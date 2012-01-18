@@ -1,0 +1,23 @@
+<FilesMatch "\.(engine|inc|info|ini|sql|route|install|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl|svn-base)$|^(code-style\.pl|Entries.*|Repository|Root|Tag|Template|all-wcprops|entries|format)$">
+  Order allow,deny
+</FilesMatch>
+
+Options -Indexes
+Options +FollowSymLinks
+ErrorDocument 404 /index.php
+DirectoryIndex index.php
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A1209600
+  <FilesMatch \.php$>
+    ExpiresActive Off
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^.*$ index.php [L,QSA]
+</IfModule>
