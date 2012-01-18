@@ -10,7 +10,7 @@
  * @version 1.0
  */
 require 'flourish/fLoader.php';
-require 'sutra/sLoader.php';
+require 'sutra/classes/sLoader.php';
 require 'moor/Moor.php';
 
 if (is_readable('./router-overrides.inc')) {
