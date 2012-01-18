@@ -1,0 +1,14 @@
+<?php
+/**
+ * Exceptions specific to the class sProcess.
+ *
+ * @copyright Copyright (c) 2011 Poluza.
+ * @author Andrew Udvare [au] <andrew@poluza.com>
+ * @license http://www.opensource.org/licenses/mit-license.php
+ *
+ * @package Sutra
+ * @link http://www.example.com/
+ *
+ * @version 1.0
+ */
+class sProcessException extends fUnexpectedException {}
