@@ -28,10 +28,6 @@ class FrontActionController extends MoorActionController {
    * @return void
    */
   public function index() {
-    /** ACCENTURE **/
-    fAuthorization::requireAuthLevel('user');
-    /** END ACCENTURE **/
-
     if (fRequest::isAjax() || fRequest::get('ajax', 'boolean', FALSE)) {
       fJSON::sendHeader();
       $args = array('/', fRequest::isGet() ? 'GET' : 'POST');
