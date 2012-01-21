@@ -69,8 +69,7 @@ class sRouter {
   }
 
   /**
-   * Get the routes. Reads from ./routers/*.route and paths that are in the
-   *   $route_files_paths array.
+   * Get the routes. Reads from paths that are in the $route_files_paths array.
    *
    * If not in production mode, the routes will be reloaded on every page load.
    *
@@ -110,7 +109,7 @@ class sRouter {
       self::$routes = $cache->get($routes_key, array());
 
       if (empty(self::$routes)) {
-        $files = glob(sLoader::getRoutesPath().'*.route');
+        $files = array();
         foreach (self::$route_files_paths as $path) {
           $files = array_merge($files, glob($path.'/*.route'));
         }
