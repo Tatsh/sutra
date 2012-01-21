@@ -121,7 +121,6 @@ class LoginActionController extends MoorActionController {
     );
     $content = sTemplate::buffer('login-form', $variables);
 
-    $config = sConfiguration::getInstance();
     $variables = array(
       'title' => __('Sign in'),
       'content' => $content,

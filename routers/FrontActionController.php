@@ -44,7 +44,6 @@ class FrontActionController extends MoorActionController {
       exit;
     }
 
-    $config = sConfiguration::getInstance();
     $variables = array(
       'title' => __('Home'),
       'content' => 'There is no content!',
