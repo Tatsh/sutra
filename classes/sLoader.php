@@ -1,13 +1,6 @@
 <?php
 /**
- * Manages auto-loading of classes. Extends fLoader class.
- *
- * Systems that do not have case-sensitive file names can pose a problem for
- *   auto-loading. In such a case, the easiest work-around is to rename the
- *   class.
- *
- * Example: autoloader_function('sCoreFunctionality') -> 'sCore/Functionality.php'
- *   On OS X (by default) and Windows, score/functionality.php is the same file.
+ * Manages loading of classes.
  *
  * @copyright Copyright (c) 2011 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
@@ -113,14 +106,13 @@ class sLoader extends fLoader {
   );
 
   /**
-   * Override best() method. We do not return after calling eagar()
-   *   because we still want the autoloader to be registered.
+   * Override best() method. Alias for sLoader::eagar().
    *
    * @return void
+   * @see sLoader::eagar()
    */
   public static function best() {
     self::eagar();
-    spl_autoload_register(array('sLoader', 'autoload'));
   }
 
   /**
@@ -148,35 +140,6 @@ class sLoader extends fLoader {
   }
 
   /**
-   * Auto-loader callback to load 3rd party classes.
-   *
-   * @internal This is never to be called directly.
-   * @access private
-   *
-   * @param string $name The class to load
-   * @return void
-   */
-  public static function autoload($name) {
-    $file = './3rdparty/routers/'.$name.'.php';
-    if (is_readable($file)) {
-      require $file;
-      return;
-    }
-
-    $file = './3rdparty/model/'.$name.'.php';
-    if (is_readable($file)) {
-      require $file;
-      return;
-    }
-
-    $file = './3rdparty/lib/'.$name.'.php';
-    if (is_readable($file)) {
-      require $file;
-      return;
-    }
-  }
-
-  /**
    * Get the path to the main router classes.
    *
    * @internal Used by sRouter.
@@ -195,9 +158,9 @@ class sLoader extends fLoader {
    */
   private static function setPaths() {
     if (!self::$path) {
-      self::$path = realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR;
-      self::$router_classes_path = realpath(self::$path.'..'.DIRECTORY_SEPARATOR.'routers').DIRECTORY_SEPARATOR;
-      self::$model_classes_path =  realpath(self::$path.'..'.DIRECTORY_SEPARATOR.'model').DIRECTORY_SEPARATOR;
+      $path = self::$path = realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR;
+      self::$router_classes_path = realpath($path.'..'.DIRECTORY_SEPARATOR.'routers').DIRECTORY_SEPARATOR;
+      self::$model_classes_path =  realpath($path.'..'.DIRECTORY_SEPARATOR.'model').DIRECTORY_SEPARATOR;
     }
   }
 }
