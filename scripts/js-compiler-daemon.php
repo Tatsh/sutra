@@ -62,9 +62,6 @@ for (;;) {
   catch (fEmptySetException $e) {
     //fCore::debug('Nothing to compile.');
   }
-  catch (ReflectionException $e) {
-    fCore::debug($e->getMessage());
-  }
 
   //fCore::debug('Sleeping for 30 seconds.');
   sleep(30);
