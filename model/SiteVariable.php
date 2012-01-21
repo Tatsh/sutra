@@ -55,34 +55,6 @@ class SiteVariable extends fActiveRecord {
   }
 
   /**
-   * Implements magic method __callStatic().
-   *
-   * Methods:
-   *   - getNameOfSomething($cast_to = NULL, $default_value = NULL) - returns
-   *       the value for name_of_something
-   *   - setNameOfSomething($value, $ttl = 3600) - returns void
-   *
-   * @param string $method Method name invoked.
-   * @param array $arguments Arguments passed in an array.
-   * @return mixed If calling get, the value of the configuration, otherwise void.
-   */
-  public static function __callStatic($method, $arguments) {
-    self::initialize();
-
-    $subject = fGrammar::underscorize(substr($method, 3));
-    if (strlen($method) > 3) {
-      if (substr($method, 0, 3) === 'get') {
-        $cast_to = isset($arguments[0]) ? $arguments[0] : NULL;
-        $default = isset($arguments[1]) ? $arguments[1] : NULL;
-        return self::getValue($subject, $cast_to, $default);
-      }
-      else if (substr($method, 0, 3) === 'set' && isset($arguments[0])) {
-        self::setValue($subject, $arguments[0], isset($arguments[1]) ? (int)$arguments[1] : self::DEFAULT_TTL);
-      }
-    }
-  }
-
-  /**
    * Get a value. The value retrieved will be cached for one hour.
    *   This cannot be named get because there exists a get method in
    *   fActiveRecord.

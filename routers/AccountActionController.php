@@ -239,8 +239,8 @@ class AccountActionController extends MoorActionController {
       fAuthorization::destroyUserInfo();
 
       $link = fURL::getDomain().'/login';
-      $from_email = SiteVariable::getCachedValue('deactivate_account_from_email', 'admin@somewhere.com');
-      $subject = __(SiteVariable::getCachedValue('deactivate_account_email_subject', __('Account deactivated')));
+      $from_email = SiteVariable::getValue('deactivate_account_from_email', 'string', 'admin@somewhere.com');
+      $subject = __(SiteVariable::getValue('deactivate_account_email_subject', 'string', __('Account deactivated')));
 
       // Keep the lines broken up
       $default_body = "

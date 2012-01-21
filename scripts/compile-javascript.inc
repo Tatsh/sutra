@@ -18,7 +18,7 @@ if (!$reflection->hasMethod('minifyJavascript')) {
 }
 
 $javascript_files = sTemplate::getJavaScriptFiles();
-$google_analytics_ua = SiteVariable::getGoogleAnalyticsUA('string', '00-00000');
+$google_analytics_ua = SiteVariable::getValue('sConfiguration::google_analytics_u_a', 'string', 'UA-000000-00');
 
 function compileJavaScript() {
   global $javascript_files, $google_analytics_ua;
