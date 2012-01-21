@@ -152,6 +152,18 @@ class sLoader extends fLoader {
   }
 
   /**
+   * Get the path to the main model classes.
+   *
+   * @internal Used by the schema installer.
+   *
+   * @return string A path.
+   */
+  public static function getModelClassesPath() {
+    self::setPaths();
+    return self::$model_classes_path;
+  }
+
+  /**
    * Determines where Sutra is installed.
    *
    * @return void
