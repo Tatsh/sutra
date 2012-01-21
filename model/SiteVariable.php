@@ -72,7 +72,7 @@ class SiteVariable extends fActiveRecord {
     $subject = fGrammar::underscorize(substr($method, 3));
     if (strlen($method) > 3) {
       if (substr($method, 0, 3) === 'get') {
-        $cast_to = isset($arguments[0]) ? $arguments[1] : NULL;
+        $cast_to = isset($arguments[0]) ? $arguments[0] : NULL;
         $default = isset($arguments[1]) ? $arguments[1] : NULL;
         return self::getValue($subject, $cast_to, $default);
       }
