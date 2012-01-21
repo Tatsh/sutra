@@ -26,7 +26,9 @@ if (is_readable('./includes.inc')) {
 }
 
 /**
- * Get translated version of text if necessary.
+ * Get translated version of text if necessary. If you pass multiple strings
+ *   argument instead of an array with key value pairs, all words that must be
+ *   replaced must begin with !, @, or %.
  *
  * @todo Implement translations as necessary.
  *
@@ -41,6 +43,25 @@ function __($text, $vars = array()) {
   if (!is_array($vars)) {
     $vars = func_get_args();
     array_shift($vars);
+
+    $original = $vars;
+    $vars = array();
+
+    $words = explode(' ', $text);
+    $special = array('!', '@', '%');
+    $i = 0;
+    foreach ($words as $word) {
+      if (!isset($original[$i])) {
+        break;
+      }
+
+      $current = $original[$i];
+
+      if (in_array($word[0], $special)) {
+        $vars[$word] = $current;
+        $i++;
+      }
+    }
   }
 
   return strtr($text, $vars);
