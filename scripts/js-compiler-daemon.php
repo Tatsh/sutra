@@ -48,7 +48,7 @@ for (;;) {
 
     $ret = file_put_contents('./'.$record->getFilename(), $compiled, LOCK_EX);
     if ($ret === FALSE) {
-      throw new fUnexpectedException(__('Could not write to file !file', array('!file' => './'.$record->getFilename())));
+      throw new fUnexpectedException('Could not write to file %s', $record->getFilename());
     }
 
     $record->setCompleted(TRUE);
