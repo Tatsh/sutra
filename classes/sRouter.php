@@ -42,7 +42,35 @@ class sRouter {
   private static $cwd = '';
 
   /**
-   * Get the routes. Reads from ./routers/*.route and 3rdparty/routers/*.route.
+   * Paths to search for that have .route files.
+   *
+   * @var array
+   */
+  private static $route_files_paths = array();
+
+  /**
+   * Add a path that has .route files.
+   *
+   * @param string $path Path (relative to site root or complete), without
+   *   ending slash.
+   * @return void
+   */
+  public static function addRoutesFilePath($path) {
+    self::$route_files_paths[] = $path;
+  }
+
+  /**
+   * Reset all route files paths.
+   *
+   * @return void
+   */
+  public static function resetRouteFilesPaths() {
+    self::$route_files_paths = array();
+  }
+
+  /**
+   * Get the routes. Reads from ./routers/*.route and paths that are in the
+   *   $route_files_paths array.
    *
    * If not in production mode, the routes will be reloaded on every page load.
    *
@@ -82,10 +110,10 @@ class sRouter {
       self::$routes = $cache->get($routes_key, array());
 
       if (empty(self::$routes)) {
-        $files = array_merge(
-          glob(sLoader::getRoutesPath().'*.route'),
-          glob('./3rdparty/routers/*.route')
-        );
+        $files = glob(sLoader::getRoutesPath().'*.route');
+        foreach (self::$route_files_paths as $path) {
+          $files = array_merge($files, glob($path.'/*.route'));
+        }
 
         if (empty($files)) {
           fCore::debug('No routes found!');
