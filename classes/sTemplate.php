@@ -81,9 +81,7 @@ class sTemplate {
    *
    * @var string
    */
-  private static $javascript_paths = array(
-    'js',
-  );
+  private static $javascript_paths = array();
 
   /**
    * Get the JavaScript paths. Useful for sorting.
@@ -105,9 +103,10 @@ class sTemplate {
   }
 
   /**
-   * Add a path to search for JavaScript files (.js).
+   * Add a path to search for JavaScript files (.js). As always, any path added
+   *   must be readable by the web server.
    *
-   * @param string $path Path (full or relative to site root) without ending
+   * @param string $path Path (relative to site root) without leading or ending
    *   slash.
    * @return void
    */
