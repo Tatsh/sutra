@@ -77,6 +77,45 @@ class sTemplate {
   private static $cdns = array();
 
   /**
+   * Paths to search for .js files.
+   *
+   * @var string
+   */
+  private static $javascript_paths = array(
+    'js',
+  );
+
+  /**
+   * Get the JavaScript paths. Useful for sorting.
+   *
+   * @return array Array of paths.
+   */
+  public static function getJavaScriptPaths() {
+    return self::$javascript_paths;
+  }
+
+  /**
+   * Set the JavaScript paths.
+   *
+   * @param array $paths Array of paths, full or relative to site root.
+   * @return void
+   */
+  public static function setJavascriptPaths(array $paths) {
+    self::$javascript_paths = $paths;
+  }
+
+  /**
+   * Add a path to search for JavaScript files (.js).
+   *
+   * @param string $path Path (full or relative to site root) without ending
+   *   slash.
+   * @return void
+   */
+  public static function addJavaScriptPath($path) {
+    self::$javascript_paths[] = $path;
+  }
+
+  /**
    * Load/get all JavaScript files in an array.
    *
    * @param boolean $reread Whether or not to force a re-read of the files.
@@ -84,13 +123,11 @@ class sTemplate {
    */
   public static function getJavaScriptFiles($reread = FALSE) {
     if (empty(self::$javascript_files) || $reread) {
-      self::$javascript_files = glob('js/*.js');
-      $other_javascript_files = glob('3rdparty/js/*.js');
-
-      sort(self::$javascript_files, SORT_STRING);
-      sort($other_javascript_files, SORT_STRING);
-
-      self::$javascript_files = array_merge(self::$javascript_files, $other_javascript_files);
+      foreach (self::$javascript_paths as $path) {
+        $files = glob($path.'/*.js');
+        sort($files, SORT_STRING);
+        self::$javascript_files = array_merge(self::$javascript_files, $files);
+      }
     }
 
     return self::$javascript_files;
