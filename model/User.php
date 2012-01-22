@@ -66,6 +66,7 @@ class User extends fActiveRecord {
     $image = $object->getAvatar();
     if ($image instanceof fImage) {
       try {
+        fCore::debug(sprintf('%s::%s():%d: Attempting to rotate image.', __CLASS__, __FUNCTION__, __LINE__));
         $simage = new sImage('./files/avatars/'.$image->getName());
         $simage->rotateAccordingToEXIFData()->saveChanges(NULL, 90, TRUE);
       }
