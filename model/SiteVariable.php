@@ -152,6 +152,9 @@ class SiteVariable extends fActiveRecord {
     self::initialize();
 
     $to = strtolower($to);
+    if (!$to) {
+      return $value;
+    }
 
     // Do not cast objects to float as this might result in a warning
     if (is_object($value) && $to == 'float') {
@@ -190,9 +193,6 @@ class SiteVariable extends fActiveRecord {
       case 'null':
         $value = NULL;
         break;
-
-      default:
-        throw new fProgrammerException('Invalid type %s specified for casting.', $to);
     }
 
     return $value;
