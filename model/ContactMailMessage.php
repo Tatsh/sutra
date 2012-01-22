@@ -15,9 +15,9 @@ class ContactMailMessage extends fActiveRecord {
   /**
    * Re-implements fActiveRecord::configure().
    *
-   * @return void
+   * @internal
    *
-   * @see fActiveRecord::configure()
+   * @return void
    */
   protected function configure() {
     fORMDate::configureDateCreatedColumn($this, 'date_created');

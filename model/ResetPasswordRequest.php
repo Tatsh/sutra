@@ -15,6 +15,8 @@ class ResetPasswordRequest extends fActiveRecord {
   /**
    * Re-implements fActiveRecord::configure().
    *
+   * @internal
+   *
    * @return void
    */
   protected function configure() {

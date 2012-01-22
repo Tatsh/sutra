@@ -22,6 +22,8 @@ class User extends fActiveRecord {
   /**
    * Re-implements fActiveRecord::configure().
    *
+   * @internal
+   *
    * @todo Use sImage to rotate avatar according to EXIF data before any fImage calls.
    *
    * @return void
