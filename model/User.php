@@ -34,9 +34,7 @@ class User extends fActiveRecord {
     fORMFile::addFImageMethodCall($this, 'avatar', 'resize', array(64, 64));
 
     // This seems to work best after already storing
-    // This means we have to update manually in the callback
-//     fORM::registerHookCallback($this, 'post::store()', 'User::rotateAvatarUsingEXIFData');
-//     fORM::registerHookCallback($this, 'post::store()', 'User::createResizedAvatars');
+    fORM::registerHookCallback($this, 'post::store()', 'User::rotateAvatarUsingEXIFDataCallback');
 
     // Encrypt password upon registration
     fORM::registerHookCallback($this, 'post::populate()', 'User::encryptPasswordCallback');
@@ -50,8 +48,54 @@ class User extends fActiveRecord {
   }
 
   /**
+   * Callback to rotate the avatar image using EXIF data.
+   *
+   * @param fActiveRecord $object The fActiveRecord instance.
+   * @param array $values The values array.
+   * @param array $old_values The old values array.
+   * @param array $related_records The related records array for the record.
+   * @param array $cache The cache array for the record.
+   * @return void
+   */
+  public static function rotateAvatarUsingEXIFDataCallback($object, &$values, &$old_values, &$related_records, &$cache) {
+    // Try to return as soon as possible
+    if (!fUpload::check('avatar', FALSE)) {
+      return;
+    }
+
+    $image = $object->getAvatar();
+    if ($image instanceof fImage) {
+      try {
+        $simage = new sImage('./files/avatars/'.$image->getName());
+        $simage->rotateAccordingToEXIFData()->saveChanges(NULL, 90, TRUE);
+      }
+      catch (fProgrammerException $e) {
+        fCore::debug(sprintf('%s::%s():%d:Caught fProgrammerException: %s', __CLASS__, __FUNCTION__, __LINE__, strip_tags($e->getMessage())));
+      }
+      catch (fValidationException $e) {
+        fCore::debug(sprintf('%s::%s():%d:Caught fValidationException: %s', __CLASS__, __FUNCTION__, __LINE__, strip_tags($e->getMessage())));
+      }
+      catch (fEnvironmentException $e) {
+        fCore::debug(sprintf('%s::%s():%d:Caught fEnvironmentException: %s', __CLASS__, __FUNCTION__, __LINE__, strip_tags($e->getMessage())));
+      }
+      catch (fUnexpectedException $e) {
+        fCore::debug(sprintf('%s::%s():%d:Caught fUnexpectedException: %s', __CLASS__, __FUNCTION__, __LINE__, strip_tags($e->getMessage())));
+      }
+    }
+//     else {
+//       fCore::debug(fCore::dump($object));
+//     }
+  }
+
+  /**
    * Callback to encrypt password using the fCryptography class.
    *
+   * @param fActiveRecord $object The fActiveRecord instance.
+   * @param array $values The values array.
+   * @param array $old_values The old values array.
+   * @param array $related_records The related records array for the record.
+   * @param array $cache The cache array for the record.
+   * @return void
    * @return void
    */
   public static function encryptPasswordCallback($object, &$values, &$old_values, &$related_records, &$cache) {
