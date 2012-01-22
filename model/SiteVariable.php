@@ -133,8 +133,6 @@ class SiteVariable extends fActiveRecord {
 
     $cache_key = __CLASS__.'::'.self::$cwd.'::'.$key;
     self::$variable_cache->set($cache_key, $value, is_null($ttl) ? self::DEFAULT_TTL : (int)$ttl);
-
-    return $this;
   }
 
   /**
