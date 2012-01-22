@@ -13,10 +13,6 @@ require 'flourish/fLoader.php';
 require 'sutra/classes/sLoader.php';
 require 'moor/Moor.php';
 
-if (is_readable('./router-overrides.inc')) {
-  require './router-overrides.inc';
-}
-
 // Initialise the includes and headers.
 sLoader::best();
 

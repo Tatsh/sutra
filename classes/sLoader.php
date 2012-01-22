@@ -133,9 +133,7 @@ class sLoader extends fLoader {
     }
 
     foreach (self::$router_classes as $class) {
-      if (!class_exists($class)) {
-        require self::$router_classes_path.$class.'.php';
-      }
+      require self::$router_classes_path.$class.'.php';
     }
   }
 
