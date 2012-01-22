@@ -42,7 +42,7 @@ class sCore extends fCore {
       $config = sConfiguration::getInstance();
 
       if (!$config->getProductionModeOn('bool')) {
-        if (file_put_contents('./dblog.txt', 'Log started at '.date('Y-m-d H:i:s').":\n")) {
+        if (file_put_contents('./dblog.txt', "\n".'Log started at '.date('Y-m-d H:i:s').":\n", FILE_APPEND)) {
           parent::registerDebugCallback(array(__CLASS__, 'debugCallback'));
           parent::enableDebugging(TRUE);
         }
