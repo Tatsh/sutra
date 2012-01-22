@@ -270,9 +270,8 @@ class sImage extends fImage {
   }
 
   /**
-   * Rotate an image a certain way based on EXIF information embedded.
-   *
-   * @note Only JPEG and TIFF images are supported.
+   * Rotate an image a certain way based on EXIF information embedded. Only
+   *   JPEG and TIFF images are supported.
    *
    * @param string $direction Optional. One of the DIRECTION_* constant values.
    *   Default is up-side up.
