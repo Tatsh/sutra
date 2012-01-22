@@ -165,6 +165,8 @@ class sConfiguration {
   /**
    * Get an instance of the class.
    *
+   * @internal Called by sCore::main().
+   *
    * @return sConfiguration
    */
   public static function getInstance() {
@@ -183,6 +185,8 @@ class sConfiguration {
    *
    * @param string $method Method such as: getSiteName, getSiteSlogan.
    * @return mixed Value or NULL.
+   *
+   * @todo Make sure this still works with CLI.
    */
   public function __call($method, $arguments) {
     if (substr($method, 0, 3) === 'get') {
