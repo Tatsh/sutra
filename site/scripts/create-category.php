@@ -20,7 +20,10 @@
  * @version 1.0
  */
 try {
-  $php_is_first = substr(strtolower($argv[0]), 0, 3) === 'php';
+  $argv[0] = strtolower($argv[0]);
+  $php_is_first = substr($argv[0], 0, 3) === 'php' || // plain old 'php' or php.exe
+    substr($argv[0], -3) === 'php' ||  // /usr/bin/php or C:\blah\php
+    substr($argv[0], -7, 3) === 'php'; // php.exe
 
   if ($php_is_first && $argc != 3) {
     throw new Exception(sprintf('USAGE: php %s CATEGORY_NAME', $argv[1]));
