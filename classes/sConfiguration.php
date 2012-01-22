@@ -1,8 +1,11 @@
 <?php
 /**
  * Manages Sutra-specific configuration. Configuration is done by hand
- *   currently in the ./config/site.ini file. This file must exist for the
+ *   currently in the CONF_PATH/site.ini file. This file must exist for the
  *   site to function. Use ./config/site.sample.ini as a template.
+ *
+ * Configuration files can be anywhere. Just call sConfiguration::setPath()
+ *   before sCore::main() (or your own main) runs.
  *
  * After the file is read, it will not be re-read until cache is cleared.
  *   You can perform this action simply by visiting /admin/clear-cache as user
@@ -12,8 +15,6 @@
  *   a variable will call SiteVariable's version, but with the proper key name.
  *   sConfiguration->getNameOfValue() is equivalent to calling
  *   SiteVariable::getValue('sConfiguration::name_of_value').
- *
- * @todo Make file not specifically at ./config/site.ini.
  *
  * @copyright Copyright (c) 2011 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
@@ -47,6 +48,13 @@ class sConfiguration {
   private static $cwd = '/var/fake/root';
 
   /**
+   * The path where the configuration files are, including database.ini.
+   *
+   * @var string
+   */
+  private static $configuration_files_path = './config';
+
+  /**
    * Constructor. Private to prevent external instantiation.
    *
    * @throws fEnvironmentException If the site configuration INI file cannot
@@ -55,7 +63,7 @@ class sConfiguration {
    * @return sConfiguration
    */
   private function __construct() {
-    $file = './config/site.ini';
+    $file = self::$configuration_files_path.DIRECTORY_SEPARATOR.'config.ini';
     self::$cwd = getcwd();
     $recache = FALSE;
 
@@ -110,6 +118,25 @@ class sConfiguration {
     else {
       throw new fEnvironmentException('Site configuration file could not be read.');
     }
+  }
+
+  /**
+   * Set where the ini files are.
+   *
+   * @param string $path A path. Will be converted to a regular path.
+   * @return void
+   */
+  public static function setPath($path) {
+    self::$configuration_files_path = realpath($path);
+  }
+
+  /**
+   * Get where the ini files are.
+   *
+   * @return string The path.
+   */
+  public static function getPath() {
+    return self::$configuration_files_path;
   }
 
   /**

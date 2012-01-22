@@ -85,7 +85,8 @@ class sDatabase {
    * @return sDatabase
    */
   public function __construct() {
-    $file = './config/database.ini';
+    $file = sConfiguration::getPath().DIRECTORY_SEPARATOR.'database.ini';
+
     if (is_readable($file)) {
       $ini = parse_ini_file($file);
       $this->user = NULL;
