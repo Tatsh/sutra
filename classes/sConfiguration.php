@@ -4,6 +4,17 @@
  *   currently in the ./config/site.ini file. This file must exist for the
  *   site to function. Use ./config/site.sample.ini as a template.
  *
+ * After the file is read, it will not be re-read until cache is cleared.
+ *   You can perform this action simply by visiting /admin/clear-cache as user
+ *   with the 'admin' auth_level.
+ *
+ * This class is simply a front end to SiteVariable. Every call to set or get
+ *   a variable will call SiteVariable's version, but with the proper key name.
+ *   sConfiguration->getNameOfValue() is equivalent to calling
+ *   SiteVariable::getValue('sConfiguration::name_of_value').
+ *
+ * @todo Make file not specifically at ./config/site.ini.
+ *
  * @copyright Copyright (c) 2011 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
  * @license http://www.opensource.org/licenses/mit-license.php
@@ -30,6 +41,8 @@ class sConfiguration {
 
   /**
    * The working directory.
+   *
+   * @var string
    */
   private static $cwd = '/var/fake/root';
 
@@ -44,8 +57,14 @@ class sConfiguration {
   private function __construct() {
     $file = './config/site.ini';
     self::$cwd = getcwd();
+    $recache = FALSE;
 
-    if (is_readable($file)) {
+    $cache = sCache::getInstance();
+    if (!$cache->get(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached')) {
+      $recache = TRUE;
+    }
+
+    if (is_readable($file) && $recache) {
       $ini = parse_ini_file($file);
       $cache = sCache::getInstance();
 
@@ -79,17 +98,14 @@ class sConfiguration {
 
       foreach ($settings as $setting) {
         if (isset($ini[$setting])) {
-          // Expire setting after 1 hour
-          $key = __CLASS__.'::'.self::$cwd.'::'.$setting;
-          $cache->set($key, $ini[$setting], 3600);
-          self::$values[$setting] = $ini[$setting];
-
-//           $key = __CLASS__.'::'.$setting;
-//           SiteVariable::setValue($key, $ini[$setting], 3600);
+          SiteVariable::setValue(self::getValidKeyName($setting), $ini[$setting], 3600);
         }
       }
 
       $cache->set(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached', time(), 3600);
+    }
+    else if (!$recache) {
+      return;
     }
     else {
       throw new fEnvironmentException('Site configuration file could not be read.');
@@ -105,8 +121,7 @@ class sConfiguration {
    * @return void
    */
   public static function add($key, $value, $ttl = 3600) {
-    $key = __CLASS__.'::'.self::$cwd.'::'.$key;
-    sCache::getInstance()->add($key, $value, $ttl);
+    SiteVariable::setValue(self::getValidKeyName($key), $value, $ttl);
   }
 
   /**
@@ -122,47 +137,17 @@ class sConfiguration {
    * @return mixed Value of key or NULL.
    */
   public static function get($key, $default = NULL, $cast = NULL) {
-    $cache = sCache::getInstance();
-    $key = __CLASS__.'::'.self::$cwd.'::'.$key;
-    $value = $cache->get($key, $default);
+    return SiteVariable::getValue(self::getValidKeyName($key), $cast, $default);
+  }
 
-    if (is_null($value)) {
-      // Value may have expired; recache
-      self::$instance = new self;
-      $value = $cache->get($key, $default);
-    }
-
-    if (!is_null($cast)) {
-      $cast = strtolower($cast);
-      switch ($cast) {
-        case 'int':
-        case 'integer':
-          return (int)$value;
-
-        case 'unset':
-          return NULL;
-
-        case 'bool':
-        case 'boolean':
-          return (bool)$value;
-
-        case 'float':
-        case 'double':
-        case 'real':
-          return (float)$value;
-
-        case 'string':
-          return strval($value);
-
-        case 'array':
-          return (array)$value;
-
-        case 'object':
-          return (object)$value;
-      }
-    }
-
-    return $value;
+  /**
+   * Get the valid key name for a key without prefix.
+   *
+   * @param string $key Key name without prefix.
+   * @return string $key Key with prefix.
+   */
+  private static function getValidKeyName($key) {
+    return __CLASS__.'::'.$key;
   }
 
   /**
@@ -174,12 +159,12 @@ class sConfiguration {
    * @return void
    */
   public static function set($key, $value, $ttl = 3600) {
-    $key = __CLASS__.'::'.self::$cwd.'::'.$key;
-    sCache::getInstance()->set($key, $value, $ttl);
+    SiteVariable::setValue(self::getValidKeyName($key), $value, $ttl);
   }
 
   /**
-   * Get instance of class.
+   * Get an instance of the class.
+   *
    * @return sConfiguration
    */
   public static function getInstance() {
@@ -196,36 +181,20 @@ class sConfiguration {
    *   'boolean', 'float', 'double', 'real', 'string', 'array', 'object'.
    * - index 1 - mixed - Default value to return if the value does not exist.
    *
-   * @param string $method Such as: getSiteName, getSiteSlogan.
+   * @param string $method Method such as: getSiteName, getSiteSlogan.
    * @return mixed Value or NULL.
    */
   public function __call($method, $arguments) {
-    static $sapi;
-
-    if (!$sapi) {
-      $sapi = strtolower(php_sapi_name());
-    }
-
     if (substr($method, 0, 3) === 'get') {
       $method = substr($method, 3);
       $config = self::getInstance();
 
       $key = fGrammar::underscorize($method);
       $arguments[1] = isset($arguments[1]) ? strtolower($arguments[1]) : '';
-      $types = array('int', 'integer', 'unset', 'bool', 'boolean', 'float', 'double', 'real', 'string', 'array', 'object');
 
-      if ($sapi !== 'cli') {
-        if (in_array($arguments[1], $types)) {
-          return $config->get($key, isset($arguments[0]) ? $arguments[0] : NULL, $arguments[1]);
-        }
-        else {
-          return $config->get($key, isset($arguments[0]) ? $arguments[0] : NULL);
-        }
-      }
-      else {
-        // CLI, no casting
-        return self::$values[$key];
-      }
+      return $config->get($key, isset($arguments[0]) ? $arguments[0] : NULL, $arguments[1]);
     }
+
+    return NULL;
   }
 }
