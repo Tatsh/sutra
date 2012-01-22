@@ -113,7 +113,7 @@ class SiteVariable extends fActiveRecord {
    * @param string $key The key name.
    * @param mixed $value The value to store.
    * @param integer $ttl Time to live in cache. Default is 3600 seconds (1 hour).
-   * @return SiteVariable The object to allow for method chaining.
+   * @return void
    */
   public static function setValue($key, $value, $ttl = NULL) {
     self::initialize();
