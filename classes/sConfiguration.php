@@ -76,38 +76,64 @@ class sConfiguration {
       $ini = parse_ini_file($file);
       $cache = sCache::getInstance();
 
-      $settings = array(
-        'site_name',
-        'site_slogan',
-        'base_url',
-        'cdn_enabled',
-        'cdn_urls',
-        'cookie_domain',
-        'production_mode_on',
-        'display_mobile_tags',
-        'template',
-        'google_analytics_u_a',
-        'mollom_public_key',
-        'mollom_secret',
-        'facebook_app_id',
-        'bitly_api_key',
-        'bitly_api_username',
-        'site_text_direction',
-        'site_language',
-        'favicon_path',
-        'site_logo_path',
-        'site_timezone',
-        'mollom_enabled',
-        'closure_jar',
-        'site_u_r_i',
-        'allowed_email_domains',
-        'facebook_app_secret',
+      $defaults = array(
+        'site_name' => __('No Name'),
+        'site_slogan' => __('No Slogan'),
+        'cdn_urls' => array(),
+        'production_mode_on' => FALSE,
+        'template' => 'default',
+        'google_analytics_u_a' => 'UA-000000-00',
+        'site_text_direction' => 'ltr',
+        'site_language' => 'en',
+        'site_timezone' => 'Europe/London', // GMT
+        'allowed_email_domains' => array(),
+        'disallowed_email_domains' => array(),
       );
 
-      foreach ($settings as $setting) {
-        if (isset($ini[$setting])) {
-          SiteVariable::setValue(self::getValidKeyName($setting), $ini[$setting], 3600);
+      $settings_to_type = array(
+        'site_name' => 'string',
+        'site_slogan' => 'string',
+        'cdn_urls' => 'array',
+        'production_mode_on' => 'bool',
+        'template' => 'string',
+        'google_analytics_u_a' => 'string',
+        'site_text_direction' => 'string',
+        'site_language' => 'string',
+        'site_timezone' => 'string',
+        'allowed_email_domains' => 'array',
+        'disallowed_email_domains' => 'array',
+      );
+
+      foreach ($settings_to_type as $setting_key => $type) {
+        if (isset($ini[$setting_key])) {
+          $value = $ini[$setting_key];
+          unset($ini[$setting_key]);
+
+          switch ($type) {
+            case 'string':
+              $value = (string)$value;
+              break;
+
+            case 'array':
+              $value = (array)$value;
+              break;
+
+            case 'boolean':
+            case 'bool':
+              $value = (bool)$value;
+              break;
+          }
+
+          SiteVariable::setValue(self::getValidKeyName($setting_key), $value, 3600);
         }
+        else {
+          SiteVariable::setValue(self::getValidKeyName($setting_key), $defaults[$setting_key], 3600);
+        }
+      }
+
+      // Set the rest; there could be custom settings
+      foreach ($ini as $key => $value) {
+        SiteVariable::setValue(self::getValidKeyName($key), $value, 3600);
       }
 
       $cache->set(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached', time(), 3600);
