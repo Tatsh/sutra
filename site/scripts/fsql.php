@@ -3,11 +3,11 @@
 /**
  * This script installs schemas.
  *
- * Example usage (in Bash and similar):
- *   ./fsql.php -r /var/www/my-sutra-site -f /home/myname/my-sutra-site/model/SomeModel.sql
+ * Example usage in Bash and similar:
+ *   ./fsql.php -r /var/www/my-sutra-site -f $HOME/my-sutra-site/model/SomeModel.sql
  *
  * Exapmle usage in Windows command line (cmd):
- *   php fsql.php -r "C:\xamp\htdocs\my-sutra-site" -f "%HOMEPATH%\my-sutra-site-model/SomeModel.sql"
+ *   php fsql.php -r "C:\xamp\htdocs\my-sutra-site" -f "%HOMEPATH%\my-sutra-site-model\SomeModel.sql"
  *
  * @copyright Copyright (c) 2012 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
