@@ -112,10 +112,11 @@ class sImage extends fImage {
    * @throws fEnvironmentException If no image processor is found; if the image
    *   type is invalid for GD.
    *
-   * @note To use ImageMagick (which is much faster), you must install the PECL
+   * Additional notes:
+   * - To use ImageMagick (which is much faster), you must install the PECL
    *   Imagick extension.
-   * @note PJPEG is not supported if GD is used.
-   * @note This overwrites the data in the file before returning (this is NOT
+   * - PJPEG is not supported if GD is used.
+   * - This overwrites the data in the file before returning (this is NOT
    *  part of the operation queue).
    *
    * @todo Accept third argument boolean overwrite.
