@@ -3,11 +3,11 @@
 /**
  * Compiles JavaScript files.
  *
- * @copyright Copyright (c) 2011 Poluza.
+ * @copyright Copyright (c) 2012 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
- * @license Proprietary.
+ * @license http://www.opensource.org/licenses/mit-license.php
  *
- * @package PoluzaScripts
+ * @package SutraScripts
  * @link http://www.example.com/
  *
  * @version 1.0
