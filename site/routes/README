@@ -1,0 +1,20 @@
+Always keep a copy of the original main-routes.route or you can always get an
+  updated working version at
+  https://github.com/tatsh/sutra/blob/master/site/routes/main-routes.route
+If you want your own class to handle the homepage, edit main-routes.route's / line.
+
+Add your own .route file, such as mysite.route.
+
+Syntax is:
+/url = className::method
+/url2 = globalfunctionName
+/url3/:user_id(\d+) = userClass::handleUser
+
+The method can be instance or static. All URLs begin with /.
+
+In the /url3 example, the method will only be called if the regular expression
+  matches. $_GET['user_id'] would exist and would be the value. You should
+  use fRequest::get('user_id', 'int').
+
+If you encounter an issue with a particular regular expression, please file an
+  issue. https://github.com/tatsh/sutra/issues
