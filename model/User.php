@@ -132,10 +132,12 @@ class User extends fActiveRecord {
   /**
    * Get an array representation of the user.
    *
+   * @param string $mode Mode for data. 'api' will output more data, such as
+   *   the user's avatar URL. 'api' is intended to be useful for web services.
    * @return array Array representation of user object.
    */
-  public function toArray() {
-    return array(
+  public function toArray($mode = 'site') {
+    $ret = array(
       'userId' => (int)$this->getUserId(),
       'name' => $this->getName(),
       //'authLevel' => $this->getAuthLevel(),
@@ -143,6 +145,17 @@ class User extends fActiveRecord {
       'dateRegistered' => $this->getDateCreated()->getFuzzyDifference(),
       'lastAccessed' => $this->getLastAccessed()->getFuzzyDifference(),
     );
+
+    if ($mode == 'api') {
+      $url = '';
+      $avatar = $user->getAvatar();
+      if ($avatar instanceof fImage) {
+        $url = fURL::getDomain().'/files/avatars/'.$avatar->getName();
+      }
+      $ret['avatar'] = $url;
+    }
+
+    return $ret;
   }
 
   /**
