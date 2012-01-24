@@ -13,6 +13,13 @@
  */
 class sCore extends fCore {
   /**
+   * The debug log file name.
+   *
+   * @var string
+   */
+  private static $debug_log_filename = './dblog.txt';
+
+  /**
    * Entry point.
    *
    * If production mode is not on, and ./dblog.txt is writable,
@@ -42,12 +49,12 @@ class sCore extends fCore {
       $config = sConfiguration::getInstance();
 
       if (!$config->getProductionModeOn('bool')) {
-        if (file_put_contents('./dblog.txt', "\n".'Log started at '.date('Y-m-d H:i:s').":\n", FILE_APPEND)) {
+        if (file_put_contents(self::$debug_log_filename, "\n".'Log started at '.date('Y-m-d H:i:s').":\n", FILE_APPEND)) {
           parent::registerDebugCallback(array(__CLASS__, 'debugCallback'));
           parent::enableDebugging(TRUE);
         }
         else {
-          self::debug('Cannot write to ./dblog.txt');
+          self::debug(sprintf('Debug: Cannot write to %s', self::$debug_log_filename));
         }
       }
 
@@ -68,34 +75,52 @@ class sCore extends fCore {
   }
 
   /**
-   * Debug callback only used when in not production mode.
-   *
-   * Filters out 'Query time was', 'BEGIN', and 'QUERY' lines.
-   *
-   * For this function to work a file './dblog.txt' must be at root with
-   *   proper permissions (such as 777 on Unix-like).
+   * Debug callback (only registered when in not production mode).
    *
    * @internal This is never to be called directly.
    * @access private
    *
-   * @param string $message Message sent.
+   * @param string $message Message to log.
    * @return void
    */
   public static function debugCallback($message) {
-    $filter = array(
-      'BEGIN',
-      'COMMIT',
-    );
+    @file_put_contents(self::$debug_log_filename, $message."\n", FILE_APPEND);
+  }
 
-    $message = preg_replace('/Query\stime\swas\s\d+\.\d+\sseconds\sfor\:'."\n".'/', '', $message);
-    $lines = explode("\n", $message);
+  /**
+   * Set the debug log file name. Do this before allowing sCore::main() to run
+   *   or assing sCore::debugCallback() with fCore::registerDebugCallback().
+   *
+   * For a web server, the file name must have write permissions from the user
+   *   that runs the web server. My recommendation on Linux (with nginx running
+   *   as nginx):
+   * - mkdir /var/log/sutra
+   * - chmod -R 0770 /var/log/sutra
+   * - chown -R nginx:nginx /var/log/sutra
+   *
+   * You may then want to use a format like site-name.log in /var/log/sutra
+   *   (full path /var/log/site-name.log).
+   *
+   * @throws fProgrammerException If the log file cannot be created.
+   *
+   * @param string $filename Full or relative path to file. Will be created if
+   *   necessary.
+   * @return void
+   *
+   * @see sCore::main()
+   * @see sCore::debugCallback()
+   * @see fCore::registerDebugCallback()
+   */
+  public static function setDebugLogFilename($filename) {
+    $time = date('Y-m-d H:i:s');
 
-    foreach ($lines as $line) {
-      $line = trim($line);
-      if (!in_array($line, $filter)) {
-        @file_put_contents('./dblog.txt', $message."\n", FILE_APPEND);
+    if (!is_file($filename)) {
+      if (!file_put_contents($filename, "Created file at $time\n")) {
+        throw new fProgrammerException('Log file %s could not be created.', $filename);
       }
     }
+
+    self::$debug_log_filename = $filename;
   }
 
   /**
