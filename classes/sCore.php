@@ -69,21 +69,22 @@ class sCore extends fCore {
         }
         else {
           self::debug(sprintf('Debug: Cannot write to %s', self::$debug_log_filename));
-
-          $exception_handling_type = strtolower($config->getExceptionHandlingDestinationType('string', 'email'));
-          $destination = '';
-          if ($exception_handling_type == 'email') {
-            $domain = str_replace('http://', 'https://', fURL::getDomain());
-            $destination = $config->getExceptionDestination('string', 'webmaster@'.$domain);
-          }
-          else {
-            $site_root_name = basename(getcwd());
-            $destination = $config->getExceptionDestination('string', '/var/log/sutra/'.$site_root_name.'.log');
-          }
-
-          self::enableErrorHandling($destination);
-          self::enableExceptionHandling($destination, self::$exception_closing_callback, self::$exception_closing_parameters);
         }
+      }
+      else {
+        $exception_handling_type = strtolower($config->getExceptionHandlingDestinationType('string', 'email'));
+        $destination = '';
+        if ($exception_handling_type == 'email') {
+          $domain = str_replace('http://', 'https://', fURL::getDomain());
+          $destination = $config->getExceptionDestination('string', 'webmaster@'.$domain);
+        }
+        else {
+          $site_root_name = basename(getcwd());
+          $destination = $config->getExceptionDestination('string', '/var/log/sutra/'.$site_root_name.'.log');
+        }
+
+        self::enableErrorHandling($destination);
+        self::enableExceptionHandling($destination, self::$exception_closing_callback, self::$exception_closing_parameters);
       }
 
       sAuthorization::initialize();
