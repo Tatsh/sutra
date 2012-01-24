@@ -18,5 +18,5 @@
 // If CssMin.php is in your include path, uncomment
 // require 'CssMin.php';
 
-sTemplate::addJavaScriptPath('js');
+sTemplate::addJavaScriptPath('./js-sutra');
 sRouter::addRoutesFilePath('./routes');
