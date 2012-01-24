@@ -20,6 +20,20 @@ class sCore extends fCore {
   private static $debug_log_filename = './dblog.txt';
 
   /**
+   * The exception closing callback used in production mode.
+   *
+   * @var callback
+   */
+  private static $exception_closing_callback = NULL;
+
+  /**
+   * The exception closing callback parameters passed.
+   *
+   * @var array
+   */
+  private static $exception_closing_parameters = array();
+
+  /**
    * Entry point.
    *
    * If production mode is not on, and ./dblog.txt is writable,
@@ -55,6 +69,20 @@ class sCore extends fCore {
         }
         else {
           self::debug(sprintf('Debug: Cannot write to %s', self::$debug_log_filename));
+
+          $exception_handling_type = strtolower($config->getExceptionHandlingDestinationType('string', 'email'));
+          $destination = '';
+          if ($exception_handling_type == 'email') {
+            $domain = str_replace('http://', 'https://', fURL::getDomain());
+            $destination = $config->getExceptionDestination('string', 'webmaster@'.$domain);
+          }
+          else {
+            $site_root_name = basename(getcwd());
+            $destination = $config->getExceptionDestination('string', '/var/log/sutra/'.$site_root_name.'.log');
+          }
+
+          self::enableErrorHandling($destination);
+          self::enableExceptionHandling($destination, self::$exception_closing_callback, self::$exception_closing_parameters);
         }
       }
 
@@ -72,6 +100,27 @@ class sCore extends fCore {
     sPostRequest::handle(); // Process a POST (possibly form) request if one was made
     sTemplate::setActiveTemplate($config->getTemplate());
     sRouter::handle(); // Process the page request
+  }
+
+  /**
+   * Set the exception closing callback, which is used in production mode
+   *   and called after an exception has occurred.
+   *
+   * @param callback $callback Callback to use.
+   * @return void
+   */
+  public static function setExceptionClosingCallback($callback) {
+    self::$exception_closing_callback = $callback;
+  }
+
+  /**
+   * Set the exception closing callback parameters.
+   *
+   * @param array $parameters Parameters to pass to the callback.
+   * @return void
+   */
+  public static function setExceptionClosingCallbackParameters(array $parameters) {
+    self::$exception_closing_parameters = $parameters;
   }
 
   /**
