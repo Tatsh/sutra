@@ -123,7 +123,8 @@ class sTemplate {
   public static function getJavaScriptFiles($reread = FALSE) {
     if (empty(self::$javascript_files) || $reread) {
       foreach (self::$javascript_paths as $path) {
-        $files = glob($path.'/*.js');
+        $path = preg_replace('/^\.\//', '', $path);
+        $files = glob($path.DIRECTORY_SEPARATOR.'*.js');
         sort($files, SORT_STRING);
         self::$javascript_files = array_merge(self::$javascript_files, $files);
       }
