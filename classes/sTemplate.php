@@ -21,6 +21,20 @@ class sTemplate {
   protected static $template_name = 'default';
 
   /**
+   * The templates path without any ending directory separator (like /).
+   *
+   * @var string
+   */
+  private static $templates_path = './template';
+
+  /**
+   * Web path prefix for resources with leading and ending slashes.
+   *
+   * @var string
+   */
+  private static $web_path_prefix = '/template/';
+
+  /**
    * The conditional JavaScript placed in the head element (IE only).
    *
    * @var string
@@ -82,6 +96,23 @@ class sTemplate {
    * @var string
    */
   private static $javascript_paths = array();
+
+  /**
+   * Set the templates path.
+   *
+   * The path is run through fDirectory. If it is not useable, then
+   *   fDirectory::__construct() will throw an fValidationException.
+   *
+   * @param string $path Path without ending separator, such as / or \\.
+   * @return void
+   *
+   * @see fDirectory::__construct()
+   */
+  public static function setTemplatesPath($path) {
+    $dir = new fDirectory($path);
+    self::$templates_path = $path;
+    self::$web_path_prefix = '/'.preg_replace('/^\.\//', '', $path).'/';
+  }
 
   /**
    * Get the JavaScript paths. Useful for sorting.
@@ -149,7 +180,7 @@ class sTemplate {
       );
     }
 
-    self::$json = fJSON::decode(file_get_contents('./template/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
+    self::$json = fJSON::decode(file_get_contents(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
     if (!self::$json || !is_array(self::$json)) {
       throw new fProgrammerException('Template JSON was invalid. Verify the template JSON file with a linter.');
     }
@@ -216,7 +247,7 @@ class sTemplate {
    * @return void
    */
   public static function setActiveTemplate($template_name) {
-    $dir = './template/'.$template_name;
+    $dir = self::$templates_path.DIRECTORY_SEPARATOR.$template_name;
     $json = $dir.'/'.$template_name.'.json';
     if (is_dir($dir) && is_readable($json)) {
       self::$template_name = $template_name;
@@ -274,8 +305,10 @@ class sTemplate {
 
     fBuffer::startCapture();
 
-    $default = './template/default/'.$filename.'.tpl.php';
-    $template = './template/'.self::$template_name.'/'.$filename.'.tpl.php';
+    $ds = DIRECTORY_SEPARATOR;
+
+    $default = self::$templates_path.$ds.'default'.$ds.$filename.'.tpl.php';
+    $template = self::$templates_path.$ds.self::$template_name.$ds.$filename.'.tpl.php';
 
     if (is_file($template)) {
       require $template;
@@ -327,7 +360,7 @@ class sTemplate {
           }
 
           foreach ($files as $file) {
-            $css[$media] .= file_get_contents('./template/'.self::$template_name.'/'.$file);
+            $css[$media] .= file_get_contents(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.DIRECTORY_SEPARATOR.$file);
           }
         }
 
@@ -374,7 +407,7 @@ class sTemplate {
 
     foreach (self::$json['css_files'] as $media => $files) {
       foreach ($files as $file) {
-        $href = '/template/'.self::$template_name.'/'.$file.'?_='.$time;
+        $href = self::$web_path_prefix.self::$template_name.'/'.$file.'?_='.$time;
         $html .= '<link rel="stylesheet" type="text/css" href="'.$href.'" media="'.$media.'">'."\n";
       }
     }
@@ -406,7 +439,7 @@ class sTemplate {
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
     foreach (self::$json['head_js_files'] as $path) {
-      $url = '/template/'.self::$template_name.'/'.$path.$time;
+      $url = self::$web_path_prefix.self::$template_name.'/'.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
@@ -439,7 +472,7 @@ class sTemplate {
     $time = time();
     foreach (self::$json['conditional_head_js_files'] as $rule => $files) {
       foreach ($files as $file) {
-        $url = '/template/'.self::$template_name.'/'.$file.'?_='.$time;
+        $url = self::$web_path_prefix.self::$template_name.'/'.$file.'?_='.$time;
         if (sHTML::linkIsURI($file)) {
           $url = $file;
         }
@@ -459,7 +492,7 @@ class sTemplate {
    * @return boolean TRUE if the template exists, otherwise FALSE.
    */
   public static function templateExists($template_name) {
-    return file_exists('./template/'.self::$template_name.'/'.$template_name.'.tpl.php');
+    return file_exists(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.DIRECTORY_SEPARATOR.$template_name.'.tpl.php');
   }
 
   /**
@@ -526,8 +559,11 @@ class sTemplate {
    * If in production mode, a CDN added to the class will be randomly selected.
    *   As such, every CDN used have the same content.
    *
-   * @param string $filename File name to find within ./template/$template_name.
+   * @param string $filename File name to find within
+   *   self::$templates_path/$template_name.
    * @return string Path to the file.
+   *
+   * @todo Resource path has to be settable. Can no longer use /template.
    */
   public static function getResourcePath($filename) {
     if (self::$in_production_mode) {
@@ -624,12 +660,15 @@ class sTemplate {
 
     fHTML::sendHeader();
 
+    $ds = DIRECTORY_SEPARATOR;
+    $path = self::$templates_path;
+
     $route = str_replace('/', '-', substr($path, 1));
     $candidates = array(
-      './template/'.self::$template_name.'/page-'.$route.'.tpl.php',
-      './template/default/page-'.$route.'.tpl.php',
-      './template/'.self::$template_name.'/page.tpl.php',
-      './template/default/page.tpl.php',
+      $path.$ds.self::$template_name.$ds.'page-'.$route.'.tpl.php',
+      $path.$ds.'default'.$ds.'page-'.$route.'.tpl.php',
+      $path.$ds.self::$template_name.$ds.'page.tpl.php',
+      $path.$ds.'default'.$ds.'page.tpl.php',
     );
     foreach ($candidates as $file) {
       if (is_readable($file)) {
