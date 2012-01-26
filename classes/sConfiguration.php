@@ -153,6 +153,7 @@ class sConfiguration {
    * @return void
    */
   public static function setPath($path) {
+    new fDirectory($path);
     self::$configuration_files_path = realpath($path);
   }
 
