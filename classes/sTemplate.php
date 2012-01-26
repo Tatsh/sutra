@@ -248,7 +248,7 @@ class sTemplate {
    */
   public static function setActiveTemplate($template_name) {
     $dir = self::$templates_path.DIRECTORY_SEPARATOR.$template_name;
-    $json = $dir.'/'.$template_name.'.json';
+    $json = $dir.DIRECTORY_SEPARATOR.$template_name.'.json';
     if (is_dir($dir) && is_readable($json)) {
       self::$template_name = $template_name;
       self::initialize();
