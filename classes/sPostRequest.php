@@ -51,10 +51,17 @@ class sPostRequest {
         fJSON::sendHeader();
       }
 
+      $url = fURL::get();
+
       // Exception for old JSON interface
-      if (fURL::get() == '/json') {
+      if ($url == '/json') {
         sRouter::getRoutes();
         Moor::run();
+        return;
+      }
+
+      // /api/ is reserved for API requests so do not validate CSRF
+      if (substr($url, 0, 5) === '/api/') {
         return;
       }
 
