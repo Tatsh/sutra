@@ -124,24 +124,27 @@ class sRouter {
 
         foreach ($files as $file) {
           $file = new fFile($file);
-          foreach ($file as $line) {
-            $line = trim($line);
+          try {
+            foreach ($file as $line) {
+              $line = trim($line);
 
-            $matches = array();
-            preg_match('#^(/.*)\s+\=\s+([A-Za-z\:]+)#', $line, $matches);
+              $matches = array();
+              preg_match('#^(/.*)\s+\=\s+([A-Za-z\:]+)#', $line, $matches);
 
-            if (empty($matches) || !isset($matches[1]) || !isset($matches[2])) {
-              continue;
+              if (empty($matches) || !isset($matches[1]) || !isset($matches[2])) {
+                continue;
+              }
+
+              $path = $matches[1];
+              $method = $matches[2];
+
+              $path = trim($path);
+              $method = trim($method);
+
+              self::$routes[$path] = $method;
             }
-
-            $path = $matches[1];
-            $method = $matches[2];
-
-            $path = trim($path);
-            $method = trim($method);
-
-            self::$routes[$path] = $method;
           }
+          catch (fNoRemainingException $e) {}
         }
 
         $cache->set($routes_key, self::$routes);
