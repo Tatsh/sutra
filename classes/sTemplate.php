@@ -240,8 +240,10 @@ class sTemplate {
   }
 
   /**
-   * Set the active template. If the template directory is not present or the
-   *   JSON file is not readable, it will be set to 'default'.
+   * Set the active template.
+   *
+   * @throws fProgrammerException If the template directory does not exist, or
+   *   if the JSON file is not found or not readable.
    *
    * @param string $template_name String of template name.
    * @return void
@@ -255,7 +257,7 @@ class sTemplate {
       return;
     }
     else {
-      fCore::debug('No template named '.$template_name.'.');
+      throw new fProgrammerException('No template named '.$template_name.'.');
     }
 
     self::$template_name = 'default';
@@ -684,7 +686,7 @@ class sTemplate {
         }
         return;
       }
-      fCore::debug('Did not find '.$file.'.');
+      //fCore::debug('Did not find '.$file.'.');
     }
 
     throw new fUnexpectedException('Could not find a valid page template for this page.');

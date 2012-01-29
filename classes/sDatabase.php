@@ -141,7 +141,6 @@ class sDatabase {
       }
 
       if (isset($ini['schema_caching']) && (int)$ini['schema_caching'] == 1) {
-        fCore::debug(__CLASS__.'::'.__FUNCTION__.' ('.__LINE__.'): ' . 'Schema caching enabled.');
         $this->schema_caching_enabled = TRUE;
         $this->dbh->enableCaching(sCache::getInstance());
       }
