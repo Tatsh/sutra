@@ -13,6 +13,15 @@
  */
 class sPostRequest {
   /**
+   * Path prefixes that do not need CSRF checking.
+   *
+   * @var array
+   */
+  private static $no_csrf_path_prefixes = array(
+    '/json', // may disappear later
+  );
+
+  /**
    * Call the processor classes for this URL.
    *
    * @return void
@@ -29,6 +38,16 @@ class sPostRequest {
         }
       }
     }
+  }
+
+  /**
+   * Add a path prefix that does not need a CSRF check.
+   *
+   * @param string $path Path prefix with leading / and optional ending /.
+   * @return void
+   */
+  public static function addNoCSRFPrefix($path) {
+    self::$no_csrf_path_prefixes[] = $path;
   }
 
   /**
@@ -53,20 +72,18 @@ class sPostRequest {
 
       $url = fURL::get();
 
-      // Exception for old JSON interface
-      if ($url == '/json') {
-        sRouter::getRoutes();
-        Moor::run();
-        return;
+      $no_csrf = FALSE;
+      foreach (self::$no_csrf_path_prefixes as $prefix) {
+        if (substr($url, 0, strlen($prefix)) === $prefix) {
+          $no_csrf = TRUE;
+          break;
+        }
       }
 
-      // /api/ is reserved for API requests so do not validate CSRF
-      if (substr($url, 0, 5) === '/api/') {
-        return;
+      if (!$no_csrf) {
+        $csrf = fRequest::get('csrf', 'string');
+        fRequest::validateCSRFToken($csrf);
       }
-
-      $csrf = fRequest::get('csrf', 'string');
-      fRequest::validateCSRFToken($csrf);
 
       sRouter::getRoutes();
       Moor::run();
