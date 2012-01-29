@@ -33,7 +33,8 @@ class sPostRequest {
     foreach (get_declared_classes() as $class) {
       $reflect = new ReflectionClass($class);
       if ($reflect->implementsInterface('sPostRequestProcessor')) {
-        if ($url == fCore::call($class.'::getURL')) {
+        $urls = fCore::call($class.'::getURLs');
+        if (in_array($url, $urls)) {
           fCore::call($class.'::submit');
         }
       }
@@ -58,7 +59,14 @@ class sPostRequest {
    * On error, POST values are stored in the cache key
    *   'sPostRequest::last_post'.
    *
+   * If the URL is exempt from CSRF validation, then this class will simply
+   *   run Moor::run() and exit. If more processing is required based on
+   *   classes that implement the sPostRequestProcessor interface, it is up
+   *   to the routing method to call sPostRequest::callProcessorClasses().
+   *
    * @return void
+   *
+   * @see sPostRequest::callProcessorClasses()
    */
   public static function handle() {
     if (!fRequest::isPost()) {
@@ -66,12 +74,7 @@ class sPostRequest {
     }
 
     try {
-      if (fRequest::isAjax()) {
-        fJSON::sendHeader();
-      }
-
       $url = fURL::get();
-
       $no_csrf = FALSE;
       foreach (self::$no_csrf_path_prefixes as $prefix) {
         if (substr($url, 0, strlen($prefix)) === $prefix) {
@@ -80,14 +83,19 @@ class sPostRequest {
         }
       }
 
-      if (!$no_csrf) {
-        $csrf = fRequest::get('csrf', 'string');
-        fRequest::validateCSRFToken($csrf);
+      if ($no_csrf) {
+        sRouter::getRoutes();
+        Moor::run();
+        exit;
       }
 
+      if (fRequest::isAjax()) {
+        fJSON::sendHeader();
+      }
+
+      fRequest::validateCSRFToken(fRequest::get('csrf', 'string'));
       sRouter::getRoutes();
       Moor::run();
-
       self::callProcessorClasses();
 
       fSession::delete(__CLASS__.'::last_post');
@@ -140,16 +148,16 @@ class sPostRequest {
         // Add error message to session
         sMessaging::addError($error, $destination);
         fURL::redirect($destination);
+        return;
       }
-      else {
-        $ret = array(
-          'error' => $error,
-          'csrf' => fRequest::generateCSRFToken(Moor::getRequestPath()),
-        );
 
-        print fJSON::encode($ret);
-        exit;
-      }
+      $ret = array(
+        'error' => $error,
+        'csrf' => fRequest::generateCSRFToken(Moor::getRequestPath()),
+      );
+
+      print fJSON::encode($ret);
+      exit;
     }
   }
 

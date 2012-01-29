@@ -25,9 +25,9 @@ interface sPostRequestProcessor {
   public static function submit();
 
   /**
-   * Get the URL the class handles.
+   * Get the URLs the class handles.
    *
-   * @return string
+   * @return array Array of string URLs.
    */
-  public static function getURL();
+  public static function getURLs();
 }
