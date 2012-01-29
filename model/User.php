@@ -83,9 +83,6 @@ class User extends fActiveRecord {
         fCore::debug(sprintf('%s::%s():%d:Caught fUnexpectedException: %s', __CLASS__, __FUNCTION__, __LINE__, strip_tags($e->getMessage())));
       }
     }
-//     else {
-//       fCore::debug(fCore::dump($object));
-//     }
   }
 
   /**
