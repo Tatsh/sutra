@@ -73,6 +73,8 @@ class sRouter {
    *
    * If not in production mode, the routes will be reloaded on every page load.
    *
+   * @throws fProgrammerException If no routes are found.
+   *
    * @return array Array of paths mapped to callbacks.
    */
   public static function getRoutes() {
@@ -115,11 +117,7 @@ class sRouter {
         }
 
         if (empty($files)) {
-          fCore::debug('No routes found!');
-          if (!$production_mode) {
-            print 'Error';
-          }
-          exit;
+          throw new fProgrammerException('No routes found.');
         }
 
         foreach ($files as $file) {
@@ -159,12 +157,15 @@ class sRouter {
   }
 
   /**
-   * Called from sCore::main() if the request method is GET.
-   *   Handles a standard GET request with Moor.
+   * Called from sCore::main(). Handles a standard GET request with Moor.
    *
    * @return void
    */
   public static function handle() {
+    if (!fRequest::isGet()) {
+      return;
+    }
+
     self::getRoutes();
     $request_path = fURL::get();
 
