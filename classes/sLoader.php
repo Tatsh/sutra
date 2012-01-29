@@ -116,6 +116,58 @@ class sLoader extends fLoader {
   }
 
   /**
+   * Load the main core classes.
+   *
+   * @return void
+   */
+  public static function requireClasses() {
+    if (class_exists('sCore')) {
+      return;
+    }
+
+    self::setPaths();
+    foreach (self::$classes as $class) {
+      require self::$path.$class.'.php';
+    }
+  }
+
+  /**
+   * Load the model classes.
+   *
+   * @return void
+   */
+  public static function requireModelClasses() {
+    if (class_exists('User')) {
+      return;
+    }
+
+    self::setPaths();
+    self::requireClasses();
+
+    foreach (self::$model_classes as $class) {
+      require self::$model_classes_path.$class.'.php';
+    }
+  }
+
+  /**
+   * Load the router classes.
+   *
+   * @return void
+   */
+  public static function requireRouterClasses() {
+    if (class_exists('AccountActionController')) {
+      return;
+    }
+
+    self::setPaths();
+    self::requireModelClasses();
+
+    foreach (self::$router_classes as $class) {
+      require self::$router_classes_path.$class.'.php';
+    }
+  }
+
+  /**
    * Override eager() method to load Sutra classes after Flourish's.
    *
    * @return void
@@ -123,18 +175,7 @@ class sLoader extends fLoader {
   public static function eagar() {
     parent::eager();
     self::setPaths();
-
-    foreach (self::$classes as $class) {
-      require self::$path.$class.'.php';
-    }
-
-    foreach (self::$model_classes as $class) {
-      require self::$model_classes_path.$class.'.php';
-    }
-
-    foreach (self::$router_classes as $class) {
-      require self::$router_classes_path.$class.'.php';
-    }
+    self::requireRouterClasses();
   }
 
   /**
