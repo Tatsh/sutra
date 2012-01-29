@@ -102,6 +102,7 @@ class sPostRequest {
 
       if (!fRequest::isAjax()) {
         $destination = fRequest::get('destination', 'string', '/');
+        $destination = fAuthorization::getRequestedURL(TRUE, $destination);
         fURL::redirect($destination);
         return;
       }
