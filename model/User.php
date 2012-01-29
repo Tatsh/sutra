@@ -147,8 +147,8 @@ class User extends fActiveRecord {
     );
 
     if ($mode == 'api') {
-      $url = '';
-      $avatar = $user->getAvatar();
+      $url = fURL::getDomain().'/files/avatars/default.png';
+      $avatar = $this->getAvatar();
       if ($avatar instanceof fImage) {
         $url = fURL::getDomain().'/files/avatars/'.$avatar->getName();
       }
