@@ -20,6 +20,13 @@ class User extends fActiveRecord {
   private static $cached_users = array();
 
   /**
+   * Array of callbacks for toArray().
+   *
+   * @var array
+   */
+  private static $to_array_callbacks = array();
+
+  /**
    * Re-implements fActiveRecord::configure().
    *
    * @internal
@@ -127,11 +134,41 @@ class User extends fActiveRecord {
   }
 
   /**
+   * Register a callback to be called whenever User::toArray() is called.
+   *
+   * All callbacks receive the User object as the first argument.
+   *
+   * @see User::toArray()
+   */
+  public static function registerToArrayCallback($callback) {
+    self::$to_array_callbacks[] = $callback;
+  }
+
+  /**
+   * Calls all the toArray callbacks so that other classes can return
+   *   data associated with this user.
+   *
+   * @param array $data Data to merge with.
+   * @return array Array with user data.
+   */
+  private function callToArrayCallbacks(array $data) {
+    $merge = array();
+
+    foreach (self::$to_array_callbacks as $callback) {
+      $merge = array_merge($merge, fCore::call($callback, array($this)));
+    }
+
+    return array_merge($data, $merge);
+  }
+
+  /**
    * Get an array representation of the user.
    *
    * @param string $mode Mode for data. 'api' will output more data, such as
    *   the user's avatar URL. 'api' is intended to be useful for web services.
    * @return array Array representation of user object.
+   *
+   * @see User::registerToArrayCallback()
    */
   public function toArray($mode = 'site') {
     $ret = array(
@@ -139,8 +176,8 @@ class User extends fActiveRecord {
       'name' => $this->getName(),
       //'authLevel' => $this->getAuthLevel(),
       'timezone' => $this->getTimezone(),
-      'dateRegistered' => $this->getDateCreated()->getFuzzyDifference(),
-      'lastAccessed' => $this->getLastAccessed()->getFuzzyDifference(),
+      'dateRegistered' => (int)$this->getDateCreated()->format('U'),
+      'lastAccessed' => (int)$this->getLastAccessed()->format('U'),
     );
 
     if ($mode == 'api') {
@@ -152,7 +189,7 @@ class User extends fActiveRecord {
       $ret['avatar'] = $url;
     }
 
-    return $ret;
+    return $this->callToArrayCallbacks($ret);
   }
 
   /**
