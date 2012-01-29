@@ -238,9 +238,8 @@ class sConfiguration {
    * - index 1 - mixed - Default value to return if the value does not exist.
    *
    * @param string $method Method such as: getSiteName, getSiteSlogan.
+   * @param array $arguments Arguments to the method.
    * @return mixed Value or NULL.
-   *
-   * @todo Make sure this still works with CLI.
    */
   public function __call($method, $arguments) {
     if (substr($method, 0, 3) === 'get') {
@@ -254,5 +253,21 @@ class sConfiguration {
     }
 
     return NULL;
+  }
+
+  /**
+   * Implementation of __callStatic. Simply initialises with
+   *   sConfiguration::getInstance() to call its __call implementation.
+   *
+   * @param string $method Method such as: getSiteName, getSiteSlogan.
+   * @param array $arguments Arguments to the method.
+   *
+   * @return mixed Value or NULL.
+   *
+   * @see sConfiguration::__call()
+   */
+  public static function __callStatic($method, $arguments) {
+    $instance = sConfiguration::getInstance();
+    return fCore::call(array($instance, $method), $arguments);
   }
 }
