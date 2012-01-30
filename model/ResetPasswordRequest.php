@@ -20,6 +20,6 @@ class ResetPasswordRequest extends fActiveRecord {
    * @return void
    */
   protected function configure() {
-    fORMDate::configureDateCreatedColumn($this, 'created_time');
+    fORMDate::configureDateCreatedColumn($this, 'date_created');
   }
 }
