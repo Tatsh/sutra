@@ -114,7 +114,8 @@ class sCache extends fCache {
             throw new fEnvironmentException('To use a file for cache, a file path (file_path) must be specified');
           }
 
-          if (substr($this->file_path, 0, 2) === '..') {
+          if (strpos($this->file_path, '..'.DIRECTORY_SEPARATOR) !== FALSE ||
+              strpos($this->file_path, DIRECTORY_SEPARATOR.'..') !== FALSE) {
             throw new fProgrammerException('Do not use a relative path for your cache file.');
           }
 
