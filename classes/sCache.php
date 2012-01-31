@@ -55,6 +55,13 @@ class sCache extends fCache {
   protected static $instance;
 
   /**
+   * The current working directory.
+   *
+   * @var string
+   */
+  private static $cwd = '';
+
+  /**
    * Initialize cache based on INI file.
    *
    * @throws fEnvironmentException If the INI file cannot be read; if the
@@ -134,5 +141,24 @@ class sCache extends fCache {
     }
 
     return self::$instance;
+  }
+
+  /**
+   * Get a key unique to the site.
+   *
+   * @param string $key Key to use.
+   * @param string $class_prefix Class prefix to use. If not specified, sCache
+   *   will be used.
+   * @return string Key that can be used for cache storage.
+   */
+  public static function getSiteUniqueKey($key, $class_prefix = NULL) {
+    if (!self::$cwd) {
+      self::$cwd = getcwd();
+    }
+
+    if (is_null($class_prefix)) {
+      $class_prefix = __CLASS__;
+    }
+    return $class_prefix.'::'.self::$cwd.'::'.$key;
   }
 }
