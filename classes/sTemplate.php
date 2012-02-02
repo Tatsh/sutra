@@ -32,7 +32,7 @@ class sTemplate {
    *
    * @var string
    */
-  private static $web_path_prefix = '/template/';
+  private static $web_path_prefix = '/files/resources/';
 
   /**
    * The conditional JavaScript placed in the head element (IE only).
@@ -111,7 +111,21 @@ class sTemplate {
   public static function setTemplatesPath($path) {
     $dir = new fDirectory($path);
     self::$templates_path = $path;
-    self::$web_path_prefix = '/'.preg_replace('/^\.\//', '', $path).'/';
+  }
+
+  /**
+   * Set the web path prefix for when CSS and JS files are fetched in
+   *   non-production mode.
+   * 
+   * Must be within the site root. 
+   * 
+   * @param string $path Path to use. Should begin with / and end with /.
+   * @return void
+   * 
+   * @todo Find a way to make this easier to use.
+   */
+  public static function setWebPathPrefix($path) {
+    self::$web_path_prefix = $path;
   }
 
   /**
@@ -409,7 +423,7 @@ class sTemplate {
 
     foreach (self::$json['css_files'] as $media => $files) {
       foreach ($files as $file) {
-        $href = self::$web_path_prefix.self::$template_name.'/'.$file.'?_='.$time;
+        $href = self::$web_path_prefix.$file.'?_='.$time;
         $html .= '<link rel="stylesheet" type="text/css" href="'.$href.'" media="'.$media.'">'."\n";
       }
     }
@@ -441,7 +455,7 @@ class sTemplate {
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
     foreach (self::$json['head_js_files'] as $path) {
-      $url = self::$web_path_prefix.self::$template_name.'/'.$path.$time;
+      $url = self::$web_path_prefix.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
