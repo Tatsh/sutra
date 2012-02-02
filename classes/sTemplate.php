@@ -116,12 +116,12 @@ class sTemplate {
   /**
    * Set the web path prefix for when CSS and JS files are fetched in
    *   non-production mode.
-   * 
-   * Must be within the site root. 
-   * 
+   *
+   * Must be within the site root.
+   *
    * @param string $path Path to use. Should begin with / and end with /.
    * @return void
-   * 
+   *
    * @todo Find a way to make this easier to use.
    */
   public static function setWebPathPrefix($path) {
@@ -376,7 +376,7 @@ class sTemplate {
           }
 
           foreach ($files as $file) {
-            $css[$media] .= file_get_contents(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.DIRECTORY_SEPARATOR.$file);
+            $css[$media] .= file_get_contents('./'.self::$web_path_prefix.$file);
           }
         }
 
