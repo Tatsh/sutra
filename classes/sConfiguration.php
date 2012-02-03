@@ -63,7 +63,7 @@ class sConfiguration {
    * @return sConfiguration
    */
   private function __construct() {
-    $file = self::$configuration_files_path.DIRECTORY_SEPARATOR.'site.ini';
+    $file = self::$configuration_files_path.'/site.ini';
     self::$cwd = getcwd();
     $recache = FALSE;
 

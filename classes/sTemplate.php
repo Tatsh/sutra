@@ -169,7 +169,7 @@ class sTemplate {
     if (empty(self::$javascript_files) || $reread) {
       foreach (self::$javascript_paths as $path) {
         $path = preg_replace('/^\.\//', '', $path);
-        $files = glob($path.DIRECTORY_SEPARATOR.'*.js');
+        $files = glob($path.'/*.js');
         sort($files, SORT_STRING);
         self::$javascript_files = array_merge(self::$javascript_files, $files);
       }
@@ -194,7 +194,7 @@ class sTemplate {
       );
     }
 
-    self::$json = fJSON::decode(file_get_contents(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
+    self::$json = fJSON::decode(file_get_contents(self::$templates_path.'/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
     if (!self::$json || !is_array(self::$json)) {
       throw new fProgrammerException('Template JSON was invalid. Verify the template JSON file with a linter.');
     }
@@ -263,8 +263,8 @@ class sTemplate {
    * @return void
    */
   public static function setActiveTemplate($template_name) {
-    $dir = self::$templates_path.DIRECTORY_SEPARATOR.$template_name;
-    $json = $dir.DIRECTORY_SEPARATOR.$template_name.'.json';
+    $dir = self::$templates_path.'/'.$template_name;
+    $json = $dir.'/'.$template_name.'.json';
     if (is_dir($dir) && is_readable($json)) {
       self::$template_name = $template_name;
       self::initialize();
@@ -323,8 +323,8 @@ class sTemplate {
 
     $ds = DIRECTORY_SEPARATOR;
 
-    $default = self::$templates_path.$ds.'default'.$ds.$filename.'.tpl.php';
-    $template = self::$templates_path.$ds.self::$template_name.$ds.$filename.'.tpl.php';
+    $default = self::$templates_path.'/default/'.$filename.'.tpl.php';
+    $template = self::$templates_path.'/'.self::$template_name.'/'.$filename.'.tpl.php';
 
     if (is_file($template)) {
       require $template;
@@ -508,7 +508,7 @@ class sTemplate {
    * @return boolean TRUE if the template exists, otherwise FALSE.
    */
   public static function templateExists($template_name) {
-    return file_exists(self::$templates_path.DIRECTORY_SEPARATOR.self::$template_name.DIRECTORY_SEPARATOR.$template_name.'.tpl.php');
+    return file_exists(self::$templates_path.'/'.self::$template_name.'/'.$template_name.'.tpl.php');
   }
 
   /**
@@ -676,15 +676,14 @@ class sTemplate {
 
     fHTML::sendHeader();
 
-    $ds = DIRECTORY_SEPARATOR;
     $path = self::$templates_path;
 
     $route = str_replace('/', '-', substr($path, 1));
     $candidates = array(
-      $path.$ds.self::$template_name.$ds.'page-'.$route.'.tpl.php',
-      $path.$ds.'default'.$ds.'page-'.$route.'.tpl.php',
-      $path.$ds.self::$template_name.$ds.'page.tpl.php',
-      $path.$ds.'default'.$ds.'page.tpl.php',
+      $path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
+      $path.'/'.'default/page-'.$route.'.tpl.php',
+      $path.'/'.self::$template_name.'/page.tpl.php',
+      $path.'/'.'default'.'/page.tpl.php',
     );
     foreach ($candidates as $file) {
       if (is_readable($file)) {

@@ -209,9 +209,9 @@ class sLoader extends fLoader {
    */
   private static function setPaths() {
     if (!self::$path) {
-      $path = self::$path = realpath(dirname(__FILE__)).DIRECTORY_SEPARATOR;
-      self::$router_classes_path = realpath($path.'..'.DIRECTORY_SEPARATOR.'routers').DIRECTORY_SEPARATOR;
-      self::$model_classes_path =  realpath($path.'..'.DIRECTORY_SEPARATOR.'model').DIRECTORY_SEPARATOR;
+      $path = self::$path = realpath(dirname(__FILE__)).'/';
+      self::$router_classes_path = realpath($path.'../routers').'/';
+      self::$model_classes_path =  realpath($path.'../model').'/';
     }
   }
 }

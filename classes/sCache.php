@@ -77,7 +77,7 @@ class sCache extends fCache {
    * @return sCache The sCache object.
    */
   public function __construct() {
-    $file = sConfiguration::getPath().DIRECTORY_SEPARATOR.'cache.ini';
+    $file = sConfiguration::getPath().'/cache.ini';
 
     if (is_readable($file)) {
       $ini = parse_ini_file($file);
