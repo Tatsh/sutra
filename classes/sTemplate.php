@@ -675,14 +675,12 @@ class sTemplate {
 
     fHTML::sendHeader();
 
-    $path = self::$templates_path;
-
     $route = str_replace('/', '-', substr($path, 1));
     $candidates = array(
-      $path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
-      $path.'/'.'default/page-'.$route.'.tpl.php',
-      $path.'/'.self::$template_name.'/page.tpl.php',
-      $path.'/'.'default'.'/page.tpl.php',
+      self::$templates_path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
+      self::$templates_path.'/'.'default/page-'.$route.'.tpl.php',
+      self::$templates_path.'/'.self::$template_name.'/page.tpl.php',
+      self::$templates_path.'/'.'default'.'/page.tpl.php',
     );
     foreach ($candidates as $file) {
       if (is_readable($file)) {
