@@ -578,14 +578,13 @@ class sTemplate {
    * @param string $filename File name to find within
    *   self::$templates_path/$template_name.
    * @return string Path to the file.
-   *
-   * @todo Resource path has to be settable. Can no longer use /template.
    */
   public static function getResourcePath($filename) {
+    $cdn = '';
     if (self::$in_production_mode) {
       $cdn = self::getACDN();
     }
-    return $cdn.'/template/'.self::$template_name.'/'.$filename;
+    return $cdn.'/files/resources/'.$filename;
   }
 
   /**
