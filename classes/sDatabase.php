@@ -178,4 +178,15 @@ class sDatabase {
 
     return self::$instance->getfDatabase();
   }
+
+  /**
+   * __callStatic implementation. Call any fDatabase method with this but
+   *   statically with sDatabase.
+   *
+   * @param string $method Method to use.
+   * @param array $arguments Arguments to use.
+   */
+  public static function __callStatic($method, $arguments) {
+    return fCore::call(array(self::getInstance(), $method), $arguments);
+  }
 }
