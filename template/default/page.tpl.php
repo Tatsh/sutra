@@ -71,13 +71,12 @@
         </div>
       </div>
     </div>
-
+    
+<?php // You do not have to use jQuery ?>
     <?php if (!$production_mode): ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.js" type="text/javascript"></script>
-      <?php // <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js" type="text/javascript"></script> ?>
     <?php else: ?>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js" type="text/javascript"></script>
-      <?php // <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script> ?>
     <?php endif; ?>
     <?php print $body_js; ?>
   </body>
