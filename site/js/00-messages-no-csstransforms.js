@@ -1,95 +1,38 @@
-// jQuery
-$(document).ready(function () {
-  if (!Modernizr['cssanimations']) {
-    var $errorMessage = $('#error-message');
-    var $message = $('#success-message');
-    var $container, top;
-    var totalTime = 4000 / 2; /* IE is not as smooth, so CSS time / 2 */
-    var inTime = totalTime * 0.8;
-    var outTime = totalTime * 0.2;
+(function (doc, win) {
+  if (win.Modernizr && !win.Modernizr['cssanimations']) {
+    // display it for 5 seconds then have it disappear
+    // no special effects
+    /**
+    * Loads messages on page load for browsers that do not support CSS
+    *   animations.
+    * @private
+    */
+    var load = function () {
+      var errorMessage = doc.getElementById('error-message');
+      var message = doc.getElementById('success-message');
+      var container;
 
-    if ($errorMessage.size() !== 0) {
-      $container = $errorMessage;
-    }
-    else if ($message.size() !== 0) {
-      $container = $message;
-    }
-    else {
-      return;
-    }
+      if (errorMessage) {
+        container = errorMessage;
+      }
+      else if (message) {
+        container = message;
+      }
+      else {
+        return;
+      }
 
-    top = parseInt($container.css('top'), 10);
-    if (isNaN(top)) {
-      top = -48;
-    }
-
-    $container.animate({
-      'top': 0
-    }, inTime, function () {
+      container.style.top = 0;
       setTimeout(function () {
-        $container.animate({
-          'top': top
-        }, outTime);
-      }, inTime);
-    });
-  }
-});
+        container.style.top = '-48px';
+      }, 2500);
+    };
 
-// Normal, no jQuery dependency, for IE only
-// Needs testing
-// if (window.attachEvent) {
-//   window.attachEvent('onload', function () {
-//     var hasAnimationSupport = true;
-//
-//     if (Modernizr && !Modernizr['cssanimations']) {
-//       hasAnimationSupport = false;
-//     }
-//     else if (document.getElementsByTagName('html')[0].className.match(/no\-cssanimations/g)) {
-//       hasAnimationSupport = false;
-//     }
-//
-//     if (!hasAnimationSupport) {
-//       var errorMessage = document.getElementById('error-message');
-//       var message = document.getElementById('success-message');
-//       var container, top;
-//       var totalTime = 4000 / 2; /* IE is not as smooth, so CSS time / 2 */
-//       var inTime = totalTime * 0.8;
-//       var outTime = totalTime * 0.2;
-//
-//       if (errorMessage) {
-//         container = errorMessage;
-//       }
-//       else if (message) {
-//         container = message;
-//       }
-//       else {
-//         return;
-//       }
-//
-//       top = parseInt(container.style.top, 10);
-//       if (isNaN(top)) {
-//         top = -48;
-//       }
-//
-//       // 30 frames per second
-//       // Move around 2 pixels per frame
-//       var plusOrMinus = -(top / 30);
-//       (function animate(frame, maxFrame, pixelsPerFrame, done) {
-//         if (frame < maxFrame) {
-//           container.style.top += pixelsPerFrame + 'px';
-//
-//           animate(frame + 1, maxFrame, pixelsPerFrame, direction);
-//           return;
-//         }
-//
-//         if (frame == maxFrame && typeof done == 'function') {
-//           done();
-//         }
-//       })(0, 30, plusOrMinus, 1, function () {
-//         setTimeout(function () {
-//           animate(0, 30, -plusOrMinus);
-//         }, outTime);
-//       });
-//     }
-//   });
-// }
+    if (doc.addEventListener) {
+      doc.addEventListener('DOMContentLoaded', load, false);
+    }
+    else if (win.attachEvent) {
+      win.attachEvent('onload', load);
+    }
+  }
+})(document, window)
