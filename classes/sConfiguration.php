@@ -68,15 +68,13 @@ class sConfiguration {
     $recache = FALSE;
 
     $cache = sCache::getInstance();
-    if (!$cache->get(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached')) {
-      $recache = TRUE;
-    }
+    $recache = !$cache->get(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached');
 
     if (!$recache) {
       return;
     }
 
-    if (is_readable($file) && $recache) {
+    if (is_readable($file)) {
       $ini = parse_ini_file($file);
       $cache = sCache::getInstance();
 
