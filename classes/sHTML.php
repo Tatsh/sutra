@@ -201,6 +201,74 @@ class sHTML extends fHTML {
   }
 
   /**
+   * Handles creating textarea tags.
+   *
+   * @param string $name Name of the field.
+   * @param string $label Label HTML.
+   * @param array $attributes Attributes.
+   */
+  private static function makeTextarea($name, $label = '', array $attributes = array()) {
+    $value = isset($attributes['value']) ? (string)$attributes['value'] : '';
+    unset($attributes['value']);
+    unset($attributes['type']);
+    $ret = $label;
+    $ret .= '<textarea '.self::attributesString($attributes).'>';
+    $ret .= self::encode($value);
+    $ret .= '</textarea>';
+    return $ret;
+  }
+
+  /**
+   * Handles creating select fields with options.
+   *
+   * @param string $name Name of the field.
+   * @param string $label Label HTML.
+   * @param array $attributes Attributes.
+   */
+  private static function makeSelectElement($name, $label = '', array $attributes = array()) {
+    $options_html = $options = '';
+    $attr = $attributes;
+
+    if (isset($attr['options']) && is_array($attr['options'])) {
+      $selected = isset($attributes['value']) ? $attributes['value'] : NULL;
+      unset($attributes['value']);
+      unset($attributes['type']);
+
+      $is_2d = is_array(current($attr['options']));
+      $options = '';
+
+      if ($is_2d) {
+        foreach ($attr['options'] as $group_name => $options) {
+          $options_html .= '<optgroup label="'.self::encode($group_name).'">';
+          foreach ($options as $key => $value) {
+            if ($selected && $selected == $key) {
+              $options_html .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
+            }
+            else {
+              $options_html .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
+            }
+          }
+          $options_html .= '</optgroup>';
+        }
+        $options = $options_html;
+      }
+      else {
+        foreach ($attr['options'] as $key => $value) {
+          if ($selected && $selected == $key) {
+            $options .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
+          }
+          else {
+            $options .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
+          }
+        }
+      }
+      unset($attributes['options']);
+    }
+
+    return $label.'<select '.self::attributesString($attributes).'>'.$options.'</select>';
+  }
+
+  /**
    * Create a form element.
    *
    * If specifying a select element, it may be desirable to have a default
@@ -237,19 +305,17 @@ class sHTML extends fHTML {
       'id' => $id,
     ));
 
-    if (isset($attributes['class']) && !is_array($attributes['class'])) {
+    $has_class = isset($attributes['class']);
+
+    if ($has_class && !is_array($attributes['class'])) {
       $classes = explode(' ', trim($attributes['class']));
       foreach ($classes as $key => $class) {
         $classes[$key] = trim($class);
       }
-      $classes[] = 'form-'.$type;
-      $attributes['class'] = $classes;
+      $attributes['class'] = array_merge($classes, array('form-'.$type));
     }
-    else {
-      if (!isset($attributes['class'])) {
-        $attributes['class'] = array();
-      }
-      $attributes['class'][] = 'form-'.$type;
+    else if (!$has_class) {
+      $attributes['class'] = array('form-'.$type);
     }
 
     // Handle the boolean attributes
@@ -275,55 +341,10 @@ class sHTML extends fHTML {
     unset($attr['label']);
 
     if ($type == 'textarea') {
-      $value = isset($attributes['value']) ? (string)$attributes['value'] : '';
-      unset($attributes['value']);
-      unset($attributes['type']);
-      $ret = $label;
-      $ret .= '<textarea '.self::attributesString($attributes).'>';
-      $ret .= self::encode($value);
-      $ret .= '</textarea>';
-      return $ret;
+      return self::makeTextarea($name, $label, $attributes);
     }
     else if ($type == 'select') {
-      $options_html = $options = '';
-
-      if (isset($attr['options']) && is_array($attr['options'])) {
-        $selected = isset($attributes['value']) ? $attributes['value'] : NULL;
-        unset($attributes['value']);
-        unset($attributes['type']);
-
-        $is_2d = is_array(current($attr['options']));
-        $options = '';
-
-        if ($is_2d) {
-          foreach ($attr['options'] as $label => $options) {
-            $options_html .= '<optgroup label="'.self::encode($label).'">';
-            foreach ($options as $key => $value) {
-              if ($selected && $selected == $key) {
-                $options_html .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
-              }
-              else {
-                $options_html .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
-              }
-            }
-            $options_html .= '</optgroup>';
-          }
-          $options = $options_html;
-        }
-        else {
-          foreach ($attr['options'] as $key => $value) {
-            if ($selected && $selected == $key) {
-              $options .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
-            }
-            else {
-              $options .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
-            }
-          }
-        }
-        unset($attributes['options']);
-      }
-
-      return $label.'<select '.self::attributesString($attributes).'>'.$options.'</select>';
+      return self::makeSelectElement($name, $label, $attributes);
     }
 
     return $label.'<input '.self::attributesString($attributes).'>';
