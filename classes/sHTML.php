@@ -180,11 +180,14 @@ class sHTML extends fHTML {
       $attributes['class'][] = 'form-'.$type;
     }
 
-    if (isset($attributes['required']) && $attributes['required'] == TRUE) {
-      $attributes['required'] = 'required';
-    }
-    else {
-      unset($attributes['required']);
+    // Handle the boolean attributes
+    foreach (self::$boolean_attributes as $b_attr) {
+      if (isset($attributes[$b_attr]) && $attributes[$b_attr]) {
+        $attributes[$b_attr] = $b_attr;
+      }
+      else {
+        unset($attributes[$b_attr]);
+      }
     }
 
     unset($attributes['label']);
@@ -200,7 +203,7 @@ class sHTML extends fHTML {
     unset($attr['label']);
 
     if ($type == 'textarea') {
-      $value = $attributes['value'];
+      $value = isset($attributes['value']) ? (string)$attributes['value'] : '';
       unset($attributes['value']);
       unset($attributes['type']);
       $ret = $label;
@@ -210,6 +213,8 @@ class sHTML extends fHTML {
       return $ret;
     }
     else if ($type == 'select') {
+      $options = '';
+
       if (isset($attr['options']) && !is_array($attr['options'])) {
         $selected = isset($attributes['value']) ? $attributes['value'] : NULL;
         unset($attributes['value']);
@@ -267,15 +272,21 @@ class sHTML extends fHTML {
       $safe = str_split($safe);
     }
 
-    $str = str_replace(array('-', ' ', '_'), '-', $str);
+    $str = str_replace(array(' ', '_'), '-', $str);
     $str = str_split($str);
     foreach ($str as $key => $char) {
       if (!in_array($char, $safe)) {
         unset($str[$key]);
       }
     }
+    $str = implode($str);
 
-    return $lower ? strtolower(implode($str)) : implode($str);
+    // Strip out on-going dashes
+    $str = preg_replace('/\-+/', '-', $str);
+    // Strip out the end and beginning dashes if present
+    $str = preg_replace(array('/^\-+(.*)/', '/([A-Za-z])\-+$/'), '$1', $str);
+
+    return $lower ? strtolower($str) : $str;
   }
 
   /**
@@ -331,7 +342,15 @@ class sHTML extends fHTML {
         $value = implode(' ', $value);
       }
 
-      if (is_bool($value) && !($value = self::getValidAttributeValue($key, $value))) {
+      if (is_bool($value) && in_array($key, self::$boolean_attributes)) {
+        if ($value === TRUE) {
+          $value = $key;
+        }
+        else {
+          continue;
+        }
+      }
+      else if (is_bool($value) && !($value = self::getValidAttributeValue($key, $value))) {
         continue;
       }
 
@@ -419,7 +438,7 @@ class sHTML extends fHTML {
         $potential = trim($potential);
 
         if (strlen($potential) != 0) {
-          $str .= '<p>'.$potential.'</p>';
+          $str .= '<p>'.htmlspecialchars($potential, ENT_QUOTES, 'UTF-8').'</p>';
         }
       }
       break;
