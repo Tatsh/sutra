@@ -137,13 +137,10 @@ class sConfiguration {
       }
 
       $cache->set(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached', time(), 3600);
-    }
-    else if (!$recache) {
       return;
     }
-    else {
-      throw new fEnvironmentException('Site configuration file could not be read.');
-    }
+
+    throw new fEnvironmentException('Site configuration file could not be read.');
   }
 
   /**
