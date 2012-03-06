@@ -249,7 +249,7 @@ class sConfiguration {
       $key = fGrammar::underscorize($method);
       $arguments[1] = isset($arguments[1]) ? strtolower($arguments[1]) : '';
 
-      return $config->get($key, isset($arguments[0]) ? $arguments[0] : NULL, $arguments[1]);
+      return $config->get($key, $arguments[1], isset($arguments[0]) ? $arguments[0] : NULL);
     }
 
     return NULL;
