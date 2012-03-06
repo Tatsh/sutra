@@ -17,7 +17,7 @@ class sTimestamp extends fTimestamp {
    *
    * @var string
    */
-  const DATETIME_REGEX = '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(\s+)?T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))?$/';
+  const DATETIME_REGEX = '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(\s+)?T([0-2][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))?$/';
 
   /**
    * List of timezones with UTF offset as key.
@@ -141,28 +141,18 @@ class sTimestamp extends fTimestamp {
         $minute = abs((int)$matches[6]);
         $second = abs((int)$matches[7]);
 
-        if ($second > 59 || $second < 0) {
-          throw new fValidationException('Invalid second value.');
-        }
-        if ($minute > 59 || $minute < 0) {
-          throw new fValidationException('Invalid minute value.');
-        }
-        if ($hour > 23 || $hour < 0) {
+        if ($hour > 23) {
           throw new fValidationException('Invalid hour value.');
         }
-        if ($day > 31 || $day <= 0) {
+        if ($day > 31) {
           throw new fValidationException('Invalid day value.');
         }
-        if ($month > 12 || $month <= 0) {
+        if ($month > 12) {
           throw new fValidationException('Invalid month value.');
         }
-        if (strlen($year) != 4) {
-          throw new fValidationException('Invalid year value.');
-        }
 
-        if (isset($matches[8])) {
+        if (isset($matches[8]) && $matches[8] !== 'Z') {
           // Should be the timezone with leading 0, can be positive or negative
-          // Positive does not have the + in this capture
           $tz = (int)$matches[8];
 
           // Ignore invalid time zone numbers
@@ -174,11 +164,6 @@ class sTimestamp extends fTimestamp {
           $timestamp = new self($year.'-'.$month.'-'.$day.' '.$hour.':'.$minute.':'.$second, $tz);
         }
         else {
-          // Timezone is assumed local, $matches[7] should be === 'Z'
-          if (!isset($matches[7]) || $matches[7] !== 'Z') {
-            throw new fValidationException('Invalid ending for RFC3339 value for local time. Must end with \'Z\'.');
-          }
-
           $timestamp = new self($year.'-'.$month.'-'.$day.' '.$hour.':'.$minute.':'.$second);
         }
       }
@@ -193,6 +178,6 @@ class sTimestamp extends fTimestamp {
       return 0;
     }
 
-    return $timestamp->format('U');
+    return (int)$timestamp->format('U');
   }
 }
