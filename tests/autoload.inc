@@ -1,4 +1,8 @@
 <?php
+// @codeCoverageIgnoreStart
+if (!defined('AUTOLOAD_INC')) {
+define('AUTOLOAD_INC', 1);
+
 function flourishAutoload($class_name) {
   $file = '../../flourish/'.$class_name.'.php';
   if (file_exists($file)) {
@@ -22,3 +26,5 @@ function modelAutoload($class_name) {
   }
 }
 spl_autoload_register('modelAutoload');
+}
+// @codeCoverageIgnoreEnd

@@ -1,4 +1,8 @@
 <?php
+// @codeCoverageIgnoreStart
+if (!defined('BLOCK_EXIT')) {
+define('BLOCK_EXIT', 1);
+
 function block_exit($a) {
   if (isset($a)) {
     print $a;
@@ -9,3 +13,6 @@ function block_exit($a) {
 if (function_exists('set_exit_overload')) {
   set_exit_overload('block_exit');
 }
+
+}
+// @codeCoverageIgnoreEnd
