@@ -2,6 +2,10 @@
 require './autoload.inc';
 
 class sCacheTest extends PHPUnit_Framework_TestCase {
+  public function testGetInstance() {
+    $this->assertInstanceOf('sCache', sCache::getInstance());
+  }
+
   public function testGetSiteUniqueKey() {
     $cwd = getcwd();
     $key = sCache::getSiteUniqueKey('key');
