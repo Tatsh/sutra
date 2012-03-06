@@ -27,6 +27,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
       'tag' => 'input',
       'attributes' => array('type' => 'text'),
     ), $text2);
+    $this->assertNotEquals($text, $text2);
   }
 
   /**
@@ -60,8 +61,15 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
       'tag' => 'input',
       'attributes' => array('autocomplete' => 'off'),
     ), $text_no_autocomplete);
+  }
 
-    // Custom attribute
+  /**
+   * @covers sHTML::makeFormElement
+   * @covers sHTML::formElementIDWithName
+   * @covers sHTML::getValidAttributeValue
+   * @covers sHTML::attributesString
+   */
+  public function testMakeFormElementCustomAttributes() {
     $text = sHTML::makeFormElement('text', 'textfield1', array('data-has-name' => FALSE, 'data-2' => TRUE));
     $this->assertTag(array(
       'tag' => 'input',
@@ -123,6 +131,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::makeTextarea
    */
   public function testMakeFormElementNonInputElements() {
     $textarea = sHTML::makeFormElement('textarea', 'name');
@@ -172,6 +181,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::makeSelectElement
    */
   public function testMakeFormElementSelectField1D() {
     // Test selected attribute
@@ -198,6 +208,26 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::makeSelectElement
+   * @depends testMakeFormElementSelectField1D
+   */
+  public function testMakeFormElementSelectField1DWithLabel() {
+    // Test selected attribute
+    $field = sHTML::makeFormElement('select', 'options', array(
+      'options' => array(
+        0 => 'Pick an option',
+        1 => 'Option 1',
+        2 => 'Option 2',
+      ),
+      'value' => 1,
+      'label' => 'My label',
+    ));
+    $this->assertTag(array('tag' => 'label'), $field);
+  }
+
+  /**
+   * @covers sHTML::makeFormElement
+   * @covers sHTML::makeSelectElement
    */
   public function testMakeFormElementSelectField2D() {
     $field = sHTML::makeFormElement('select', 'options', array(
@@ -235,6 +265,31 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
       'tag' => 'optgroup',
       'attributes' => array('label' => 'group 2'),
     ), $field);
+  }
+
+  /**
+   * @covers sHTML::makeFormElement
+   * @covers sHTML::makeSelectElement
+   * @depends testMakeFormElementSelectField2D
+   */
+  public function testMakeFormElementSelectField2DWithLabel() {
+    $field = sHTML::makeFormElement('select', 'options', array(
+      'options' => array(
+        'group 1' => array(
+          1 => 'option 1',
+          2 => 'option 2',
+          3 => 'option 3',
+        ),
+        'group 2' => array(
+          4 => 'option 4 (group 2)',
+          5 => 'option 5 (group 2)',
+          6 => 'option 6 (group 2)',
+        ),
+      ),
+      'value' => 2,
+      'label' => 'My label',
+    ));
+    $this->assertTag(array('tag' => 'label'), $field, "No label: $field");
   }
 
   /**
