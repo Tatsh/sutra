@@ -1,4 +1,6 @@
 <?php
+require './autoload.inc';
+
 class sCacheTest extends PHPUnit_Framework_TestCase {
   public function testGetSiteUniqueKey() {
     $cwd = getcwd();
