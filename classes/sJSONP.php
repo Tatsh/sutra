@@ -97,6 +97,7 @@ class sJSONP extends fJSON {
     return preg_match($identifier_syntax, $subject) && !in_array(fUTF8::lower($subject), $reserved_words);
   }
 
+  // @codeCoverageIgnoreStart
   /**
    * Overrides sendHeader to send a text/javascript response instead.
    *
@@ -105,11 +106,14 @@ class sJSONP extends fJSON {
   public static function sendHeader() {
     header('Content-Type: text/javascript; charset=utf-8');
   }
+  // @codeCoverageIgnoreEnd
 
+  // @codeCoverageIgnoreStart
   /**
    * Force use as a static class.
    *
    * @return sJSONP
    */
   private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
