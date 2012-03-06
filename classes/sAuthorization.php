@@ -151,23 +151,6 @@ class sAuthorization extends fAuthorization {
   }
 
   /**
-   * Find out if this is a test with CLI to run a page logged in.
-   *
-   * @return boolean TRUE if logged in, FALSE otherwise.
-   */
-  private static function isFakeLoggedIn() {
-    if (PHP_SAPI != 'cli') {
-      return FALSE;
-    }
-
-    if (isset($_SERVER['LOGIN_FAKED'])) {
-      return (bool)$_SERVER['LOGIN_FAKED'];
-    }
-
-    return FALSE;
-  }
-
-  /**
    * Require that a user not be logged in.
    *
    * @param boolean $handle_ajax If set to TRUE, then AJAX requests will be
