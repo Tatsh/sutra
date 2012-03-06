@@ -57,7 +57,7 @@ class sAuthorization extends fAuthorization {
       return FALSE;
     }
 
-    return preg_match('/'.implode('|', $extensions).'/', $extension);
+    return (bool)preg_match('/'.implode('|', $extensions).'/', $extension);
   }
 
   /**
@@ -72,6 +72,13 @@ class sAuthorization extends fAuthorization {
     }
 
     if (!self::$initialized) {
+      try {
+        $session_length = SiteVariable::getValue(__CLASS__.'::session_length', NULL, '30 minutes', 0);
+      }
+      catch (fProgrammerException $e) {
+        sDatabase::getInstance();
+      }
+
       $session_length = SiteVariable::getValue(__CLASS__.'::session_length', NULL, '30 minutes', 0);
       $long_session_length = SiteVariable::getValue(__CLASS__.'::long_session_length', NULL, '1 week', 0);
       $login_page = SiteVariable::getValue(__CLASS__.'::login_page', NULL, '/login', 0);
@@ -103,7 +110,7 @@ class sAuthorization extends fAuthorization {
     if (is_null(self::$guest_user_id)) {
       $cache = sCache::getInstance();
       $key = __CLASS__.'::'.getcwd().'::guest_user_id';
-      self::$guest_user_id = $id = $cache->get($key);
+      self::$guest_user_id = $id = (int)$cache->get($key);
 
       if (is_null($id)) {
         try {
@@ -134,9 +141,9 @@ class sAuthorization extends fAuthorization {
       exit;
     }
 
-    fAuthorization::requireLoggedIn();
+    parent::requireLoggedIn();
 
-    if (fAuthorization::getUserAuthLevel() != 'admin') {
+    if (parent::getUserAuthLevel() != 'admin') {
       $page_404 = SiteVariable::getValue(__CLASS__.'::page_404', 'string', '/404', 0);
       fURL::redirect($page_404);
       return;
