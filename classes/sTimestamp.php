@@ -17,7 +17,7 @@ class sTimestamp extends fTimestamp {
    *
    * @var string
    */
-  const DATETIME_REGEX = '/^([0-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])\s+T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))?$/';
+  const DATETIME_REGEX = '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(\s+)?T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))?$/';
 
   /**
    * List of timezones with UTF offset as key.
@@ -137,9 +137,9 @@ class sTimestamp extends fTimestamp {
         $year = abs((int)$matches[1]);
         $month = abs((int)$matches[2]);
         $day = abs((int)$matches[3]);
-        $hour = abs((int)$matches[4]);
-        $minute = abs((int)$matches[5]);
-        $second = abs((int)$matches[6]);
+        $hour = abs((int)$matches[5]);
+        $minute = abs((int)$matches[6]);
+        $second = abs((int)$matches[7]);
 
         if ($second > 59 || $second < 0) {
           throw new fValidationException('Invalid second value.');
