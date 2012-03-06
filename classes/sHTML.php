@@ -21,6 +21,78 @@ class sHTML extends fHTML {
   private static $form_element_ids = array();
 
   /**
+   * ASCII safe values used by stripNonASCIIFromString.
+   *
+   * @var array
+   */
+  private static $safe_ascii = array(
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
+    'a',
+    'b',
+    'c',
+    'd',
+    'e',
+    'f',
+    'g',
+    'h',
+    'i',
+    'j',
+    'k',
+    'l',
+    'm',
+    'n',
+    'o',
+    'p',
+    'q',
+    'r',
+    's',
+    't',
+    'u',
+    'v',
+    'w',
+    'x',
+    'y',
+    'z',
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '0',
+    '-',
+  );
+
+  /**
    * Valid values for the element input type attribute.
    *
    * @link http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute
@@ -213,9 +285,9 @@ class sHTML extends fHTML {
       return $ret;
     }
     else if ($type == 'select') {
-      $options = '';
+      $options_html = $options = '';
 
-      if (isset($attr['options']) && !is_array($attr['options'])) {
+      if (isset($attr['options']) && is_array($attr['options'])) {
         $selected = isset($attributes['value']) ? $attributes['value'] : NULL;
         unset($attributes['value']);
         unset($attributes['type']);
@@ -225,22 +297,23 @@ class sHTML extends fHTML {
 
         if ($is_2d) {
           foreach ($attr['options'] as $label => $options) {
-            $options .= '<optgroup label="'.self::encode($label).'">';
+            $options_html .= '<optgroup label="'.self::encode($label).'">';
             foreach ($options as $key => $value) {
-              if ($selected && $selected == $value) {
-                $options .= '<option selected value="'.self::encode($key).'">'.self::encode($value).'</option>';
+              if ($selected && $selected == $key) {
+                $options_html .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
               }
               else {
-                $options .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
+                $options_html .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
               }
             }
-            $options .= '</optgroup>';
+            $options_html .= '</optgroup>';
           }
+          $options = $options_html;
         }
         else {
           foreach ($attr['options'] as $key => $value) {
-            if ($selected && $selected == $value) {
-              $options .= '<option selected value="'.self::encode($key).'">'.self::encode($value).'</option>';
+            if ($selected && $selected == $key) {
+              $options .= '<option selected="selected" value="'.self::encode($key).'">'.self::encode($value).'</option>';
             }
             else {
               $options .= '<option value="'.self::encode($key).'">'.self::encode($value).'</option>';
@@ -266,11 +339,7 @@ class sHTML extends fHTML {
    * @return string String, processed.
    */
   public static function stripNonASCIIFromString($str, $lower = TRUE) {
-    static $safe;
-    if (!$safe) {
-      $safe = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890-';
-      $safe = str_split($safe);
-    }
+    $safe = self::$safe_ascii;
 
     $str = str_replace(array(' ', '_'), '-', $str);
     $str = str_split($str);
@@ -300,19 +369,9 @@ class sHTML extends fHTML {
    *   omitted.
    */
   private static function getValidAttributeValue($attribute_name, $value) {
-    // Should be omitted
-    if ($value === FALSE && in_array($attribute_name, self::$boolean_attributes)) {
-      return FALSE;
-    }
-
     // Assume that maybe this value is for a boolean attribute
     if (!array_key_exists($attribute_name, self::$special_enumerated_attributes)) {
-      if ($value) {
-        return ''; // on
-      }
-      else {
-        return FALSE; // off (should be omitted)
-      }
+      return FALSE;
     }
 
     return self::$special_enumerated_attributes[$attribute_name][$value];
@@ -342,16 +401,24 @@ class sHTML extends fHTML {
         $value = implode(' ', $value);
       }
 
-      if (is_bool($value) && in_array($key, self::$boolean_attributes)) {
-        if ($value === TRUE) {
-          $value = $key;
+      if (is_bool($value)) {
+        if (in_array($key, self::$boolean_attributes)) {
+          if ($value === TRUE) {
+            $value = $key;
+          }
+          else {
+            continue;
+          }
+        }
+        else if ($test = self::getValidAttributeValue($key, $value)) {
+          $value = $test;
+        }
+        else if ($value) {
+          $value = 'true';
         }
         else {
-          continue;
+          $value = 'false';
         }
-      }
-      else if (is_bool($value) && !($value = self::getValidAttributeValue($key, $value))) {
-        continue;
       }
 
       $value = htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
@@ -500,10 +567,12 @@ class sHTML extends fHTML {
     return $html;
   }
 
+  // @codeCoverageIgnoreStart
   /**
    * Private to force use as static class.
    *
    * @return sHTML
    */
   private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
