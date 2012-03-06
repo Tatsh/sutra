@@ -14,3 +14,11 @@ function sutraAutoload($class_name) {
   }
 }
 spl_autoload_register('sutraAutoload');
+
+function modelAutoload($class_name) {
+  $file = '../model/'.$class_name.'.php';
+  if (file_exists($file)) {
+    require_once $file;
+  }
+}
+spl_autoload_register('modelAutoload');
