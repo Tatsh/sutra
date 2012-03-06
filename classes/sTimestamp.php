@@ -85,7 +85,7 @@ class sTimestamp extends fTimestamp {
     $ret = '';
 
     if ($value < 0) {
-      if ($value[1] >= 10) {
+      if (abs($value) >= 10) {
         $ret = $value.':00';
       }
       else {
