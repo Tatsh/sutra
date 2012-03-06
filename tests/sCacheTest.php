@@ -1,5 +1,5 @@
 <?php
-require './autoload.inc';
+require './00-global.php';
 
 class sCacheTest extends PHPUnit_Framework_TestCase {
   public function testGetInstance() {

@@ -1,5 +1,5 @@
 <?php
-require './autoload.inc';
+require './00-global.php';
 
 class sJSONPTest extends PHPUnit_Framework_TestCase {
   /**
@@ -26,5 +26,10 @@ class sJSONPTest extends PHPUnit_Framework_TestCase {
     $b->data = 'a';
     $code = sJSONP::encode($b, 'goodCallback');
     $this->assertEquals('goodCallback({"data":"a"});', $code);
+
+    // No callback specified
+    $_SERVER['REQUEST_METHOD'] = 'GET';
+    $code = sJSONP::encode($b);
+    $this->assertStringStartsWith('fn(', $code);
   }
 }

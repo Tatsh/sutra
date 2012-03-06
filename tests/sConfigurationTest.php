@@ -1,10 +1,37 @@
 <?php
-require './autoload.inc';
-require './stubs.inc';
+require './00-global.php';
 
 class sConfigurationTest extends PHPUnit_Framework_TestCase {
   public function setUp() {
+    sCache::getInstance()->clear();
     sDatabase::getInstance();
+  }
+
+  /**
+   * @expectedException fEnvironmentException
+   */
+  public function testSetPathWithNoFiles() {
+    sConfiguration::setPath('./config2');
+    $cwd = getcwd();
+    sCache::getInstance()->delete('sConfiguration::'.$cwd.'::site_settings_last_cached');
+    sConfiguration::getInstance();
+  }
+
+  /**
+   * @depends testSetPathWithNoFiles
+   */
+  public function testSetPath() {
+    // Set back to original
+    sConfiguration::setPath('./config');
+    $cwd = getcwd();
+    sCache::getInstance()->delete('sConfiguration::'.$cwd.'::site_settings_last_cached');
+    sConfiguration::getInstance();
+  }
+
+  public function testNoRecache() {
+    $cwd = getcwd();
+    sCache::getInstance()->set('sConfiguration::'.$cwd.'::site_settings_last_cached', 1331035455);
+    sConfiguration::getInstance();
   }
 
   /**
@@ -14,20 +41,16 @@ class sConfigurationTest extends PHPUnit_Framework_TestCase {
     sConfiguration::setPath('bad');
   }
 
-  public function testSetPath() {
-    sConfiguration::setPath('/etc/sutra');
+  /**
+   * depends testSetPath
+   */
+  public function testGetPath() {
+    $this->assertStringEndsWith('config', sConfiguration::getPath());
   }
 
   /**
    * depends testSetPath
    */
-  public function testGetPath() {
-    $this->assertEquals('/etc/sutra', sConfiguration::getPath());
-
-    // Set back to original
-    sConfiguration::setPath('./config');
-  }
-
   public function testAdd() {
     sConfiguration::add('mykey', 'true');
   }
@@ -52,6 +75,9 @@ class sConfigurationTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('false', sConfiguration::get('mykey'));
   }
 
+  /**
+   * depends testSetPath
+   */
   public function testCallStatic() {
     if (version_compare(PHP_VERSION, '5.3.0') >= 0) {
       $this->assertEquals('Test site', sConfiguration::getSiteName());
@@ -68,5 +94,6 @@ class sConfigurationTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('false', $config->getMykey());
     $this->assertInternalType('int', $config->getMykey('int'));
     $this->assertInternalType('float', $config->getMykey('float'));
+    $this->assertNull($config->badCall());
   }
 }

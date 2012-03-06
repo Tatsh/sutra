@@ -1,10 +1,11 @@
 <?php
-require './autoload.inc';
+require './00-global.php';
 
 class sHTMLTest extends PHPUnit_Framework_TestCase {
   /**
    * @expectedException fProgrammerException
    * @covers sHTML::makeFormElement
+   * @covers sHTML::formElementIDWithName
    */
   public function testMakeFormElementBadType() {
     sHTML::makeFormElement('nogood', 'name');
@@ -12,6 +13,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::formElementIDWithName
    */
   public function testMakeFormElementTextAndTextField() {
     $text = sHTML::makeFormElement('text', 'name');
@@ -29,6 +31,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::formElementIDWithName
+   * @covers sHTML::getValidAttributeValue
+   * @covers sHTML::attributesString
    */
   public function testMakeFormElementSpecialAttributes() {
     // autocomplete and spellcheck
@@ -38,7 +43,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $this->assertTag(array(
       'tag' => 'input',
       'attributes' => array('spellcheck' => 'true'),
-    ), $text);
+    ), $text, "Failed to assert tag: $text");
     $this->assertTag(array(
       'tag' => 'input',
       'attributes' => array('spellcheck' => 'false'),
@@ -55,10 +60,18 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
       'tag' => 'input',
       'attributes' => array('autocomplete' => 'off'),
     ), $text_no_autocomplete);
+
+    // Custom attribute
+    $text = sHTML::makeFormElement('text', 'textfield1', array('data-has-name' => FALSE, 'data-2' => TRUE));
+    $this->assertTag(array(
+      'tag' => 'input',
+      'attributes' => array('data-has-name' => 'false', 'data-2' => 'true'),
+    ), $text, "Returned tag: $text");
   }
 
   /**
    * @covers sHTML::makeFormElement
+   * @covers sHTML::formElementIDWithName
    */
   public function testMakeFormElementBooleanAttributes() {
     $boolean_attributes = array(
@@ -124,6 +137,107 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
   }
 
   /**
+   * @covers sHTML::makeFormElement
+   */
+  public function testMakeFormElementClassNotArray() {
+    $field = sHTML::makeFormElement('textfield', 'name', array('class' => 'class-1 class-2'));
+    $this->assertTag(array(
+      'tag' => 'input',
+      'attributes' => array(
+        'class' => 'class-1 class-2',
+      ),
+    ), $field);
+  }
+
+  /**
+   * @covers sHTML::makeFormElement
+   */
+  public function testMakeFormElementLabelAndRequired() {
+    $field = sHTML::makeFormElement('textfield', 'name', array(
+      'label' => 'My label',
+      'required' => TRUE,
+    ));
+    $this->assertTag(array(
+      'tag' => 'input',
+      'attributes' => array('required' => 'required'),
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'label',
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'span',
+      'attributes' => array('class' => 'form-required-marker'),
+    ), $field);
+  }
+
+  /**
+   * @covers sHTML::makeFormElement
+   */
+  public function testMakeFormElementSelectField1D() {
+    // Test selected attribute
+    $field = sHTML::makeFormElement('select', 'options', array(
+      'options' => array(
+        0 => 'Pick an option',
+        1 => 'Option 1',
+        2 => 'Option 2',
+      ),
+      'value' => 1,
+    ));
+    $this->assertTag(array(
+      'tag' => 'select',
+      'attributes' => array('class' => 'form-select', 'name' => 'options'),
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'option',
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'option',
+      'attributes' => array('selected' => 'selected'),
+    ), $field, 'Failed to find selected option.');
+  }
+
+  /**
+   * @covers sHTML::makeFormElement
+   */
+  public function testMakeFormElementSelectField2D() {
+    $field = sHTML::makeFormElement('select', 'options', array(
+      'options' => array(
+        'group 1' => array(
+          1 => 'option 1',
+          2 => 'option 2',
+          3 => 'option 3',
+        ),
+        'group 2' => array(
+          4 => 'option 4 (group 2)',
+          5 => 'option 5 (group 2)',
+          6 => 'option 6 (group 2)',
+        ),
+      ),
+      'value' => 2,
+    ));
+
+    $this->assertTag(array(
+      'tag' => 'select',
+      'attributes' => array('class' => 'form-select', 'name' => 'options'),
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'option',
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'option',
+      'attributes' => array('selected' => 'selected'),
+      ), $field, 'Failed to find selected option: '.$field);
+    $this->assertTag(array(
+      'tag' => 'optgroup',
+      'attributes' => array('label' => 'group 1'),
+    ), $field);
+    $this->assertTag(array(
+      'tag' => 'optgroup',
+      'attributes' => array('label' => 'group 2'),
+    ), $field);
+  }
+
+  /**
    * @covers sHTML::stripNonASCIIFromString
    */
   public function testStripNonASCIIFromString() {
@@ -142,6 +256,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::attributesString
+   * @covers sHTML::getValidAttributeValue
    */
   public function testAttributesString() {
     // Not using array as class
@@ -177,15 +292,22 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $attr = array(
       'required' => TRUE,
       'spellcheck' => TRUE, // can only be true or false or omitted
-      'autocomplete' => TRUE, // can only be on or off or omitted
-      'scoped' => TRUE,
+      'autocomplete' => FALSE, // can only be on or off or omitted
+      'scoped' => FALSE,
     );
     $result = sHTML::attributesString($attr);
-    $this->assertEquals('autocomplete="on" required="required" scoped="scoped" spellcheck="true"', $result);
+    $this->assertEquals('autocomplete="off" required="required" spellcheck="true"', $result);
+
+    // Pass an empty array (technically)
+    $this->assertEquals('', sHTML::attributesString());
+
+    // Pass an empty class array
+    $this->assertEquals('', sHTML::attributesString(array('class' => array())));
   }
 
   /**
    * @covers sHTML::tag
+   * @covers sHTML::tagRequiresEnd
    */
   public function testTag() {
     // Simple <a> tag
@@ -199,6 +321,15 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
       'class' => 'some-link',
     ), 'My link');
     $this->assertEquals('<a class="some-link" href="http://www.google.com" rel="external">My link</a>', $result);
+
+    // <input> doesn't require end tag in HTML
+    $result = sHTML::tag('input');
+    $this->assertEquals('<input>', $result);
+    $result = sHTML::tag('input', array('value' => 1, 'type' => 'hidden'));
+    $this->assertTag(array(
+      'input',
+      'attributes' => array('value' => 1, 'type' => 'hidden'),
+    ), $result);
   }
 
   /**
@@ -239,10 +370,12 @@ Everything should be properly encoded.";
       'item 3',
     );
 
+    $result_auto_type_ul = sHTML::makeList($items, 'bad value');
     $result = sHTML::makeList($items, 'ul');
     $result_ol = sHTML::makeList($items, 'ol');
     $result_with_attr = sHTML::makeList($items, 'ul', array('class' => array('list-1')));
 
+    $this->assertTag(array('tag' => 'ul'), $result_auto_type_ul);
     $this->assertTag(array('tag' => 'ul'), $result);
     $this->assertTag(array('tag' => 'li'), $result);
     $this->assertTag(array('tag' => 'li', 'attributes' => array('class' => 'first')), $result);

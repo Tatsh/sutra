@@ -2,8 +2,7 @@
 /**
  * Run with --stderr argument.
  */
-require './autoload.inc';
-require './block-exit.inc';
+require './00-global.php';
 
 class sAuthorizationTest extends PHPUnit_Framework_TestCase {
   public function setUp() {
@@ -48,6 +47,11 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
     sAuthorization::initialize();
   }
 
+  public function testInitializeWithResource() {
+    $_SERVER['REQUEST_URI'] = 'http://localhost/file.png';
+    sAuthorization::initialize();
+  }
+
   public function testGetGuestUserId() {
     $this->assertInternalType('integer', sAuthorization::getGuestUserId());
   }
@@ -62,5 +66,6 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
 
   public function testRequireNotLoggedIn() {
     $this->assertNull(sAuthorization::requireNotLoggedIn());
+    $this->assertNull(sAuthorization::requireNotLoggedIn(TRUE));
   }
 }
