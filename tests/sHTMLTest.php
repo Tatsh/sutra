@@ -4,11 +4,15 @@ require './autoload.inc';
 class sHTMLTest extends PHPUnit_Framework_TestCase {
   /**
    * @expectedException fProgrammerException
+   * @covers sHTML::makeFormElement
    */
   public function testMakeFormElementBadType() {
     sHTML::makeFormElement('nogood', 'name');
   }
 
+  /**
+   * @covers sHTML::makeFormElement
+   */
   public function testMakeFormElementTextAndTextField() {
     $text = sHTML::makeFormElement('text', 'name');
     $text2 = sHTML::makeFormElement('textfield', 'name');
@@ -23,6 +27,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     ), $text2);
   }
 
+  /**
+   * @covers sHTML::makeFormElement
+   */
   public function testMakeFormElementSpecialAttributes() {
     // autocomplete and spellcheck
     $text = sHTML::makeFormElement('text', 'name', array('spellcheck' => TRUE));
@@ -50,6 +57,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     ), $text_no_autocomplete);
   }
 
+  /**
+   * @covers sHTML::makeFormElement
+   */
   public function testMakeFormElementBooleanAttributes() {
     $boolean_attributes = array(
       'scoped',
@@ -87,6 +97,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     }
   }
 
+  /**
+   * @covers sHTML::makeFormElement
+   */
   public function testMakeFormElementHasLabelTag() {
     $labeled = sHTML::makeFormElement('text', 'name', array('label' => 'My label'));
 
@@ -95,6 +108,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     ), $labeled, "Failed to assert $labeled has a <label> tag.");
   }
 
+  /**
+   * @covers sHTML::makeFormElement
+   */
   public function testMakeFormElementNonInputElements() {
     $textarea = sHTML::makeFormElement('textarea', 'name');
     $select = sHTML::makeFormElement('select', 'name');
@@ -107,6 +123,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     ), $select);
   }
 
+  /**
+   * @covers sHTML::stripNonASCIIFromString
+   */
   public function testStripNonASCIIFromString() {
     $str = 'this string just needs dashes';
     $result = sHTML::stripNonASCIIFromString($str);
@@ -121,6 +140,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('This-string-has-garbage', $result);
   }
 
+  /**
+   * @covers sHTML::attributesString
+   */
   public function testAttributesString() {
     // Not using array as class
     // All strings
@@ -162,6 +184,9 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('autocomplete="on" required="required" scoped="scoped" spellcheck="true"', $result);
   }
 
+  /**
+   * @covers sHTML::tag
+   */
   public function testTag() {
     // Simple <a> tag
     $result = sHTML::tag('a', array(), 'My link');
@@ -176,12 +201,18 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals('<a class="some-link" href="http://www.google.com" rel="external">My link</a>', $result);
   }
 
+  /**
+   * @covers sHTML::linkIsURI
+   */
   public function testLinkIsURI() {
     $this->assertTrue(sHTML::linkIsURI('http://www.google.com'));
     $this->assertTrue(sHTML::linkIsURI('https://www.amazon.com'));
     $this->assertFalse(sHTML::linkIsURI('garbage string'));
   }
 
+  /**
+   * @covers sHTML::paragraphify
+   */
   public function testParagraphify() {
     $str = "My special string
 
@@ -198,6 +229,9 @@ Everything should be properly encoded.";
     $this->assertRegExp('#\&lt;p\&gt;#', $result);
   }
 
+  /**
+   * @covers sHTML::makeList
+   */
   public function testMakeList() {
     $items = array(
       'item 1',
