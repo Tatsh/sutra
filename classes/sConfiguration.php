@@ -72,6 +72,10 @@ class sConfiguration {
       $recache = TRUE;
     }
 
+    if (!$recache) {
+      return;
+    }
+
     if (is_readable($file) && $recache) {
       $ini = parse_ini_file($file);
       $cache = sCache::getInstance();
