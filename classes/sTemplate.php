@@ -28,13 +28,6 @@ class sTemplate {
   private static $templates_path = './template';
 
   /**
-   * Web path prefix for resources with leading and ending slashes.
-   *
-   * @var string
-   */
-  private static $web_path_prefix = '/files/resources/';
-
-  /**
    * The conditional JavaScript placed in the head element (IE only).
    *
    * @var string
@@ -114,67 +107,31 @@ class sTemplate {
   }
 
   /**
-   * Set the web path prefix for when CSS and JS files are fetched in
-   *   non-production mode.
+   * Add a JavaScript file.
    *
-   * Must be within the site root.
-   *
-   * @param string $path Path to use. Should begin with / and end with /.
-   * @return void
-   *
-   * @todo Find a way to make this easier to use.
+   * @param string $file File name. Should be relative to site root.
+   * @param boolean $prepend If this JavaScript file should become the first.
    */
-  public static function setWebPathPrefix($path) {
-    self::$web_path_prefix = $path;
-  }
+  public static function addJavaScriptFile($file, $prepend = FALSE) {
+    $file = str_replace('./', '/', $file);
+    if ($file[0] === '/') {
+      $file = substr($file, 1);
+    }
 
-  /**
-   * Get the JavaScript paths. Useful for sorting.
-   *
-   * @return array Array of paths.
-   */
-  public static function getJavaScriptPaths() {
-    return self::$javascript_paths;
-  }
+    if (!$prepend) {
+      self::$javascript_files[] = $file;
+      return;
+    }
 
-  /**
-   * Set the JavaScript paths.
-   *
-   * @param array $paths Array of paths, full or relative to site root.
-   * @return void
-   */
-  public static function setJavascriptPaths(array $paths) {
-    self::$javascript_paths = $paths;
-  }
-
-  /**
-   * Add a path to search for JavaScript files (.js). As always, any path added
-   *   must be readable by the web server.
-   *
-   * @param string $path Path (relative to site root) without leading or ending
-   *   slash.
-   * @return void
-   */
-  public static function addJavaScriptPath($path) {
-    self::$javascript_paths[] = $path;
+    array_unshift(self::$javascript_files, $file);
   }
 
   /**
    * Load/get all JavaScript files in an array.
    *
-   * @param boolean $reread Whether or not to force a re-read of the files.
    * @return array
    */
-  public static function getJavaScriptFiles($reread = FALSE) {
-    if (empty(self::$javascript_files) || $reread) {
-      foreach (self::$javascript_paths as $path) {
-        $path = preg_replace('/^\.\//', '', $path);
-        $files = glob($path.'/*.js');
-        sort($files, SORT_STRING);
-        self::$javascript_files = array_merge(self::$javascript_files, $files);
-      }
-    }
-
+  public static function getJavaScriptFiles() {
     return self::$javascript_files;
   }
 
@@ -423,7 +380,7 @@ class sTemplate {
 
     foreach (self::$json['css_files'] as $media => $files) {
       foreach ($files as $file) {
-        $href = self::$web_path_prefix.$file.'?_='.$time;
+        $href = self::$templates_path.'/'.self::$template_name.'/'.$file.'?_='.$time;
         $html .= '<link rel="stylesheet" type="text/css" href="'.$href.'" media="'.$media.'">'."\n";
       }
     }
@@ -455,7 +412,7 @@ class sTemplate {
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
     foreach (self::$json['head_js_files'] as $path) {
-      $url = self::$web_path_prefix.$path.$time;
+      $url = self::$templates_path.'/'.self::$template_name.'/'.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
