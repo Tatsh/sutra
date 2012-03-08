@@ -278,8 +278,6 @@ class sTemplate {
 
     fBuffer::startCapture();
 
-    $ds = DIRECTORY_SEPARATOR;
-
     $default = self::$templates_path.'/default/'.$filename.'.tpl.php';
     $template = self::$templates_path.'/'.self::$template_name.'/'.$filename.'.tpl.php';
 
@@ -290,6 +288,7 @@ class sTemplate {
       require $default;
     }
     else {
+      fBuffer::stopCapture();
       throw new fProgrammerException('Invalid template file "%s" specified.', $filename);
     }
 
@@ -504,6 +503,15 @@ class sTemplate {
   }
 
   /**
+   * Get the CDNs in currently in use.
+   *
+   * @returns array Array of string URLs.
+   */
+  public static function getCDNs() {
+    return self::$cdns;
+  }
+
+  /**
    * Remove all CDNs.
    *
    * @return void
@@ -571,6 +579,15 @@ class sTemplate {
    */
   public static function addBodyClass($class_name) {
     self::$body_classes[] = $class_name;
+  }
+
+  /**
+   * Get the body classes.
+   *
+   * @return array Array of strings.
+   */
+  public static function getBodyClasses() {
+    return self::$body_classes;
   }
 
   /**
@@ -659,10 +676,12 @@ class sTemplate {
     throw new fUnexpectedException('Could not find a valid page template for this page.');
   }
 
+  // @codeCoverageIgnoreStart
   /**
    * Forces use as a static class.
    *
    * @return sTemplate
    */
   private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
