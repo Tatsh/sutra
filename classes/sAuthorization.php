@@ -168,10 +168,12 @@ class sAuthorization extends fAuthorization {
     }
   }
 
+  // @codeCoverageIgnoreStart
   /**
    * Forces use as a static class
    *
    * @return sAuthorization
    */
   private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
