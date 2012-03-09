@@ -1,6 +1,7 @@
 <?php
 /**
- * Controller for the front page.
+ * Controller for the front page. This class is intended to be replaced by your
+ *   own.
  *
  * @copyright Copyright (c) 2011 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
@@ -22,25 +23,15 @@ class FrontActionController extends MoorActionController {
   }
 
   /**
-   * Renders the front page. Will call any classes that implement the
-   *   sAJAXResponder interface with the URL /.
+   * Renders the front page. If the request is via AJAX, will print an empty
+   *   JSON array.
    *
    * @return void
    */
   public function index() {
     if (fRequest::isAjax() || fRequest::get('ajax', 'boolean', FALSE)) {
       fJSON::sendHeader();
-      $args = array('/', fRequest::isGet() ? 'GET' : 'POST');
-      $data = array();
-
-      foreach (get_declared_classes() as $class) {
-        $reflect = new ReflectionClass($class);
-        if ($reflect->implementsInterface('sAJAXResponder')) {
-          $data = array_merge($data, fCore::call($class.'::requestAt', $args));
-        }
-      }
-
-      print fJSON::encode($data);
+      print fJSON::encode(array());
       exit;
     }
 
