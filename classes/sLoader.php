@@ -64,7 +64,6 @@ class sLoader extends fLoader {
     'sTemplate',
     'sTemplateVariableSetter',
     'sTimestamp',
-    'sAJAXResponder',
   );
 
   /**
