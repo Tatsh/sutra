@@ -421,7 +421,7 @@ class sTemplate {
 
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
-    $prefix = preg_replace('/^\./', '', self::$templates_path);
+    $prefix = preg_replace('/^\./', '/', self::$templates_path);
 
     foreach (self::$json['conditional_head_js_files'] as $rule => $files) {
       foreach ($files as $file) {
@@ -576,7 +576,13 @@ class sTemplate {
     }
 
     foreach ($arr as $filename) {
-      $filename = self::$in_production_mode ? $filename : $filename.'?_='.$time;
+      $original = $filename;
+      $filename = self::$in_production_mode ? '/'.$filename : '/'.$filename.'?_='.$time;
+
+      if (sHTML::linkIsURI($original)) {
+        $filename = $original;
+      }
+
       $scripts .= sHTML::tag('script', array(
         'type' => 'text/javascript',
         'src' => $filename,
