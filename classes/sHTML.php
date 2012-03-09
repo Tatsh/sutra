@@ -500,6 +500,19 @@ class sHTML extends fHTML {
   }
 
   /**
+   * Create a tag HTML string wrapped by a MSIE conditional comment.
+   *
+   * @param string $rule The IE rule. Examples: 'lt IE 9', 'IE 8', 'gt IE 6'.
+   * @param string $tag Tag name.
+   * @param string $content Content to place within the HTML.
+   * @return string The HTML tag, ready to be displayed.
+   */
+  public static function conditionalTag($rule, $tag, array $attr = array(), $content = '') {
+    $tag = self::tag($tag, $attr, $content);
+    return '<!--[if '.$rule.']>'.$tag.'<![endif]-->';
+  }
+
+  /**
    * Check if a URL is a full URI or not.
    *
    * @param string URL to check.
