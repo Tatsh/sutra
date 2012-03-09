@@ -19,20 +19,7 @@ class AdminActionController extends MoorActionController {
    */
   public function clearCache() {
     sAuthorization::requireAdministratorPrivileges();
-
-    $cache = sCache::getInstance();
-    $cwd = getcwd();
-    $filename = $cache->get('sTemplate::'.$cwd.'::latest_compiled_js_filename');
-
-    $cache->clear();
-
-    $cache->set('sTemplate::'.$cwd.'::latest_compiled_js_filename', $filename);
-    $cache->set('sTemplate::'.$cwd.'::latest_compiled_js_filename_should_be_deleted', TRUE);
-
-    $new_compilation = new CompiledJavascriptFile;
-    $new_compilation->setFilename('files/js-'.fCryptography::randomString(32).'.js');
-    $new_compilation->store();
-
+    $cache = sCache::getInstance()->clear();
     sMessaging::add(__('Cleared caches.'), '/admin');
     fURL::redirect('/admin');
   }

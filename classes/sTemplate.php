@@ -18,7 +18,7 @@ class sTemplate {
    *
    * @var string
    */
-  protected static $template_name = 'default';
+  private static $template_name = 'default';
 
   /**
    * The templates path without any ending directory separator (like /).
@@ -32,49 +32,56 @@ class sTemplate {
    *
    * @var string
    */
-  protected static $conditional_head_js = '';
+  private static $conditional_head_js = '';
 
   /**
    * The JavaScript placed in the head element. Should be as few as possible.
    *
    * @var string
    */
-  protected static $head_js = '';
+  private static $head_js = '';
 
   /**
    * The template JSON file decoded into an array.
    *
    * @var array
    */
-  protected static $json = NULL;
+  private static $json = NULL;
 
   /**
    * The JavaScript files (which appear normally at the bottom of the page).
    *
    * @var array
    */
-  protected static $javascript_files = array();
+  private static $javascript_files = array();
+
+  /**
+   * The minified/compiled JavaScript files used in production mode.
+   *
+   * @var array
+   */
+  private static $compiled_javascript_files = array();
 
   /**
    * Whether or not the site is in production mode or not.
    *
    * @var boolean
    */
-  protected static $in_production_mode = FALSE;
+  private static $in_production_mode = FALSE;
 
   /**
    * Array of strings of class names to apply to the body element.
    *
    * @var array
    */
-  protected static $body_classes = array();
+  private static $body_classes = array();
 
   /**
    * Array of classes that implement sTemplateVariableSetter.
    *
    * @var array
    */
-  private static $variable_setter_classes = NULL;
+  private static $variable_setter_classes = array();
 
   /**
    * Array of CDN URL prefixes.
@@ -84,11 +91,11 @@ class sTemplate {
   private static $cdns = array();
 
   /**
-   * Paths to search for .js files.
+   * Resources path.
    *
    * @var string
    */
-  private static $javascript_paths = array();
+  private static $resources_path = '';
 
   /**
    * Set the templates path.
@@ -103,7 +110,7 @@ class sTemplate {
    */
   public static function setTemplatesPath($path) {
     $dir = new fDirectory($path);
-    self::$templates_path = $path;
+    self::$templates_path = str_replace('\\', '/', $path);
   }
 
   /**
@@ -132,6 +139,9 @@ class sTemplate {
    * @return array
    */
   public static function getJavaScriptFiles() {
+    if (self::$in_production_mode) {
+      return self::$compiled_javascript_files;
+    }
     return self::$javascript_files;
   }
 
@@ -145,68 +155,11 @@ class sTemplate {
       return;
     }
 
-    if (self::$template_name == 'default') {
-      self::$json = array(
-        'css_files' => array(),
-      );
-    }
+    self::$in_production_mode = sConfiguration::getInstance()->getProductionModeOn('bool', FALSE);
 
     self::$json = fJSON::decode(file_get_contents(self::$templates_path.'/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
     if (!self::$json || !is_array(self::$json)) {
       throw new fProgrammerException('Template JSON was invalid. Verify the template JSON file with a linter.');
-    }
-
-    $config = sConfiguration::getInstance();
-    self::$in_production_mode = $config->getProductionModeOn(FALSE, 'bool');
-
-    if (!self::$in_production_mode) {
-      self::getJavaScriptFiles();
-    }
-    else {
-      // Find latest compiled version; first cache then database
-      $cache = sCache::getInstance();
-
-      try {
-        $cwd = getcwd();
-        $cached = $cache->get(__CLASS__.'::'.$cwd.'::latest_compiled_js_filename');
-        $should_delete = $cache->get(__CLASS__.'::'.$cwd.'::latest_compiled_js_filename_should_be_deleted');
-
-        if (is_null($cached) || $should_delete) {
-          $records = fRecordSet::build('CompiledJavascriptFile', array('completed=' => TRUE), array('date_completed' => 'desc'), 1);
-          $records->tossIfEmpty();
-
-          $record = $records->getRecord(0);
-          $name = $record->getFilename();
-
-          if ($should_delete && ($name != $cached)) {
-            // The new file is complete
-            $cache->delete(__CLASS__.'::'.$cwd.'::latest_compiled_js_filename_should_be_deleted');
-          }
-
-          if (!is_file('./'.$name)) {
-            $record->delete();
-            throw new fEmptySetException;
-          }
-
-          $cached = $name;
-
-          $cache->set(__CLASS__.'::'.$cwd.'::latest_compiled_js_filename', $name, 86400 * 7);
-        }
-
-        self::$javascript_files = array($cached);
-      }
-      catch (fEmptySetException $e) {
-        self::$javascript_files = array();
-
-        if (!is_null($cached) && is_file('./'.$cached)) {
-          self::$javascript_files[] = $cached;
-        }
-
-        // Queue to be compiled
-        $new_compilation = new CompiledJavascriptFile;
-        $new_compilation->setFilename('files/js-'.fCryptography::randomString(32).'.js');
-        $new_compilation->store();
-      }
     }
   }
 
@@ -222,7 +175,8 @@ class sTemplate {
   public static function setActiveTemplate($template_name) {
     $dir = self::$templates_path.'/'.$template_name;
     $json = $dir.'/'.$template_name.'.json';
-    if (is_dir($dir) && is_readable($json)) {
+
+    if (is_readable($json)) {
       self::$template_name = $template_name;
       self::initialize();
       return;
@@ -235,12 +189,22 @@ class sTemplate {
   }
 
   /**
+   * Add a minified JavaScript file. Should be relative to site path.
+   *
+   * @param string $filename File name. Example: '/files/themin.min.js'
+   * @return void
+   */
+  public static function addMinifiedJavaScriptFile($filename) {
+    self::$compiled_javascript_files[] = $filename;
+  }
+
+  /**
    * Get all classes that implement the TemplateInterface class.
    *
    * @return array Array of class names.
    */
   private static function getTemplateImplementationClassNames() {
-    if (!is_array(self::$variable_setter_classes)) {
+    if (empty(self::$variable_setter_classes)) {
       $ret = array();
 
       foreach (get_declared_classes() as $class_name) {
@@ -269,8 +233,7 @@ class sTemplate {
    */
   public static function buffer($filename, array $variables = array()) {
     foreach (self::getTemplateImplementationClassNames() as $class) {
-      $callback = array($class, 'getVariables');
-      $add = call_user_func_array($callback, array($filename));
+      $add = fCore::call($class.'::getVariables', $filename);
       $variables = array_merge($variables, $add);
     }
 
@@ -312,6 +275,7 @@ class sTemplate {
     self::initialize();
     $css = array();
     $html = '';
+    $prefix = preg_replace('/^\./', '', self::$templates_path);
 
     if (!isset(self::$json['css_files'])) {
       self::$json['css_files'] = array();
@@ -332,7 +296,7 @@ class sTemplate {
           }
 
           foreach ($files as $file) {
-            $css[$media] .= file_get_contents('./'.self::$web_path_prefix.$file);
+            $css[$media] .= file_get_contents(self::$templates_path.'/'.self::$template_name.'/'.$file);
           }
         }
 
@@ -369,7 +333,12 @@ class sTemplate {
 
       foreach ($cached as $media => $css) {
         $href = '/media/css/c'.$cached_name.'/'.urlencode(base64_encode($media)).'.css';
-        $html .= '<link rel="stylesheet" type="text/css" href="'.$href.'" media="'.$media.'">';
+        $html .= sHTML::tag('link', array(
+          'rel' => 'stylesheet',
+          'type' => 'text/css',
+          'href' => $href,
+          'media' => $media,
+        ));
       }
 
       return $html;
@@ -379,8 +348,13 @@ class sTemplate {
 
     foreach (self::$json['css_files'] as $media => $files) {
       foreach ($files as $file) {
-        $href = self::$templates_path.'/'.self::$template_name.'/'.$file.'?_='.$time;
-        $html .= '<link rel="stylesheet" type="text/css" href="'.$href.'" media="'.$media.'">'."\n";
+        $href = $prefix.'/'.self::$template_name.'/'.$file.'?_='.$time;
+        $html .= sHTML::tag('link', array(
+          'rel' => 'stylesheet',
+          'type' => 'text/css',
+          'href' => $href,
+          'media' => $media,
+        ))."\n";
       }
     }
 
@@ -410,12 +384,17 @@ class sTemplate {
 
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
+    $prefix = preg_replace('/^\./', '', self::$templates_path);
+
     foreach (self::$json['head_js_files'] as $path) {
-      $url = self::$templates_path.'/'.self::$template_name.'/'.$path.$time;
+      $url = $prefix.'/'.self::$template_name.'/'.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
-      $html .= '<script type="text/javascript" src="'.$url.'"></script>';
+      $html .= sHTML::tag('script', array(
+        'type' => 'text/javascript',
+        'src' => $url,
+      ));
     }
 
     return $html;
@@ -441,16 +420,19 @@ class sTemplate {
     }
 
     $html = '';
-    $time = time();
+    $time = !self::$in_production_mode ? '?_='.time() : '';
+    $prefix = preg_replace('/^\./', '', self::$templates_path);
+
     foreach (self::$json['conditional_head_js_files'] as $rule => $files) {
       foreach ($files as $file) {
-        $url = self::$web_path_prefix.self::$template_name.'/'.$file.'?_='.$time;
+        $url = self::$template_name.'/'.$file.'?_='.$time;
         if (sHTML::linkIsURI($file)) {
           $url = $file;
         }
-        $html .= '<!--[if '.$rule.']>';
-        $html .= '<script type="text/javascript" src="'.$url.'"></script>';
-        $html .= '<![endif]-->';
+        $html .= sHTML::conditionalTag($rule, 'script', array(
+          'type' => 'text/javascript',
+          'src' => $url,
+        ));
       }
     }
 
@@ -531,7 +513,30 @@ class sTemplate {
     }
 
     $key = fCryptography::random(0, count(self::$cdns) - 1);
+
     return self::$cdns[$key];
+  }
+
+  /**
+   * Set path where resources are besides the template path.
+   *
+   * @throws fValidationException If the directory is invalid.
+   *
+   * @param string $path Path name.
+   * @return void
+   */
+  public static function setResourcesPath($path) {
+    new fDirectory($path);
+    self::$resources_path = $path;
+  }
+
+  /**
+   * Get the resources path set.
+   *
+   * @return string The resources path.
+   */
+  public static function getResourcesPath() {
+    return self::$resources_path;
   }
 
   /**
@@ -546,10 +551,12 @@ class sTemplate {
    */
   public static function getResourcePath($filename) {
     $cdn = '';
+
     if (self::$in_production_mode) {
       $cdn = self::getACDN();
     }
-    return $cdn.'/files/resources/'.$filename;
+
+    return $cdn.self::$resources_path.$filename;
   }
 
   /**
@@ -562,10 +569,18 @@ class sTemplate {
 
     $scripts = '';
     $time = time();
+    $arr = self::$javascript_files;
 
-    foreach (self::$javascript_files as $filename) {
+    if (self::$in_production_mode) {
+      $arr = self::$compiled_javascript_files;
+    }
+
+    foreach ($arr as $filename) {
       $filename = self::$in_production_mode ? $filename : $filename.'?_='.$time;
-      $scripts .= '<script type="text/javascript" src="/'.$filename.'"></script>'."\n";
+      $scripts .= sHTML::tag('script', array(
+        'type' => 'text/javascript',
+        'src' => $filename,
+      ))."\n";
     }
 
     return $scripts;
@@ -629,7 +644,7 @@ class sTemplate {
       'body_js' => self::getScriptTags(),
       'logged_in' => (bool)fAuthorization::checkLoggedIn(),
       'user' => fAuthorization::getUserToken(),
-      'production_mode' => $config->getProductionModeOn(FALSE, 'bool'),
+      'production_mode' => self::$in_production_mode,
       'logo_url' => fHTML::encode($config->getSiteLogoPath('string')),
     );
 

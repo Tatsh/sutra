@@ -74,7 +74,6 @@ class sLoader extends fLoader {
    */
   private static $model_classes = array(
     'Category',
-    'CompiledJavascriptFile',
     'ContactMailMessage',
     'ResetPasswordRequest',
     'RouterAlias',

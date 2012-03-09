@@ -31,7 +31,6 @@ try {
   $classes = array(
     'User',
     'Category',
-    'CompiledJavascriptFile',
     'ContactMailMessage',
     'ResetPasswordRequest',
     'RouterAlias',
