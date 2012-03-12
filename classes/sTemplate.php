@@ -139,9 +139,6 @@ class sTemplate {
    * @return array
    */
   public static function getJavaScriptFiles() {
-    if (self::$in_production_mode) {
-      return self::$compiled_javascript_files;
-    }
     return self::$javascript_files;
   }
 
