@@ -626,9 +626,6 @@ class sTemplate {
     if ($path != '/') {
       $class_path .= ' page-'.str_replace('/', '-', substr($path, 1));
     }
-    else {
-      $class_path = NULL;
-    }
 
     $vars = array(
       'lang' => $config->getSiteLanguage(),
