@@ -149,11 +149,11 @@ class ResetPasswordActionController extends MoorActionController {
 
       $user = new User($user_id);
 
-      if ($request->getCreatedTime()->gt(time() + (30 * 60))) {
+      if ($request->getDateCreated()->gt(time() + (30 * 60))) {
         throw new fNotFoundException;
       }
 
-      $minutes = ($request->getCreatedTime()->format('U') - $time) + 30;
+      $minutes = ($request->getDateCreated()->format('U') - $time) + 30;
 
       $content = sTemplate::buffer('reset-password-final-form', array(
         'user' => $user,
