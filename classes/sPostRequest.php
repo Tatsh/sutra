@@ -172,4 +172,13 @@ class sPostRequest {
       fRequest::set($key, $value);
     }
   }
+
+  /**
+   * Deletes all POST values stored.
+   *
+   * @return void
+   */
+  public static function deleteLastPOSTValues() {
+    fSession::delete(__CLASS__.'::last_post');
+  }
 }
