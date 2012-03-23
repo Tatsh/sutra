@@ -57,6 +57,7 @@ class sLoader extends fLoader {
     'sJSONP',
     'sMessaging',
     'sNumber',
+    'sORMJSON',
     'sPostRequest',
     'sPostRequestProcessor',
     'sProcess',
