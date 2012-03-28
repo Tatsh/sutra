@@ -117,7 +117,7 @@ class sPostRequest {
       $error = preg_replace("#(\n)+#", ' ', $error);
 
       if (strpos($error, 'The form submitted could not be validated as authentic') !== FALSE) {
-        $error = __('Unknown error occurred. Please try again.');
+        $error = __('An unknown error occurred. Please try again.');
       }
 
       if (!fRequest::isAjax()) {
