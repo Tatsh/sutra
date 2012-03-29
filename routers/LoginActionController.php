@@ -21,12 +21,12 @@ class LoginActionController extends MoorActionController {
    * @return void
    */
   public function post() {
-    if (!fRequest::isPost()) {
-      fURL::redirect('/login');
-      return;
-    }
-
     try {
+      if (!fRequest::isPost()) {
+        fURL::redirect('/login');
+        return;
+      }
+      
       $time = time();
       if (fSession::get(__CLASS__.'::account_locked', FALSE)) {
         $end_time = fSession::get(__CLASS__.'::account_locked_till');
@@ -92,16 +92,16 @@ class LoginActionController extends MoorActionController {
       }
 
       $user->store(); // Store so that last_access gets updated
+      
+      // Log in
+      fAuthorization::setUserAuthLevel($user->getAuthLevel());
+      fAuthorization::setUserToken($user);
+      if (fRequest::get('session', 'bool', FALSE)) {
+        fSession::enablePersistence();
+      }
     }
     catch (fNotFoundException $e) {
       throw new fValidationException(__('User name or password incorrect.'));
-    }
-
-    // Log in
-    fAuthorization::setUserAuthLevel($user->getAuthLevel());
-    fAuthorization::setUserToken($user);
-    if (fRequest::get('session', 'bool', FALSE)) {
-      fSession::enablePersistence();
     }
   }
 
