@@ -149,8 +149,6 @@ class sCache extends fCache {
     else {
       throw new fEnvironmentException('Cache type is invalid');
     }
-
-    throw new fEnvironmentException('Cache configuration file could not be read');
   }
 
   /**
