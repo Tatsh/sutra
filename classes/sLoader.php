@@ -34,13 +34,6 @@ class sLoader extends fLoader {
   private static $router_classes_path = '';
 
   /**
-   * Class prefixes.
-   *
-   * @var array
-   */
-  private static $prefixes = NULL;
-
-  /**
    * All the current Sutra classes.
    *
    * @var array
