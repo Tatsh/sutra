@@ -62,6 +62,39 @@ class sCache extends fCache {
   private static $cwd = '';
 
   /**
+   * Throws an exception if the INI file is not readable or cannot be parsed.
+   *
+   * @throws fEnvironmentException If the site configuration INI file cannot
+   *   be read.
+   *
+   * @param string $file File name.
+   * @return array Array if the file could be parsed.
+   */
+  private static function readINIFile($file) {
+    if (!is_readable($file) || ($ini = parse_ini_file($file)) === FALSE) {
+      throw new fEnvironmentException('Cache configuration file could not be read');
+    }
+    return $ini;
+  }
+
+  private static function initMemcache($host, $port) {
+    if (!$host) {
+      throw new fEnvironmentException('To use Memcache, a host (memcache_host) and a port (memcache_port) must be specified');
+    }
+    if (!is_numeric($port)) {
+      throw new fEnvironmentException('To use Memcache, the port (memcache_port) must be an integer');
+    }
+    if (!class_exists('Memcache')) {
+      throw new fEnvironmentException('The Memcache extension does not appear to be installed');
+    }
+
+    $memcache = new Memcache;
+    $memcache->connect($host, (int)$port);
+
+    return $memcache;
+  }
+
+  /**
    * Initialize cache based on INI file.
    *
    * @throws fEnvironmentException If the INI file cannot be read; if the
@@ -78,57 +111,36 @@ class sCache extends fCache {
    */
   public function __construct() {
     $file = sConfiguration::getPath().'/cache.ini';
+    $ini = self::readINIFile($file);
+    $this->type = strtolower(isset($ini['type']) ? $ini['type'] : 'invalid');
 
-    if (is_readable($file)) {
-      $ini = parse_ini_file($file);
-      $this->type = strtolower(isset($ini['type']) ? $ini['type'] : 'invalid');
+    if ($this->type == 'memcache') {
+      $this->memcache_host = $ini['memcache_host'];
+      $this->memcache_port = $ini['memcache_port'];
+      $this->memcache = self::initMemcache($this->memcache_host, $this->memcache_port);
+    }
+    else if ($this->type == 'apc' || $this->type == 'xcache') {
+      parent::__construct($this->type);
+    }
+    else if ($this->type == 'file') {
+      $this->file_path = $ini['file_path'];
 
-      switch ($this->type) {
-        case 'memcache':
-          $this->memcache_host = $ini['memcache_host'];
-          $this->memcache_port = (int)$ini['memcache_port'];
-
-          if ($this->memcache_host === '' || !$this->memcache_port) {
-            throw new fEnvironmentException('To use Memcache, a host (memcache_host) and a port (memcache_port) must be specified.');
-          }
-
-          if (class_exists('Memcache', FALSE)) {
-            $this->memcache = new Memcache;
-            $this->memcache->connect($this->memcache_host, $this->memcache_port);
-            parent::__construct('memcache', $this->memcache);
-          }
-          else {
-            throw new fEnvironmentException('The Memcache extension does not appear to be installed.');
-          }
-          break;
-
-        case 'apc':
-        case 'xcache':
-          parent::__construct($this->type);
-          break;
-
-        case 'file':
-          $this->file_path = $ini['file_path'];
-
-          if (!$this->file_path) {
-            throw new fEnvironmentException('To use a file for cache, a file path (file_path) must be specified');
-          }
-
-          if (strpos($this->file_path, '..'.DIRECTORY_SEPARATOR) !== FALSE ||
-              strpos($this->file_path, DIRECTORY_SEPARATOR.'..') !== FALSE) {
-            throw new fProgrammerException('Do not use a relative path for your cache file.');
-          }
-
-          parent::__construct('file', $this->file_path);
-          break;
-
-        default:
-          throw new fEnvironmentException('Cache type is invalid.');
+      if (!$this->file_path) {
+        throw new fEnvironmentException('To use a file for cache, a file path (file_path) must be specified');
       }
+
+      if (strpos($this->file_path, '..'.DIRECTORY_SEPARATOR) !== FALSE ||
+        strpos($this->file_path, DIRECTORY_SEPARATOR.'..') !== FALSE) {
+        throw new fProgrammerException('Do not use a relative path for your cache file');
+      }
+
+      parent::__construct('file', $this->file_path);
     }
     else {
-      throw new fEnvironmentException('Cache configuration file could not be read.');
+      throw new fEnvironmentException('Cache type is invalid');
     }
+
+    throw new fEnvironmentException('Cache configuration file could not be read');
   }
 
   /**
