@@ -14,35 +14,6 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
     sAuthorization::setLoginPage('/login');
   }
 
-  public function testIsResource() {
-    $extensions = array(
-      'css',
-      'js',
-      'png',
-      'gif',
-      'jpeg',
-      'jpg',
-      'bmp',
-      'wbmp',
-    );
-
-    foreach ($extensions as $ext) {
-      $_SERVER['REQUEST_URI'] = 'http://localhost/file.'.$ext;
-      $this->assertTrue(sAuthorization::isResource(), "Failed to assert file.$ext as a resource.");
-    }
-
-    $extensions = array(
-      'bin',
-      'zip',
-      'obj',
-      'octet',
-    );
-    foreach ($extensions as $ext) {
-      $_SERVER['REQUEST_URI'] = 'http://localhost/file.'.$ext;
-      $this->assertFalse(sAuthorization::isResource(), "Failed to assert file.$ext as not a resource.");
-    }
-  }
-
   public function testInitialize() {
     sAuthorization::initialize();
   }
