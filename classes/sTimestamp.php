@@ -131,8 +131,9 @@ class sTimestamp extends fTimestamp {
    * @return int UNIX timestamp. If 0 is returned, the timestamp was invalid.
    */
   public static function rfc3339ToUNIX($rfc, $throw = FALSE) {
-    $matches = array();
     try {
+      $matches = array();
+
       if (preg_match(self::DATETIME_REGEX, $rfc, $matches)) {
         $year = abs((int)$matches[1]);
         $month = abs((int)$matches[2]);
@@ -170,6 +171,8 @@ class sTimestamp extends fTimestamp {
       else {
         throw new fValidationException('The value specified could not be validated as a RFC3339 timestamp.');
       }
+
+      return (int)$timestamp->format('U');
     }
     catch (fValidationException $e) {
       if ($throw) {
@@ -177,7 +180,5 @@ class sTimestamp extends fTimestamp {
       }
       return 0;
     }
-
-    return (int)$timestamp->format('U');
   }
 }

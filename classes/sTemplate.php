@@ -660,7 +660,6 @@ class sTemplate {
     $variables = array_merge($vars, $variables);
     $variables['title'] = $title;
     extract($variables);
-    $content = isset($vars['content']) ? $vars['content'] : $variables['content'];
 
     fHTML::sendHeader();
 

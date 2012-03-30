@@ -49,6 +49,48 @@ class sRouter {
   private static $route_files_paths = array();
 
   /**
+   * If the site is in production mode.
+   *
+   * @var boolean
+   */
+  private static $production_mode = FALSE;
+
+  /**
+   * Instance of sConfiguration.
+   *
+   * @var sConfiguration
+   */
+  private static $config = NULL;
+
+  /**
+   * Instance of sCache.
+   *
+   * @var sCache
+   */
+  private static $cache = NULL;
+
+  /**
+   * Key that the routes array is stored in cache.
+   *
+   * @var string
+   */
+  private static $routes_key = '';
+
+  /**
+   * Key that the route aliases array is stored in cache.
+   *
+   * @var string
+   */
+  private static $router_aliases_key = '';
+
+  /**
+   * If routing has begun. Set to TRUE right before Moor::run() is called.
+   *
+   * @var boolean
+   */
+  private static $started = FALSE;
+
+  /**
    * Add a path that has .route files.
    *
    * @param string $path Path (relative to site root or complete), without
@@ -69,32 +111,35 @@ class sRouter {
   }
 
   /**
-   * Get the routes. Reads from paths that are in the $route_files_paths array.
+   * Initialises the class.
    *
-   * If not in production mode, the routes will be reloaded on every page load.
-   *
-   * @throws fProgrammerException If no routes are found.
-   *
-   * @return array Array of paths mapped to callbacks.
+   * @return void
    */
-  public static function getRoutes() {
+  private static function initialize() {
     if (!self::$cwd) {
       self::$cwd = getcwd();
     }
 
-    $config = sConfiguration::getInstance();
-    $cache = sCache::getInstance();
-    $production_mode = $config->getProductionModeOn();
-    $routes_key = __CLASS__.'::'.self::$cwd.'::moor_routes';
-    $router_aliases_key = __CLASS__.'::'.self::$cwd.'::router_aliases';
+    self::$routes_key = __CLASS__.'::'.self::$cwd.'::moor_routes';
+    self::$router_aliases_key = __CLASS__.'::'.self::$cwd.'::router_aliases';
+    self::$config = sConfiguration::getInstance();
+    self::$production_mode = self::$config->getProductionModeOn();
+    self::$cache = sCache::getInstance();
 
-    if (!$production_mode || fURL::get() == '/admin/clear-cache') {
-      $cache->set($routes_key, array());
-      $cache->set($router_aliases_key, array());
+    if (!self::$production_mode || fURL::get() == '/admin/clear-cache') {
+      self::$cache->set(self::$routes_key, array());
+      self::$cache->set(self::$router_aliases_key, array());
     }
+  }
 
+  /**
+   * Initialises the aliases either from cache or the database.
+   *
+   * @return void
+   */
+  private static function initializeAliases() {
     if (empty(self::$aliases)) {
-      self::$aliases = $cache->get($router_aliases_key, array());
+      self::$aliases = self::$cache->get(self::$router_aliases_key, array());
 
       if (empty(self::$aliases)) {
         $alias_records = fRecordSet::build('RouterAlias');
@@ -103,51 +148,100 @@ class sRouter {
           self::$aliases[$record->getAlias()] = $record->getPath();
         }
 
-        $cache->set($router_aliases_key, self::$aliases);
+        self::$cache->set(self::$router_aliases_key, self::$aliases);
       }
     }
+  }
+
+  /**
+   * Gets the routes from cache.
+   *
+   * @return void
+   */
+  private static function getRoutesFromCache() {
+    if (empty(self::$routes)) {
+      self::$routes = self::$cache->get(self::$routes_key, array());
+    }
+  }
+
+  /**
+   * Gets all the .route files.
+   *
+   * @throws fProgrammerException If no .route files are found.
+   *
+   * @return array Array of .route files.
+   */
+  private static function getRouteFiles() {
+    $files = array();
+    foreach (self::$route_files_paths as $path) {
+      $files = array_merge($files, glob($path.'/*.route'));
+    }
+
+    if (empty($files)) {
+      throw new fProgrammerException('No routes found.');
+    }
+
+    return $files;
+  }
+
+  /**
+   * Parses .route file and adds all of its routes to self::$routes.
+   *
+   * @param string $file_path File path.
+   * @return void
+   *
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+   */
+  private static function addRoutesFromFile($file_path) {
+    try {
+      $file = new fFile($file_path);
+      foreach ($file as $line) {
+        $line = trim($line);
+
+        $matches = array();
+        preg_match('#^(/.*)\s+\=\s+([A-Za-z\:]+)#', $line, $matches);
+
+        if (empty($matches) || !isset($matches[1]) || !isset($matches[2])) {
+          continue;
+        }
+
+        $path = $matches[1];
+        $method = $matches[2];
+
+        $path = trim($path);
+        $method = trim($method);
+
+        self::$routes[$path] = $method;
+      }
+    }
+    catch (fNoRemainingException $e) {}
+  }
+
+  /**
+   * Get the routes. Reads from paths that are in the $route_files_paths array.
+   *
+   * If not in production mode, the routes will be reloaded on every page load.
+   *
+   * @throws fProgrammerException If no routes are found.
+   *
+   * @return array Array of paths mapped to callbacks.
+   *
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+   */
+  public static function getRoutes() {
+    self::initialize();
+    self::initializeAliases();
+    self::getRoutesFromCache();
 
     if (empty(self::$routes)) {
-      self::$routes = $cache->get($routes_key, array());
-
-      if (empty(self::$routes)) {
-        $files = array();
-        foreach (self::$route_files_paths as $path) {
-          $files = array_merge($files, glob($path.'/*.route'));
-        }
-
-        if (empty($files)) {
-          throw new fProgrammerException('No routes found.');
-        }
-
-        foreach ($files as $file) {
-          $file = new fFile($file);
-          try {
-            foreach ($file as $line) {
-              $line = trim($line);
-
-              $matches = array();
-              preg_match('#^(/.*)\s+\=\s+([A-Za-z\:]+)#', $line, $matches);
-
-              if (empty($matches) || !isset($matches[1]) || !isset($matches[2])) {
-                continue;
-              }
-
-              $path = $matches[1];
-              $method = $matches[2];
-
-              $path = trim($path);
-              $method = trim($method);
-
-              self::$routes[$path] = $method;
-            }
-          }
-          catch (fNoRemainingException $e) {}
-        }
-
-        $cache->set($routes_key, self::$routes);
+      $files = self::getRouteFiles();
+      foreach ($files as $file) {
+        self::addRoutesFromFile($file);
       }
+      self::$cache->set(self::$routes_key, self::$routes);
+    }
 
+    if (!self::$started) {
       foreach (self::$routes as $path => $method) {
         Moor::route($path, $method);
       }
@@ -188,6 +282,8 @@ class sRouter {
       Moor::setNotFoundCallback(self::$routes['/404']);
     }
 
+
+    self::$started = TRUE;
     Moor::run();
   }
 
@@ -253,7 +349,10 @@ class sRouter {
     }
     $last_modified = gmdate('D, d M Y H:i:s', $last_modified).' GMT';
 
-    header('Vary: Accept-Encoding');
+    if ($accept_encoding) {
+      header('Vary: Accept-Encoding');
+    }
+
     header('Cache-Control: max-age='.$cache_time); // 2 weeks
     header('Last-Modified: '.$last_modified);
     header('Etag: '.$etag);

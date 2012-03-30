@@ -28,7 +28,6 @@ class sPostRequest {
    */
   public static function callProcessorClasses() {
     $url = fURL::get();
-    $classes = array();
 
     foreach (get_declared_classes() as $class) {
       $reflect = new ReflectionClass($class);
@@ -67,6 +66,8 @@ class sPostRequest {
    * @return void
    *
    * @see sPostRequest::callProcessorClasses()
+   *
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function handle() {
     if (!fRequest::isPost()) {
