@@ -26,7 +26,7 @@ class sArray {
   public static function hasRequiredKeys(array $array, array $required_keys, $only_required = FALSE) {
     foreach ($required_keys as $key) {
       if (!array_key_exists($key, $array)) {
-        return FALSE;
+        return $key;
       }
     }
 
