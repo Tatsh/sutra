@@ -47,6 +47,7 @@ class sLoader extends fLoader {
    */
   private static $classes = array(
     'sProcessException',
+    'sArray',
     'sAuthorization',
     'sCache',
     'sConfiguration',
