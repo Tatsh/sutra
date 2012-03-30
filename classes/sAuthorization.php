@@ -32,7 +32,7 @@ class sAuthorization extends fAuthorization {
    *
    * @return boolean If the URL requested is to a resource.
    */
-  public static function isResource() {
+  private static function isResource() {
     $extensions = array(
       'css',
       'js',
@@ -64,6 +64,8 @@ class sAuthorization extends fAuthorization {
    * Initialise the class.
    *
    * @return void
+   *
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function initialize() {
     if (self::isResource()) {
@@ -105,6 +107,8 @@ class sAuthorization extends fAuthorization {
    * Get the guest user ID.
    *
    * @return integer The guest user ID.
+   *
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function getGuestUserId() {
     if (is_null(self::$guest_user_id)) {
