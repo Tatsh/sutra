@@ -12,9 +12,6 @@
  * @version 1.0
  */
 class sORMJSON extends fORMJSON {
-  const JSONToValue = 'sORMJSON::JSONToValue';
-  const valueToJSON = 'sORMJSON::valueToJSON';
-
   /**
    * Columns => class names registered.
    *
@@ -53,9 +50,9 @@ class sORMJSON extends fORMJSON {
     }
 
     if (!self::$callbacks_registered) {
-      fORM::registerHookCallback($class, 'post::loadFromIdentityMap()', self::JSONToValue);
-      fORM::registerHookCallback($class, 'post::loadFromResult()', self::JSONToValue);
-      fORM::registerHookCallback($class, 'pre::validate()', self::valueToJSON);
+      fORM::registerHookCallback($class, 'post::loadFromIdentityMap()', array(__CLASS__, 'JSONToValue'));
+      fORM::registerHookCallback($class, 'post::loadFromResult()', array(__CLASS__, 'JSONToValue'));
+      fORM::registerHookCallback($class, 'pre::validate()', array(__CLASS__, 'valueToJSON'));
       self::$callbacks_registered = TRUE;
     }
 
@@ -75,6 +72,8 @@ class sORMJSON extends fORMJSON {
    * @internal
    *
    * @return void
+   *
+   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public static function JSONToValue($object, &$values, &$old_values, &$related_records, &$cache) {
     $class = get_class($object);
@@ -98,6 +97,8 @@ class sORMJSON extends fORMJSON {
    * @internal
    *
    * @return void
+   *
+   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public static function valueToJSON($object, &$values, &$old_values, &$related_records, &$cache) {
     $class = get_class($object);
