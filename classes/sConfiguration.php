@@ -55,6 +55,68 @@ class sConfiguration {
   private static $configuration_files_path = './config';
 
   /**
+   * Setting keys to their types.
+   *
+   * @var array
+   */
+  private static $settings_to_type = array(
+    'site_name' => 'string',
+    'site_slogan' => 'string',
+    'cdn_urls' => 'array',
+    'template' => 'string',
+    'google_analytics_u_a' => 'string',
+    'site_text_direction' => 'string',
+    'site_language' => 'string',
+    'site_timezone' => 'string',
+    'allowed_email_domains' => 'array',
+    'disallowed_email_domains' => 'array',
+  );
+
+  /**
+   * Setting keys to their default values.
+   *
+   * @var array
+   */
+  private static $defaults = array(
+    'site_name' => 'No Name',
+    'site_slogan' => 'No Slogan',
+    'cdn_urls' => array(),
+    'template' => 'default',
+    'google_analytics_u_a' => 'UA-000000-00',
+    'site_text_direction' => 'ltr',
+    'site_language' => 'en',
+    'site_timezone' => 'GMT',
+    'allowed_email_domains' => array(),
+    'disallowed_email_domains' => array(),
+  );
+
+  /**
+   * Cast a value.
+   *
+   * @param mixed $value Value to cast.
+   * @param string $type Type to cast to. One of: 'string', 'array', 'boolean', 'bool'.
+   * @return string|array|boolean The value, casted.
+   */
+  private static function cast($value, $type) {
+    switch ($type) {
+      case 'string':
+        $value = (string)$value;
+        break;
+
+      case 'array':
+        $value = (array)$value;
+        break;
+
+      case 'boolean':
+      case 'bool':
+        $value = (bool)$value;
+        break;
+    }
+
+    return $value;
+  }
+
+  /**
    * Constructor. Private to prevent external instantiation.
    *
    * @throws fEnvironmentException If the site configuration INI file cannot
@@ -66,83 +128,41 @@ class sConfiguration {
     $file = self::$configuration_files_path.'/site.ini';
     self::$cwd = getcwd();
     $recache = FALSE;
+    $ini = parse_ini_file($file);
+    $production_mode_on = FALSE;
 
+    if ($ini === FALSE) {
+      throw new fEnvironmentException('Site configuration file could not be read.');
+    }
+
+    $production_mode_on = isset($ini['production_mode_on']) ? (bool)$ini['production_mode_on'] : FALSE;
     $cache = sCache::getInstance();
+    SiteVariable::setValue(self::getValidKeyName('production_mode_on'), $production_mode_on, 3600);
     $recache = !$cache->get(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached');
 
     if (!$recache) {
       return;
     }
 
-    if (is_readable($file)) {
-      $ini = parse_ini_file($file);
-      $cache = sCache::getInstance();
-
-      $defaults = array(
-        'site_name' => __('No Name'),
-        'site_slogan' => __('No Slogan'),
-        'cdn_urls' => array(),
-        'production_mode_on' => FALSE,
-        'template' => 'default',
-        'google_analytics_u_a' => 'UA-000000-00',
-        'site_text_direction' => 'ltr',
-        'site_language' => 'en',
-        'site_timezone' => 'Europe/London', // GMT
-        'allowed_email_domains' => array(),
-        'disallowed_email_domains' => array(),
-      );
-
-      $settings_to_type = array(
-        'site_name' => 'string',
-        'site_slogan' => 'string',
-        'cdn_urls' => 'array',
-        'production_mode_on' => 'bool',
-        'template' => 'string',
-        'google_analytics_u_a' => 'string',
-        'site_text_direction' => 'string',
-        'site_language' => 'string',
-        'site_timezone' => 'string',
-        'allowed_email_domains' => 'array',
-        'disallowed_email_domains' => 'array',
-      );
-
-      foreach ($settings_to_type as $setting_key => $type) {
-        if (isset($ini[$setting_key])) {
-          $value = $ini[$setting_key];
-          unset($ini[$setting_key]);
-
-          switch ($type) {
-            case 'string':
-              $value = (string)$value;
-              break;
-
-            case 'array':
-              $value = (array)$value;
-              break;
-
-            case 'boolean':
-            case 'bool':
-              $value = (bool)$value;
-              break;
-          }
-
-          SiteVariable::setValue(self::getValidKeyName($setting_key), $value, 3600);
-        }
-        else {
-          SiteVariable::setValue(self::getValidKeyName($setting_key), $defaults[$setting_key], 3600);
-        }
+    foreach (self::$settings_to_type as $setting_key => $type) {
+      if (isset($ini[$setting_key])) {
+        $value = self::cast($ini[$setting_key], $type);
+        SiteVariable::setValue(self::getValidKeyName($setting_key), $value, 3600);
       }
-
-      // Set the rest; there could be custom settings
-      foreach ($ini as $key => $value) {
-        SiteVariable::setValue(self::getValidKeyName($key), $value, 3600);
+      else {
+        SiteVariable::setValue(self::getValidKeyName($setting_key), self::$defaults[$setting_key], 3600);
       }
-
-      $cache->set(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached', time(), 3600);
-      return;
     }
 
-    throw new fEnvironmentException('Site configuration file could not be read.');
+    // Set the rest; there could be custom settings
+    foreach ($ini as $key => $value) {
+      if ($key == 'production_mode_on') {
+        continue;
+      }
+      SiteVariable::setValue(self::getValidKeyName($key), $value, 3600);
+    }
+
+    $cache->set(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached', time(), 3600);
   }
 
   /**
