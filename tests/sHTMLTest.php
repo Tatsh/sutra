@@ -33,7 +33,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
   /**
    * @covers sHTML::makeFormElement
    * @covers sHTML::formElementIDWithName
-   * @covers sHTML::getValidAttributeValue
+   * @covers sHTML::validAttributeValue
    * @covers sHTML::attributesString
    */
   public function testMakeFormElementSpecialAttributes() {
@@ -66,7 +66,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
   /**
    * @covers sHTML::makeFormElement
    * @covers sHTML::formElementIDWithName
-   * @covers sHTML::getValidAttributeValue
+   * @covers sHTML::validAttributeValue
    * @covers sHTML::attributesString
    */
   public function testMakeFormElementCustomAttributes() {
@@ -311,7 +311,7 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @covers sHTML::attributesString
-   * @covers sHTML::getValidAttributeValue
+   * @covers sHTML::validAttributeValue
    */
   public function testAttributesString() {
     // Not using array as class
