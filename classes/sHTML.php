@@ -515,10 +515,20 @@ class sHTML extends fHTML {
   /**
    * Check if a URL is a full URI or not.
    *
-   * @param string URL to check.
+   * @param string $url URL to check.
+   * @param array $other_protocols Other protocols to check.
    * @return bool TRUE if the path is full URI beginning with http or https, FALSE otherwise.
    */
-  public static function linkIsURI($url) {
+  public static function linkIsURI($url, array $other_protocols = array()) {
+    if (!empty($other_protocols)) {
+      foreach ($other_protocols as $protocol) {
+        $length = strlen($protocol);
+        if (substr($url, 0, $length) == $protocol) {
+          return TRUE;
+        }
+      }
+    }
+
     return substr($url, 0, 7) == 'http://' || substr($url, 0, 8) == 'https://' || $url[0] == '/';
   }
 
