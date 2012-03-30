@@ -209,12 +209,16 @@ class sHTML extends fHTML {
    */
   private static function makeTextarea($name, $label = '', array $attributes = array()) {
     $value = isset($attributes['value']) ? (string)$attributes['value'] : '';
+    $attributes['name'] = $name;
+
     unset($attributes['value']);
     unset($attributes['type']);
+
     $ret = $label;
     $ret .= '<textarea '.self::attributesString($attributes).'>';
     $ret .= self::encode($value);
     $ret .= '</textarea>';
+
     return $ret;
   }
 
@@ -264,6 +268,8 @@ class sHTML extends fHTML {
       }
       unset($attributes['options']);
     }
+
+    $attributes['name'] = $name;
 
     return $label.'<select '.self::attributesString($attributes).'>'.$options.'</select>';
   }
@@ -385,11 +391,10 @@ class sHTML extends fHTML {
    *
    * @param string $attribute_value Attribute value.
    * @param boolean $value Boolean value for the attribute.
-   *
    * @return boolean If this function returns FALSE, the attribute must be
    *   omitted.
    */
-  private static function getValidAttributeValue($attribute_name, $value) {
+  private static function validAttributeValue($attribute_name, $value) {
     // Assume that maybe this value is for a boolean attribute
     if (!array_key_exists($attribute_name, self::$special_enumerated_attributes)) {
       return FALSE;
@@ -431,7 +436,7 @@ class sHTML extends fHTML {
             continue;
           }
         }
-        else if ($test = self::getValidAttributeValue($key, $value)) {
+        else if ($test = self::validAttributeValue($key, $value)) {
           $value = $test;
         }
         else if ($value) {
@@ -544,7 +549,7 @@ class sHTML extends fHTML {
     preg_match_all("#(.*)\n#", $html, $matches);
     $str = '';
 
-    foreach ($matches as $index => $potentials) {
+    foreach ($matches as $potentials) {
       foreach ($potentials as $potential) {
         $potential = trim($potential);
 
@@ -587,7 +592,7 @@ class sHTML extends fHTML {
     $html = '<'.$type.' '.self::attributesString($attr).'>';
     $i = 1;
     $count = count($items);
-    foreach ($items as $path => $title) {
+    foreach ($items as $title) {
       $classes = array();
       if ($i == 1) {
         $classes[] = 'first';
