@@ -117,28 +117,36 @@ class sConfiguration {
   }
 
   /**
-   * Constructor. Private to prevent external instantiation.
+   * Throws an exception if the INI file is not readable or cannot be parsed.
    *
    * @throws fEnvironmentException If the site configuration INI file cannot
    *   be read.
+   *
+   * @param string $file File name.
+   * @return array Array if the file could be parsed.
+   */
+  private static function readINIFile($file) {
+    if (!is_readable($file) || ($ini = parse_ini_file($file)) === FALSE) {
+      throw new fEnvironmentException('Site configuration file could not be read.');
+    }
+    return $ini;
+  }
+
+  /**
+   * Constructor. Private to prevent external instantiation.
    *
    * @return sConfiguration
    */
   private function __construct() {
     $file = self::$configuration_files_path.'/site.ini';
     self::$cwd = getcwd();
-    $recache = FALSE;
-    $ini = parse_ini_file($file);
-    $production_mode_on = FALSE;
-
-    if ($ini === FALSE) {
-      throw new fEnvironmentException('Site configuration file could not be read.');
-    }
-
+    $ini = self::readINIFile($file);
     $production_mode_on = isset($ini['production_mode_on']) ? (bool)$ini['production_mode_on'] : FALSE;
     $cache = sCache::getInstance();
-    SiteVariable::setValue(self::getValidKeyName('production_mode_on'), $production_mode_on, 3600);
     $recache = !$cache->get(__CLASS__.'::'.self::$cwd.'::site_settings_last_cached');
+
+    SiteVariable::setValue(self::getValidKeyName('production_mode_on'), $production_mode_on, 3600);
+
 
     if (!$recache) {
       return;
