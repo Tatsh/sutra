@@ -47,7 +47,7 @@ class sGrammar extends fGrammar {
    * @see sGrammar::addDashizeRule()
    */
   public static function removeDashizeRule($original) {
-    if (!strlen($string)) {
+    if (!strlen($original)) {
       throw new fProgrammerException(
         "An empty string was passed to %s",
         __CLASS__ . '::removeDashizeRule()'
