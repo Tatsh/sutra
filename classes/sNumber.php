@@ -252,6 +252,20 @@ class sNumber extends fNumber {
   }
 
   /**
+   * Checks if a number is equal to its int-casted counterpart.
+   *
+   * @param mixed $value Value to check.
+   * @return boolean If the int-casted value is the same.
+   */
+  public static function isEqualToIntCast($value) {
+    if (!is_numeric($value)) {
+      return FALSE;
+    }
+
+    return $value == intval($value);
+  }
+
+  /**
    * Get the correct suffix for the current number.
    *
    * @return string Correct English suffix.
