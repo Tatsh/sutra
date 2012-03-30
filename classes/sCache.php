@@ -77,6 +77,16 @@ class sCache extends fCache {
     return $ini;
   }
 
+  /**
+   * Initialises a new Memcache object if the Memcache extension is available.
+   *
+   * @throws fEnvironmentException If the host is invalid, if the port is
+   *   invalid, or if the Memcache extension is not intalled.
+   *
+   * @param string $host Host to use.
+   * @param integer $port Port.
+   * @return Memcache
+   */
   private static function initMemcache($host, $port) {
     if (!$host) {
       throw new fEnvironmentException('To use Memcache, a host (memcache_host) and a port (memcache_port) must be specified');
