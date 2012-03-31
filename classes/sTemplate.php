@@ -150,6 +150,15 @@ class sTemplate {
   }
 
   /**
+   * Gets the correct templates path.
+   *
+   * @return string The path.
+   */
+  private static function getTemplatesPath() {
+    return self::$in_production_mode ? self::$production_mode_template_path : self::$templates_path;
+  }
+
+  /**
    * Load the template's JSON data into the class property $json.
    *
    * @return void
@@ -160,8 +169,9 @@ class sTemplate {
     }
 
     self::$in_production_mode = sConfiguration::getInstance()->getProductionModeOn('bool', FALSE);
+    $path = self::getTemplatesPath();
+    self::$json = fJSON::decode(file_get_contents($path.'/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
 
-    self::$json = fJSON::decode(file_get_contents(self::$templates_path.'/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
     if (!self::$json || !is_array(self::$json)) {
       throw new fProgrammerException('Template JSON was invalid. Verify the template JSON file with a linter.');
     }
@@ -177,7 +187,8 @@ class sTemplate {
    * @return void
    */
   public static function setActiveTemplate($template_name) {
-    $dir = self::$templates_path.'/'.$template_name;
+    $path = self::getTemplatesPath();
+    $dir = $path.'/'.$template_name;
     $json = $dir.'/'.$template_name.'.json';
 
     if (is_readable($json)) {
@@ -245,8 +256,8 @@ class sTemplate {
 
     fBuffer::startCapture();
 
-    $default = self::$templates_path.'/default/'.$filename.'.tpl.php';
-    $template = self::$templates_path.'/'.self::$template_name.'/'.$filename.'.tpl.php';
+    $default = self::getTemplatesPath().'/default/'.$filename.'.tpl.php';
+    $template = self::getTemplatesPath().'/'.self::$template_name.'/'.$filename.'.tpl.php';
 
     if (is_file($template)) {
       require $template;
@@ -291,7 +302,7 @@ class sTemplate {
     self::initialize();
     $css = array();
     $html = '';
-    $prefix = preg_replace('/^\./', '', self::$in_production_mode ? self::$production_mode_template_path : self::$templates_path);
+    $prefix = preg_replace('/^\./', '', self::getTemplatesPath());
 
     if (!isset(self::$json['css_files'])) {
       self::$json['css_files'] = array();
@@ -447,7 +458,7 @@ class sTemplate {
 
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
-    $prefix = preg_replace('/^\./', '/', self::$templates_path);
+    $prefix = preg_replace('/^\./', '/', self::getTemplatesPath());
 
     foreach (self::$json['conditional_head_js_files'] as $rule => $files) {
       foreach ($files as $file) {
@@ -472,7 +483,7 @@ class sTemplate {
    * @return boolean TRUE if the template exists, otherwise FALSE.
    */
   public static function templateExists($template_name) {
-    return file_exists(self::$templates_path.'/'.self::$template_name.'/'.$template_name.'.tpl.php');
+    return file_exists(self::getTemplatesPath().'/'.self::$template_name.'/'.$template_name.'.tpl.php');
   }
 
   /**
@@ -694,11 +705,12 @@ class sTemplate {
     fHTML::sendHeader();
 
     $route = str_replace('/', '-', substr($path, 1));
+    $templates_path = self::getTemplatesPath();
     $candidates = array(
-      self::$templates_path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
-      self::$templates_path.'/'.'default/page-'.$route.'.tpl.php',
-      self::$templates_path.'/'.self::$template_name.'/page.tpl.php',
-      self::$templates_path.'/'.'default'.'/page.tpl.php',
+      $templates_path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
+      $templates_path.'/'.'default/page-'.$route.'.tpl.php',
+      $templates_path.'/'.self::$template_name.'/page.tpl.php',
+      $templates_path.'/'.'default'.'/page.tpl.php',
     );
     foreach ($candidates as $file) {
       if (is_readable($file)) {
