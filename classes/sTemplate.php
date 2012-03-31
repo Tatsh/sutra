@@ -381,10 +381,14 @@ class sTemplate {
 
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
-    $prefix = preg_replace('/^\./', '', self::$templates_path);
+    $prefix = self::$resources_path;
+
+    if (!$prefix) {
+      $prefix = '/template';
+    }
 
     foreach (self::$json['head_js_files'] as $path) {
-      $url = $prefix.'/'.self::$template_name.'/'.$path.$time;
+      $url = $prefix.'/'.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
@@ -523,7 +527,6 @@ class sTemplate {
    * @return void
    */
   public static function setResourcesPath($path) {
-    new fDirectory($path);
     self::$resources_path = $path;
   }
 
