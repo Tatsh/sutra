@@ -570,14 +570,16 @@ class sTemplate {
     $scripts = '';
     $time = time();
     $arr = self::$javascript_files;
+    $cd = '';
 
     if (self::$in_production_mode) {
       $arr = self::$compiled_javascript_files;
+      $cdn = self::getACDN();
     }
 
     foreach ($arr as $filename) {
       $original = $filename;
-      $filename = self::$in_production_mode ? '/'.$filename : '/'.$filename.'?_='.$time;
+      $filename = self::$in_production_mode ? $cdn.'/'.$filename : '/'.$filename.'?_='.$time;
 
       if (sHTML::linkIsURI($original)) {
         $filename = $original;
