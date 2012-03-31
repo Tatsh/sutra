@@ -382,13 +382,18 @@ class sTemplate {
     $html = '';
     $time = !self::$in_production_mode ? '?_='.time() : '';
     $prefix = self::$resources_path;
+    $cdn = '';
+
+    if (self::$in_production_mode) {
+      $cdn = self::getACDN();
+    }
 
     if (!$prefix) {
       $prefix = '/template';
     }
 
     foreach (self::$json['head_js_files'] as $path) {
-      $url = $prefix.'/'.$path.$time;
+      $url = $cdn.$prefix.'/'.$path.$time;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
       }
