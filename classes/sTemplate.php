@@ -28,6 +28,13 @@ class sTemplate {
   private static $templates_path = './template';
 
   /**
+   * The templates path used when production mode is enabled.
+   *
+   * @var string
+   */
+  private static $production_mode_template_path = '';
+
+  /**
    * The conditional JavaScript placed in the head element (IE only).
    *
    * @var string
@@ -256,6 +263,18 @@ class sTemplate {
   }
 
   /**
+   * Set the template path used when production mode is enabled. If this is not
+   *   set, the default path will be used.
+   *
+   * @param string $path Path to use.
+   * @return void
+   */
+  public static function setProductionModeTemplatesPath($path) {
+    new fDirectory($path);
+    self::$production_mode_template_path = $path;
+  }
+
+  /**
    * Get the list of stylesheets in order. The template's JSON file dictates this order.
    *
    * Currently 'default' template has no stylesheets.
@@ -272,7 +291,7 @@ class sTemplate {
     self::initialize();
     $css = array();
     $html = '';
-    $prefix = preg_replace('/^\./', '', self::$templates_path);
+    $prefix = preg_replace('/^\./', '', self::$in_production_mode ? self::$production_mode_template_path : self::$templates_path);
 
     if (!isset(self::$json['css_files'])) {
       self::$json['css_files'] = array();
@@ -294,7 +313,7 @@ class sTemplate {
           }
 
           foreach ($files as $file) {
-            $css[$media] .= file_get_contents(self::$templates_path.'/'.self::$template_name.'/'.$file);
+            $css[$media] .= file_get_contents(self::$production_mode_template_path.'/'.self::$template_name.'/'.$file);
           }
         }
 
