@@ -168,7 +168,6 @@ class sTemplate {
       return;
     }
 
-    self::$in_production_mode = sConfiguration::getInstance()->getProductionModeOn('bool', FALSE);
     $path = self::getTemplatesPath();
     self::$json = fJSON::decode(file_get_contents($path.'/'.self::$template_name.'/'.self::$template_name.'.json'), TRUE);
 
@@ -187,6 +186,8 @@ class sTemplate {
    * @return void
    */
   public static function setActiveTemplate($template_name) {
+    self::$in_production_mode = sConfiguration::getInstance()->getProductionModeOn('bool', FALSE);
+
     $path = self::getTemplatesPath();
     $dir = $path.'/'.$template_name;
     $json = $dir.'/'.$template_name.'.json';
