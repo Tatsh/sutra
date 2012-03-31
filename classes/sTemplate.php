@@ -284,6 +284,7 @@ class sTemplate {
       $cwd = getcwd();
       $cached = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css');
       $cached_name = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css_name');
+      $cdn = self::getACDN();
 
       //$cached = NULL;
       if (is_null($cached) || is_null($cached_name)) {
@@ -329,7 +330,7 @@ class sTemplate {
       }
 
       foreach ($cached as $media => $css) {
-        $href = '/media/css/c'.$cached_name.'/'.urlencode(base64_encode($media)).'.css';
+        $href = $cdn.'/media/css/c'.$cached_name.'/'.urlencode(base64_encode($media)).'.css';
         $html .= sHTML::tag('link', array(
           'rel' => 'stylesheet',
           'type' => 'text/css',
