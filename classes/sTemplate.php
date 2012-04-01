@@ -688,7 +688,7 @@ class sTemplate {
       'logged_in' => (bool)fAuthorization::checkLoggedIn(),
       'user' => fAuthorization::getUserToken(),
       'production_mode' => self::$in_production_mode,
-      'logo_url' => fHTML::encode($cdn.$config->getSiteLogoPath('string')),
+      'logo_url' => fHTML::encode(($cdn ? $cdn.'/' : '').$config->getSiteLogoPath('string')),
     );
 
     foreach (self::getTemplateImplementationClassNames() as $class) {
