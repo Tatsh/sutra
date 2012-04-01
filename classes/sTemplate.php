@@ -664,6 +664,7 @@ class sTemplate {
     $config = sConfiguration::getInstance();
     $path = fURL::get();
     $class_path = implode(' ', self::$body_classes);
+    $cdn = self::getACDN();
 
     if ($path != '/') {
       $class_path .= ' page-'.str_replace('/', '-', substr($path, 1));
@@ -687,7 +688,7 @@ class sTemplate {
       'logged_in' => (bool)fAuthorization::checkLoggedIn(),
       'user' => fAuthorization::getUserToken(),
       'production_mode' => self::$in_production_mode,
-      'logo_url' => fHTML::encode($config->getSiteLogoPath('string')),
+      'logo_url' => fHTML::encode($cdn.$config->getSiteLogoPath('string')),
     );
 
     foreach (self::getTemplateImplementationClassNames() as $class) {
