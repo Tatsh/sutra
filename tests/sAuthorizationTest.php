@@ -6,7 +6,6 @@ require './00-global.php';
 
 class sAuthorizationTest extends PHPUnit_Framework_TestCase {
   public function setUp() {
-    // HACK
     $_SERVER['SERVER_NAME'] = 'localhost';
     $_SERVER['REQUEST_URI'] = 'http://localhost';
 
