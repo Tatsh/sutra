@@ -13,6 +13,14 @@
  */
 class sPostRequest {
   /**
+   * The key in session that holds the last POST values. The last POST values
+   *   are only stored when a validation error occurs.
+   *
+   * @var string
+   */
+  const LAST_POST_SESSION_KEY = 'sPostRequest::last_post';
+
+  /**
    * Path prefixes that do not need CSRF checking.
    *
    * @var array
@@ -51,6 +59,89 @@ class sPostRequest {
   }
 
   /**
+   * Handles AJAX requests.
+   *
+   * @return void
+   * @SuppressWarnings(PHPMD.ExitExpression)
+   */
+  protected static function ajaxHandle() {
+    try {
+      $url = fURL::get();
+      fJSON::sendHeader();
+      self::handleCommon();
+      // If any data needed to be sent it should've been printed in the callback
+    }
+    catch (fValidationException $e) {
+      $ret = array(
+        'error' => self::getErrorMessageFromException($e),
+        'csrf' => fRequest::generateCSRFToken($url),
+      );
+      print fJSON::encode($ret);
+    }
+    exit;
+  }
+
+  /**
+   * Checks if the path in use requires a CSRF.
+   *
+   * @param string $url URL to check.
+   * @return boolean If the path requires a CSRF (default TRUE).
+   */
+  protected static function requiresCSRF($url = NULL) {
+    if (!$url) {
+      $url = fURL::get();
+    }
+
+    foreach (self::$no_csrf_path_prefixes as $prefix) {
+      if (substr($url, 0, strlen($prefix)) === $prefix) {
+        return FALSE;
+      }
+    }
+
+    return TRUE;
+  }
+
+  /**
+   * Runs Moor's router.
+   *
+   * @return void
+   */
+  private static function useMoor() {
+    sRouter::getRoutes();
+    Moor::run();
+  }
+
+  /**
+   * The common POST handling processing code.
+   *
+   * @return void
+   */
+  private static function handleCommon() {
+    fRequest::validateCSRFToken(fRequest::get('csrf', 'string'));
+    self::useMoor();
+    self::callProcessorClasses();
+    self::deleteLastPOSTValues();
+  }
+
+  /**
+   * Gets the error message from the exception with tags and new lines
+   *   stripped, handling special cases as well.
+   *
+   * @param fValidationException $e Exception to use.
+   * @return string
+   */
+  private static function getErrorMessageFromException($e) {
+    $error = __(strip_tags($e->getMessage()));
+    $error = preg_replace("#(\n)+#", ' ', $error);
+
+    if (strpos($error, 'The form submitted could not be validated as authentic') !== FALSE) {
+      $error = __('An unknown error occurred. Please try again.');
+    }
+
+    return $error;
+  }
+
+  /**
    * Called from sCore::main(). If this is not a POST request, this function
    *   will return immediately. Otherwise, POST data will be processed and the
    *   browser will be redirected.
@@ -64,103 +155,76 @@ class sPostRequest {
    *   to the routing method to call sPostRequest::callProcessorClasses().
    *
    * @return void
-   *
    * @see sPostRequest::callProcessorClasses()
-   *
-   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+   * @SuppressWarnings(PHPMD.ExitExpression)
    */
   public static function handle() {
-    if (!fRequest::isPost()) {
-      return;
-    }
-
     try {
-      $url = fURL::get();
-      $no_csrf = FALSE;
-      foreach (self::$no_csrf_path_prefixes as $prefix) {
-        if (substr($url, 0, strlen($prefix)) === $prefix) {
-          $no_csrf = TRUE;
-          break;
-        }
-      }
-
-      if ($no_csrf) {
-        sRouter::getRoutes();
-        Moor::run();
-        exit;
+      if (!fRequest::isPost()) {
+        return;
       }
 
       if (fRequest::isAjax()) {
-        fJSON::sendHeader();
+        self::ajaxHandle();
       }
 
-      fRequest::validateCSRFToken(fRequest::get('csrf', 'string'));
-      sRouter::getRoutes();
-      Moor::run();
-      self::callProcessorClasses();
+      $url = fURL::get();
 
-      fSession::delete(__CLASS__.'::last_post');
-
-      if (!fRequest::isAjax()) {
-        $destination = fRequest::get('destination', 'string', '/');
-        $destination = fAuthorization::getRequestedURL(TRUE, $destination);
-        fURL::redirect($destination);
-        return;
+      if (!self::requiresCSRF($url)) {
+        self::useMoor();
+        exit;
       }
 
-      // AJAX request and we are complete
-      // If any data needed to be sent it should've been printed in the
-      //   callback
-      exit;
+      self::handleCommon();
+
+      $destination = fRequest::get('destination', 'string', '/');
+      $destination = fAuthorization::getRequestedURL(TRUE, $destination);
+      fURL::redirect($destination);
     }
     catch (fValidationException $e) {
-      $error = __(strip_tags($e->getMessage()));
-      $error = preg_replace("#(\n)+#", ' ', $error);
-
-      if (strpos($error, 'The form submitted could not be validated as authentic') !== FALSE) {
-        $error = __('An unknown error occurred. Please try again.');
-      }
-
-      if (!fRequest::isAjax()) {
-        // Store all POSTed values in session
-        $safe_post = array();
-        foreach ($_POST as $key => $value) {
-          $safe_post[$key] = fRequest::get($key);
-        }
-        fSession::set(__CLASS__.'::last_post', $safe_post);
-
-        // Redirect back to same page without /post
-        $url = explode('/', fURL::get());
-        $destination = array();
-
-        $count = sizeof($url) - 1;
-        $i = 0;
-        foreach ($url as $part) {
-          if ($part === 'post' && $i == $count) {
-            break;
-          }
-
-          $destination[] = $part;
-
-          $i++;
-        }
-
-        $destination = implode('/', $destination);
-
-        // Add error message to session
-        sMessaging::addError($error, $destination);
-        fURL::redirect($destination);
-        return;
-      }
-
-      $ret = array(
-        'error' => $error,
-        'csrf' => fRequest::generateCSRFToken(Moor::getRequestPath()),
-      );
-
-      print fJSON::encode($ret);
-      exit;
+      self::savePOSTValues();
+      sMessaging::addError(self::getErrorMessageFromException($e), self::getDestinationURL());
+      fURL::redirect($destination);
     }
+  }
+
+  /**
+   * Saves the POST values to sessions.
+   *
+   * @return void
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+   */
+  private static function savePOSTValues() {
+    $safe_post = array();
+    foreach ($_POST as $key => $value) {
+      $safe_post[$key] = fRequest::get($key);
+    }
+    fSession::set(self::LAST_POST_SESSION_KEY, $safe_post);
+  }
+
+  /**
+   * Gets the destination URL.
+   *
+   * @return string The destination URL.
+   */
+  private static function getDestinationURL() {
+    // Redirect back to same page without /post
+    $url = explode('/', fURL::get());
+    $destination = array();
+
+    $count = sizeof($url) - 1;
+    $i = 0;
+    foreach ($url as $part) {
+      if ($part === 'post' && $i == $count) {
+        break;
+      }
+
+      $destination[] = $part;
+
+      $i++;
+    }
+
+    return implode('/', $destination);
   }
 
   /**
@@ -169,7 +233,8 @@ class sPostRequest {
    * @return void
    */
   public static function restoreLastPOSTValues() {
-    foreach (fSession::get(__CLASS__.'::last_post', array()) as $key => $value) {
+    $values = fSession::get(self::LAST_POST_SESSION_KEY, array());
+    foreach ($values as $key => $value) {
       fRequest::set($key, $value);
     }
   }
@@ -180,6 +245,6 @@ class sPostRequest {
    * @return void
    */
   public static function deleteLastPOSTValues() {
-    fSession::delete(__CLASS__.'::last_post');
+    fSession::delete(self::LAST_POST_SESSION_KEY);
   }
 }
