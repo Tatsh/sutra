@@ -2,26 +2,11 @@
 require './00-global.php';
 
 class sTimestampTest extends PHPUnit_Framework_TestCase {
-  /**
-   * @expectedException fProgrammerException
-   */
-  public function testTimezoneStringWithOffset() {
-    sTimestamp::timezoneStringWithOffset(14);
-  }
-
-  public function testTimezoneStringWithOffsetValid() {
-    $this->assertEquals('Pacific/Auckland', sTimestamp::timezoneStringWithOffset(12));
-  }
-
   public function testFormatTimezoneWithNumber() {
     $this->assertEquals('-12:00', sTimestamp::formatTimezoneWithNumber(-12));
     $this->assertEquals('+08:00', sTimestamp::formatTimezoneWithNumber(8));
     $this->assertEquals('-08:00', sTimestamp::formatTimezoneWithNumber(-8));
     $this->assertEquals('+12:00', sTimestamp::formatTimezoneWithNumber(12));
-  }
-
-  public function testGetTimezones() {
-    $this->assertInternalType('array', sTimestamp::getTimezones());
   }
 
   /**
@@ -50,7 +35,7 @@ class sTimestampTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fValidationException
-   * @expectedExceptionMessage Invalid hour value.
+   * @expectedExceptionMessage The date/time specified, 2002-10-2 25:0:0, does not appear to be a valid date/time
    */
   public function testRfc3339ToUNIXBadHour() {
     sTimestamp::rfc3339ToUNIX('2002-10-02T25:00:00Z', TRUE);
@@ -58,7 +43,7 @@ class sTimestampTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fValidationException
-   * @expectedExceptionMessage Invalid day value.
+   * @expectedExceptionMessage The date/time specified, 2002-10-32 23:0:0, does not appear to be a valid date/time
    */
   public function testRfc3339ToUNIXBadDayNumber() {
     sTimestamp::rfc3339ToUNIX('2002-10-32T23:00:00Z', TRUE);
@@ -66,7 +51,7 @@ class sTimestampTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fValidationException
-   * @expectedExceptionMessage Invalid month value.
+   * @expectedExceptionMessage The date/time specified, 2002-13-31 23:0:0, does not appear to be a valid date/time
    */
   public function testRfc3339ToUNIXBadMonthNumber() {
     sTimestamp::rfc3339ToUNIX('2002-13-31T23:00:00Z', TRUE);
@@ -90,31 +75,23 @@ class sTimestampTest extends PHPUnit_Framework_TestCase {
     sTimestamp::rfc3339ToUNIX('0999-13-31T23:00:00Z', TRUE);
   }
 
-  /**
-   * @expectedException fValidationException
-   * @expectedExceptionMessage Invalid timezone value.
-   */
-  public function testRfc3339ToUNIXBadTimezoneTooLow() {
-    sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59-13:00', TRUE);
-  }
-
-  /**
-   * @expectedException fValidationException
-   * @expectedExceptionMessage Invalid timezone value.
-   */
-  public function testRfc3339ToUNIXBadTimezoneTooHigh() {
-    sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59+13:00', TRUE);
-  }
-
   public function testRfc3339ToUNIXNoExceptionBadTimestamp() {
-    $this->assertEquals(0, sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59+13:00'));
+    $this->assertEquals(FALSE, sTimestamp::rfc3339ToUNIX('2002-10-02T25:00:59+13:00'));
+    $this->assertEquals(FALSE, sTimestamp::rfc3339ToUNIX('2002-10-02T25:00:59Z'));
+    $this->assertEquals(FALSE, sTimestamp::rfc3339ToUNIX('2002-10-02T25:00:59.573Z'));
   }
 
   public function testRfc3339ToUNIX() {
     $result = sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59+10:00');
-    $this->assertInternalType('int', $result);
+    $this->assertInternalType('integer', $result);
+
+    $result = sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59.573+10:00');
+    $this->assertInternalType('integer', $result);
 
     $result = sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59Z');
-    $this->assertInternalType('int', $result);
+    $this->assertInternalType('integer', $result);
+
+    $result = sTimestamp::rfc3339ToUNIX('2002-10-02T22:00:59.573Z');
+    $this->assertInternalType('integer', $result);
   }
 }
