@@ -12,6 +12,56 @@
  * @version 1.0
  */
 class sJSONP extends fJSON {
+  private static $reserved_words = array(
+    'break',
+    'do',
+    'instanceof',
+    'typeof',
+    'case',
+    'else',
+    'new',
+    'var',
+    'catch',
+    'finally',
+    'return',
+    'void',
+    'continue',
+    'for',
+    'switch',
+    'while',
+    'debugger',
+    'function',
+    'this',
+    'with',
+    'default',
+    'if',
+    'throw',
+    'delete',
+    'in',
+    'try',
+    'class',
+    'enum',
+    'extends',
+    'super',
+    'const',
+    'export',
+    'import',
+    'implements',
+    'let',
+    'private',
+    'public',
+    'yield',
+    'interface',
+    'package',
+    'protected',
+    'static',
+    'null',
+    'true',
+    'false',
+  );
+
+  private static $identifier_syntax = '/^[$_\p{L}][$_\p{L}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*+$/u';
+
   /**
    * Overrides encode method to wrap around the callback received.
    *
@@ -44,57 +94,7 @@ class sJSONP extends fJSON {
    * @return boolean TRUE if the callback can be used, FALSE otherwise.
    */
   private static function isValidCallback($subject) {
-    $identifier_syntax = '/^[$_\p{L}][$_\p{L}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*+$/u';
-
-    $reserved_words = array(
-      'break',
-      'do',
-      'instanceof',
-      'typeof',
-      'case',
-      'else',
-      'new',
-      'var',
-      'catch',
-      'finally',
-      'return',
-      'void',
-      'continue',
-      'for',
-      'switch',
-      'while',
-      'debugger',
-      'function',
-      'this',
-      'with',
-      'default',
-      'if',
-      'throw',
-      'delete',
-      'in',
-      'try',
-      'class',
-      'enum',
-      'extends',
-      'super',
-      'const',
-      'export',
-      'import',
-      'implements',
-      'let',
-      'private',
-      'public',
-      'yield',
-      'interface',
-      'package',
-      'protected',
-      'static',
-      'null',
-      'true',
-      'false',
-    );
-
-    return preg_match($identifier_syntax, $subject) && !in_array(fUTF8::lower($subject), $reserved_words);
+    return preg_match(self::$identifier_syntax, $subject) && !in_array(fUTF8::lower($subject), self::$reserved_words);
   }
 
   // @codeCoverageIgnoreStart
