@@ -1,15 +1,15 @@
 <?php
 /**
- * Singleton class to manage Sutra-specific cache.
+ * Extension to sCache.
  *
  * @copyright Copyright (c) 2011 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
  * @package Sutra
- * @link http://www.example.com/
+ * @link http://www.sutralib.com/
  *
- * @version 1.0
+ * @version 1.01
  */
 class sCache extends fCache {
   /**
@@ -34,17 +34,17 @@ class sCache extends fCache {
    * Get a key unique to the site.
    *
    * @param string $key Key to use.
-   * @param string $class_prefix Class prefix to use. If not specified, sCache
-   *   will be used.
+   * @param string $prefix Class prefix to use. If not specified, 'sCache' will
+   *   be used.
    * @return string Key that can be used for cache storage.
    */
-  public static function getSiteUniqueKey($key, $class_prefix = NULL) {
+  public static function getSiteUniqueKey($key, $prefix = NULL) {
     self::initialize();
 
-    if (is_null($class_prefix)) {
-      $class_prefix = __CLASS__;
+    if (is_null($prefix)) {
+      $prefix = __CLASS__;
     }
 
-    return $class_prefix.'::'.self::$cwd.'::'.$key;
+    return $prefix.'::'.self::$cwd.'::'.$key;
   }
 }
