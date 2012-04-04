@@ -25,8 +25,9 @@ class sTimestamp extends fTimestamp {
    * @param float $value The timezone, can be decimal.
    * @return string String, such as +08:00.
    */
-  public static function formatTimezoneWithNumber($value) {
+  public static function formatTimezoneNumber($value) {
     $ret = '';
+    $value = (float)$value;
 
     if ($value < 0) {
       if (abs($value) >= 10) {
@@ -67,7 +68,7 @@ class sTimestamp extends fTimestamp {
    * @return integer|boolean UNIX timestamp or boolean FALSE. If FALSE is
    *   returned, the string was invalid.
    */
-  public static function rfc3339ToUNIX($rfc, $throw = FALSE) {
+  public static function RFC3339ToTimestamp($rfc, $throw = FALSE) {
     try {
       $matches = array();
 
