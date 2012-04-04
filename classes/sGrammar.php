@@ -85,21 +85,8 @@ class sGrammar extends fGrammar {
     if (isset(self::$dashize_rules[$string])) {
       $string = self::$dashize_rules[$string];
     }
-    else if (strpos($string, '-') !== FALSE && strtolower($string) == $string) {}
-    else if (strpos($string, '_') !== FALSE && strtolower($string) == $string) {
-      $string = str_replace('_', '-', $string);
-    }
-    else if (strpos($string, ' ') !== FALSE) {
-      $string = strtolower(preg_replace('#\s+#', '_', $string));
-    }
     else {
-      do {
-        $old_string = $string;
-        $string = preg_replace('/([a-zA-Z])([0-9])/', '\1-\2', $string);
-        $string = preg_replace('/([a-z0-9A-Z])([A-Z])/', '\1-\2', $string);
-      } while ($old_string != $string);
-
-      $string = strtolower($string);
+      $string = fURL::makeFriendly($string, NULL, '-');
     }
 
     self::$dashize_cache[$original] = $string;
