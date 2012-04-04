@@ -15,6 +15,18 @@ function sutraAutoload($class_name) {
   $file = '../classes/'.$class_name.'.php';
   if (file_exists($file)) {
     require_once $file;
+    return;
+  }
+
+  $file = '../needs-refactoring/'.$class_name.'.php';
+  if (file_exists($file)) {
+    require_once $file;
+    return;
+  }
+
+  $file = '../web-db-dependent/'.$class_name.'.php';
+  if (file_exists($file)) {
+    require_once $file;
   }
 }
 spl_autoload_register('sutraAutoload');
