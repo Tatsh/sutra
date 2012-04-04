@@ -35,12 +35,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
     return NULL;
   }
 
-  /**
-   * @covers sProcess::stripQuotesInArguments
-   */
   public function testConstructorWithArguments() {
     new sProcess('curl', 'a', '"b"', '\'c\'', 'd');
     new sProcess('curl -v -F "aa=1&b=2"');
+    new sProcess('curl', 'a');
+    new sProcess('curl', 'a', 'b', 'c');
   }
 
   /**
