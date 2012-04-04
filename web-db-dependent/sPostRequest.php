@@ -30,6 +30,16 @@ class sPostRequest {
   );
 
   /**
+   * Registered callbacks.
+   *
+   * @var array
+   */
+  private static $registered_callbacks = array(
+    'after' => array('*' => array()),
+    'before' => array('*' => array()),
+  );
+
+  /**
    * Call the processor classes for this URL.
    *
    * @return void
@@ -56,6 +66,40 @@ class sPostRequest {
    */
   public static function addNoCSRFPrefix($path) {
     self::$no_csrf_path_prefixes[] = $path;
+  }
+
+  /**
+   * Register a callback to be called after before or after validation.
+   *   Callbacks registered should have no knowledge of other registered
+   *   callbacks.
+   *
+   * @param callback $callback Callback.
+   * @param string $when When to call. One of: 'after' for after successful
+   *   validation,'before' for before any processing by the routing method.
+   * @param string $url URL (beginning with /) that this will be called for. By
+   *   default, this is all URLs.
+   * @return void
+   */
+  public static function registerCallback($callback, $when = 'after', $url = '*') {
+    $when = strtolower($when);
+
+    if ($when !== 'after' && $when !== 'before') {
+      throw new fProgrammerException('Invalid when value specified, "%s". Must be one of: before, after.', $when);
+    }
+
+    self::$registered_callbacks[$when][] = $callback;
+  }
+
+  /**
+   * Calls registered callbacks.
+   *
+   * @param string $when One of: 'after', 'before'.
+   * @return void
+   */
+  private static function callCallbacks($when) {
+    foreach (self::$registered_callbacks[$when] as $callback) {
+      $callback();
+    }
   }
 
   /**
@@ -164,6 +208,8 @@ class sPostRequest {
         return;
       }
 
+      self::callCallbacks('before');
+
       if (fRequest::isAjax()) {
         self::ajaxHandle();
       }
@@ -176,6 +222,8 @@ class sPostRequest {
       }
 
       self::handleCommon();
+
+      self::callCallbacks('after');
 
       $destination = fRequest::get('destination', 'string', '/');
       $destination = fAuthorization::getRequestedURL(TRUE, $destination);
