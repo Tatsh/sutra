@@ -7,11 +7,18 @@
  * @license http://www.opensource.org/licenses/mit-license.php
  *
  * @package Sutra
- * @link http://www.example.com/
+ * @link http://www.sutralib.com/
  *
- * @version 1.0
+ * @version 1.01
  */
 class sTemplate {
+  /**
+   * The fCache instance.
+   *
+   * @var fCache
+   */
+  private static $cache = NULL;
+
   /**
    * The template name. Matches directory name in './template'. Defaults to
    *   'default'.
@@ -32,7 +39,7 @@ class sTemplate {
    *
    * @var string
    */
-  private static $production_mode_template_path = '';
+  private static $production_mode_template_path = './template';
 
   /**
    * The conditional JavaScript placed in the head element (IE only).
@@ -105,6 +112,85 @@ class sTemplate {
   private static $resources_path = '';
 
   /**
+   * If resources such as CSS and JavaScript while not in production mode
+   *   should be printed with query strings added to prevent caching (in
+   *   particular with IE).
+   *
+   * @var boolean
+   */
+  private static $query_strings_enabled = TRUE;
+
+  /**
+   * Set the fCache instance sTemplate will use.
+   *
+   * @param fCache $cache The cache object.
+   * @return void
+   */
+  public static function setCache(fCache $cache) {
+    self::$cache = $cache;
+  }
+
+  /**
+   * Gets the fCache instance this is using.
+   *
+   * @throws fProgrammerException If cache is NULL.
+   *
+   * @return fCache The fCache instance.
+   * @see sTemplate::setCache()
+   */
+  public static function getCache() {
+    if (!self::$cache) {
+      throw new fProgrammerException('Cache must be set by calling %s.', __CLASS__.'::'.__FUNCTION__.'()');
+    }
+    return self::$cache;
+  }
+
+  /**
+   * Set the current mode. In production mode, the site will use minified CSS
+   *   and only minified JavaScript files which are added using
+   *   sTemplate::addMinifiedJavaScriptFile().
+   *
+   * In development mode, the site will use the CSS and JavaScript files, and
+   *   will append a query string to each resource to prevent caching by
+   *   default. This can be disabled by calling:
+   *   sTemplate::enableQueryStrings() with FALSE as the first argument.
+   *
+   * @param string $mode One of 'development' or 'production'.
+   * @return void
+   * @see sTemplate::addMinifiedJavaScriptFile()
+   * @see sTemplate::enableQueryStrings()
+   */
+  public static function setMode($mode = 'development') {
+    $valid_modes = array('development', 'production');
+
+    if (!in_array($mode, $valid_modes)) {
+      throw new fProgrammerException('Invalid mode, "%s", specified. Must be one of: %s.', implode(', ', $valid_modes));
+    }
+
+    self::$in_production_mode = $mode != 'development' ? TRUE : FALSE;
+  }
+
+  /**
+   * Get the current working mode.
+   *
+   * @return string One of: 'development', 'production'.
+   */
+  public static function getMode() {
+    return self::$in_production_mode ? 'production' : 'development';
+  }
+
+  /**
+   * Enable or disable query strings on resource URLs such as CSS while in
+   *   development mode.
+   *
+   * @param boolean $bool Value to set. TRUE or FALSE.
+   * @return void
+   */
+  public static function enableQueryStrings($bool = TRUE) {
+    self::$query_strings_enabled = $bool ? TRUE : FALSE;
+  }
+
+  /**
    * Set the templates path.
    *
    * The path is run through fDirectory. If it is not useable, then
@@ -116,7 +202,7 @@ class sTemplate {
    * @see fDirectory::__construct()
    */
   public static function setTemplatesPath($path) {
-    $dir = new fDirectory($path);
+    new fDirectory($path);
     self::$templates_path = str_replace('\\', '/', $path);
   }
 
@@ -311,7 +397,7 @@ class sTemplate {
     }
 
     if (self::$in_production_mode) {
-      $cache = sCache::getInstance();
+      $cache = self::getCache();
       $cwd = getcwd();
       $cached = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css');
       $cached_name = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css_name');
@@ -616,7 +702,11 @@ class sTemplate {
 
     foreach ($arr as $filename) {
       $original = $filename;
-      $filename = self::$in_production_mode ? $cdn.'/'.$filename : '/'.$filename.'?_='.$time;
+      $filename = self::$in_production_mode ? $cdn.'/'.$filename : '/'.$filename;
+
+      if (self::$query_strings_enabled && !self::$in_production_mode) {
+        $filename .= '?_='.$time;
+      }
 
       if (sHTML::linkIsURI($original)) {
         $filename = $original;
@@ -632,7 +722,8 @@ class sTemplate {
   }
 
   /**
-   * Add a body class.
+   * Add a body class. This would normally be output in the class attribute of
+   *   the &lt;body&gt; element.
    *
    * @param string $class_name Class name to add.
    * @return void
