@@ -50,13 +50,6 @@ class sProcess {
   private $popen_handle = NULL;
 
   /**
-   * Mode for popen() but simplified. Only 'w' or 'r' are accepted.
-   *
-   * @var string
-   */
-  private $popen_mode = 'w';
-
-  /**
    * File to pipe output to when using mode 'w' with popen().
    * @var fFile
    */
@@ -84,6 +77,69 @@ class sProcess {
   private $redirect_standard_error = FALSE;
 
   /**
+   * Where standard error gets sent to.
+   *
+   * @var string
+   */
+  private $stderr_target = '/dev/null';
+
+  /**
+   * Strips double and singular surrounding quotes out of all arguments.
+   *
+   * @return void
+   */
+  private function stripQuotesInArguments() {
+    foreach ($this->arguments as $key => $arg) {
+      $end = strlen($arg) - 1;
+      if (($arg[0] === '"' && $arg[$end] === '"') || ($arg[0] === '\'' && $arg[$end] === '\'')) {
+        $this->arguments[$key] = substr($arg, 1, $end - 1);
+      }
+
+      $this->arguments[$key] = trim($arg);
+    }
+  }
+
+  /**
+   * Parses the name and arguments from the arguments given to __construct().
+   *
+   * @param array $arguments Arguments passed.
+   * @return void
+   */
+  private function parseNameAndArguments(array $arguments) {
+    $count = count($arguments);
+
+    // new sProcess(array('curl', 'a', 'b', 'c'))
+    if (is_array($arguments[0]) &&  $count == 1) {
+      $this->program = $arguments[0][0];
+      $this->arguments = array_slice($arguments[0], 1);
+    }
+    // new sProcess('curl', array('a', 'b', 'c'))
+    else if (is_string($arguments[0]) && $count == 2) {
+      $this->program = $arguments[0];
+
+      if (is_array($arguments[1])) {
+        $this->arguments = $arguments[1];
+      }
+      else {
+        // new sProcess('curl', 'a', 'b', 'c', 'd')
+        $this->arguments = array_slice($arguments, 1);
+      }
+    }
+    // new sProcess('curl a b c d')
+    else {
+      $args = explode(' ', $arguments[0]);
+      $this->program = trim($args[0]);
+      $this->arguments = array_slice($args, 1);
+    }
+
+    if (isset($this->arguments[0]) && is_array($this->arguments[0])) {
+      $this->arguments = $this->arguments[0];
+    }
+
+    $this->stripQuotesInArguments();
+  }
+
+  /**
    * Constructor.
    *
    * On Windows, can include the .exe but this will be removed.
@@ -91,88 +147,23 @@ class sProcess {
    * You may also pass arguments to this instead of an array.
    *   Example: new sProcess('app', '--help').
    *
+   * @throws fProgrammerException If the binary is invalid.
+   *
    * @param array|string $name If string, the program to run, optionally with
    *   path and arguments. If array, each part of the command line separated.
    *   These will be implode()'d with spaces.
    * @return sProcess The object.
    */
   public function __construct($name) {
-    $args = func_get_args();
+    $this->parseNameAndArguments(func_get_args());
 
-    if (is_array($name)) {
-      $this->program = $name[0];
-    }
-    else if (sizeof($args) > 1) {
-      $this->program = $name[0];
-      $name = $args;
-    }
-    else {
-      $name = explode(' ', $name);
-
-      foreach ($name as $key => $value) {
-        $name[$key] = trim($value);
-      }
-
-      $this->program = $name[0];
-    }
-
-    unset($name[0]);
-    $this->arguments = $name;
-
-    // Would be better to do the matching ends with regexes
-    // For now, '' and "" are supported but not in combination with ``
-    foreach ($this->arguments as $key => $arg) {
-      if ($arg[0] === '"') {
-        $found_end = FALSE;
-        $i = $key + 1;
-        while (!$found_end) {
-          $this->arguments[$key] .= ' '.$this->arguments[$i];
-
-          if (substr($this->arguments[$i], -1) === '"') {
-            $this->arguments[$key] = substr($this->arguments[$key], 1, -1);
-            $found_end = TRUE;
-          }
-
-          unset($this->arguments[$i]);
-
-          $i++;
-        }
-      }
-      else if ($arg[0] === '\'') {
-        $found_end = FALSE;
-        $i = $key + 1;
-        while (!$found_end) {
-          $this->arguments[$key] .= ' '.$this->arguments[$i];
-
-          if (substr($this->arguments[$i], -1) === '\'') {
-            $this->arguments[$key] = substr($this->arguments[$key], 1, -1);
-            $found_end = TRUE;
-          }
-
-          unset($this->arguments[$i]);
-
-          $i++;
-        }
-      }
-      else if ($arg[0] === '`') {
-        $found_end = FALSE;
-        $i = $key + 1;
-        while (!$found_end) {
-          $this->arguments[$key] .= ' '.$this->arguments[$i];
-
-          if (substr($this->arguments[$i], -1) === '`') {
-            $found_end = TRUE;
-          }
-
-          unset($this->arguments[$i]);
-
-          $i++;
-        }
-      }
-    }
-
-    if (self::checkOS('windows') && substr($this->program, 0, -4) === '.exe' && $pos = strpos($this->program, '.exe')) {
+    $pos = strpos($this->program, '.exe');
+    if (self::checkOS('windows') && substr($this->program, 0, -4) === '.exe' && $pos !== FALSE) {
       $this->program = substr(0, $pos);
+    }
+
+    if (!self::exists($this->program)) {
+      throw new fProgrammerException('The executable specified, "%s", does not exist or is not in the path.', $this->program);
     }
 
     $this->work_dir = new fDirectory('.');
@@ -180,16 +171,19 @@ class sProcess {
   }
 
   /**
-   * Set the working directory.
+   * Set the working directory. Note that this changes into the specified
+   *   directory, so you may want to save the current directory before calling
+   *   this method.
    *
    * @throws fProgrammerException If the working directory is not writable or does not exist.
    *
    * @return void
+   * @see getcwd()
    */
   public function setWorkingDirectory($dir) {
     $dir = new fDirectory($dir);
     if (!$dir->isWritable()) {
-      throw new fProgrammerException('Working directory %s is not writable.', $dir);
+      throw new fProgrammerException('Working directory "%s" is not writable.', $dir->getName());
     }
     $this->work_dir = $dir;
     chdir($this->work_dir->getPath());
@@ -217,8 +211,8 @@ class sProcess {
    *   If not passed, will use environment variables.
    * @return void
    */
-  static public function setPath($path = NULL) {
-    if (is_null(self::$path)) {
+  public static function setPath($path = NULL) {
+    if (is_null($path)) {
       if (self::checkOS('windows')) {
         self::$path = getenv('Path');
       }
@@ -235,12 +229,13 @@ class sProcess {
   }
 
   /**
-   * Get the list of paths.
+   * Get the list of paths from the environment variables PATH (UNIX and
+   *   UNIX-like) or Path (Windows).
    *
    * @param boolean $array Return array if set to TRUE.
    * @return mixed
    */
-  static public function getPath($array = FALSE) {
+  public static function getPath($array = FALSE) {
     self::setPath();
     return $array ? explode(':', self::$path) : self::$path;
   }
@@ -253,26 +248,19 @@ class sProcess {
    *   but that is not required.
    * @return boolean TRUE If the binary is found, FALSE otherwise.
    */
-  static public function exists($bin_name) {
-    $test = explode('/', $bin_name);
-    $other = explode('\\', $bin_name);
-    if (sizeof($test) > 1) {
-      $bin_name = end($test);
-    }
-    if (sizeof($other)) {
-      $bin_name = end($test);
-    }
-    if (fCore::checkOS('windows') && strpos($bin_name, '.exe') === FALSE) {
+  private static function exists($bin_name) {
+    if (self::checkOS('windows') && substr(strtolower($bin_name), -4, 4) === FALSE) {
       $bin_name .= '.exe';
     }
 
-    self::setPath();
-    $paths = explode(':', self::$path);
+    $paths = self::getPath(TRUE);
     foreach ($paths as $path) {
       if (is_file($path.'/'.$bin_name)) {
         return TRUE;
       }
     }
+
+    return FALSE;
   }
 
   /**
@@ -291,7 +279,8 @@ class sProcess {
    * @throws sProcessException If tossing is enabled, and the return value
    *   does not match the one passed.
    *
-   * @param int $rv Return value expected. Default is 0.
+   * @param int $rv Return value expected. Default is 0. Ignored if the class
+   *   is not set to throw an exception on an invalid return value.
    * @return string Output of the program.
    */
   public function execute($rv = 0) {
@@ -302,7 +291,7 @@ class sProcess {
     exec($cmd, $output, $ret);
 
     if ($this->toss && $ret !== $rv) {
-      throw new sProcessException('Return value incorrect.');
+      throw new sProcessException('Return value incorrect');
     }
 
     return implode("\n", $output);
@@ -333,7 +322,7 @@ class sProcess {
   private function commandLine($popen = FALSE) {
     $args = array();
     foreach ($this->arguments as $arg) {
-      if ($arg[0] !== '-' && $arg[0] !== '|' && $arg[0] !== '`') {
+      if ($arg[0] !== '-' && $arg[0] !== '|') {
         $args[] = escapeshellarg($arg);
       }
       else {
@@ -344,16 +333,10 @@ class sProcess {
     array_unshift($args, $this->program);
 
     if ($this->redirect_standard_error) {
-      // No idea if this works
-      if (self::checkOS('windows')) {
-        $args[] = '2>nul';
-      }
-      else {
-        $args[] = '2>/dev/null';
-      }
+      $args[] = '2>'.$this->stderr_target;
     }
 
-    if ($popen && $this->popen_mode === 'w') {
+    if ($popen) {
       $args[] = '>';
       $args[] = escapeshellarg($this->getTemporaryFileName());
     }
@@ -364,24 +347,18 @@ class sProcess {
   /**
    * Begin an interactive session with the process.
    *
-   * @param $mode A file mode, such as 'w+'.
    * @return sProcess The object to allow for method chaining.
    *
    * @see popen()
    */
-  public function beginInteractive($mode = 'w') {
+  public function beginInteractive() {
     if (!is_null($this->popen_handle)) {
       throw new fProgrammerException('Attempted to open an interactive session when there is already one active.');
     }
 
-    if ($mode !== 'w' && $mode !== 'r') {
-      throw new fProgrammerException('Invalid mode argument. Valid values: r, w.');
-    }
-
-    $this->popen_mode = $mode;
     $cmd = $this->commandLine(TRUE);
     fCore::debug('Executing: '.$cmd);
-    $this->popen_handle = popen($cmd, $mode);
+    $this->popen_handle = popen($cmd, 'w');
 
     return $this;
   }
@@ -389,28 +366,42 @@ class sProcess {
   /**
    * Redirect standard error.
    *
-   * @param $bool bool Defauls to TRUE. Class instantiates with this set to
+   * @param boolean $bool Defauls to TRUE. Class instantiates with this set to
    *   FALSE.
+   * @param string $where Where the output should go to. Example could be '&1'
+   *   or a file name.
    * @return void
    */
-  public function redirectStandardError($bool = TRUE) {
+  public function redirectStandardError($bool = TRUE, $where = NULL) {
     if (!is_null($this->popen_handle)) {
       throw new fProgrammerException('Attempted to set setting to program already running.');
     }
 
+    if (is_null($where)) {
+      if (self::checkOS('windows')) {
+        $where = 'nul';
+      }
+      else {
+        $where = '/dev/null';
+      }
+    }
+
     $this->redirect_standard_error = $bool;
+    $this->stderr_target = $where;
   }
 
   /**
    * Redirect standard error. Convenience alias for redirectStandardError().
    *
-   * @param $bool Defauls to TRUE.
+   * @param boolean $bool Defauls to TRUE.
+   * @param string $where Where the output should go to. Example could be '&1'
+   *   or a file name.
    * @return void
    *
    * @see sProcess::redirectStandardError()
    */
-  public function redirectStdErr($bool = TRUE) {
-    self::redirectStandardError($bool);
+  public function redirectStdErr($bool = TRUE, $where = NULL) {
+    self::redirectStandardError($bool, $where);
   }
 
   /**
@@ -428,19 +419,13 @@ class sProcess {
     if (is_null($this->popen_handle)) {
       throw new fProgrammerException('Attempted to write to non-existent handle.');
     }
-    if ($this->popen_mode !== 'w') {
-      throw new fProgrammerException('Attempted to write to non-writable handle.');
-    }
 
     $args = func_get_args();
     $string = substr(call_user_func_array('sprintf', $args), 0, 100) . '...';
     fCore::debug('Writing '.$string.' to handle.');
 
     array_unshift($args, $this->popen_handle);
-    $ret = call_user_func_array('fprintf', $args);
-    if (!$ret) {
-      throw new sProcessException('Could not write to handle or string was zero length.');
-    }
+    call_user_func_array('fprintf', $args);
   }
 
   /**
