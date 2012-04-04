@@ -183,9 +183,7 @@ class sPostRequest {
    *   'sPostRequest::last_post'.
    *
    * If the URL is exempt from CSRF validation, then this class will simply
-   *   run Moor::run() and exit. If more processing is required based on
-   *   classes that implement the sPostRequestProcessor interface, it is up
-   *   to the routing method to call sPostRequest::callProcessorClasses().
+   *   run Moor::run() and exit.
    *
    * @return void
    * @see sPostRequest::callProcessorClasses()
