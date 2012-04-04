@@ -94,8 +94,6 @@ class sProcess {
       if (($arg[0] === '"' && $arg[$end] === '"') || ($arg[0] === '\'' && $arg[$end] === '\'')) {
         $this->arguments[$key] = substr($arg, 1, $end - 1);
       }
-
-      $this->arguments[$key] = trim($arg);
     }
   }
 
@@ -107,33 +105,35 @@ class sProcess {
    */
   private function parseNameAndArguments(array $arguments) {
     $count = count($arguments);
+    $is_string = is_string($arguments[0]);
 
     // new sProcess(array('curl', 'a', 'b', 'c'))
     if (is_array($arguments[0]) &&  $count == 1) {
-      $this->program = $arguments[0][0];
+      $this->program = trim($arguments[0][0]);
       $this->arguments = array_slice($arguments[0], 1);
     }
     // new sProcess('curl', array('a', 'b', 'c'))
-    else if (is_string($arguments[0]) && $count == 2) {
-      $this->program = $arguments[0];
+    // new sProcess('curl', 'a')
+    else if ($is_string && $count == 2) {
+      $this->program = trim($arguments[0]);
 
       if (is_array($arguments[1])) {
         $this->arguments = $arguments[1];
       }
       else {
-        // new sProcess('curl', 'a', 'b', 'c', 'd')
-        $this->arguments = array_slice($arguments, 1);
+        $this->arguments = array((string)$arguments[1]);
       }
     }
     // new sProcess('curl a b c d')
-    else {
+    else if ($is_string && $count == 1) {
       $args = explode(' ', $arguments[0]);
       $this->program = trim($args[0]);
       $this->arguments = array_slice($args, 1);
     }
-
-    if (isset($this->arguments[0]) && is_array($this->arguments[0])) {
-      $this->arguments = $this->arguments[0];
+    // new sProcess('curl', 'a', 'b', 'c','d')
+    else {
+      $this->program = trim($arguments[0]);
+      $this->arguments = array_slice($arguments, 1);
     }
 
     $this->stripQuotesInArguments();
