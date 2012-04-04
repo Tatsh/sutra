@@ -40,25 +40,6 @@ class sPostRequest {
   );
 
   /**
-   * Call the processor classes for this URL.
-   *
-   * @return void
-   */
-  public static function callProcessorClasses() {
-    $url = fURL::get();
-
-    foreach (get_declared_classes() as $class) {
-      $reflect = new ReflectionClass($class);
-      if ($reflect->implementsInterface('sPostRequestProcessor')) {
-        $urls = fCore::call($class.'::getURLs');
-        if (in_array($url, $urls)) {
-          fCore::call($class.'::submit');
-        }
-      }
-    }
-  }
-
-  /**
    * Add a path prefix that does not need a CSRF check.
    *
    * @param string $path Path prefix with leading / and optional ending /.
@@ -87,7 +68,7 @@ class sPostRequest {
       throw new fProgrammerException('Invalid when value specified, "%s". Must be one of: before, after.', $when);
     }
 
-    self::$registered_callbacks[$when][] = $callback;
+    self::$registered_callbacks[$when][$url][] = $callback;
   }
 
   /**
@@ -97,8 +78,16 @@ class sPostRequest {
    * @return void
    */
   private static function callCallbacks($when) {
-    foreach (self::$registered_callbacks[$when] as $callback) {
+    foreach (self::$registered_callbacks[$when]['*'] as $callback) {
       $callback();
+    }
+
+    $url = fURL::get();
+
+    if (isset(self::$registered_callbacks[$when][$url])) {
+      foreach (self::$registered_callbacks[$when][$url] as $callback) {
+        $callback();
+      }
     }
   }
 
@@ -110,15 +99,16 @@ class sPostRequest {
    */
   protected static function ajaxHandle() {
     try {
-      $url = fURL::get();
       fJSON::sendHeader();
+      self::callCallbacks('before');
       self::handleCommon();
+      self::callCallbacks('after');
       // If any data needed to be sent it should've been printed in the callback
     }
     catch (fValidationException $e) {
       $ret = array(
         'error' => self::getErrorMessageFromException($e),
-        'csrf' => fRequest::generateCSRFToken($url),
+        'csrf' => fRequest::generateCSRFToken(fURL::get()),
       );
       print fJSON::encode($ret);
     }
@@ -163,7 +153,6 @@ class sPostRequest {
   private static function handleCommon() {
     fRequest::validateCSRFToken(fRequest::get('csrf', 'string'));
     self::useMoor();
-    self::callProcessorClasses();
     self::deleteLastPOSTValues();
   }
 
@@ -208,13 +197,13 @@ class sPostRequest {
         return;
       }
 
-      self::callCallbacks('before');
-
       if (fRequest::isAjax()) {
         self::ajaxHandle();
       }
 
       $url = fURL::get();
+
+      self::callCallbacks('before');
 
       if (!self::requiresCSRF($url)) {
         self::useMoor();
@@ -222,7 +211,6 @@ class sPostRequest {
       }
 
       self::handleCommon();
-
       self::callCallbacks('after');
 
       $destination = fRequest::get('destination', 'string', '/');
