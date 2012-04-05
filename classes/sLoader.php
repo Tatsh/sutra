@@ -26,14 +26,14 @@ class sLoader extends fLoader {
    */
   private static $classes = array(
     'sArray',
-//     'sAuthorization',
+    'sAuthorization',
     'sCache',
     'sGrammar',
     'sHTML',
     'sImage',
     'sJSONP',
     'sMessaging',
-//     'sNumber',
+    'sNumber',
     'sORMJSON',
 //     'sPostRequest',
     'sProcess',
