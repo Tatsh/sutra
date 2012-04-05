@@ -12,6 +12,11 @@
  * @version 1.0
  */
 class sJSONP extends fJSON {
+  /**
+   * JavaScript reserved words, as per the ECMA 3 standard.
+   *
+   * @var array
+   */
   private static $reserved_words = array(
     'break',
     'do',
@@ -60,6 +65,12 @@ class sJSONP extends fJSON {
     'false',
   );
 
+  /**
+   * The JavaScript identifier syntax regular expression.
+   *
+   * @var string
+   * @credit http://www.geekality.net/2010/06/27/php-how-to-easily-provide-json-and-jsonp/
+   */
   private static $identifier_syntax = '/^[$_\p{L}][$_\p{L}\p{Mn}\p{Mc}\p{Nd}\p{Pc}\x{200C}\x{200D}]*+$/u';
 
   /**
@@ -87,8 +98,6 @@ class sJSONP extends fJSON {
   /**
    * Validate a callback name is not a reserved word in JavaScript and does not have
    *   invalid characters.
-   *
-   * @credit http://www.geekality.net/2010/06/27/php-how-to-easily-provide-json-and-jsonp/
    *
    * @param string $subject The callback name.
    * @return boolean TRUE if the callback can be used, FALSE otherwise.
