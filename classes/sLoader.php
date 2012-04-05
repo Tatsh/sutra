@@ -9,7 +9,7 @@
  * @package Sutra
  * @link http://www.example.com/
  *
- * @version 1.0
+ * @version 1.2
  */
 class sLoader extends fLoader {
   /**
