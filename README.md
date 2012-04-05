@@ -11,7 +11,9 @@ Sutra is a PHP framework based on Flourish, and uses Moor for routing.
 
 # How do I use it?
 
-## Set up your web root (example for nginx on Gentoo)
+## Set up your web root
+
+Example for nginx on Gentoo:
 
 ```bash
 sudo gpasswd -a $USER nginx
@@ -21,7 +23,9 @@ chmod -R 0770 my-new-site
 chown -R nginx:nginx my-new-site
 ```
 
-## Set up where Sutra and dependencies will live (example here being $HOME/php)
+## Set up where Sutra and dependencies will live
+
+Example here being $HOME/php:
 
 ```bash
 mkdir ~/php
@@ -34,9 +38,16 @@ for i in sutra/patches/flourish*.patch; do patch -p0 < "$i"; done
 
 # Get my fork of Moor
 git clone git://github.com/tatsh/moor.git moor
+
+# Where templates will live (as in, not in the web root)
+mkdir -p ~/sutra-tpl/default
+touch ~/sutra-tpl/default/page.tpl.php
+mkdir ~/sutra-tpl/template-name
+touch ~/sutra-tpl/template-name/page.tpl.php
+touch ~/sutra-tpl/template-name/login-form.tpl.php
 ```
 
-## Start your index.php or similar file in the web root
+## Continue setting up the web root
 
 ```bash
 cd /var/www/my-new-site
@@ -52,7 +63,7 @@ touch files/my-print-style.css
 
 nginx needs some tweaking (as root). Here is a sample configuration file for use with Moor:
 
-```perl
+```nginx
 server {
         server_name mynewsite.mydomain.com;
         access_log /var/log/nginx/mynewsite.mydomain.com.access_log main;
@@ -98,6 +109,7 @@ server {
 ```
 
 ```bash
+# After making any configuration changes
 /etc/init.d/nginx reload
 ```
 
@@ -128,7 +140,7 @@ sTemplate::setSiteName('My cool site');
 
 // Add some JavaScript
 sTemplate::addJavaScriptFile('files/my-code.js'); // Goes in <body>
-sTemplate::addJavaScriptFile('files/modernizr.js', 'head'); // Need to be in <head> if you're using the html5shiv of course
+sTemplate::addJavaScriptFile('files/modernizr.js', 'head'); // Needs to be in <head> if you're using the html5shiv of course
 
 // Production-mode only JavaScript
 sTemplate::addMinifiedJavaScriptFile('files/my-code.min.js');
