@@ -1,10 +1,3 @@
-# Note
-
-This branch is intended to separate classes that require database (sDatabase,
-sConfiguration) or web server (sCore) away from the ones that do not.
-
-This will be Sutra 1.2 when complete.
-
 # What is this?
 
 Sutra is a PHP unframework based on Flourish.
