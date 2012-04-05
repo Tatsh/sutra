@@ -78,7 +78,7 @@ class sLoader extends fLoader {
     }
 
     function sTimestamp($datetime, $timezone = NULL) {
-      return new sTimestamp($date, $timezone);
+      return new sTimestamp($datetime, $timezone);
     }
   }
 
