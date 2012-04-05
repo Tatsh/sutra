@@ -20,83 +20,26 @@ class sLoader extends fLoader {
   private static $path = '';
 
   /**
-   * Path where Sutra model classes are installed.
-   *
-   * @var string
-   */
-  private static $model_classes_path = '';
-
-  /**
-   * Path where Sutra router classes are installed.
-   *
-   * @var string
-   */
-  private static $router_classes_path = '';
-
-  /**
-   * All the current Sutra classes.
+   * All the Sutra classes.
    *
    * @var array
    */
   private static $classes = array(
-    'sProcessException',
     'sArray',
-    'sAuthorization',
+//     'sAuthorization',
     'sCache',
-    'sConfiguration',
-    'sCore',
-    'sDatabase',
+    'sGrammar',
     'sHTML',
     'sImage',
     'sJSONP',
     'sMessaging',
-    'sNumber',
+//     'sNumber',
     'sORMJSON',
-    'sPostRequest',
-    'sPostRequestProcessor',
+//     'sPostRequest',
     'sProcess',
-    'sRouter',
+    'sProcessException',
     'sTemplate',
-    'sTemplateVariableSetter',
     'sTimestamp',
-    'sGrammar',
-  );
-
-  /**
-   * All the model classes that come with Sutra.
-   *
-   * @var array
-   */
-  private static $model_classes = array(
-    'Category',
-    'ContactMailMessage',
-    'ResetPasswordRequest',
-    'RouterAlias',
-    'SiteVariable',
-    'User',
-    'UserVerification',
-  );
-
-  /**
-   * All of Sutra's router classes.
-   *
-   * @var array
-   */
-  private static $router_classes = array(
-    'AccountActionController',
-    'AdminActionController',
-    'AdminUserListActionController',
-    'ContactActionController',
-    'CSRFTokenController',
-    'CSSActionController',
-    'FrontActionController',
-    'LoginActionController',
-    'LogoutActionController',
-    'PageNotFoundActionController',
-    'RegisterActionController',
-    'ResetPasswordActionController',
-    'UserProfileActionController',
-    'UserVerificationActionController',
   );
 
   /**
@@ -110,90 +53,16 @@ class sLoader extends fLoader {
   }
 
   /**
-   * Load the main core classes.
-   *
-   * @return void
-   */
-  public static function requireClasses() {
-    if (class_exists('sCore')) {
-      return;
-    }
-
-    self::setPaths();
-    foreach (self::$classes as $class) {
-      require self::$path.$class.'.php';
-    }
-  }
-
-  /**
-   * Load the model classes.
-   *
-   * @return void
-   */
-  public static function requireModelClasses() {
-    if (class_exists('User')) {
-      return;
-    }
-
-    self::setPaths();
-    self::requireClasses();
-
-    foreach (self::$model_classes as $class) {
-      require self::$model_classes_path.$class.'.php';
-    }
-  }
-
-  /**
-   * Load the router classes.
-   *
-   * @return void
-   */
-  public static function requireRouterClasses() {
-    if (class_exists('AccountActionController')) {
-      return;
-    }
-
-    self::setPaths();
-    self::requireModelClasses();
-
-    foreach (self::$router_classes as $class) {
-      require self::$router_classes_path.$class.'.php';
-    }
-  }
-
-  /**
    * Override eager() method to load Sutra classes after Flourish's.
    *
    * @return void
    */
   public static function eagar() {
     parent::eager();
-    self::setPaths();
-    self::requireRouterClasses();
-  }
-
-  /**
-   * Get the path to the main router classes.
-   *
-   * @internal Used by sRouter.
-   *
-   * @return string A path.
-   */
-  public static function getRoutesPath() {
-    self::setPaths();
-    return self::$router_classes_path;
-  }
-
-  /**
-   * Get the path to the main model classes.
-   *
-   * @internal Used by the schema installer.
-   *
-   * @return string A path.
-   */
-  public static function getModelClassesPath() {
-    self::setPaths();
-    return self::$model_classes_path;
+    self::setPath();
+    foreach (self::$classes as $class) {
+      require self::$path.$class.'.php';
+    }
   }
 
   /**
@@ -201,11 +70,9 @@ class sLoader extends fLoader {
    *
    * @return void
    */
-  private static function setPaths() {
+  private static function setPath() {
     if (!self::$path) {
-      $path = self::$path = realpath(dirname(__FILE__)).'/';
-      self::$router_classes_path = realpath($path.'../routers').'/';
-      self::$model_classes_path =  realpath($path.'../model').'/';
+      self::$path = realpath(dirname(__FILE__)).'/';
     }
   }
 }
