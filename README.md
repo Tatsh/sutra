@@ -7,7 +7,7 @@ This will be Sutra 1.2 when complete.
 
 # What is this?
 
-Sutra is a PHP framework based on Flourish, and uses Moor for routing.
+Sutra is a PHP unframework based on Flourish.
 
 # How do I use it?
 
@@ -168,13 +168,13 @@ class FrontActionController extends MoorActionController {
    * @return void
    */
   public function index() {
-    // 'content' and 'title' are required keys
     $variables = array(
       'csrf' => fRequest::generateCSRFToken('/login/post'), // Security is good
     );
     $content = fAuthorization::checkLoggedIn() ? sTemplate::buffer('login-form', $vars) : '';
 
     // Renders page.tpl.php
+    // 'content' and 'title' are required keys
     sTemplate::render(array(
       'content' => $content,
       'title' => 'Welcome',
