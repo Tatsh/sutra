@@ -1,15 +1,15 @@
 <?php
 /**
- * Extension to Flourish's fNumber class.
+ * Provides getting ordinal numbers as an extension to fNumber.
  *
- * @copyright Copyright (c) 2011 Poluza.
+ * @copyright Copyright (c) 2012 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
  * @package Sutra
- * @link http://www.example.com/
+ * @link http://www.sutralib.com/
  *
- * @version 1.0
+ * @version 1.2
  */
 class sNumber extends fNumber {
   /**
@@ -80,9 +80,10 @@ class sNumber extends fNumber {
   );
 
   /**
-   * Adds an array of callbacks with the default methods in this class.
+   * Adds an array of callbacks with the default methods in this class for a
+   *   specified locale.
    *
-   * @param string $locale Locale name.
+   * @param string $locale Locale name, such as fr_FR.
    * @return void
    */
   private static function addDefaultCallbacks($locale) {
@@ -122,7 +123,7 @@ class sNumber extends fNumber {
     );
 
     if (!in_array($method_name, $valid_methods)) {
-      throw new fProgrammerException('Invalid method name %s specified.', $method_name);
+      throw new fProgrammerException('Invalid method name "%s" specified. Must be one of: %s.', $method_name, implode(', ', $valid_methods));
     }
 
     self::$callbacks[$locale][$method_name] = $callback;
@@ -151,7 +152,9 @@ class sNumber extends fNumber {
    * @todo Validate the locale against a list of locales.
    */
   public static function setLocale($locale) {
-    self::addDefaultCallbacks($locale);
+    if(!isset(self::$callbacks[$locale])) {
+      self::addDefaultCallbacks($locale);
+    }
     self::$locale = $locale;
   }
 
@@ -166,7 +169,9 @@ class sNumber extends fNumber {
    * @todo Validate the locale against a list of locales.
    */
   public static function setFallbackLocale($locale) {
-    self::addDefaultCallbacks($locale);
+    if(!isset(self::$callbacks[$locale])) {
+      self::addDefaultCallbacks($locale);
+    }
     self::$fallback_locale = $locale;
   }
 
@@ -177,7 +182,7 @@ class sNumber extends fNumber {
    * @param string $fn Method name to check for.
    * @return string Callback name.
    */
-  public static function getValidCallback($fn) {
+  private static function getValidCallback($fn) {
     $locale = self::$locale;
     $fallback = self::$fallback_locale;
 
@@ -221,10 +226,10 @@ class sNumber extends fNumber {
   }
 
   /**
-   * Get the correct suffix for a number.
+   * Get the correct oridinal suffix for a number.
    *
    * @param integer $value Number to use.
-   * @return string Correct English suffix.
+   * @return string Correct suffix.
    */
   public static function ordinalSuffix($value) {
     $cb = self::getValidCallback('ordinalSuffix');
