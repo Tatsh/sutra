@@ -34,21 +34,13 @@ class sAuthorization extends fAuthorization {
    *   'admin', sAuthorization::setAdministratorAuthLevelName() must be called
    *   before any calls to this method.
    *
-   * @param boolean $ajax If set to TRUE, this will test if the request is made
-   *   via AJAX and then print a JSON-encoded message instead.
    * @param string $error_url URL to go to on error. Default is to go to the
    *   login page.
    * @return void
    * @see sAuthorization::setAdministratorAuthLevelName()
    */
-  public static function requireAdministratorPrivileges($ajax = FALSE, $error_url = NULL) {
+  public static function requireAdministratorPrivileges($error_url = NULL) {
     $not_admin = !self::checkLoggedIn() || self::getUserAuthLevel() != self::$admin_level_name;
-
-    if ($ajax && fRequest::isAjax() && $not_admin) {
-      fJSON::sendHeader();
-      print fJSON::encode(array('error' => 'This resource is not available to your user level'));
-      return;
-    }
 
     parent::requireLoggedIn();
 
@@ -60,18 +52,10 @@ class sAuthorization extends fAuthorization {
   /**
    * Require that a user not be logged in.
    *
-   * @param boolean $handle_ajax If set to TRUE, then AJAX requests will be
-   *   handled. Default is FALSE.
    * @return void
    */
-  public static function requireNotLoggedIn($handle_ajax = FALSE) {
+  public static function requireNotLoggedIn() {
     if (self::checkLoggedIn()) {
-      if ($handle_ajax) {
-        fJSON::sendHeader();
-        print fJSON::encode(array('error' => 'You are already logged in');
-        exit;
-      }
-
       fURL::redirect('/');
     }
   }
