@@ -177,6 +177,16 @@ class sTemplate {
   }
 
   /**
+   * Set the site name.
+   *
+   * @param string $name Name for the site.
+   * @return void
+   */
+  public static function setSiteName($name) {
+    self::$site_name = (string)$name;
+  }
+
+  /**
    * Set the current mode. In production mode, the site will use minified CSS
    *   and only minified JavaScript files which are added using
    *   sTemplate::addMinifiedJavaScriptFile().
