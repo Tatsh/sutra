@@ -2,7 +2,7 @@
 /**
  * Manages templating. Similar to fTemplating but different.
  *
- * @copyright Copyright (c) 2011 Poluza.
+ * @copyright Copyright (c) 2012 Poluza.
  * @author Andrew Udvare [au] <andrew@poluza.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
@@ -226,10 +226,13 @@ class sTemplate {
    * Register a callback to be called when the template name specified is about
    *   to be rendered.
    *
-   * @param callback $callback Callback.
+   * @param callback $callback Callback. All callbacks must return an array of
+   *   keys to string values. They must be registered before the template will
+   *   be used with sTemplate::buffer().
    * @param string $template_name Template name (without .tpl.php) to listen
    *   for.
    * @return void
+   * @see sTemplate::buffer()
    */
   public static function registerCallback($callback, $template_name = '*') {
     self::$registered_callbacks[$template_name][] = $callback;
@@ -245,12 +248,20 @@ class sTemplate {
     $variables = array();
 
     foreach (self::$registered_callbacks['*'] as $callback) {
-      $variables = array_merge($variables, $callback());
+      $ret = $callback();
+      if (!is_array($ret)) {
+        throw new fProgrammerException('Callback "%s" did not return an array.', $callback);
+      }
+      $variables = array_merge($variables, $ret);
     }
 
     if (isset(self::$registered_callbacks[$template_name])) {
       foreach (self::$registered_callbacks[$template_name] as $callback) {
-        $variables = array_merge($variables, $callback());
+        $ret = $callback();
+        if (!is_array($ret)) {
+          throw new fProgrammerException('Callback "%s" for template "%s" did not return an array.', $callback, $template_name);
+        }
+        $variables = array_merge($variables, $ret);
       }
     }
 
@@ -407,7 +418,7 @@ class sTemplate {
    * @return string The captured content.
    */
   public static function buffer($filename, array $variables = array()) {
-    $variables = self::callCallbacks($filename);
+    $variables = array_merge($variables, self::callCallbacks($filename));
     $path = self::getTemplatesPath();
     $default = $path.'/'.self::$template_fallback.'/'.$filename.'.tpl.php';
     $template = $path.'/'.self::$template_name.'/'.$filename.'.tpl.php';
@@ -768,7 +779,7 @@ class sTemplate {
     );
     $error_message = fMessaging::retrieve('validation', $path);
     $message = fMessaging::retrieve('success', $path);
-    $logged_in = (bool)fAuthorization::checkLoggedIn();
+    $logged_in = fAuthorization::checkLoggedIn();
 
     if ($path != '/') {
       $classes .= ' page-'.str_replace('/', '-', substr($path, 1));
