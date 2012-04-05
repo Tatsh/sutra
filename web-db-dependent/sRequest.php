@@ -11,7 +11,7 @@
  *
  * @version 1.0
  */
-class sPostRequest {
+class sRequest extends fRequest {
   /**
    * The key in session that holds the last POST values. The last POST values
    *   are only stored when a validation error occurs.
@@ -141,7 +141,6 @@ class sPostRequest {
    * @return void
    */
   private static function useMoor() {
-    sRouter::getRoutes();
     Moor::run();
   }
 
