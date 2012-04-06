@@ -46,11 +46,13 @@ class sCache extends fCache {
   }
 
   /**
-   * Tries to set a value to the cache, but stops if a value already exists
+   * Tries to set a value to the cache, but stops if a value already exists.
    *
-   * @param string $key The key to store as, this should not exceed 250 characters
-   * @param mixed $value The value to store, this will be serialized
-   * @param integer $ttl The number of seconds to keep the cache valid for, 0 for no limit.
+   * @param string $key The key to store as, this should not exceed 250
+   *   characters.
+   * @param mixed $value The value to store, this will be serialized.
+   * @param integer $ttl The number of seconds to keep the cache valid for, 0
+   *   for no limit.
    * @return boolean  If the key/value pair were added successfully.
    */
   public function add($key, $value, $ttl = 0) {
@@ -74,7 +76,8 @@ class sCache extends fCache {
    *
    * @param string $key The key to return the value for.
    * @param mixed  $default The value to return if the key did not exist.
-   * @return mixed The cached value or the default value if no cached value was found.
+   * @return mixed The cached value or the default value if no cached value
+   *   was found.
    */
   public function get($key, $default = NULL) {
     $key = self::getSiteUniqueKey($key);
@@ -82,11 +85,13 @@ class sCache extends fCache {
   }
 
   /**
-   * Sets a value to the cache, overriding any previous value
+   * Sets a value to the cache, overriding any previous value.
    *
-   * @param string $key The key to store as, this should not exceed 250 characters
-   * @param mixed $value The value to store, this will be serialized
-   * @param integer $ttl The number of seconds to keep the cache valid for, 0 for no limit
+   * @param string $key The key to store as, this should not exceed 250
+   *   characters.
+   * @param mixed $value The value to store, this will be serialized.
+   * @param integer $ttl The number of seconds to keep the cache valid for, 0
+   *   for no limit.
    * @return boolean If the value was successfully saved.
    */
   public function set($key, $value, $ttl = 0) {
