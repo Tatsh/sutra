@@ -5,7 +5,7 @@ SUTRA="/home/tatsh/dev/sutra-separated/classes"
 
 phpdoc -ti "Sutra documentation (generated $(date)" \
 	-t "$DOCDIR" \
-	-d "$FLOURISH,$SUTRA"
+	-d "$SUTRA,$FLOURISH"
 pushd "$DOCDIR"
 git add .
 git commit -m "Generated documentation"
