@@ -7,6 +7,7 @@ phpdoc -ti "Sutra documentation (generated $(date)" \
 	-t "$DOCDIR" \
 	-d "$FLOURISH,$SUTRA"
 pushd "$DOCDIR"
-git commit -m "Generated documentation" -a
+git add .
+git commit -m "Generated documentation"
 git push -u origin gh-pages
 popd
