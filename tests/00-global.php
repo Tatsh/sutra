@@ -9,4 +9,6 @@ $_SERVER['SERVER_NAME'] = 'example.com';
 $_SERVER['REQUEST_URI'] = '/index.php';
 $_SERVER['REQUEST_METHOD'] = 'GET';
 $_SERVER['SERVER_PORT'] = 80;
+
+date_default_timezone_set('America/Chicago');
 // @codeCoverageIgnoreEnd
