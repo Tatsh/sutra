@@ -844,6 +844,32 @@ class sTemplate {
   }
 
   /**
+   * Get the correct page template for this URL.
+   *
+   * @throws fUnexpectedException If a candidate file cannot be found.
+   *
+   * @return string Template file name (with .tpl.php) to use.
+   */
+  private static function getPageTemplate() {
+    $route = str_replace('/', '-', substr(fURL::get(), 1));
+    $templates_path = self::getTemplatesPath();
+    $candidates = array(
+      $templates_path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
+      $templates_path.'/'.self::$template_fallback.'/page-'.$route.'.tpl.php',
+      $templates_path.'/'.self::$template_name.'/page.tpl.php',
+      $templates_path.'/'.self::$template_fallback.'/page.tpl.php',
+    );
+
+    foreach ($candidates as $file) {
+      if (is_readable($file)) {
+        return $file;
+      }
+    }
+
+    throw new fUnexpectedException('Could not find a valid page template for this URL.');
+  }
+
+  /**
    * Perform final rendering. Call this at the end of the router's main action
    *   method.
    *
@@ -865,16 +891,9 @@ class sTemplate {
 
     $path = fURL::get();
     $classes = implode(' ', self::$body_classes);
-    $cdn = self::getACDN();
     $route = str_replace('/', '-', substr($path, 1));
-    $templates_path = self::getTemplatesPath();
-    $candidates = array(
-      $templates_path.'/'.self::$template_name.'/page-'.$route.'.tpl.php',
-      $templates_path.'/'.self::$template_fallback.'/page-'.$route.'.tpl.php',
-      $templates_path.'/'.self::$template_name.'/page.tpl.php',
-      $templates_path.'/'.self::$template_fallback.'/page.tpl.php',
-    );
     $logged_in = fAuthorization::checkLoggedIn();
+    $file = self::getPageTemplate();
 
     if ($path != '/') {
       $classes .= ' page-'.str_replace('/', '-', substr($path, 1));
@@ -896,6 +915,7 @@ class sTemplate {
       'logged_in' => $logged_in,
       'user' => fAuthorization::getUserToken(),
       'production_mode' => self::$in_production_mode,
+      'cdn' => self::getACDN(),
     );
 
     $vars = array_merge($vars, self::callCallbacks('page'));
@@ -911,24 +931,16 @@ class sTemplate {
 
     fHTML::sendHeader();
 
-    foreach ($candidates as $file) {
-      if (is_readable($file)) {
-        if (self::$in_production_mode) {
-          fBuffer::startCapture();
-          require $file;
-          $output = str_replace("\n", '', fBuffer::stopCapture());
-          $output = preg_replace('/\s\s+/', '', $output);
-          print $output;
-        }
-        else {
-          require $file;
-        }
-        return;
-      }
-      //fCore::debug('Did not find '.$file.'.');
+    if (self::$in_production_mode) {
+      fBuffer::startCapture();
+      require $file;
+      $output = str_replace("\n", '', fBuffer::stopCapture());
+      $output = preg_replace('/\s\s+/', '', $output);
+      print $output;
     }
-
-    throw new fUnexpectedException('Could not find a valid page template for this page.');
+    else {
+      require $file;
+    }
   }
 
   // @codeCoverageIgnoreStart
