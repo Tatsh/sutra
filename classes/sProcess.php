@@ -2,9 +2,7 @@
 /**
  * Manages processes external to PHP, including interactive processes.
  *
- * @todo Test on Windows, someday.
- *
- * @copyright Copyright (c) 2012 bne1.
+ * @copyright Copyright (c) 2012 Poluza.
  * @author Andrew Udvare [au] <andrew@bne1.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
