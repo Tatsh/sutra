@@ -40,7 +40,7 @@ class sResponse {
       header('Vary: Accept-Encoding');
     }
 
-    header('Cache-Control: max-age='.$cache_time); // 2 weeks
+    header('Cache-Control: max-age='.$cache_time);
     header('Last-Modified: '.$last_modified);
     header('Etag: '.$etag);
 
