@@ -48,7 +48,6 @@ class sResponse {
     $none = isset($_SERVER['HTTP_IF_NONE_MATCH']) && trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag;
     if ($modified || $none) {
       header('HTTP/1.1 304 Not Modified');
-      exit;
     }
   }
 }
