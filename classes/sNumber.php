@@ -115,8 +115,6 @@ class sNumber extends fNumber {
    * @todo Validate the locale against a list of locales.
    */
   public static function addCallback($locale, $method_name, $callback) {
-    self::addDefaultCallbacks($locale);
-
     $valid_methods = array(
       'ordinal',
       'ordinalSuffix',
@@ -127,6 +125,11 @@ class sNumber extends fNumber {
     }
 
     self::$callbacks[$locale][$method_name] = $callback;
+    $check = $method_name != 'ordinal' ? 'ordinal' : 'ordinalSuffix';
+
+    if (!isset(self::$callbacks[$locale][$check])) {
+      self::$callbacks[$locale][$check] = __CLASS__.'::'.$check;
+    }
   }
 
   /**
@@ -138,6 +141,11 @@ class sNumber extends fNumber {
   public static function removeLocale($locale_name) {
     if (isset(self::$callbacks[$locale_name])) {
       unset(self::$callbacks[$locale_name]);
+    }
+
+    if (self::$locale == $locale_name) {
+      self::$locale = 'en_US';
+      self::$fallback_locale = 'en_US';
     }
   }
 
@@ -183,21 +191,11 @@ class sNumber extends fNumber {
    * @return string Callback name.
    */
   private static function getValidCallback($fn) {
-    $locale = self::$locale;
-    $fallback = self::$fallback_locale;
-
-    if (!isset(self::$callbacks[self::$locale])) {
-      $locale = 'en_US';
-    }
-    if (!isset(self::$callbacks[self::$fallback_locale])) {
-      $fallback = 'en_US';
+    if (!isset(self::$callbacks[self::$locale][$fn])) {
+      return self::$callbacks[self::$fallback_locale][$fn];
     }
 
-    if (!isset(self::$callbacks[$locale][$fn])) {
-      return self::$callbacks[$fallback][$fn];
-    }
-
-    return self::$callbacks[$locale][$fn];
+    return self::$callbacks[self::$locale][$fn];
   }
 
   /**
