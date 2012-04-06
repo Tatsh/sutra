@@ -7422,6 +7422,12 @@
 							<div class="index-item-description">The directory to look for files</div>
 					</dd>
 			<dt class="field">
+						random
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCryptography.html#constrandom">fCryptography::random</a> in fCryptography.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">random</span>
 					</dt>
 		<dd class="index-item-body">
@@ -7429,10 +7435,10 @@
 							<div class="index-item-description">Generates a random number using [http://php.net/mt_rand mt_rand()] after ensuring a good PRNG seed</div>
 					</dd>
 			<dt class="field">
-						random
+						randomString
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCryptography.html#constrandom">fCryptography::random</a> in fCryptography.php</div>
+			<div class="index-item-details"><a href="Flourish/fCryptography.html#constrandomString">fCryptography::randomString</a> in fCryptography.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">randomString</span>
@@ -7440,12 +7446,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fCryptography.html#methodrandomString">fCryptography::randomString()</a> in fCryptography.php</div>
 							<div class="index-item-description">Returns a random string of the type and length specified</div>
-					</dd>
-			<dt class="field">
-						randomString
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCryptography.html#constrandomString">fCryptography::randomString</a> in fCryptography.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">read</span>
@@ -7481,17 +7481,17 @@
 							<div class="index-item-description">Stores what data has been added to a file so it can be removed if there is a rollback</div>
 					</dd>
 			<dt class="field">
-						recordCreate
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordCreate">fFilesystem::recordCreate</a> in fFilesystem.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">recordCreate</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fFilesystem.html#methodrecordCreate">fFilesystem::recordCreate()</a> in fFilesystem.php</div>
 							<div class="index-item-description">Keeps a record of created files so they can be deleted up in case of a rollback</div>
+					</dd>
+			<dt class="field">
+						recordCreate
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordCreate">fFilesystem::recordCreate</a> in fFilesystem.php</div>
 					</dd>
 			<dt class="field">
 						recordDelete
@@ -7520,6 +7520,12 @@
 							<div class="index-item-description">Keeps a record of duplicated files so they can be cleaned up in case of a rollback</div>
 					</dd>
 			<dt class="field">
+						recordRename
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordRename">fFilesystem::recordRename</a> in fFilesystem.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">recordRename</span>
 					</dt>
 		<dd class="index-item-body">
@@ -7527,10 +7533,10 @@
 							<div class="index-item-description">Keeps a temp file in place of the old filename so the file can be restored during a rollback</div>
 					</dd>
 			<dt class="field">
-						recordRename
+						recordWrite
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordRename">fFilesystem::recordRename</a> in fFilesystem.php</div>
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordWrite">fFilesystem::recordWrite</a> in fFilesystem.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">recordWrite</span>
@@ -7540,23 +7546,17 @@
 							<div class="index-item-description">Keeps backup copies of files so they can be restored if there is a rollback</div>
 					</dd>
 			<dt class="field">
-						recordWrite
+						<span class="method-title">redirect</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constrecordWrite">fFilesystem::recordWrite</a> in fFilesystem.php</div>
+			<div class="index-item-details"><a href="Flourish/fURL.html#methodredirect">fURL::redirect()</a> in fURL.php</div>
+							<div class="index-item-description">Redirects to the URL specified, without requiring a full-qualified URL</div>
 					</dd>
 			<dt class="field">
 						redirect
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fURL.html#constredirect">fURL::redirect</a> in fURL.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">redirect</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fURL.html#methodredirect">fURL::redirect()</a> in fURL.php</div>
-							<div class="index-item-description">Redirects to the URL specified, without requiring a full-qualified URL</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">redirectStandardError</span>
@@ -7603,20 +7603,14 @@
 						<span class="method-title">reflect</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodreflect">fActiveRecord::reflect()</a> in fActiveRecord.php</div>
-							<div class="index-item-description">Generates the method signatures for all methods (including dynamic ones)</div>
+			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#methodreflect">fORMOrdering::reflect()</a> in fORMOrdering.php</div>
+							<div class="index-item-description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</div>
 					</dd>
 			<dt class="field">
 						reflect
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constreflect">fORMColumn::reflect</a> in fORMColumn.php</div>
-					</dd>
-			<dt class="field">
-						reflect
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constreflect">fORMRelated::reflect</a> in fORMRelated.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreflect">fORMOrdering::reflect</a> in fORMOrdering.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reflect</span>
@@ -7626,10 +7620,22 @@
 							<div class="index-item-description">Adds information about methods provided by this class to fActiveRecord</div>
 					</dd>
 			<dt class="field">
+						reflect
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constreflect">fORMRelated::reflect</a> in fORMRelated.php</div>
+					</dd>
+			<dt class="field">
+						reflect
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constreflect">fORMMoney::reflect</a> in fORMMoney.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">reflect</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMColumn.html#methodreflect">fORMColumn::reflect()</a> in fORMColumn.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#methodreflect">fORMMoney::reflect()</a> in fORMMoney.php</div>
 							<div class="index-item-description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</div>
 					</dd>
 			<dt class="field">
@@ -7652,30 +7658,24 @@
 			<div class="index-item-details"><a href="Flourish/fORMJSON.html#constreflect">fORMJSON::reflect</a> in fORMJSON.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">reflect</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#methodreflect">fORMMoney::reflect()</a> in fORMMoney.php</div>
-							<div class="index-item-description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</div>
-					</dd>
-			<dt class="field">
 						reflect
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constreflect">fORMMoney::reflect</a> in fORMMoney.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constreflect">fORMColumn::reflect</a> in fORMColumn.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reflect</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#methodreflect">fORMOrdering::reflect()</a> in fORMOrdering.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMColumn.html#methodreflect">fORMColumn::reflect()</a> in fORMColumn.php</div>
 							<div class="index-item-description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</div>
 					</dd>
 			<dt class="field">
-						reflect
+						<span class="method-title">reflect</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreflect">fORMOrdering::reflect</a> in fORMOrdering.php</div>
+			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodreflect">fActiveRecord::reflect()</a> in fActiveRecord.php</div>
+							<div class="index-item-description">Generates the method signatures for all methods (including dynamic ones)</div>
 					</dd>
 			<dt class="field">
 						regenerateID
@@ -7707,6 +7707,13 @@
 						<span class="method-title">registerCallback</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fException.html#methodregisterCallback">fException::registerCallback()</a> in fException.php</div>
+							<div class="index-item-description">Adds a callback for when certain types of exceptions are created</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">registerCallback</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Sutra/sTemplate.html#methodregisterCallback">sTemplate::registerCallback()</a> in sTemplate.php</div>
 							<div class="index-item-description">Register a callback to be called when the template name specified is about    to be rendered.</div>
 					</dd>
@@ -7718,24 +7725,17 @@
 							<div class="index-item-description">Register a callback to be called after before or after validation.</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">registerCallback</span>
+						<span class="method-title">registerComposeCallback</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fException.html#methodregisterCallback">fException::registerCallback()</a> in fException.php</div>
-							<div class="index-item-description">Adds a callback for when certain types of exceptions are created</div>
+			<div class="index-item-details"><a href="Flourish/fText.html#methodregisterComposeCallback">fText::registerComposeCallback()</a> in fText.php</div>
+							<div class="index-item-description">Adds a callback for when a message is created using ::compose()</div>
 					</dd>
 			<dt class="field">
 						registerComposeCallback
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fText.html#constregisterComposeCallback">fText::registerComposeCallback</a> in fText.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">registerComposeCallback</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fText.html#methodregisterComposeCallback">fText::registerComposeCallback()</a> in fText.php</div>
-							<div class="index-item-description">Adds a callback for when a message is created using ::compose()</div>
 					</dd>
 			<dt class="field">
 						registerDebugCallback
@@ -7751,10 +7751,17 @@
 							<div class="index-item-description">Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">registerFormatCallback</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fMoney.html#methodregisterFormatCallback">fMoney::registerFormatCallback()</a> in fMoney.php</div>
+							<div class="index-item-description">Allows setting a callback to translate or modify any return values from ::format()</div>
+					</dd>
+			<dt class="field">
 						registerFormatCallback
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fNumber.html#constregisterFormatCallback">fNumber::registerFormatCallback</a> in fNumber.php</div>
+			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constregisterFormatCallback">fTimestamp::registerFormatCallback</a> in fTimestamp.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerFormatCallback</span>
@@ -7762,12 +7769,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fTimestamp.html#methodregisterFormatCallback">fTimestamp::registerFormatCallback()</a> in fTimestamp.php</div>
 							<div class="index-item-description">Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()</div>
-					</dd>
-			<dt class="field">
-						registerFormatCallback
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constregisterFormatCallback">fTimestamp::registerFormatCallback</a> in fTimestamp.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerFormatCallback</span>
@@ -7780,21 +7781,13 @@
 						registerFormatCallback
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fNumber.html#constregisterFormatCallback">fNumber::registerFormatCallback</a> in fNumber.php</div>
+					</dd>
+			<dt class="field">
+						registerFormatCallback
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fMoney.html#constregisterFormatCallback">fMoney::registerFormatCallback</a> in fMoney.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">registerFormatCallback</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fMoney.html#methodregisterFormatCallback">fMoney::registerFormatCallback()</a> in fMoney.php</div>
-							<div class="index-item-description">Allows setting a callback to translate or modify any return values from ::format()</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">registerHookCallback</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#methodregisterHookCallback">fORM::registerHookCallback()</a> in fORM.php</div>
-							<div class="index-item-description">Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook</div>
 					</dd>
 			<dt class="field">
 						registerHookCallback
@@ -7806,14 +7799,15 @@
 						<span class="method-title">registerHookCallback</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fDatabase.html#methodregisterHookCallback">fDatabase::registerHookCallback()</a> in fDatabase.php</div>
-							<div class="index-item-description">Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</div>
+			<div class="index-item-details"><a href="Flourish/fORM.html#methodregisterHookCallback">fORM::registerHookCallback()</a> in fORM.php</div>
+							<div class="index-item-description">Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook</div>
 					</dd>
 			<dt class="field">
-						registerInspectCallback
+						<span class="method-title">registerHookCallback</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterInspectCallback">fORM::registerInspectCallback</a> in fORM.php</div>
+			<div class="index-item-details"><a href="Flourish/fDatabase.html#methodregisterHookCallback">fDatabase::registerHookCallback()</a> in fDatabase.php</div>
+							<div class="index-item-description">Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerInspectCallback</span>
@@ -7821,6 +7815,12 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORM.html#methodregisterInspectCallback">fORM::registerInspectCallback()</a> in fORM.php</div>
 							<div class="index-item-description">Registers a callback to modify the results of fActiveRecord::inspect() methods</div>
+					</dd>
+			<dt class="field">
+						registerInspectCallback
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterInspectCallback">fORM::registerInspectCallback</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
 						registerJoinArrayCallback
@@ -7875,17 +7875,17 @@
 			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterReflectCallback">fORM::registerReflectCallback</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
-						registerReplicateCallback
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterReplicateCallback">fORM::registerReplicateCallback</a> in fORM.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">registerReplicateCallback</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORM.html#methodregisterReplicateCallback">fORM::registerReplicateCallback()</a> in fORM.php</div>
 							<div class="index-item-description">Registers a callback for when a value is replicated for a specific column</div>
+					</dd>
+			<dt class="field">
+						registerReplicateCallback
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterReplicateCallback">fORM::registerReplicateCallback</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerScalarizeCallback</span>
@@ -7901,12 +7901,6 @@
 			<div class="index-item-details"><a href="Flourish/fORM.html#constregisterScalarizeCallback">fORM::registerScalarizeCallback</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
-						registerUnformatCallback
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fNumber.html#constregisterUnformatCallback">fNumber::registerUnformatCallback</a> in fNumber.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">registerUnformatCallback</span>
 					</dt>
 		<dd class="index-item-body">
@@ -7917,7 +7911,7 @@
 						registerUnformatCallback
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fMoney.html#constregisterUnformatCallback">fMoney::registerUnformatCallback</a> in fMoney.php</div>
+			<div class="index-item-details"><a href="Flourish/fNumber.html#constregisterUnformatCallback">fNumber::registerUnformatCallback</a> in fNumber.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerUnformatCallback</span>
@@ -7927,12 +7921,6 @@
 							<div class="index-item-description">Allows setting a callback to clean any formatted values so they can be passed to fNumber</div>
 					</dd>
 			<dt class="field">
-						registerUnformatCallback
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constregisterUnformatCallback">fTimestamp::registerUnformatCallback</a> in fTimestamp.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">registerUnformatCallback</span>
 					</dt>
 		<dd class="index-item-body">
@@ -7940,10 +7928,16 @@
 							<div class="index-item-description">Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()</div>
 					</dd>
 			<dt class="field">
-						registerValidationNameMethod
+						registerUnformatCallback
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constregisterValidationNameMethod">fORMRelated::registerValidationNameMethod</a> in fORMRelated.php</div>
+			<div class="index-item-details"><a href="Flourish/fMoney.html#constregisterUnformatCallback">fMoney::registerUnformatCallback</a> in fMoney.php</div>
+					</dd>
+			<dt class="field">
+						registerUnformatCallback
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constregisterUnformatCallback">fTimestamp::registerUnformatCallback</a> in fTimestamp.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">registerValidationNameMethod</span>
@@ -7953,11 +7947,10 @@
 							<div class="index-item-description">Registers a method to use to get a name for a related record when doing validation</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">remove</span>
+						registerValidationNameMethod
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSession.html#methodremove">fSession::remove()</a> in fSession.php</div>
-							<div class="index-item-description">Removes and returns the value from the end of an array value</div>
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constregisterValidationNameMethod">fORMRelated::registerValidationNameMethod</a> in fORMRelated.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">remove</span>
@@ -7965,6 +7958,13 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fTemplating.html#methodremove">fTemplating::remove()</a> in fTemplating.php</div>
 							<div class="index-item-description">Removes and returns the value from the end of an array element</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">remove</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fSession.html#methodremove">fSession::remove()</a> in fSession.php</div>
+							<div class="index-item-description">Removes and returns the value from the end of an array value</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">removeCDN</span>
@@ -8021,23 +8021,17 @@
 							<div class="index-item-description">Remove a locale's set of callbacks.</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">removeRegexReplacement</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMValidation.html#methodremoveRegexReplacement">fORMValidation::removeRegexReplacement()</a> in fORMValidation.php</div>
-							<div class="index-item-description">Removes a regex replacement</div>
-					</dd>
-			<dt class="field">
 						removeRegexReplacement
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constremoveRegexReplacement">fORMValidation::removeRegexReplacement</a> in fORMValidation.php</div>
 					</dd>
 			<dt class="field">
-						removeStringReplacement
+						<span class="method-title">removeRegexReplacement</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constremoveStringReplacement">fORMValidation::removeStringReplacement</a> in fORMValidation.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMValidation.html#methodremoveRegexReplacement">fORMValidation::removeRegexReplacement()</a> in fORMValidation.php</div>
+							<div class="index-item-description">Removes a regex replacement</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">removeStringReplacement</span>
@@ -8047,11 +8041,10 @@
 							<div class="index-item-description">Removes a string replacement</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">rename</span>
+						removeStringReplacement
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFile.html#methodrename">fFile::rename()</a> in fFile.php</div>
-							<div class="index-item-description">Renames the current file</div>
+			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constremoveStringReplacement">fORMValidation::removeStringReplacement</a> in fORMValidation.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rename</span>
@@ -8061,6 +8054,13 @@
 							<div class="index-item-description">Renames the current directory</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">rename</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFile.html#methodrename">fFile::rename()</a> in fFile.php</div>
+							<div class="index-item-description">Renames the current file</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">render</span>
 					</dt>
 		<dd class="index-item-body">
@@ -8068,17 +8068,17 @@
 							<div class="index-item-description">Perform final rendering. Call this at the end of the router's main action    method.</div>
 					</dd>
 			<dt class="field">
+						reorder
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreorder">fORMOrdering::reorder</a> in fORMOrdering.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">reorder</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#methodreorder">fORMOrdering::reorder()</a> in fORMOrdering.php</div>
 							<div class="index-item-description">Re-orders the object based on it's current state and new position</div>
-					</dd>
-			<dt class="field">
-						reorder
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreorder">fORMOrdering::reorder</a> in fORMOrdering.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reorderMessage</span>
@@ -8114,17 +8114,17 @@
 							<div class="index-item-description">Replaces matching parts of the string</div>
 					</dd>
 			<dt class="field">
+						replace
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fBuffer.html#constreplace">fBuffer::replace</a> in fBuffer.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">replace</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fBuffer.html#methodreplace">fBuffer::replace()</a> in fBuffer.php</div>
 							<div class="index-item-description">Replaces a value in the output buffer</div>
-					</dd>
-			<dt class="field">
-						replace
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fBuffer.html#constreplace">fBuffer::replace</a> in fBuffer.php</div>
 					</dd>
 			<dt class="field">
 						replaceInQueryString
@@ -8140,17 +8140,17 @@
 							<div class="index-item-description">Replaces a value in the query string</div>
 					</dd>
 			<dt class="field">
-						replaceMessages
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constreplaceMessages">fORMValidation::replaceMessages</a> in fORMValidation.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">replaceMessages</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMValidation.html#methodreplaceMessages">fORMValidation::replaceMessages()</a> in fORMValidation.php</div>
 							<div class="index-item-description">Takes a list of messages and performs string and regex replacements on them</div>
+					</dd>
+			<dt class="field">
+						replaceMessages
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constreplaceMessages">fORMValidation::replaceMessages</a> in fORMValidation.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">replicate</span>
@@ -8166,17 +8166,17 @@
 			<div class="index-item-details"><a href="Flourish/fORMFile.html#constreplicate">fORMFile::replicate</a> in fORMFile.php</div>
 					</dd>
 			<dt class="field">
-						replicate
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#constreplicate">fORM::replicate</a> in fORM.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">replicate</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodreplicate">fActiveRecord::replicate()</a> in fActiveRecord.php</div>
 							<div class="index-item-description">Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records</div>
+					</dd>
+			<dt class="field">
+						replicate
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORM.html#constreplicate">fORM::replicate</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">replicate</span>
@@ -8199,11 +8199,10 @@
 							<div class="index-item-description">Redirect the user to the login page if they do not have the permissions required</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">requireAdministratorPrivileges</span>
+						requireAuthLevel
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Sutra/sAuthorization.html#methodrequireAdministratorPrivileges">sAuthorization::requireAdministratorPrivileges()</a> in sAuthorization.php</div>
-							<div class="index-item-description">Redirect the user if not an administrator. If the level is not named    'admin', sAuthorization::setAdministratorAuthLevelName() must be called    before any calls to this method.</div>
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constrequireAuthLevel">fAuthorization::requireAuthLevel</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">requireAuthLevel</span>
@@ -8213,10 +8212,10 @@
 							<div class="index-item-description">Redirect the user to the login page if they do not have the auth level required</div>
 					</dd>
 			<dt class="field">
-						requireAuthLevel
+						requireLoggedIn
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constrequireAuthLevel">fAuthorization::requireAuthLevel</a> in fAuthorization.php</div>
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constrequireLoggedIn">fAuthorization::requireLoggedIn</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">requireLoggedIn</span>
@@ -8224,12 +8223,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fAuthorization.html#methodrequireLoggedIn">fAuthorization::requireLoggedIn()</a> in fAuthorization.php</div>
 							<div class="index-item-description">Redirect the user to the login page if they do not have an auth level or ACLs</div>
-					</dd>
-			<dt class="field">
-						requireLoggedIn
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constrequireLoggedIn">fAuthorization::requireLoggedIn</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">requireNotLoggedIn</span>
@@ -8242,7 +8235,7 @@
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fText.html#constreset">fText::reset</a> in fText.php</div>
+			<div class="index-item-details"><a href="Flourish/fUTF8.html#constreset">fUTF8::reset</a> in fUTF8.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
@@ -8252,43 +8245,24 @@
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTemplating.html#methodreset">fTemplating::reset()</a> in fTemplating.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constreset">fTimestamp::reset</a> in fTimestamp.php</div>
+			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#constreset">fActiveRecord::reset</a> in fActiveRecord.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTimestamp.html#methodreset">fTimestamp::reset()</a> in fTimestamp.php</div>
+			<div class="index-item-details"><a href="Flourish/fPagination.html#methodreset">fPagination::reset()</a> in fPagination.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUTF8.html#constreset">fUTF8::reset</a> in fUTF8.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUTF8.html#methodreset">fUTF8::reset()</a> in fUTF8.php</div>
+			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodreset">fActiveRecord::reset()</a> in fActiveRecord.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTemplating.html#constreset">fTemplating::reset</a> in fTemplating.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
@@ -8301,26 +8275,26 @@
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fPagination.html#constreset">fPagination::reset</a> in fPagination.php</div>
+			<div class="index-item-details"><a href="Flourish/fTimestamp.html#constreset">fTimestamp::reset</a> in fTimestamp.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constreset">fORMValidation::reset</a> in fORMValidation.php</div>
+			<div class="index-item-details"><a href="Flourish/fTemplating.html#constreset">fTemplating::reset</a> in fTemplating.php</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fText.html#constreset">fText::reset</a> in fText.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fPagination.html#methodreset">fPagination::reset()</a> in fPagination.php</div>
+			<div class="index-item-details"><a href="Flourish/fTemplating.html#methodreset">fTemplating::reset()</a> in fTemplating.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fRequest.html#constreset">fRequest::reset</a> in fRequest.php</div>
 					</dd>
 			<dt class="field">
 						reset
@@ -8332,8 +8306,14 @@
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fRequest.html#methodreset">fRequest::reset()</a> in fRequest.php</div>
-							<div class="index-item-description">Resets the configuration and data of the class</div>
+			<div class="index-item-details"><a href="Flourish/fTimestamp.html#methodreset">fTimestamp::reset()</a> in fTimestamp.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMValidation.html#constreset">fORMValidation::reset</a> in fORMValidation.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
@@ -8346,52 +8326,33 @@
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constreset">fORMColumn::reset</a> in fORMColumn.php</div>
+			<div class="index-item-details"><a href="Flourish/fPagination.html#constreset">fPagination::reset</a> in fPagination.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fGrammar.html#constreset">fGrammar::reset</a> in fGrammar.php</div>
+			<div class="index-item-details"><a href="Flourish/fRequest.html#constreset">fRequest::reset</a> in fRequest.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fGrammar.html#methodreset">fGrammar::reset()</a> in fGrammar.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
+			<div class="index-item-details"><a href="Flourish/fRequest.html#methodreset">fRequest::reset()</a> in fRequest.php</div>
+							<div class="index-item-description">Resets the configuration and data of the class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#methodreset">fFilesystem::reset()</a> in fFilesystem.php</div>
+			<div class="index-item-details"><a href="Flourish/fUTF8.html#methodreset">fUTF8::reset()</a> in fUTF8.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constreset">fFilesystem::reset</a> in fFilesystem.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fEmail.html#constreset">fEmail::reset</a> in fEmail.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fImage.html#constreset">fImage::reset</a> in fImage.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fImage.html#methodreset">fImage::reset()</a> in fImage.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constreset">fORMMoney::reset</a> in fORMMoney.php</div>
 					</dd>
 			<dt class="field">
 						reset
@@ -8427,63 +8388,55 @@
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">reset</span>
+						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fEmail.html#methodreset">fEmail::reset()</a> in fEmail.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCRUD.html#methodreset">fCRUD::reset()</a> in fCRUD.php</div>
-							<div class="index-item-description">Resets the configuration and data of the class</div>
+			<div class="index-item-details"><a href="Flourish/fNumber.html#constreset">fNumber::reset</a> in fNumber.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constreset">fAuthorization::reset</a> in fAuthorization.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fBuffer.html#methodreset">fBuffer::reset()</a> in fBuffer.php</div>
-							<div class="index-item-description">Resets the configuration and buffer of the class</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#methodreset">fAuthorization::reset()</a> in fAuthorization.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodreset">fActiveRecord::reset()</a> in fActiveRecord.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
+			<div class="index-item-details"><a href="Flourish/fORM.html#constreset">fORM::reset</a> in fORM.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#constreset">fActiveRecord::reset</a> in fActiveRecord.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fBuffer.html#constreset">fBuffer::reset</a> in fBuffer.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constreset">fORMColumn::reset</a> in fORMColumn.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fCookie.html#constreset">fCookie::reset</a> in fCookie.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCookie.html#methodreset">fCookie::reset()</a> in fCookie.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORM.html#methodreset">fORM::reset()</a> in fORM.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fMailbox.html#constreset">fMailbox::reset</a> in fMailbox.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fImage.html#methodreset">fImage::reset()</a> in fImage.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
 						reset
@@ -8501,14 +8454,66 @@
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCRUD.html#methodreset">fCRUD::reset()</a> in fCRUD.php</div>
+							<div class="index-item-description">Resets the configuration and data of the class</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fEmail.html#methodreset">fEmail::reset()</a> in fEmail.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fEmail.html#constreset">fEmail::reset</a> in fEmail.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fCore.html#methodreset">fCore::reset()</a> in fCore.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#constreset">fFilesystem::reset</a> in fFilesystem.php</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fImage.html#constreset">fImage::reset</a> in fImage.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fGrammar.html#methodreset">fGrammar::reset()</a> in fGrammar.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fGrammar.html#constreset">fGrammar::reset</a> in fGrammar.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#methodreset">fFilesystem::reset()</a> in fFilesystem.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#methodreset">fCookie::reset()</a> in fCookie.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMColumn.html#methodreset">fORMColumn::reset()</a> in fORMColumn.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
@@ -8522,77 +8527,26 @@
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fMailbox.html#constreset">fMailbox::reset</a> in fMailbox.php</div>
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constreset">fAuthorization::reset</a> in fAuthorization.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#methodreset">fAuthorization::reset()</a> in fAuthorization.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#constreset">fORMDatabase::reset</a> in fORMDatabase.php</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMFile.html#constreset">fORMFile::reset</a> in fORMFile.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constreset">fORMMoney::reset</a> in fORMMoney.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fNumber.html#constreset">fNumber::reset</a> in fNumber.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDate.html#methodreset">fORMDate::reset()</a> in fORMDate.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDate.html#constreset">fORMDate::reset</a> in fORMDate.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#methodreset">fORMMoney::reset()</a> in fORMMoney.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreset">fORMOrdering::reset</a> in fORMOrdering.php</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMSchema.html#constreset">fORMSchema::reset</a> in fORMSchema.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMSchema.html#methodreset">fORMSchema::reset()</a> in fORMSchema.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						reset
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constreset">fORMRelated::reset</a> in fORMRelated.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#methodreset">fORMRelated::reset()</a> in fORMRelated.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
@@ -8605,8 +8559,47 @@
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#methodreset">fORMDatabase::reset()</a> in fORMDatabase.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMSchema.html#methodreset">fORMSchema::reset()</a> in fORMSchema.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMSchema.html#constreset">fORMSchema::reset</a> in fORMSchema.php</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMOrdering.html#constreset">fORMOrdering::reset</a> in fORMOrdering.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#methodreset">fORMMoney::reset()</a> in fORMMoney.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#methodreset">fORMRelated::reset()</a> in fORMRelated.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
+					</dd>
+			<dt class="field">
+						reset
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#constreset">fORMRelated::reset</a> in fORMRelated.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fBuffer.html#methodreset">fBuffer::reset()</a> in fBuffer.php</div>
+							<div class="index-item-description">Resets the configuration and buffer of the class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
@@ -8619,26 +8612,26 @@
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#constreset">fORM::reset</a> in fORM.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMDate.html#constreset">fORMDate::reset</a> in fORMDate.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">reset</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#methodreset">fORMDatabase::reset()</a> in fORMDatabase.php</div>
+							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
 						reset
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#constreset">fORMDatabase::reset</a> in fORMDatabase.php</div>
+			<div class="index-item-details"><a href="Flourish/fBuffer.html#constreset">fBuffer::reset</a> in fBuffer.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">reset</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMColumn.html#methodreset">fORMColumn::reset()</a> in fORMColumn.php</div>
-							<div class="index-item-description">Resets the configuration of the class</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">reset</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORM.html#methodreset">fORM::reset()</a> in fORM.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMDate.html#methodreset">fORMDate::reset()</a> in fORMDate.php</div>
 							<div class="index-item-description">Resets the configuration of the class</div>
 					</dd>
 			<dt class="field">
@@ -8665,8 +8658,8 @@
 						<span class="method-title">retrieve</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMSchema.html#methodretrieve">fORMSchema::retrieve()</a> in fORMSchema.php</div>
-							<div class="index-item-description">Return the instance of the fSchema class</div>
+			<div class="index-item-details"><a href="Flourish/fTemplating.html#methodretrieve">fTemplating::retrieve()</a> in fTemplating.php</div>
+							<div class="index-item-description">Retrieves a named template</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">retrieve</span>
@@ -8674,25 +8667,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fMessaging.html#methodretrieve">fMessaging::retrieve()</a> in fMessaging.php</div>
 							<div class="index-item-description">Retrieves and removes a message from the session</div>
-					</dd>
-			<dt class="field">
-						retrieve
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTemplating.html#constretrieve">fTemplating::retrieve</a> in fTemplating.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">retrieve</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fTemplating.html#methodretrieve">fTemplating::retrieve()</a> in fTemplating.php</div>
-							<div class="index-item-description">Retrieves a named template</div>
-					</dd>
-			<dt class="field">
-						retrieve
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMSchema.html#constretrieve">fORMSchema::retrieve</a> in fORMSchema.php</div>
 					</dd>
 			<dt class="field">
 						retrieve
@@ -8708,10 +8682,23 @@
 							<div class="index-item-description">Return the instance of the fDatabase class</div>
 					</dd>
 			<dt class="field">
-						retrieveOld
+						<span class="method-title">retrieve</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#constretrieveOld">fActiveRecord::retrieveOld</a> in fActiveRecord.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMSchema.html#methodretrieve">fORMSchema::retrieve()</a> in fORMSchema.php</div>
+							<div class="index-item-description">Return the instance of the fSchema class</div>
+					</dd>
+			<dt class="field">
+						retrieve
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fTemplating.html#constretrieve">fTemplating::retrieve</a> in fTemplating.php</div>
+					</dd>
+			<dt class="field">
+						retrieve
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMSchema.html#constretrieve">fORMSchema::retrieve</a> in fORMSchema.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">retrieveOld</span>
@@ -8721,10 +8708,10 @@
 							<div class="index-item-description">Retrieves the oldest value for a column or all old values</div>
 					</dd>
 			<dt class="field">
-						rev
+						retrieveOld
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrev">fUTF8::rev</a> in fUTF8.php</div>
+			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#constretrieveOld">fActiveRecord::retrieveOld</a> in fActiveRecord.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rev</span>
@@ -8732,6 +8719,19 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fUTF8.html#methodrev">fUTF8::rev()</a> in fUTF8.php</div>
 							<div class="index-item-description">Reverses a string</div>
+					</dd>
+			<dt class="field">
+						rev
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrev">fUTF8::rev</a> in fUTF8.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">rewind</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fFile.html#methodrewind">fFile::rewind()</a> in fFile.php</div>
+							<div class="index-item-description">Rewinds the file handle (required by iterator interface)</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rewind</span>
@@ -8748,13 +8748,6 @@
 							<div class="index-item-description">Rewinds the query (required by iterator interface)</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">rewind</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFile.html#methodrewind">fFile::rewind()</a> in fFile.php</div>
-							<div class="index-item-description">Rewinds the file handle (required by iterator interface)</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">RFC3339ToTimestamp</span>
 					</dt>
 		<dd class="index-item-body">
@@ -8765,8 +8758,8 @@
 						<span class="method-title">rollback</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fFilesystem.html#methodrollback">fFilesystem::rollback()</a> in fFilesystem.php</div>
-							<div class="index-item-description">Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</div>
+			<div class="index-item-details"><a href="Flourish/fORMFile.html#methodrollback">fORMFile::rollback()</a> in fORMFile.php</div>
+							<div class="index-item-description">Rolls back a transaction, or decreases the level</div>
 					</dd>
 			<dt class="field">
 						rollback
@@ -8784,8 +8777,8 @@
 						<span class="method-title">rollback</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMFile.html#methodrollback">fORMFile::rollback()</a> in fORMFile.php</div>
-							<div class="index-item-description">Rolls back a transaction, or decreases the level</div>
+			<div class="index-item-details"><a href="Flourish/fFilesystem.html#methodrollback">fFilesystem::rollback()</a> in fFilesystem.php</div>
+							<div class="index-item-description">Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rotate</span>
@@ -8809,6 +8802,12 @@
 							<div class="index-item-description">Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal</div>
 					</dd>
 			<dt class="field">
+						rpos
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrpos">fUTF8::rpos</a> in fUTF8.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">rpos</span>
 					</dt>
 		<dd class="index-item-body">
@@ -8816,10 +8815,10 @@
 							<div class="index-item-description">Finds the last position (in characters) of the search value in the string</div>
 					</dd>
 			<dt class="field">
-						rpos
+						rtrim
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrpos">fUTF8::rpos</a> in fUTF8.php</div>
+			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrtrim">fUTF8::rtrim</a> in fUTF8.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">rtrim</span>
@@ -8827,12 +8826,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fUTF8.html#methodrtrim">fUTF8::rtrim()</a> in fUTF8.php</div>
 							<div class="index-item-description">Trims whitespace, or any specified characters, from the end of a string</div>
-					</dd>
-			<dt class="field">
-						rtrim
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUTF8.html#constrtrim">fUTF8::rtrim</a> in fUTF8.php</div>
 					</dd>
 		</dl>
 	<a name="s"></a>
@@ -9025,22 +9018,15 @@
 						<span class="method-title">send</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fEmail.html#methodsend">fEmail::send()</a> in fEmail.php</div>
-							<div class="index-item-description">Sends the email</div>
+			<div class="index-item-details"><a href="Flourish/fSMTP.html#methodsend">fSMTP::send()</a> in fSMTP.php</div>
+							<div class="index-item-description">Sends a message via the SMTP server</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">send</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSMTP.html#methodsend">fSMTP::send()</a> in fSMTP.php</div>
-							<div class="index-item-description">Sends a message via the SMTP server</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">sendHeader</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fJSON.html#methodsendHeader">fJSON::sendHeader()</a> in fJSON.php</div>
-							<div class="index-item-description">Sets the proper `Content-Type` header for UTF-8 encoded JSON</div>
+			<div class="index-item-details"><a href="Flourish/fEmail.html#methodsend">fEmail::send()</a> in fEmail.php</div>
+							<div class="index-item-description">Sends the email</div>
 					</dd>
 			<dt class="field">
 						sendHeader
@@ -9059,14 +9045,15 @@
 						<span class="method-title">sendHeader</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fHTML.html#methodsendHeader">fHTML::sendHeader()</a> in fHTML.php</div>
-							<div class="index-item-description">Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</div>
+			<div class="index-item-details"><a href="Flourish/fJSON.html#methodsendHeader">fJSON::sendHeader()</a> in fJSON.php</div>
+							<div class="index-item-description">Sets the proper `Content-Type` header for UTF-8 encoded JSON</div>
 					</dd>
 			<dt class="field">
-						sendHeader
+						<span class="method-title">sendHeader</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fHTML.html#constsendHeader">fHTML::sendHeader</a> in fHTML.php</div>
+			<div class="index-item-details"><a href="Flourish/fXML.html#methodsendHeader">fXML::sendHeader()</a> in fXML.php</div>
+							<div class="index-item-description">Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</div>
 					</dd>
 			<dt class="field">
 						sendHeader
@@ -9078,8 +9065,14 @@
 						<span class="method-title">sendHeader</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fXML.html#methodsendHeader">fXML::sendHeader()</a> in fXML.php</div>
-							<div class="index-item-description">Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</div>
+			<div class="index-item-details"><a href="Flourish/fHTML.html#methodsendHeader">fHTML::sendHeader()</a> in fHTML.php</div>
+							<div class="index-item-description">Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</div>
+					</dd>
+			<dt class="field">
+						sendHeader
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fHTML.html#constsendHeader">fHTML::sendHeader</a> in fHTML.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">sendMessagesOnShutdown</span>
@@ -9112,67 +9105,14 @@
 						<span class="method-title">set</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fPagination.html#methodset">fPagination::set()</a> in fPagination.php</div>
-							<div class="index-item-description">Sets data to be available to the templates</div>
-					</dd>
-			<dt class="field">
-						set
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fRequest.html#constset">fRequest::set</a> in fRequest.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">set</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Sutra/sCache.html#methodset">sCache::set()</a> in sCache.php</div>
-							<div class="index-item-description">Sets a value to the cache, overriding any previous value.</div>
-					</dd>
-			<dt class="field">
-						set
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMFile.html#constset">fORMFile::set</a> in fORMFile.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">set</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMFile.html#methodset">fORMFile::set()</a> in fORMFile.php</div>
-							<div class="index-item-description">Copies a file from the filesystem to the file upload directory and sets it as the file for the specified column</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">set</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodset">fActiveRecord::set()</a> in fActiveRecord.php</div>
-							<div class="index-item-description">Sets a value to the record</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">set</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCache.html#methodset">fCache::set()</a> in fCache.php</div>
-							<div class="index-item-description">Sets a value to the cache, overriding any previous value</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">set</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fRequest.html#methodset">fRequest::set()</a> in fRequest.php</div>
-							<div class="index-item-description">Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</div>
+			<div class="index-item-details"><a href="Flourish/fSession.html#methodset">fSession::set()</a> in fSession.php</div>
+							<div class="index-item-description">Sets data to the `$_SESSION` superglobal</div>
 					</dd>
 			<dt class="field">
 						set
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fSession.html#constset">fSession::set</a> in fSession.php</div>
-					</dd>
-			<dt class="field">
-						set
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#constset">fCookie::set</a> in fCookie.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">set</span>
@@ -9185,15 +9125,68 @@
 						<span class="method-title">set</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#methodset">fCookie::set()</a> in fCookie.php</div>
-							<div class="index-item-description">Sets a cookie to be sent back to the browser - uses default parameters set by the other set methods of this class</div>
+			<div class="index-item-details"><a href="Flourish/fRequest.html#methodset">fRequest::set()</a> in fRequest.php</div>
+							<div class="index-item-description">Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">set</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSession.html#methodset">fSession::set()</a> in fSession.php</div>
-							<div class="index-item-description">Sets data to the `$_SESSION` superglobal</div>
+			<div class="index-item-details"><a href="Flourish/fORMFile.html#methodset">fORMFile::set()</a> in fORMFile.php</div>
+							<div class="index-item-description">Copies a file from the filesystem to the file upload directory and sets it as the file for the specified column</div>
+					</dd>
+			<dt class="field">
+						set
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMFile.html#constset">fORMFile::set</a> in fORMFile.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fActiveRecord.html#methodset">fActiveRecord::set()</a> in fActiveRecord.php</div>
+							<div class="index-item-description">Sets a value to the record</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fPagination.html#methodset">fPagination::set()</a> in fPagination.php</div>
+							<div class="index-item-description">Sets data to be available to the templates</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCache.html#methodset">fCache::set()</a> in fCache.php</div>
+							<div class="index-item-description">Sets a value to the cache, overriding any previous value</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Sutra/sCache.html#methodset">sCache::set()</a> in sCache.php</div>
+							<div class="index-item-description">Sets a value to the cache, overriding any previous value.</div>
+					</dd>
+			<dt class="field">
+						set
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fRequest.html#constset">fRequest::set</a> in fRequest.php</div>
+					</dd>
+			<dt class="field">
+						set
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCookie.html#constset">fCookie::set</a> in fCookie.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">set</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCookie.html#methodset">fCookie::set()</a> in fCookie.php</div>
+							<div class="index-item-description">Sets a cookie to be sent back to the browser - uses default parameters set by the other set methods of this class</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setActiveTemplate</span>
@@ -9203,24 +9196,11 @@
 							<div class="index-item-description">Set the active template.</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">setAdministratorAuthLevelName</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Sutra/sAuthorization.html#methodsetAdministratorAuthLevelName">sAuthorization::setAdministratorAuthLevelName()</a> in sAuthorization.php</div>
-							<div class="index-item-description">Set the name of the administrator user level.</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">setAffectedRows</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fResult.html#methodsetAffectedRows">fResult::setAffectedRows()</a> in fResult.php</div>
 							<div class="index-item-description">Sets the number of affected rows</div>
-					</dd>
-			<dt class="field">
-						setAuthLevels
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetAuthLevels">fAuthorization::setAuthLevels</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setAuthLevels</span>
@@ -9230,6 +9210,12 @@
 							<div class="index-item-description">Sets the authorization levels to use for level checking</div>
 					</dd>
 			<dt class="field">
+						setAuthLevels
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetAuthLevels">fAuthorization::setAuthLevels</a> in fAuthorization.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setAutoIncrementedValue</span>
 					</dt>
 		<dd class="index-item-body">
@@ -9237,17 +9223,17 @@
 							<div class="index-item-description">Sets the auto incremented value</div>
 					</dd>
 			<dt class="field">
+						setBackend
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fSession.html#constsetBackend">fSession::setBackend</a> in fSession.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setBackend</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fSession.html#methodsetBackend">fSession::setBackend()</a> in fSession.php</div>
 							<div class="index-item-description">Sets an fCache object to store sessions in</div>
-					</dd>
-			<dt class="field">
-						setBackend
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSession.html#constsetBackend">fSession::setBackend</a> in fSession.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setBody</span>
@@ -9318,6 +9304,12 @@
 							<div class="index-item-description">Set the CSS media type order.</div>
 					</dd>
 			<dt class="field">
+						setCurrencyColumn
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constsetCurrencyColumn">fORMMoney::setCurrencyColumn</a> in fORMMoney.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setCurrencyColumn</span>
 					</dt>
 		<dd class="index-item-body">
@@ -9325,10 +9317,10 @@
 							<div class="index-item-description">Sets the currency column and then tries to objectify the related money column</div>
 					</dd>
 			<dt class="field">
-						setCurrencyColumn
+						setDateCreated
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constsetCurrencyColumn">fORMMoney::setCurrencyColumn</a> in fORMMoney.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetDateCreated">fORMDate::setDateCreated</a> in fORMDate.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setDateCreated</span>
@@ -9338,10 +9330,11 @@
 							<div class="index-item-description">Sets the appropriate column values to the date the object was created (for new records)</div>
 					</dd>
 			<dt class="field">
-						setDateCreated
+						<span class="method-title">setDateUpdated</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetDateCreated">fORMDate::setDateCreated</a> in fORMDate.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMDate.html#methodsetDateUpdated">fORMDate::setDateUpdated()</a> in fORMDate.php</div>
+							<div class="index-item-description">Sets the appropriate column values to the date the object was updated</div>
 					</dd>
 			<dt class="field">
 						setDateUpdated
@@ -9350,24 +9343,17 @@
 			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetDateUpdated">fORMDate::setDateUpdated</a> in fORMDate.php</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">setDateUpdated</span>
+						<span class="method-title">setDefaultCurrency</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDate.html#methodsetDateUpdated">fORMDate::setDateUpdated()</a> in fORMDate.php</div>
-							<div class="index-item-description">Sets the appropriate column values to the date the object was updated</div>
+			<div class="index-item-details"><a href="Flourish/fMoney.html#methodsetDefaultCurrency">fMoney::setDefaultCurrency()</a> in fMoney.php</div>
+							<div class="index-item-description">Sets the default currency to use when creating fMoney objects</div>
 					</dd>
 			<dt class="field">
 						setDefaultCurrency
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fMoney.html#constsetDefaultCurrency">fMoney::setDefaultCurrency</a> in fMoney.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">setDefaultCurrency</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fMoney.html#methodsetDefaultCurrency">fMoney::setDefaultCurrency()</a> in fMoney.php</div>
-							<div class="index-item-description">Sets the default currency to use when creating fMoney objects</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setDefaultDomain</span>
@@ -9396,12 +9382,6 @@
 							<div class="index-item-description">Sets the default expiration date to use for cookies</div>
 					</dd>
 			<dt class="field">
-						setDefaultHTTPOnly
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#constsetDefaultHTTPOnly">fCookie::setDefaultHTTPOnly</a> in fCookie.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">setDefaultHTTPOnly</span>
 					</dt>
 		<dd class="index-item-body">
@@ -9409,10 +9389,10 @@
 							<div class="index-item-description">Sets the default httponly flag to use for cookies</div>
 					</dd>
 			<dt class="field">
-						setDefaultPath
+						setDefaultHTTPOnly
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#constsetDefaultPath">fCookie::setDefaultPath</a> in fCookie.php</div>
+			<div class="index-item-details"><a href="Flourish/fCookie.html#constsetDefaultHTTPOnly">fCookie::setDefaultHTTPOnly</a> in fCookie.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setDefaultPath</span>
@@ -9422,17 +9402,23 @@
 							<div class="index-item-description">Sets the default path to use for cookies</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">setDefaultSecure</span>
+						setDefaultPath
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCookie.html#methodsetDefaultSecure">fCookie::setDefaultSecure()</a> in fCookie.php</div>
-							<div class="index-item-description">Sets the default secure flag to use for cookies</div>
+			<div class="index-item-details"><a href="Flourish/fCookie.html#constsetDefaultPath">fCookie::setDefaultPath</a> in fCookie.php</div>
 					</dd>
 			<dt class="field">
 						setDefaultSecure
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fCookie.html#constsetDefaultSecure">fCookie::setDefaultSecure</a> in fCookie.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">setDefaultSecure</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fCookie.html#methodsetDefaultSecure">fCookie::setDefaultSecure()</a> in fCookie.php</div>
+							<div class="index-item-description">Sets the default secure flag to use for cookies</div>
 					</dd>
 			<dt class="field">
 						setDefaultTimezone
@@ -9448,17 +9434,17 @@
 							<div class="index-item-description">Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function.</div>
 					</dd>
 			<dt class="field">
-						setEmailColumn
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constsetEmailColumn">fORMColumn::setEmailColumn</a> in fORMColumn.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">setEmailColumn</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMColumn.html#methodsetEmailColumn">fORMColumn::setEmailColumn()</a> in fORMColumn.php</div>
 							<div class="index-item-description">Sets the value for an email column, trimming the value if it is a valid email</div>
+					</dd>
+			<dt class="field">
+						setEmailColumn
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMColumn.html#constsetEmailColumn">fORMColumn::setEmailColumn</a> in fORMColumn.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setFallbackLocale</span>
@@ -9468,17 +9454,17 @@
 							<div class="index-item-description">Set the fallback locale if the current locale set does not have a    callback for the method requested. If no callbacks yet exist,    the defaults in this class will be assigned.</div>
 					</dd>
 			<dt class="field">
+						setFieldFormat
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fValidationException.html#constsetFieldFormat">fValidationException::setFieldFormat</a> in fValidationException.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setFieldFormat</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fValidationException.html#methodsetFieldFormat">fValidationException::setFieldFormat()</a> in fValidationException.php</div>
 							<div class="index-item-description">Set the format to be applied to all field names used in fValidationExceptions</div>
-					</dd>
-			<dt class="field">
-						setFieldFormat
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fValidationException.html#constsetFieldFormat">fValidationException::setFieldFormat</a> in fValidationException.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setFromEmail</span>
@@ -9589,6 +9575,13 @@
 							<div class="index-item-description">Allows the message to be overwriten</div>
 					</dd>
 			<dt class="field">
+						<span class="method-title">setMessageOrder</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fValidation.html#methodsetMessageOrder">fValidation::setMessageOrder()</a> in fValidation.php</div>
+							<div class="index-item-description">Allows setting the order that the individual errors in a message will be displayed</div>
+					</dd>
+			<dt class="field">
 						setMessageOrder
 					</dt>
 		<dd class="index-item-body">
@@ -9600,13 +9593,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMValidation.html#methodsetMessageOrder">fORMValidation::setMessageOrder()</a> in fORMValidation.php</div>
 							<div class="index-item-description">Allows setting the order that the list items in a message will be displayed</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">setMessageOrder</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fValidation.html#methodsetMessageOrder">fValidation::setMessageOrder()</a> in fValidation.php</div>
-							<div class="index-item-description">Allows setting the order that the individual errors in a message will be displayed</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setMIMETypes</span>
@@ -9630,17 +9616,17 @@
 							<div class="index-item-description">Set the current mode. In production mode, the site will use minified CSS    and only minified JavaScript files which are added using    sTemplate::addMinifiedJavaScriptFile().</div>
 					</dd>
 			<dt class="field">
+						setMoneyColumn
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constsetMoneyColumn">fORMMoney::setMoneyColumn</a> in fORMMoney.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setMoneyColumn</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMMoney.html#methodsetMoneyColumn">fORMMoney::setMoneyColumn()</a> in fORMMoney.php</div>
 							<div class="index-item-description">Sets the money column and then tries to objectify it with an related currency column</div>
-					</dd>
-			<dt class="field">
-						setMoneyColumn
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMMoney.html#constsetMoneyColumn">fORMMoney::setMoneyColumn</a> in fORMMoney.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setOptional</span>
@@ -9794,14 +9780,14 @@
 						<span class="method-title">setSQL</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fUnbufferedResult.html#methodsetSQL">fUnbufferedResult::setSQL()</a> in fUnbufferedResult.php</div>
+			<div class="index-item-details"><a href="Flourish/fResult.html#methodsetSQL">fResult::setSQL()</a> in fResult.php</div>
 							<div class="index-item-description">Sets the SQL used in the query</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setSQL</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fResult.html#methodsetSQL">fResult::setSQL()</a> in fResult.php</div>
+			<div class="index-item-details"><a href="Flourish/fUnbufferedResult.html#methodsetSQL">fUnbufferedResult::setSQL()</a> in fUnbufferedResult.php</div>
 							<div class="index-item-description">Sets the SQL used in the query</div>
 					</dd>
 			<dt class="field">
@@ -9832,12 +9818,6 @@
 			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetTimestampColumn">fORMDate::setTimestampColumn</a> in fORMDate.php</div>
 					</dd>
 			<dt class="field">
-						setTimezoneColumn
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetTimezoneColumn">fORMDate::setTimezoneColumn</a> in fORMDate.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">setTimezoneColumn</span>
 					</dt>
 		<dd class="index-item-body">
@@ -9845,17 +9825,23 @@
 							<div class="index-item-description">Sets the timezone column and then tries to objectify the related timestamp column</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">setUntranslatedSQL</span>
+						setTimezoneColumn
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fResult.html#methodsetUntranslatedSQL">fResult::setUntranslatedSQL()</a> in fResult.php</div>
-							<div class="index-item-description">Sets the SQL from before translation</div>
+			<div class="index-item-details"><a href="Flourish/fORMDate.html#constsetTimezoneColumn">fORMDate::setTimezoneColumn</a> in fORMDate.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setUntranslatedSQL</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fUnbufferedResult.html#methodsetUntranslatedSQL">fUnbufferedResult::setUntranslatedSQL()</a> in fUnbufferedResult.php</div>
+							<div class="index-item-description">Sets the SQL from before translation</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">setUntranslatedSQL</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fResult.html#methodsetUntranslatedSQL">fResult::setUntranslatedSQL()</a> in fResult.php</div>
 							<div class="index-item-description">Sets the SQL from before translation</div>
 					</dd>
 			<dt class="field">
@@ -9872,6 +9858,12 @@
 							<div class="index-item-description">Sets the ACLs for the logged in user.</div>
 					</dd>
 			<dt class="field">
+						setUserAuthLevel
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetUserAuthLevel">fAuthorization::setUserAuthLevel</a> in fAuthorization.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">setUserAuthLevel</span>
 					</dt>
 		<dd class="index-item-body">
@@ -9879,10 +9871,10 @@
 							<div class="index-item-description">Sets the authorization level for the logged in user</div>
 					</dd>
 			<dt class="field">
-						setUserAuthLevel
+						setUserToken
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetUserAuthLevel">fAuthorization::setUserAuthLevel</a> in fAuthorization.php</div>
+			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetUserToken">fAuthorization::setUserToken</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setUserToken</span>
@@ -9890,12 +9882,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fAuthorization.html#methodsetUserToken">fAuthorization::setUserToken()</a> in fAuthorization.php</div>
 							<div class="index-item-description">Sets some piece of information to use to identify the current user</div>
-					</dd>
-			<dt class="field">
-						setUserToken
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fAuthorization.html#constsetUserToken">fAuthorization::setUserToken</a> in fAuthorization.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">setWorkingDirectory</span>
@@ -9910,12 +9896,6 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Sutra/sGrammar.html">sGrammar</a> in sGrammar.php</div>
 							<div class="index-item-description">Extends fGrammar.</div>
-					</dd>
-			<dt class="field">
-						show
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fMessaging.html#constshow">fMessaging::show</a> in fMessaging.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">show</span>
@@ -9938,17 +9918,23 @@
 							<div class="index-item-description">Retrieves a message, removes it from the session and prints it - will not print if no content</div>
 					</dd>
 			<dt class="field">
-						<span class="method-title">showChecked</span>
+						show
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fHTML.html#methodshowChecked">fHTML::showChecked()</a> in fHTML.php</div>
-							<div class="index-item-description">Prints a `checked=&quot;checked&quot;` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</div>
+			<div class="index-item-details"><a href="Flourish/fMessaging.html#constshow">fMessaging::show</a> in fMessaging.php</div>
 					</dd>
 			<dt class="field">
 						showChecked
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fHTML.html#constshowChecked">fHTML::showChecked</a> in fHTML.php</div>
+					</dd>
+			<dt class="field">
+						<span class="method-title">showChecked</span>
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fHTML.html#methodshowChecked">fHTML::showChecked()</a> in fHTML.php</div>
+							<div class="index-item-description">Prints a `checked=&quot;checked&quot;` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">showLinks</span>
@@ -9958,17 +9944,17 @@
 							<div class="index-item-description">Shows links to other pages when more than one page of records exists</div>
 					</dd>
 			<dt class="field">
-						showRecordSetLinks
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fPagination.html#constshowRecordSetLinks">fPagination::showRecordSetLinks</a> in fPagination.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">showRecordSetLinks</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fPagination.html#methodshowRecordSetLinks">fPagination::showRecordSetLinks()</a> in fPagination.php</div>
 							<div class="index-item-description">Handles the `showLinks()` method for fRecordSet</div>
+					</dd>
+			<dt class="field">
+						showRecordSetLinks
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fPagination.html#constshowRecordSetLinks">fPagination::showRecordSetLinks</a> in fPagination.php</div>
 					</dd>
 			<dt class="field">
 						sHTML
@@ -9981,15 +9967,15 @@
 						<span class="method-title">sign</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fEmail.html#methodsign">fEmail::sign()</a> in fEmail.php</div>
-							<div class="index-item-description">Sets the email to be signed with S/MIME</div>
+			<div class="index-item-details"><a href="Flourish/fNumber.html#methodsign">fNumber::sign()</a> in fNumber.php</div>
+							<div class="index-item-description">Returns the sign of the number</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">sign</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fNumber.html#methodsign">fNumber::sign()</a> in fNumber.php</div>
-							<div class="index-item-description">Returns the sign of the number</div>
+			<div class="index-item-details"><a href="Flourish/fEmail.html#methodsign">fEmail::sign()</a> in fEmail.php</div>
+							<div class="index-item-description">Sets the email to be signed with S/MIME</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">silenceNotices</span>
@@ -10013,17 +9999,17 @@
 							<div class="index-item-description">Provides more methods to fImage, most notably rotation based on EXIF data    which may be present in the file.</div>
 					</dd>
 			<dt class="field">
+						singularize
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fGrammar.html#constsingularize">fGrammar::singularize</a> in fGrammar.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">singularize</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fGrammar.html#methodsingularize">fGrammar::singularize()</a> in fGrammar.php</div>
 							<div class="index-item-description">Returns the singular version of a plural noun</div>
-					</dd>
-			<dt class="field">
-						singularize
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fGrammar.html#constsingularize">fGrammar::singularize</a> in fGrammar.php</div>
 					</dd>
 			<dt class="field">
 						sJSONP
@@ -10082,17 +10068,17 @@
 							<div class="index-item-description">Splits the record set into an array of fRecordSet objects</div>
 					</dd>
 			<dt class="field">
-						splitHavingConditions
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#constsplitHavingConditions">fORMDatabase::splitHavingConditions</a> in fORMDatabase.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">splitHavingConditions</span>
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#methodsplitHavingConditions">fORMDatabase::splitHavingConditions()</a> in fORMDatabase.php</div>
 							<div class="index-item-description">Removed aggregate function calls from where conditions array and puts them in a having conditions array</div>
+					</dd>
+			<dt class="field">
+						splitHavingConditions
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMDatabase.html#constsplitHavingConditions">fORMDatabase::splitHavingConditions</a> in fORMDatabase.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">splitMessage</span>
@@ -10143,12 +10129,6 @@
 							<div class="index-item-description">Callback for custom SQLite length function; returns the number of UTF-8 characters in a string</div>
 					</dd>
 			<dt class="field">
-						sqliteLogBaseFirst
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSQLTranslation.html#constsqliteLogBaseFirst">fSQLTranslation::sqliteLogBaseFirst</a> in fSQLTranslation.php</div>
-					</dd>
-			<dt class="field">
 						<span class="method-title">sqliteLogBaseFirst</span>
 					</dt>
 		<dd class="index-item-body">
@@ -10156,10 +10136,10 @@
 							<div class="index-item-description">Callback for custom SQLite function; calculates the log to a specific base of a number</div>
 					</dd>
 			<dt class="field">
-						sqliteSign
+						sqliteLogBaseFirst
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fSQLTranslation.html#constsqliteSign">fSQLTranslation::sqliteSign</a> in fSQLTranslation.php</div>
+			<div class="index-item-details"><a href="Flourish/fSQLTranslation.html#constsqliteLogBaseFirst">fSQLTranslation::sqliteLogBaseFirst</a> in fSQLTranslation.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">sqliteSign</span>
@@ -10167,6 +10147,12 @@
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fSQLTranslation.html#methodsqliteSign">fSQLTranslation::sqliteSign()</a> in fSQLTranslation.php</div>
 							<div class="index-item-description">Callback for custom SQLite function; returns the sign of the number</div>
+					</dd>
+			<dt class="field">
+						sqliteSign
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fSQLTranslation.html#constsqliteSign">fSQLTranslation::sqliteSign</a> in fSQLTranslation.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">sqliteSubstr</span>
@@ -10224,6 +10210,12 @@
 			<div class="index-item-details"><a href="Flourish/fBuffer.html#conststart">fBuffer::start</a> in fBuffer.php</div>
 					</dd>
 			<dt class="field">
+						startCapture
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fBuffer.html#conststartCapture">fBuffer::startCapture</a> in fBuffer.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">startCapture</span>
 					</dt>
 		<dd class="index-item-body">
@@ -10231,10 +10223,10 @@
 							<div class="index-item-description">Starts capturing output, should be used with ::stopCapture() to grab output from code that does not offer an option of returning a value instead of outputting it</div>
 					</dd>
 			<dt class="field">
-						startCapture
+						startErrorCapture
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fBuffer.html#conststartCapture">fBuffer::startCapture</a> in fBuffer.php</div>
+			<div class="index-item-details"><a href="Flourish/fCore.html#conststartErrorCapture">fCore::startErrorCapture</a> in fCore.php</div>
 					</dd>
 			<dt class="field">
 						<span class="method-title">startErrorCapture</span>
@@ -10244,23 +10236,17 @@
 							<div class="index-item-description">Temporarily enables capturing error messages</div>
 					</dd>
 			<dt class="field">
-						startErrorCapture
+						<span class="method-title">stem</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fCore.html#conststartErrorCapture">fCore::startErrorCapture</a> in fCore.php</div>
+			<div class="index-item-details"><a href="Flourish/fGrammar.html#methodstem">fGrammar::stem()</a> in fGrammar.php</div>
+							<div class="index-item-description">Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching</div>
 					</dd>
 			<dt class="field">
 						stem
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fGrammar.html#conststem">fGrammar::stem</a> in fGrammar.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">stem</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fGrammar.html#methodstem">fGrammar::stem()</a> in fGrammar.php</div>
-							<div class="index-item-description">Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching</div>
 					</dd>
 			<dt class="field">
 						sTemplate
@@ -10323,6 +10309,12 @@
 							<div class="index-item-description">Stores a record in the database, whether existing or new</div>
 					</dd>
 			<dt class="field">
+						store
+					</dt>
+		<dd class="index-item-body">
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#conststore">fORMRelated::store</a> in fORMRelated.php</div>
+					</dd>
+			<dt class="field">
 						<span class="method-title">store</span>
 					</dt>
 		<dd class="index-item-body">
@@ -10330,23 +10322,17 @@
 							<div class="index-item-description">Stores any many-to-many associations or any one-to-many records that have been flagged for association</div>
 					</dd>
 			<dt class="field">
-						store
+						<span class="method-title">storeManyToMany</span>
 					</dt>
 		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#conststore">fORMRelated::store</a> in fORMRelated.php</div>
+			<div class="index-item-details"><a href="Flourish/fORMRelated.html#methodstoreManyToMany">fORMRelated::storeManyToMany()</a> in fORMRelated.php</div>
+							<div class="index-item-description">Associates a set of many-to-many related records with the current record</div>
 					</dd>
 			<dt class="field">
 						storeManyToMany
 					</dt>
 		<dd class="index-item-body">
 			<div class="index-item-details"><a href="Flourish/fORMRelated.html#conststoreManyToMany">fORMRelated::storeManyToMany</a> in fORMRelated.php</div>
-					</dd>
-			<dt class="field">
-						<span class="method-title">storeManyToMany</span>
-					</dt>
-		<dd class="index-item-body">
-			<div class="index-item-details"><a href="Flourish/fORMRelated.html#methodstoreManyToMany">fORMRelated::storeManyToMany()</a> in fORMRelated.php</div>
-							<div class="index-item-description">Associates a set of many-to-many related records with the current record</div>
 					</dd>
 			<dt class="field">
 						storeOneToMany
