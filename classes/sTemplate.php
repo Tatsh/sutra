@@ -1,6 +1,6 @@
 <?php
 /**
- * Manages templating. Similar to fTemplating but different.
+ * Manages templating.
  *
  * @copyright Copyright (c) 2012 bne1.
  * @author Andrew Udvare [au] <andrew@bne1.com>
@@ -13,9 +13,9 @@
  */
 class sTemplate {
   /**
-   * The fCache instance.
+   * The sCache instance.
    *
-   * @var fCache
+   * @var sCache
    */
   private static $cache = NULL;
 
@@ -152,6 +152,13 @@ class sTemplate {
   private static $site_slogan = '';
 
   /**
+   * Where minified CSS should be stored.
+   *
+   * @var string
+   */
+  private static $minifed_css_path = 'files';
+
+  /**
    * Set the sCache instance sTemplate will use.
    *
    * @param sCache $cache The cache object.
@@ -162,11 +169,11 @@ class sTemplate {
   }
 
   /**
-   * Gets the fCache instance this is using.
+   * Gets the sCache instance this is using.
    *
    * @throws fProgrammerException If cache is NULL.
    *
-   * @return fCache The fCache instance.
+   * @return sCache The sCache instance.
    * @see sTemplate::setCache()
    */
   public static function getCache() {
@@ -174,6 +181,33 @@ class sTemplate {
       throw new fProgrammerException('Cache must be set by calling %s.', __CLASS__.'::setCache()');
     }
     return self::$cache;
+  }
+
+  /**
+   * Set where minified CSS should be stored. This directory will be in the site root.
+   *
+   * @param string $path Path in which to store minified CSS. Should not have
+   *    a leading '/', or './' at the beginning.
+   * @return void
+   */
+  public static function setMinifiedCSSPath($path) {
+    $dir = new fDirectory($path);
+
+    if (!$dir->isWritable()) {
+      throw new fProgrammerException('The directory specified, "%s", does exist but is not writable.', $path);
+    }
+
+    self::$minifed_css_path = $path;
+  }
+
+  /**
+   * Set the site slogan.
+   *
+   * @param string $slogan Slogan string.
+   * @return void
+   */
+  public static function setSiteSlogan($slogan) {
+    self::$site_slogan = (string)$slogan;
   }
 
   /**
@@ -462,26 +496,32 @@ class sTemplate {
     self::$production_mode_template_path = $path;
   }
 
+  /**
+   * Makes the stylesheets HTML when in production mode.
+   *
+   * @throws fUnexpectedException If a file is unable to read or found.
+   *
+   * @return string The HTML link tags.
+   */
   private static function getStylesheetsHTMLProductionMode() {
     fCore::startErrorCapture(E_ALL);
 
     $html = '';
     $cache = self::getCache();
     $cwd = getcwd();
-    $cached = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css');
-    $cached_name = $cache->get(__CLASS__.'::'.$cwd.'::last_combined_css_name');
+    $names = $cache->get(__CLASS__.'::last_combined_css_names', array());
     $cdn = self::getACDN();
     $css = array();
-    //$cached = NULL; // for debugging
 
-    if (is_null($cached) || is_null($cached_name)) {
+    //$names = array(); // for debugging
+    if (empty($names)) {
       foreach (self::$css_files as $media => $files) {
         if (!isset($css[$media])) {
           $css[$media] = '';
         }
 
         foreach ($files as $file) {
-          $ret = file_get_contents(self::$production_mode_template_path.'/'.self::$template_name.'/'.$file);
+          $ret = file_get_contents($file);
 
           if ($ret === FALSE) {
             throw new fUnexpectedException('Unable to read file "%s"', $file);
@@ -500,36 +540,80 @@ class sTemplate {
         'CompressColorValues' => TRUE,
       );
       $has_css_min = class_exists('CssMin');
+      $time = time();
 
       foreach ($css as $key => $text) {
         if (!$text) {
-          unset($css[$key]);
           continue;
         }
 
         if ($has_css_min) {
-          $css[$key] = CssMin::minify($text, $filters, $plugins);
+          $text = CssMin::minify($text, $filters, $plugins);
         }
         else {
           // Simple, but CSS has to be near perfect (as it should always be)
-          $css[$key] = str_replace("\n", '', $text);
+          $text = str_replace("\n", '', $text);
+        }
+
+        $media = sHTML::stripNonASCIIFromString($key);
+        $filename = './'.self::$minifed_css_path.'/css-'.$media.'-'.$time.'.min.css';
+        $names[$key] = preg_replace('/^\./', '', $filename);
+        $ret = file_put_contents($filename, $text, LOCK_EX);
+
+        if ($ret === FALSE) {
+          throw new fUnexpectedException('Unable to write to "%s" (minified CSS).', $filename);
         }
       }
 
-      $cached = $css;
-      $cached_name = fCryptography::randomString(32, 'alpha');
-      $cache->set(__CLASS__.'::'.$cwd.'::last_combined_css_name', $cached_name, 86400 * 7);
-      $cache->set(__CLASS__.'::'.$cwd.'::last_combined_css', $css, 86400 * 7);
+      // Save to cache for the set time
+      $cache->set(__CLASS__.'::last_combined_css_names', $names);
     }
 
-    foreach ($cached as $media => $css) {
-      $href = $cdn.'/media/css/c'.$cached_name.'/'.urlencode(base64_encode($media)).'.css';
+    $used = array();
+    foreach (self::$css_media_order as $media) {
+      if (isset($names[$media])) {
+        $css = $names[$media];
+
+        if (!is_file('.'.$css)) {
+          $recache = TRUE;
+          break;
+        }
+
+        $href = $cdn.$css;
+        $used[$href] = TRUE;
+        $html .= sHTML::tag('link', array(
+          'rel' => 'stylesheet',
+          'type' => 'text/css',
+          'href' => $href,
+          'media' => $media,
+        ));
+      }
+    }
+
+    foreach ($names as $media => $css) {
+      if (!is_file('.'.$css)) {
+        $recache = TRUE;
+        break;
+      }
+
+      $href = $cdn.$css;
+
+      if (isset($used[$href])) {
+        continue;
+      }
+
       $html .= sHTML::tag('link', array(
         'rel' => 'stylesheet',
         'type' => 'text/css',
         'href' => $href,
         'media' => $media,
       ));
+    }
+
+    if ($recache) {
+      fCore::debug('A minified CSS file was not found. All files are being re-generated.');
+      $cache->delete(__CLASS__.'::last_combined_css_names');
+      return self::getStylesheetsHTMLProductionMode();
     }
 
     fCore::stopErrorCapture();
@@ -551,9 +635,13 @@ class sTemplate {
     }
 
     $html = '';
-    $prefix = preg_replace('/^\./', '', self::getTemplatesPath());
 
     if (self::$in_production_mode) {
+      $cache = self::getCache();
+      if ($cache->get(__CLASS__.'::last_mode') != 'production') {
+        $cache->delete(__CLASS__.'::last_combined_css_names');
+      }
+
       return self::getStylesheetsHTMLProductionMode();
     }
 
@@ -564,7 +652,7 @@ class sTemplate {
       $files = isset(self::$css_files[$media]) ? self::$css_files[$media] : array();
 
       foreach ($files as $file) {
-        $href = $prefix.'/'.self::$template_name.'/'.$file.$qs;
+        $href = '/'.$file.$qs;
         $added[$href] = TRUE;
         $html .= sHTML::tag('link', array(
           'rel' => 'stylesheet',
@@ -578,7 +666,7 @@ class sTemplate {
     // Then just add the rest
     foreach (self::$css_files as $media => $files) {
       foreach ($files as $file) {
-        $href = $prefix.'/'.self::$template_name.'/'.$file.$qs;
+        $href = '/'.$file.$qs;
         if (!isset($added[$href])) {
           $html .= sHTML::tag('link', array(
             'rel' => 'stylesheet',
@@ -822,6 +910,9 @@ class sTemplate {
     $vars['title'] = $variables['title'];
     $vars['content'] = $variables['content'];
     extract($vars);
+
+    // Save the last mode so that the CSS rendering code will know to re-generate
+    self::getCache()->set(__CLASS__.'::last_mode', self::$in_production_mode ? 'production' : 'development');
 
     fHTML::sendHeader();
 
