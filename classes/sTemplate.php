@@ -2,14 +2,14 @@
 /**
  * Manages templating. Similar to fTemplating but different.
  *
- * @copyright Copyright (c) 2012 Poluza.
- * @author Andrew Udvare [au] <andrew@poluza.com>
+ * @copyright Copyright (c) 2012 bne1.
+ * @author Andrew Udvare [au] <andrew@bne1.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
  * @package Sutra
  * @link http://www.sutralib.com/
  *
- * @version 1.01
+ * @version 1.2
  */
 class sTemplate {
   /**
@@ -152,12 +152,12 @@ class sTemplate {
   private static $site_slogan = '';
 
   /**
-   * Set the fCache instance sTemplate will use.
+   * Set the sCache instance sTemplate will use.
    *
-   * @param fCache $cache The cache object.
+   * @param sCache $cache The cache object.
    * @return void
    */
-  public static function setCache(fCache $cache) {
+  public static function setCache(sCache $cache) {
     self::$cache = $cache;
   }
 
