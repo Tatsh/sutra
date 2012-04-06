@@ -4,7 +4,7 @@ mkdir -p template
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
 
-phpunit -v --colors --coverage-html ./report --stderr .
+phpunit --stderr -c config.xml .
 
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
