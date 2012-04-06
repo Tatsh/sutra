@@ -237,7 +237,8 @@ class sProcess {
    */
   public static function getPath($array = FALSE) {
     self::setPath();
-    return $array ? explode(':', self::$path) : self::$path;
+	$delimiter = fCore::checkOS('windows') ? ';' : ':';
+    return $array ? explode($delimiter, self::$path) : self::$path;
   }
 
   /**
@@ -249,7 +250,7 @@ class sProcess {
    * @return boolean TRUE If the binary is found, FALSE otherwise.
    */
   private static function exists($bin_name) {
-    if (self::checkOS('windows') && substr(strtolower($bin_name), -4, 4) === FALSE) {
+    if (self::checkOS('windows') && substr(strtolower($bin_name), -4, 4) !== '.exe') {
       $bin_name .= '.exe';
     }
 
