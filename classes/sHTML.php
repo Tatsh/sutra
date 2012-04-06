@@ -531,8 +531,10 @@ class sHTML extends fHTML {
         if (substr($url, 0, $length) == $protocol) {
           return TRUE;
         }
+  // @codeCoverageIgnoreStart
       }
     }
+  // @codeCoverageIgnoreEnd
 
     return substr($url, 0, 7) == 'http://' || substr($url, 0, 8) == 'https://' || $url[0] == '/';
   }
