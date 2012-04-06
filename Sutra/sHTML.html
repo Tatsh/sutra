@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sHTML</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sHTML</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Library to help with rendering HTML tags cleanly and validly. Note that    only some element attributes are checked for validity and fixed.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Andrew Udvare [au] &lt;<a href="mailto:andrew@bne1.com">andrew@bne1.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.2</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2012 bne1.</li>
+				<li><span class="field">link:</span> <a href="http://www.sutralib.com/">http://www.sutralib.com/</a></li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_sutra-separated---classes---sHTML.php.html">/sutra-separated/classes/sHTML.php</a> (line <span class="field">15</span>)
+		</p>
+		
+				
+		<pre><a href="../Flourish/fHTML.html">fHTML</a>
+   |
+   --sHTML</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#attributesString" title="details" class="method-name">attributesString</a>
+											([<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#conditionalTag" title="details" class="method-name">conditionalTag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rule</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">bool</span>
+										<a href="#linkIsURI" title="details" class="method-name">linkIsURI</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$other_protocols</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#makeFormElement" title="details" class="method-name">makeFormElement</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#makeList" title="details" class="method-name">makeList</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'ul'</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#paragraphify" title="details" class="method-name">paragraphify</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$html</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#stripNonASCIIFromString" title="details" class="method-name">stripNonASCIIFromString</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$lower</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#tag" title="details" class="method-name">tag</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span> = <span class="var-default">''</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">bool</span>
+										<a href="#tagRequiresEnd" title="details" class="method-name">tagRequiresEnd</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+									</div>
+								
+																																																																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodattributesString" id="attributesString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method attributesString</span> (line <span class="line-number">413</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert an array of key =&gt; value attributes for an HTML tag to a    string for use in HTML.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> String ready for use within HTML tag.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			attributesString
+		</span>
+					([<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attr</span><span class="var-description">: Attributes array.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconditionalTag" id="conditionalTag"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method conditionalTag</span> (line <span class="line-number">515</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a tag HTML string wrapped by a MSIE conditional comment.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The HTML tag, ready to be displayed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			conditionalTag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rule</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rule</span><span class="var-description">: The IE rule. Examples: 'lt IE 9', 'IE 8', 'gt IE 6'.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: Tag name.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$content</span><span class="var-description">: Content to place within the HTML.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attr</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlinkIsURI" id="linkIsURI"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method linkIsURI</span> (line <span class="line-number">527</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if a URL is a full URI or not.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the path is full URI beginning with http or https, FALSE otherwise.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			linkIsURI
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$other_protocols</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$url</span><span class="var-description">: URL to check.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$other_protocols</span><span class="var-description">: Other protocols to check.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmakeFormElement" id="makeFormElement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method makeFormElement</span> (line <span class="line-number">295</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a form element.</p>
+<p class="description"><p>If specifying a select element, it may be desirable to have a default    selected option. To do so, specify a 'value' key with a string value    in the $attr argument. For optgroups, use a 2-dimensional array in    the 'options' key in the $attr argument.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> HTML tags ready for use.</li>
+				<li><span class="field">throws:</span> fProgrammerException If the type argument is invalid.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			makeFormElement
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: One of the HTML 5 element types for use with the    input tags, 'select', and 'textarea'.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: Form element name, unique to the form.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attr</span><span class="var-description">: Array of key =&gt; value attributes. Use 'label' to    provide a string for use with a label element (which will have the    for attribute set properly).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmakeList" id="makeList"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method makeList</span> (line <span class="line-number">577</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a list. 'first', 'last', 'odd', 'even', 'item-INDEX' classes    will be automatically added to each li element.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			makeList
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$items</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$type</span> = <span class="var-default">'ul'</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$items</span><span class="var-description">: Array of strings.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$type</span><span class="var-description">: 'ul' or 'ol', defaults to 'ul' even if an invalid    value is passed.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attr</span><span class="var-description">: Array of attributes for the parent element.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodparagraphify" id="paragraphify"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method paragraphify</span> (line <span class="line-number">546</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create paragraphs from 2 or more new lines.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			paragraphify
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$html</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$html</span><span class="var-description">: Unfiltered string to paragraphify.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstripNonASCIIFromString" id="stripNonASCIIFromString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method stripNonASCIIFromString</span> (line <span class="line-number">368</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Strip out non-ASCII characters and accents out of the string.</p>
+<p class="description"><p>Basically, this removes all characters NOT within the range of:    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890-</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> String, processed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			stripNonASCIIFromString
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$str</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$lower</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$str</span><span class="var-description">: String to process.</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$lower</span><span class="var-description">: Lower case if set to TRUE (default).</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtag" id="tag"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method tag</span> (line <span class="line-number">488</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create a tag HTML string.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> HTML tag, ready to be displayed.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			tag
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$attr</span> = <span class="var-default">array()</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span> = <span class="var-default">''</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: Tag name.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$content</span><span class="var-description">: Content to place within HTML. If the tag never uses an end tag, this parameter will be ignored. In particular, &lt;input&gt;, &lt;link&gt; and similar tags.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$attr</span><span class="var-description">: Attributes array.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtagRequiresEnd" id="tagRequiresEnd"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method tagRequiresEnd</span> (line <span class="line-number">468</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Some tags require end tags while some others do not. Example: &lt;p&gt; does    not in HTML, but in XHTML like all tags requires an end tag. However,    some browsers are not going to do the same thing when encountering    several &lt;p&gt; tags with no endings, so it returns TRUE.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> TRUE if the end tag is required, FALSE otherwise.</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">bool</span>
+		<span class="method-name">
+			tagRequiresEnd
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$tag</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$tag</span><span class="var-description">: Tag name.</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fHTML.html">fHTML</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodcontainsBlockLevelHTML">fHTML::containsBlockLevelHTML()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodconvertNewlines">fHTML::convertNewlines()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methoddecode">fHTML::decode()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodencode">fHTML::encode()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodmakeLinks">fHTML::makeLinks()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodprepare">fHTML::prepare()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodprintOption">fHTML::printOption()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodsendHeader">fHTML::sendHeader()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodshow">fHTML::show()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fHTML.html#methodshowChecked">fHTML::showChecked()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fHTML.html">fHTML</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constcontainsBlockLevelHTML">fHTML::containsBlockLevelHTML</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constconvertNewlines">fHTML::convertNewlines</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constdecode">fHTML::decode</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constencode">fHTML::encode</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constmakeLinks">fHTML::makeLinks</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constprepare">fHTML::prepare</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constprintOption">fHTML::printOption</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constsendHeader">fHTML::sendHeader</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constshow">fHTML::show</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fHTML.html#constshowChecked">fHTML::showChecked</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:47 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

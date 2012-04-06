@@ -1,0 +1,1635 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fRecordSet</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fRecordSet</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li>IteratorAggregate (internal interface)</li><li>ArrayAccess (internal interface)</li><li>Countable (internal interface)</li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A lightweight, iterable set of fActiveRecord-based objects</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b45</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fRecordSet">http://flourishlib.com/fRecordSet</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fRecordSet.php.html">/flourish/fRecordSet.php</a> (line <span class="field">59</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#build" title="details" class="const-name">build</a> = 					<span class="var-type"> 'fRecordSet::build'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#buildFromArray" title="details" class="const-name">buildFromArray</a> = 					<span class="var-type"> 'fRecordSet::buildFromArray'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#buildFromSQL" title="details" class="const-name">buildFromSQL</a> = 					<span class="var-type"> 'fRecordSet::buildFromSQL'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#build" title="details" class="method-name">build</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$where_conditions</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$order_bys</span> = <span class="var-default">array()</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#buildFromArray" title="details" class="method-name">buildFromArray</a>
+											(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$total_records</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+									</div>
+																																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#buildFromSQL" title="details" class="method-name">buildFromSQL</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$sql</span>, [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$non_limited_count_sql</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+									</div>
+																																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#compose" title="details" class="method-name">compose</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																																																																																																																																																																																																																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#tally" title="details" class="method-name">tally</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$where_conditions</span> = <span class="var-default">array()</span>])
+									</div>
+																																								
+												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">Iterator|array</span>&nbsp;<span class="var-name">$records</span> = <span class="var-default">NULL</span>], [<span class="var-type">string|integer</span>&nbsp;<span class="var-name">$non_limited_count</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+									</div>
+																																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#buildFromCall" title="details" class="method-name">buildFromCall</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#buildFromMap" title="details" class="method-name">buildFromMap</a>
+											(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#call" title="details" class="method-name">call</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#chunk" title="details" class="method-name">chunk</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#contains" title="details" class="method-name">contains</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$record</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$ignore_limit</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#diff" title="details" class="method-name">diff</a>
+											(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#filter" title="details" class="method-name">filter</a>
+											(<span class="var-type">callback|string|array</span>&nbsp;<span class="var-name">$procedure</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string|array</span>
+										<a href="#getClass" title="details" class="method-name">getClass</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">ArrayIterator</span>
+										<a href="#getIterator" title="details" class="method-name">getIterator</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getLimit" title="details" class="method-name">getLimit</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getPage" title="details" class="method-name">getPage</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#getPages" title="details" class="method-name">getPages</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getPrimaryKeys" title="details" class="method-name">getPrimaryKeys</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+										<a href="#getRecord" title="details" class="method-name">getRecord</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$index</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getRecords" title="details" class="method-name">getRecords</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#intersect" title="details" class="method-name">intersect</a>
+											(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#map" title="details" class="method-name">map</a>
+											(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#merge" title="details" class="method-name">merge</a>
+											(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#offsetExists" title="details" class="method-name">offsetExists</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+										<a href="#offsetGet" title="details" class="method-name">offsetGet</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetSet" title="details" class="method-name">offsetSet</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetUnset" title="details" class="method-name">offsetUnset</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#reduce" title="details" class="method-name">reduce</a>
+											(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$initial_value</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#slice" title="details" class="method-name">slice</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#sort" title="details" class="method-name">sort</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$direction</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#sortByCallback" title="details" class="method-name">sortByCallback</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$callback</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#split" title="details" class="method-name">split</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#tossIfEmpty" title="details" class="method-name">tossIfEmpty</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#unique" title="details" class="method-name">unique</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__call" title="details" class="method-name">__call</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodbuild" id="build"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method build</span> (line <span class="line-number">203</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules</p>
+<p class="description"><p>The where conditions array can contain `key =&gt; value` entries in any of  the following formats:</p><p>{{{  'column='                    =&gt; VALUE,                       // column = VALUE  'column!'                    =&gt; VALUE                        // column &lt;&gt; VALUE  'column!='                   =&gt; VALUE                        // column &lt;&gt; VALUE  'column&lt;&gt;'                   =&gt; VALUE                        // column &lt;&gt; VALUE  'column~'                    =&gt; VALUE                        // column LIKE '%VALUE%'  'column^~'                   =&gt; VALUE                        // column LIKE 'VALUE%'  'column$~'                   =&gt; VALUE                        // column LIKE '%VALUE'  'column!~'                   =&gt; VALUE                        // column NOT LIKE '%VALUE%'  'column&lt;'                    =&gt; VALUE                        // column &lt; VALUE  'column&lt;='                   =&gt; VALUE                        // column &lt;= VALUE  'column&gt;'                    =&gt; VALUE                        // column &gt; VALUE  'column&gt;='                   =&gt; VALUE                        // column &gt;= VALUE  'column=:'                   =&gt; 'other_column'               // column = other_column  'column!:'                   =&gt; 'other_column'               // column &lt;&gt; other_column  'column!=:'                  =&gt; 'other_column'               // column &lt;&gt; other_column  'column&lt;&gt;:'                  =&gt; 'other_column'               // column &lt;&gt; other_column  'column&lt;:'                   =&gt; 'other_column'               // column &lt; other_column  'column&lt;=:'                  =&gt; 'other_column'               // column &lt;= other_column  'column&gt;:'                   =&gt; 'other_column'               // column &gt; other_column  'column&gt;=:'                  =&gt; 'other_column'               // column &gt;= other_column  'column='                    =&gt; array(VALUE, VALUE2, ... )   // column IN (VALUE, VALUE2, ... )  'column!'                    =&gt; array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )  'column!='                   =&gt; array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )  'column&lt;&gt;'                   =&gt; array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )  'column~'                    =&gt; array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE%' OR column LIKE '%VALUE2%' OR column ... )  'column^~'                   =&gt; array(VALUE, VALUE2, ... )   // (column LIKE 'VALUE%' OR column LIKE 'VALUE2%' OR column ... )  'column$~'                   =&gt; array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE' OR column LIKE '%VALUE2' OR column ... )  'column&amp;~'                   =&gt; array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE%' AND column LIKE '%VALUE2%' AND column ... )  'column!~'                   =&gt; array(VALUE, VALUE2, ... )   // (column NOT LIKE '%VALUE%' AND column NOT LIKE '%VALUE2%' AND column ... )  'column!|column2&lt;|column3='  =&gt; array(VALUE, VALUE2, VALUE3) // (column &lt;&gt; '%VALUE%' OR column2 &lt; '%VALUE2%' OR column3 = '%VALUE3%')  'column|column2&gt;&lt;'           =&gt; array(VALUE, VALUE2)         // WHEN VALUE === NULL: ((column2 IS NULL AND column = VALUE) OR (column2 IS NOT NULL AND column &lt;= VALUE AND column2 &gt;= VALUE))                                                               // WHEN VALUE !== NULL: ((column &lt;= VALUE AND column2 &gt;= VALUE) OR (column &gt;= VALUE AND column &lt;= VALUE2))  'column|column2|column3~'    =&gt; VALUE                        // (column LIKE '%VALUE%' OR column2 LIKE '%VALUE%' OR column3 LIKE '%VALUE%')  'column|column2|column3~'    =&gt; array(VALUE, VALUE2, ... )   // ((column LIKE '%VALUE%' OR column2 LIKE '%VALUE%' OR column3 LIKE '%VALUE%') AND (column LIKE '%VALUE2%' OR column2 LIKE '%VALUE2%' OR column3 LIKE '%VALUE2%') AND ... )  }}}</p><p>When creating a condition in the form `column|column2|column3~`, if the  value for the condition is a single string that contains spaces, the  string will be parsed for search terms. The search term parsing will  handle quoted phrases and normal words and will strip punctuation and  stop words (such as &quot;the&quot; and &quot;a&quot;).</p><p>The order bys array can contain `key =&gt; value` entries in any of the  following formats:</p><p>{{{  'column'     =&gt; 'asc'      // 'first_name' =&gt; 'asc'  'column'     =&gt; 'desc'     // 'last_name'  =&gt; 'desc'  'expression' =&gt; 'asc'      // &quot;CASE first_name WHEN 'smith' THEN 1 ELSE 2 END&quot; =&gt; 'asc'  'expression' =&gt; 'desc'     // &quot;CASE first_name WHEN 'smith' THEN 1 ELSE 2 END&quot; =&gt; 'desc'  }}}</p><p>The column in both the where conditions and order bys can be in any of  the formats:</p><p>{{{  'column'                                                         // e.g. 'first_name'  'current_table.column'                                           // e.g. 'users.first_name'  'related_table.column'                                           // e.g. 'user_groups.name'  'related_table{route}.column'                                    // e.g. 'user_groups{user_group_id}.name'  'related_table=&gt;once_removed_related_table.column'               // e.g. 'user_groups=&gt;permissions.level'  'related_table{route}=&gt;once_removed_related_table.column'        // e.g. 'user_groups{user_group_id}=&gt;permissions.level'  'related_table=&gt;once_removed_related_table{route}.column'        // e.g. 'user_groups=&gt;permissions{read}.level'  'related_table{route}=&gt;once_removed_related_table{route}.column' // e.g. 'user_groups{user_group_id}=&gt;permissions{read}.level'  'column||other_column'                                           // e.g. 'first_name||last_name' - this concatenates the column values  }}}</p><p>In addition to using plain column names for where conditions, it is also  possible to pass an aggregate function wrapped around a column in place  of a column name, but only for certain comparison types. //Note that for  column comparisons, the function may be placed on either column or both.//</p><p>{{{  'function(column)='   =&gt; VALUE,                       // function(column) = VALUE  'function(column)!'   =&gt; VALUE                        // function(column) &lt;&gt; VALUE  'function(column)!=   =&gt; VALUE                        // function(column) &lt;&gt; VALUE  'function(column)&lt;&gt;'  =&gt; VALUE                        // function(column) &lt;&gt; VALUE  'function(column)~'   =&gt; VALUE                        // function(column) LIKE '%VALUE%'  'function(column)^~'  =&gt; VALUE                        // function(column) LIKE 'VALUE%'  'function(column)$~'  =&gt; VALUE                        // function(column) LIKE '%VALUE'  'function(column)!~'  =&gt; VALUE                        // function(column) NOT LIKE '%VALUE%'  'function(column)&lt;'   =&gt; VALUE                        // function(column) &lt; VALUE  'function(column)&lt;='  =&gt; VALUE                        // function(column) &lt;= VALUE  'function(column)&gt;'   =&gt; VALUE                        // function(column) &gt; VALUE  'function(column)&gt;='  =&gt; VALUE                        // function(column) &gt;= VALUE  'function(column)=:'  =&gt; 'other_column'               // function(column) = other_column  'function(column)!:'  =&gt; 'other_column'               // function(column) &lt;&gt; other_column  'function(column)!=:' =&gt; 'other_column'               // function(column) &lt;&gt; other_column  'function(column)&lt;&gt;:' =&gt; 'other_column'               // function(column) &lt;&gt; other_column  'function(column)&lt;:'  =&gt; 'other_column'               // function(column) &lt; other_column  'function(column)&lt;=:' =&gt; 'other_column'               // function(column) &lt;= other_column  'function(column)&gt;:'  =&gt; 'other_column'               // function(column) &gt; other_column  'function(column)&gt;=:' =&gt; 'other_column'               // function(column) &gt;= other_column  'function(column)='   =&gt; array(VALUE, VALUE2, ... )   // function(column) IN (VALUE, VALUE2, ... )  'function(column)!'   =&gt; array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )  'function(column)!='  =&gt; array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )  'function(column)&lt;&gt;'  =&gt; array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )  }}}</p><p>The aggregate functions `AVG()`, `COUNT()`, `MAX()`, `MIN()` and  `SUM()` are supported across all database types.</p><p>Below is an example of using where conditions and order bys. Please note  that values should **not** be escaped for the database, but should just  be normal PHP values.</p><p>{{{  #!php  return fRecordSet::build(      'User',      array(          'first_name='      =&gt; 'John',          'status!'          =&gt; 'Inactive',          'groups.group_id=' =&gt; 2      ),      array(          'last_name'   =&gt; 'asc',          'date_joined' =&gt; 'desc'      )  );  }}}</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A set of fActiveRecord objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			build
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$where_conditions</span> = <span class="var-default">array()</span>], [<span class="var-type">array</span>&nbsp;<span class="var-name">$order_bys</span> = <span class="var-default">array()</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to create the fRecordSet of</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$where_conditions</span><span class="var-description">: The `column =&gt; value` comparisons for the `WHERE` clause</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$order_bys</span><span class="var-description">: The `column =&gt; direction` values to use for the `ORDER BY` clause</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span><span class="var-description">: The number of records to fetch</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The page offset to use when limiting records</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildFromArray" id="buildFromArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method buildFromArray</span> (line <span class="line-number">291</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an fRecordSet from an array of records</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A set of fActiveRecord objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			buildFromArray
+		</span>
+					(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$total_records</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$class</span><span class="var-description">: The class or classes of the records</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$records</span><span class="var-description">: The records to create the set from, the order of the record set will be the same as the order of the array.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$total_records</span><span class="var-description">: The total number of records - this should only be provided if the array is a segment of a larger array - this is informational only and does not affect the array</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span><span class="var-description">: The maximum number of records the array was limited to - this is informational only and does not affect the array</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The page of records the array is from - this is informational only and does not affect the array</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildFromSQL" id="buildFromSQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method buildFromSQL</span> (line <span class="line-number">370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an fRecordSet from an SQL statement</p>
+<p class="description"><p>The SQL statement should select all columns from a single table with a *  pattern since that is what an fActiveRecord models. If any columns are  left out or added, strange error may happen when loading or saving  records.</p><p>Here is an example of an appropriate SQL statement:</p><p>{{{  #!sql  SELECT users.* FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.name = 'Public'  }}}</p><p>Here is an example of a SQL statement that will cause errors:</p><p>{{{  #!sql  SELECT users.*, groups.name FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.group_id = 2  }}}</p><p>The `$non_limited_count_sql` should only be passed when the `$sql`  contains a `LIMIT` clause and should contain a count of the records when  a `LIMIT` is not imposed.</p><p>Here is an example of a `$sql` statement with a `LIMIT` clause and a  corresponding `$non_limited_count_sql`:</p><p>{{{  #!php  fRecordSet::buildFromSQL('User', 'SELECT * FROM users LIMIT 5', 'SELECT count(*) FROM users');  }}}</p><p>The `$non_limited_count_sql` is used when ::count() is called with `TRUE`  passed as the parameter.</p><p>Both the `$sql` and `$non_limited_count_sql` can be passed as a string  SQL statement, or an array containing a SQL statement and the values to  escape into it:</p><p>{{{  #!php  fRecordSet::buildFromSQL(      'User',      array(&quot;SELECT * FROM users WHERE date_created &gt; %d LIMIT %i OFFSET %i&quot;, $start_date, 10, 10*($page-1)),      array(&quot;SELECT * FROM users WHERE date_created &gt; %d&quot;, $start_date),      10,      $page  )  }}}</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A set of fActiveRecord objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			buildFromSQL
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$sql</span>, [<span class="var-type">string|array</span>&nbsp;<span class="var-name">$non_limited_count_sql</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to create the fRecordSet of</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$sql</span><span class="var-description">: The SQL to create the set from, or an array of the SQL statement plus values to escape</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$non_limited_count_sql</span><span class="var-description">: An SQL statement, or an array of the SQL statement plus values to escape, to get the total number of rows that would have been returned if a `LIMIT` clause had not been used. Should only be passed if a `LIMIT` clause is used in `$sql`.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span><span class="var-description">: The number of records the SQL statement was limited to - this is information only and does not affect the SQL</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The page of records the SQL statement returned - this is information only and does not affect the SQL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcompose" id="compose"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method compose</span> (line <span class="line-number">412</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Composes text using fText if loaded</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The composed and possible translated message</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			compose
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to compose</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$component</span><span class="var-description">: A string or number to insert into the message</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtally" id="tally"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method tally</span> (line <span class="line-number">434</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Counts the number of records that match the conditions specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			tally
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$where_conditions</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class of records to count</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$where_conditions</span><span class="var-description">: An array of where clause parameters in the same format as ::build()</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">595</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the contents of the set</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string|array</span>&nbsp;<span class="var-name">$class</span>, [<span class="var-type">Iterator|array</span>&nbsp;<span class="var-name">$records</span> = <span class="var-default">NULL</span>], [<span class="var-type">string|integer</span>&nbsp;<span class="var-name">$non_limited_count</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$limit</span> = <span class="var-default">NULL</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$page</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$class</span><span class="var-description">: The type(s) of records the object will contain</span>			</li>
+					<li>
+				<span class="var-type">Iterator|array</span>
+				<span class="var-name">$records</span><span class="var-description">: The Iterator object of the records to create or an array of records</span>			</li>
+					<li>
+				<span class="var-type">string|integer</span>
+				<span class="var-name">$non_limited_count</span><span class="var-description">: An SQL statement to get the total number of records sans a `LIMIT` clause or a integer of the total number of records</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$limit</span><span class="var-description">: The number of records the set was limited to</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$page</span><span class="var-description">: The page of records that was built</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildFromCall" id="buildFromCall"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildFromCall</span> (line <span class="line-number">777</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calls a specific method on each object, returning an fRecordSet of the results</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A set of records that resulted from calling the method</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			buildFromCall
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to call</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: A parameter to pass for each call to the method</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildFromMap" id="buildFromMap"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">buildFromMap</span> (line <span class="line-number">816</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Maps each record in the set to a callback function, returning an fRecordSet of the results</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A set of records that resulted from the mapping operation</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			buildFromMap
+		</span>
+					(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">callback</span>
+				<span class="var-name">$callback</span><span class="var-description">: The callback to pass the values to</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: The parameter to pass to the callback - see method description for details</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcall" id="call"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">call</span> (line <span class="line-number">855</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Calls a specific method on each object, returning an array of the results</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array the size of the record set with one result from each record/method</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			call
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to call</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: A parameter to pass for each call to the method</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodchunk" id="chunk"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">chunk</span> (line <span class="line-number">879</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Chunks the record set into an array of fRecordSet objects</p>
+<p class="description"><p>Each fRecordSet would contain `$number` records, except for the last,  which will contain between 1 and `$number` records.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of fRecordSet objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			chunk
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$number</span><span class="var-description">: The number of fActiveRecord objects to place in each fRecordSet</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcontains" id="contains"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">contains</span> (line <span class="line-number">896</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks if the record set contains the record specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the record specified is in this record set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			contains
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$record</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$record</span><span class="var-description">: The record to check, must exist in the database</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">930</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of records in the set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of records in the set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$ignore_limit</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$ignore_limit</span><span class="var-description">: If set to `TRUE`, this method will return the number of records that would be in the set if there was no `LIMIT` clause</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Countable::count</dt>
+					</dl>
+			
+	</div>
+<a name="methoddiff" id="diff"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">diff</span> (line <span class="line-number">957</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes all passed records from the current record set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The records not present in the passed records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			diff
+		</span>
+					(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$records</span><span class="var-description">: The record set, array of records, or record to remove from the current record set, all instances will be removed</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remember_original_count</span><span class="var-description">: If the number of records in the current set should be saved as the non-limited count for the new set - the page will be reset to `1` either way</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfilter" id="filter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">filter</span> (line <span class="line-number">1049</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Filters the records in the record set via a callback</p>
+<p class="description"><p>The `$callback` parameter can be one of three different forms to filter  the records in the set:</p><p><ul><li>A callback that accepts a single record and returns `FALSE` if it should be removed</li><li>A psuedo-callback in the form `'{record}::methodName'` to filter out any records where the output of `$record-&gt;methodName()` is equivalent to `FALSE`</li><li>A conditions array that will remove any records that don't meet all of the conditions</li></ul>  The conditions array can use one or more of the following `key =&gt; value`  syntaxes to perform various comparisons. The array keys are method  names followed by a comparison operator.</p><p>{{{  // The following forms work for any $value that is not an array  'methodName='                           =&gt; $value  // If the output is equal to $value  'methodName!'                           =&gt; $value  // If the output is not equal to $value  'methodName!='                          =&gt; $value  // If the output is not equal to $value  'methodName&lt;&gt;'                          =&gt; $value  // If the output is not equal to $value  'methodName&lt;'                           =&gt; $value  // If the output is less than $value  'methodName&lt;='                          =&gt; $value  // If the output is less than or equal to $value  'methodName&gt;'                           =&gt; $value  // If the output is greater than $value  'methodName&gt;='                          =&gt; $value  // If the output is greater than or equal to $value  'methodName~'                           =&gt; $value  // If the output contains the $value (case insensitive)  'methodName^~'                          =&gt; $value  // If the output starts with the $value (case insensitive)  'methodName$~'                          =&gt; $value  // If the output ends with the $value (case insensitive)  'methodName!~'                          =&gt; $value  // If the output does not contain the $value (case insensitive)  'methodName|methodName2|methodName3~'   =&gt; $value  // Parses $value as a search string and make sure each term is present in at least one output (case insensitive)</p><p>// The following forms work for any $array that is an array  'methodName='                           =&gt; $array  // If the output is equal to at least one value in $array  'methodName!'                           =&gt; $array  // If the output is not equal to any value in $array  'methodName!='                          =&gt; $array  // If the output is not equal to any value in $array  'methodName&lt;&gt;'                          =&gt; $array  // If the output is not equal to any value in $array  'methodName~'                           =&gt; $array  // If the output contains one of the strings in $array (case insensitive)  'methodName^~'                          =&gt; $array  // If the output starts with one of the strings in $array (case insensitive)  'methodName$~'                          =&gt; $array  // If the output ends with one of the strings in $array (case insensitive)  'methodName!~'                          =&gt; $array  // If the output contains none of the strings in $array (case insensitive)  'methodName&amp;~'                          =&gt; $array  // If the output contains all of the strings in $array (case insensitive)  'methodName|methodName2|methodName3~'   =&gt; $array  // If each value in the array is present in the output of at least one method (case insensitive)</p><p>// The following works for an equal number of methods and values in the array  'methodName!|methodName2&lt;|methodName3=' =&gt; array($value, $value2, $value3) // An OR statement - one of the method to value comparisons must be TRUE</p><p>// The following accepts exactly two methods and two values, although the second value may be NULL  'methodName|methodName2&gt;&lt;'              =&gt; array($value, $value2) // If the range of values from the methods intersects the range of $value and $value2 - should be dates, times, timestamps or numbers  }}}</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A new fRecordSet with the filtered records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			filter
+		</span>
+					(<span class="var-type">callback|string|array</span>&nbsp;<span class="var-name">$procedure</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">callback|string|array</span>
+				<span class="var-name">$procedure</span><span class="var-description">: The way in which to filter the records - see method description for possible forms</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remember_original_count</span><span class="var-description">: If the number of records in the current set should be saved as the non-limited count for the new set - the page will be reset to `1` either way</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetClass" id="getClass"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getClass</span> (line <span class="line-number">1109</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the class name of the record being stored</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The class name(s) of the records in the set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string|array</span>
+		<span class="method-name">
+			getClass
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetIterator" id="getIterator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getIterator</span> (line <span class="line-number">1124</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an iterator for the record set</p>
+<p class="description"><p>This method is required by the IteratorAggregate interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An iterator for the record set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">ArrayIterator</span>
+		<span class="method-name">
+			getIterator
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>IteratorAggregate::getIterator</dt>
+					</dl>
+			
+	</div>
+<a name="methodgetLimit" id="getLimit"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getLimit</span> (line <span class="line-number">1135</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of records the set was limited to</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of records the set was limited to</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getLimit
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPage" id="getPage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPage</span> (line <span class="line-number">1146</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the page of records this set represents</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The page of records this set represents</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getPage
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPages" id="getPages"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPages</span> (line <span class="line-number">1157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of pages of records exist for the limit used when creating this set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of pages of records that exist for the limit specified</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			getPages
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPrimaryKeys" id="getPrimaryKeys"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrimaryKeys</span> (line <span class="line-number">1196</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the primary keys for all of the records in the set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The primary keys of all the records in the set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getPrimaryKeys
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRecord" id="getRecord"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRecord</span> (line <span class="line-number">1174</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the record at the zero-based index specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The record requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+		<span class="method-name">
+			getRecord
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$index</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$index</span><span class="var-description">: The index of the record to return</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRecords" id="getRecords"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getRecords</span> (line <span class="line-number">1185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns all of the records in the set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The records in the set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getRecords
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodintersect" id="intersect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">intersect</span> (line <span class="line-number">1233</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns all records in the current record set that are also present in the passed records</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The records present in the current record set that are also present in the passed records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			intersect
+		</span>
+					(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$records</span><span class="var-description">: The record set, array of records, or record to create an intersection of with the current record set</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remember_original_count</span><span class="var-description">: If the number of records in the current set should be saved as the non-limited count for the new set - the page will be reset to `1` either way</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmap" id="map"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">map</span> (line <span class="line-number">1301</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs an [http://php.net/array_map array_map()] on the record in the set</p>
+<p class="description"><p>The record will be passed to the callback as the first parameter unless  it's position is specified by the placeholder string `'{record}'`.</p><p>Additional parameters can be passed to the callback in one of two  different ways:</p><p><ul><li>Passing a non-array value will cause it to be passed to the callback</li><li>Passing an array value will cause the array values to be passed to the callback with their corresponding record</li></ul>  If an array parameter is too long (more items than records in the set)  it will be truncated. If an array parameter is too short (less items  than records in the set) it will be padded with `NULL` values.</p><p>To allow passing the record as a specific parameter to the callback, a  placeholder string `'{record}'` will be replaced with a the record. It  is also possible to specify `'{record}::methodName'` to cause the output  of a method from the record to be passed instead of the whole record.</p><p>It is also possible to pass the zero-based record index to the callback  by passing a parameter that contains `'{index}'`.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of the results from the callback</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			map
+		</span>
+					(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$parameter</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">callback</span>
+				<span class="var-name">$callback</span><span class="var-description">: The callback to pass the values to</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$parameter</span><span class="var-description">: The parameter to pass to the callback - see method description for details</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmerge" id="merge"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">merge</span> (line <span class="line-number">1356</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Merges the record set with more records</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The merged record sets</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			merge
+		</span>
+					(<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$records</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$records</span><span class="var-description">: The record set, array of records, or record to merge with the current record set, duplicates will **not** be removed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoffsetExists" id="offsetExists"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetExists</span> (line <span class="line-number">1415</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if an offset exists</p>
+<p class="description"><p>This method is required by the ArrayAccess interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the offset exists</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			offsetExists
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to check</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetExists</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetGet" id="offsetGet"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetGet</span> (line <span class="line-number">1433</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a record based on the offset</p>
+<p class="description"><p>This method is required by the ArrayAccess interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The requested record</li>
+				<li><span class="field">throws:</span> fNoRemainingException  When the offset specified is beyond the last record</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+		<span class="method-name">
+			offsetGet
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset of the record to get</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetGet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetSet" id="offsetSet"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetSet</span> (line <span class="line-number">1462</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prevents setting values to the record set</p>
+<p class="description"><p>This method is required by the ArrayAccess interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetSet
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to set</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to set to the offset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetSet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetUnset" id="offsetUnset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetUnset</span> (line <span class="line-number">1481</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prevents unsetting values from the record set</p>
+<p class="description"><p>This method is required by the ArrayAccess interface.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetUnset
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to unset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetUnset</dt>
+					</dl>
+			
+	</div>
+<a name="methodreduce" id="reduce"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">reduce</span> (line <span class="line-number">1740</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reduces the record set to a single value via a callback</p>
+<p class="description"><p>The callback should take two parameters and return a single value:</p><p><ul><li>The initial value and the first record for the first call</li><li>The result of the last call plus the next record for the second and subsequent calls</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The result of the reduce operation</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			reduce
+		</span>
+					(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$initial_value</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">callback</span>
+				<span class="var-name">$callback</span><span class="var-description">: The callback to pass the records to - see method description for details</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$initial_value</span><span class="var-description">: The initial value to seed reduce with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodslice" id="slice"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">slice</span> (line <span class="line-number">1768</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Slices a section of records from the set and returns a new set containing those</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new slice of records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			slice
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$offset</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$length</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$offset</span><span class="var-description">: The index to start at, negative indexes will slice that many records from the end</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$length</span><span class="var-description">: The number of records to return, negative values will stop that many records before the end, `NULL` will return all records to the end of the set - if there are not enough records, less than `$length` will be returned</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remember_original_count</span><span class="var-description">: If the number of records in the current set should be saved as the non-limited count for the new set - the page will be reset to `1` either way</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsort" id="sort"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">sort</span> (line <span class="line-number">1805</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sorts the set by the return value of a method from the class created and rewind the interator</p>
+<p class="description"><p>This methods uses fUTF8::inatcmp() to perform comparisons.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A new record set object, with the records sorted as requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			sort
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$direction</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to call on each object to get the value to sort by</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$direction</span><span class="var-description">: Either `'asc'` or `'desc'`</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsortByCallback" id="sortByCallback"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">sortByCallback</span> (line <span class="line-number">1848</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sorts the set by passing the callback to [http://php.net/usort `usort()`] and rewinds the interator</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A new record set object, with the records sorted as requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			sortByCallback
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$callback</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$callback</span><span class="var-description">: The function/method to pass to `usort()`</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplit" id="split"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">split</span> (line <span class="line-number">1872</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Splits the record set into an array of fRecordSet objects</p>
+<p class="description"><p>Each fRecordSet would contain ceil(number of records/`$number`) records,  except for the last, which will contain between 1 and ceil(…) records.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of fRecordSet objects</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			split
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$number</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$number</span><span class="var-description">: The number of fRecordSet objects to create</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtossIfEmpty" id="tossIfEmpty"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tossIfEmpty</span> (line <span class="line-number">1891</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throws an fEmptySetException if the record set is empty</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The record set object, to allow for method chaining</li>
+				<li><span class="field">throws:</span> fEmptySetException  When there are no record in the set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			tossIfEmpty
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to use for the exception if there are no records in this set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodunique" id="unique"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">unique</span> (line <span class="line-number">1922</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a new fRecordSet containing only unique records in the record set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new record set with only unique records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			unique
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remember_original_count</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remember_original_count</span><span class="var-description">: If the number of records in the current set should be saved as the non-limited count for the new set - the page will be reset to `1` either way</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__call" id="__call"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__call</span> (line <span class="line-number">531</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows for preloading various data related to the record set in single database queries, as opposed to one query per record</p>
+<p class="description"><p>This method will handle methods in the format `verbRelatedRecords()` for  the verbs `build`, `prebuild`, `precount` and `precreate`.</p><p>`build` calls `create{RelatedClass}()` on each record in the set and  returns the result as a new record set. The relationship route can be  passed as an optional parameter.</p><p>`prebuild` builds *-to-many record sets for all records in the record  set. `precount` will count records in *-to-many record sets for every  record in the record set. `precreate` will create a *-to-one record  for every record in the record set.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__call
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The name of the method called</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">627</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constbuild" id="build"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">build</span>
+			 = <span class="const-default"> 'fRecordSet::build'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constbuildFromArray" id="buildFromArray"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">buildFromArray</span>
+			 = <span class="const-default"> 'fRecordSet::buildFromArray'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constbuildFromSQL" id="buildFromSQL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">buildFromSQL</span>
+			 = <span class="const-default"> 'fRecordSet::buildFromSQL'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:44 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

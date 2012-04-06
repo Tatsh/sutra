@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fLoader</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fLoader</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A class that loads Flourish</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> netcarver [n] &lt;<a href="mailto:fContrib@netcarving.com">fContrib@netcarving.com</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b3</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fLoader">http://flourishlib.com/fLoader</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fLoader.php.html">/flourish/fLoader.php</a> (line <span class="field">18</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Sutra/sLoader.html">sLoader</a></td>
+					<td>
+											Manages loading of classes.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#autoload" title="details" class="const-name">autoload</a> = 					<span class="var-type"> 'fLoader::autoload'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#best" title="details" class="const-name">best</a> = 					<span class="var-type"> 'fLoader::best'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#eager" title="details" class="const-name">eager</a> = 					<span class="var-type"> 'fLoader::eager'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#hasOpcodeCache" title="details" class="const-name">hasOpcodeCache</a> = 					<span class="var-type"> 'fLoader::hasOpcodeCache'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#lazy" title="details" class="const-name">lazy</a> = 					<span class="var-type"> 'fLoader::lazy'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#autoload" title="details" class="method-name">autoload</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#best" title="details" class="method-name">best</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#eager" title="details" class="method-name">eager</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#hasOpcodeCache" title="details" class="method-name">hasOpcodeCache</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#lazy" title="details" class="method-name">lazy</a>
+										()
+									</div>
+								
+																																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodautoload" id="autoload"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method autoload</span> (line <span class="line-number">118</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tries to load a Flourish class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			autoload
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to load</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Sutra/sLoader.html#methodautoload">sLoader::autoload()</a>
+								: Tries to load a Sutra class.
+							</li>
+				</ul>
+	</div>
+<a name="methodbest" id="best"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method best</span> (line <span class="line-number">137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs eager loading if an op-code cache is present, otherwise lazy</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			best
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Sutra/sLoader.html#methodbest">sLoader::best()</a>
+								: Override best() method.
+							</li>
+				</ul>
+	</div>
+<a name="methodeager" id="eager"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method eager</span> (line <span class="line-number">209</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads all Flourish classes when called</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			eager
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodhasOpcodeCache" id="hasOpcodeCache"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method hasOpcodeCache</span> (line <span class="line-number">234</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check if a PHP opcode cache is installed</p>
+<p class="description"><p>The following opcode caches are currently detected:</p><p><ul><li>[http://pecl.php.net/package/APC APC]</li><li>[http://eaccelerator.net eAccelerator]</li><li>[http://www.nusphere.com/products/phpexpress.htm Nusphere PhpExpress]</li><li>[http://turck-mmcache.sourceforge.net/index_old.html Turck MMCache]</li><li>[http://xcache.lighttpd.net XCache]</li><li>[http://www.zend.com/en/products/server/ Zend Server (Optimizer+)]</li><li>[http://www.zend.com/en/products/platform/ Zend Platform (Code Acceleration)]</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If a PHP opcode cache is loaded</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			hasOpcodeCache
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlazy" id="lazy"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method lazy</span> (line <span class="line-number">253</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers an autoloader for Flourish via [http://php.net/spl_autoload_register `spl_autoload_register()`]</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			lazy
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Sutra/sLoader.html#methodlazy">sLoader::lazy()</a>
+								: Registers a class auto-loader to load Sutra classes.
+							</li>
+				</ul>
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constautoload" id="autoload"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">autoload</span>
+			 = <span class="const-default"> 'fLoader::autoload'</span>
+			(line <span class="line-number">21</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constbest" id="best"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">best</span>
+			 = <span class="const-default"> 'fLoader::best'</span>
+			(line <span class="line-number">22</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="consteager" id="eager"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">eager</span>
+			 = <span class="const-default"> 'fLoader::eager'</span>
+			(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="consthasOpcodeCache" id="hasOpcodeCache"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">hasOpcodeCache</span>
+			 = <span class="const-default"> 'fLoader::hasOpcodeCache'</span>
+			(line <span class="line-number">24</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constlazy" id="lazy"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">lazy</span>
+			 = <span class="const-default"> 'fLoader::lazy'</span>
+			(line <span class="line-number">25</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:42 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

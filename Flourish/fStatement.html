@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fStatement</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fStatement</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Representation of a prepared statement for use with the fDatabase class</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b7</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2010-2011 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fStatement">http://flourishlib.com/fStatement</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fStatement.php.html">/flourish/fStatement.php</a> (line <span class="field">21</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																				
+												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fStatement.html">fStatement</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../Flourish/fDatabase.html">fDatabase</a></span>&nbsp;<span class="var-name">$database</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$placeholders</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$untranslated_sql</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$untranslated_query</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__destruct" title="details" class="method-name">__destruct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#execute" title="details" class="method-name">execute</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#executeQuery" title="details" class="method-name">executeQuery</a>
+											(<span class="var-type"><a href="../Flourish/fResult.html">fResult</a></span>&nbsp;<span class="var-name">$result</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#executeUnbufferedQuery" title="details" class="method-name">executeUnbufferedQuery</a>
+											(<span class="var-type"><a href="../Flourish/fUnbufferedResult.html">fUnbufferedResult</a></span>&nbsp;<span class="var-name">$result</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getSQL" title="details" class="method-name">getSQL</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getUntranslatedSQL" title="details" class="method-name">getUntranslatedSQL</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">91</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets up a prepared statement</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fStatement.html">fStatement</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../Flourish/fDatabase.html">fDatabase</a></span>&nbsp;<span class="var-name">$database</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$query</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$placeholders</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$untranslated_sql</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$untranslated_query</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fDatabase.html">fDatabase</a></span>
+				<span class="var-name">$database</span><span class="var-description">: The database object this result set was created from</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$query</span><span class="var-description">: The SQL statement to prepare</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$placeholders</span><span class="var-description">: The data type placeholders</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$untranslated_query</span><span class="var-description">: The original untranslated SQL, if applicable</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$untranslated_sql</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__destruct" id="__destruct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Destructor __destruct</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Frees up the result object to save memory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__destruct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodexecute" id="execute"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">execute</span> (line <span class="line-number">317</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the statement without returning a result</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The (usually boolean) result of the extension function/method call</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			execute
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: The parameters for the statement</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">&$extra</span><span class="var-description">: A variable to place extra information needed by some database extensions</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$different</span><span class="var-description">: If this statement is different than the last statement run on the fDatabase instance</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexecuteQuery" id="executeQuery"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">executeQuery</span> (line <span class="line-number">410</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the statement in buffered mode</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			executeQuery
+		</span>
+					(<span class="var-type"><a href="../Flourish/fResult.html">fResult</a></span>&nbsp;<span class="var-name">$result</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fResult.html">fResult</a></span>
+				<span class="var-name">$result</span><span class="var-description">: The object to place the result into</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: The parameters for the statement</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">&$extra</span><span class="var-description">: A variable to place extra information needed by some database extensions</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$different</span><span class="var-description">: If this statement is different than the last statement run on the fDatabase instance</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodexecuteUnbufferedQuery" id="executeUnbufferedQuery"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">executeUnbufferedQuery</span> (line <span class="line-number">588</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes the statement in unbuffered mode (if possible)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			executeUnbufferedQuery
+		</span>
+					(<span class="var-type"><a href="../Flourish/fUnbufferedResult.html">fUnbufferedResult</a></span>&nbsp;<span class="var-name">$result</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$params</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">&$extra</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$different</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fUnbufferedResult.html">fUnbufferedResult</a></span>
+				<span class="var-name">$result</span><span class="var-description">: The object to place the result into</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$params</span><span class="var-description">: The parameters for the statement</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">&$extra</span><span class="var-description">: A variable to place extra information needed by some database extensions</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$different</span><span class="var-description">: If this statement is different than the last statement run on the fDatabase instance</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSQL" id="getSQL"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSQL</span> (line <span class="line-number">691</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the SQL for the prepared statement</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The SQL statement</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSQL
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUntranslatedSQL" id="getUntranslatedSQL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getUntranslatedSQL</span> (line <span class="line-number">702</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the untranslated SQL for the prepared statement</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The untranslated SQL statement</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getUntranslatedSQL
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">301</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:45 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

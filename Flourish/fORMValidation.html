@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fORMValidation</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fORMValidation</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles validation for fActiveRecord classes</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Jeff Turcotte [jt] &lt;<a href="mailto:jeff.turcotte@gmail.com">jeff.turcotte@gmail.com</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b31</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fORMValidation">http://flourishlib.com/fORMValidation</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fORMValidation.php.html">/flourish/fORMValidation.php</a> (line <span class="field">46</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addConditionalRule" title="details" class="const-name">addConditionalRule</a> = 					<span class="var-type"> 'fORMValidation::addConditionalRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addManyToManyRule" title="details" class="const-name">addManyToManyRule</a> = 					<span class="var-type"> 'fORMValidation::addManyToManyRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addOneOrMoreRule" title="details" class="const-name">addOneOrMoreRule</a> = 					<span class="var-type"> 'fORMValidation::addOneOrMoreRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addOneToManyRule" title="details" class="const-name">addOneToManyRule</a> = 					<span class="var-type"> 'fORMValidation::addOneToManyRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addOnlyOneRule" title="details" class="const-name">addOnlyOneRule</a> = 					<span class="var-type"> 'fORMValidation::addOnlyOneRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addRegexReplacement" title="details" class="const-name">addRegexReplacement</a> = 					<span class="var-type"> 'fORMValidation::addRegexReplacement'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addRegexRule" title="details" class="const-name">addRegexRule</a> = 					<span class="var-type"> 'fORMValidation::addRegexRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addRequiredRule" title="details" class="const-name">addRequiredRule</a> = 					<span class="var-type"> 'fORMValidation::addRequiredRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addStringReplacement" title="details" class="const-name">addStringReplacement</a> = 					<span class="var-type"> 'fORMValidation::addStringReplacement'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addValidValuesRule" title="details" class="const-name">addValidValuesRule</a> = 					<span class="var-type"> 'fORMValidation::addValidValuesRule'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#hasValue" title="details" class="const-name">hasValue</a> = 					<span class="var-type"> 'fORMValidation::hasValue'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#inspect" title="details" class="const-name">inspect</a> = 					<span class="var-type"> 'fORMValidation::inspect'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#removeRegexReplacement" title="details" class="const-name">removeRegexReplacement</a> = 					<span class="var-type"> 'fORMValidation::removeRegexReplacement'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#removeStringReplacement" title="details" class="const-name">removeStringReplacement</a> = 					<span class="var-type"> 'fORMValidation::removeStringReplacement'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reorderMessages" title="details" class="const-name">reorderMessages</a> = 					<span class="var-type"> 'fORMValidation::reorderMessages'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#replaceMessages" title="details" class="const-name">replaceMessages</a> = 					<span class="var-type"> 'fORMValidation::replaceMessages'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reset" title="details" class="const-name">reset</a> = 					<span class="var-type"> 'fORMValidation::reset'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setColumnCaseInsensitive" title="details" class="const-name">setColumnCaseInsensitive</a> = 					<span class="var-type"> 'fORMValidation::setColumnCaseInsensitive'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setMessageOrder" title="details" class="const-name">setMessageOrder</a> = 					<span class="var-type"> 'fORMValidation::setMessageOrder'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#validate" title="details" class="const-name">validate</a> = 					<span class="var-type"> 'fORMValidation::validate'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#validateRelated" title="details" class="const-name">validateRelated</a> = 					<span class="var-type"> 'fORMValidation::validateRelated'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addConditionalRule" title="details" class="method-name">addConditionalRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$main_columns</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$conditional_values</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$conditional_columns</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addManyToManyRule" title="details" class="method-name">addManyToManyRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addOneOrMoreRule" title="details" class="method-name">addOneOrMoreRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addOneToManyRule" title="details" class="method-name">addOneToManyRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addOnlyOneRule" title="details" class="method-name">addOnlyOneRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addRegexReplacement" title="details" class="method-name">addRegexReplacement</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addRegexRule" title="details" class="method-name">addRegexRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$regex</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addRequiredRule" title="details" class="method-name">addRequiredRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addStringReplacement" title="details" class="method-name">addStringReplacement</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addValidValuesRule" title="details" class="method-name">addValidValuesRule</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$valid_values</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#hasValue" title="details" class="method-name">hasValue</a>
+											(<span class="var-type"><a href="../Flourish/fSchema.html">fSchema</a></span>&nbsp;<span class="var-name">$schema</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#inspect" title="details" class="method-name">inspect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$metadata</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#removeRegexReplacement" title="details" class="method-name">removeRegexReplacement</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#removeStringReplacement" title="details" class="method-name">removeStringReplacement</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#reorderMessages" title="details" class="method-name">reorderMessages</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#replaceMessages" title="details" class="method-name">replaceMessages</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setColumnCaseInsensitive" title="details" class="method-name">setColumnCaseInsensitive</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setMessageOrder" title="details" class="method-name">setMessageOrder</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#validate" title="details" class="method-name">validate</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$old_values</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#validateRelated" title="details" class="method-name">validateRelated</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>)
+									</div>
+								
+																																																																																																																																																																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddConditionalRule" id="addConditionalRule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addConditionalRule</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a conditional rule</p>
+<p class="description"><p>If a non-empty value is found in one of the `$main_columns`, or if  specified, a value from the `$conditional_values` array, all of the  `$conditional_columns` will also be required to have a value.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addConditionalRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$main_columns</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$conditional_values</span>, <span class="var-type">string|array</span>&nbsp;<span class="var-name">$conditional_columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class this rule applies to</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$main_columns</span><span class="var-description">: The column(s) to check for a value</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$conditional_values</span><span class="var-description">: If `NULL`, any value in the main column will trigger the conditional column(s), otherwise the value must match this scalar value or be present in the array of values</span>			</li>
+					<li>
+				<span class="var-type">string|array</span>
+				<span class="var-name">$conditional_columns</span><span class="var-description">: The column(s) that are to be required</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddManyToManyRule" id="addManyToManyRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addManyToManyRule</span> (line <span class="line-number">194</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a many-to-many rule that requires at least one related record is associated with the current record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addManyToManyRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class to add the rule for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The name of the related class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddOneOrMoreRule" id="addOneOrMoreRule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addOneOrMoreRule</span> (line <span class="line-number">226</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a one-or-more rule that requires at least one of the columns specified has a value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addOneOrMoreRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span><span class="var-description">: The columns to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddOneToManyRule" id="addOneToManyRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addOneToManyRule</span> (line <span class="line-number">251</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add a one-to-many rule that requires at least one related record is associated with the current record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addOneToManyRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class to add the rule for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The name of the related class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddOnlyOneRule" id="addOnlyOneRule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addOnlyOneRule</span> (line <span class="line-number">283</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add an only-one rule that requires exactly one of the columns must have a value</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addOnlyOneRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span><span class="var-description">: The columns to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRegexReplacement" id="addRegexReplacement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addRegexReplacement</span> (line <span class="line-number">314</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</p>
+<p class="description"><p>Regex replacement is done after the `post::validate()` hook, and right  before the messages are reordered.</p><p>If a message is an empty string after replacement, it will be  removed from the list of messages.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addRegexReplacement
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$search</span><span class="var-description">: The PCRE regex to search for - see http://php.net/pcre for details</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$replace</span><span class="var-description">: The string to replace with - all $ and \ are used in back references and must be escaped with a \ when meant literally</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRegexRule" id="addRegexRule"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addRegexRule</span> (line <span class="line-number">339</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a rule to validate a column against a PCRE regular expression - the rule is not run if the value is `NULL`</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addRegexRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$regex</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to match with the regex</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$regex</span><span class="var-description">: The PCRE regex to match against - see http://php.net/pcre for details</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to use if the value does not match the regular expression</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddRequiredRule" id="addRequiredRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addRequiredRule</span> (line <span class="line-number">366</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Requires that a column have a non-`NULL` value</p>
+<p class="description"><p>Before using this method, try setting the database column to `NOT NULL`  and remove any default value. Such a configuration will trigger the same  functionality as this method, and will enforce the rule on the database  level for any other code that queries it.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addRequiredRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the column(s) exists in</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span><span class="var-description">: The column or columns to check - each column will require a value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddStringReplacement" id="addStringReplacement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addStringReplacement</span> (line <span class="line-number">396</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</p>
+<p class="description"><p>String replacement is done after the `post::validate()` hook, and right  before the messages are reordered.</p><p>If a message is an empty string after replacement, it will be  removed from the list of messages.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addStringReplacement
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$search</span><span class="var-description">: The string to search for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$replace</span><span class="var-description">: The string to replace with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddValidValuesRule" id="addValidValuesRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addValidValuesRule</span> (line <span class="line-number">426</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Restricts a column to having only a value from the list of valid values</p>
+<p class="description"><p>Please note that `NULL` values are always allowed, even if not listed in  the `$valid_values` array, if the column is not set as `NOT NULL`.</p><p>This functionality can also be accomplished by added a `CHECK` constraint  on the column in the database, or using a MySQL `ENUM` data type.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addValidValuesRule
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$valid_values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class this rule applies to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$valid_values</span><span class="var-description">: The valid values to check - `NULL` values are always allows if the column is not set to `NOT NULL`</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasValue" id="hasValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method hasValue</span> (line <span class="line-number">1125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if a columns has a value, but based on the schema and if the column allows NULL</p>
+<p class="description"><p>If the columns allows NULL values, than anything other than NULL  will be returned as TRUE. If the column does not allow NULL and  the value is anything other than the &quot;empty&quot; value for that data type,  then TRUE will be returned.</p><p>The values that are considered &quot;empty&quot; for each data type are as follows.  Please note that there is no &quot;empty&quot; value for dates, times or  timestamps.</p><p><ul><li>Blob: ''</li><li>Boolean: FALSE</li><li>Float: 0.0</li><li>Integer: 0</li><li>String: ''</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An error message for the rule</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			hasValue
+		</span>
+					(<span class="var-type"><a href="../Flourish/fSchema.html">fSchema</a></span>&nbsp;<span class="var-name">$schema</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$columns</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fSchema.html">fSchema</a></span>
+				<span class="var-name">$schema</span><span class="var-description">: The schema object for the table</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class the column is part of</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: An associative array of all values for the record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$columns</span><span class="var-description">: The column to check</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinspect" id="inspect"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method inspect</span> (line <span class="line-number">1091</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds metadata about features added by this class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			inspect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$metadata</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class being inspected</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column being inspected</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$metadata</span><span class="var-description">: The array of metadata about a column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveRegexReplacement" id="removeRegexReplacement"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method removeRegexReplacement</span> (line <span class="line-number">1211</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a regex replacement</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeRegexReplacement
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$search</span><span class="var-description">: The string to search for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$replace</span><span class="var-description">: The string to replace with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveStringReplacement" id="removeStringReplacement"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method removeStringReplacement</span> (line <span class="line-number">1249</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a string replacement</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeStringReplacement
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$search</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$replace</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the columns exists in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$search</span><span class="var-description">: The string to search for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$replace</span><span class="var-description">: The string to replace with</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreorderMessages" id="reorderMessages"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reorderMessages</span> (line <span class="line-number">1286</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reorders list items in an html string based on their contents</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The reordered messages</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			reorderMessages
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to reorder messages for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$messages</span><span class="var-description">: An array of the messages</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreplaceMessages" id="replaceMessages"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method replaceMessages</span> (line <span class="line-number">1326</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Takes a list of messages and performs string and regex replacements on them</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new array of messages</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			replaceMessages
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to reorder messages for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$messages</span><span class="var-description">: The array of messages</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reset</span> (line <span class="line-number">1365</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the configuration of the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetColumnCaseInsensitive" id="setColumnCaseInsensitive"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setColumnCaseInsensitive</span> (line <span class="line-number">1388</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setColumnCaseInsensitive
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class the column is located in</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to set as case-insensitive</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMessageOrder" id="setMessageOrder"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setMessageOrder</span> (line <span class="line-number">1423</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows setting the order that the list items in a message will be displayed</p>
+<p class="description"><p>All string comparisons during the reordering process are done in a  case-insensitive manner.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMessageOrder
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$matches</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or an instance of the class to set the message order for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$matches</span><span class="var-description">: This should be an ordered array of strings. If a line contains the string it will be displayed in the relative order it occurs in this array.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidate" id="validate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method validate</span> (line <span class="line-number">1484</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates values for an fActiveRecord object against the database schema and any additional rules that have been added</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of messages</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			validate
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$old_values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The instance of the class to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: The values to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$old_values</span><span class="var-description">: The old values for the record</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidateRelated" id="validateRelated"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method validateRelated</span> (line <span class="line-number">1555</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates related records for an fActiveRecord object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of messages</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			validateRelated
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The object to validate</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the object</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records for the object</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constaddConditionalRule" id="addConditionalRule"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addConditionalRule</span>
+			 = <span class="const-default"> 'fORMValidation::addConditionalRule'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddManyToManyRule" id="addManyToManyRule"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addManyToManyRule</span>
+			 = <span class="const-default"> 'fORMValidation::addManyToManyRule'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddOneOrMoreRule" id="addOneOrMoreRule"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addOneOrMoreRule</span>
+			 = <span class="const-default"> 'fORMValidation::addOneOrMoreRule'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddOneToManyRule" id="addOneToManyRule"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addOneToManyRule</span>
+			 = <span class="const-default"> 'fORMValidation::addOneToManyRule'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddOnlyOneRule" id="addOnlyOneRule"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addOnlyOneRule</span>
+			 = <span class="const-default"> 'fORMValidation::addOnlyOneRule'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddRegexReplacement" id="addRegexReplacement"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addRegexReplacement</span>
+			 = <span class="const-default"> 'fORMValidation::addRegexReplacement'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddRegexRule" id="addRegexRule"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addRegexRule</span>
+			 = <span class="const-default"> 'fORMValidation::addRegexRule'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddRequiredRule" id="addRequiredRule"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addRequiredRule</span>
+			 = <span class="const-default"> 'fORMValidation::addRequiredRule'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddStringReplacement" id="addStringReplacement"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addStringReplacement</span>
+			 = <span class="const-default"> 'fORMValidation::addStringReplacement'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddValidValuesRule" id="addValidValuesRule"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addValidValuesRule</span>
+			 = <span class="const-default"> 'fORMValidation::addValidValuesRule'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="consthasValue" id="hasValue"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">hasValue</span>
+			 = <span class="const-default"> 'fORMValidation::hasValue'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constinspect" id="inspect"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">inspect</span>
+			 = <span class="const-default"> 'fORMValidation::inspect'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constremoveRegexReplacement" id="removeRegexReplacement"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">removeRegexReplacement</span>
+			 = <span class="const-default"> 'fORMValidation::removeRegexReplacement'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constremoveStringReplacement" id="removeStringReplacement"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">removeStringReplacement</span>
+			 = <span class="const-default"> 'fORMValidation::removeStringReplacement'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreorderMessages" id="reorderMessages"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reorderMessages</span>
+			 = <span class="const-default"> 'fORMValidation::reorderMessages'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreplaceMessages" id="replaceMessages"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">replaceMessages</span>
+			 = <span class="const-default"> 'fORMValidation::replaceMessages'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreset" id="reset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reset</span>
+			 = <span class="const-default"> 'fORMValidation::reset'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetColumnCaseInsensitive" id="setColumnCaseInsensitive"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setColumnCaseInsensitive</span>
+			 = <span class="const-default"> 'fORMValidation::setColumnCaseInsensitive'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetMessageOrder" id="setMessageOrder"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setMessageOrder</span>
+			 = <span class="const-default"> 'fORMValidation::setMessageOrder'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constvalidate" id="validate"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">validate</span>
+			 = <span class="const-default"> 'fORMValidation::validate'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constvalidateRelated" id="validateRelated"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">validateRelated</span>
+			 = <span class="const-default"> 'fORMValidation::validateRelated'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:44 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

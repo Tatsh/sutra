@@ -1,0 +1,1691 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fORMFile</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fORMFile</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides file manipulation functionality for fActiveRecord classes</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b30</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2008-2011 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fORMFile">http://flourishlib.com/fORMFile</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fORMFile.php.html">/flourish/fORMFile.php</a> (line <span class="field">44</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addFImageMethodCall" title="details" class="const-name">addFImageMethodCall</a> = 					<span class="var-type"> 'fORMFile::addFImageMethodCall'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addFUploadMethodCall" title="details" class="const-name">addFUploadMethodCall</a> = 					<span class="var-type"> 'fORMFile::addFUploadMethodCall'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#begin" title="details" class="const-name">begin</a> = 					<span class="var-type"> 'fORMFile::begin'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#commit" title="details" class="const-name">commit</a> = 					<span class="var-type"> 'fORMFile::commit'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#configureColumnInheritance" title="details" class="const-name">configureColumnInheritance</a> = 					<span class="var-type"> 'fORMFile::configureColumnInheritance'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#configureFileUploadColumn" title="details" class="const-name">configureFileUploadColumn</a> = 					<span class="var-type"> 'fORMFile::configureFileUploadColumn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#configureImageUploadColumn" title="details" class="const-name">configureImageUploadColumn</a> = 					<span class="var-type"> 'fORMFile::configureImageUploadColumn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#delete" title="details" class="const-name">delete</a> = 					<span class="var-type"> 'fORMFile::delete'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#deleteOld" title="details" class="const-name">deleteOld</a> = 					<span class="var-type"> 'fORMFile::deleteOld'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#encode" title="details" class="const-name">encode</a> = 					<span class="var-type"> 'fORMFile::encode'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#inspect" title="details" class="const-name">inspect</a> = 					<span class="var-type"> 'fORMFile::inspect'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#moveFromTemp" title="details" class="const-name">moveFromTemp</a> = 					<span class="var-type"> 'fORMFile::moveFromTemp'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#objectify" title="details" class="const-name">objectify</a> = 					<span class="var-type"> 'fORMFile::objectify'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#populate" title="details" class="const-name">populate</a> = 					<span class="var-type"> 'fORMFile::populate'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#prepare" title="details" class="const-name">prepare</a> = 					<span class="var-type"> 'fORMFile::prepare'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#process" title="details" class="const-name">process</a> = 					<span class="var-type"> 'fORMFile::process'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#processImage" title="details" class="const-name">processImage</a> = 					<span class="var-type"> 'fORMFile::processImage'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reflect" title="details" class="const-name">reflect</a> = 					<span class="var-type"> 'fORMFile::reflect'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#replicate" title="details" class="const-name">replicate</a> = 					<span class="var-type"> 'fORMFile::replicate'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reset" title="details" class="const-name">reset</a> = 					<span class="var-type"> 'fORMFile::reset'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#rollback" title="details" class="const-name">rollback</a> = 					<span class="var-type"> 'fORMFile::rollback'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#set" title="details" class="const-name">set</a> = 					<span class="var-type"> 'fORMFile::set'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#TEMP_DIRECTORY" title="details" class="const-name">TEMP_DIRECTORY</a> = 					<span class="var-type"> '__flourish_temp'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#upload" title="details" class="const-name">upload</a> = 					<span class="var-type"> 'fORMFile::upload'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#validate" title="details" class="const-name">validate</a> = 					<span class="var-type"> 'fORMFile::validate'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addFImageMethodCall" title="details" class="method-name">addFImageMethodCall</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addFUploadMethodCall" title="details" class="method-name">addFUploadMethodCall</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#begin" title="details" class="method-name">begin</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#commit" title="details" class="method-name">commit</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#configureColumnInheritance" title="details" class="method-name">configureColumnInheritance</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$inherit_from_column</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#configureFileUploadColumn" title="details" class="method-name">configureFileUploadColumn</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#configureImageUploadColumn" title="details" class="method-name">configureImageUploadColumn</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#deleteOld" title="details" class="method-name">deleteOld</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#encode" title="details" class="method-name">encode</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#inspect" title="details" class="method-name">inspect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$metadata</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#moveFromTemp" title="details" class="method-name">moveFromTemp</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">mixed</span>
+										<a href="#objectify" title="details" class="method-name">objectify</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#populate" title="details" class="method-name">populate</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#prepare" title="details" class="method-name">prepare</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+										<a href="#process" title="details" class="method-name">process</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#processImage" title="details" class="method-name">processImage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fFile.html">fFile</a></span>&nbsp;<span class="var-name">$image</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reflect" title="details" class="method-name">reflect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$signatures</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$include_doc_comments</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">mixed</span>
+										<a href="#replicate" title="details" class="method-name">replicate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#rollback" title="details" class="method-name">rollback</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+										<a href="#set" title="details" class="method-name">set</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#upload" title="details" class="method-name">upload</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#validate" title="details" class="method-name">validate</a>
+											(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$validation_messages</span>)
+									</div>
+								
+																																																																																																																																																																																																				</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddFImageMethodCall" id="addFImageMethodCall"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addFImageMethodCall</span> (line <span class="line-number">139</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an fImage method call to the image manipulation for a column if an image file is uploaded</p>
+<p class="description"><p>Any call to fImage::saveChanges() will be called last. If no explicit  method call to fImage::saveChanges() is made, it will be called  implicitly with default parameters.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addFImageMethodCall
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to call the method for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The fImage method to call</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters to pass to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodaddFUploadMethodCall" id="addFUploadMethodCall"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addFUploadMethodCall</span> (line <span class="line-number">173</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an fUpload method call to the fUpload initialization for a column</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addFUploadMethodCall
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span> = <span class="var-default">array()</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to call the method for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The fUpload method to call</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters to pass to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbegin" id="begin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method begin</span> (line <span class="line-number">213</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Begins a transaction, or increases the level</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			begin
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcommit" id="commit"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method commit</span> (line <span class="line-number">235</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Commits a transaction, or decreases the level</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			commit
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodconfigureColumnInheritance" id="configureColumnInheritance"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method configureColumnInheritance</span> (line <span class="line-number">384</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Takes one file or image upload columns and sets it to inherit any uploaded/set files from another column</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configureColumnInheritance
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$inherit_from_column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column that will inherit the uploaded file</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$inherit_from_column</span><span class="var-description">: The column to inherit the uploaded file from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconfigureFileUploadColumn" id="configureFileUploadColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method configureFileUploadColumn</span> (line <span class="line-number">289</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a column to be a file upload column</p>
+<p class="description"><p>Configuring a column to be a file upload column means that whenever  fActiveRecord::populate() is called for an fActiveRecord object, any  appropriately named file uploads (via `$_FILES`) will be moved into  the directory for this column.</p><p>Setting the column to a file path will cause the specified file to  be copied into the directory for this column.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configureFileUploadColumn
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to set as a file upload column</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>
+				<span class="var-name">$directory</span><span class="var-description">: The directory to upload/move to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodconfigureImageUploadColumn" id="configureImageUploadColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method configureImageUploadColumn</span> (line <span class="line-number">427</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a column to be an image upload column</p>
+<p class="description"><p>This method works exactly the same as ::configureFileUploadColumn()  except that only image files are accepted.</p><p>To alter an image, including the file type, use ::addFImageMethodCall().</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configureImageUploadColumn
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to set as a file upload column</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>
+				<span class="var-name">$directory</span><span class="var-description">: The directory to upload to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method delete</span> (line <span class="line-number">476</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the files for this record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddeleteOld" id="deleteOld"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method deleteOld</span> (line <span class="line-number">509</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes old files for this record that have been replaced by new ones</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			deleteOld
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodencode" id="encode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method encode</span> (line <span class="line-number">539</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encodes a file for output into an HTML `input` tag</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			encode
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The method that was called</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodinspect" id="inspect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method inspect</span> (line <span class="line-number">563</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds metadata about features added by this class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			inspect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$metadata</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class being inspected</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column being inspected</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$metadata</span><span class="var-description">: The array of metadata about a column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmoveFromTemp" id="moveFromTemp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method moveFromTemp</span> (line <span class="line-number">588</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moves uploaded files from the temporary directory to the permanent directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			moveFromTemp
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodobjectify" id="objectify"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method objectify</span> (line <span class="line-number">615</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Turns a filename into an fFile or fImage object</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The fFile, fImage or raw value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			objectify
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class this value is for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column the value is in</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpopulate" id="populate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method populate</span> (line <span class="line-number">646</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs the upload action for file uploads during fActiveRecord::populate()</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			populate
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprepare" id="prepare"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method prepare</span> (line <span class="line-number">673</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prepares a file for output into HTML by returning filename or the web server path to the file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			prepare
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The method that was called</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprocess" id="process"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method process</span> (line <span class="line-number">738</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles re-processing an existing image file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The record object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+		<span class="method-name">
+			process
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The method that was called</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprocessImage" id="processImage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method processImage</span> (line <span class="line-number">761</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs image manipulation on an uploaded/set image</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			processImage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type"><a href="../Flourish/fFile.html">fFile</a></span>&nbsp;<span class="var-name">$image</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The name of the class we are manipulating the image for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column the image is assigned to</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fFile.html">fFile</a></span>
+				<span class="var-name">$image</span><span class="var-description">: The image object to manipulate</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreflect" id="reflect"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reflect</span> (line <span class="line-number">804</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reflect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$signatures</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$include_doc_comments</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to reflect</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$signatures</span><span class="var-description">: The associative array of `{method name} =&gt; {signature}`</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$include_doc_comments</span><span class="var-description">: If doc comments should be included with the signature</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreplicate" id="replicate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method replicate</span> (line <span class="line-number">928</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a copy of an uploaded file in the temp directory for the newly cloned record</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The cloned fFile object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			replicate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class this value is for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column the value is in</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reset</span> (line <span class="line-number">962</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the configuration of the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrollback" id="rollback"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method rollback</span> (line <span class="line-number">980</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rolls back a transaction, or decreases the level</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rollback
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodset" id="set"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method set</span> (line <span class="line-number">1011</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Copies a file from the filesystem to the file upload directory and sets it as the file for the specified column</p>
+<p class="description"><p>This method will perform the fImage calls defined for the column.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The record object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+		<span class="method-name">
+			set
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The method that was called</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodupload" id="upload"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method upload</span> (line <span class="line-number">1131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Uploads a file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The uploaded file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			upload
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method_name</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$parameters</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method_name</span><span class="var-description">: The method that was called</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$parameters</span><span class="var-description">: The parameters passed to the method</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidate" id="validate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method validate</span> (line <span class="line-number">1240</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates uploaded files to ensure they match all of the criteria defined</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validate
+		</span>
+					(<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$cache</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$validation_messages</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$object</span><span class="var-description">: The fActiveRecord instance</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$old_values</span><span class="var-description">: The old values</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: Any records related to this record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$cache</span><span class="var-description">: The cache array for the record</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$validation_messages</span><span class="var-description">: The existing validation messages</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constaddFImageMethodCall" id="addFImageMethodCall"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addFImageMethodCall</span>
+			 = <span class="const-default"> 'fORMFile::addFImageMethodCall'</span>
+			(line <span class="line-number">47</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constaddFUploadMethodCall" id="addFUploadMethodCall"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addFUploadMethodCall</span>
+			 = <span class="const-default"> 'fORMFile::addFUploadMethodCall'</span>
+			(line <span class="line-number">48</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constbegin" id="begin"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">begin</span>
+			 = <span class="const-default"> 'fORMFile::begin'</span>
+			(line <span class="line-number">49</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcommit" id="commit"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">commit</span>
+			 = <span class="const-default"> 'fORMFile::commit'</span>
+			(line <span class="line-number">50</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constconfigureColumnInheritance" id="configureColumnInheritance"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">configureColumnInheritance</span>
+			 = <span class="const-default"> 'fORMFile::configureColumnInheritance'</span>
+			(line <span class="line-number">51</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constconfigureFileUploadColumn" id="configureFileUploadColumn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">configureFileUploadColumn</span>
+			 = <span class="const-default"> 'fORMFile::configureFileUploadColumn'</span>
+			(line <span class="line-number">52</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constconfigureImageUploadColumn" id="configureImageUploadColumn"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">configureImageUploadColumn</span>
+			 = <span class="const-default"> 'fORMFile::configureImageUploadColumn'</span>
+			(line <span class="line-number">53</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constdelete" id="delete"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">delete</span>
+			 = <span class="const-default"> 'fORMFile::delete'</span>
+			(line <span class="line-number">54</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constdeleteOld" id="deleteOld"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">deleteOld</span>
+			 = <span class="const-default"> 'fORMFile::deleteOld'</span>
+			(line <span class="line-number">55</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constencode" id="encode"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">encode</span>
+			 = <span class="const-default"> 'fORMFile::encode'</span>
+			(line <span class="line-number">56</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constinspect" id="inspect"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">inspect</span>
+			 = <span class="const-default"> 'fORMFile::inspect'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constmoveFromTemp" id="moveFromTemp"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">moveFromTemp</span>
+			 = <span class="const-default"> 'fORMFile::moveFromTemp'</span>
+			(line <span class="line-number">58</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constobjectify" id="objectify"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">objectify</span>
+			 = <span class="const-default"> 'fORMFile::objectify'</span>
+			(line <span class="line-number">59</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constpopulate" id="populate"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">populate</span>
+			 = <span class="const-default"> 'fORMFile::populate'</span>
+			(line <span class="line-number">60</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constprepare" id="prepare"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">prepare</span>
+			 = <span class="const-default"> 'fORMFile::prepare'</span>
+			(line <span class="line-number">61</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constprocess" id="process"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">process</span>
+			 = <span class="const-default"> 'fORMFile::process'</span>
+			(line <span class="line-number">62</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constprocessImage" id="processImage"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">processImage</span>
+			 = <span class="const-default"> 'fORMFile::processImage'</span>
+			(line <span class="line-number">63</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreflect" id="reflect"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reflect</span>
+			 = <span class="const-default"> 'fORMFile::reflect'</span>
+			(line <span class="line-number">64</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreplicate" id="replicate"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">replicate</span>
+			 = <span class="const-default"> 'fORMFile::replicate'</span>
+			(line <span class="line-number">65</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreset" id="reset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reset</span>
+			 = <span class="const-default"> 'fORMFile::reset'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constrollback" id="rollback"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">rollback</span>
+			 = <span class="const-default"> 'fORMFile::rollback'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constset" id="set"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">set</span>
+			 = <span class="const-default"> 'fORMFile::set'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constTEMP_DIRECTORY" id="TEMP_DIRECTORY"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">TEMP_DIRECTORY</span>
+			 = <span class="const-default"> '__flourish_temp'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The temporary directory to use for various tasks</p>
+	
+	
+</div>
+<a name="constupload" id="upload"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">upload</span>
+			 = <span class="const-default"> 'fORMFile::upload'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constvalidate" id="validate"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">validate</span>
+			 = <span class="const-default"> 'fORMFile::validate'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:43 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

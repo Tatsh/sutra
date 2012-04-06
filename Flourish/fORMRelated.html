@@ -1,0 +1,1764 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fORMRelated</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fORMRelated</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Handles related record tasks for fActiveRecord classes</p>
+<p class="description"><p>The functionality of this class only works with single-field `FOREIGN KEY`  constraints.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond, iMarc LLC [wb-imarc] &lt;<a href="mailto:will@imarc.net">will@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b44</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fORMRelated">http://flourishlib.com/fORMRelated</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fORMRelated.php.html">/flourish/fORMRelated.php</a> (line <span class="field">63</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#associateRecords" title="details" class="const-name">associateRecords</a> = 					<span class="var-type"> 'fORMRelated::associateRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#buildRecords" title="details" class="const-name">buildRecords</a> = 					<span class="var-type"> 'fORMRelated::buildRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#countRecords" title="details" class="const-name">countRecords</a> = 					<span class="var-type"> 'fORMRelated::countRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#createRecord" title="details" class="const-name">createRecord</a> = 					<span class="var-type"> 'fORMRelated::createRecord'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#determineRequestFilter" title="details" class="const-name">determineRequestFilter</a> = 					<span class="var-type"> 'fORMRelated::determineRequestFilter'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#flagForAssociation" title="details" class="const-name">flagForAssociation</a> = 					<span class="var-type"> 'fORMRelated::flagForAssociation'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getOrderBys" title="details" class="const-name">getOrderBys</a> = 					<span class="var-type"> 'fORMRelated::getOrderBys'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getRelatedRecordName" title="details" class="const-name">getRelatedRecordName</a> = 					<span class="var-type"> 'fORMRelated::getRelatedRecordName'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#hasRecords" title="details" class="const-name">hasRecords</a> = 					<span class="var-type"> 'fORMRelated::hasRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#linkRecords" title="details" class="const-name">linkRecords</a> = 					<span class="var-type"> 'fORMRelated::linkRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#overrideRelatedRecordName" title="details" class="const-name">overrideRelatedRecordName</a> = 					<span class="var-type"> 'fORMRelated::overrideRelatedRecordName'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#populateRecords" title="details" class="const-name">populateRecords</a> = 					<span class="var-type"> 'fORMRelated::populateRecords'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reflect" title="details" class="const-name">reflect</a> = 					<span class="var-type"> 'fORMRelated::reflect'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#registerValidationNameMethod" title="details" class="const-name">registerValidationNameMethod</a> = 					<span class="var-type"> 'fORMRelated::registerValidationNameMethod'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reset" title="details" class="const-name">reset</a> = 					<span class="var-type"> 'fORMRelated::reset'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setCount" title="details" class="const-name">setCount</a> = 					<span class="var-type"> 'fORMRelated::setCount'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setOrderBys" title="details" class="const-name">setOrderBys</a> = 					<span class="var-type"> 'fORMRelated::setOrderBys'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setPrimaryKeys" title="details" class="const-name">setPrimaryKeys</a> = 					<span class="var-type"> 'fORMRelated::setPrimaryKeys'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setRecordSet" title="details" class="const-name">setRecordSet</a> = 					<span class="var-type"> 'fORMRelated::setRecordSet'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#store" title="details" class="const-name">store</a> = 					<span class="var-type"> 'fORMRelated::store'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#storeManyToMany" title="details" class="const-name">storeManyToMany</a> = 					<span class="var-type"> 'fORMRelated::storeManyToMany'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#storeOneToMany" title="details" class="const-name">storeOneToMany</a> = 					<span class="var-type"> 'fORMRelated::storeOneToMany'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#validate" title="details" class="const-name">validate</a> = 					<span class="var-type"> 'fORMRelated::validate'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#associateRecord" title="details" class="method-name">associateRecord</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a>|array|string|integer</span>&nbsp;<span class="var-name">$record</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#associateRecords" title="details" class="method-name">associateRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array</span>&nbsp;<span class="var-name">$records_to_associate</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+										<a href="#buildRecords" title="details" class="method-name">buildRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#countRecords" title="details" class="method-name">countRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+										<a href="#createRecord" title="details" class="method-name">createRecord</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#determineFirstPKColumn" title="details" class="method-name">determineFirstPKColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#determineRequestFilter" title="details" class="method-name">determineRequestFilter</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#flagForAssociation" title="details" class="method-name">flagForAssociation</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getOrderBys" title="details" class="method-name">getOrderBys</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getPrimaryKeys" title="details" class="method-name">getPrimaryKeys</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getRelatedRecordName" title="details" class="method-name">getRelatedRecordName</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#hasRecords" title="details" class="method-name">hasRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#linkRecords" title="details" class="method-name">linkRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#overrideRelatedRecordName" title="details" class="method-name">overrideRelatedRecordName</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$record_name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#populateRecords" title="details" class="method-name">populateRecords</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reflect" title="details" class="method-name">reflect</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$signatures</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$include_doc_comments</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#registerValidationNameMethod" title="details" class="method-name">registerValidationNameMethod</a>
+											(<span class="var-type">string|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setCount" title="details" class="method-name">setCount</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$count</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setOrderBys" title="details" class="method-name">setOrderBys</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$order_bys</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setPrimaryKeys" title="details" class="method-name">setPrimaryKeys</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$primary_keys</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setRecordSet" title="details" class="method-name">setRecordSet</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#store" title="details" class="method-name">store</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_cascade</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#storeManyToMany" title="details" class="method-name">storeManyToMany</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relationship</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$related_info</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#storeOneToStar" title="details" class="method-name">storeOneToStar</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_cascade</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#validate" title="details" class="method-name">validate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>)
+									</div>
+								
+																																																																																																																																																																																																																				</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodassociateRecord" id="associateRecord"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method associateRecord</span> (line <span class="line-number">132</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates associations for one-to-one relationships</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			associateRecord
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a>|array|string|integer</span>&nbsp;<span class="var-name">$record</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related values for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class we are associating with the current record</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a>|array|string|integer</span>
+				<span class="var-name">$record</span><span class="var-description">: The record (or primary key of the record) to be associated</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to use between the current class and the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodassociateRecords" id="associateRecords"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method associateRecords</span> (line <span class="line-number">170</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates associations for *-to-many relationships</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			associateRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array</span>&nbsp;<span class="var-name">$records_to_associate</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related values for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class we are associating with the current record</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a>|array</span>
+				<span class="var-name">$records_to_associate</span><span class="var-description">: An fRecordSet, an array or records, or an array of primary keys of the records to be associated</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to use between the current class and the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodbuildRecords" id="buildRecords"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method buildRecords</span> (line <span class="line-number">221</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Builds a set of related records along a one-to-many or many-to-many relationship</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A record set of the related records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+		<span class="method-name">
+			buildRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related values for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class that is related to the current record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to follow for the class specified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcountRecords" id="countRecords"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method countRecords</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Counts the number of related one-to-many or many-to-many records</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of related records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			countRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related values for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class that is related to the current record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to follow for the class specified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcreateRecord" id="createRecord"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method createRecord</span> (line <span class="line-number">380</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Builds the object for the related class specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An instance of the class specified</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+		<span class="method-name">
+			createRecord
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to create the related record for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$values</span><span class="var-description">: The values existing in the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records for the record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddetermineFirstPKColumn" id="determineFirstPKColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method determineFirstPKColumn</span> (line <span class="line-number">457</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Figures out the first primary key column for a related class that is not the related column</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The first primary key column in the related class</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			determineFirstPKColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name of the main class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class being filtered for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddetermineRequestFilter" id="determineRequestFilter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method determineRequestFilter</span> (line <span class="line-number">502</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Figures out what filter to pass to fRequest::filter() for the specified related class</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The prefix to filter the request fields by</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			determineRequestFilter
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name of the main class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class being filtered for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodflagForAssociation" id="flagForAssociation"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method flagForAssociation</span> (line <span class="line-number">540</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the related records for a *-to-many relationship to be associated upon fActiveRecord::store()</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			flagForAssociation
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to associate the related records to</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class we are associating with the current record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to use between the current class and the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetOrderBys" id="getOrderBys"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getOrderBys</span> (line <span class="line-number">571</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the ordering to use when returning an fRecordSet of related objects</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of the order bys - see fRecordSet::build() for format</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getOrderBys
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the order bys for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class the ordering rules apply to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related table, should be a column name in the current table or a join table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetPrimaryKeys" id="getPrimaryKeys"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getPrimaryKeys</span> (line <span class="line-number">599</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the primary keys of the related records for *-to-many relationships</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The primary keys of the related records</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getPrimaryKeys
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related primary keys for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class that is related to the current record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to follow for the class specified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRelatedRecordName" id="getRelatedRecordName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getRelatedRecordName</span> (line <span class="line-number">712</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the record name for a related class</p>
+<p class="description"><p>The default record name of a related class is the result of  fGrammar::humanize() called on the class.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The record name for the related class specified</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRelatedRecordName
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type"></span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get the related class name for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class to get the record name of</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$route</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodhasRecords" id="hasRecords"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method hasRecords</span> (line <span class="line-number">753</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indicates if a record has a one-to-one or any *-to-many related records</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			hasRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to check related records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the record we are checking</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records for the record we are checking</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class we are checking for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodlinkRecords" id="linkRecords"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method linkRecords</span> (line <span class="line-number">787</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Parses associations for many-to-many relationships from the page request</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			linkRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to get link the related records to</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class to populate</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodoverrideRelatedRecordName" id="overrideRelatedRecordName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method overrideRelatedRecordName</span> (line <span class="line-number">858</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows overriding of default record names or related records</p>
+<p class="description"><p>The default record name of a related record is the result of  fGrammar::humanize() called on the class name.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			overrideRelatedRecordName
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$record_name</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class to set the related record name for</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The name of the related class, or an instance of it</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$record_name</span><span class="var-description">: The human version of the related record</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodpopulateRecords" id="populateRecords"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method populateRecords</span> (line <span class="line-number">896</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the values for records in a one-to-many relationship with this record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			populateRecords
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to populate the related records of</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class to populate</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreflect" id="reflect"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reflect</span> (line <span class="line-number">956</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds information about methods provided by this class to fActiveRecord</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reflect
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$signatures</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$include_doc_comments</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to reflect the related record methods for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$signatures</span><span class="var-description">: The associative array of `{method_name} =&gt; {signature}`</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$include_doc_comments</span><span class="var-description">: If the doc block comments for each method should be included</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregisterValidationNameMethod" id="registerValidationNameMethod"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method registerValidationNameMethod</span> (line <span class="line-number">1288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Registers a method to use to get a name for a related record when doing validation</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerValidationNameMethod
+		</span>
+					(<span class="var-type">string|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Flourish/fActiveRecord.html">fActiveRecord</a></span>
+				<span class="var-name">$class</span><span class="var-description">: The class to register the method for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class to register the method for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to be called on the related class that will return the name</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reset</span> (line <span class="line-number">1314</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the configuration of the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetCount" id="setCount"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setCount</span> (line <span class="line-number">1370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Records the number of related one-to-many or many-to-many records</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setCount
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$count</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to set the related records count for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class that is related to the current record</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$count</span><span class="var-description">: The number of records</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to follow for the class specified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOrderBys" id="setOrderBys"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setOrderBys</span> (line <span class="line-number">1331</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the ordering to use when returning an fRecordSet of related objects</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOrderBys
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$order_bys</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$class</span><span class="var-description">: The class name or instance of the class this ordering rule applies to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class we are getting info from</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$order_bys</span><span class="var-description">: An array of the order bys for this table.column combination - see fRecordSet::build() for format</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related table, this should be a column name in the current table or a join table name</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetPrimaryKeys" id="setPrimaryKeys"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setPrimaryKeys</span> (line <span class="line-number">1411</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the related records for *-to-many relationships, providing only primary keys</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setPrimaryKeys
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$primary_keys</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to set the related primary keys for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class we are setting the records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$primary_keys</span><span class="var-description">: The records to set</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to use between the current class and the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRecordSet" id="setRecordSet"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setRecordSet</span> (line <span class="line-number">1448</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the related records for *-to-many relationships</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRecordSet
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>&nbsp;<span class="var-name">$records</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$route</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to set the related records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records existing for the fActiveRecord class</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The class we are associating with the current record</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fRecordSet.html">fRecordSet</a></span>
+				<span class="var-name">$records</span><span class="var-description">: The records are associating</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to use between the current class and the related class</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstore" id="store"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method store</span> (line <span class="line-number">1484</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores any many-to-many associations or any one-to-many records that have been flagged for association</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			store
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_cascade</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to store the related records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values for the main record being stored</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records array</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$force_cascade</span><span class="var-description">: This flag will be passed to the fActiveRecord::delete() method on related records that are being deleted</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstoreManyToMany" id="storeManyToMany"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method storeManyToMany</span> (line <span class="line-number">1519</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Associates a set of many-to-many related records with the current record</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			storeManyToMany
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$relationship</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">$related_info</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class the relationship is being stored for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values for the main record being stored</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$relationship</span><span class="var-description">: The information about the relationship between this object and the records in the record set</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$related_info</span><span class="var-description">: An array containing the keys `'record_set'`, `'count'`, `'primary_keys'` and `'associate'`</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodstoreOneToStar" id="storeOneToStar"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method storeOneToStar</span> (line <span class="line-number">1599</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Stores a set of one-to-many related records in the database</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException  When one of the &quot;many&quot; records throws an exception from fActiveRecord::store()</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			storeOneToStar
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$related_class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$route</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_cascade</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to store the related records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The current values for the main record being stored</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records array</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$related_class</span><span class="var-description">: The related class being stored</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$route</span><span class="var-description">: The route to the related class</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$force_cascade</span><span class="var-description">: This flag will be passed to the fActiveRecord::delete() method on related records that are being deleted</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidate" id="validate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method validate</span> (line <span class="line-number">1661</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates any many-to-many associations or any one-to-many records that have been flagged for association</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			validate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">&$related_records</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: The class to validate the related records for</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$values</span><span class="var-description">: The values for the object</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">&$related_records</span><span class="var-description">: The related records for the object</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constassociateRecords" id="associateRecords"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">associateRecords</span>
+			 = <span class="const-default"> 'fORMRelated::associateRecords'</span>
+			(line <span class="line-number">66</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constbuildRecords" id="buildRecords"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">buildRecords</span>
+			 = <span class="const-default"> 'fORMRelated::buildRecords'</span>
+			(line <span class="line-number">67</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcountRecords" id="countRecords"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">countRecords</span>
+			 = <span class="const-default"> 'fORMRelated::countRecords'</span>
+			(line <span class="line-number">68</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcreateRecord" id="createRecord"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">createRecord</span>
+			 = <span class="const-default"> 'fORMRelated::createRecord'</span>
+			(line <span class="line-number">69</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constdetermineRequestFilter" id="determineRequestFilter"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">determineRequestFilter</span>
+			 = <span class="const-default"> 'fORMRelated::determineRequestFilter'</span>
+			(line <span class="line-number">70</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constflagForAssociation" id="flagForAssociation"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">flagForAssociation</span>
+			 = <span class="const-default"> 'fORMRelated::flagForAssociation'</span>
+			(line <span class="line-number">71</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetOrderBys" id="getOrderBys"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getOrderBys</span>
+			 = <span class="const-default"> 'fORMRelated::getOrderBys'</span>
+			(line <span class="line-number">72</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetRelatedRecordName" id="getRelatedRecordName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getRelatedRecordName</span>
+			 = <span class="const-default"> 'fORMRelated::getRelatedRecordName'</span>
+			(line <span class="line-number">73</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="consthasRecords" id="hasRecords"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">hasRecords</span>
+			 = <span class="const-default"> 'fORMRelated::hasRecords'</span>
+			(line <span class="line-number">74</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constlinkRecords" id="linkRecords"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">linkRecords</span>
+			 = <span class="const-default"> 'fORMRelated::linkRecords'</span>
+			(line <span class="line-number">75</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constoverrideRelatedRecordName" id="overrideRelatedRecordName"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">overrideRelatedRecordName</span>
+			 = <span class="const-default"> 'fORMRelated::overrideRelatedRecordName'</span>
+			(line <span class="line-number">76</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constpopulateRecords" id="populateRecords"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">populateRecords</span>
+			 = <span class="const-default"> 'fORMRelated::populateRecords'</span>
+			(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreflect" id="reflect"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reflect</span>
+			 = <span class="const-default"> 'fORMRelated::reflect'</span>
+			(line <span class="line-number">78</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constregisterValidationNameMethod" id="registerValidationNameMethod"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">registerValidationNameMethod</span>
+			 = <span class="const-default"> 'fORMRelated::registerValidationNameMethod'</span>
+			(line <span class="line-number">79</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreset" id="reset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reset</span>
+			 = <span class="const-default"> 'fORMRelated::reset'</span>
+			(line <span class="line-number">80</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetCount" id="setCount"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setCount</span>
+			 = <span class="const-default"> 'fORMRelated::setCount'</span>
+			(line <span class="line-number">82</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetOrderBys" id="setOrderBys"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setOrderBys</span>
+			 = <span class="const-default"> 'fORMRelated::setOrderBys'</span>
+			(line <span class="line-number">81</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetPrimaryKeys" id="setPrimaryKeys"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setPrimaryKeys</span>
+			 = <span class="const-default"> 'fORMRelated::setPrimaryKeys'</span>
+			(line <span class="line-number">83</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetRecordSet" id="setRecordSet"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setRecordSet</span>
+			 = <span class="const-default"> 'fORMRelated::setRecordSet'</span>
+			(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="conststore" id="store"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">store</span>
+			 = <span class="const-default"> 'fORMRelated::store'</span>
+			(line <span class="line-number">85</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="conststoreManyToMany" id="storeManyToMany"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">storeManyToMany</span>
+			 = <span class="const-default"> 'fORMRelated::storeManyToMany'</span>
+			(line <span class="line-number">86</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="conststoreOneToMany" id="storeOneToMany"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">storeOneToMany</span>
+			 = <span class="const-default"> 'fORMRelated::storeOneToMany'</span>
+			(line <span class="line-number">87</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constvalidate" id="validate"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">validate</span>
+			 = <span class="const-default"> 'fORMRelated::validate'</span>
+			(line <span class="line-number">88</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:44 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

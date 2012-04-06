@@ -1,0 +1,1367 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fFile</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fFile</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li>Iterator (internal interface)</li><li>Countable (internal interface)</li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Represents a file on the filesystem, also provides static file-related methods</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond, iMarc LLC [wb-imarc] &lt;<a href="mailto:will@imarc.net">will@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b39</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fFile">http://flourishlib.com/fFile</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fFile.php.html">/flourish/fFile.php</a> (line <span class="field">54</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Flourish/fImage.html">fImage</a></td>
+					<td>
+											Represents an image on the filesystem, also provides image manipulation functionality
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#create" title="details" class="const-name">create</a> = 					<span class="var-type"> 'fFile::create'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$deleted" title="details" class="var-name">$deleted</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$file" title="details" class="var-name">$file</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#create" title="details" class="method-name">create</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file_path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$contents</span>)
+									</div>
+																																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#determineMimeType" title="details" class="method-name">determineMimeType</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$contents</span> = <span class="var-default">NULL</span>])
+									</div>
+																																																																																																																																																																																																								
+												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skip_checks</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#append" title="details" class="method-name">append</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#current" title="details" class="method-name">current</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#duplicate" title="details" class="method-name">duplicate</a>
+											([<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>&nbsp;<span class="var-name">$new_directory</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getExtension" title="details" class="method-name">getExtension</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getMimeType" title="details" class="method-name">getMimeType</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fTimestamp.html">fTimestamp</a></span>
+										<a href="#getMTime" title="details" class="method-name">getMTime</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remove_extension</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+										<a href="#getParent" title="details" class="method-name">getParent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPath" title="details" class="method-name">getPath</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$translate_to_web_path</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer|string</span>
+										<a href="#getSize" title="details" class="method-name">getSize</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">FALSE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$decimal_places</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isWritable" title="details" class="method-name">isWritable</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer</span>
+										<a href="#key" title="details" class="method-name">key</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#move" title="details" class="method-name">move</a>
+											(<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$new_directory</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#next" title="details" class="method-name">next</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#output" title="details" class="method-name">output</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#read" title="details" class="method-name">read</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#rename" title="details" class="method-name">rename</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_filename</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#rewind" title="details" class="method-name">rewind</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#tossIfDeleted" title="details" class="method-name">tossIfDeleted</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#valid" title="details" class="method-name">valid</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#write" title="details" class="method-name">write</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+										<a href="#__clone" title="details" class="method-name">__clone</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#__sleep" title="details" class="method-name">__sleep</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__wakeup" title="details" class="method-name">__wakeup</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$deleted" id="$deleted"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$deleted</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number">459</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A backtrace from when the file was deleted</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$file" id="$file"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$file</span>
+						(line <span class="line-number">466</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The full path to the file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcreate" id="create"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method create</span> (line <span class="line-number">71</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a file on the filesystem and returns an object representing it.</p>
+<p class="description"><p>This operation will be reverted by a filesystem transaction being rolled back.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException  When no file was specified or the file already exists</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			create
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file_path</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$contents</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file_path</span><span class="var-description">: The path to the new file</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$contents</span><span class="var-description">: The contents to write to the file, must be a non-NULL value to be written</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Flourish/fImage.html#methodcreate">fImage::create()</a>
+								: Creates an image on the filesystem and returns an object representing it
+							</li>
+				</ul>
+	</div>
+<a name="methoddetermineMimeType" id="determineMimeType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method determineMimeType</span> (line <span class="line-number">118</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Determines the file's mime type by either looking at the file contents or matching the extension</p>
+<p class="description"><p>Please see the ::getMimeType() description for details about how the  mime type is determined and what mime types are detected.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The mime type of the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			determineMimeType
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$contents</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The file to check the mime type for - must be a valid filesystem path if no `$contents` are provided, otherwise just a filename</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$contents</span><span class="var-description">: The first 4096 bytes of the file content - the `$file` parameter only need be a filename if this is provided</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">523</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an object to represent a file on the filesystem</p>
+<p class="description"><p>If multiple fFile objects are created for a single file, they will  reflect changes in each other including rename and delete actions.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException  When no file was specified, the file does not exist or the path specified is not a file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skip_checks</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The path to the file</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$skip_checks</span><span class="var-description">: If file checks should be skipped, which improves performance, but may cause undefined behavior - only skip these if they are duplicated elsewhere</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Flourish/fImage.html#method__construct">fImage::__construct()</a>
+								: Creates an object to represent an image on the filesystem
+							</li>
+				</ul>
+	</div>
+<a name="methodappend" id="append"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">append</span> (line <span class="line-number">632</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Appends the provided data to the file</p>
+<p class="description"><p>If a filesystem transaction is in progress and is rolled back, this  data will be removed.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The file object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			append
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The data to append to the file</span>			</li>
+				</ul>
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Flourish/fImage.html#methodappend">fImage::append()</a>
+								: Prevents a programmer from trying to append an image
+							</li>
+				</ul>
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">660</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of lines in the file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of lines in the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Countable::count</dt>
+					</dl>
+			
+	</div>
+<a name="methodcurrent" id="current"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">current</span> (line <span class="line-number">697</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current line of the file (required by iterator interface)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current row</li>
+				<li><span class="field">throws:</span> fNoRemainingException   When there are no remaining lines in the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			current
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Iterator::current</dt>
+					</dl>
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">723</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes the current file</p>
+<p class="description"><p>This operation will NOT be performed until the filesystem transaction  has been committed, if a transaction is in progress. Any non-Flourish  code (PHP or system) will still see this file as existing until that  point.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodduplicate" id="duplicate"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">duplicate</span> (line <span class="line-number">763</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a new file object with a copy of this file</p>
+<p class="description"><p>If no directory is specified, the file is created with a new name in  the current directory. If a new directory is specified, you must also  indicate if you wish to overwrite an existing file with the same name  in the new directory or create a unique name.</p><p>This operation will be reverted by a filesystem transaction being rolled  back.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new fFile object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			duplicate
+		</span>
+					([<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>&nbsp;<span class="var-name">$new_directory</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>
+				<span class="var-name">$new_directory</span><span class="var-description">: The directory to duplicate the file into if different than the current directory</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$overwrite</span><span class="var-description">: If a new directory is specified, this indicates if a file with the same name should be overwritten.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetExtension" id="getExtension"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getExtension</span> (line <span class="line-number">825</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the file extension</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The extension of the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getExtension
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMimeType" id="getMimeType"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMimeType</span> (line <span class="line-number">912</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the file's mime type</p>
+<p class="description"><p>This method will attempt to look at the file contents and the file  extension to determine the mime type. If the file contains binary  information, the contents will be used for mime type verification,  however if the contents appear to be plain text, the file extension  will be used.</p><p>The following mime types are supported. All other binary file types  will be returned as `application/octet-stream` and all other text files  will be returned as `text/plain`.</p><p>**Archive:**</p><p><ul><li>`application/x-bzip2` BZip2 file</li><li>`application/x-compress` Compress (*nix) file</li><li>`application/x-gzip` GZip file</li><li>`application/x-rar-compressed` Rar file</li><li>`application/x-stuffit` StuffIt file</li><li>`application/x-tar` Tar file</li><li>`application/zip` Zip file</li></ul>  **Audio:**</p><p><ul><li>`audio/x-flac` FLAC audio</li><li>`audio/mpeg` MP3 audio</li><li>`audio/mp4` MP4 (AAC) audio</li><li>`audio/vorbis` Ogg Vorbis audio</li><li>`audio/x-wav` WAV audio</li><li>`audio/x-ms-wma` Windows media audio</li></ul>  **Document:**</p><p><ul><li>`application/vnd.ms-excel` Excel (2000, 2003 and 2007) file</li><li>`application/pdf` PDF file</li><li>`application/vnd.ms-powerpoint` Powerpoint (2000, 2003, 2007) file</li><li>`text/rtf` RTF file</li><li>`application/msword` Word (2000, 2003 and 2007) file</li></ul>  **Image:**</p><p><ul><li>`image/x-ms-bmp` BMP file</li><li>`application/postscript` EPS file</li><li>`image/gif` GIF file</li><li>`application/vnd.microsoft.icon` ICO file</li><li>`image/jpeg` JPEG file</li><li>`image/png` PNG file</li><li>`image/tiff` TIFF file</li><li>`image/svg+xml` SVG file</li></ul>  **Text:**</p><p><ul><li>`text/css` CSS file</li><li>`text/csv` CSV file</li><li>`text/html` (X)HTML file</li><li>`text/calendar` iCalendar file</li><li>`application/javascript` Javascript file</li><li>`application/x-perl` Perl file</li><li>`application/x-httpd-php` PHP file</li><li>`application/x-python` Python file</li><li>`application/rss+xml` RSS feed</li><li>`application/x-ruby` Ruby file</li><li>`text/tab-separated-values` TAB file</li><li>`text/x-vcard` VCard file</li><li>`application/xhtml+xml` XHTML (Real) file</li><li>`application/xml` XML file</li></ul>  **Video/Animation:**</p><p><ul><li>`video/x-msvideo` AVI video</li><li>`application/x-shockwave-flash` Flash movie</li><li>`video/x-flv` Flash video</li><li>`video/x-ms-asf` Microsoft ASF video</li><li>`video/mp4` MP4 video</li><li>`video/ogg` OGM and Ogg Theora video</li><li>`video/quicktime` Quicktime video</li><li>`video/x-ms-wmv` Windows media video</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The mime type of the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getMimeType
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetMTime" id="getMTime"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getMTime</span> (line <span class="line-number">925</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the last modification time of the file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The timestamp of when the file was last modified</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fTimestamp.html">fTimestamp</a></span>
+		<span class="method-name">
+			getMTime
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getName</span> (line <span class="line-number">939</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the filename (i.e. does not include the directory)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The filename of the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getName
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$remove_extension</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$remove_extension</span><span class="var-description">: If the extension should be removed from the filename</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetParent" id="getParent"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getParent</span> (line <span class="line-number">951</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the directory the file is located in</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The directory containing the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+		<span class="method-name">
+			getParent
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPath" id="getPath"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPath</span> (line <span class="line-number">966</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the file's current path (directory and filename)</p>
+<p class="description"><p>If the web path is requested, uses translations set with  fFilesystem::addWebPathTranslation()</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The path (directory and filename) for the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPath
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$translate_to_web_path</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$translate_to_web_path</span><span class="var-description">: If the path should be the web path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSize" id="getSize"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSize</span> (line <span class="line-number">984</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the size of the file</p>
+<p class="description"><p>The return value may be incorrect for files over 2GB on 32-bit OSes.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If formatted a string with filesize in b/kb/mb/gb/tb, otherwise an integer</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|string</span>
+		<span class="method-name">
+			getSize
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">FALSE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$decimal_places</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$format</span><span class="var-description">: If the filesize should be formatted for human readability</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$decimal_places</span><span class="var-description">: The number of decimal places to format to (if enabled)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisWritable" id="isWritable"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">isWritable</span> (line <span class="line-number">1004</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check to see if the current file is writable</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the file is writable</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isWritable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodkey" id="key"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">key</span> (line <span class="line-number">1020</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the current one-based line number (required by iterator interface)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current line number</li>
+				<li><span class="field">throws:</span> fNoRemainingException  When there are no remaining lines in the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			key
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Iterator::key</dt>
+					</dl>
+			
+	</div>
+<a name="methodmove" id="move"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">move</span> (line <span class="line-number">1054</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moves the current file to a different directory</p>
+<p class="description"><p>Please note that ::rename() will rename a file in its directory or rename  it into a different directory.</p><p>If the current file's filename already exists in the new directory and  the overwrite flag is set to false, the filename will be changed to a  unique name.</p><p>This operation will be reverted if a filesystem transaction is in  progress and is later rolled back.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The file object, to allow for method chaining</li>
+				<li><span class="field">throws:</span> fValidationException  When the directory passed is not a directory or is not readable</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			move
+		</span>
+					(<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$new_directory</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>
+				<span class="var-name">$new_directory</span><span class="var-description">: The directory to move this file into</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$overwrite</span><span class="var-description">: If the current filename already exists in the new directory, `TRUE` will cause the file to be overwritten, `FALSE` will cause the new filename to change</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnext" id="next"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">next</span> (line <span class="line-number">1072</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Advances to the next line in the file (required by iterator interface)</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fNoRemainingException  When there are no remaining lines in the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			next
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Iterator::next</dt>
+					</dl>
+			
+	</div>
+<a name="methodoutput" id="output"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">output</span> (line <span class="line-number">1103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prints the contents of the file</p>
+<p class="description"><p>This method is primarily intended for when PHP is used to control access  to files.</p><p>Be sure to close the session, if open, to prevent performance issues.  Any open output buffers are automatically closed and discarded.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The file object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			output
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$headers</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$filename</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$headers</span><span class="var-description">: If HTTP headers for the file should be included</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$filename</span><span class="var-description">: Present the file as an attachment instead of just outputting type headers - if a string is passed, that will be used for the filename, if `TRUE` is passed, the current filename will be used</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodread" id="read"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">read</span> (line <span class="line-number">1141</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reads the data from the file</p>
+<p class="description"><p>Reads all file data into memory, use with caution on large files!</p><p>This operation will read the data that has been written during the  current transaction if one is in progress.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The contents of the file</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			read
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The data to write to the file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrename" id="rename"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rename</span> (line <span class="line-number">1162</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renames the current file</p>
+<p class="description"><p>If the filename already exists and the overwrite flag is set to false,  a new filename will be created.</p><p>This operation will be reverted if a filesystem transaction is in  progress and is later rolled back.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The file object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			rename
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_filename</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$new_filename</span><span class="var-description">: The new full path to the file or a new filename in the current directory</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$overwrite</span><span class="var-description">: If the new filename already exists, `TRUE` will cause the file to be overwritten, `FALSE` will cause the new filename to change</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrewind" id="rewind"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rewind</span> (line <span class="line-number">1242</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rewinds the file handle (required by iterator interface)</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rewind
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Iterator::rewind</dt>
+					</dl>
+			
+	</div>
+<a name="methodtossIfDeleted" id="tossIfDeleted"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tossIfDeleted</span> (line <span class="line-number">1257</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throws an fProgrammerException if the file has been deleted</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tossIfDeleted
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodvalid" id="valid"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">valid</span> (line <span class="line-number">1275</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns if the file has any lines left (required by iterator interface)</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the iterator is still valid</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			valid
+		</span>
+				()
+			</div>
+	
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>Iterator::valid</dt>
+					</dl>
+			
+	</div>
+<a name="methodwrite" id="write"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">write</span> (line <span class="line-number">1299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Writes the provided data to the file</p>
+<p class="description"><p>Requires all previous data to be stored in memory if inside a  transaction, use with caution on large files!</p><p>If a filesystem transaction is in progress and is rolled back, the  previous data will be restored.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The file object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			write
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The data to write to the file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__clone" id="__clone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__clone</span> (line <span class="line-number">483</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Duplicates a file in the current directory when the object is cloned</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The new fFile object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a></span>
+		<span class="method-name">
+			__clone
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">568</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__sleep" id="__sleep"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__sleep</span> (line <span class="line-number">581</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The iterator information doesn't need to be serialized since a resource can't be</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The instance variables to serialize</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			__sleep
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">592</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the filename of the file</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The filename</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__wakeup" id="__wakeup"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__wakeup</span> (line <span class="line-number">609</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Re-inserts the file back into the filesystem map when unserialized</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__wakeup
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constcreate" id="create"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">create</span>
+			 = <span class="const-default"> 'fFile::create'</span>
+			(line <span class="line-number">57</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:41 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

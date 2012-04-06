@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sORMJSON</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sORMJSON</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extension to fORMJSON.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Andrew Udvare [au] &lt;<a href="mailto:andrew@bne1.com">andrew@bne1.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.2</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2012 bne1.</li>
+				<li><span class="field">link:</span> <a href="http://www.sutralib.com/">http://www.sutralib.com/</a></li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_sutra-separated---classes---sORMJSON.php.html">/sutra-separated/classes/sORMJSON.php</a> (line <span class="field">14</span>)
+		</p>
+		
+				
+		<pre><a href="../Flourish/fORMJSON.html">fORMJSON</a>
+   |
+   --sORMJSON</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#configureJSONSerializedColumn" title="details" class="method-name">configureJSONSerializedColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_array</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#JSONToValue" title="details" class="method-name">JSONToValue</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#valueToJSON" title="details" class="method-name">valueToJSON</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$cache</span>)
+									</div>
+								
+																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodconfigureJSONSerializedColumn" id="configureJSONSerializedColumn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method configureJSONSerializedColumn</span> (line <span class="line-number">41</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Configure a column string column (VARCHAR or TEXT) to store a JSON</p>
+<p class="description"><p>serialised object. Conversion to an array and back is transparent. If    there are validations to perform on these columns when they are in their    original data type, those callbacks should be registered before calling    this method.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			configureJSONSerializedColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$class</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$force_array</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$class</span><span class="var-description">: Class name or instance of the class.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column name.</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$force_array</span><span class="var-description">: Force the JSON to be converted to be an array.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodJSONToValue" id="JSONToValue"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method JSONToValue</span> (line <span class="line-number">78</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts the JSON string to the value after getting retrieved from the database.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			JSONToValue
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$object</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$values</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$old_values</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$related_records</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$cache</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalueToJSON" id="valueToJSON"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method valueToJSON</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts the value to a JSON string before validation.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			valueToJSON
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$object</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$old_values</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$related_records</span>, <span class="var-type"></span>&nbsp;<span class="var-name">&$cache</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$object</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$values</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$old_values</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$related_records</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">&$cache</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fORMJSON.html">fORMJSON</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fORMJSON.html#methodextend">fORMJSON::extend()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fORMJSON.html#methodreflect">fORMJSON::reflect()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fORMJSON.html#methodtoJSON">fORMJSON::toJSON()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fORMJSON.html#methodtoJSONRecordSet">fORMJSON::toJSONRecordSet()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fORMJSON.html">fORMJSON</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fORMJSON.html#constextend">fORMJSON::extend</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fORMJSON.html#constreflect">fORMJSON::reflect</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fORMJSON.html#consttoJSON">fORMJSON::toJSON</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fORMJSON.html#consttoJSONRecordSet">fORMJSON::toJSONRecordSet</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:48 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

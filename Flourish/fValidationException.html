@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fValidationException</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fValidationException</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An exception caused by a data not matching a rule or set of rules</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond, iMarc LLC [wb-imarc] &lt;<a href="mailto:will@imarc.net">will@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b4</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2010 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fValidationException">http://flourishlib.com/fValidationException</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fValidationException.php.html">/flourish/fValidationException.php</a> (line <span class="field">19</span>)
+		</p>
+		
+				
+		<pre>Exception
+   |
+   --<a href="../Flourish/fException.html">fException</a>
+      |
+      --<a href="../Flourish/fExpectedException.html">fExpectedException</a>
+         |
+         --fValidationException</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#formatField" title="details" class="const-name">formatField</a> = 					<span class="var-type"> 'fValidationException::formatField'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#removeFieldNames" title="details" class="const-name">removeFieldNames</a> = 					<span class="var-type"> 'fValidationException::removeFieldNames'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setFieldFormat" title="details" class="const-name">setFieldFormat</a> = 					<span class="var-type"> 'fValidationException::setFieldFormat'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+												<div class="var-title">
+					static <span class="var-type">string</span>
+					<a href="#$field_format" title="details" class="var-name">$field_format</a>
+				</div>
+																							</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#formatField" title="details" class="method-name">formatField</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#removeFieldNames" title="details" class="method-name">removeFieldNames</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+									</div>
+																								<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setFieldFormat" title="details" class="method-name">setFieldFormat</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+									</div>
+								
+																												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">''</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$sub_messages</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$code</span>)
+									</div>
+																</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$field_format" id="$field_format"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			static <span class="var-type">string</span>
+			<span class="var-name">$field_format</span>
+			 = <span class="var-default"> '%s: '</span>			(line <span class="line-number">30</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The formatting string to use for field names</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+							<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname">Exception (Internal Class)</span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name">$code</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$file</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$line</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$message</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$previous</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$string</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$trace</span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodformatField" id="formatField"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method formatField</span> (line <span class="line-number">39</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Accepts a field name and formats it based on the formatting string set via ::setFieldFormat()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The formatted field name</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			formatField
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The name of the field to format</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveFieldNames" id="removeFieldNames"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method removeFieldNames</span> (line <span class="line-number">51</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes the field names from normal validation messages, leaving just the message part</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The messages without field names</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			removeFieldNames
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$messages</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$messages</span><span class="var-description">: The messages to remove the field names from</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFieldFormat" id="setFieldFormat"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setFieldFormat</span> (line <span class="line-number">84</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the format to be applied to all field names used in fValidationExceptions</p>
+<p class="description"><p>The format should contain exactly one `%s`  [http://php.net/sprintf sprintf()] conversion specification, which will  be replaced with the field name. Any literal `%` characters should be  written as `%%`.</p><p>The default format is just `%s: `, which simply inserts a `:` and space  after the field name.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setFieldFormat
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$format</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$format</span><span class="var-description">: A string to format the field name with - `%s` will be replaced with the field name</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">137</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the message for the exception, allowing for custom formatting beyond fException</p>
+<p class="description"><p>If this method receives exactly two parameters, a string and an array,  the string will be used as a message in a HTML `&lt;p&gt;` tag and the array  will be turned into an unorder list `</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">''</span>], <span class="var-type">array</span>&nbsp;<span class="var-name">$sub_messages</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$code</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The beginning message for the exception. This will be placed in a `&lt;p&gt;` tag.</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$sub_messages</span><span class="var-description">: An array of strings to place in a `</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$code</span><span class="var-description">: The optional exception code</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Flourish/fException.html#method__construct">fException::__construct()</a></dt>
+						<dd>Sets the message for the exception, allowing for string interpolation and internationalization</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fException.html">fException</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fException.html#method__construct">fException::__construct()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodcompose">fException::compose()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methoddump">fException::dump()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodformatTrace">fException::formatTrace()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodgetCSSClass">fException::getCSSClass()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodprepare">fException::prepare()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodprintMessage">fException::printMessage()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodprintTrace">fException::printTrace()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodregisterCallback">fException::registerCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodreorderMessage">fException::reorderMessage()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodsetMessage">fException::setMessage()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#methodsplitMessage">fException::splitMessage()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fException.html#method__get">fException::__get()</a></span><br>
+											</blockquote>
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname">Exception (Internal Class)</span></p>
+					<blockquote>
+													<span class="method-name">constructor __construct ( [$message = ], [$code = ], [$previous = ] )</span><br>
+													<span class="method-name">getCode (  )</span><br>
+													<span class="method-name">getFile (  )</span><br>
+													<span class="method-name">getLine (  )</span><br>
+													<span class="method-name">getMessage (  )</span><br>
+													<span class="method-name">getPrevious (  )</span><br>
+													<span class="method-name">getTrace (  )</span><br>
+													<span class="method-name">getTraceAsString (  )</span><br>
+													<span class="method-name">__clone (  )</span><br>
+													<span class="method-name">__toString (  )</span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constformatField" id="formatField"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">formatField</span>
+			 = <span class="const-default"> 'fValidationException::formatField'</span>
+			(line <span class="line-number">21</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constremoveFieldNames" id="removeFieldNames"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">removeFieldNames</span>
+			 = <span class="const-default"> 'fValidationException::removeFieldNames'</span>
+			(line <span class="line-number">22</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetFieldFormat" id="setFieldFormat"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setFieldFormat</span>
+			 = <span class="const-default"> 'fValidationException::setFieldFormat'</span>
+			(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:46 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

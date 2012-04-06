@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sCache</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sCache</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extension to sCache. This is almost the same but invisibly provides    site-unique keys so that one site's cache entry does not conflict with    another.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Andrew Udvare [au] &lt;<a href="mailto:andrew@bne1.com">andrew@bne1.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.2</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2012 bne1.</li>
+				<li><span class="field">link:</span> <a href="http://www.sutralib.com/">http://www.sutralib.com/</a></li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_sutra-separated---classes---sCache.php.html">/sutra-separated/classes/sCache.php</a> (line <span class="field">16</span>)
+		</p>
+		
+				
+		<pre><a href="../Flourish/fCache.html">fCache</a>
+   |
+   --sCache</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																				
+												<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#add" title="details" class="method-name">add</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$ttl</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">mixed</span>
+										<a href="#get" title="details" class="method-name">get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#set" title="details" class="method-name">set</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$ttl</span> = <span class="var-default">0</span>])
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fCache.html">fCache</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../Flourish/fCache.html#var$config">fCache::$config</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../Flourish/fCache.html#var$data_store">fCache::$data_store</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../Flourish/fCache.html#var$type">fCache::$type</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="methodadd" id="add"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">add</span> (line <span class="line-number">58</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Tries to set a value to the cache, but stops if a value already exists.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the key/value pair were added successfully.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			add
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$ttl</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The key to store as, this should not exceed 250    characters.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to store, this will be serialized.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$ttl</span><span class="var-description">: The number of seconds to keep the cache valid for, 0    for no limit.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Flourish/fCache.html#methodadd">fCache::add()</a></dt>
+						<dd>Tries to set a value to the cache, but stops if a value already exists</dd>
+					</dl>
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">69</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Deletes a value from the cache.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the delete succeeded.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			delete
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The key to delete.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Flourish/fCache.html#methoddelete">fCache::delete()</a></dt>
+						<dd>Deletes a value from the cache</dd>
+					</dl>
+			
+	</div>
+<a name="methodget" id="get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">get</span> (line <span class="line-number">82</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a value from the cache.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The cached value or the default value if no cached value    was found.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The key to return the value for.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$default</span><span class="var-description">: The value to return if the key did not exist.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Flourish/fCache.html#methodget">fCache::get()</a></dt>
+						<dd>Returns a value from the cache</dd>
+					</dl>
+			
+	</div>
+<a name="methodset" id="set"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">set</span> (line <span class="line-number">97</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets a value to the cache, overriding any previous value.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the value was successfully saved.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			set
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$key</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$ttl</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$key</span><span class="var-description">: The key to store as, this should not exceed 250    characters.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to store, this will be serialized.</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$ttl</span><span class="var-description">: The number of seconds to keep the cache valid for, 0    for no limit.</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt><a href="../Flourish/fCache.html#methodset">fCache::set()</a></dt>
+						<dd>Sets a value to the cache, overriding any previous value</dd>
+					</dl>
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fCache.html">fCache</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fCache.html#method__construct">fCache::__construct()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodadd">fCache::add()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodclean">fCache::clean()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodclear">fCache::clear()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methoddelete">fCache::delete()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodget">fCache::get()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodsave">fCache::save()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodserialize">fCache::serialize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodset">fCache::set()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#methodunserialize">fCache::unserialize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fCache.html#method__destruct">fCache::__destruct()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:47 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

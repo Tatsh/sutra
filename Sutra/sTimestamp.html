@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sTimestamp</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sTimestamp</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Utility functions for timestamp and time/date/time zone representations.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Andrew Udvare [au] &lt;<a href="mailto:andrew@bne1.com">andrew@bne1.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.2</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2012 bne1.</li>
+				<li><span class="field">link:</span> <a href="http://www.sutralib.com/">http://www.sutralib.com/</a></li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_sutra-separated---classes---sTimestamp.php.html">/sutra-separated/classes/sTimestamp.php</a> (line <span class="field">14</span>)
+		</p>
+		
+				
+		<pre><a href="../Flourish/fTimestamp.html">fTimestamp</a>
+   |
+   --sTimestamp</pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-vars">Vars</a>
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DATETIME_REGEX" title="details" class="const-name">DATETIME_REGEX</a> = 					<span class="var-type"> '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(?:\s+)?T([0-2][0-9])\:([0-5][0-9])\:([0-5][0-9](?:\.\d+)?)(?:Z|(?:[\-\+]([0-1][0-9])\:00))?$/'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#formatTimezoneNumber" title="details" class="method-name">formatTimezoneNumber</a>
+											(<span class="var-type">float</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer|boolean</span>
+										<a href="#RFC3339ToTimestamp" title="details" class="method-name">RFC3339ToTimestamp</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$rfc</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$throw</span> = <span class="var-default">FALSE</span>])
+									</div>
+								
+																				</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fTimestamp.html">fTimestamp</a></span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name"><a href="../Flourish/fTimestamp.html#var$timestamp">fTimestamp::$timestamp</a></span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name"><a href="../Flourish/fTimestamp.html#var$timezone">fTimestamp::$timezone</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-vars">Vars</a>
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodformatTimezoneNumber" id="formatTimezoneNumber"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method formatTimezoneNumber</span> (line <span class="line-number">30</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Get a formatted timezone string such as +08:00 from 8 or -12:00 from -12.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> String, such as +08:00.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			formatTimezoneNumber
+		</span>
+					(<span class="var-type">float</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">float</span>
+				<span class="var-name">$value</span><span class="var-description">: The timezone, can be decimal.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodRFC3339ToTimestamp" id="RFC3339ToTimestamp"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method RFC3339ToTimestamp</span> (line <span class="line-number">73</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Convert an RFC3339 (HTML 5 version) timestamp to UNIX. Timezone is    ignored.</p>
+<p class="description"><p>HTML 5 mandates 2 extra constraints: <ul><li>the literal letters T and Z in the date/time syntax must always be uppercase</li><li>the date-fullyear production is instead defined as four or more digits
+     representing a number greater than 0</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> UNIX timestamp or boolean FALSE. If FALSE is    returned, the string was invalid.</li>
+				<li><span class="field">throws:</span> fValidationException If $throw is set to TRUE and the timestamp    is invalid.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer|boolean</span>
+		<span class="method-name">
+			RFC3339ToTimestamp
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$rfc</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$throw</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$rfc</span><span class="var-description">: The RFC value, like: 1990-12-31T23:59:60Z or    1996-12-19T16:39:57-08:00.</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$throw</span><span class="var-description">: Throw an fValidationException if the timestamp is    is invalid. Defaults to FALSE.</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fTimestamp.html">fTimestamp</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#method__construct">fTimestamp::__construct()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodadjust">fTimestamp::adjust()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodcallFormatCallback">fTimestamp::callFormatCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodcallUnformatCallback">fTimestamp::callUnformatCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodcompose">fTimestamp::compose()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methoddefineFormat">fTimestamp::defineFormat()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodeq">fTimestamp::eq()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodfixISOWeek">fTimestamp::fixISOWeek()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodformat">fTimestamp::format()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodgetDefaultTimezone">fTimestamp::getDefaultTimezone()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodgetFuzzyDifference">fTimestamp::getFuzzyDifference()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodgt">fTimestamp::gt()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodgte">fTimestamp::gte()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodisValidTimezone">fTimestamp::isValidTimezone()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodlt">fTimestamp::lt()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodlte">fTimestamp::lte()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodmodify">fTimestamp::modify()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodregisterFormatCallback">fTimestamp::registerFormatCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodregisterUnformatCallback">fTimestamp::registerUnformatCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodreset">fTimestamp::reset()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodsetDefaultTimezone">fTimestamp::setDefaultTimezone()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#methodtranslateFormat">fTimestamp::translateFormat()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#method__get">fTimestamp::__get()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fTimestamp.html#method__toString">fTimestamp::__toString()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-vars">Vars</a>
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDATETIME_REGEX" id="DATETIME_REGEX"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DATETIME_REGEX</span>
+			 = <span class="const-default"> '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(?:\s+)?T([0-2][0-9])\:([0-5][0-9])\:([0-5][0-9](?:\.\d+)?)(?:Z|(?:[\-\+]([0-1][0-9])\:00))?$/'</span>
+			(line <span class="line-number">22</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loose regular expression to match timestamp as defined by W3C for    HTML 5 date/datetime fields. The main difference is allowing for    a space between the date and the literal 'T'.</p>
+	
+	
+</div>
+							<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fTimestamp.html">fTimestamp</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constcallFormatCallback">fTimestamp::callFormatCallback</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constcallUnformatCallback">fTimestamp::callUnformatCallback</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constcombine">fTimestamp::combine</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constdefineFormat">fTimestamp::defineFormat</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constfixISOWeek">fTimestamp::fixISOWeek</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constgetDefaultTimezone">fTimestamp::getDefaultTimezone</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constisValidTimezone">fTimestamp::isValidTimezone</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constregisterFormatCallback">fTimestamp::registerFormatCallback</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constregisterUnformatCallback">fTimestamp::registerUnformatCallback</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constreset">fTimestamp::reset</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#constsetDefaultTimezone">fTimestamp::setDefaultTimezone</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fTimestamp.html#consttranslateFormat">fTimestamp::translateFormat</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:48 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class sGrammar</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class sGrammar</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-consts">Constants</a>
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Extends fGrammar.</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Andrew Udvare [au] &lt;<a href="mailto:andrew@bne1.com">andrew@bne1.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.2</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2012 bne1.</li>
+				<li><span class="field">link:</span> <a href="http://www.sutralib.com/">http://www.sutralib.com/</a></li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_sutra-separated---classes---sGrammar.php.html">/sutra-separated/classes/sGrammar.php</a> (line <span class="field">14</span>)
+		</p>
+		
+				
+		<pre><a href="../Flourish/fGrammar.html">fGrammar</a>
+   |
+   --sGrammar</pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-consts">Constants</a>
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addDashizeRule" title="details" class="method-name">addDashizeRule</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$original</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$returnString</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#dashize" title="details" class="method-name">dashize</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#removeDashizeRule" title="details" class="method-name">removeDashizeRule</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$original</span>)
+									</div>
+								
+																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-consts">Constants</a>
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddDashizeRule" id="addDashizeRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addDashizeRule</span> (line <span class="line-number">38</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Add an exception string for sGrammar::dashize().</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../Sutra/sGrammar.html#methodremoveDashizeRule">sGrammar::removeDashizeRule()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addDashizeRule
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$original</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$returnString</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$original</span><span class="var-description">: Original string.</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$returnString</span><span class="var-description">: The string to return in case this string is passed to    sGrammar::dashize().</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddashize" id="dashize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dashize</span> (line <span class="line-number">76</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Converts an underscore_notation or camelCase notation to dash-notation.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Converted string.</li>
+				<li><span class="field">see:</span> <a href="../Sutra/sGrammar.html#methodaddDashizeRule">sGrammar::addDashizeRule()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			dashize
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$string</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$string</span><span class="var-description">: String to convert.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodremoveDashizeRule" id="removeDashizeRule"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method removeDashizeRule</span> (line <span class="line-number">56</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes a rule used by sGrammar::dashize().</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../Sutra/sGrammar.html#methodaddDashizeRule">sGrammar::addDashizeRule()</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			removeDashizeRule
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$original</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$original</span><span class="var-description">: Original string that would be processed.</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname"><a href="../Flourish/fGrammar.html">fGrammar</a></span></p>
+					<blockquote>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodaddCamelUnderscoreRule">fGrammar::addCamelUnderscoreRule()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodaddHumanizeRule">fGrammar::addHumanizeRule()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodaddSingularPluralRule">fGrammar::addSingularPluralRule()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodcamelize">fGrammar::camelize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodcompose">fGrammar::compose()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodhumanize">fGrammar::humanize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodinflectOnQuantity">fGrammar::inflectOnQuantity()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodjoinArray">fGrammar::joinArray()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodpluralize">fGrammar::pluralize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodregisterJoinArrayCallback">fGrammar::registerJoinArrayCallback()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodreset">fGrammar::reset()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodsingularize">fGrammar::singularize()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodstem">fGrammar::stem()</a></span><br>
+													<span class="method-name"><a href="../Flourish/fGrammar.html#methodunderscorize">fGrammar::underscorize()</a></span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Constants</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname"><a href="../Flourish/fGrammar.html">fGrammar</a></span></p>
+					<blockquote>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constaddCamelUnderscoreRule">fGrammar::addCamelUnderscoreRule</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constaddHumanizeRule">fGrammar::addHumanizeRule</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constaddSingularPluralRule">fGrammar::addSingularPluralRule</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constcamelize">fGrammar::camelize</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#consthumanize">fGrammar::humanize</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constinflectOnQuantity">fGrammar::inflectOnQuantity</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constjoinArray">fGrammar::joinArray</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constpluralize">fGrammar::pluralize</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constregisterJoinArrayCallback">fGrammar::registerJoinArrayCallback</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constreset">fGrammar::reset</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constsingularize">fGrammar::singularize</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#conststem">fGrammar::stem</a></span><br>
+							</span>
+													<img src="../media/images/Variable.png" />
+							<span class="const-title">
+								<span class="const-name"><a href="../Flourish/fGrammar.html#constunderscorize">fGrammar::underscorize</a></span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:47 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

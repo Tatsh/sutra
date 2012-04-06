@@ -1,0 +1,1083 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fXML</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fXML</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+                <p class="implements">
+            Implements interfaces:
+            <ul>
+                <li>ArrayAccess (internal interface)</li>            </ul>
+        </p>
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides functionality for XML files</p>
+<p class="description"><p>This class is implemented to use the UTF-8 character encoding. Please see  http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Craig Ruksznis [cr-imarc] &lt;<a href="mailto:craigruk@imarc.net">craigruk@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b8</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fXML">http://flourishlib.com/fXML</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fXML.php.html">/flourish/fXML.php</a> (line <span class="field">26</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#encode" title="details" class="const-name">encode</a> = 					<span class="var-type"> 'fXML::encode'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#sendHeader" title="details" class="const-name">sendHeader</a> = 					<span class="var-type"> 'fXML::sendHeader'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$__custom_prefixes" title="details" class="var-name">$__custom_prefixes</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">DOMElement</span>
+					<a href="#$__dom" title="details" class="var-name">$__dom</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$__xml" title="details" class="var-name">$__xml</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">DOMXPath</span>
+					<a href="#$__xpath" title="details" class="var-name">$__xpath</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#encode" title="details" class="method-name">encode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+									</div>
+																																																																																																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#sendHeader" title="details" class="method-name">sendHeader</a>
+										()
+									</div>
+																																																																																
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#addCustomPrefix" title="details" class="method-name">addCustomPrefix</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$ns_prefix</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getNamespace" title="details" class="method-name">getNamespace</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPrefix" title="details" class="method-name">getPrefix</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getText" title="details" class="method-name">getText</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#offsetExists" title="details" class="method-name">offsetExists</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#offsetGet" title="details" class="method-name">offsetGet</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetSet" title="details" class="method-name">offsetSet</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#offsetUnset" title="details" class="method-name">offsetUnset</a>
+											(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$offset</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#query" title="details" class="method-name">query</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fXML.html">fXML</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>&nbsp;<span class="var-name">$source</span>, [<span class="var-type">numeric</span>&nbsp;<span class="var-name">$http_timeout</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$fix_entities_encoding</span> = <span class="var-default">NULL</span>], <span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>&nbsp;<span class="var-name">3</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">4</span>)
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#toXML" title="details" class="method-name">toXML</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array|string|<a href="../Flourish/fXML.html">fXML</a></span>
+										<a href="#xpath" title="details" class="method-name">xpath</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$first_only</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fXML.html">fXML</a>|NULL</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#__isset" title="details" class="method-name">__isset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__set" title="details" class="method-name">__set</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#__sleep" title="details" class="method-name">__sleep</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__unset" title="details" class="method-name">__unset</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#__wakeup" title="details" class="method-name">__wakeup</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$__custom_prefixes" id="$__custom_prefixes"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$__custom_prefixes</span>
+						(line <span class="line-number">77</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Custom prefix =&gt; namespace URI mappings</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$__dom" id="$__dom"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">DOMElement</span>
+			<span class="var-name">$__dom</span>
+						(line <span class="line-number">84</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The dom element for this XML</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$__xml" id="$__xml"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$__xml</span>
+						(line <span class="line-number">98</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The XML string for serialization</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$__xpath" id="$__xpath"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">DOMXPath</span>
+			<span class="var-name">$__xpath</span>
+						(line <span class="line-number">91</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An XPath object for performing xpath lookups</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodencode" id="encode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method encode</span> (line <span class="line-number">39</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Encodes content for display in a UTF-8 encoded XML document</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The encoded content</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			encode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$content</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$content</span><span class="var-description">: The content to encode</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsendHeader" id="sendHeader"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method sendHeader</span> (line <span class="line-number">66</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sendHeader
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+<a name="methodaddCustomPrefix" id="addCustomPrefix"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addCustomPrefix</span> (line <span class="line-number">363</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a custom namespace prefix to full namespace mapping</p>
+<p class="description"><p>This namespace prefix will be valid for any operation on this object,  including calls to ::xpath().</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addCustomPrefix
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$ns_prefix</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$namespace</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$ns_prefix</span><span class="var-description">: The custom namespace prefix</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$namespace</span><span class="var-description">: The full namespace it maps to</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getName</span> (line <span class="line-number">440</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the name of the current element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of the current element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetNamespace" id="getNamespace"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getNamespace</span> (line <span class="line-number">451</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the namespace of the current element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The namespace of the current element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getNamespace
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPrefix" id="getPrefix"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPrefix</span> (line <span class="line-number">462</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the namespace prefix of the current element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The namespace prefix of the current element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPrefix
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetText" id="getText"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getText</span> (line <span class="line-number">473</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the string text of the current element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The string text of the current element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getText
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodoffsetExists" id="offsetExists"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetExists</span> (line <span class="line-number">492</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides functionality for isset() and empty() (required by arrayaccess interface)</p>
+<p class="description"><p>Offsets refers to an attribute name. Attribute may start with a namespace  prefix and a `:` to indicate what namespace the attribute is part of. A  blank namespace prefix (i.e. an offset starting with `:`) is treated as  the XML default namespace.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the offset exists</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			offsetExists
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to check</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetExists</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetGet" id="offsetGet"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetGet</span> (line <span class="line-number">511</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides functionality for get [index] syntax (required by ArrayAccess interface)</p>
+<p class="description"><p>Offsets refers to an attribute name. Attribute may start with a namespace  prefix and a `:` to indicate what namespace the attribute is part of. A  blank namespace prefix (i.e. an offset starting with `:`) is treated as  the XML default namespace.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The value of the offset</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			offsetGet
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$offset</span><span class="var-description">: The attribute to retrieve the value for</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetGet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetSet" id="offsetSet"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetSet</span> (line <span class="line-number">529</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Required by ArrayAccess interface</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetSet
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$offset</span>, <span class="var-type"></span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to set</span>			</li>
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$value</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetSet</dt>
+					</dl>
+			
+	</div>
+<a name="methodoffsetUnset" id="offsetUnset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">offsetUnset</span> (line <span class="line-number">543</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Required by ArrayAccess interface</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			offsetUnset
+		</span>
+					(<span class="var-type">integer|string</span>&nbsp;<span class="var-name">$offset</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer|string</span>
+				<span class="var-name">$offset</span><span class="var-description">: The offset to unset</span>			</li>
+				</ul>
+		
+				<hr class="separator" />
+		<div class="notes">Implementation of:</div>
+			<dl>
+			<dt>ArrayAccess::offsetUnset</dt>
+					</dl>
+			
+	</div>
+<a name="methodquery" id="query"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">query</span> (line <span class="line-number">555</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs an XPath query on the current element, returning the raw results</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The matching elements</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			query
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span><span class="var-description">: The XPath path to query</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">117</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Create the XML object from a string, fFile or URL</p>
+<p class="description"><p>The `$default_namespace` will be used for any sort of methods calls,  member access or array access when the element or attribute name does  not include a `:`.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException    When the source XML is invalid or does not exist</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fXML.html">fXML</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>&nbsp;<span class="var-name">$source</span>, [<span class="var-type">numeric</span>&nbsp;<span class="var-name">$http_timeout</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$fix_entities_encoding</span> = <span class="var-default">NULL</span>], <span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>&nbsp;<span class="var-name">3</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">4</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>
+				<span class="var-name">$source</span><span class="var-description">: The source of the XML, either an fFile object, a string of XML, a file path or a URL</span>			</li>
+					<li>
+				<span class="var-type">numeric</span>
+				<span class="var-name">$http_timeout</span><span class="var-description">: The timeout to use in seconds when requesting an XML file from a URL</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$fix_entities_encoding</span><span class="var-description">: This will fix two common XML authoring errors and should only be used when experiencing decoding issues - HTML entities that haven't been encoded as XML, and XML content published in ISO-8859-1 or Windows-1252 encoding without an explicit encoding attribute</span>			</li>
+					<li>
+				<span class="var-type"><a href="../Flourish/fFile.html">fFile</a>|string</span>
+				<span class="var-name">3</span><span class="var-description">: |$source</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">4</span><span class="var-description">: |$fix_entities_encoding</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtoXML" id="toXML"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">toXML</span> (line <span class="line-number">601</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a well-formed XML string from the current element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The XML</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			toXML
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodxpath" id="xpath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">xpath</span> (line <span class="line-number">614</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Executes an XPath query on the current element, returning an array of matching elements</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An array of matching elements, or a string or fXML object if `$first_only` is `TRUE`</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array|string|<a href="../Flourish/fXML.html">fXML</a></span>
+		<span class="method-name">
+			xpath
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$path</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$first_only</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$path</span><span class="var-description">: The XPath path to query</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$first_only</span><span class="var-description">: If only the first match should be returned</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">226</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows access to the text content of a child tag</p>
+<p class="description"><p>The child element name (`$name`) may start with a namespace prefix and a  `:` to indicate what namespace it is part of. A blank namespace prefix  (i.e. an element name starting with `:`) is treated as the XML default  namespace.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The child element requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fXML.html">fXML</a>|NULL</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The child element to retrieve</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__isset" id="__isset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__isset</span> (line <span class="line-number">276</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The child element name (`$name`) may start with a namespace prefix and a  `:` to indicate what namespace it is part of. A blank namespace prefix  (i.e. an element name starting with `:`) is treated as the XML default  namespace.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the child element is set</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			__isset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The child element to check - see method description for details about namespaces</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__set" id="__set"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__set</span> (line <span class="line-number">294</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prevents users from trying to set elements</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__set
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$value</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The element to set</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$value</span><span class="var-description">: The value to set</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__sleep" id="__sleep"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__sleep</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The XML needs to be made into a string before being serialized</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The members to serialize</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			__sleep
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">319</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the string inside the root XML element</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The text inside the root element</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__unset" id="__unset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__unset</span> (line <span class="line-number">333</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prevents users from trying to unset elements</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__unset
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The element to unset</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__wakeup" id="__wakeup"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__wakeup</span> (line <span class="line-number">346</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The XML needs to be made into a DOMElement when woken up</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__wakeup
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constencode" id="encode"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">encode</span>
+			 = <span class="const-default"> 'fXML::encode'</span>
+			(line <span class="line-number">29</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsendHeader" id="sendHeader"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">sendHeader</span>
+			 = <span class="const-default"> 'fXML::sendHeader'</span>
+			(line <span class="line-number">30</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:47 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

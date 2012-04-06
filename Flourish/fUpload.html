@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fUpload</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fUpload</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides validation and movement of uploaded files</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond, iMarc LLC [wb-imarc] &lt;<a href="mailto:will@imarc.net">will@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b14</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fUpload">http://flourishlib.com/fUpload</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fUpload.php.html">/flourish/fUpload.php</a> (line <span class="field">29</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#check" title="details" class="const-name">check</a> = 					<span class="var-type"> 'fUpload::check'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#count" title="details" class="const-name">count</a> = 					<span class="var-type"> 'fUpload::count'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#filter" title="details" class="const-name">filter</a> = 					<span class="var-type"> 'fUpload::filter'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																												<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#check" title="details" class="method-name">check</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$throw_exception</span> = <span class="var-default">TRUE</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#compose" title="details" class="method-name">compose</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">integer</span>
+										<a href="#count" title="details" class="method-name">count</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																								<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#filter" title="details" class="method-name">filter</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+									</div>
+																																																																								
+												<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#allowDotFiles" title="details" class="method-name">allowDotFiles</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#allowPHP" title="details" class="method-name">allowPHP</a>
+										()
+									</div>
+																																								<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#enableOverwrite" title="details" class="method-name">enableOverwrite</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fFile.html">fFile</a>|NULL</span>
+										<a href="#move" title="details" class="method-name">move</a>
+											(<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>&nbsp;<span class="var-name">$directory</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setImageDimensions" title="details" class="method-name">setImageDimensions</a>
+											(<span class="var-type">integer</span>&nbsp;<span class="var-name">$min_width</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$min_height</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$max_width</span> = <span class="var-default">0</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$max_height</span> = <span class="var-default">0</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setImageRatio" title="details" class="method-name">setImageRatio</a>
+											(<span class="var-type">numeric</span>&nbsp;<span class="var-name">$width</span>, <span class="var-type">numeric</span>&nbsp;<span class="var-name">$height</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$allow_excess_dimension</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setMaxSize" title="details" class="method-name">setMaxSize</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setMIMETypes" title="details" class="method-name">setMIMETypes</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$mime_types</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setOptional" title="details" class="method-name">setOptional</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">NULL|string</span>
+										<a href="#validate" title="details" class="method-name">validate</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$return_message</span> = <span class="var-default">NULL</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">3</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">4</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcheck" id="check"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method check</span> (line <span class="line-number">46</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if the field specified is a valid file upload field</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the field is a valid file upload field</li>
+				<li><span class="field">throws:</span> fValidationException  If `$throw_exception` is `TRUE` and the request was not a POST or the content type is not multipart/form-data</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			check
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$throw_exception</span> = <span class="var-default">TRUE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The field to check</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$throw_exception</span><span class="var-description">: If an exception should be thrown when there are issues with the form</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcompose" id="compose"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method compose</span> (line <span class="line-number">106</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Composes text using fText if loaded</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The composed and possible translated message</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			compose
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to compose</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$component</span><span class="var-description">: A string or number to insert into the message</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method count</span> (line <span class="line-number">78</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the number of files uploaded to a file upload array field</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The number of uploaded files</li>
+				<li><span class="field">throws:</span> fValidationException  If the form is not properly configured for file uploads</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">integer</span>
+		<span class="method-name">
+			count
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The field to get the number of files for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfilter" id="filter"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method filter</span> (line <span class="line-number">129</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes individual file upload entries from an array of file inputs in `$_FILES` when no file was uploaded</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The indexes of the files that were uploaded</li>
+				<li><span class="field">throws:</span> fValidationException  If the form is not properly configured for file uploads</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			filter
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The field to filter</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="methodallowDotFiles" id="allowDotFiles"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">allowDotFiles</span> (line <span class="line-number">238</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the upload class to allow files starting with a `.`</p>
+<p class="description"><p>Files starting with `.` may change the behaviour of web servers,  for instance `.htaccess` files for Apache.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			allowDotFiles
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodallowPHP" id="allowPHP"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">allowPHP</span> (line <span class="line-number">249</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the upload class to allow PHP files</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			allowPHP
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenableOverwrite" id="enableOverwrite"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">enableOverwrite</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Set the class to overwrite existing files in the destination directory instead of renaming the file</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enableOverwrite
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodmove" id="move"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">move</span> (line <span class="line-number">315</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moves an uploaded file from the temp directory to a permanent location</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> An fFile (or fImage) object, or `NULL` if no file was uploaded</li>
+				<li><span class="field">throws:</span> fValidationException  When the form is not setup for file uploads, the `$directory` is somehow invalid or ::validate() thows an exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fFile.html">fFile</a>|NULL</span>
+		<span class="method-name">
+			move
+		</span>
+					(<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>&nbsp;<span class="var-name">$directory</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string|<a href="../Flourish/fDirectory.html">fDirectory</a></span>
+				<span class="var-name">$directory</span><span class="var-description">: The directory to upload the file to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The file upload field to get the file from</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$index</span><span class="var-description">: If the field was an array file upload field, upload the file corresponding to this index</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetImageDimensions" id="setImageDimensions"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setImageDimensions</span> (line <span class="line-number">374</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the allowable dimensions for an uploaded image</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setImageDimensions
+		</span>
+					(<span class="var-type">integer</span>&nbsp;<span class="var-name">$min_width</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$min_height</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$max_width</span> = <span class="var-default">0</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$max_height</span> = <span class="var-default">0</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$min_width</span><span class="var-description">: The minimum width - `0` for no minimum</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$min_height</span><span class="var-description">: The minimum height - `0` for no minimum</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$max_width</span><span class="var-description">: The maximum width - `0` for no maximum</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$max_height</span><span class="var-description">: The maximum height - `0` for no maximum</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetImageRatio" id="setImageRatio"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setImageRatio</span> (line <span class="line-number">429</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the allowable dimensions for an uploaded image</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setImageRatio
+		</span>
+					(<span class="var-type">numeric</span>&nbsp;<span class="var-name">$width</span>, <span class="var-type">numeric</span>&nbsp;<span class="var-name">$height</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$allow_excess_dimension</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">numeric</span>
+				<span class="var-name">$width</span><span class="var-description">: The minimum ratio width</span>			</li>
+					<li>
+				<span class="var-type">numeric</span>
+				<span class="var-name">$height</span><span class="var-description">: The minimum ratio height</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$allow_excess_dimension</span><span class="var-description">: The dimension that should allow for excess pixels</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMaxSize" id="setMaxSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMaxSize</span> (line <span class="line-number">481</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the maximum size the uploaded file may be</p>
+<p class="description"><p>This method should be used with the  [http://php.net/file-upload.post-method `MAX_FILE_SIZE`] hidden form  input since the hidden form input will reject a file that is too large  before the file completely uploads, while this method will wait until the  whole file has been uploaded. This method should always be used since it  is very easy for the `MAX_FILE_SIZE` post field to be manipulated on the  client side.</p><p>This method can only further restrict the  [http://php.net/upload_max_filesize `upload_max_filesize` ini setting],  it can not increase that setting. `upload_max_filesize` must be set  in the php.ini (or an Apache configuration) since file uploads are  handled before the request is handed off to PHP.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMaxSize
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$size</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$size</span><span class="var-description">: The maximum file size (e.g. `1MB`, `200K`, `10.5M`) - `0` for no limit</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMIMETypes" id="setMIMETypes"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMIMETypes</span> (line <span class="line-number">508</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the file mime types accepted</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMIMETypes
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$mime_types</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$mime_types</span><span class="var-description">: The mime types to accept</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to display if the uploaded file is not one of the mime type specified</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetOptional" id="setOptional"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setOptional</span> (line <span class="line-number">520</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the file upload to be optional instead of required</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setOptional
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodvalidate" id="validate"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">validate</span> (line <span class="line-number">538</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validates the uploaded file, ensuring a file was actually uploaded and that is matched the restrictions put in place</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If `$return_message` is not `TRUE` or if no error occurs, `NULL`, otherwise a string error message</li>
+				<li><span class="field">throws:</span> fValidationException  When the form is not configured for file uploads, no file is uploaded or the uploaded file violates the options set for this object</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">NULL|string</span>
+		<span class="method-name">
+			validate
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$field</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$index</span> = <span class="var-default">NULL</span>], [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$return_message</span> = <span class="var-default">NULL</span>], <span class="var-type">string</span>&nbsp;<span class="var-name">3</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">4</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$field</span><span class="var-description">: The field the file was uploaded through</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$index</span><span class="var-description">: If the field was an array of file uploads, this specifies which one to validate</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$return_message</span><span class="var-description">: If any validation error should be returned as a string instead of being thrown as an fValidationException</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">3</span><span class="var-description">: |$field</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">4</span><span class="var-description">: |$return_message</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">224</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constcheck" id="check"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">check</span>
+			 = <span class="const-default"> 'fUpload::check'</span>
+			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcount" id="count"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">count</span>
+			 = <span class="const-default"> 'fUpload::count'</span>
+			(line <span class="line-number">33</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constfilter" id="filter"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">filter</span>
+			 = <span class="const-default"> 'fUpload::filter'</span>
+			(line <span class="line-number">34</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:46 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

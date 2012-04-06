@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fDirectory</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fDirectory</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Represents a directory on the filesystem, also provides static directory-related methods</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond, iMarc LLC [wb-imarc] &lt;<a href="mailto:will@imarc.net">will@imarc.net</a>&gt;</li>
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b14</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond, others</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fDirectory">http://flourishlib.com/fDirectory</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fDirectory.php.html">/flourish/fDirectory.php</a> (line <span class="field">29</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#create" title="details" class="const-name">create</a> = 					<span class="var-type"> 'fDirectory::create'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#makeCanonical" title="details" class="const-name">makeCanonical</a> = 					<span class="var-type"> 'fDirectory::makeCanonical'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																<div class="var-title">
+					<span class="var-type">array</span>
+					<a href="#$deleted" title="details" class="var-name">$deleted</a>
+				</div>
+																<div class="var-title">
+					<span class="var-type">string</span>
+					<a href="#$directory" title="details" class="var-name">$directory</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																												<div class="method-definition">
+					static 						<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+										<a href="#create" title="details" class="method-name">create</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">numeric</span>&nbsp;<span class="var-name">$mode</span> = <span class="var-default">0777</span>])
+									</div>
+																																																																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#makeCanonical" title="details" class="method-name">makeCanonical</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+									</div>
+																																																																
+												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skip_checks</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#clear" title="details" class="method-name">clear</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#delete" title="details" class="method-name">delete</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getName" title="details" class="method-name">getName</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+										<a href="#getParent" title="details" class="method-name">getParent</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getPath" title="details" class="method-name">getPath</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$translate_to_web_path</span> = <span class="var-default">FALSE</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">integer|string</span>
+										<a href="#getSize" title="details" class="method-name">getSize</a>
+											([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">FALSE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$decimal_places</span> = <span class="var-default">1</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#isWritable" title="details" class="method-name">isWritable</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+										<a href="#move" title="details" class="method-name">move</a>
+											(<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$new_parent_directory</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#rename" title="details" class="method-name">rename</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_dirname</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#scan" title="details" class="method-name">scan</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#scanRecursive" title="details" class="method-name">scanRecursive</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#tossIfDeleted" title="details" class="method-name">tossIfDeleted</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="var$deleted" id="$deleted"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">array</span>
+			<span class="var-name">$deleted</span>
+			 = <span class="var-default"> NULL</span>			(line <span class="line-number">105</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">A backtrace from when the file was deleted</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$directory" id="$directory"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<span class="var-title">
+			<span class="var-type">string</span>
+			<span class="var-name">$directory</span>
+						(line <span class="line-number">112</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">The full path to the directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+																			<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcreate" id="create"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method create</span> (line <span class="line-number">50</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a directory on the filesystem and returns an object representing it</p>
+<p class="description"><p>The directory creation is done recursively, so if any of the parent  directories do not exist, they will be created.</p><p>This operation will be reverted by a filesystem transaction being rolled back.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException  When no directory was specified, or the directory already exists</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+		<span class="method-name">
+			create
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">numeric</span>&nbsp;<span class="var-name">$mode</span> = <span class="var-default">0777</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: The path to the new directory</span>			</li>
+					<li>
+				<span class="var-type">numeric</span>
+				<span class="var-name">$mode</span><span class="var-description">: The mode (permissions) to use when creating the directory. This should be an octal number (requires a leading zero). This has no effect on the Windows platform.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodmakeCanonical" id="makeCanonical"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method makeCanonical</span> (line <span class="line-number">91</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Makes sure a directory has a `/` or `\` at the end</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The directory name in canonical form</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			makeCanonical
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: The directory to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">128</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates an object to represent a directory on the filesystem</p>
+<p class="description"><p>If multiple fDirectory objects are created for a single directory,  they will reflect changes in each other including rename and delete  actions.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> fValidationException  When no directory was specified, when the directory does not exist or when the path specified is not a directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$directory</span>, [<span class="var-type">boolean</span>&nbsp;<span class="var-name">$skip_checks</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$directory</span><span class="var-description">: The path to the directory</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$skip_checks</span><span class="var-description">: If file checks should be skipped, which improves performance, but may cause undefined behavior - only skip these if they are duplicated elsewhere</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodclear" id="clear"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">clear</span> (line <span class="line-number">192</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Removes all files and directories inside of the directory</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			clear
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddelete" id="delete"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">delete</span> (line <span class="line-number">214</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Will delete a directory and all files and directories inside of it</p>
+<p class="description"><p>This operation will not be performed until the filesystem transaction  has been committed, if a transaction is in progress. Any non-Flourish  code (PHP or system) will still see this directory and all contents as  existing until that point.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			delete
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetName" id="getName"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getName</span> (line <span class="line-number">250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the name of the directory</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The name of the directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getName
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetParent" id="getParent"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getParent</span> (line <span class="line-number">261</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the parent directory</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The object representing the parent directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+		<span class="method-name">
+			getParent
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetPath" id="getPath"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getPath</span> (line <span class="line-number">286</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the directory's current path</p>
+<p class="description"><p>If the web path is requested, uses translations set with  fFilesystem::addWebPathTranslation()</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The path for the directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getPath
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$translate_to_web_path</span> = <span class="var-default">FALSE</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$translate_to_web_path</span><span class="var-description">: If the path should be the web path</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSize" id="getSize"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSize</span> (line <span class="line-number">307</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the disk usage of the directory and all files and folders contained within</p>
+<p class="description"><p>This method may return incorrect results if files over 2GB exist and the  server uses a 32 bit operating system</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If formatted, a string with filesize in b/kb/mb/gb/tb, otherwise an integer</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">integer|string</span>
+		<span class="method-name">
+			getSize
+		</span>
+					([<span class="var-type">boolean</span>&nbsp;<span class="var-name">$format</span> = <span class="var-default">FALSE</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$decimal_places</span> = <span class="var-default">1</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$format</span><span class="var-description">: If the filesize should be formatted for human readability</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$decimal_places</span><span class="var-description">: The number of decimal places to format to (if enabled)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisWritable" id="isWritable"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">isWritable</span> (line <span class="line-number">331</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Check to see if the current directory is writable</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the directory is writable</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isWritable
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodmove" id="move"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">move</span> (line <span class="line-number">358</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Moves the current directory into a different directory</p>
+<p class="description"><p>Please note that ::rename() will rename a directory in its current  parent directory or rename it into a different parent directory.</p><p>If the current directory's name already exists in the new parent  directory and the overwrite flag is set to false, the name will be  changed to a unique name.</p><p>This operation will be reverted if a filesystem transaction is in  progress and is later rolled back.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The directory object, to allow for method chaining</li>
+				<li><span class="field">throws:</span> fValidationException  When the new parent directory passed is not a directory, is not readable or is a sub-directory of this directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fDirectory.html">fDirectory</a></span>
+		<span class="method-name">
+			move
+		</span>
+					(<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>&nbsp;<span class="var-name">$new_parent_directory</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../Flourish/fDirectory.html">fDirectory</a>|string</span>
+				<span class="var-name">$new_parent_directory</span><span class="var-description">: The directory to move this directory into</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$overwrite</span><span class="var-description">: If the current filename already exists in the new directory, `TRUE` will cause the file to be overwritten, `FALSE` will cause the new filename to change</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrename" id="rename"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">rename</span> (line <span class="line-number">384</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Renames the current directory</p>
+<p class="description"><p>This operation will NOT be performed until the filesystem transaction  has been committed, if a transaction is in progress. Any non-Flourish  code (PHP or system) will still see this directory (and all contained  files/dirs) as existing with the old paths until that point.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			rename
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_dirname</span>, <span class="var-type">boolean</span>&nbsp;<span class="var-name">$overwrite</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$new_dirname</span><span class="var-description">: The new full path to the directory or a new name in the current parent directory</span>			</li>
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$overwrite</span><span class="var-description">: If the new dirname already exists, TRUE will cause the file to be overwritten, FALSE will cause the new filename to change</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodscan" id="scan"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">scan</span> (line <span class="line-number">461</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a [http://php.net/scandir scandir()] on a directory, removing the `.` and `..` entries</p>
+<p class="description"><p>If the `$filter` looks like a valid PCRE pattern - matching delimeters  (a delimeter can be any non-alphanumeric, non-backslash, non-whitespace  character) followed by zero or more of the flags `i`, `m`, `s`, `x`,  `e`, `A`, `D`,  `S`, `U`, `X`, `J`, `u` - then  [http://php.net/preg_match `preg_match()`] will be used.</p><p>Otherwise the `$filter` will do a case-sensitive match with `*` matching  zero or more characters and `?` matching a single character.</p><p>On all OSes (even Windows), directories will be separated by `/`s when  comparing with the `$filter`.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The fFile (or fImage) and fDirectory objects for the files/directories in this directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			scan
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filter</span><span class="var-description">: A PCRE or glob pattern to filter files/directories by path - directories can be detected by checking for a trailing / (even on Windows)</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodscanRecursive" id="scanRecursive"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">scanRecursive</span> (line <span class="line-number">501</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Performs a **recursive** [http://php.net/scandir scandir()] on a directory, removing the `.` and `..` entries</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The fFile (or fImage) and fDirectory objects for the files/directories (listed recursively) in this directory</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			scanRecursive
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filter</span><span class="var-description">: A PCRE or glob pattern to filter files/directories by path - see ::scan() for details</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtossIfDeleted" id="tossIfDeleted"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">tossIfDeleted</span> (line <span class="line-number">546</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Throws an exception if the directory has been deleted</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			tossIfDeleted
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">170</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__toString</span> (line <span class="line-number">181</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the full filesystem path for the directory</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The full filesystem path</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constcreate" id="create"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">create</span>
+			 = <span class="const-default"> 'fDirectory::create'</span>
+			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constmakeCanonical" id="makeCanonical"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">makeCanonical</span>
+			 = <span class="const-default"> 'fDirectory::makeCanonical'</span>
+			(line <span class="line-number">33</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:41 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

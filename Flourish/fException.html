@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fException</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fException</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|											<a href="#sec-vars">Vars</a>
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">An exception that allows for easy l10n, printing, tracing and hooking</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b8</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2009 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fException">http://flourishlib.com/fException</a></li>
+				<li><span class="field">abstract:</span> </li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fException.php.html">/flourish/fException.php</a> (line <span class="field">22</span>)
+		</p>
+		
+				
+		<pre>Exception
+   |
+   --fException</pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|												<a href="#sec-vars">Vars</a>
+								|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+								</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Flourish/fUnexpectedException.html">fUnexpectedException</a></td>
+					<td>
+											An exception that should probably not be handled by the display code, fCore::enableExceptionHandler() is recommended
+										</td>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Flourish/fExpectedException.html">fExpectedException</a></td>
+					<td>
+											An exception that should be handled by the display code
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-vars">Vars</a>
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																				<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#compose" title="details" class="method-name">compose</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#dump" title="details" class="method-name">dump</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+									</div>
+																																																								<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#registerCallback" title="details" class="method-name">registerCallback</a>
+											(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$exception_type</span> = <span class="var-default">NULL</span>])
+									</div>
+																																								
+												<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+											([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">''</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$code</span>)
+									</div>
+																																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#formatTrace" title="details" class="method-name">formatTrace</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#getCSSClass" title="details" class="method-name">getCSSClass</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#prepare" title="details" class="method-name">prepare</a>
+											(<span class="var-type"></span>&nbsp;<span class="var-name">$content</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#printMessage" title="details" class="method-name">printMessage</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#printTrace" title="details" class="method-name">printTrace</a>
+										()
+									</div>
+																								<div class="method-definition">
+											<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+										<a href="#reorderMessage" title="details" class="method-name">reorderMessage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$match</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">void</span>
+										<a href="#setMessage" title="details" class="method-name">setMessage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_message</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#splitMessage" title="details" class="method-name">splitMessage</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$list_item_matches</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">callback</span>
+										<a href="#__get" title="details" class="method-name">__get</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+										<h4>Inherited Variables</h4>
+				<A NAME='inherited_vars'><!-- --></A>
+									<p>Inherited from <span class="classname">Exception (Internal Class)</span></p>
+					<blockquote>
+													<span class="var-title">
+								<span class="var-name">$code</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$file</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$line</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$message</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$previous</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$string</span><br>
+							</span>
+													<span class="var-title">
+								<span class="var-name">$trace</span><br>
+							</span>
+											</blockquote> 
+										
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-vars">Vars</a>
+																	<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcompose" id="compose"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method compose</span> (line <span class="line-number">40</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Composes text using fText if loaded</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The composed and possible translated message</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			compose
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message to compose</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$component</span><span class="var-description">: A string or number to insert into the message</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddump" id="dump"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method dump</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</p>
+<p class="description"><p>The string output format of this method is very similar to the output of  [http://php.net/print_r print_r()] except that the following values  are represented as special strings:</p><p><ul><li>`TRUE`: `'{true}'`</li><li>`FALSE`: `'{false}'`</li><li>`NULL`: `'{null}'`</li><li>`''`: `'{empty_string}'`</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The string representation of the value</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			dump
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$data</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$data</span><span class="var-description">: The value to dump</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodregisterCallback" id="registerCallback"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method registerCallback</span> (line <span class="line-number">147</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a callback for when certain types of exceptions are created</p>
+<p class="description"><p>The callback will be called when any exception of this class, or any  child class, specified is tossed. A single parameter will be passed  to the callback, which will be the exception object.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			registerCallback
+		</span>
+					(<span class="var-type">callback</span>&nbsp;<span class="var-name">$callback</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$exception_type</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">callback</span>
+				<span class="var-name">$callback</span><span class="var-description">: The callback</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$exception_type</span><span class="var-description">: The type of exception to call the callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">198</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the message for the exception, allowing for string interpolation and internationalization</p>
+<p class="description"><p>The `$message` can contain any number of formatting placeholders for  string and number interpolation via [http://php.net/sprintf `sprintf()`].  Any `%` signs that do not appear to be part of a valid formatting  placeholder will be automatically escaped with a second `%`.</p><p>The following aspects of valid `sprintf()` formatting codes are not  accepted since they are redundant and restrict the non-formatting use of  the `%` sign in exception messages: <ul><li>`% 2d`: Using a literal space as a padding character - a space will be used if no padding character is specified</li><li>`%'.d`: Providing a padding character but no width - no padding will be applied without a width</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+		<span class="method-name">
+			__construct
+		</span>
+					([<span class="var-type">string</span>&nbsp;<span class="var-name">$message</span> = <span class="var-default">''</span>], <span class="var-type">mixed</span>&nbsp;<span class="var-name">$component</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">2</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$code</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$message</span><span class="var-description">: The message for the exception. This accepts a subset of [http://php.net/sprintf `sprintf()`] strings - see method description for more details.</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$component</span><span class="var-description">: A string or number to insert into the message</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">2</span><span class="var-description">: ...</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$code</span><span class="var-description">: The exception code to set</span>			</li>
+				</ul>
+		
+			<hr class="separator" />
+		<div class="notes">Redefinition of:</div>
+		<dl>
+			<dt>Exception::constructor __construct ( [$message = ], [$code = ], [$previous = ] )</dt>
+					</dl>
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Flourish/fValidationException.html#method__construct">fValidationException::__construct()</a>
+								: Sets the message for the exception, allowing for custom formatting beyond fException
+							</li>
+				</ul>
+	</div>
+<a name="methodformatTrace" id="formatTrace"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">formatTrace</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the backtrace to currently called exception</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> A nicely formatted backtrace to this exception</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			formatTrace
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetCSSClass" id="getCSSClass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getCSSClass</span> (line <span class="line-number">300</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the CSS class name for printing information about the exception</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			getCSSClass
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodprepare" id="prepare"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">prepare</span> (line <span class="line-number">319</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prepares content for output into HTML</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The prepared content</li>
+				<li><span class="field">access:</span> protected</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			prepare
+		</span>
+					(<span class="var-type"></span>&nbsp;<span class="var-name">$content</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"></span>
+				<span class="var-name">$content</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprintMessage" id="printMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">printMessage</span> (line <span class="line-number">357</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prints the message inside of a div with the class being 'exception %THIS_EXCEPTION_CLASS_NAME%'</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			printMessage
+		</span>
+				()
+			</div>
+	
+		
+			
+			<hr class="separator" />
+		<div class="notes">Redefined in descendants as:</div>
+		<ul class="redefinitions">
+					<li>
+				<a href="../Flourish/fUnexpectedException.html#methodprintMessage">fUnexpectedException::printMessage()</a>
+								: Prints out a generic error message inside of a `div` with the class being `'exception {exception_class_name}'`
+							</li>
+				</ul>
+	</div>
+<a name="methodprintTrace" id="printTrace"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">printTrace</span> (line <span class="line-number">370</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prints the backtrace to currently called exception inside of a pre tag with the class being 'exception %THIS_EXCEPTION_CLASS_NAME% trace'</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			printTrace
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreorderMessage" id="reorderMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">reorderMessage</span> (line <span class="line-number">385</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reorders list items in the message based on simple string matching</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The exception object, to allow for method chaining</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../Flourish/fException.html">fException</a></span>
+		<span class="method-name">
+			reorderMessage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$match</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$match</span><span class="var-description">: This should be a string to match to one of the list items - whatever the order this is in the parameter list will be the order of the list item in the adjusted message</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">1</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetMessage" id="setMessage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setMessage</span> (line <span class="line-number">434</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows the message to be overwriten</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setMessage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$new_message</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$new_message</span><span class="var-description">: The new message for the exception</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsplitMessage" id="splitMessage"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">splitMessage</span> (line <span class="line-number">516</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Splits an exception with an HTML list into multiple strings each containing part of the original message</p>
+<p class="description"><p>This method should be called with two or more parameters of arrays of  string to match. If any of the provided strings are matching in a list  item in the exception message, a new copy of the message will be created  containing just the matching list items.</p><p>Here is an exception message to be split:</p><p>{{{  #!html  &lt;p&gt;The following problems were found:&lt;/p&gt;  <ul><li>First Name: Please enter a value</li><li>Last Name: Please enter a value</li><li>Email: Please enter a value</li><li>Address: Please enter a value</li><li>City: Please enter a value</li><li>State: Please enter a value</li><li>Zip Code: Please enter a value</li></ul>  }}}</p><p>The following PHP would split the exception into two messages:</p><p>{{{  #!php  list ($name_exception, $address_exception) = $exception-&gt;splitMessage(      array('First Name', 'Last Name', 'Email'),      array('Address', 'City', 'State', 'Zip Code')  );  }}}</p><p>The resulting messages would be:</p><p>{{{  #!html  &lt;p&gt;The following problems were found:&lt;/p&gt;  <ul><li>First Name: Please enter a value</li><li>Last Name: Please enter a value</li><li>Email: Please enter a value</li></ul>  }}}</p><p>and</p><p>{{{  #!html  &lt;p&gt;The following problems were found:&lt;/p&gt;  <ul><li>Address: Please enter a value</li><li>City: Please enter a value</li><li>State: Please enter a value</li><li>Zip Code: Please enter a value</li></ul>  }}}</p><p>If no list items match the strings in a parameter, the result will be  an empty string, allowing for simple display:</p><p>{{{  #!php  fHTML::show($name_exception, 'error');  }}}</p><p>An empty string is returned when none of the list items matched the  strings in the parameter. If no list items are found, the first value in  the returned array will be the existing message and all other array  values will be an empty string.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> This will contain an array of strings corresponding to the parameters passed - see method description for details</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			splitMessage
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$list_item_matches</span>, <span class="var-type">array</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$list_item_matches</span><span class="var-description">: An array of strings to filter the list items by, list items will be ordered in the same order as this array</span>			</li>
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">1</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="method__get" id="__get"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">__get</span> (line <span class="line-number">268</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">All requests that hit this method should be requests for callbacks</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The callback for the method requested</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">callback</span>
+		<span class="method-name">
+			__get
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$method</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$method</span><span class="var-description">: The method to create a callback for</span>			</li>
+				</ul>
+		
+			
+	</div>
+							<h4>Inherited Methods</h4>
+				<a name='inherited_methods'><!-- --></a>	
+									<!-- =========== Summary =========== -->
+					<p>Inherited From <span class="classname">Exception (Internal Class)</span></p>
+					<blockquote>
+													<span class="method-name">constructor __construct ( [$message = ], [$code = ], [$previous = ] )</span><br>
+													<span class="method-name">getCode (  )</span><br>
+													<span class="method-name">getFile (  )</span><br>
+													<span class="method-name">getLine (  )</span><br>
+													<span class="method-name">getMessage (  )</span><br>
+													<span class="method-name">getPrevious (  )</span><br>
+													<span class="method-name">getTrace (  )</span><br>
+													<span class="method-name">getTraceAsString (  )</span><br>
+													<span class="method-name">__clone (  )</span><br>
+													<span class="method-name">__toString (  )</span><br>
+											</blockquote>
+										
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:41 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

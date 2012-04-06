@@ -1,0 +1,1308 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fAuthorization</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fAuthorization</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+							<a href="#sec-descendents">Descendents</a>
+			|													<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Allows defining and checking user authentication via ACLs, authorization levels or a simple logged in/not logged in scheme</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b6</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2011 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fAuthorization">http://flourishlib.com/fAuthorization</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fAuthorization.php.html">/flourish/fAuthorization.php</a> (line <span class="field">20</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+	<a name="sec-descendents"></a>
+	<div class="info-box">
+		<div class="info-box-title">Direct descendents</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+			<span class="disabled">Descendents</span>
+			|															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<table cellpadding="2" cellspacing="0" class="class-table">
+				<tr>
+					<th class="class-table-header">Class</th>
+					<th class="class-table-header">Description</th>
+				</tr>
+								<tr>
+					<td style="padding-right: 2em"><a href="../Sutra/sAuthorization.html">sAuthorization</a></td>
+					<td>
+											Allows defining and checking user authentication.
+										</td>
+				</tr>
+							</table>
+		</div>
+	</div>
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#addNamedIPRange" title="details" class="const-name">addNamedIPRange</a> = 					<span class="var-type"> 'fAuthorization::addNamedIPRange'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#checkACL" title="details" class="const-name">checkACL</a> = 					<span class="var-type"> 'fAuthorization::checkACL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#checkAuthLevel" title="details" class="const-name">checkAuthLevel</a> = 					<span class="var-type"> 'fAuthorization::checkAuthLevel'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#checkIP" title="details" class="const-name">checkIP</a> = 					<span class="var-type"> 'fAuthorization::checkIP'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#checkLoggedIn" title="details" class="const-name">checkLoggedIn</a> = 					<span class="var-type"> 'fAuthorization::checkLoggedIn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#destroyUserInfo" title="details" class="const-name">destroyUserInfo</a> = 					<span class="var-type"> 'fAuthorization::destroyUserInfo'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getLoginPage" title="details" class="const-name">getLoginPage</a> = 					<span class="var-type"> 'fAuthorization::getLoginPage'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getRequestedURL" title="details" class="const-name">getRequestedURL</a> = 					<span class="var-type"> 'fAuthorization::getRequestedURL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getUserACLs" title="details" class="const-name">getUserACLs</a> = 					<span class="var-type"> 'fAuthorization::getUserACLs'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getUserAuthLevel" title="details" class="const-name">getUserAuthLevel</a> = 					<span class="var-type"> 'fAuthorization::getUserAuthLevel'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getUserToken" title="details" class="const-name">getUserToken</a> = 					<span class="var-type"> 'fAuthorization::getUserToken'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#requireACL" title="details" class="const-name">requireACL</a> = 					<span class="var-type"> 'fAuthorization::requireACL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#requireAuthLevel" title="details" class="const-name">requireAuthLevel</a> = 					<span class="var-type"> 'fAuthorization::requireAuthLevel'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#requireLoggedIn" title="details" class="const-name">requireLoggedIn</a> = 					<span class="var-type"> 'fAuthorization::requireLoggedIn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reset" title="details" class="const-name">reset</a> = 					<span class="var-type"> 'fAuthorization::reset'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setAuthLevels" title="details" class="const-name">setAuthLevels</a> = 					<span class="var-type"> 'fAuthorization::setAuthLevels'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setLoginPage" title="details" class="const-name">setLoginPage</a> = 					<span class="var-type"> 'fAuthorization::setLoginPage'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setRequestedURL" title="details" class="const-name">setRequestedURL</a> = 					<span class="var-type"> 'fAuthorization::setRequestedURL'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setUserACLs" title="details" class="const-name">setUserACLs</a> = 					<span class="var-type"> 'fAuthorization::setUserACLs'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setUserAuthLevel" title="details" class="const-name">setUserAuthLevel</a> = 					<span class="var-type"> 'fAuthorization::setUserAuthLevel'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#setUserToken" title="details" class="const-name">setUserToken</a> = 					<span class="var-type"> 'fAuthorization::setUserToken'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#addNamedIPRange" title="details" class="method-name">addNamedIPRange</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$ip_ranges</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#checkACL" title="details" class="method-name">checkACL</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$permission</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#checkAuthLevel" title="details" class="method-name">checkAuthLevel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#checkIP" title="details" class="method-name">checkIP</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$ip_ranges</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">boolean</span>
+										<a href="#checkLoggedIn" title="details" class="method-name">checkLoggedIn</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#destroyUserInfo" title="details" class="method-name">destroyUserInfo</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getLoginPage" title="details" class="method-name">getLoginPage</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getRequestedURL" title="details" class="method-name">getRequestedURL</a>
+											(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$clear</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$default_url</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">array</span>
+										<a href="#getUserACLs" title="details" class="method-name">getUserACLs</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getUserAuthLevel" title="details" class="method-name">getUserAuthLevel</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">mixed</span>
+										<a href="#getUserToken" title="details" class="method-name">getUserToken</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#requireACL" title="details" class="method-name">requireACL</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$permission</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#requireAuthLevel" title="details" class="method-name">requireAuthLevel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#requireLoggedIn" title="details" class="method-name">requireLoggedIn</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setAuthLevels" title="details" class="method-name">setAuthLevels</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$levels</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setLoginPage" title="details" class="method-name">setLoginPage</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setRequestedURL" title="details" class="method-name">setRequestedURL</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setUserACLs" title="details" class="method-name">setUserACLs</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$acls</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setUserAuthLevel" title="details" class="method-name">setUserAuthLevel</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#setUserToken" title="details" class="method-name">setUserToken</a>
+											(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$token</span>)
+									</div>
+								
+																																																																																																																																																																												</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendents</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodaddNamedIPRange" id="addNamedIPRange"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method addNamedIPRange</span> (line <span class="line-number">78</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds a named IP address or range, or array of addresses and/or ranges</p>
+<p class="description"><p>This method allows ::checkIP() to be called with a name instead of the  actual IPs.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			addNamedIPRange
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$name</span>, <span class="var-type">mixed</span>&nbsp;<span class="var-name">$ip_ranges</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$name</span><span class="var-description">: The name to give the IP addresses/ranges</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$ip_ranges</span><span class="var-description">: This can be string (or array of strings) of the IPs or IP ranges to restrict to - please see ::checkIP() for format details</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckACL" id="checkACL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method checkACL</span> (line <span class="line-number">91</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if the logged in user meets the requirements of the ACL specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the user has the required permissions</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkACL
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$permission</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$resource</span><span class="var-description">: The resource we are checking permissions for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$permission</span><span class="var-description">: The permission to require from the user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckAuthLevel" id="checkAuthLevel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method checkAuthLevel</span> (line <span class="line-number">125</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if the logged in user has the specified auth level</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the user has the required auth level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkAuthLevel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$level</span><span class="var-description">: The level to check against the logged in user's level</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckIP" id="checkIP"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method checkIP</span> (line <span class="line-number">163</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if the user is from the IPs or IP ranges specified</p>
+<p class="description"><p>The `$ip_ranges` parameter can be either a single string, or an array of  strings, each of which should be in one of the following formats:</p><p><ul></ul><ul><li>192.168.1.1</li></ul><ul></ul><ul><li>192.168.1.0/24</li></ul><ul></ul><ul><li>192.168.1.0/255.255.255.0</li><li>208.77.188.160/255.255.255.240</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the user is coming from (one of) the IPs or ranges specified</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkIP
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$ip_ranges</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$ip_ranges</span><span class="var-description">: A string (or array of strings) of the IPs or IP ranges to restrict to - see method description for details</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckLoggedIn" id="checkLoggedIn"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method checkLoggedIn</span> (line <span class="line-number">220</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if the user has an auth level or ACLs defined</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> If the user is logged in</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkLoggedIn
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methoddestroyUserInfo" id="destroyUserInfo"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method destroyUserInfo</span> (line <span class="line-number">236</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Destroys the user's auth level and/or ACLs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			destroyUserInfo
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetLoginPage" id="getLoginPage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getLoginPage</span> (line <span class="line-number">250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the login page set via ::setLoginPage()</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The login page users are redirected to if they don't have the required authorization</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getLoginPage
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetRequestedURL" id="getRequestedURL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getRequestedURL</span> (line <span class="line-number">262</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns the URL requested before the user was redirected to the login page</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The URL that was requested before they were redirected to the login page</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRequestedURL
+		</span>
+					(<span class="var-type">boolean</span>&nbsp;<span class="var-name">$clear</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$default_url</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">boolean</span>
+				<span class="var-name">$clear</span><span class="var-description">: If the requested url should be cleared from the session after it is retrieved</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$default_url</span><span class="var-description">: The default URL to return if the user was not redirected</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetUserACLs" id="getUserACLs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getUserACLs</span> (line <span class="line-number">277</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the ACLs for the logged in user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The logged in user's ACLs</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getUserACLs
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUserAuthLevel" id="getUserAuthLevel"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getUserAuthLevel</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the authorization level for the logged in user</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The logged in user's auth level</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getUserAuthLevel
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetUserToken" id="getUserToken"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getUserToken</span> (line <span class="line-number">299</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the value that was set as the user token, `NULL` if no token has been set</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The user token that had been set, `NULL` if none</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getUserToken
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrequireACL" id="requireACL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method requireACL</span> (line <span class="line-number">324</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirect the user to the login page if they do not have the permissions required</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			requireACL
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$resource</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">$permission</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$resource</span><span class="var-description">: The resource we are checking permissions for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$permission</span><span class="var-description">: The permission to require from the user</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrequireAuthLevel" id="requireAuthLevel"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method requireAuthLevel</span> (line <span class="line-number">342</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirect the user to the login page if they do not have the auth level required</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			requireAuthLevel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$level</span><span class="var-description">: The level to check against the logged in user's level</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodrequireLoggedIn" id="requireLoggedIn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method requireLoggedIn</span> (line <span class="line-number">359</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Redirect the user to the login page if they do not have an auth level or ACLs</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			requireLoggedIn
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reset</span> (line <span class="line-number">378</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the configuration of the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodsetAuthLevels" id="setAuthLevels"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setAuthLevels</span> (line <span class="line-number">392</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the authorization levels to use for level checking</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setAuthLevels
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$levels</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$levels</span><span class="var-description">: An associative array of `(string) {level} =&gt; (integer) {value}`, for each level</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetLoginPage" id="setLoginPage"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setLoginPage</span> (line <span class="line-number">404</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the login page to redirect users to</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setLoginPage
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$url</span><span class="var-description">: The URL of the login page</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetRequestedURL" id="setRequestedURL"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setRequestedURL</span> (line <span class="line-number">416</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the restricted URL requested by the user</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setRequestedURL
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$url</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$url</span><span class="var-description">: The URL to save as the requested URL</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUserACLs" id="setUserACLs"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setUserACLs</span> (line <span class="line-number">441</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the ACLs for the logged in user.</p>
+<p class="description"><p>Array should be formatted like:</p><p>{{{  array (      (string) {resource name} =&gt; array(          (mixed) {permission}, ...      ), ...  )  }}}</p><p>The resource name or the permission may be the single character `'*'`  which acts as a wildcard.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUserACLs
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$acls</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$acls</span><span class="var-description">: The logged in user's ACLs - see method description for format</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUserAuthLevel" id="setUserAuthLevel"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setUserAuthLevel</span> (line <span class="line-number">454</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the authorization level for the logged in user</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUserAuthLevel
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$level</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$level</span><span class="var-description">: The logged in user's auth level</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetUserToken" id="setUserToken"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method setUserToken</span> (line <span class="line-number">468</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets some piece of information to use to identify the current user</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			setUserToken
+		</span>
+					(<span class="var-type">mixed</span>&nbsp;<span class="var-name">$token</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$token</span><span class="var-description">: The user's token. This could be a user id, an email address, a user object, etc.</span>			</li>
+				</ul>
+		
+			
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+							<a href="#sec-descendents">Descendants</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constaddNamedIPRange" id="addNamedIPRange"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">addNamedIPRange</span>
+			 = <span class="const-default"> 'fAuthorization::addNamedIPRange'</span>
+			(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcheckACL" id="checkACL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">checkACL</span>
+			 = <span class="const-default"> 'fAuthorization::checkACL'</span>
+			(line <span class="line-number">24</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcheckAuthLevel" id="checkAuthLevel"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">checkAuthLevel</span>
+			 = <span class="const-default"> 'fAuthorization::checkAuthLevel'</span>
+			(line <span class="line-number">25</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcheckIP" id="checkIP"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">checkIP</span>
+			 = <span class="const-default"> 'fAuthorization::checkIP'</span>
+			(line <span class="line-number">26</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constcheckLoggedIn" id="checkLoggedIn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">checkLoggedIn</span>
+			 = <span class="const-default"> 'fAuthorization::checkLoggedIn'</span>
+			(line <span class="line-number">27</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constdestroyUserInfo" id="destroyUserInfo"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">destroyUserInfo</span>
+			 = <span class="const-default"> 'fAuthorization::destroyUserInfo'</span>
+			(line <span class="line-number">28</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetLoginPage" id="getLoginPage"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getLoginPage</span>
+			 = <span class="const-default"> 'fAuthorization::getLoginPage'</span>
+			(line <span class="line-number">29</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetRequestedURL" id="getRequestedURL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getRequestedURL</span>
+			 = <span class="const-default"> 'fAuthorization::getRequestedURL'</span>
+			(line <span class="line-number">30</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetUserACLs" id="getUserACLs"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getUserACLs</span>
+			 = <span class="const-default"> 'fAuthorization::getUserACLs'</span>
+			(line <span class="line-number">31</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetUserAuthLevel" id="getUserAuthLevel"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getUserAuthLevel</span>
+			 = <span class="const-default"> 'fAuthorization::getUserAuthLevel'</span>
+			(line <span class="line-number">32</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetUserToken" id="getUserToken"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getUserToken</span>
+			 = <span class="const-default"> 'fAuthorization::getUserToken'</span>
+			(line <span class="line-number">33</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constrequireACL" id="requireACL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">requireACL</span>
+			 = <span class="const-default"> 'fAuthorization::requireACL'</span>
+			(line <span class="line-number">34</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constrequireAuthLevel" id="requireAuthLevel"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">requireAuthLevel</span>
+			 = <span class="const-default"> 'fAuthorization::requireAuthLevel'</span>
+			(line <span class="line-number">35</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constrequireLoggedIn" id="requireLoggedIn"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">requireLoggedIn</span>
+			 = <span class="const-default"> 'fAuthorization::requireLoggedIn'</span>
+			(line <span class="line-number">36</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreset" id="reset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reset</span>
+			 = <span class="const-default"> 'fAuthorization::reset'</span>
+			(line <span class="line-number">37</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetAuthLevels" id="setAuthLevels"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setAuthLevels</span>
+			 = <span class="const-default"> 'fAuthorization::setAuthLevels'</span>
+			(line <span class="line-number">38</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetLoginPage" id="setLoginPage"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setLoginPage</span>
+			 = <span class="const-default"> 'fAuthorization::setLoginPage'</span>
+			(line <span class="line-number">39</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetRequestedURL" id="setRequestedURL"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setRequestedURL</span>
+			 = <span class="const-default"> 'fAuthorization::setRequestedURL'</span>
+			(line <span class="line-number">40</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetUserACLs" id="setUserACLs"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setUserACLs</span>
+			 = <span class="const-default"> 'fAuthorization::setUserACLs'</span>
+			(line <span class="line-number">41</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetUserAuthLevel" id="setUserAuthLevel"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setUserAuthLevel</span>
+			 = <span class="const-default"> 'fAuthorization::setUserAuthLevel'</span>
+			(line <span class="line-number">42</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constsetUserToken" id="setUserToken"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">setUserToken</span>
+			 = <span class="const-default"> 'fAuthorization::setUserToken'</span>
+			(line <span class="line-number">43</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:39 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>

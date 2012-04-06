@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class fCRUD</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class fCRUD</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Provides miscellaneous functionality for [http://en.wikipedia.org/wiki/Create,_read,_update_and_delete CRUD-like] pages</p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Will Bond [wb] &lt;<a href="mailto:will@flourishlib.com">will@flourishlib.com</a>&gt;</li>
+				<li><span class="field">version:</span> 1.0.0b5</li>
+				<li><span class="field">copyright:</span> Copyright (c) 2007-2009 Will Bond</li>
+				<li><span class="field">link:</span> <a href="http://flourishlib.com/fCRUD">http://flourishlib.com/fCRUD</a></li>
+				<li><span class="field">license:</span> <a href="http://flourishlib.com/license">http://flourishlib.com/license</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_flourish---fCRUD.php.html">/flourish/fCRUD.php</a> (line <span class="field">19</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getColumnClass" title="details" class="const-name">getColumnClass</a> = 					<span class="var-type"> 'fCRUD::getColumnClass'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getRowClass" title="details" class="const-name">getRowClass</a> = 					<span class="var-type"> 'fCRUD::getRowClass'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getSearchValue" title="details" class="const-name">getSearchValue</a> = 					<span class="var-type"> 'fCRUD::getSearchValue'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getSortColumn" title="details" class="const-name">getSortColumn</a> = 					<span class="var-type"> 'fCRUD::getSortColumn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#getSortDirection" title="details" class="const-name">getSortDirection</a> = 					<span class="var-type"> 'fCRUD::getSortDirection'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#printSortableColumn" title="details" class="const-name">printSortableColumn</a> = 					<span class="var-type"> 'fCRUD::printSortableColumn'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#redirectWithLoadedValues" title="details" class="const-name">redirectWithLoadedValues</a> = 					<span class="var-type"> 'fCRUD::redirectWithLoadedValues'</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#reset" title="details" class="const-name">reset</a> = 					<span class="var-type"> 'fCRUD::reset'</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+									<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getColumnClass" title="details" class="method-name">getColumnClass</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getRowClass" title="details" class="method-name">getRowClass</a>
+											([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$row_value</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$affected_value</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">mixed</span>
+										<a href="#getSearchValue" title="details" class="method-name">getSearchValue</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$cast_to</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getSortColumn" title="details" class="method-name">getSortColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$possible_column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">1</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">string</span>
+										<a href="#getSortDirection" title="details" class="method-name">getSortDirection</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$default_direction</span>)
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#printSortableColumn" title="details" class="method-name">printSortableColumn</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$column_name</span> = <span class="var-default">NULL</span>])
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#redirectWithLoadedValues" title="details" class="method-name">redirectWithLoadedValues</a>
+										()
+									</div>
+																<div class="method-definition">
+					static 						<span class="method-result">void</span>
+										<a href="#reset" title="details" class="method-name">reset</a>
+										()
+									</div>
+								
+																																																																				</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																		<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodgetColumnClass" id="getColumnClass"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getColumnClass</span> (line <span class="line-number">77</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Return the string `'sorted'` if `$column` is the column that is currently being sorted by, otherwise returns `''`</p>
+<p class="description"><p>This method will only be useful if used with the other sort methods  ::printSortableColumn(), ::getSortColumn() and ::getSortDirection().</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The CSS class for the column, either `''` or `'sorted'`</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getColumnClass
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to check</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetRowClass" id="getRowClass"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getRowClass</span> (line <span class="line-number">131</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns a CSS class name for a row</p>
+<p class="description"><p>Will return `'even'`, `'odd'`, or `'highlighted'` if the two parameters  are equal and not `NULL`. The first call to this method will return  the appropriate class concatenated with `' first'`.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The css class</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getRowClass
+		</span>
+					([<span class="var-type">mixed</span>&nbsp;<span class="var-name">$row_value</span> = <span class="var-default">NULL</span>], [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$affected_value</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$row_value</span><span class="var-description">: The value from the row</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$affected_value</span><span class="var-description">: The value that was just added or updated</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSearchValue" id="getSearchValue"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getSearchValue</span> (line <span class="line-number">159</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the current value of a search field</p>
+<p class="description"><p>If a value is an empty string and no cast to is specified, the value will  become `NULL`.</p><p>If a query string of `?reset` is passed, all previous search values will  be erased.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The current value</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">mixed</span>
+		<span class="method-name">
+			getSearchValue
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$cast_to</span> = <span class="var-default">NULL</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$default</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column that is being pulled back</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$cast_to</span><span class="var-description">: The data type to cast to</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$default</span><span class="var-description">: The default value</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSortColumn" id="getSortColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getSortColumn</span> (line <span class="line-number">185</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the current column to sort by, defaults to first one specified</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The column to sort by</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSortColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$possible_column</span>, <span class="var-type">string</span>&nbsp;<span class="var-name">1</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$possible_column</span><span class="var-description">: The columns that can be sorted by, defaults to first</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">1</span><span class="var-description">: ...</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetSortDirection" id="getSortDirection"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method getSortDirection</span> (line <span class="line-number">216</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Gets the current sort direction</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> The direction, `'asc'` or `'desc'`</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSortDirection
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$default_direction</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$default_direction</span><span class="var-description">: The default direction, `'asc'` or `'desc'`</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodprintSortableColumn" id="printSortableColumn"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method printSortableColumn</span> (line <span class="line-number">261</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Prints a sortable column header `a` tag</p>
+<p class="description"><p>The a tag will include the CSS class `'sortable_column'` and the  direction being sorted, `'asc'` or `'desc'`.</p><p>{{{  #!php  fCRUD::printSortableColumn('name', 'Name');  }}}</p><p>would create the following HTML based on the page context</p><p>{{{  #!html  &lt;!-- If name is the current sort column in the asc direction, the output would be --&gt;  &lt;a href=&quot;?sort=name&amp;dir=desc&quot; class=&quot;sorted_column asc&quot;&gt;Name&lt;/a&gt;</p><p>&lt;!-- If name is not the current sort column, the output would be --&gt;  &lt;a href=&quot;?sort-name&amp;dir=asc&quot; class=&quot;sorted_column&quot;&gt;Name&lt;/a&gt;  }}}</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			printSortableColumn
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$column</span>, [<span class="var-type">string</span>&nbsp;<span class="var-name">$column_name</span> = <span class="var-default">NULL</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column</span><span class="var-description">: The column to create the sortable header for</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$column_name</span><span class="var-description">: This will override the humanized version of the column</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodredirectWithLoadedValues" id="redirectWithLoadedValues"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method redirectWithLoadedValues</span> (line <span class="line-number">291</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks to see if any values (search or sort) were loaded from the session, and if so redirects the user to the current URL with those values added</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			redirectWithLoadedValues
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreset" id="reset"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">static method reset</span> (line <span class="line-number">314</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Resets the configuration and data of the class</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+	    static
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reset
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constgetColumnClass" id="getColumnClass"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getColumnClass</span>
+			 = <span class="const-default"> 'fCRUD::getColumnClass'</span>
+			(line <span class="line-number">22</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetRowClass" id="getRowClass"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getRowClass</span>
+			 = <span class="const-default"> 'fCRUD::getRowClass'</span>
+			(line <span class="line-number">23</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetSearchValue" id="getSearchValue"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getSearchValue</span>
+			 = <span class="const-default"> 'fCRUD::getSearchValue'</span>
+			(line <span class="line-number">24</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetSortColumn" id="getSortColumn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getSortColumn</span>
+			 = <span class="const-default"> 'fCRUD::getSortColumn'</span>
+			(line <span class="line-number">25</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constgetSortDirection" id="getSortDirection"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">getSortDirection</span>
+			 = <span class="const-default"> 'fCRUD::getSortDirection'</span>
+			(line <span class="line-number">26</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constprintSortableColumn" id="printSortableColumn"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">printSortableColumn</span>
+			 = <span class="const-default"> 'fCRUD::printSortableColumn'</span>
+			(line <span class="line-number">27</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constredirectWithLoadedValues" id="redirectWithLoadedValues"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">redirectWithLoadedValues</span>
+			 = <span class="const-default"> 'fCRUD::redirectWithLoadedValues'</span>
+			(line <span class="line-number">28</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constreset" id="reset"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">reset</span>
+			 = <span class="const-default"> 'fCRUD::reset'</span>
+			(line <span class="line-number">29</span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+
+	<p class="notes" id="credit">
+		Documentation generated on Fri, 06 Apr 2012 08:38:40 -0500 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
