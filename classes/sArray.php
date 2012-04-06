@@ -21,9 +21,13 @@ class sArray {
    * @return string|boolean Returns boolean TRUE if the array is valid, or the
    *   missing key.
    *
-   * @SuppressWarnings("unused")
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function hasRequiredKeys(array $array, array $required_keys, $only_required = FALSE) {
+    if (empty($array)) {
+      return array_shift($required_keys);
+    }
+
     foreach ($required_keys as $key) {
       if (!array_key_exists($key, $array)) {
         return $key;
