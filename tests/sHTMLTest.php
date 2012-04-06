@@ -394,6 +394,8 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
     $this->assertTrue(sHTML::linkIsURI('http://www.google.com'));
     $this->assertTrue(sHTML::linkIsURI('https://www.amazon.com'));
     $this->assertFalse(sHTML::linkIsURI('garbage string'));
+    $this->assertFalse(sHTML::linkIsURI('rtmp://alternate-protocol'));
+    $this->assertTrue(sHTML::linkIsURI('rtmp://alternate-protocol', array('rtmp')));
   }
 
   /**
@@ -445,5 +447,10 @@ Everything should be properly encoded.";
       'tag' => 'ul',
       'attributes' => array('class' => 'list-1'),
     ), $result_with_attr);
+  }
+
+  public function testConditionalTag() {
+    $tag = sHTML::conditionalTag('lt IE 9', 'td', array('valign' => 'top'));
+    $this->assertEquals('<!--[if lt IE 9]><td valign="top"></td><![endif]-->', $tag);
   }
 }
