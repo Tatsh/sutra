@@ -4,6 +4,8 @@ Sutra is a PHP unframework based on Flourish.
 
 # How do I use it?
 
+Generated documentation: http://tatsh.github.com/sutra/
+
 ## Set up your web root
 
 Example for nginx on Gentoo:
