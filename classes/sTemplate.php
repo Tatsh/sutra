@@ -508,7 +508,6 @@ class sTemplate {
 
     $html = '';
     $cache = self::getCache();
-    $cwd = getcwd();
     $names = $cache->get(__CLASS__.'::last_combined_css_names', array());
     $cdn = self::getACDN();
     $css = array();
