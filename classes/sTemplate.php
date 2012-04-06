@@ -874,8 +874,6 @@ class sTemplate {
       $templates_path.'/'.self::$template_name.'/page.tpl.php',
       $templates_path.'/'.self::$template_fallback.'/page.tpl.php',
     );
-    $error_message = fMessaging::retrieve('validation', $path);
-    $message = fMessaging::retrieve('success', $path);
     $logged_in = fAuthorization::checkLoggedIn();
 
     if ($path != '/') {
@@ -894,8 +892,6 @@ class sTemplate {
       'body_class' => $classes,
       'site_name' => fHTML::encode(self::$site_name),
       'site_slogan' => fHTML::encode(self::$site_slogan),
-      'error_message' => $error_message ? $error_message : '',
-      'message' => $message ? $message : '',
       'body_js' => self::getJavaScriptHTML('body'),
       'logged_in' => $logged_in,
       'user' => fAuthorization::getUserToken(),
