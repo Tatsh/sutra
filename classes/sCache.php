@@ -40,14 +40,9 @@ class sCache extends fCache {
    *   be used.
    * @return string Key that can be used for cache storage.
    */
-  private static function getSiteUniqueKey($key, $prefix = NULL) {
+  private static function getSiteUniqueKey($key) {
     self::initialize();
-
-    if (is_null($prefix)) {
-      $prefix = __CLASS__;
-    }
-
-    return $prefix.'::'.self::$cwd.'::'.$key;
+    return __CLASS__.'::'.self::$cwd.'::'.$key;
   }
 
   /**
@@ -59,7 +54,7 @@ class sCache extends fCache {
    * @return boolean  If the key/value pair were added successfully.
    */
   public function add($key, $value, $ttl = 0) {
-    $key = self::getSiteUniqueKey($key, __CLASS__);
+    $key = self::getSiteUniqueKey($key);
     return parent::add($key, $value, $ttl);
   }
 
@@ -70,7 +65,7 @@ class sCache extends fCache {
    * @return boolean If the delete succeeded.
    */
   public function delete($key) {
-    $key = self::getSiteUniqueKey($key, __CLASS__);
+    $key = self::getSiteUniqueKey($key);
     return parent::delete($key);
   }
 
@@ -82,7 +77,7 @@ class sCache extends fCache {
    * @return mixed The cached value or the default value if no cached value was found.
    */
   public function get($key, $default = NULL) {
-    $key = self::getSiteUniqueKey($key, __CLASS__);
+    $key = self::getSiteUniqueKey($key);
     return parent::get($key, $default);
   }
 
@@ -95,7 +90,7 @@ class sCache extends fCache {
    * @return boolean If the value was successfully saved.
    */
   public function set($key, $value, $ttl = 0) {
-    $key = self::getSiteUniqueKey($key, __CLASS__);
+    $key = self::getSiteUniqueKey($key);
     return parent::set($key, $value, $ttl);
   }
 }
