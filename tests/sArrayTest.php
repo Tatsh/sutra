@@ -6,7 +6,7 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
 
   public function testHasRequiredKeys() {
     $ret = sArray::hasRequiredKeys(array(), self::$must_have);
-    $this->assertFalse($ret, "Asserting that $ret is FALSE from empty array");
+    $this->assertEquals($ret, 'a', "Asserting that $ret is a (first key) from empty array");
 
     $ret = sArray::hasRequiredKeys(array('d'), self::$must_have);
     $this->assertEquals('a', $ret, 'array("d") should return "a"');
@@ -23,7 +23,7 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
 
   public function testHasOnlyRequiredKeys() {
     $ret = sArray::hasRequiredKeys(array(), self::$must_have, TRUE);
-    $this->assertFalse($ret, "Asserting that $ret is FALSE from empty array (third parameter = TRUE)");
+    $this->assertEquals($ret, 'a', "Asserting that $ret is a (first key) from empty array (third parameter = TRUE)");
 
     $ret = sArray::hasRequiredKeys(array('d'), self::$must_have, TRUE);
     $this->assertEquals('a', $ret, 'array("d") should return "a" (third parameter = TRUE)');
