@@ -27,9 +27,9 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
   }
 
   public function getObject($name) {
-	$args = func_get_args();
-	array_shift($args);
-	return new sProcess($name, $args);
+    $args = func_get_args();
+    array_shift($args);
+    return new sProcess($name, $args);
   }
 
   public function testConstructorWithArguments() {
@@ -58,14 +58,14 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Working directory "non-writable-directory" is not writable.
    */
   public function testSetWorkingDirectoryNonWritableDirectory() {
-	if (fCore::checkOS('windows')) {
-	  $this->markTestSkipped();
-	  return;
-	}
-	
+    if (fCore::checkOS('windows')) {
+      $this->markTestSkipped();
+      return;
+    }
+
     $proc = $this->getObject('curl');
     $dir_name = 'non-writable-directory';
-	
+
     mkdir($dir_name, 0500);
     $proc->setWorkingDirectory($dir_name);
     chdir(self::$root);
@@ -111,11 +111,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
     $output = $proc->execute();
     $this->assertStringStartsWith('Usage: curl [options...] <url>', $output);
 
-	if (!fCore::checkOS('windows')) {
-	  $proc = $this->getObject('printf', 'abc%d', '1');
+    if (!fCore::checkOS('windows')) {
+      $proc = $this->getObject('printf', 'abc%d', '1');
       $output = $proc->execute();
       $this->assertStringStartsWith('abc1', $output);
-	}
+    }
   }
 
   /**
@@ -123,7 +123,7 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Attempted to open an interactive session when there is already one active.
    */
   public function testInteractiveAlreadyActive() {
-	$program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+    $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
     $proc = $this->getObject($program);
     $proc->beginInteractive();
     $proc->beginInteractive();
@@ -134,18 +134,17 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Attempted to set setting to program already running.
    */
   public function testRedirectStdErrorAlreadyRunning() {
-	$program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+    $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
     $proc = $this->getObject($program);
     $proc->beginInteractive();
     $proc->redirectStandardError();
   }
 
   public function testInteractive() {
-	$is_windows = fCore::checkOS('windows');
-	$program = $is_windows ? 'ftp' : 'bc';
-	$write = $is_windows ? 'quit' : '1 * 2';
+    $is_windows = fCore::checkOS('windows');
+    $program = $is_windows ? 'ftp' : 'bc';
+    $write = $is_windows ? 'quit' : '1 * 2';
     $proc = $this->getObject($program);
-
     $proc->beginInteractive();
     $proc->write($write);
     $proc->EOF();
@@ -156,9 +155,9 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Attempted to write to non-existent handle.
    */
   public function testInteractiveNonExistantHandle() {
-	$is_windows = fCore::checkOS('windows');
-	$program = $is_windows ? 'ftp' : 'bc';
-	$write = $is_windows ? 'quit' : '1 * 2';
+    $is_windows = fCore::checkOS('windows');
+    $program = $is_windows ? 'ftp' : 'bc';
+    $write = $is_windows ? 'quit' : '1 * 2';
     $proc = $this->getObject($program);
     $proc->write($write);
   }
@@ -168,7 +167,7 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Attempted to close non-existent handle.
    */
   public function testCloseNonExistantHandle() {
-	$program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+    $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
     $proc = $this->getObject($program);
     $proc->EOF();
   }
@@ -178,9 +177,10 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Return value was not expected value: (got: 0, wanted: 2).
    */
   public function testTossIfUnexpectedInteractive() {
-	$is_windows = fCore::checkOS('windows');
-	$program = $is_windows ? 'ftp' : 'bc';
-	$write = $is_windows ? 'quit' : '1 * 2';
+    $is_windows = fCore::checkOS('windows');
+    $program = $is_windows ? 'ftp' : 'bc';
+    $write = $is_windows ? 'quit' : '1 * 2';
+    $proc = $this->getObject($program);
     $proc->tossIfUnexpected();
     $proc->beginInteractive();
     $proc->write($write);
@@ -192,7 +192,8 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage Attempted to add arguments to a program already running.
    */
   public function testAddArgumentAlreadyRunning() {
-	$program = $fCore::checkOS('windows') ? 'ftp' : 'bc';
+    $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+    $proc = $this->getObject($program);
     $proc->tossIfUnexpected();
     $proc->beginInteractive();
     $proc->addArgument('a');
