@@ -22,22 +22,43 @@ class sNumberTest extends PHPUnit_Framework_TestCase {
     return $n.'e';
   }
 
+  /**
+   * @expectedException fProgrammerException
+   */
+  public function testAddCallbackLocaleException() {
+    sNumber::addCallback('jeoiajgeiajgoiejg', 'ordinal', __CLASS__.'::frenchOrdinal');
+  }
+
   public function testAddCallback() {
-    sNumber::addCallback('fr_FR', 'ordinal', __CLASS__.'::frenchOrdinal');
+    sNumber::addCallback('fr-FR', 'ordinal', __CLASS__.'::frenchOrdinal');
     sNumber::addCallback('fr_FR', 'ordinalSuffix', __CLASS__.'::frenchOrdinalSuffix');
-    sNumber::setLocale('fr_FR');
+    sNumber::setLocale('fr-FR');
     $this->assertEquals('1e', sNumber::ordinal(1));
     $this->assertEquals('e', sNumber::ordinalSuffix(1));
   }
 
   public function testSetLocaleNoCallbacks() {
-    sNumber::setLocale('fi_FI');
+    sNumber::setLocale('fi-FI');
     $this->assertEquals('2nd', sNumber::ordinal(2));
     $this->assertEquals('nd', sNumber::ordinalSuffix(2));
   }
 
+  /**
+   * @expectedException fProgrammerException
+   */
+  public function testSetLocaleException() {
+    sNumber::setLocale('jeoiajgeiajgoiejg');
+  }
+
+  /**
+   * @expectedException fProgrammerException
+   */
+  public function testSetFallbackLocaleException() {
+    sNumber::setFallbackLocale('jeoiajgeiajgoiejg');
+  }
+
   public function testSetFallbackLocaleNonExistantLocale() {
-    sNumber::addCallback('fr_FR', 'ordinal', __CLASS__.'::frenchOrdinal');
+    sNumber::addCallback('fr-FR', 'ordinal', __CLASS__.'::frenchOrdinal');
     sNumber::setFallbackLocale('fr_CA');
     $this->assertEquals('nd', sNumber::ordinalSuffix(2));
   }
