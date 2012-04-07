@@ -89,9 +89,6 @@ class sORMJSON extends fORMJSON {
 
     foreach (self::$json_columns[$class] as $info) {
       $content = fJSON::decode($values[$info['column']], $info['force_array']);
-      if (!$content) {
-        continue; // Leave it alone if there was an error decoding it
-      }
       fActiveRecord::assign($values, $old_values, $info['column'], $content);
     }
   }
