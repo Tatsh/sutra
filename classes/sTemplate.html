@@ -57,8 +57,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#addBodyClass" title="addBodyClass :: Add a body class. This would normally be output in the class attribute of
-  the &amp;lt;body&amp;gt; element."><span class="description">Add a body class. This would normally be output in the class attribute of
-  the &amp;lt;body&amp;gt; element.</span><pre>addBodyClass()</pre></a></li>
+  the &lt;body&gt; element."><span class="description">Add a body class. This would normally be output in the class attribute of
+  the &lt;body&gt; element.</span><pre>addBodyClass()</pre></a></li>
 <li class="method public "><a href="#addCDN" title="addCDN :: Add a CDN URL prefix WITHOUT including the final slash."><span class="description">Add a CDN URL prefix WITHOUT including the final slash.</span><pre>addCDN()</pre></a></li>
 <li class="method public "><a href="#addCSSFile" title="addCSSFile :: Add a CSS file path."><span class="description">Add a CSS file path.</span><pre>addCSSFile()</pre></a></li>
 <li class="method public "><a href="#addJavaScriptFile" title="addJavaScriptFile :: Add a JavaScript file."><span class="description">Add a JavaScript file.</span><pre>addJavaScriptFile()</pre></a></li>
@@ -177,7 +177,7 @@
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="addBodyClass" id="addBodyClass"></a><div class="element clickable method public addBodyClass" data-toggle="collapse" data-target=".addBodyClass .collapse">
 <h2>Add a body class. This would normally be output in the class attribute of
-  the &amp;lt;body&amp;gt; element.</h2>
+  the &lt;body&gt; element.</h2>
 <pre>addBodyClass(string $class_name) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
@@ -442,6 +442,11 @@
 <div class="subelement argument">
 <h4>$fallback_template</h4>
 <code>string</code><p>The fallback template.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If any directory is not found or not readable.</td>
+</tr></table>
 </div></div>
 </div>
 <a name="setCDNs" id="setCDNs"></a><div class="element clickable method public setCDNs" data-toggle="collapse" data-target=".setCDNs .collapse">
@@ -493,6 +498,11 @@
 <h4>$path</h4>
 <code>string</code><p>Path in which to store minified CSS. Should not have a leading '/', or './' at the beginning.</p>
 </div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the directory is not writable.</td>
+</tr></table>
 </div></div>
 </div>
 <a name="setMode" id="setMode"></a><div class="element clickable method public setMode" data-toggle="collapse" data-target=".setMode .collapse">
@@ -835,7 +845,7 @@ Make this script optionally compile-able.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T13:13:00-05:00.<br></footer></div>
+            generated on 2012-04-07T17:54:22-05:00.<br></footer></div>
 </div>
 </body>
 </html>

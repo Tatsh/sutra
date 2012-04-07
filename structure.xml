@@ -1406,7 +1406,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sTemplate.php" hash="ac4382d28c91a49a21f359fcd6d3c058" package="Sutra">
+  <file path="sutra/classes/sTemplate.php" hash="74f9b70cad48b36c4eae675d8a649c13" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages templating.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -1687,12 +1687,15 @@
           <tag line="171" name="see" description="\sTemplate::setCache()" refers="\sTemplate::setCache()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="193" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="195" package="">
         <name>setMinifiedCSSPath</name>
         <type>function</type>
         <docblock line="186">
           <description><![CDATA[Set where minified CSS should be stored. This directory will be in the site root.]]></description>
           <long-description><![CDATA[]]></long-description>
+          <tag line="186" name="throws" description="If the directory is not writable." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
           <tag line="186" name="param" description="Path in which to store minified CSS. Should not have a leading '/', or './' at the beginning." type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
@@ -1700,54 +1703,54 @@
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="193">
+        <argument line="195">
           <name>$path</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="209" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="211" package="">
         <name>setSiteSlogan</name>
         <type>function</type>
-        <docblock line="203">
+        <docblock line="205">
           <description><![CDATA[Set the site slogan.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="203" name="param" description="Slogan string." type="string" variable="$slogan">
+          <tag line="205" name="param" description="Slogan string." type="string" variable="$slogan">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="203" name="return" description="" type="void">
+          <tag line="205" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="209">
+        <argument line="211">
           <name>$slogan</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="219" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="221" package="">
         <name>setSiteName</name>
         <type>function</type>
-        <docblock line="213">
+        <docblock line="215">
           <description><![CDATA[Set the site name.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="213" name="param" description="Name for the site." type="string" variable="$name">
+          <tag line="215" name="param" description="Name for the site." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="213" name="return" description="" type="void">
+          <tag line="215" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="219">
+        <argument line="221">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="238" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="240" package="">
         <name>setMode</name>
         <type>function</type>
-        <docblock line="223">
+        <docblock line="225">
           <description><![CDATA[Set the current mode. In production mode, the site will use minified CSS
   and only minified JavaScript files which are added using
   sTemplate::addMinifiedJavaScriptFile().]]></description>
@@ -1755,575 +1758,578 @@
   will append a query string to each resource to prevent caching by
   default. This can be disabled by calling:
   sTemplate::enableQueryStrings() with FALSE as the first argument.</p>]]></long-description>
-          <tag line="223" name="param" description="One of 'development' or 'production'." type="string" variable="$mode">
+          <tag line="225" name="param" description="One of 'development' or 'production'." type="string" variable="$mode">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="223" name="return" description="" type="void">
+          <tag line="225" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="223" name="see" description="\sTemplate::addMinifiedJavaScriptFile()" refers="\sTemplate::addMinifiedJavaScriptFile()"/>
-          <tag line="223" name="see" description="\sTemplate::enableQueryStrings()" refers="\sTemplate::enableQueryStrings()"/>
+          <tag line="225" name="see" description="\sTemplate::addMinifiedJavaScriptFile()" refers="\sTemplate::addMinifiedJavaScriptFile()"/>
+          <tag line="225" name="see" description="\sTemplate::enableQueryStrings()" refers="\sTemplate::enableQueryStrings()"/>
         </docblock>
-        <argument line="238">
+        <argument line="240">
           <name>$mode</name>
           <default><![CDATA['development']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="254" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="256" package="">
         <name>getMode</name>
         <type>function</type>
-        <docblock line="249">
+        <docblock line="251">
           <description><![CDATA[Get the current working mode.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="249" name="return" description="One of: 'development', 'production'." type="string">
+          <tag line="251" name="return" description="One of: 'development', 'production'." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="265" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="267" package="">
         <name>enableQueryStrings</name>
         <type>function</type>
-        <docblock line="258">
+        <docblock line="260">
           <description><![CDATA[Enable or disable query strings on resource URLs such as CSS while in
   development mode.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="258" name="param" description="Value to set. TRUE or FALSE." type="boolean" variable="$bool">
+          <tag line="260" name="param" description="Value to set. TRUE or FALSE." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="258" name="return" description="" type="void">
+          <tag line="260" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="265">
+        <argument line="267">
           <name>$bool</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="281" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="283" package="">
         <name>registerCallback</name>
         <type>function</type>
-        <docblock line="269">
+        <docblock line="271">
           <description><![CDATA[Register a callback to be called when the template name specified is about
   to be rendered.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="269" name="param" description="Callback. All callbacks must return an array of keys to string values. They must be registered before the template will be used with sTemplate::buffer()." type="callback" variable="$callback">
+          <tag line="271" name="param" description="Callback. All callbacks must return an array of keys to string values. They must be registered before the template will be used with sTemplate::buffer()." type="callback" variable="$callback">
             <type by_reference="false">callback</type>
           </tag>
-          <tag line="269" name="param" description="Template name (without .tpl.php) to listen for." type="string" variable="$template_name">
+          <tag line="271" name="param" description="Template name (without .tpl.php) to listen for." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="269" name="return" description="" type="void">
+          <tag line="271" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="269" name="see" description="\sTemplate::buffer()" refers="\sTemplate::buffer()"/>
+          <tag line="271" name="see" description="\sTemplate::buffer()" refers="\sTemplate::buffer()"/>
         </docblock>
-        <argument line="281">
+        <argument line="283">
           <name>$callback</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="281">
+        <argument line="283">
           <name>$template_name</name>
           <default><![CDATA['*']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="291" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="293" package="">
         <name>callCallbacks</name>
         <type>function</type>
-        <docblock line="285">
+        <docblock line="287">
           <description><![CDATA[Calls all the registered callback for * and this template.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="285" name="param" description="Template name." type="string" variable="$template_name">
+          <tag line="287" name="param" description="Template name." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="285" name="return" description="Array of key =&gt; value pairs for use in the template." type="array">
+          <tag line="287" name="return" description="Array of key =&gt; value pairs for use in the template." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="291">
+        <argument line="293">
           <name>$template_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="325" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="327" package="">
         <name>setTemplatesPath</name>
         <type>function</type>
-        <docblock line="315">
+        <docblock line="317">
           <description><![CDATA[Set the templates path.]]></description>
           <long-description><![CDATA[<p>The path is run through fDirectory. If it is not useable, then
   fDirectory::__construct() will throw an fValidationException.</p>]]></long-description>
-          <tag line="315" name="param" description="Path without ending separator, such as / or \\." type="string" variable="$path">
+          <tag line="317" name="param" description="Path without ending separator, such as / or \\." type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="315" name="return" description="" type="void">
+          <tag line="317" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="315" name="see" description="\fDirectory::__construct()" refers="\fDirectory::__construct()"/>
+          <tag line="317" name="see" description="\fDirectory::__construct()" refers="\fDirectory::__construct()"/>
         </docblock>
-        <argument line="325">
+        <argument line="327">
           <name>$path</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="338" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="340" package="">
         <name>addJavaScriptFile</name>
         <type>function</type>
-        <docblock line="330">
+        <docblock line="332">
           <description><![CDATA[Add a JavaScript file.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="330" name="param" description="File name. Should be relative to site root or can be full URIs." type="string" variable="$filename">
+          <tag line="332" name="param" description="File name. Should be relative to site root or can be full URIs." type="string" variable="$filename">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="330" name="param" description="Where the script should go. One of: 'head', 'body'." type="string" variable="$where">
+          <tag line="332" name="param" description="Where the script should go. One of: 'head', 'body'." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="330" name="return" description="" type="void">
+          <tag line="332" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="338">
+        <argument line="340">
           <name>$filename</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="338">
+        <argument line="340">
           <name>$where</name>
           <default><![CDATA['body']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="358" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="360" package="">
         <name>addMinifiedJavaScriptFile</name>
         <type>function</type>
-        <docblock line="350">
+        <docblock line="352">
           <description><![CDATA[Add a minified JavaScript file. Should be relative to site path, or can be
   full URIs. These are only added during production mode.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="350" name="param" description="File name. Example: '/files/themin.min.js'" type="string" variable="$filename">
+          <tag line="352" name="param" description="File name. Example: '/files/themin.min.js'" type="string" variable="$filename">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="350" name="param" description="Where the script should go. One of: 'head', 'body'." type="string" variable="$where">
+          <tag line="352" name="param" description="Where the script should go. One of: 'head', 'body'." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="350" name="return" description="" type="void">
+          <tag line="352" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="358">
+        <argument line="360">
           <name>$filename</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="358">
+        <argument line="360">
           <name>$where</name>
           <default><![CDATA['body']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="378" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="380" package="">
         <name>getJavaScriptFiles</name>
         <type>function</type>
-        <docblock line="370">
+        <docblock line="372">
           <description><![CDATA[Load/get all JavaScript files in an array. If no argument is specified,
   then all JavaScript file paths will be in the array, with first level
   keys being 'head' and 'body'.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="370" name="param" description="Which to get. One of: 'head', 'body'." type="string" variable="$where">
+          <tag line="372" name="param" description="Which to get. One of: 'head', 'body'." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="370" name="return" description="" type="array">
+          <tag line="372" name="return" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="378">
+        <argument line="380">
           <name>$where</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="400" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="402" package="">
         <name>getTemplatesPath</name>
         <type>function</type>
-        <docblock line="395">
+        <docblock line="397">
           <description><![CDATA[Gets the correct templates path.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="395" name="return" description="The path." type="string">
+          <tag line="397" name="return" description="The path." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="413" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="415" package="">
         <name>addCSSFile</name>
         <type>function</type>
-        <docblock line="404">
+        <docblock line="406">
           <description><![CDATA[Add a CSS file path.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="404" name="param" description="Path to the CSS file. Should be in the site root." type="string" variable="$path">
+          <tag line="406" name="param" description="Path to the CSS file. Should be in the site root." type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="404" name="param" description="Media type." type="string" variable="$media">
+          <tag line="406" name="param" description="Media type." type="string" variable="$media">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="404" name="param" description="If this CSS file sould be first." type="boolean" variable="$prepend">
+          <tag line="406" name="param" description="If this CSS file sould be first." type="boolean" variable="$prepend">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="404" name="return" description="" type="void">
+          <tag line="406" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="404" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
+          <tag line="406" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
         </docblock>
-        <argument line="413">
+        <argument line="415">
           <name>$path</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="413">
+        <argument line="415">
           <name>$media</name>
           <default><![CDATA['all']]></default>
           <type/>
         </argument>
-        <argument line="413">
+        <argument line="415">
           <name>$prepend</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="434" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="436" package="">
         <name>setCSSMediaOrder</name>
         <type>function</type>
-        <docblock line="428">
+        <docblock line="430">
           <description><![CDATA[Set the CSS media type order.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="428" name="param" description="Array of media query strings such as 'screen'." type="array" variable="$order">
+          <tag line="430" name="param" description="Array of media query strings such as 'screen'." type="array" variable="$order">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="428" name="return" description="" type="void">
+          <tag line="430" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="434">
+        <argument line="436">
           <name>$order</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="445" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="450" package="">
         <name>setActiveTemplate</name>
         <type>function</type>
-        <docblock line="438">
+        <docblock line="440">
           <description><![CDATA[Set the active template.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="438" name="param" description="String of template name." type="string" variable="$template_name">
+          <tag line="440" name="throws" description="If any directory is not found or not readable." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="440" name="param" description="String of template name." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="438" name="param" description="The fallback template." type="string" variable="$fallback_template">
+          <tag line="440" name="param" description="The fallback template." type="string" variable="$fallback_template">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="438" name="return" description="" type="void">
+          <tag line="440" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="445">
+        <argument line="450">
           <name>$template_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="445">
+        <argument line="450">
           <name>$fallback_template</name>
           <default><![CDATA['default']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="464" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="475" package="">
         <name>buffer</name>
         <type>function</type>
-        <docblock line="453">
+        <docblock line="464">
           <description><![CDATA[Buffer a file in for content.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="453" name="param" description="File name to include without extension." type="string" variable="$filename">
+          <tag line="464" name="param" description="File name to include without extension." type="string" variable="$filename">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="453" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included." type="array" variable="$variables">
+          <tag line="464" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included." type="array" variable="$variables">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="453" name="throws" description="If the file cannot be found." type="\fProgrammerException">
+          <tag line="464" name="throws" description="If the file cannot be found." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="453" name="return" description="The captured content." type="string">
+          <tag line="464" name="return" description="The captured content." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="464">
+        <argument line="475">
           <name>$filename</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="464">
+        <argument line="475">
           <name>$variables</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="494" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="505" package="">
         <name>setProductionModeTemplatesPath</name>
         <type>function</type>
-        <docblock line="487">
+        <docblock line="498">
           <description><![CDATA[Set the template path used when production mode is enabled. If this is not
   set, the default path will be used.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="487" name="param" description="Path to use." type="string" variable="$path">
+          <tag line="498" name="param" description="Path to use." type="string" variable="$path">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="487" name="return" description="" type="void">
+          <tag line="498" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="494">
+        <argument line="505">
           <name>$path</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="506" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="517" package="">
         <name>getStylesheetsHTMLProductionMode</name>
         <type>function</type>
-        <docblock line="499">
+        <docblock line="510">
           <description><![CDATA[Makes the stylesheets HTML when in production mode.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="499" name="throws" description="If a file is unable to read or found." type="\fUnexpectedException">
+          <tag line="510" name="throws" description="If a file is unable to read or found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="499" name="return" description="The HTML link tags." type="string">
+          <tag line="510" name="return" description="The HTML link tags." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="631" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="642" package="">
         <name>getStylesheetsHTML</name>
         <type>function</type>
-        <docblock line="623">
+        <docblock line="634">
           <description><![CDATA[Get the list of stylesheets in order.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="623" name="throws" description="If the CSS file cannot be read (production mode only)." type="\fUnexpectedException">
+          <tag line="634" name="throws" description="If the CSS file cannot be read (production mode only)." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="623" name="return" description="String of link HTML tags." type="string">
+          <tag line="634" name="return" description="String of link HTML tags." type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="623" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
+          <tag line="634" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="693" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="704" package="">
         <name>getJavaScriptHTML</name>
         <type>function</type>
-        <docblock line="683">
+        <docblock line="694">
           <description><![CDATA[Get string of HTML scripts for use in the head element.]]></description>
           <long-description><![CDATA[<p>JavaScript here can only be dependent on scripts that are also
   in the head element.
 Make this script optionally compile-able.</p>]]></long-description>
-          <tag line="683" name="param" description="Which scripts to get. One of: 'head', 'body'." type="string" variable="$where">
+          <tag line="694" name="param" description="Which scripts to get. One of: 'head', 'body'." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="683" name="return" description="" type="string">
+          <tag line="694" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="693">
+        <argument line="704">
           <name>$where</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="722" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="733" package="">
         <name>templateExists</name>
         <type>function</type>
-        <docblock line="716">
+        <docblock line="727">
           <description><![CDATA[Check if a certain template file exists.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="716" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
+          <tag line="727" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="716" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
+          <tag line="727" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="722">
+        <argument line="733">
           <name>$template_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="732" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="743" package="">
         <name>addCDN</name>
         <type>function</type>
-        <docblock line="726">
+        <docblock line="737">
           <description><![CDATA[Add a CDN URL prefix WITHOUT including the final slash.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="726" name="param" description="The prefix URL to use." type="string" variable="$url">
+          <tag line="737" name="param" description="The prefix URL to use." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="726" name="return" description="" type="void">
+          <tag line="737" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="732">
+        <argument line="743">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="742" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="753" package="">
         <name>removeCDN</name>
         <type>function</type>
-        <docblock line="736">
+        <docblock line="747">
           <description><![CDATA[Remove a specified CDN URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="736" name="param" description="The URL to remove." type="string" variable="$url">
+          <tag line="747" name="param" description="The URL to remove." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="736" name="return" description="" type="void">
+          <tag line="747" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="742">
+        <argument line="753">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="757" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="768" package="">
         <name>setCDNs</name>
         <type>function</type>
-        <docblock line="751">
+        <docblock line="762">
           <description><![CDATA[Set the CDNs to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="751" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
+          <tag line="762" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="751" name="return" description="" type="void">
+          <tag line="762" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="757">
+        <argument line="768">
           <name>$urls</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="766" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="777" package="">
         <name>getCDNs</name>
         <type>function</type>
-        <docblock line="761">
+        <docblock line="772">
           <description><![CDATA[Get the CDNs in currently in use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="761" name="returns" description="array Array of string URLs."/>
+          <tag line="772" name="returns" description="array Array of string URLs."/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="775" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="786" package="">
         <name>removeCDNs</name>
         <type>function</type>
-        <docblock line="770">
+        <docblock line="781">
           <description><![CDATA[Remove all CDNs.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="770" name="return" description="" type="void">
+          <tag line="781" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="784" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="795" package="">
         <name>getACDN</name>
         <type>function</type>
-        <docblock line="779">
+        <docblock line="790">
           <description><![CDATA[Get a CDN to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="779" name="return" description="Empty string, or CDN URL prefix." type="string">
+          <tag line="790" name="return" description="Empty string, or CDN URL prefix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="801" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="812" package="">
         <name>addBodyClass</name>
         <type>function</type>
-        <docblock line="794">
+        <docblock line="805">
           <description><![CDATA[Add a body class. This would normally be output in the class attribute of
-  the &lt;body&gt; element.]]></description>
+  the <body> element.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="794" name="param" description="Class name to add." type="string" variable="$class_name">
+          <tag line="805" name="param" description="Class name to add." type="string" variable="$class_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="794" name="return" description="" type="void">
+          <tag line="805" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="801">
+        <argument line="812">
           <name>$class_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="810" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="821" package="">
         <name>getBodyClasses</name>
         <type>function</type>
-        <docblock line="805">
+        <docblock line="816">
           <description><![CDATA[Get the body classes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="805" name="return" description="Array of strings." type="array">
+          <tag line="816" name="return" description="Array of strings." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="821" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="832" package="">
         <name>getPageTemplate</name>
         <type>function</type>
-        <docblock line="814">
+        <docblock line="825">
           <description><![CDATA[Get the correct page template for this URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="814" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
+          <tag line="825" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="814" name="return" description="Template file name (with .tpl.php) to use." type="string">
+          <tag line="825" name="return" description="Template file name (with .tpl.php) to use." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="852" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="863" package="">
         <name>render</name>
         <type>function</type>
-        <docblock line="840">
+        <docblock line="851">
           <description><![CDATA[Perform final rendering. Call this at the end of the router's main action
   method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="840" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
+          <tag line="851" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="840" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
+          <tag line="851" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="840" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
+          <tag line="851" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="840" name="return" description="" type="void">
+          <tag line="851" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="852">
+        <argument line="863">
           <name>$variables</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="920" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="931" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="915">
+        <docblock line="926">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="915" name="return" description="" type="\sTemplate">
+          <tag line="926" name="return" description="" type="\sTemplate">
             <type by_reference="false">\sTemplate</type>
           </tag>
         </docblock>
@@ -3117,7 +3123,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sImage.php" hash="ee4e0bb007c6ea28fcef63e93eda2717" package="Sutra">
+  <file path="sutra/classes/sImage.php" hash="9ab360efe3f0f3b0596e309a9a5e0f25" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides more methods to fImage, most notably rotation based on EXIF data
   which may be present in the file.]]></description>
@@ -3284,40 +3290,40 @@ Make this script optionally compile-able.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="263" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="272" package="">
         <name>rotateAccordingToEXIFData</name>
         <type>function</type>
-        <docblock line="248">
+        <docblock line="257">
           <description><![CDATA[Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.]]></description>
           <long-description><![CDATA[<p>Unlike fImage, these changes are immediate.</p>]]></long-description>
-          <tag line="248" name="throws" description="If the EXIF extension is not installed." type="\fEnvironmentException">
+          <tag line="257" name="throws" description="If the EXIF extension is not installed." type="\fEnvironmentException">
             <type by_reference="false">\fEnvironmentException</type>
           </tag>
-          <tag line="248" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="integer" variable="$direction">
+          <tag line="257" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="integer" variable="$direction">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="248" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
+          <tag line="257" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="248" name="param" description="JPEG quality on a scale from 0 to 100." type="integer" variable="$jpeg_quality">
+          <tag line="257" name="param" description="JPEG quality on a scale from 0 to 100." type="integer" variable="$jpeg_quality">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="248" name="return" description="Object to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned." type="\sImage">
+          <tag line="257" name="return" description="Object to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="263">
+        <argument line="272">
           <name>$direction</name>
           <default><![CDATA[self::DIRECTION_UPSIDE_UP]]></default>
           <type/>
         </argument>
-        <argument line="263">
+        <argument line="272">
           <name>$overwrite</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
-        <argument line="263">
+        <argument line="272">
           <name>$jpeg_quality</name>
           <default><![CDATA[90]]></default>
           <type/>
