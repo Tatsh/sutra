@@ -714,39 +714,6 @@ class sTemplate {
   }
 
   /**
-   * Get string of HTML scripts conditionally for IE. All conditional comments
-   *   are in the returned string.
-   *
-   * @return string HTML string of script tags wrapped with conditional
-   *   comments as necessary.
-   * @todo Re-do
-   */
-  public static function getConditionalHeadJavaScriptFromJSONFile() {
-    if (self::$template_name == 'default' || self::$in_production_mode) {
-      return '';
-    }
-
-    $html = '';
-    $time = !self::$in_production_mode ? '?_='.time() : '';
-    $prefix = preg_replace('/^\./', '/', self::getTemplatesPath());
-
-//     foreach (self::$json['conditional_head_js_files'] as $rule => $files) {
-//       foreach ($files as $file) {
-//         $url = self::$template_name.'/'.$file.'?_='.$time;
-//         if (sHTML::linkIsURI($file)) {
-//           $url = $file;
-//         }
-//         $html .= sHTML::conditionalTag($rule, 'script', array(
-//           'type' => 'text/javascript',
-//           'src' => $url,
-//         ));
-//       }
-//     }
-
-    return $html;
-  }
-
-  /**
    * Check if a certain template file exists.
    *
    * @param string $template_name Template name to check, without .tpl.php.
