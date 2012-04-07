@@ -314,8 +314,6 @@ class sProcess {
   /**
    * Get the complete command line, escaped, including any piping.
    *
-   * @todo Support leading -- for arguments that begin with - that are NOT flags.
-   *
    * @param boolean $popen Whether or not popen() is being used.
    * @return string The complete command line.
    */
