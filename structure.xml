@@ -537,7 +537,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sORMJSON.php" hash="d4669e0f1ea04fe02a4a86f495a8f493" package="Sutra">
+  <file path="sutra/classes/sORMJSON.php" hash="d560917f7bab5c84639af5f248686cf1" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Extension to fORMJSON.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -676,66 +676,66 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="113" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="110" package="">
         <name>valueToJSON</name>
         <type>function</type>
-        <docblock line="99">
+        <docblock line="96">
           <description><![CDATA[Converts the value to a JSON string before validation.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="99" name="internal" description=""/>
-          <tag line="99" name="param" description="The fActiveRecord instance." type="\fActiveRecord" variable="$object">
+          <tag line="96" name="internal" description=""/>
+          <tag line="96" name="param" description="The fActiveRecord instance." type="\fActiveRecord" variable="$object">
             <type by_reference="false">\fActiveRecord</type>
           </tag>
-          <tag line="99" name="param" description="Current values array reference." type="array" variable="$values">
+          <tag line="96" name="param" description="Current values array reference." type="array" variable="$values">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="99" name="param" description="Old values array reference." type="array" variable="$old_values">
+          <tag line="96" name="param" description="Old values array reference." type="array" variable="$old_values">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="99" name="param" description="Related records array reference." type="array" variable="$related_records">
+          <tag line="96" name="param" description="Related records array reference." type="array" variable="$related_records">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="99" name="param" description="Cache array reference." type="array" variable="$cache">
+          <tag line="96" name="param" description="Cache array reference." type="array" variable="$cache">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="99" name="return" description="" type="void">
+          <tag line="96" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="99" name="SuppressWarnings" description="(PHPMD.UnusedFormalParameter)"/>
+          <tag line="96" name="SuppressWarnings" description="(PHPMD.UnusedFormalParameter)"/>
         </docblock>
-        <argument line="113">
+        <argument line="110">
           <name>$object</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="113">
+        <argument line="110">
           <name>$values</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="113">
+        <argument line="110">
           <name>$old_values</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="113">
+        <argument line="110">
           <name>$related_records</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="113">
+        <argument line="110">
           <name>$cache</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="132" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="129" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="127">
+        <docblock line="124">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="127" name="return" description="" type="\sORMJSON">
+          <tag line="124" name="return" description="" type="\sORMJSON">
             <type by_reference="false">\sORMJSON</type>
           </tag>
         </docblock>
@@ -3117,7 +3117,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sImage.php" hash="8ec1e0072607201c97ad3c8ac1958fa3" package="Sutra">
+  <file path="sutra/classes/sImage.php" hash="ee4e0bb007c6ea28fcef63e93eda2717" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides more methods to fImage, most notably rotation based on EXIF data
   which may be present in the file.]]></description>
@@ -3234,122 +3234,92 @@ Make this script optionally compile-able.</p>]]></long-description>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="private" line="80" package="Sutra">
-        <name>$operations_queue</name>
-        <default><![CDATA[array()]]></default>
-        <docblock line="75">
-          <description><![CDATA[Operations queue.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="75" name="var" description="" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="90" package="">
-        <name>saveChanges</name>
-        <type>function</type>
-        <docblock line="82">
-          <description><![CDATA[Override saveChanges() so that our queue runs first.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="82" name="param" description="The new file format for the image. One of: 'jpg', 'gif', 'png'. Default is NULL (no change)." type="string" variable="$new_image_type">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="82" name="param" description="Quality value from 0 to 100 if the image is JPEG. Otherwise ignored. Default is 90." type="integer" variable="$jpeg_quality">
-            <type by_reference="false">integer</type>
-          </tag>
-          <tag line="82" name="param" description="Overwrite the old image if true. Default is FALSE." type="boolean" variable="$overwrite">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="82" name="return" description="The image object, to allow for method chaining." type="\sImage">
-            <type by_reference="false">\sImage</type>
-          </tag>
-        </docblock>
-        <argument line="90">
-          <name>$new_image_type</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
-        <argument line="90">
-          <name>$jpeg_quality</name>
-          <default><![CDATA[90]]></default>
-          <type/>
-        </argument>
-        <argument line="90">
-          <name>$overwrite</name>
-          <default><![CDATA[FALSE]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="127" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="106" package="">
         <name>flip</name>
         <type>function</type>
-        <docblock line="101">
+        <docblock line="75">
           <description><![CDATA[Flip the image in a specified direction. If PECL Imagick class is
   not found, GD will be used.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="101" name="throws" description="If Imagick fails to return data, or if an ImagickException is thrown." type="\fUnexpectedException">
+          <long-description><![CDATA[<p>Unlike fImage, these changes are immediate.</p>]]></long-description>
+          <tag line="75" name="throws" description="If Imagick fails to return data, or if an ImagickException is thrown." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="101" name="throws" description="If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue). If the second argument is of internal type boolean, it will be treated as the $overwrite argument. The JPEG quality will be 90." type="\fEnvironmentException">
+          <tag line="75" name="throws" description="If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue). If the second argument is of internal type boolean, it will be treated as the $overwrite argument. The JPEG quality will be 90." type="\fEnvironmentException">
             <type by_reference="false">\fEnvironmentException</type>
           </tag>
-          <tag line="101" name="param" description="One of the FLIP_* constants." type="integer" variable="$type">
+          <tag line="75" name="param" description="One of the FLIP_* constants." type="integer" variable="$type">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="101" name="param" description="Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90." type="integer" variable="$jpeg_quality">
+          <tag line="75" name="param" description="Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90." type="integer" variable="$jpeg_quality">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="101" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
+          <tag line="75" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="101" name="return" description="The image object, to allow method chaining." type="\sImage">
+          <tag line="75" name="param" description="Override the processor. Must be one of: 'imagemagick', 'gd'. This is generally for testing purposes only." type="string" variable="$processor_override">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="75" name="return" description="The image object, to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="127">
+        <argument line="106">
           <name>$type</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="127">
+        <argument line="106">
           <name>$jpeg_quality</name>
           <default><![CDATA[90]]></default>
           <type/>
         </argument>
-        <argument line="127">
+        <argument line="106">
           <name>$overwrite</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
+        <argument line="106">
+          <name>$processor_override</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="286" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="263" package="">
         <name>rotateAccordingToEXIFData</name>
         <type>function</type>
-        <docblock line="275">
+        <docblock line="248">
           <description><![CDATA[Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="275" name="throws" description="If the EXIF extension is not installed." type="\fEnvironmentException">
+          <long-description><![CDATA[<p>Unlike fImage, these changes are immediate.</p>]]></long-description>
+          <tag line="248" name="throws" description="If the EXIF extension is not installed." type="\fEnvironmentException">
             <type by_reference="false">\fEnvironmentException</type>
           </tag>
-          <tag line="275" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="string" variable="$direction">
-            <type by_reference="false">string</type>
+          <tag line="248" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="integer" variable="$direction">
+            <type by_reference="false">integer</type>
           </tag>
-          <tag line="275" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
+          <tag line="248" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="275" name="return" description="Object to allow method chaining." type="\sImage">
+          <tag line="248" name="param" description="JPEG quality on a scale from 0 to 100." type="integer" variable="$jpeg_quality">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="248" name="return" description="Object to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="286">
+        <argument line="263">
           <name>$direction</name>
           <default><![CDATA[self::DIRECTION_UPSIDE_UP]]></default>
           <type/>
         </argument>
-        <argument line="286">
+        <argument line="263">
           <name>$overwrite</name>
           <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
+        <argument line="263">
+          <name>$jpeg_quality</name>
+          <default><![CDATA[90]]></default>
           <type/>
         </argument>
       </method>

@@ -90,7 +90,7 @@
 <li class="method public "><a href="#rotateAccordingToEXIFData" title="rotateAccordingToEXIFData :: Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported."><span class="description">Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.</span><pre>rotateAccordingToEXIFData()</pre></a></li>
-<li class="method public "><a href="#saveChanges" title="saveChanges :: Override saveChanges() so that our queue runs first."><span class="description">Override saveChanges() so that our queue runs first.</span><pre>saveChanges()</pre></a></li>
+<li class="method public inherited"><a href="#saveChanges" title="saveChanges :: Saves any changes to the image"><span class="description">Saves any changes to the image</span><pre>saveChanges()</pre></a></li>
 <li class="method public inherited"><a href="#setImageMagickDirectory" title="setImageMagickDirectory :: Sets the directory the ImageMagick binary is installed in and tells the class to use ImageMagick even if GD is installed"><span class="description">Sets the directory the ImageMagick binary is installed in and tells the class to use ImageMagick even if GD is installed</span><pre>setImageMagickDirectory()</pre></a></li>
 <li class="method public inherited"><a href="#setImageMagickTempDir" title="setImageMagickTempDir :: Sets a custom directory to use for the ImageMagick temporary files"><span class="description">Sets a custom directory to use for the ImageMagick temporary files</span><pre>setImageMagickTempDir()</pre></a></li>
 <li class="method public inherited"><a href="#write" title="write :: Writes the provided data to the file"><span class="description">Writes the provided data to the file</span><pre>write()</pre></a></li>
@@ -120,7 +120,6 @@
 <li class="property private inherited"><a href="#%24file_handle" title="$file_handle :: The file handle for iteration"><span class="description">The file handle for iteration</span><pre>$file_handle</pre></a></li>
 <li class="property private inherited"><a href="#%24imagemagick_dir" title="$imagemagick_dir :: If we are using the ImageMagick processor, this stores the path to the binaries"><span class="description">If we are using the ImageMagick processor, this stores the path to the binaries</span><pre>$imagemagick_dir</pre></a></li>
 <li class="property private inherited"><a href="#%24imagemagick_temp_dir" title="$imagemagick_temp_dir :: A custom tmp path to use for ImageMagick"><span class="description">A custom tmp path to use for ImageMagick</span><pre>$imagemagick_temp_dir</pre></a></li>
-<li class="property private "><a href="#%24operations_queue" title="$operations_queue :: Operations queue."><span class="description">Operations queue.</span><pre>$operations_queue</pre></a></li>
 <li class="property private inherited"><a href="#%24pending_modifications" title="$pending_modifications :: The modifications to perform on the image when it is saved"><span class="description">The modifications to perform on the image when it is saved</span><pre>$pending_modifications</pre></a></li>
 <li class="property private inherited"><a href="#%24processor" title="$processor :: The processor to use for the image manipulation"><span class="description">The processor to use for the image manipulation</span><pre>$processor</pre></a></li>
 <li class="nav-header">
@@ -423,10 +422,10 @@ back.</p></p>
 <a name="flip" id="flip"></a><div class="element clickable method public flip" data-toggle="collapse" data-target=".flip .collapse">
 <h2>Flip the image in a specified direction. If PECL Imagick class is
   not found, GD will be used.</h2>
-<pre>flip(integer $type, integer $jpeg_quality, boolean $overwrite) : <a href="../classes/sImage.html">\sImage</a></pre>
+<pre>flip(integer $type, integer $jpeg_quality, boolean $overwrite, string $processor_override) : <a href="../classes/sImage.html">\sImage</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
-<p class="long_description"></p>
+<p class="long_description"><p>Unlike fImage, these changes are immediate.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$type</h4>
@@ -439,6 +438,10 @@ back.</p></p>
 <div class="subelement argument">
 <h4>$overwrite</h4>
 <code>boolean</code><p>If the file should be overwritten.</p></div>
+<div class="subelement argument">
+<h4>$processor_override</h4>
+<code>string</code><p>Override the processor. Must be one of: 'imagemagick', 'gd'. This is generally for testing purposes only.</p>
+</div>
 <h3>Exceptions</h3>
 <table class="table table-bordered">
 <tr>
@@ -452,7 +455,7 @@ back.</p></p>
 </table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/sImage.html">\sImage</a></code>The image object, to allow method chaining.</div>
+<code><a href="../classes/sImage.html">\sImage</a></code>The image object, to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned.</div>
 </div></div>
 </div>
 <a name="getDimensions" id="getDimensions"></a><div class="element clickable method public getDimensions" data-toggle="collapse" data-target=".getDimensions .collapse">
@@ -967,18 +970,21 @@ resized image is smooth in appearance. Resizing does not occur until
 <a name="rotateAccordingToEXIFData" id="rotateAccordingToEXIFData"></a><div class="element clickable method public rotateAccordingToEXIFData" data-toggle="collapse" data-target=".rotateAccordingToEXIFData .collapse">
 <h2>Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.</h2>
-<pre>rotateAccordingToEXIFData(string $direction, boolean $overwrite) : <a href="../classes/sImage.html">\sImage</a></pre>
+<pre>rotateAccordingToEXIFData(integer $direction, boolean $overwrite, integer $jpeg_quality) : <a href="../classes/sImage.html">\sImage</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
-<p class="long_description"></p>
+<p class="long_description"><p>Unlike fImage, these changes are immediate.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$direction</h4>
-<code>string</code><p>Optional. One of the DIRECTION_* constant values. Default is up-side up.</p>
+<code>integer</code><p>Optional. One of the DIRECTION_* constant values. Default is up-side up.</p>
 </div>
 <div class="subelement argument">
 <h4>$overwrite</h4>
 <code>boolean</code><p>If the file should be overwritten.</p></div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>JPEG quality on a scale from 0 to 100.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/fEnvironmentException.html">\fEnvironmentException</a></code></th>
@@ -986,13 +992,13 @@ resized image is smooth in appearance. Resizing does not occur until
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/sImage.html">\sImage</a></code>Object to allow method chaining.</div>
+<code><a href="../classes/sImage.html">\sImage</a></code>Object to allow method chaining. If $overwrite is FALSE, then a new sImage object is returned.</div>
 </div></div>
 </div>
 <a name="saveChanges" id="saveChanges"></a><div class="element clickable method public saveChanges" data-toggle="collapse" data-target=".saveChanges .collapse">
-<h2>Override saveChanges() so that our queue runs first.</h2>
-<pre>saveChanges(string $new_image_type, integer $jpeg_quality, boolean $overwrite) : <a href="../classes/sImage.html">\sImage</a></pre>
-<div class="labels"></div>
+<h2>Saves any changes to the image</h2>
+<pre>saveChanges(string $new_image_type, integer $jpeg_quality, boolean $overwrite) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"><p>If the file type is different than the current one, removes the current
 file once the new one is created.</p>
@@ -1001,20 +1007,25 @@ file once the new one is created.</p>
 back. If a transaction is in progress and the new image type causes a
 new file to be created, the old file will not be deleted until the
 transaction is committed.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::saveChanges()</td>
+</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$new_image_type</h4>
-<code>string</code><p>The new file format for the image. One of: 'jpg', 'gif', 'png'. Default is NULL (no change).</p>
+<code>string</code><p>The new file format for the image: 'NULL<code>(no change),</code>'jpg'<code>,</code>'gif'<code>,</code>'png'`</p>
 </div>
 <div class="subelement argument">
 <h4>$jpeg_quality</h4>
-<code>integer</code><p>Quality value from 0 to 100 if the image is JPEG. Otherwise ignored. Default is 90.</p></div>
+<code>integer</code><p>The quality setting to use for JPEG images - this may be ommitted</p>
+</div>
 <div class="subelement argument">
 <h4>$overwrite</h4>
-<code>boolean</code><p>Overwrite the old image if true. Default is FALSE.</p></div>
+<code>boolean</code><p>If an existing file with the same name and extension should be overwritten</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
-<code><a href="../classes/sImage.html">\sImage</a></code>The image object, to allow for method chaining.</div>
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
 </div></div>
 </div>
 <a name="setImageMagickDirectory" id="setImageMagickDirectory"></a><div class="element clickable method public setImageMagickDirectory" data-toggle="collapse" data-target=".setImageMagickDirectory .collapse">
@@ -1454,12 +1465,6 @@ previous data will be restored.</p></p>
 </tr></table>
 </div></div>
 </div>
-<a name="%24operations_queue" id="$operations_queue"> </a><div class="element clickable property private $operations_queue" data-toggle="collapse" data-target=".$operations_queue .collapse">
-<h2>Operations queue.</h2>
-<pre>$operations_queue : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
 <a name="%24pending_modifications" id="$pending_modifications"> </a><div class="element clickable property private $pending_modifications" data-toggle="collapse" data-target=".$pending_modifications .collapse">
 <h2>The modifications to perform on the image when it is saved</h2>
 <pre>$pending_modifications : array</pre>
@@ -1613,7 +1618,7 @@ previous data will be restored.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T07:29:28-05:00.<br></footer></div>
+            generated on 2012-04-07T13:13:00-05:00.<br></footer></div>
 </div>
 </body>
 </html>
