@@ -73,34 +73,10 @@ class sImage extends fImage {
   const FLIP_NONE = 3;
 
   /**
-   * Operations queue.
-   *
-   * @var array
-   */
-  private $operations_queue = array();
-
-  /**
-   * Override saveChanges() so that our queue runs first.
-   *
-   * @param string $new_image_type The new file format for the image. One of: 'jpg', 'gif', 'png'. Default is NULL (no change).
-   * @param integer $jpeg_quality Quality value from 0 to 100 if the image is JPEG. Otherwise ignored. Default is 90.
-   * @param boolean $overwrite Overwrite the old image if true. Default is FALSE.
-   * @return sImage The image object, to allow for method chaining.
-   */
-  public function saveChanges($new_image_type = NULL, $jpeg_quality = 90, $overwrite = FALSE) {
-    foreach ($this->operations_queue as $method => $args) {
-      call_user_func_array(array($this, $method), $args);
-    }
-    $this->operations_queue = array();
-
-    parent::saveChanges($new_image_type, $jpeg_quality, $overwrite);
-
-    return $this;
-  }
-
-  /**
    * Flip the image in a specified direction. If PECL Imagick class is
    *   not found, GD will be used.
+   *
+   * Unlike fImage, these changes are immediate.
    *
    * @throws fUnexpectedException If Imagick fails to return data, or if
    *   an ImagickException is thrown.
@@ -122,65 +98,77 @@ class sImage extends fImage {
    *   directly, if the image is JPEG, specify a quality from 0 (worst
    *   quality) to 100 (best quality). Default is 90.
    * @param boolean $overwrite If the file should be overwritten.
-   * @return sImage The image object, to allow method chaining.
+   * @param string $processor_override Override the processor. Must be one of:
+   *   'imagemagick', 'gd'. This is generally for testing purposes only.
+   * @return sImage The image object, to allow method chaining. If $overwrite
+   *   is FALSE, then a new sImage object is returned.
    */
-  public function flip($type, $jpeg_quality = 90, $overwrite = FALSE) {
+  public function flip($type, $jpeg_quality = 90, $overwrite = FALSE, $processor_override = NULL) {
     $this->tossIfDeleted();
 
+    $file = $this;
+
     if ($type == self::FLIP_NONE) {
-      return $this;
+      return $file;
     }
 
-    // Handle signature: flip($type, $overwrite = FALSE)
+    // Handle signature: flip($type, $overwrite = FALSE, $processor_override = NULL)
     $args = func_get_args();
-    if (is_bool($args[1])) {
+    if (isset($args[1]) && is_bool($args[1])) {
       $jpeg_quality = 90;
       $overwite = $args[1];
+      $processor_override = isset($args[2]) ? (string)$args[2] : NULL;
     }
 
-    $processor = self::determineProcessor();
-    if ($processor == 'none') {
-      throw new fEnvironmentException('No image processor was found.');
+    if (!$overwrite) {
+      $file = clone $this;
+      $file->rename($this->getName(), FALSE);
     }
 
-    $mime = strtolower($this->getMimeType());
+    $processor = $processor_override;
+    $valid = array('gd', 'imagemagick');
+    if (is_null($processor) || !in_array($processor, $valid)) {
+      $processor = self::determineProcessor();
+      if ($processor == 'none') {
+        throw new fEnvironmentException('No image processor was found.');
+      }
+    }
+
+    $mime = strtolower($file->getMimeType());
     $supported = self::getCompatibleMimeTypes();
 
-    if (!class_exists('Imagick')) {
-      $processor = 'gd';
-      $supported = array('image/gif', 'image/jpeg', 'image/png');
-    }
-    else {
-      $processor = 'imagemagick';
+    // Fallback to GD still if the imagick extension is not loaded
+    if (is_null($processor_override)) {
+      if (!extension_loaded('imagick')) {
+        $processor = 'gd';
+        $supported = array('image/gif', 'image/jpeg', 'image/png');
+      }
+      else {
+        $processor = 'imagemagick';
+      }
     }
 
     if (!in_array($mime, $supported)) {
-      return $this;
+      return $file;
     }
 
     if ($processor == 'imagemagick') {
       fCore::debug(__CLASS__.'->'.__FUNCTION__.': Using Imagick class.');
 
-      $image = new Imagick($this->getPath());
+      $image = new Imagick($file->getPath());
       if ($type == self::FLIP_VERTICAL) {
         $image->flipImage();
       }
       else if ($type == self::FLIP_HORIZONTAL) {
         $image->flopImage();
       }
-      else {
+      else { // Both
         $image->flipImage();
         $image->flopImage();
       }
 
       try {
-        $data = $image->getImageBlob();
-
-        if (!strlen($data)) {
-          throw new fUnexpectedException('Imagick->getImageBlob() returned 0 bytes.');
-        }
-
-        $this->write($data);
+        $file->write($image->getImageBlob());
       }
       catch (ImagickException $e) {
         throw new fUnexpectedException('Caught ImagickException: '.$e->getMessage());
@@ -194,30 +182,24 @@ class sImage extends fImage {
 
       switch ($mime) {
         case 'image/gif':
-          $img_src = imagecreatefromgif($this->getPath());
+          $img_src = imagecreatefromgif($file->getPath());
           break;
 
         case 'image/jpeg':
-          $img_src = imagecreatefromjpeg($this->getPath());
+          $img_src = imagecreatefromjpeg($file->getPath());
           break;
 
         case 'image/png':
-          $img_src = imagecreatefrompng($this->getPath());
+          $img_src = imagecreatefrompng($file->getPath());
           imagealphablending($img_src, FALSE);
           imagesavealpha($img_src, TRUE);
           break;
-
-        default:
-          throw new fEnvironmentException('GD cannot handle this image type.');
-      }
-
-      if (!$img_src) {
-        throw new fUnexpectedException('Cannot open file %s.', $this->getName());
       }
 
       $width = imagesx($img_src);
       $height = imagesy($img_src);
       $img_destination = imagecreatetruecolor($width, $height);
+      $ret = FALSE;
 
       if ($mime == 'image/png') {
         imagealphablending($img_destination, FALSE);
@@ -238,59 +220,60 @@ class sImage extends fImage {
         }
       }
 
-      fBuffer::startCapture();
-
-      $ret = FALSE;
-
       switch ($mime) {
         case 'image/gif':
-          $ret = imagegif($img_destination);
+          $ret = imagegif($img_destination, $file->getPath());
           break;
 
         case 'image/jpeg':
-          $ret = imagejpeg($img_destination, $this->getPath(), $jpeg_quality);
-          print $this->read();
+          $ret = imagejpeg($img_destination, $file->getPath(), $jpeg_quality);
           break;
 
         case 'image/png':
-          $ret = imagepng($img_destination);
+          $ret = imagepng($img_destination, $file->getPath());
           break;
       }
 
       if (!$ret) {
-        fBuffer::stopCapture();
         throw new fUnexpectedException('Unexpected error while using GD.');
       }
-
-      $data = fBuffer::stopCapture();
-      $this->write($data);
 
       imagedestroy($img_src);
       imagedestroy($img_destination);
     }
 
-    return $this;
+    return $file;
   }
 
   /**
    * Rotate an image a certain way based on EXIF information embedded. Only
    *   JPEG and TIFF images are supported.
    *
+   * Unlike fImage, these changes are immediate.
+   *
    * @throws fEnvironmentException If the EXIF extension is not installed.
    *
-   * @param string $direction Optional. One of the DIRECTION_* constant values.
-   *   Default is up-side up.
+   * @param integer $direction Optional. One of the DIRECTION_* constant
+   *   values. Default is up-side up.
    * @param boolean If the file should be overwritten.
-   * @return sImage Object to allow method chaining.
+   * @param integer $jpeg_quality JPEG quality on a scale from 0 to 100.
+   * @return sImage Object to allow method chaining. If $overwrite is FALSE,
+   *   then a new sImage object is returned.
    */
-  public function rotateAccordingToEXIFData($direction = self::DIRECTION_UPSIDE_UP, $overwrite = FALSE) {
-    $this->tossIfDeleted();
+  public function rotateAccordingToEXIFData($direction = self::DIRECTION_UPSIDE_UP, $overwrite = FALSE, $jpeg_quality = 90) {
+    $file = $this;
+    $file->tossIfDeleted();
 
     $direction = strtolower($direction);
     $mime = strtolower($this->getMimeType());
 
+    if (!$overwrite) {
+      $file = clone $file;
+      $file->rename($this->getName(), FALSE);
+    }
+
     if (!in_array($mime, array('image/tiff', 'image/jpeg'))) {
-      return $this;
+      return $file;
     }
 
     if (!function_exists('exif_read_data')) {
@@ -302,9 +285,8 @@ class sImage extends fImage {
     $rotated = FALSE;
     $flip_type = self::FLIP_NONE;
 
-    // NOTE Sometimes stored in other places like $exif_data['IFD0']['Orientation']
     if (!isset($exif_data['Orientation'])) {
-      return $this;
+      return $file;
     }
 
     switch ($exif_data['Orientation']) {
@@ -313,7 +295,7 @@ class sImage extends fImage {
         break;
 
       case 3: // 180 CCW
-        $this->rotate(180);
+        $file->rotate(180);
         $rotated = TRUE;
         break;
 
@@ -322,29 +304,29 @@ class sImage extends fImage {
         break;
 
       case 5: // Vertical flip + 90 CCW
-        $this->rotate(90);
+        $file->rotate(270);
         $rotated = TRUE;
         $flip_type = self::FLIP_VERTICAL;
         break;
 
       case 6: // 90 CCW
-        $this->rotate(90);
+        $file->rotate(270);
         $rotated = TRUE;
         break;
 
       case 7: // Horizontal flip + 90 CCW
-        $this->rotate(90);
+        $file->rotate(90);
         $rotated = TRUE;
         $flip_type = self::FLIP_HORIZONTAL;
         break;
 
       case 8: // 90 CW
-        $this->rotate(-90);
+        $file->rotate(270);
         $rotated = TRUE;
         break;
 
       default:
-        return $this;
+        return $file;
     }
 
     if ($rotated) {
@@ -352,29 +334,22 @@ class sImage extends fImage {
         // Now rotate according to the direction specified
         switch ($direction) {
           case self::DIRECTION_UPSIDE_DOWN:
-            $this->rotate(180);
+            $file->rotate(180);
             break;
 
           case self::DIRECTION_UPSIDE_LEFT:
-            $this->rotate(-90);
+            $file->rotate(270);
             break;
 
           case self::DIRECTION_UPSIDE_RIGHT:
-            $this->rotate(90);
+            $file->rotate(90);
             break;
-
-          default:
-            throw new fProgrammerException('Invalid direction specified for rotation.');
         }
       }
     }
 
-    if ($flip_type != self::FLIP_NONE) {
-      $this->operations_queue['flip'] = array($flip_type, $overwrite);
-    }
+    $file->saveChanges(NULL, $jpeg_quality, $overwrite);
 
-    $this->saveChanges();
-
-    return $this;
+    return $file->flip($flip_type, $jpeg_quality, TRUE);
   }
 }
