@@ -155,9 +155,8 @@ class sProcess {
   public function __construct($name) {
     $this->parseNameAndArguments(func_get_args());
 
-    $pos = strpos($this->program, '.exe');
-    if (self::checkOS('windows') && substr($this->program, 0, -4) === '.exe' && $pos !== FALSE) {
-      $this->program = substr(0, $pos);
+    if (self::checkOS('windows') && substr($this->program, -4) === '.exe') {
+      $this->program = substr($this->program, 0, -4);
     }
 
     if (!self::exists($this->program)) {
