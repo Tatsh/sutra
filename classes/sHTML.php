@@ -389,7 +389,7 @@ class sHTML extends fHTML {
    * Get a valid value for an enumerated (only ones that represent on or off)
    *   or boolean attribute.
    *
-   * @param string $attribute_value Attribute value.
+   * @param string $attribute_name Attribute name.
    * @param boolean $value Boolean value for the attribute.
    * @return boolean If this function returns FALSE, the attribute must be
    *   omitted.
@@ -509,6 +509,7 @@ class sHTML extends fHTML {
    *
    * @param string $rule The IE rule. Examples: 'lt IE 9', 'IE 8', 'gt IE 6'.
    * @param string $tag Tag name.
+   * @param array $attr Attributes array.
    * @param string $content Content to place within the HTML.
    * @return string The HTML tag, ready to be displayed.
    */

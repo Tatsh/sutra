@@ -330,10 +330,9 @@ class sTemplate {
   /**
    * Add a JavaScript file.
    *
-   * @param string $file File name. Should be relative to site root or can be
-   *   full URIs.
+   * @param string $filename File name. Should be relative to site root or can
+   *   be full URIs.
    * @param string $where Where the script should go. One of: 'head', 'body'.
-   * @param boolean $prepend If this JavaScript file should become the first.
    * @return void
    */
   public static function addJavaScriptFile($filename, $where = 'body') {
@@ -353,6 +352,7 @@ class sTemplate {
    *   full URIs. These are only added during production mode.
    *
    * @param string $filename File name. Example: '/files/themin.min.js'
+   * @param string $where Where the script should go. One of: 'head', 'body'.
    * @return void
    */
   public static function addMinifiedJavaScriptFile($filename, $where = 'body') {
@@ -687,6 +687,7 @@ class sTemplate {
    *   in the head element.
    * Make this script optionally compile-able.
    *
+   * @param string $where Which scripts to get. One of: 'head', 'body'.
    * @return string
    */
   private static function getJavaScriptHTML($where) {

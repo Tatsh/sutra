@@ -36,8 +36,6 @@ class sCache extends fCache {
    * Get a key unique to the site.
    *
    * @param string $key Key to use.
-   * @param string $prefix Class prefix to use. If not specified, 'sCache' will
-   *   be used.
    * @return string Key that can be used for cache storage.
    */
   private static function getSiteUniqueKey($key) {

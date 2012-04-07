@@ -175,6 +175,7 @@ class sProcess {
    *
    * @throws fProgrammerException If the working directory is not writable or does not exist.
    *
+   * @param string $dir Path.
    * @return void
    * @see getcwd()
    */
@@ -195,7 +196,7 @@ class sProcess {
    *
    * @see fCore::checkOS()
    */
-  static public function checkOS() {
+  static public function checkOS($os) {
     return call_user_func_array(array('fCore', 'checkOS'), func_get_args());
   }
 
@@ -243,8 +244,8 @@ class sProcess {
    * Find out if a binary exists on the system in PATH. The binary is NOT
    *   tested for executability.
    *
-   * @param string $name Binary without any path. Can include .exe on Windows
-   *   but that is not required.
+   * @param string $bin_name Binary without any path. Can include .exe on
+   *   Windows but that is not required.
    * @return boolean TRUE If the binary is found, FALSE otherwise.
    */
   private static function exists($bin_name) {
@@ -414,7 +415,7 @@ class sProcess {
    *
    * @see fprintf()
    */
-  public function write() {
+  public function write($format) {
     if (is_null($this->popen_handle)) {
       throw new fProgrammerException('Attempted to write to non-existent handle.');
     }
@@ -464,10 +465,10 @@ class sProcess {
    * @throws sProcessException If attempting to add arguments to a process
    *   already running.
    *
-   * @param string,... Arguments to add.
+   * @param string,... $arg Arguments to add.
    * @return sProcess The object to allow for method chaining.
    */
-  public function addArgument() {
+  public function addArgument($arg) {
     if (!is_null($this->popen_handle)) {
       throw new fProgrammerException('Attempted to add arguments to a program already running.');
     }

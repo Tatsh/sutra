@@ -71,6 +71,11 @@ class sORMJSON extends fORMJSON {
    *
    * @internal
    *
+   * @param fActiveRecord $object The fActiveRecord instance.
+   * @param array $values Current values array reference.
+   * @param array $old_values Old values array reference.
+   * @param array $related_records Related records array reference.
+   * @param array $cache Cache array reference.
    * @return void
    *
    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
@@ -96,6 +101,11 @@ class sORMJSON extends fORMJSON {
    *
    * @internal
    *
+   * @param fActiveRecord $object The fActiveRecord instance.
+   * @param array $values Current values array reference.
+   * @param array $old_values Old values array reference.
+   * @param array $related_records Related records array reference.
+   * @param array $cache Cache array reference.
    * @return void
    *
    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
