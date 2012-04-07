@@ -89,8 +89,6 @@ class sImage extends fImage {
    */
   public function saveChanges($new_image_type = NULL, $jpeg_quality = 90, $overwrite = FALSE) {
     foreach ($this->operations_queue as $method => $args) {
-      $args[] = $jpeg_quality;
-      $args[] = $overwrite;
       call_user_func_array(array($this, $method), $args);
     }
     $this->operations_queue = array();
@@ -116,19 +114,28 @@ class sImage extends fImage {
    * - This overwrites the data in the file before returning (this is NOT
    *  part of the operation queue).
    *
-   * @todo Accept third argument boolean overwrite.
+   * If the second argument is of internal type boolean, it will be treated as
+   *   the $overwrite argument. The JPEG quality will be 90.
    *
    * @param integer $type One of the FLIP_* constants.
    * @param integer $jpeg_quality Because this saves changes to the file
    *   directly, if the image is JPEG, specify a quality from 0 (worst
    *   quality) to 100 (best quality). Default is 90.
+   * @param boolean $overwrite If the file should be overwritten.
    * @return sImage The image object, to allow method chaining.
    */
-  public function flip($type, $jpeg_quality = 90) {
+  public function flip($type, $jpeg_quality = 90, $overwrite = FALSE) {
     $this->tossIfDeleted();
 
     if ($type == self::FLIP_NONE) {
       return $this;
+    }
+
+    // Handle signature: flip($type, $overwrite = FALSE)
+    $args = func_get_args();
+    if (is_bool($args[1])) {
+      $jpeg_quality = 90;
+      $overwite = $args[1];
     }
 
     $processor = self::determineProcessor();
@@ -269,11 +276,14 @@ class sImage extends fImage {
    * Rotate an image a certain way based on EXIF information embedded. Only
    *   JPEG and TIFF images are supported.
    *
+   * @throws fEnvironmentException If the EXIF extension is not installed.
+   *
    * @param string $direction Optional. One of the DIRECTION_* constant values.
    *   Default is up-side up.
+   * @param boolean If the file should be overwritten.
    * @return sImage Object to allow method chaining.
    */
-  public function rotateAccordingToEXIFData($direction = self::DIRECTION_UPSIDE_UP) {
+  public function rotateAccordingToEXIFData($direction = self::DIRECTION_UPSIDE_UP, $overwrite = FALSE) {
     $this->tossIfDeleted();
 
     $direction = strtolower($direction);
@@ -284,7 +294,7 @@ class sImage extends fImage {
     }
 
     if (!function_exists('exif_read_data')) {
-      throw new fEnvironmentException('EXIF library must be installed to use this method.');
+      throw new fEnvironmentException('The EXIF extension must be installed and loaded to use this method.');
     }
 
     // First rotate up anyways
@@ -360,7 +370,7 @@ class sImage extends fImage {
     }
 
     if ($flip_type != self::FLIP_NONE) {
-      $this->operations_queue['flip'] = array($flip_type);
+      $this->operations_queue['flip'] = array($flip_type, $overwrite);
     }
 
     $this->saveChanges();
