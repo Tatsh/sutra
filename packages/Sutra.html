@@ -1,0 +1,223 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » Sutra</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">176</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">11</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Sutra.html" title="Sutra"><i class="icon-folder-open"></i>Sutra</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#sJSONP" title="Extension to Flourish fJSON class to provide methods for JSONP support.">sJSONP</a></li>
+<li><a href="#sCache" title="Extension to sCache. This is almost the same but invisibly provides
+  site-unique keys so that one site's cache entry does not conflict with
+  another.">sCache</a></li>
+<li><a href="#sGrammar" title="Extends fGrammar.">sGrammar</a></li>
+<li><a href="#sArray" title="Array utility functions.">sArray</a></li>
+<li><a href="#sORMJSON" title="Extension to fORMJSON.">sORMJSON</a></li>
+<li><a href="#sProcessException" title="Exceptions specific to the class sProcess.">sProcessException</a></li>
+<li><a href="#sProcess" title="Manages processes external to PHP, including interactive processes.">sProcess</a></li>
+<li><a href="#sLoader" title="Manages loading of classes.">sLoader</a></li>
+<li><a href="#sTemplate" title="Manages templating.">sTemplate</a></li>
+<li><a href="#sNumber" title="Provides getting ordinal numbers as an extension to fNumber.">sNumber</a></li>
+<li><a href="#sRequest" title="Manages POST requests.">sRequest</a></li>
+<li><a href="#sImage" title="Provides more methods to fImage, most notably rotation based on EXIF data
+  which may be present in the file.">sImage</a></li>
+<li><a href="#sTimestamp" title="Utility functions for timestamp and time/date/time zone representations.">sTimestamp</a></li>
+<li><a href="#sHTML" title="Library to help with rendering HTML tags cleanly and validly. Note that
+  only some element attributes are checked for validity and fixed.">sHTML</a></li>
+<li><a href="#sAuthorization" title="Allows defining and checking user authentication.">sAuthorization</a></li>
+<li><a href="#sResponse" title="Common non-file related HTTP response helper class.">sResponse</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span>
+</li>
+<li class="active"><a href="../packages/Sutra.html">Sutra</a></li>
+</ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<a name="sArray" id="sArray"></a><div class="element ajax clickable class" href="../classes/sArray.html">
+<h1>sArray<a href="../classes/sArray.html">¶</a>
+</h1>
+<p class="short_description">Array utility functions.</p>
+<div class="details collapse"></div>
+<a href="../classes/sArray.html" class="more">« More »</a>
+</div>
+<a name="sAuthorization" id="sAuthorization"></a><div class="element ajax clickable class" href="../classes/sAuthorization.html">
+<h1>sAuthorization<a href="../classes/sAuthorization.html">¶</a>
+</h1>
+<p class="short_description">Allows defining and checking user authentication.</p>
+<div class="details collapse"></div>
+<a href="../classes/sAuthorization.html" class="more">« More »</a>
+</div>
+<a name="sCache" id="sCache"></a><div class="element ajax clickable class" href="../classes/sCache.html">
+<h1>sCache<a href="../classes/sCache.html">¶</a>
+</h1>
+<p class="short_description">Extension to sCache. This is almost the same but invisibly provides
+  site-unique keys so that one site's cache entry does not conflict with
+  another.</p>
+<div class="details collapse"></div>
+<a href="../classes/sCache.html" class="more">« More »</a>
+</div>
+<a name="sGrammar" id="sGrammar"></a><div class="element ajax clickable class" href="../classes/sGrammar.html">
+<h1>sGrammar<a href="../classes/sGrammar.html">¶</a>
+</h1>
+<p class="short_description">Extends fGrammar.</p>
+<div class="details collapse"></div>
+<a href="../classes/sGrammar.html" class="more">« More »</a>
+</div>
+<a name="sHTML" id="sHTML"></a><div class="element ajax clickable class" href="../classes/sHTML.html">
+<h1>sHTML<a href="../classes/sHTML.html">¶</a>
+</h1>
+<p class="short_description">Library to help with rendering HTML tags cleanly and validly. Note that
+  only some element attributes are checked for validity and fixed.</p>
+<div class="details collapse"></div>
+<a href="../classes/sHTML.html" class="more">« More »</a>
+</div>
+<a name="sImage" id="sImage"></a><div class="element ajax clickable class" href="../classes/sImage.html">
+<h1>sImage<a href="../classes/sImage.html">¶</a>
+</h1>
+<p class="short_description">Provides more methods to fImage, most notably rotation based on EXIF data
+  which may be present in the file.</p>
+<div class="details collapse"></div>
+<a href="../classes/sImage.html" class="more">« More »</a>
+</div>
+<a name="sJSONP" id="sJSONP"></a><div class="element ajax clickable class" href="../classes/sJSONP.html">
+<h1>sJSONP<a href="../classes/sJSONP.html">¶</a>
+</h1>
+<p class="short_description">Extension to Flourish fJSON class to provide methods for JSONP support.</p>
+<div class="details collapse"></div>
+<a href="../classes/sJSONP.html" class="more">« More »</a>
+</div>
+<a name="sLoader" id="sLoader"></a><div class="element ajax clickable class" href="../classes/sLoader.html">
+<h1>sLoader<a href="../classes/sLoader.html">¶</a>
+</h1>
+<p class="short_description">Manages loading of classes.</p>
+<div class="details collapse"></div>
+<a href="../classes/sLoader.html" class="more">« More »</a>
+</div>
+<a name="sNumber" id="sNumber"></a><div class="element ajax clickable class" href="../classes/sNumber.html">
+<h1>sNumber<a href="../classes/sNumber.html">¶</a>
+</h1>
+<p class="short_description">Provides getting ordinal numbers as an extension to fNumber.</p>
+<div class="details collapse"></div>
+<a href="../classes/sNumber.html" class="more">« More »</a>
+</div>
+<a name="sORMJSON" id="sORMJSON"></a><div class="element ajax clickable class" href="../classes/sORMJSON.html">
+<h1>sORMJSON<a href="../classes/sORMJSON.html">¶</a>
+</h1>
+<p class="short_description">Extension to fORMJSON.</p>
+<div class="details collapse"></div>
+<a href="../classes/sORMJSON.html" class="more">« More »</a>
+</div>
+<a name="sProcess" id="sProcess"></a><div class="element ajax clickable class" href="../classes/sProcess.html">
+<h1>sProcess<a href="../classes/sProcess.html">¶</a>
+</h1>
+<p class="short_description">Manages processes external to PHP, including interactive processes.</p>
+<div class="details collapse"></div>
+<a href="../classes/sProcess.html" class="more">« More »</a>
+</div>
+<a name="sProcessException" id="sProcessException"></a><div class="element ajax clickable class" href="../classes/sProcessException.html">
+<h1>sProcessException<a href="../classes/sProcessException.html">¶</a>
+</h1>
+<p class="short_description">Exceptions specific to the class sProcess.</p>
+<div class="details collapse"></div>
+<a href="../classes/sProcessException.html" class="more">« More »</a>
+</div>
+<a name="sRequest" id="sRequest"></a><div class="element ajax clickable class" href="../classes/sRequest.html">
+<h1>sRequest<a href="../classes/sRequest.html">¶</a>
+</h1>
+<p class="short_description">Manages POST requests.</p>
+<div class="details collapse"></div>
+<a href="../classes/sRequest.html" class="more">« More »</a>
+</div>
+<a name="sResponse" id="sResponse"></a><div class="element ajax clickable class" href="../classes/sResponse.html">
+<h1>sResponse<a href="../classes/sResponse.html">¶</a>
+</h1>
+<p class="short_description">Common non-file related HTTP response helper class.</p>
+<div class="details collapse"></div>
+<a href="../classes/sResponse.html" class="more">« More »</a>
+</div>
+<a name="sTemplate" id="sTemplate"></a><div class="element ajax clickable class" href="../classes/sTemplate.html">
+<h1>sTemplate<a href="../classes/sTemplate.html">¶</a>
+</h1>
+<p class="short_description">Manages templating.</p>
+<div class="details collapse"></div>
+<a href="../classes/sTemplate.html" class="more">« More »</a>
+</div>
+<a name="sTimestamp" id="sTimestamp"></a><div class="element ajax clickable class" href="../classes/sTimestamp.html">
+<h1>sTimestamp<a href="../classes/sTimestamp.html">¶</a>
+</h1>
+<p class="short_description">Utility functions for timestamp and time/date/time zone representations.</p>
+<div class="details collapse"></div>
+<a href="../classes/sTimestamp.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:59:14-05:00.<br></footer></div>
+</div>
+</body>
+</html>

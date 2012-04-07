@@ -1,0 +1,794 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sGrammar</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">176</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">11</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#addCamelUnderscoreRule" title="addCamelUnderscoreRule :: Adds a custom `camelCase` to `underscore_notation` and `underscore_notation` to `camelCase` rule"><span class="description">Adds a custom `camelCase` to `underscore_notation` and `underscore_notation` to `camelCase` rule</span><pre>addCamelUnderscoreRule()</pre></a></li>
+<li class="method public "><a href="#addDashizeRule" title="addDashizeRule :: Add an exception string for sGrammar::dashize()."><span class="description">Add an exception string for sGrammar::dashize().</span><pre>addDashizeRule()</pre></a></li>
+<li class="method public inherited"><a href="#addHumanizeRule" title="addHumanizeRule :: Adds a custom mapping of a non-humanized string to a humanized string for ::humanize()"><span class="description">Adds a custom mapping of a non-humanized string to a humanized string for ::humanize()</span><pre>addHumanizeRule()</pre></a></li>
+<li class="method public inherited"><a href="#addSingularPluralRule" title="addSingularPluralRule :: Adds a custom singular to plural and plural to singular rule for ::pluralize() and ::singularize()"><span class="description">Adds a custom singular to plural and plural to singular rule for ::pluralize() and ::singularize()</span><pre>addSingularPluralRule()</pre></a></li>
+<li class="method public inherited"><a href="#camelize" title="camelize :: Converts an `underscore_notation`, human-friendly or `camelCase` string to `camelCase`"><span class="description">Converts an `underscore_notation`, human-friendly or `camelCase` string to `camelCase`</span><pre>camelize()</pre></a></li>
+<li class="method public "><a href="#dashize" title="dashize :: Converts an underscore_notation or camelCase notation to dash-notation."><span class="description">Converts an underscore_notation or camelCase notation to dash-notation.</span><pre>dashize()</pre></a></li>
+<li class="method public inherited"><a href="#humanize" title="humanize :: Makes an `underscore_notation`, `camelCase`, or human-friendly string into a human-friendly string"><span class="description">Makes an `underscore_notation`, `camelCase`, or human-friendly string into a human-friendly string</span><pre>humanize()</pre></a></li>
+<li class="method public inherited"><a href="#inflectOnQuantity" title="inflectOnQuantity :: Returns the singular or plural form of the word or based on the quantity specified"><span class="description">Returns the singular or plural form of the word or based on the quantity specified</span><pre>inflectOnQuantity()</pre></a></li>
+<li class="method public inherited"><a href="#joinArray" title="joinArray :: Returns the passed terms joined together using rule 2 from Strunk &amp; White's 'The Elements of Style'"><span class="description">Returns the passed terms joined together using rule 2 from Strunk &amp; White's 'The Elements of Style'</span><pre>joinArray()</pre></a></li>
+<li class="method public inherited"><a href="#pluralize" title="pluralize :: Returns the plural version of a singular noun"><span class="description">Returns the plural version of a singular noun</span><pre>pluralize()</pre></a></li>
+<li class="method public inherited"><a href="#registerJoinArrayCallback" title="registerJoinArrayCallback :: Allows replacing the ::joinArray() function with a user defined function"><span class="description">Allows replacing the ::joinArray() function with a user defined function</span><pre>registerJoinArrayCallback()</pre></a></li>
+<li class="method public "><a href="#removeDashizeRule" title="removeDashizeRule :: Removes a rule used by sGrammar::dashize()."><span class="description">Removes a rule used by sGrammar::dashize().</span><pre>removeDashizeRule()</pre></a></li>
+<li class="method public inherited"><a href="#singularize" title="singularize :: Returns the singular version of a plural noun"><span class="description">Returns the singular version of a plural noun</span><pre>singularize()</pre></a></li>
+<li class="method public inherited"><a href="#stem" title="stem :: Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching"><span class="description">Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching</span><pre>stem()</pre></a></li>
+<li class="method public inherited"><a href="#underscorize" title="underscorize :: Converts a `camelCase`, human-friendly or `underscore_notation` string to `underscore_notation`"><span class="description">Converts a `camelCase`, human-friendly or `underscore_notation` string to `underscore_notation`</span><pre>underscorize()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private inherited"><a href="#camelizeCallback" title="camelizeCallback :: A callback used by ::camelize() to handle converting underscore to camelCase"><span class="description">A callback used by ::camelize() to handle converting underscore to camelCase</span><pre>camelizeCallback()</pre></a></li>
+<li class="method private inherited"><a href="#splitLastWord" title="splitLastWord :: Splits the last word off of a `camelCase` or `underscore_notation` string"><span class="description">Splits the last word off of a `camelCase` or `underscore_notation` string</span><pre>splitLastWord()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24cache" title="$cache :: Cache for plural &lt;-&gt; singular and underscore &lt;-&gt; camelcase"><span class="description">Cache for plural &lt;-&gt; singular and underscore &lt;-&gt; camelcase</span><pre>$cache</pre></a></li>
+<li class="property private inherited"><a href="#%24camelize_rules" title="$camelize_rules :: Custom rules for camelizing a string"><span class="description">Custom rules for camelizing a string</span><pre>$camelize_rules</pre></a></li>
+<li class="property private "><a href="#%24dashize_cache" title="$dashize_cache :: Cache of strings that have been run through sGrammar::dashize()."><span class="description">Cache of strings that have been run through sGrammar::dashize().</span><pre>$dashize_cache</pre></a></li>
+<li class="property private "><a href="#%24dashize_rules" title="$dashize_rules :: Exceptions for sGrammar::dashize()."><span class="description">Exceptions for sGrammar::dashize().</span><pre>$dashize_rules</pre></a></li>
+<li class="property private inherited"><a href="#%24humanize_rules" title="$humanize_rules :: Custom rules for humanizing a string"><span class="description">Custom rules for humanizing a string</span><pre>$humanize_rules</pre></a></li>
+<li class="property private inherited"><a href="#%24join_array_callback" title="$join_array_callback :: The callback to replace ::joinArray()"><span class="description">The callback to replace ::joinArray()</span><pre>$join_array_callback</pre></a></li>
+<li class="property private inherited"><a href="#%24plural_to_singular_rules" title="$plural_to_singular_rules :: Rules for plural to singular inflection of nouns"><span class="description">Rules for plural to singular inflection of nouns</span><pre>$plural_to_singular_rules</pre></a></li>
+<li class="property private inherited"><a href="#%24singular_to_plural_rules" title="$singular_to_plural_rules :: Rules for singular to plural inflection of nouns"><span class="description">Rules for singular to plural inflection of nouns</span><pre>$singular_to_plural_rules</pre></a></li>
+<li class="property private inherited"><a href="#%24underscorize_rules" title="$underscorize_rules :: Custom rules for underscorizing a string"><span class="description">Custom rules for underscorizing a string</span><pre>$underscorize_rules</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  inherited"><a href="#addCamelUnderscoreRule" title="addCamelUnderscoreRule :: "><span class="description">addCamelUnderscoreRule</span><pre>addCamelUnderscoreRule</pre></a></li>
+<li class="constant  inherited"><a href="#addHumanizeRule" title="addHumanizeRule :: "><span class="description">addHumanizeRule</span><pre>addHumanizeRule</pre></a></li>
+<li class="constant  inherited"><a href="#addSingularPluralRule" title="addSingularPluralRule :: "><span class="description">addSingularPluralRule</span><pre>addSingularPluralRule</pre></a></li>
+<li class="constant  inherited"><a href="#camelize" title="camelize :: "><span class="description">camelize</span><pre>camelize</pre></a></li>
+<li class="constant  inherited"><a href="#humanize" title="humanize :: "><span class="description">humanize</span><pre>humanize</pre></a></li>
+<li class="constant  inherited"><a href="#inflectOnQuantity" title="inflectOnQuantity :: "><span class="description">inflectOnQuantity</span><pre>inflectOnQuantity</pre></a></li>
+<li class="constant  inherited"><a href="#joinArray" title="joinArray :: "><span class="description">joinArray</span><pre>joinArray</pre></a></li>
+<li class="constant  inherited"><a href="#pluralize" title="pluralize :: "><span class="description">pluralize</span><pre>pluralize</pre></a></li>
+<li class="constant  inherited"><a href="#registerJoinArrayCallback" title="registerJoinArrayCallback :: "><span class="description">registerJoinArrayCallback</span><pre>registerJoinArrayCallback</pre></a></li>
+<li class="constant  inherited"><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  inherited"><a href="#singularize" title="singularize :: "><span class="description">singularize</span><pre>singularize</pre></a></li>
+<li class="constant  inherited"><a href="#stem" title="stem :: "><span class="description">stem</span><pre>stem</pre></a></li>
+<li class="constant  inherited"><a href="#underscorize" title="underscorize :: "><span class="description">underscorize</span><pre>underscorize</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CsGrammar" id="\sGrammar"></a><div href="../classes/sGrammar.html" class="element class">
+<p class="short_description">Extends fGrammar.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.sutralib.com/">http://www.sutralib.com/</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.2</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addCamelUnderscoreRule" id="addCamelUnderscoreRule"></a><div class="element clickable method public addCamelUnderscoreRule" data-toggle="collapse" data-target=".addCamelUnderscoreRule .collapse">
+<h2>Adds a custom `camelCase` to `underscore_notation` and `underscore_notation` to `camelCase` rule</h2>
+<pre>addCamelUnderscoreRule(string $camel_case, string $underscore_notation) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addCamelUnderscoreRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$camel_case</h4>
+<code>string</code><p>The lower <code>camelCase</code> version of the string</p>
+</div>
+<div class="subelement argument">
+<h4>$underscore_notation</h4>
+<code>string</code><p>The <code>underscore_notation</code> version of the string</p>
+</div>
+</div></div>
+</div>
+<a name="addDashizeRule" id="addDashizeRule"></a><div class="element clickable method public addDashizeRule" data-toggle="collapse" data-target=".addDashizeRule .collapse">
+<h2>Add an exception string for sGrammar::dashize().</h2>
+<pre>addDashizeRule(string $original, string $returnString) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sGrammar::removeDashizeRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$original</h4>
+<code>string</code><p>Original string.</p></div>
+<div class="subelement argument">
+<h4>$returnString</h4>
+<code>string</code><p>The string to return in case this string is passed to sGrammar::dashize().</p>
+</div>
+</div></div>
+</div>
+<a name="addHumanizeRule" id="addHumanizeRule"></a><div class="element clickable method public addHumanizeRule" data-toggle="collapse" data-target=".addHumanizeRule .collapse">
+<h2>Adds a custom mapping of a non-humanized string to a humanized string for ::humanize()</h2>
+<pre>addHumanizeRule(string $non_humanized_string, string $humanized_string) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addHumanizeRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$non_humanized_string</h4>
+<code>string</code><p>The non-humanized string</p>
+</div>
+<div class="subelement argument">
+<h4>$humanized_string</h4>
+<code>string</code><p>The humanized string</p></div>
+</div></div>
+</div>
+<a name="addSingularPluralRule" id="addSingularPluralRule"></a><div class="element clickable method public addSingularPluralRule" data-toggle="collapse" data-target=".addSingularPluralRule .collapse">
+<h2>Adds a custom singular to plural and plural to singular rule for ::pluralize() and ::singularize()</h2>
+<pre>addSingularPluralRule(string $singular, string $plural) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addSingularPluralRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$singular</h4>
+<code>string</code><p>The singular version of the noun</p></div>
+<div class="subelement argument">
+<h4>$plural</h4>
+<code>string</code><p>The plural version of the noun</p></div>
+</div></div>
+</div>
+<a name="camelize" id="camelize"></a><div class="element clickable method public camelize" data-toggle="collapse" data-target=".camelize .collapse">
+<h2>Converts an `underscore_notation`, human-friendly or `camelCase` string to `camelCase`</h2>
+<pre>camelize(string $string, boolean $upper) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::camelize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<div class="subelement argument">
+<h4>$upper</h4>
+<code>boolean</code><p>If the camel case should be <code>UpperCamelCase</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<a name="dashize" id="dashize"></a><div class="element clickable method public dashize" data-toggle="collapse" data-target=".dashize .collapse">
+<h2>Converts an underscore_notation or camelCase notation to dash-notation.</h2>
+<pre>dashize(string $string) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sGrammar::addDashizeRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>String to convert.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Converted string.</div>
+</div></div>
+</div>
+<a name="humanize" id="humanize"></a><div class="element clickable method public humanize" data-toggle="collapse" data-target=".humanize .collapse">
+<h2>Makes an `underscore_notation`, `camelCase`, or human-friendly string into a human-friendly string</h2>
+<pre>humanize(string $string) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::humanize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to humanize</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<a name="inflectOnQuantity" id="inflectOnQuantity"></a><div class="element clickable method public inflectOnQuantity" data-toggle="collapse" data-target=".inflectOnQuantity .collapse">
+<h2>Returns the singular or plural form of the word or based on the quantity specified</h2>
+<pre>inflectOnQuantity(mixed $quantity, string $singular_form, string $plural_form, boolean $use_words_for_single_digits) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::inflectOnQuantity()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$quantity</h4>
+<code>mixed</code><p>The quantity (integer) or an array of objects to count</p>
+</div>
+<div class="subelement argument">
+<h4>$singular_form</h4>
+<code>string</code><p>The string to be returned for when <code>$quantity = 1</code></p>
+</div>
+<div class="subelement argument">
+<h4>$plural_form</h4>
+<code>string</code><p>The string to be returned for when <code>$quantity != 1</code>, use <code>%d</code> to place the quantity in the string</p>
+</div>
+<div class="subelement argument">
+<h4>$use_words_for_single_digits</h4>
+<code>boolean</code><p>If the numbers 0 to 9 should be written out as words</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="joinArray" id="joinArray"></a><div class="element clickable method public joinArray" data-toggle="collapse" data-target=".joinArray .collapse">
+<h2>Returns the passed terms joined together using rule 2 from Strunk &amp; White's 'The Elements of Style'</h2>
+<pre>joinArray(array $strings, string $type) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::joinArray()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$strings</h4>
+<code>array</code><p>An array of strings to be joined together</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of join to perform, <code>'and'</code> or <code>'or'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The terms joined together</div>
+</div></div>
+</div>
+<a name="pluralize" id="pluralize"></a><div class="element clickable method public pluralize" data-toggle="collapse" data-target=".pluralize .collapse">
+<h2>Returns the plural version of a singular noun</h2>
+<pre>pluralize(string $singular_noun, boolean $return_error) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::pluralize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$singular_noun</h4>
+<code>string</code><p>The singular noun to pluralize</p></div>
+<div class="subelement argument">
+<h4>$return_error</h4>
+<code>boolean</code><p>If this is <code>TRUE</code> and the noun can't be pluralized, <code>FALSE</code> will be returned instead</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The pluralized noun</div>
+</div></div>
+</div>
+<a name="registerJoinArrayCallback" id="registerJoinArrayCallback"></a><div class="element clickable method public registerJoinArrayCallback" data-toggle="collapse" data-target=".registerJoinArrayCallback .collapse">
+<h2>Allows replacing the ::joinArray() function with a user defined function</h2>
+<pre>registerJoinArrayCallback(callback $callback) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This would be most useful for changing ::joinArray() to work with
+languages other than English.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::registerJoinArrayCallback()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The function to replace ::joinArray() with - should accept the same parameters and return the same type</p>
+</div>
+</div></div>
+</div>
+<a name="removeDashizeRule" id="removeDashizeRule"></a><div class="element clickable method public removeDashizeRule" data-toggle="collapse" data-target=".removeDashizeRule .collapse">
+<h2>Removes a rule used by sGrammar::dashize().</h2>
+<pre>removeDashizeRule(string $original) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sGrammar::addDashizeRule()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$original</h4>
+<code>string</code><p>Original string that would be processed.</p></div>
+</div></div>
+</div>
+<a name="singularize" id="singularize"></a><div class="element clickable method public singularize" data-toggle="collapse" data-target=".singularize .collapse">
+<h2>Returns the singular version of a plural noun</h2>
+<pre>singularize(string $plural_noun, boolean $return_error) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::singularize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plural_noun</h4>
+<code>string</code><p>The plural noun to singularize</p></div>
+<div class="subelement argument">
+<h4>$return_error</h4>
+<code>boolean</code><p>If this is <code>TRUE</code> and the noun can't be pluralized, <code>FALSE</code> will be returned instead</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The singularized noun</div>
+</div></div>
+</div>
+<a name="stem" id="stem"></a><div class="element clickable method public stem" data-toggle="collapse" data-target=".stem .collapse">
+<h2>Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching</h2>
+<pre>stem(string $word) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>See http://tartarus.org/~martin/PorterStemmer/ for details about the
+algorithm.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::stem()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$word</h4>
+<code>string</code><p>The word to get the stem of</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The stem of the word</div>
+</div></div>
+</div>
+<a name="underscorize" id="underscorize"></a><div class="element clickable method public underscorize" data-toggle="collapse" data-target=".underscorize .collapse">
+<h2>Converts a `camelCase`, human-friendly or `underscore_notation` string to `underscore_notation`</h2>
+<pre>underscorize(string $string) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::underscorize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::compose()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fGrammar.html">\fGrammar</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fGrammar.html">\fGrammar</a></code></div>
+</div></div>
+</div>
+<a name="camelizeCallback" id="camelizeCallback"></a><div class="element clickable method private camelizeCallback" data-toggle="collapse" data-target=".camelizeCallback .collapse">
+<h2>A callback used by ::camelize() to handle converting underscore to camelCase</h2>
+<pre>camelizeCallback(array $match) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::camelizeCallback()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$match</h4>
+<code>array</code><p>The regular expression match</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The value to replace the string with</div>
+</div></div>
+</div>
+<a name="splitLastWord" id="splitLastWord"></a><div class="element clickable method private splitLastWord" data-toggle="collapse" data-target=".splitLastWord .collapse">
+<h2>Splits the last word off of a `camelCase` or `underscore_notation` string</h2>
+<pre>splitLastWord(string $string) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::splitLastWord()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to split the word from</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The first element is the beginning part of the string, the second element is the last word</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24cache" id="$cache"> </a><div class="element clickable property private $cache" data-toggle="collapse" data-target=".$cache .collapse">
+<h2>Cache for plural &lt;-&gt; singular and underscore &lt;-&gt; camelcase</h2>
+<pre>$cache : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$cache</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24camelize_rules" id="$camelize_rules"> </a><div class="element clickable property private $camelize_rules" data-toggle="collapse" data-target=".$camelize_rules .collapse">
+<h2>Custom rules for camelizing a string</h2>
+<pre>$camelize_rules : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$camelize_rules</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24dashize_cache" id="$dashize_cache"> </a><div class="element clickable property private $dashize_cache" data-toggle="collapse" data-target=".$dashize_cache .collapse">
+<h2>Cache of strings that have been run through sGrammar::dashize().</h2>
+<pre>$dashize_cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24dashize_rules" id="$dashize_rules"> </a><div class="element clickable property private $dashize_rules" data-toggle="collapse" data-target=".$dashize_rules .collapse">
+<h2>Exceptions for sGrammar::dashize().</h2>
+<pre>$dashize_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24humanize_rules" id="$humanize_rules"> </a><div class="element clickable property private $humanize_rules" data-toggle="collapse" data-target=".$humanize_rules .collapse">
+<h2>Custom rules for humanizing a string</h2>
+<pre>$humanize_rules : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$humanize_rules</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24join_array_callback" id="$join_array_callback"> </a><div class="element clickable property private $join_array_callback" data-toggle="collapse" data-target=".$join_array_callback .collapse">
+<h2>The callback to replace ::joinArray()</h2>
+<pre>$join_array_callback : callback</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$join_array_callback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24plural_to_singular_rules" id="$plural_to_singular_rules"> </a><div class="element clickable property private $plural_to_singular_rules" data-toggle="collapse" data-target=".$plural_to_singular_rules .collapse">
+<h2>Rules for plural to singular inflection of nouns</h2>
+<pre>$plural_to_singular_rules : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$plural_to_singular_rules</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24singular_to_plural_rules" id="$singular_to_plural_rules"> </a><div class="element clickable property private $singular_to_plural_rules" data-toggle="collapse" data-target=".$singular_to_plural_rules .collapse">
+<h2>Rules for singular to plural inflection of nouns</h2>
+<pre>$singular_to_plural_rules : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$singular_to_plural_rules</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24underscorize_rules" id="$underscorize_rules"> </a><div class="element clickable property private $underscorize_rules" data-toggle="collapse" data-target=".$underscorize_rules .collapse">
+<h2>Custom rules for underscorizing a string</h2>
+<pre>$underscorize_rules : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::$$underscorize_rules</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="addCamelUnderscoreRule" id="addCamelUnderscoreRule"> </a><div class="element clickable constant  addCamelUnderscoreRule" data-toggle="collapse" data-target=".addCamelUnderscoreRule .collapse">
+<h2>addCamelUnderscoreRule</h2>
+<pre>addCamelUnderscoreRule </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addCamelUnderscoreRule</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addHumanizeRule" id="addHumanizeRule"> </a><div class="element clickable constant  addHumanizeRule" data-toggle="collapse" data-target=".addHumanizeRule .collapse">
+<h2>addHumanizeRule</h2>
+<pre>addHumanizeRule </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addHumanizeRule</td>
+</tr></table>
+</div></div>
+</div>
+<a name="addSingularPluralRule" id="addSingularPluralRule"> </a><div class="element clickable constant  addSingularPluralRule" data-toggle="collapse" data-target=".addSingularPluralRule .collapse">
+<h2>addSingularPluralRule</h2>
+<pre>addSingularPluralRule </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::addSingularPluralRule</td>
+</tr></table>
+</div></div>
+</div>
+<a name="camelize" id="camelize"> </a><div class="element clickable constant  camelize" data-toggle="collapse" data-target=".camelize .collapse">
+<h2>camelize</h2>
+<pre>camelize </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::camelize</td>
+</tr></table>
+</div></div>
+</div>
+<a name="humanize" id="humanize"> </a><div class="element clickable constant  humanize" data-toggle="collapse" data-target=".humanize .collapse">
+<h2>humanize</h2>
+<pre>humanize </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::humanize</td>
+</tr></table>
+</div></div>
+</div>
+<a name="inflectOnQuantity" id="inflectOnQuantity"> </a><div class="element clickable constant  inflectOnQuantity" data-toggle="collapse" data-target=".inflectOnQuantity .collapse">
+<h2>inflectOnQuantity</h2>
+<pre>inflectOnQuantity </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::inflectOnQuantity</td>
+</tr></table>
+</div></div>
+</div>
+<a name="joinArray" id="joinArray"> </a><div class="element clickable constant  joinArray" data-toggle="collapse" data-target=".joinArray .collapse">
+<h2>joinArray</h2>
+<pre>joinArray </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::joinArray</td>
+</tr></table>
+</div></div>
+</div>
+<a name="pluralize" id="pluralize"> </a><div class="element clickable constant  pluralize" data-toggle="collapse" data-target=".pluralize .collapse">
+<h2>pluralize</h2>
+<pre>pluralize </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::pluralize</td>
+</tr></table>
+</div></div>
+</div>
+<a name="registerJoinArrayCallback" id="registerJoinArrayCallback"> </a><div class="element clickable constant  registerJoinArrayCallback" data-toggle="collapse" data-target=".registerJoinArrayCallback .collapse">
+<h2>registerJoinArrayCallback</h2>
+<pre>registerJoinArrayCallback </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::registerJoinArrayCallback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::reset</td>
+</tr></table>
+</div></div>
+</div>
+<a name="singularize" id="singularize"> </a><div class="element clickable constant  singularize" data-toggle="collapse" data-target=".singularize .collapse">
+<h2>singularize</h2>
+<pre>singularize </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::singularize</td>
+</tr></table>
+</div></div>
+</div>
+<a name="stem" id="stem"> </a><div class="element clickable constant  stem" data-toggle="collapse" data-target=".stem .collapse">
+<h2>stem</h2>
+<pre>stem </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::stem</td>
+</tr></table>
+</div></div>
+</div>
+<a name="underscorize" id="underscorize"> </a><div class="element clickable constant  underscorize" data-toggle="collapse" data-target=".underscorize .collapse">
+<h2>underscorize</h2>
+<pre>underscorize </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fGrammar::underscorize</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:59:14-05:00.<br></footer></div>
+</div>
+</body>
+</html>
