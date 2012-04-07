@@ -186,6 +186,8 @@ class sTemplate {
   /**
    * Set where minified CSS should be stored. This directory will be in the site root.
    *
+   * @throws fProgrammerException If the directory is not writable.
+   *
    * @param string $path Path in which to store minified CSS. Should not have
    *    a leading '/', or './' at the beginning.
    * @return void
@@ -438,6 +440,9 @@ class sTemplate {
   /**
    * Set the active template.
    *
+   * @throws fProgrammerException If any directory is not found or not
+   *   readable.
+   *
    * @param string $template_name String of template name.
    * @param string $fallback_template The fallback template.
    * @return void
@@ -446,8 +451,14 @@ class sTemplate {
     $path = self::getTemplatesPath();
     self::$template_name = $template_name;
     self::$template_fallback = $fallback_template;
-    new fDirectory($path.'/'.self::$template_name);
-    new fDirectory($path.'/'.self::$template_fallback);
+
+    try {
+      new fDirectory($path.'/'.self::$template_name);
+      new fDirectory($path.'/'.self::$template_fallback);
+    }
+    catch (fValidationException $e) {
+      throw new fProgrammerException($e->getMessage());
+    }
   }
 
   /**
@@ -793,7 +804,7 @@ class sTemplate {
 
   /**
    * Add a body class. This would normally be output in the class attribute of
-   *   the &lt;body&gt; element.
+   *   the <body> element.
    *
    * @param string $class_name Class name to add.
    * @return void
