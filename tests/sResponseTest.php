@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 /**
  * Just for code coverage purposes.

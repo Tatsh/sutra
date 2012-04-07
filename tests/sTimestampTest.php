@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 class sTimestampTest extends PHPUnit_Framework_TestCase {
   public function testFormatTimezoneWithNumber() {

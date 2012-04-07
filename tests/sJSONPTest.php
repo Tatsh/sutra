@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 class sJSONPTest extends PHPUnit_Framework_TestCase {
   /**

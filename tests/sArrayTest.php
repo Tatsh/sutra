@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 class sArrayTest extends PHPUnit_Framework_TestCase {
   private static $must_have = array('a', 'b', 'c');

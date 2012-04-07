@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 class sProcessTest extends PHPUnit_Framework_TestCase {
   const SKIP_MESSAGE = 'Not yet testing for other OS\'s besides Linux, OS X, Solaris, and BSD.';

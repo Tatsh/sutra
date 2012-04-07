@@ -1,5 +1,5 @@
 <?php
-require './00-global.php';
+require './includes/global.inc';
 
 class sGrammarTest extends PHPUnit_Framework_TestCase {
   public function testDashize() {
