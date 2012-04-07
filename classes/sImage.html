@@ -34,9 +34,7 @@
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
                 <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>todo 
-                <span class="label label-info">11</span>
-</li></ul></a></li>
+                <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -174,14 +172,6 @@
 <tr>
 <th>version</th>
 <td>1.2</td>
-</tr>
-<tr>
-<th>todo</th>
-<td>Add method to set an image's opacity.</td>
-</tr>
-<tr>
-<th>todo</th>
-<td>Add method to create an image with images as layers.</td>
 </tr>
 </table>
 <h3>
@@ -433,20 +423,10 @@ back.</p></p>
 <a name="flip" id="flip"></a><div class="element clickable method public flip" data-toggle="collapse" data-target=".flip .collapse">
 <h2>Flip the image in a specified direction. If PECL Imagick class is
   not found, GD will be used.</h2>
-<pre>flip(integer $type, integer $jpeg_quality) : <a href="../classes/sImage.html">\sImage</a></pre>
+<pre>flip(integer $type, integer $jpeg_quality, boolean $overwrite) : <a href="../classes/sImage.html">\sImage</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>todo</th>
-<td>Accept third argument boolean overwrite.</td>
-</tr>
-<tr>
-<th>todo</th>
-<td>Use ImageMagick command line instead of Imagick.</td>
-</tr>
-</table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$type</h4>
@@ -456,6 +436,9 @@ back.</p></p>
 <h4>$jpeg_quality</h4>
 <code>integer</code><p>Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90.</p>
 </div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the file should be overwritten.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered">
 <tr>
@@ -464,7 +447,7 @@ back.</p></p>
 </tr>
 <tr>
 <th><code><a href="../classes/fEnvironmentException.html">\fEnvironmentException</a></code></th>
-<td>If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue).</td>
+<td>If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue). If the second argument is of internal type boolean, it will be treated as the $overwrite argument. The JPEG quality will be 90.</td>
 </tr>
 </table>
 <h3>Returns</h3>
@@ -984,7 +967,7 @@ resized image is smooth in appearance. Resizing does not occur until
 <a name="rotateAccordingToEXIFData" id="rotateAccordingToEXIFData"></a><div class="element clickable method public rotateAccordingToEXIFData" data-toggle="collapse" data-target=".rotateAccordingToEXIFData .collapse">
 <h2>Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.</h2>
-<pre>rotateAccordingToEXIFData(string $direction) : <a href="../classes/sImage.html">\sImage</a></pre>
+<pre>rotateAccordingToEXIFData(string $direction, boolean $overwrite) : <a href="../classes/sImage.html">\sImage</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
@@ -993,6 +976,14 @@ resized image is smooth in appearance. Resizing does not occur until
 <h4>$direction</h4>
 <code>string</code><p>Optional. One of the DIRECTION_* constant values. Default is up-side up.</p>
 </div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the file should be overwritten.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fEnvironmentException.html">\fEnvironmentException</a></code></th>
+<td>If the EXIF extension is not installed.</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/sImage.html">\sImage</a></code>Object to allow method chaining.</div>
@@ -1622,7 +1613,7 @@ previous data will be restored.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T06:22:54-05:00.<br></footer></div>
+            generated on 2012-04-07T07:29:28-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -769,7 +769,7 @@
       </docblock>
     </class>
   </file>
-  <file path="sutra/classes/sProcess.php" hash="29a36f70ca12f13b5394ce93cf348178" package="Sutra">
+  <file path="sutra/classes/sProcess.php" hash="176957d5f460746ebe206c796a271886" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages processes external to PHP, including interactive processes.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -1110,13 +1110,12 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="322" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="320" package="">
         <name>commandLine</name>
         <type>function</type>
         <docblock line="314">
           <description><![CDATA[Get the complete command line, escaped, including any piping.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="314" name="todo" description="Support leading -- for arguments that begin with - that are NOT flags."/>
           <tag line="314" name="param" description="Whether or not popen() is being used." type="boolean" variable="$popen">
             <type by_reference="false">boolean</type>
           </tag>
@@ -1124,141 +1123,141 @@
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="322">
+        <argument line="320">
           <name>$popen</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="354" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="352" package="">
         <name>beginInteractive</name>
         <type>function</type>
-        <docblock line="347">
+        <docblock line="345">
           <description><![CDATA[Begin an interactive session with the process.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="347" name="return" description="The object to allow for method chaining." type="\sProcess">
+          <tag line="345" name="return" description="The object to allow for method chaining." type="\sProcess">
             <type by_reference="false">\sProcess</type>
           </tag>
-          <tag line="347" name="see" description="\popen()" refers="\popen()"/>
+          <tag line="345" name="see" description="\popen()" refers="\popen()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="375" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="373" package="">
         <name>redirectStandardError</name>
         <type>function</type>
-        <docblock line="366">
+        <docblock line="364">
           <description><![CDATA[Redirect standard error.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="366" name="param" description="Defauls to TRUE. Class instantiates with this set to FALSE." type="boolean" variable="$bool">
+          <tag line="364" name="param" description="Defauls to TRUE. Class instantiates with this set to FALSE." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="366" name="param" description="Where the output should go to. Example could be '&amp;1' or a file name." type="string" variable="$where">
+          <tag line="364" name="param" description="Where the output should go to. Example could be '&amp;1' or a file name." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="366" name="return" description="" type="void">
+          <tag line="364" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="375">
+        <argument line="373">
           <name>$bool</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
-        <argument line="375">
+        <argument line="373">
           <name>$where</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="403" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="401" package="">
         <name>redirectStdErr</name>
         <type>function</type>
-        <docblock line="393">
+        <docblock line="391">
           <description><![CDATA[Redirect standard error. Convenience alias for redirectStandardError().]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="393" name="param" description="Defauls to TRUE." type="boolean" variable="$bool">
+          <tag line="391" name="param" description="Defauls to TRUE." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="393" name="param" description="Where the output should go to. Example could be '&amp;1' or a file name." type="string" variable="$where">
+          <tag line="391" name="param" description="Where the output should go to. Example could be '&amp;1' or a file name." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="393" name="return" description="" type="void">
+          <tag line="391" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="393" name="see" description="\sProcess::redirectStandardError()" refers="\sProcess::redirectStandardError()"/>
+          <tag line="391" name="see" description="\sProcess::redirectStandardError()" refers="\sProcess::redirectStandardError()"/>
         </docblock>
-        <argument line="403">
+        <argument line="401">
           <name>$bool</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
-        <argument line="403">
+        <argument line="401">
           <name>$where</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="418" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="416" package="">
         <name>write</name>
         <type>function</type>
-        <docblock line="407">
+        <docblock line="405">
           <description><![CDATA[Write to the interactive process.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="407" name="throws" description="If the handle cannot be written to or if the string passed was of zero-length." type="\sProcessException">
+          <tag line="405" name="throws" description="If the handle cannot be written to or if the string passed was of zero-length." type="\sProcessException">
             <type by_reference="false">\sProcessException</type>
           </tag>
-          <tag line="407" name="param" description="A formatted string and arguments. Example: &quot;%s&quot;, 'string'." type="\$format,..." variable="$format">
+          <tag line="405" name="param" description="A formatted string and arguments. Example: &quot;%s&quot;, 'string'." type="\$format,..." variable="$format">
             <type by_reference="false">\$format,...</type>
           </tag>
-          <tag line="407" name="return" description="The object to allow for method chaining." type="\sProcess">
+          <tag line="405" name="return" description="The object to allow for method chaining." type="\sProcess">
             <type by_reference="false">\sProcess</type>
           </tag>
-          <tag line="407" name="see" description="\fprintf()" refers="\fprintf()"/>
+          <tag line="405" name="see" description="\fprintf()" refers="\fprintf()"/>
         </docblock>
-        <argument line="418">
+        <argument line="416">
           <name>$format</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="441" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="439" package="">
         <name>EOF</name>
         <type>function</type>
-        <docblock line="431">
+        <docblock line="429">
           <description><![CDATA[End the interactive session.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="431" name="throws" description="If tossing is enabled and the return value does not match the one passed; if attempting to close a non-existent popen handle." type="\sProcessException">
+          <tag line="429" name="throws" description="If tossing is enabled and the return value does not match the one passed; if attempting to close a non-existent popen handle." type="\sProcessException">
             <type by_reference="false">\sProcessException</type>
           </tag>
-          <tag line="431" name="param" description="Return value expected. Defaults to 0." type="int" variable="$rv">
+          <tag line="429" name="param" description="Return value expected. Defaults to 0." type="int" variable="$rv">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="431" name="return" description="Output of the session." type="string">
+          <tag line="429" name="return" description="Output of the session." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="441">
+        <argument line="439">
           <name>$rv</name>
           <default><![CDATA[0]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="471" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="469" package="">
         <name>addArgument</name>
         <type>function</type>
-        <docblock line="462">
+        <docblock line="460">
           <description><![CDATA[Add argument (or arguments) to the current set of arguments.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="462" name="throws" description="If attempting to add arguments to a process already running." type="\sProcessException">
+          <tag line="460" name="throws" description="If attempting to add arguments to a process already running." type="\sProcessException">
             <type by_reference="false">\sProcessException</type>
           </tag>
-          <tag line="462" name="param" description="Arguments to add." type="\string,..." variable="$arg">
+          <tag line="460" name="param" description="Arguments to add." type="\string,..." variable="$arg">
             <type by_reference="false">\string,...</type>
           </tag>
-          <tag line="462" name="return" description="The object to allow for method chaining." type="\sProcess">
+          <tag line="460" name="return" description="The object to allow for method chaining." type="\sProcess">
             <type by_reference="false">\sProcess</type>
           </tag>
         </docblock>
-        <argument line="471">
+        <argument line="469">
           <name>$arg</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -1407,7 +1406,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sTemplate.php" hash="8442dfe0a3b85c461a1e74c7a09dee9a" package="Sutra">
+  <file path="sutra/classes/sTemplate.php" hash="ac4382d28c91a49a21f359fcd6d3c058" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages templating.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2140,211 +2139,198 @@ Make this script optionally compile-able.</p>]]></long-description>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="724" package="">
-        <name>getConditionalHeadJavaScriptFromJSONFile</name>
-        <type>function</type>
-        <docblock line="716">
-          <description><![CDATA[Get string of HTML scripts conditionally for IE. All conditional comments
-  are in the returned string.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="716" name="return" description="HTML string of script tags wrapped with conditional comments as necessary." type="string">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="716" name="todo" description="Re-do"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="755" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="722" package="">
         <name>templateExists</name>
         <type>function</type>
-        <docblock line="749">
+        <docblock line="716">
           <description><![CDATA[Check if a certain template file exists.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="749" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
+          <tag line="716" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="749" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
+          <tag line="716" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="755">
+        <argument line="722">
           <name>$template_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="765" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="732" package="">
         <name>addCDN</name>
         <type>function</type>
-        <docblock line="759">
+        <docblock line="726">
           <description><![CDATA[Add a CDN URL prefix WITHOUT including the final slash.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="759" name="param" description="The prefix URL to use." type="string" variable="$url">
+          <tag line="726" name="param" description="The prefix URL to use." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="759" name="return" description="" type="void">
+          <tag line="726" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="765">
+        <argument line="732">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="775" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="742" package="">
         <name>removeCDN</name>
         <type>function</type>
-        <docblock line="769">
+        <docblock line="736">
           <description><![CDATA[Remove a specified CDN URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="769" name="param" description="The URL to remove." type="string" variable="$url">
+          <tag line="736" name="param" description="The URL to remove." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="769" name="return" description="" type="void">
+          <tag line="736" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="775">
+        <argument line="742">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="790" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="757" package="">
         <name>setCDNs</name>
         <type>function</type>
-        <docblock line="784">
+        <docblock line="751">
           <description><![CDATA[Set the CDNs to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="784" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
+          <tag line="751" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="784" name="return" description="" type="void">
+          <tag line="751" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="790">
+        <argument line="757">
           <name>$urls</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="799" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="766" package="">
         <name>getCDNs</name>
         <type>function</type>
-        <docblock line="794">
+        <docblock line="761">
           <description><![CDATA[Get the CDNs in currently in use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="794" name="returns" description="array Array of string URLs."/>
+          <tag line="761" name="returns" description="array Array of string URLs."/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="808" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="775" package="">
         <name>removeCDNs</name>
         <type>function</type>
-        <docblock line="803">
+        <docblock line="770">
           <description><![CDATA[Remove all CDNs.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="803" name="return" description="" type="void">
+          <tag line="770" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="817" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="784" package="">
         <name>getACDN</name>
         <type>function</type>
-        <docblock line="812">
+        <docblock line="779">
           <description><![CDATA[Get a CDN to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="812" name="return" description="Empty string, or CDN URL prefix." type="string">
+          <tag line="779" name="return" description="Empty string, or CDN URL prefix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="834" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="801" package="">
         <name>addBodyClass</name>
         <type>function</type>
-        <docblock line="827">
+        <docblock line="794">
           <description><![CDATA[Add a body class. This would normally be output in the class attribute of
   the &lt;body&gt; element.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="827" name="param" description="Class name to add." type="string" variable="$class_name">
+          <tag line="794" name="param" description="Class name to add." type="string" variable="$class_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="827" name="return" description="" type="void">
+          <tag line="794" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="834">
+        <argument line="801">
           <name>$class_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="843" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="810" package="">
         <name>getBodyClasses</name>
         <type>function</type>
-        <docblock line="838">
+        <docblock line="805">
           <description><![CDATA[Get the body classes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="838" name="return" description="Array of strings." type="array">
+          <tag line="805" name="return" description="Array of strings." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="854" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="821" package="">
         <name>getPageTemplate</name>
         <type>function</type>
-        <docblock line="847">
+        <docblock line="814">
           <description><![CDATA[Get the correct page template for this URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="847" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
+          <tag line="814" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="847" name="return" description="Template file name (with .tpl.php) to use." type="string">
+          <tag line="814" name="return" description="Template file name (with .tpl.php) to use." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="885" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="852" package="">
         <name>render</name>
         <type>function</type>
-        <docblock line="873">
+        <docblock line="840">
           <description><![CDATA[Perform final rendering. Call this at the end of the router's main action
   method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="873" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
+          <tag line="840" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="873" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
+          <tag line="840" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="873" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
+          <tag line="840" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="873" name="return" description="" type="void">
+          <tag line="840" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="885">
+        <argument line="852">
           <name>$variables</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="953" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="920" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="948">
+        <docblock line="915">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="948" name="return" description="" type="\sTemplate">
+          <tag line="915" name="return" description="" type="\sTemplate">
             <type by_reference="false">\sTemplate</type>
           </tag>
         </docblock>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sNumber.php" hash="db310f9c1a173047784b2d88a0d68e7f" package="Sutra">
+  <file path="sutra/classes/sNumber.php" hash="39f2fca7a97556815134ec01ea676e84" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides getting ordinal numbers as an extension to fNumber.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2369,332 +2355,580 @@ Make this script optionally compile-able.</p>]]></long-description>
         <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
         <tag line="2" name="version" description="1.2"/>
       </docblock>
-      <property final="false" static="true" visibility="private" line="20" package="Sutra">
-        <name>$locale</name>
-        <default><![CDATA['en_US']]></default>
-        <docblock line="15">
-          <description><![CDATA[The locale for the class. Defaults to US English.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="15" name="var" description="" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="true" visibility="private" line="28" package="Sutra">
-        <name>$fallback_locale</name>
-        <default><![CDATA['en_US']]></default>
-        <docblock line="22">
-          <description><![CDATA[The fallback to use if the locale has no callback for the locale in use.]]></description>
-          <long-description><![CDATA[<p>Defaults to US English.</p>]]></long-description>
-          <tag line="22" name="var" description="" type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="true" visibility="private" line="35" package="Sutra">
-        <name>$callbacks</name>
+      <property final="false" static="true" visibility="private" line="21" package="Sutra">
+        <name>$valid_locales</name>
         <default><![CDATA[array(
-    'en_AU' => array( // Australia
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_CA' => array( // Canada
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_GB' => array( // United Kingdom
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_IE' => array( // Ireland
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_IN' => array( // India
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_MT' => array( // Malta
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_NZ' => array( // New Zealand
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_PH' => array( // Philippines
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_SG' => array( // Singapore
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_US' => array( // United States
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
-    'en_ZA' => array( // South Africa
-      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
-      'ordinalSuffix' => 'sNumber::ordinalSuffix',
-    ),
+    'af-ZA' => TRUE,
+    'am-ET' => TRUE,
+    'ar-AE' => TRUE,
+    'ar-BH' => TRUE,
+    'ar-DZ' => TRUE,
+    'ar-EG' => TRUE,
+    'ar-IQ' => TRUE,
+    'ar-JO' => TRUE,
+    'ar-KW' => TRUE,
+    'ar-LB' => TRUE,
+    'ar-LY' => TRUE,
+    'ar-MA' => TRUE,
+    'arn-CL' => TRUE,
+    'ar-OM' => TRUE,
+    'ar-QA' => TRUE,
+    'ar-SA' => TRUE,
+    'ar-SY' => TRUE,
+    'ar-TN' => TRUE,
+    'ar-YE' => TRUE,
+    'as-IN' => TRUE,
+    'az-Cyrl-AZ' => TRUE,
+    'az-Latn-AZ' => TRUE,
+    'ba-RU' => TRUE,
+    'be-BY' => TRUE,
+    'bg-BG' => TRUE,
+    'bn-BD' => TRUE,
+    'bn-IN' => TRUE,
+    'bo-CN' => TRUE,
+    'br-FR' => TRUE,
+    'bs-Cyrl-BA' => TRUE,
+    'bs-Latn-BA' => TRUE,
+    'ca-ES' => TRUE,
+    'co-FR' => TRUE,
+    'cs-CZ' => TRUE,
+    'cy-GB' => TRUE,
+    'da-DK' => TRUE,
+    'de-AT' => TRUE,
+    'de-CH' => TRUE,
+    'de-DE' => TRUE,
+    'de-LI' => TRUE,
+    'de-LU' => TRUE,
+    'dsb-DE' => TRUE,
+    'dv-MV' => TRUE,
+    'el-GR' => TRUE,
+    'en-029' => TRUE,
+    'en-AU' => TRUE,
+    'en-BZ' => TRUE,
+    'en-CA' => TRUE,
+    'en-GB' => TRUE,
+    'en-IE' => TRUE,
+    'en-IN' => TRUE,
+    'en-JM' => TRUE,
+    'en-MY' => TRUE,
+    'en-NZ' => TRUE,
+    'en-PH' => TRUE,
+    'en-SG' => TRUE,
+    'en-TT' => TRUE,
+    'en-US' => TRUE,
+    'en-ZA' => TRUE,
+    'en-ZW' => TRUE,
+    'es-AR' => TRUE,
+    'es-BO' => TRUE,
+    'es-CL' => TRUE,
+    'es-CO' => TRUE,
+    'es-CR' => TRUE,
+    'es-DO' => TRUE,
+    'es-EC' => TRUE,
+    'es-ES' => TRUE,
+    'es-GT' => TRUE,
+    'es-HN' => TRUE,
+    'es-MX' => TRUE,
+    'es-NI' => TRUE,
+    'es-PA' => TRUE,
+    'es-PE' => TRUE,
+    'es-PR' => TRUE,
+    'es-PY' => TRUE,
+    'es-SV' => TRUE,
+    'es-US' => TRUE,
+    'es-UY' => TRUE,
+    'es-VE' => TRUE,
+    'et-EE' => TRUE,
+    'eu-ES' => TRUE,
+    'fa-IR' => TRUE,
+    'fi-FI' => TRUE,
+    'fil-PH' => TRUE,
+    'fo-FO' => TRUE,
+    'fr-BE' => TRUE,
+    'fr-CA' => TRUE,
+    'fr-CH' => TRUE,
+    'fr-FR' => TRUE,
+    'fr-LU' => TRUE,
+    'fr-MC' => TRUE,
+    'fy-NL' => TRUE,
+    'ga-IE' => TRUE,
+    'gd-GB' => TRUE,
+    'gl-ES' => TRUE,
+    'gsw-FR' => TRUE,
+    'gu-IN' => TRUE,
+    'ha-Latn-NG' => TRUE,
+    'he-IL' => TRUE,
+    'hi-IN' => TRUE,
+    'hr-BA' => TRUE,
+    'hr-HR' => TRUE,
+    'hsb-DE' => TRUE,
+    'hu-HU' => TRUE,
+    'hy-AM' => TRUE,
+    'id-ID' => TRUE,
+    'ig-NG' => TRUE,
+    'ii-CN' => TRUE,
+    'is-IS' => TRUE,
+    'it-CH' => TRUE,
+    'it-IT' => TRUE,
+    'iu-Cans-CA' => TRUE,
+    'iu-Latn-CA' => TRUE,
+    'ja-JP' => TRUE,
+    'ka-GE' => TRUE,
+    'kk-KZ' => TRUE,
+    'kl-GL' => TRUE,
+    'km-KH' => TRUE,
+    'kn-IN' => TRUE,
+    'kok-IN' => TRUE,
+    'ko-KR' => TRUE,
+    'ky-KG' => TRUE,
+    'lb-LU' => TRUE,
+    'lo-LA' => TRUE,
+    'lt-LT' => TRUE,
+    'lv-LV' => TRUE,
+    'mi-NZ' => TRUE,
+    'mk-MK' => TRUE,
+    'ml-IN' => TRUE,
+    'mn-MN' => TRUE,
+    'mn-Mong-CN' => TRUE,
+    'moh-CA' => TRUE,
+    'mr-IN' => TRUE,
+    'ms-BN' => TRUE,
+    'ms-MY' => TRUE,
+    'mt-MT' => TRUE,
+    'nb-NO' => TRUE,
+    'ne-NP' => TRUE,
+    'nl-BE' => TRUE,
+    'nl-NL' => TRUE,
+    'nn-NO' => TRUE,
+    'nso-ZA' => TRUE,
+    'oc-FR' => TRUE,
+    'or-IN' => TRUE,
+    'pa-IN' => TRUE,
+    'pl-PL' => TRUE,
+    'prs-AF' => TRUE,
+    'ps-AF' => TRUE,
+    'pt-BR' => TRUE,
+    'pt-PT' => TRUE,
+    'qut-GT' => TRUE,
+    'quz-BO' => TRUE,
+    'quz-EC' => TRUE,
+    'quz-PE' => TRUE,
+    'rm-CH' => TRUE,
+    'ro-RO' => TRUE,
+    'ru-RU' => TRUE,
+    'rw-RW' => TRUE,
+    'sah-RU' => TRUE,
+    'sa-IN' => TRUE,
+    'se-FI' => TRUE,
+    'se-NO' => TRUE,
+    'se-SE' => TRUE,
+    'si-LK' => TRUE,
+    'sk-SK' => TRUE,
+    'sl-SI' => TRUE,
+    'sma-NO' => TRUE,
+    'sma-SE' => TRUE,
+    'smj-NO' => TRUE,
+    'smj-SE' => TRUE,
+    'smn-FI' => TRUE,
+    'sms-FI' => TRUE,
+    'sq-AL' => TRUE,
+    'sr-Cyrl-BA' => TRUE,
+    'sr-Cyrl-CS' => TRUE,
+    'sr-Cyrl-ME' => TRUE,
+    'sr-Cyrl-RS' => TRUE,
+    'sr-Latn-BA' => TRUE,
+    'sr-Latn-CS' => TRUE,
+    'sr-Latn-ME' => TRUE,
+    'sr-Latn-RS' => TRUE,
+    'sv-FI' => TRUE,
+    'sv-SE' => TRUE,
+    'sw-KE' => TRUE,
+    'syr-SY' => TRUE,
+    'ta-IN' => TRUE,
+    'te-IN' => TRUE,
+    'tg-Cyrl-TJ' => TRUE,
+    'th-TH' => TRUE,
+    'tk-TM' => TRUE,
+    'tn-ZA' => TRUE,
+    'tr-TR' => TRUE,
+    'tt-RU' => TRUE,
+    'tzm-Latn-DZ' => TRUE,
+    'ug-CN' => TRUE,
+    'uk-UA' => TRUE,
+    'ur-PK' => TRUE,
+    'uz-Cyrl-UZ' => TRUE,
+    'uz-Latn-UZ' => TRUE,
+    'vi-VN' => TRUE,
+    'wo-SN' => TRUE,
+    'xh-ZA' => TRUE,
+    'yo-NG' => TRUE,
+    'zh-CN' => TRUE,
+    'zh-HK' => TRUE,
+    'zh-MO' => TRUE,
+    'zh-SG' => TRUE,
+    'zh-TW' => TRUE,
+    'zu-ZA' => TRUE,
   )]]></default>
-        <docblock line="30">
-          <description><![CDATA[Callbacks for other languages.]]></description>
+        <docblock line="15">
+          <description><![CDATA[Common list of locales.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="30" name="var" description="" type="array">
+          <tag line="15" name="see" description="\http://www.iana.org/assignments/language-subtag-registry" refers="\http://www.iana.org/assignments/language-subtag-registry"/>
+          <tag line="15" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="89" package="">
-        <name>addDefaultCallbacks</name>
-        <type>function</type>
-        <docblock line="82">
-          <description><![CDATA[Adds an array of callbacks with the default methods in this class for a
-  specified locale.]]></description>
+      <property final="false" static="true" visibility="private" line="239" package="Sutra">
+        <name>$locale</name>
+        <default><![CDATA['en-US']]></default>
+        <docblock line="234">
+          <description><![CDATA[The locale for the class. Defaults to US English.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="82" name="param" description="Locale name, such as fr_FR." type="string" variable="$locale">
+          <tag line="234" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="82" name="return" description="" type="void">
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="247" package="Sutra">
+        <name>$fallback_locale</name>
+        <default><![CDATA['en-US']]></default>
+        <docblock line="241">
+          <description><![CDATA[The fallback to use if the locale has no callback for the locale in use.]]></description>
+          <long-description><![CDATA[<p>Defaults to US English.</p>]]></long-description>
+          <tag line="241" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="private" line="254" package="Sutra">
+        <name>$callbacks</name>
+        <default><![CDATA[array(
+    'en-AU' => array( // Australia
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-CA' => array( // Canada
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-GB' => array( // United Kingdom
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-IE' => array( // Ireland
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-IN' => array( // India
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-MT' => array( // Malta
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-NZ' => array( // New Zealand
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-PH' => array( // Philippines
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-SG' => array( // Singapore
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-US' => array( // United States
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+    'en-ZA' => array( // South Africa
+      'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
+      'ordinalSuffix' => 'sNumber::ordinalSuffix',
+    ),
+  )]]></default>
+        <docblock line="249">
+          <description><![CDATA[Callbacks for other languages.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="249" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="309" package="">
+        <name>tossIfInvalidLocale</name>
+        <type>function</type>
+        <docblock line="301">
+          <description><![CDATA[Checks if a locale is valid.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="301" name="throws" description="If the locale is invalid." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="301" name="param" description="Locale to check." type="string" variable="$locale">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="301" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="89">
+        <argument line="309">
           <name>$locale</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="117" package="">
-        <name>addCallback</name>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="328" package="">
+        <name>addDefaultCallbacks</name>
         <type>function</type>
-        <docblock line="98">
-          <description><![CDATA[Add a callback that will be used in place of the ones here.]]></description>
-          <long-description><![CDATA[<p>For use with different languages and locales.</p>
-
-<p>All callbacks must receive one value, an integer, and return a string.</p>]]></long-description>
-          <tag line="98" name="throws" description="If the method name is invalid." type="\fProgrammerException">
+        <docblock line="319">
+          <description><![CDATA[Adds an array of callbacks with the default methods in this class for a
+  specified locale.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="319" name="throws" description="If the locale is invalid." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="98" name="param" description="The locale name. Should be a standard locale name such as en_GB, fr_FR, etc." type="string" variable="$locale">
+          <tag line="319" name="param" description="Locale name, such as fr-FR." type="string" variable="$locale">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="98" name="param" description="Method name in this class to override. One of: ordinal, ordinalSuffix. The instance methods will also use this callback." type="string" variable="$method_name">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="98" name="param" description="Callback to use." type="string|array" variable="$callback">
-            <type by_reference="false">string</type>
-            <type by_reference="false">array</type>
-          </tag>
-          <tag line="98" name="return" description="" type="void">
+          <tag line="319" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="98" name="todo" description="Validate the locale against a list of locales."/>
         </docblock>
-        <argument line="117">
+        <argument line="328">
           <name>$locale</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="117">
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="357" package="">
+        <name>addCallback</name>
+        <type>function</type>
+        <docblock line="340">
+          <description><![CDATA[Add a callback that will be used in place of the ones here.]]></description>
+          <long-description><![CDATA[<p>For use with different languages and locales.</p>
+
+<p>All callbacks must receive one value, an integer, and return a string.</p>]]></long-description>
+          <tag line="340" name="throws" description="If the method name or locale is invalid." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="340" name="param" description="The locale name. Should be a standard locale name such as en-GB, fr-FR, etc." type="string" variable="$locale">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="340" name="param" description="Method name in this class to override. One of: ordinal, ordinalSuffix. The instance methods will also use this callback." type="string" variable="$method_name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="340" name="param" description="Callback to use." type="string|array" variable="$callback">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="340" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="357">
+          <name>$locale</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="357">
           <name>$method_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="117">
+        <argument line="357">
           <name>$callback</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="141" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="385" package="">
         <name>removeLocale</name>
         <type>function</type>
-        <docblock line="135">
+        <docblock line="379">
           <description><![CDATA[Remove a locale's set of callbacks.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="135" name="param" description="Locale name." type="string" variable="$locale_name">
+          <tag line="379" name="param" description="Locale name." type="string" variable="$locale_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="135" name="return" description="" type="void">
+          <tag line="379" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="141">
+        <argument line="385">
           <name>$locale_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="162" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="408" package="">
         <name>setLocale</name>
         <type>function</type>
-        <docblock line="152">
+        <docblock line="398">
           <description><![CDATA[Set the current locale in use for this class. If no callbacks yet exist,
   the defaults in this class will be assigned.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="152" name="param" description="The language name. Should be a standard locale name such as en_GB, fr_FR, etc." type="string" variable="$locale">
+          <tag line="398" name="throws" description="If the locale is invalid." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="398" name="param" description="The locale name. Should be a standard locale name such as en-GB, fr-FR, etc." type="string" variable="$locale">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="152" name="return" description="" type="void">
+          <tag line="398" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="152" name="todo" description="Validate the locale against a list of locales."/>
         </docblock>
-        <argument line="162">
+        <argument line="408">
           <name>$locale</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="179" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="427" package="">
         <name>setFallbackLocale</name>
         <type>function</type>
-        <docblock line="169">
+        <docblock line="419">
           <description><![CDATA[Set the fallback locale if the current locale set does not have a
   callback for the method requested. If no callbacks yet exist,
   the defaults in this class will be assigned.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="169" name="param" description="Locale name." type="string" variable="$locale">
+          <tag line="419" name="param" description="Locale name." type="string" variable="$locale">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="169" name="return" description="" type="void">
+          <tag line="419" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="169" name="todo" description="Validate the locale against a list of locales."/>
         </docblock>
-        <argument line="179">
+        <argument line="427">
           <name>$locale</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="193" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="445" package="">
         <name>getValidCallback</name>
         <type>function</type>
-        <docblock line="186">
+        <docblock line="438">
           <description><![CDATA[Get the correct callback based on the locale and fallback locale set in
   the class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="186" name="param" description="Method name to check for." type="string" variable="$fn">
+          <tag line="438" name="param" description="Method name to check for." type="string" variable="$fn">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="186" name="return" description="Callback name." type="string">
+          <tag line="438" name="return" description="Callback name." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="193">
+        <argument line="445">
           <name>$fn</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="207" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="459" package="">
         <name>ordinal</name>
         <type>function</type>
-        <docblock line="201">
+        <docblock line="453">
           <description><![CDATA[Format a number to be ordinal.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="201" name="param" description="Number to use." type="int" variable="$value">
+          <tag line="453" name="param" description="Number to use." type="int" variable="$value">
             <type by_reference="false">int</type>
           </tag>
-          <tag line="201" name="return" description="Number with proper English suffix." type="string">
+          <tag line="453" name="return" description="Number with proper English suffix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="207">
+        <argument line="459">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="221" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="473" package="">
         <name>ordinalNumberPrefixedCallback</name>
         <type>function</type>
-        <docblock line="211">
+        <docblock line="463">
           <description><![CDATA[Callback for English ordinal numbers (where numbers come before the
   ordinal keyword).]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="211" name="internal" description="For internal use."/>
-          <tag line="211" name="access" description="private"/>
-          <tag line="211" name="param" description="" type="integer" variable="$value">
+          <tag line="463" name="internal" description="For internal use."/>
+          <tag line="463" name="access" description="private"/>
+          <tag line="463" name="param" description="" type="integer" variable="$value">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="211" name="return" description="The value, formatted." type="string">
+          <tag line="463" name="return" description="The value, formatted." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="221">
+        <argument line="473">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="232" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="484" package="">
         <name>ordinalSuffix</name>
         <type>function</type>
-        <docblock line="226">
+        <docblock line="478">
           <description><![CDATA[Get the correct oridinal suffix for a number.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="226" name="param" description="Number to use." type="integer" variable="$value">
+          <tag line="478" name="param" description="Number to use." type="integer" variable="$value">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="226" name="return" description="Correct suffix." type="string">
+          <tag line="478" name="return" description="Correct suffix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="232">
+        <argument line="484">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="263" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="515" package="">
         <name>isEqualToIntCast</name>
         <type>function</type>
-        <docblock line="257">
-          <description><![CDATA[Checks if a number is equal to its int-casted counterpart.]]></description>
+        <docblock line="509">
+          <description><![CDATA[Checks if a number is equal to its integer-casted counterpart.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="257" name="param" description="Value to check." type="mixed" variable="$value">
+          <tag line="509" name="param" description="Value to check." type="mixed" variable="$value">
             <type by_reference="false">mixed</type>
           </tag>
-          <tag line="257" name="return" description="If the int-casted value is the same." type="boolean">
+          <tag line="509" name="return" description="If the int-casted value is the same." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="263">
+        <argument line="515">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="276" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="528" package="">
         <name>getOrdinalSuffix</name>
         <type>function</type>
-        <docblock line="271">
+        <docblock line="523">
           <description><![CDATA[Get the correct suffix for the current number.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="271" name="return" description="Correct English suffix." type="string">
+          <tag line="523" name="return" description="Correct English suffix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="287" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="539" package="">
         <name>formatWithOrdinalSuffix</name>
         <type>function</type>
-        <docblock line="280">
+        <docblock line="532">
           <description><![CDATA[Get the number formatted with the oridinal suffix.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="280" name="param" description="If TRUE and all digits after the decimal place are 0, the decimal place and all zeros are removed." type="boolean" variable="$remove_zero_fraction">
+          <tag line="532" name="param" description="If TRUE and all digits after the decimal place are 0, the decimal place and all zeros are removed." type="boolean" variable="$remove_zero_fraction">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="280" name="return" description="Number with proper English suffix." type="string">
+          <tag line="532" name="return" description="Number with proper English suffix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="287">
+        <argument line="539">
           <name>$remove_zero_fraction</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
@@ -2883,7 +3117,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sImage.php" hash="fc73e95a3f5eda828db885fd46d91136" package="Sutra">
+  <file path="sutra/classes/sImage.php" hash="8ec1e0072607201c97ad3c8ac1958fa3" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides more methods to fImage, most notably rotation based on EXIF data
   which may be present in the file.]]></description>
@@ -2895,10 +3129,8 @@ Make this script optionally compile-able.</p>]]></long-description>
       <tag line="2" name="package" description="Sutra"/>
       <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
       <tag line="2" name="version" description="1.2"/>
-      <tag line="2" name="todo" description="Add method to set an image's opacity."/>
-      <tag line="2" name="todo" description="Add method to create an image with images as layers."/>
     </docblock>
-    <class final="false" abstract="false" namespace="default" line="21" package="Sutra">
+    <class final="false" abstract="false" namespace="default" line="18" package="Sutra">
       <name>sImage</name>
       <full_name>\sImage</full_name>
       <extends>\fImage</extends>
@@ -2913,196 +3145,211 @@ Make this script optionally compile-able.</p>]]></long-description>
         <tag line="2" name="package" description="Sutra"/>
         <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
         <tag line="2" name="version" description="1.2"/>
-        <tag line="2" name="todo" description="Add method to set an image's opacity."/>
-        <tag line="2" name="todo" description="Add method to create an image with images as layers."/>
       </docblock>
-      <constant namespace="default" line="27" package="Sutra">
+      <constant namespace="default" line="24" package="Sutra">
         <name>DIRECTION_UPSIDE_UP</name>
         <value><![CDATA[0]]></value>
-        <docblock line="22">
+        <docblock line="19">
           <description><![CDATA[Rotation direction upside-up.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="22" name="var" description="" type="integer">
+          <tag line="19" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="34" package="Sutra">
+      <constant namespace="default" line="31" package="Sutra">
         <name>DIRECTION_UPSIDE_DOWN</name>
         <value><![CDATA[1]]></value>
-        <docblock line="29">
+        <docblock line="26">
           <description><![CDATA[Rotation direction upside-down.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="29" name="var" description="" type="integer">
+          <tag line="26" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="41" package="Sutra">
+      <constant namespace="default" line="38" package="Sutra">
         <name>DIRECTION_UPSIDE_LEFT</name>
         <value><![CDATA[2]]></value>
-        <docblock line="36">
+        <docblock line="33">
           <description><![CDATA[Rotation direction upside-left.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="36" name="var" description="" type="integer">
+          <tag line="33" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="48" package="Sutra">
+      <constant namespace="default" line="45" package="Sutra">
         <name>DIRECTION_UPSIDE_RIGHT</name>
         <value><![CDATA[3]]></value>
-        <docblock line="43">
+        <docblock line="40">
           <description><![CDATA[Rotation direction upside-right.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="43" name="var" description="" type="integer">
+          <tag line="40" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="55" package="Sutra">
+      <constant namespace="default" line="52" package="Sutra">
         <name>FLIP_HORIZONTAL</name>
         <value><![CDATA[0]]></value>
-        <docblock line="50">
+        <docblock line="47">
           <description><![CDATA[Flip direction horizontal.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="50" name="var" description="" type="integer">
+          <tag line="47" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="62" package="Sutra">
+      <constant namespace="default" line="59" package="Sutra">
         <name>FLIP_VERTICAL</name>
         <value><![CDATA[1]]></value>
-        <docblock line="57">
+        <docblock line="54">
           <description><![CDATA[Flip direction vertical.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="57" name="var" description="" type="integer">
+          <tag line="54" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="69" package="Sutra">
+      <constant namespace="default" line="66" package="Sutra">
         <name>FLIP_BOTH</name>
         <value><![CDATA[2]]></value>
-        <docblock line="64">
+        <docblock line="61">
           <description><![CDATA[Flip direction both ways.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="64" name="var" description="" type="integer">
+          <tag line="61" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="76" package="Sutra">
+      <constant namespace="default" line="73" package="Sutra">
         <name>FLIP_NONE</name>
         <value><![CDATA[3]]></value>
-        <docblock line="71">
+        <docblock line="68">
           <description><![CDATA[No flip.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="71" name="var" description="" type="integer">
+          <tag line="68" name="var" description="" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="false" visibility="private" line="83" package="Sutra">
+      <property final="false" static="false" visibility="private" line="80" package="Sutra">
         <name>$operations_queue</name>
         <default><![CDATA[array()]]></default>
-        <docblock line="78">
+        <docblock line="75">
           <description><![CDATA[Operations queue.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="78" name="var" description="" type="array">
+          <tag line="75" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="93" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="90" package="">
         <name>saveChanges</name>
         <type>function</type>
-        <docblock line="85">
+        <docblock line="82">
           <description><![CDATA[Override saveChanges() so that our queue runs first.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="85" name="param" description="The new file format for the image. One of: 'jpg', 'gif', 'png'. Default is NULL (no change)." type="string" variable="$new_image_type">
+          <tag line="82" name="param" description="The new file format for the image. One of: 'jpg', 'gif', 'png'. Default is NULL (no change)." type="string" variable="$new_image_type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="85" name="param" description="Quality value from 0 to 100 if the image is JPEG. Otherwise ignored. Default is 90." type="integer" variable="$jpeg_quality">
+          <tag line="82" name="param" description="Quality value from 0 to 100 if the image is JPEG. Otherwise ignored. Default is 90." type="integer" variable="$jpeg_quality">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="85" name="param" description="Overwrite the old image if true. Default is FALSE." type="boolean" variable="$overwrite">
+          <tag line="82" name="param" description="Overwrite the old image if true. Default is FALSE." type="boolean" variable="$overwrite">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="85" name="return" description="The image object, to allow for method chaining." type="\sImage">
+          <tag line="82" name="return" description="The image object, to allow for method chaining." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="93">
+        <argument line="90">
           <name>$new_image_type</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
-        <argument line="93">
+        <argument line="90">
           <name>$jpeg_quality</name>
           <default><![CDATA[90]]></default>
           <type/>
         </argument>
-        <argument line="93">
+        <argument line="90">
           <name>$overwrite</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="131" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="127" package="">
         <name>flip</name>
         <type>function</type>
-        <docblock line="106">
+        <docblock line="101">
           <description><![CDATA[Flip the image in a specified direction. If PECL Imagick class is
   not found, GD will be used.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="106" name="throws" description="If Imagick fails to return data, or if an ImagickException is thrown." type="\fUnexpectedException">
+          <tag line="101" name="throws" description="If Imagick fails to return data, or if an ImagickException is thrown." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="106" name="throws" description="If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue)." type="\fEnvironmentException">
+          <tag line="101" name="throws" description="If no image processor is found; if the image type is invalid for GD. Additional notes: - To use ImageMagick (which is much faster), you must install the PECL Imagick extension. - PJPEG is not supported if GD is used. - This overwrites the data in the file before returning (this is NOT part of the operation queue). If the second argument is of internal type boolean, it will be treated as the $overwrite argument. The JPEG quality will be 90." type="\fEnvironmentException">
             <type by_reference="false">\fEnvironmentException</type>
           </tag>
-          <tag line="106" name="todo" description="Accept third argument boolean overwrite."/>
-          <tag line="106" name="todo" description="Use ImageMagick command line instead of Imagick."/>
-          <tag line="106" name="param" description="One of the FLIP_* constants." type="integer" variable="$type">
+          <tag line="101" name="param" description="One of the FLIP_* constants." type="integer" variable="$type">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="106" name="param" description="Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90." type="integer" variable="$jpeg_quality">
+          <tag line="101" name="param" description="Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90." type="integer" variable="$jpeg_quality">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="106" name="return" description="The image object, to allow method chaining." type="\sImage">
+          <tag line="101" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="101" name="return" description="The image object, to allow method chaining." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="131">
+        <argument line="127">
           <name>$type</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="131">
+        <argument line="127">
           <name>$jpeg_quality</name>
           <default><![CDATA[90]]></default>
           <type/>
         </argument>
+        <argument line="127">
+          <name>$overwrite</name>
+          <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="280" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="286" package="">
         <name>rotateAccordingToEXIFData</name>
         <type>function</type>
-        <docblock line="272">
+        <docblock line="275">
           <description><![CDATA[Rotate an image a certain way based on EXIF information embedded. Only
   JPEG and TIFF images are supported.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="272" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="string" variable="$direction">
+          <tag line="275" name="throws" description="If the EXIF extension is not installed." type="\fEnvironmentException">
+            <type by_reference="false">\fEnvironmentException</type>
+          </tag>
+          <tag line="275" name="param" description="Optional. One of the DIRECTION_* constant values. Default is up-side up." type="string" variable="$direction">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="272" name="return" description="Object to allow method chaining." type="\sImage">
+          <tag line="275" name="param" description="If the file should be overwritten." type="boolean" variable="$overwrite">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="275" name="return" description="Object to allow method chaining." type="\sImage">
             <type by_reference="false">\sImage</type>
           </tag>
         </docblock>
-        <argument line="280">
+        <argument line="286">
           <name>$direction</name>
           <default><![CDATA[self::DIRECTION_UPSIDE_UP]]></default>
+          <type/>
+        </argument>
+        <argument line="286">
+          <name>$overwrite</name>
+          <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
@@ -47926,7 +48173,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p>]]><
   <package name="Flourish" full_name="Flourish"/>
   <package name="Sutra" full_name="Sutra"/>
   <namespace name="default" full_name="default"/>
-  <marker count="11">todo</marker>
+  <marker count="0">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="0"/>
 </project>

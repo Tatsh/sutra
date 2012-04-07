@@ -34,9 +34,7 @@
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
                 <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul><li>todo 
-                <span class="label label-info">11</span>
-</li></ul></a></li>
+                <ul></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -75,7 +73,7 @@
 <li class="method public inherited"><a href="#getScale" title="getScale :: Returns the scale of this number"><span class="description">Returns the scale of this number</span><pre>getScale()</pre></a></li>
 <li class="method public inherited"><a href="#gt" title="gt :: Indicates if this value is greater than the one passed"><span class="description">Indicates if this value is greater than the one passed</span><pre>gt()</pre></a></li>
 <li class="method public inherited"><a href="#gte" title="gte :: Indicates if this value is greater than or equal to the one passed"><span class="description">Indicates if this value is greater than or equal to the one passed</span><pre>gte()</pre></a></li>
-<li class="method public "><a href="#isEqualToIntCast" title="isEqualToIntCast :: Checks if a number is equal to its int-casted counterpart."><span class="description">Checks if a number is equal to its int-casted counterpart.</span><pre>isEqualToIntCast()</pre></a></li>
+<li class="method public "><a href="#isEqualToIntCast" title="isEqualToIntCast :: Checks if a number is equal to its integer-casted counterpart."><span class="description">Checks if a number is equal to its integer-casted counterpart.</span><pre>isEqualToIntCast()</pre></a></li>
 <li class="method public inherited"><a href="#lt" title="lt :: Indicates if this value is less than the one passed"><span class="description">Indicates if this value is less than the one passed</span><pre>lt()</pre></a></li>
 <li class="method public inherited"><a href="#lte" title="lte :: Indicates if this value is less than or equal to the one passed"><span class="description">Indicates if this value is less than or equal to the one passed</span><pre>lte()</pre></a></li>
 <li class="method public inherited"><a href="#mod" title="mod :: Returns the remainder of dividing this number by the divisor provided. All floats are converted to integers."><span class="description">Returns the remainder of dividing this number by the divisor provided. All floats are converted to integers.</span><pre>mod()</pre></a></li>
@@ -122,6 +120,7 @@
 <li class="method private inherited"><a href="#performSub" title="performSub :: Subtracts the second number from the first"><span class="description">Subtracts the second number from the first</span><pre>performSub()</pre></a></li>
 <li class="method private inherited"><a href="#setScale" title="setScale :: Sets the scale for a number"><span class="description">Sets the scale for a number</span><pre>setScale()</pre></a></li>
 <li class="method private inherited"><a href="#stripLeadingZeroes" title="stripLeadingZeroes :: Strips the leading zeroes off of a number"><span class="description">Strips the leading zeroes off of a number</span><pre>stripLeadingZeroes()</pre></a></li>
+<li class="method private "><a href="#tossIfInvalidLocale" title="tossIfInvalidLocale :: Checks if a locale is valid."><span class="description">Checks if a locale is valid.</span><pre>tossIfInvalidLocale()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
@@ -131,6 +130,7 @@
 <li class="property private "><a href="#%24locale" title="$locale :: The locale for the class. Defaults to US English."><span class="description">The locale for the class. Defaults to US English.</span><pre>$locale</pre></a></li>
 <li class="property private inherited"><a href="#%24scale" title="$scale :: The scale (number of digits after the decimal) of the number"><span class="description">The scale (number of digits after the decimal) of the number</span><pre>$scale</pre></a></li>
 <li class="property private inherited"><a href="#%24unformat_callback" title="$unformat_callback :: A callback to process all values through"><span class="description">A callback to process all values through</span><pre>$unformat_callback</pre></a></li>
+<li class="property private "><a href="#%24valid_locales" title="$valid_locales :: Common list of locales."><span class="description">Common list of locales.</span><pre>$valid_locales</pre></a></li>
 <li class="property private inherited"><a href="#%24value" title="$value :: The value of the number"><span class="description">The value of the number</span><pre>$value</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
@@ -272,14 +272,11 @@
 <p class="long_description"><p>For use with different languages and locales.</p>
 
 <p>All callbacks must receive one value, an integer, and return a string.</p></p>
-<table class="table table-bordered"><tr>
-<th>todo</th>
-<td>Validate the locale against a list of locales.</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$locale</h4>
-<code>string</code><p>The locale name. Should be a standard locale name such as en_GB, fr_FR, etc.</p></div>
+<code>string</code><p>The locale name. Should be a standard locale name such as en-GB, fr-FR, etc.</p>
+</div>
 <div class="subelement argument">
 <h4>$method_name</h4>
 <code>string</code><p>Method name in this class to override. One of: ordinal, ordinalSuffix. The instance methods will also use this callback.</p></div>
@@ -289,7 +286,7 @@
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
-<td>If the method name is invalid.</td>
+<td>If the method name or locale is invalid.</td>
 </tr></table>
 </div></div>
 </div>
@@ -552,7 +549,7 @@
 </div></div>
 </div>
 <a name="isEqualToIntCast" id="isEqualToIntCast"></a><div class="element clickable method public isEqualToIntCast" data-toggle="collapse" data-target=".isEqualToIntCast .collapse">
-<h2>Checks if a number is equal to its int-casted counterpart.</h2>
+<h2>Checks if a number is equal to its integer-casted counterpart.</h2>
 <pre>isEqualToIntCast(mixed $value) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
@@ -881,10 +878,6 @@ and is primarily useful for cryptographic functionality.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>todo</th>
-<td>Validate the locale against a list of locales.</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$locale</h4>
@@ -898,14 +891,16 @@ and is primarily useful for cryptographic functionality.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>todo</th>
-<td>Validate the locale against a list of locales.</td>
-</tr></table>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$locale</h4>
-<code>string</code><p>The language name. Should be a standard locale name such as en_GB, fr_FR, etc.</p></div>
+<code>string</code><p>The locale name. Should be a standard locale name such as en-GB, fr-FR, etc.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the locale is invalid.</td>
+</tr></table>
 </div></div>
 </div>
 <a name="sign" id="sign"></a><div class="element clickable method public sign" data-toggle="collapse" data-target=".sign .collapse">
@@ -1001,7 +996,13 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$locale</h4>
-<code>string</code><p>Locale name, such as fr_FR.</p></div>
+<code>string</code><p>Locale name, such as fr-FR.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the locale is invalid.</td>
+</tr></table>
 </div></div>
 </div>
 <a name="cmp" id="cmp"></a><div class="element clickable method private cmp" data-toggle="collapse" data-target=".cmp .collapse">
@@ -1350,6 +1351,23 @@ and is primarily useful for cryptographic functionality.</p></p>
 <code>string</code>The number with leading zeroes stripped</div>
 </div></div>
 </div>
+<a name="tossIfInvalidLocale" id="tossIfInvalidLocale"></a><div class="element clickable method private tossIfInvalidLocale" data-toggle="collapse" data-target=".tossIfInvalidLocale .collapse">
+<h2>Checks if a locale is valid.</h2>
+<pre>tossIfInvalidLocale(string $locale) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$locale</h4>
+<code>string</code><p>Locale to check.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the locale is invalid.</td>
+</tr></table>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
 <a name="%24callbacks" id="$callbacks"> </a><div class="element clickable property private $callbacks" data-toggle="collapse" data-target=".$callbacks .collapse">
@@ -1403,6 +1421,18 @@ and is primarily useful for cryptographic functionality.</p></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fNumber::$$unformat_callback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24valid_locales" id="$valid_locales"> </a><div class="element clickable property private $valid_locales" data-toggle="collapse" data-target=".$valid_locales .collapse">
+<h2>Common list of locales.</h2>
+<pre>$valid_locales : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\http://www.iana.org/assignments/language-subtag-registry</td>
 </tr></table>
 </div></div>
 </div>
@@ -1487,7 +1517,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T06:22:54-05:00.<br></footer></div>
+            generated on 2012-04-07T07:29:28-05:00.<br></footer></div>
 </div>
 </body>
 </html>
