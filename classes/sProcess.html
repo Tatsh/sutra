@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">176</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">11</span>
@@ -181,10 +181,14 @@
 </div>
 <a name="addArgument" id="addArgument"></a><div class="element clickable method public addArgument" data-toggle="collapse" data-target=".addArgument .collapse">
 <h2>Add argument (or arguments) to the current set of arguments.</h2>
-<pre>addArgument() : <a href="../classes/sProcess.html">\sProcess</a></pre>
+<pre>addArgument(\string,... $arg) : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arg</h4>
+<code>\string,...</code><p>Arguments to add.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/sProcessException.html">\sProcessException</a></code></th>
@@ -212,7 +216,7 @@
 </div>
 <a name="checkOS" id="checkOS"></a><div class="element clickable method public checkOS" data-toggle="collapse" data-target=".checkOS .collapse">
 <h2>Check the current operating system. Alias for fCore::checkOS().</h2>
-<pre>checkOS() : boolean</pre>
+<pre>checkOS(string $os) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
@@ -220,6 +224,10 @@
 <th>see</th>
 <td>\fCore::checkOS()</td>
 </tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$os</h4>
+<code>string</code><p>One of: windows, linux, mac.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>Whether or not the system matches.</div>
@@ -313,7 +321,7 @@
 <h2>Set the working directory. Note that this changes into the specified
   directory, so you may want to save the current directory before calling
   this method.</h2>
-<pre>setWorkingDirectory($dir) : void</pre>
+<pre>setWorkingDirectory(string $dir) : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
@@ -324,8 +332,7 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$dir</h4>
-<code></code>
-</div>
+<code>string</code><p>Path.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
@@ -342,7 +349,7 @@
 </div>
 <a name="write" id="write"></a><div class="element clickable method public write" data-toggle="collapse" data-target=".write .collapse">
 <h2>Write to the interactive process.</h2>
-<pre>write() : <a href="../classes/sProcess.html">\sProcess</a></pre>
+<pre>write(\$format,... $format) : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
@@ -350,6 +357,11 @@
 <th>see</th>
 <td>\fprintf()</td>
 </tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>\$format,...</code><p>A formatted string and arguments. Example: "%s", 'string'.</p>
+</div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/sProcessException.html">\sProcessException</a></code></th>
@@ -383,15 +395,14 @@
 <a name="exists" id="exists"></a><div class="element clickable method private exists" data-toggle="collapse" data-target=".exists .collapse">
 <h2>Find out if a binary exists on the system in PATH. The binary is NOT
   tested for executability.</h2>
-<pre>exists($bin_name) : boolean</pre>
+<pre>exists(string $bin_name) : boolean</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$bin_name</h4>
-<code></code>
-</div>
+<code>string</code><p>Binary without any path. Can include .exe on Windows but that is not required.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>TRUE If the binary is found, FALSE otherwise.</div>
@@ -495,7 +506,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T05:59:14-05:00.<br></footer></div>
+            generated on 2012-04-07T06:22:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>
