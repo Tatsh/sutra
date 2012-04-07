@@ -11,3 +11,5 @@ git add .
 git commit -m "Generated documentation"
 git push -u origin gh-pages
 popd
+
+# kate: replace-tabs false;
