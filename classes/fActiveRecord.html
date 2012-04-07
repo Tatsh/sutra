@@ -1,0 +1,1026 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fActiveRecord</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__call" title="__call :: Handles all method calls for columns, related records and hook callbacks"><span class="description">Handles all method calls for columns, related records and hook callbacks</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#__construct" title="__construct :: Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded"><span class="description">Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#clearIdentityMap" title="clearIdentityMap :: Clears the identity map"><span class="description">Clears the identity map</span><pre>clearIdentityMap()</pre></a></li>
+<li class="method public "><a href="#delete" title="delete :: Deletes a record from the database, but does not destroy the object"><span class="description">Deletes a record from the database, but does not destroy the object</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#exists" title="exists :: Checks to see if the record exists in the database"><span class="description">Checks to see if the record exists in the database</span><pre>exists()</pre></a></li>
+<li class="method public "><a href="#load" title="load :: Loads a record from the database"><span class="description">Loads a record from the database</span><pre>load()</pre></a></li>
+<li class="method public "><a href="#populate" title="populate :: Sets the values for this record by getting values from the request through the fRequest class"><span class="description">Sets the values for this record by getting values from the request through the fRequest class</span><pre>populate()</pre></a></li>
+<li class="method public "><a href="#reflect" title="reflect :: Generates the method signatures for all methods (including dynamic ones)"><span class="description">Generates the method signatures for all methods (including dynamic ones)</span><pre>reflect()</pre></a></li>
+<li class="method public "><a href="#replicate" title="replicate :: Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records"><span class="description">Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records</span><pre>replicate()</pre></a></li>
+<li class="method public "><a href="#store" title="store :: Stores a record in the database, whether existing or new"><span class="description">Stores a record in the database, whether existing or new</span><pre>store()</pre></a></li>
+<li class="method public "><a href="#validate" title="validate :: Validates the values of the record against the database and any additional validation rules"><span class="description">Validates the values of the record against the database and any additional validation rules</span><pre>validate()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method protected "><a href="#configure" title="configure :: Allows the programmer to set features for the class"><span class="description">Allows the programmer to set features for the class</span><pre>configure()</pre></a></li>
+<li class="method protected "><a href="#constructInsertParams" title="constructInsertParams :: Creates the fDatabase::translatedQuery() insert statement params"><span class="description">Creates the fDatabase::translatedQuery() insert statement params</span><pre>constructInsertParams()</pre></a></li>
+<li class="method protected "><a href="#constructUpdateParams" title="constructUpdateParams :: Creates the fDatabase::translatedQuery() update statement params"><span class="description">Creates the fDatabase::translatedQuery() update statement params</span><pre>constructUpdateParams()</pre></a></li>
+<li class="method protected "><a href="#encode" title="encode :: Retrieves a value from the record and prepares it for output into an HTML form element."><span class="description">Retrieves a value from the record and prepares it for output into an HTML form element.</span><pre>encode()</pre></a></li>
+<li class="method protected "><a href="#fetchResultFromUniqueKey" title="fetchResultFromUniqueKey :: Loads a record from the database based on a UNIQUE key"><span class="description">Loads a record from the database based on a UNIQUE key</span><pre>fetchResultFromUniqueKey()</pre></a></li>
+<li class="method protected "><a href="#get" title="get :: Retrieves a value from the record"><span class="description">Retrieves a value from the record</span><pre>get()</pre></a></li>
+<li class="method protected "><a href="#inspect" title="inspect :: Retrieves information about a column"><span class="description">Retrieves information about a column</span><pre>inspect()</pre></a></li>
+<li class="method protected "><a href="#loadFromIdentityMap" title="loadFromIdentityMap :: Tries to load the object (via references to class vars) from the fORM identity map"><span class="description">Tries to load the object (via references to class vars) from the fORM identity map</span><pre>loadFromIdentityMap()</pre></a></li>
+<li class="method protected "><a href="#loadFromResult" title="loadFromResult :: Loads a record from the database directly from a result object"><span class="description">Loads a record from the database directly from a result object</span><pre>loadFromResult()</pre></a></li>
+<li class="method protected "><a href="#prepare" title="prepare :: Retrieves a value from the record and prepares it for output into html."><span class="description">Retrieves a value from the record and prepares it for output into html.</span><pre>prepare()</pre></a></li>
+<li class="method protected "><a href="#set" title="set :: Sets a value to the record"><span class="description">Sets a value to the record</span><pre>set()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#determineSubject" title="determineSubject :: Takes information from a method call and determines the subject, route and if subject was plural"><span class="description">Takes information from a method call and determines the subject, route and if subject was plural</span><pre>determineSubject()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24cache" title="$cache :: A data store for caching data related to a record, the structure of this is completely up to the developer using it"><span class="description">A data store for caching data related to a record, the structure of this is completely up to the developer using it</span><pre>$cache</pre></a></li>
+<li class="property protected "><a href="#%24callback_cache" title="$callback_cache :: Caches callbacks for methods"><span class="description">Caches callbacks for methods</span><pre>$callback_cache</pre></a></li>
+<li class="property protected "><a href="#%24configured" title="$configured :: An array of flags indicating a class has been configured"><span class="description">An array of flags indicating a class has been configured</span><pre>$configured</pre></a></li>
+<li class="property protected "><a href="#%24identity_map" title="$identity_map :: Maps objects via their primary key"><span class="description">Maps objects via their primary key</span><pre>$identity_map</pre></a></li>
+<li class="property protected "><a href="#%24method_name_cache" title="$method_name_cache :: Caches method name parsings"><span class="description">Caches method name parsings</span><pre>$method_name_cache</pre></a></li>
+<li class="property protected "><a href="#%24old_values" title="$old_values :: The old values for this record"><span class="description">The old values for this record</span><pre>$old_values</pre></a></li>
+<li class="property protected "><a href="#%24related_records" title="$related_records :: Records that are related to the current record via some relationship"><span class="description">Records that are related to the current record via some relationship</span><pre>$related_records</pre></a></li>
+<li class="property protected "><a href="#%24replicate_level" title="$replicate_level :: Keeps track of the recursive call level of replication so we can clear the map"><span class="description">Keeps track of the recursive call level of replication so we can clear the map</span><pre>$replicate_level</pre></a></li>
+<li class="property protected "><a href="#%24replicate_map" title="$replicate_map :: Keeps a list of records that have been replicated"><span class="description">Keeps a list of records that have been replicated</span><pre>$replicate_map</pre></a></li>
+<li class="property protected "><a href="#%24unescape_map" title="$unescape_map :: Contains a list of what columns in each class need to be unescaped and what data type they are"><span class="description">Contains a list of what columns in each class need to be unescaped and what data type they are</span><pre>$unescape_map</pre></a></li>
+<li class="property protected "><a href="#%24values" title="$values :: The values for this record"><span class="description">The values for this record</span><pre>$values</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#assign" title="assign :: "><span class="description">assign</span><pre>assign</pre></a></li>
+<li class="constant  "><a href="#changed" title="changed :: "><span class="description">changed</span><pre>changed</pre></a></li>
+<li class="constant  "><a href="#checkConditions" title="checkConditions :: "><span class="description">checkConditions</span><pre>checkConditions</pre></a></li>
+<li class="constant  "><a href="#forceConfigure" title="forceConfigure :: "><span class="description">forceConfigure</span><pre>forceConfigure</pre></a></li>
+<li class="constant  "><a href="#hasOld" title="hasOld :: "><span class="description">hasOld</span><pre>hasOld</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#retrieveOld" title="retrieveOld :: "><span class="description">retrieveOld</span><pre>retrieveOld</pre></a></li>
+<li class="constant  "><a href="#validateClass" title="validateClass :: "><span class="description">validateClass</span><pre>validateClass</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfActiveRecord" id="\fActiveRecord"></a><div href="../classes/fActiveRecord.html" class="element class">
+<p class="short_description">An [http://en.wikipedia.org/wiki/Active_record_pattern active record pattern] base class</p>
+<div class="details">
+<p class="long_description"><p>This class uses fORMSchema to inspect your database and provides an
+OO interface to a single database table. The class dynamically handles
+method calls for getting, setting and other operations on columns. It also
+dynamically handles retrieving and storing related records.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fActiveRecord">http://flourishlib.com/fActiveRecord</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b81</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b81  Fixed a bug with updating a record that contains only an auto-incrementing primary key [wb, 2011-09-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b80  Added support to ::checkCondition() for the `^~` and `$~` operators [wb, 2011-06-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b79  Fixed some bugs in handling relationships between PHP 5.3 namespaced classes [wb, 2011-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b78  Backwards Compatibility Break - ::reflect() now returns an associative array instead of a string [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b77  Fixed ::inspect() to not throw an fProgrammerException when a valid element has a `NULL` value [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b76  Added ::clearIdentityMap() [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b75  Fixed a bug where child records of a record with a non-auto-incrementing primary key would not be saved properly for a new record [wb, 2010-12-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b74  Updated ::populate() to use the `binary` type for fRequest::get() [wb, 2010-11-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b73  Backwards Compatibility Break - changed column set methods to treat strings of all whitespace the same as empty string and convert them to `NULL` [wb, 2010-11-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b72  Added the new `comment` element to the reflection signature for `inspect` methods [wb, 2010-11-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b71  Updated class to use fORM::getRelatedClass() [wb, 2010-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b70  Added support for PHP 5.3 namespaced fActiveRecord classes [wb, 2010-11-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b69  Backwards Compatibility Break - changed ::validate() to return a nested array of validation messages when there are validation errors on child records [wb-imarc+wb, 2010-10-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b68  Added hooks to ::replicate() [wb, 2010-09-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b67  Updated code to work with the new fORM API [wb, 2010-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b66  Fixed a bug with ::store() and non-primary key auto-incrementing columns [wb, 2010-07-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b65  Fixed bugs with ::inspect() making some `min_value` and `max_value` elements available for non-numeric types, fixed ::reflect() to list the `min_value` and `max_value` elements [wb, 2010-06-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b64  BackwardsCompatibilityBreak - changed ::validate()'s returned messages array to have field name keys - added the option to ::validate() to remove field names from messages [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b63  Changed how is_subclass_of() is used to work around a bug in 5.2.x [wb, 2010-04-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b62  Fixed a bug that could cause infinite recursion starting in v1.0.0b60 [wb, 2010-04-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b61  Fixed issues with handling `populate` actions when working with mapped classes [wb, 2010-03-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b60  Fixed issues with handling `associate` and `has` actions when working with mapped classes, added ::validateClass() [wb, 2010-03-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b59  Changed an extended UTF-8 arrow character into the correct `-&gt;` [wb, 2010-03-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b58  Fixed ::reflect() to specify the value returned from `set` methods [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b57  Added the `post::loadFromIdentityMap()` hook and fixed ::__construct() to always call the `post::__construct()` hook [wb, 2010-03-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b56  Fixed `$force_cascade` in ::delete() to work even when the restricted relationship is once-removed through an unrestricted relationship [wb, 2010-03-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b55  Fixed ::load() to that related records are cleared, requiring them to be loaded from the database [wb, 2010-03-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b54  Fixed detection of route name for one-to-one relationships in ::delete() [wb, 2010-03-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b53  Fixed a bug where related records with a primary key that contained a foreign key with an on update cascade clause would be deleted when changing the value of the column referenced by the foreign key [wb, 2009-12-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b52  Backwards Compatibility Break - Added the $force_cascade parameter to ::delete() and ::store() - enabled calling ::prepare() and ::encode() for non-column get methods, added `::has{RelatedRecords}()` methods [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b51  Made ::changed() properly recognize that a blank string and NULL are equivalent due to the way that ::set() casts values [wb, 2009-11-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b50  Fixed a bug with trying to load by a multi-column primary key where one of the columns was not specified [wb, 2009-11-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b49  Fixed a bug affecting where conditions with columns that are not null but have a default value [wb, 2009-11-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b48  Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b47  Changed `::associate{RelatedRecords}()`, `::link{RelatedRecords}()` and `::populate{RelatedRecords}()` to allow for method chaining [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b46  Changed SQL statements to use value placeholders and identifier escaping [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b45  Added support for `!~`, `&amp;~`, `&gt;&lt;` and OR comparisons to ::checkConditions(), made object handling in ::checkConditions() more robust [wb, 2009-09-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b44  Updated code for new fValidationException API [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b43  Updated code for new fRecordSet API [wb, 2009-09-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b42  Corrected a grammar bug in ::hash() [wb, 2009-09-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b41  Fixed a bug in the last version that would cause issues with classes containing a custom class to table mapping [wb, 2009-09-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b40  Added a check to the configuration part of ::__construct() to ensure modelled tables have primary keys [wb, 2009-08-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b39  Changed `set{ColumnName}()` methods to return the record for method chaining, fixed a bug with loading by multi-column unique constraints, fixed a bug with ::load() [wb, 2009-08-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b38  Updated ::changed() to do a strict comparison when at least one value is NULL [wb, 2009-08-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b37  Changed ::__construct() to allow any Iterator object instead of just fResult [wb, 2009-08-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b36  Fixed a bug with setting NULL values from v1.0.0b33 [wb, 2009-08-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b35  Fixed a bug with unescaping data in ::loadFromResult() from v1.0.0b33 [wb, 2009-08-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b34  Added the ability to compare fActiveRecord objects in ::checkConditions() [wb, 2009-08-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b33  Performance enhancements to ::__call() and ::__construct() [wb, 2009-08-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b32  Changed ::delete() to remove auto-incrementing primary keys after the post::delete() hook [wb, 2009-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b31  Fixed a bug with loading a record by a multi-column primary key, fixed one-to-one relationship API [wb, 2009-07-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Updated ::reflect() for new fORM::callReflectCallbacks() API [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Updated to use new fORM::callInspectCallbacks() method [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Fixed a bug where records would break the identity map at the end of ::store() [wb, 2009-07-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Changed ::hash() from a protected method to a static public/internal method that requires the class name for non-fActiveRecord values [wb, 2009-07-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Added ::checkConditions() from fRecordSet [wb, 2009-07-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Updated ::validate() to use new fORMValidation API, including new message search/replace functionality [wb, 2009-07-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Changed ::validate() to remove duplicate validation messages [wb, 2009-06-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Updated code for new fORMValidation::validateRelated() API [wb, 2009-06-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Added support for the $formatting parameter to encode methods on char, text and varchar columns [wb, 2009-06-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Performance tweaks and updates for fORM and fORMRelated API changes [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Added `list{RelatedRecords}()` methods, updated code for new fORMRelated API [wb, 2009-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Changed ::store() to use new fORMRelated::store() method [wb, 2009-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added some missing parameter information to ::reflect() [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Fixed bugs in ::__clone() and ::replicate() related to recursive relationships [wb-imarc, 2009-05-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed an incorrect variable reference in ::store() [wb, 2009-05-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  ::store() no longer tries to get an auto-incrementing ID from the database if a value was set [wb, 2009-05-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  ::delete(), ::load(), ::populate() and ::store() now return the record to allow for method chaining [wb, 2009-03-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  ::set() now removes commas from integers and floats to prevent validation issues [wb, 2009-03-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  ::encode() no longer adds commas to floats [wb, 2009-03-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  ::__wakeup() no longer registers the record as the definitive copy in the identity map [wb, 2009-03-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Changed ::__construct() to populate database default values when a non-existing record is instantiated [wb, 2009-01-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed ::exists() to properly detect cases when an existing record has one or more NULL values in the primary key [wb, 2009-01-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed ::__construct() to not trigger the post::__construct() hook when force-configured [wb, 2008-12-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   ::__construct() now accepts an associative array matching any unique key or primary key, fixed the post::__construct() hook to be called once for each record [wb, 2008-12-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed ::replicate() to use plural record names for related records [wb, 2008-12-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Added ::replicate() to allow cloning along with related records [wb, 2008-12-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Changed ::__clone() to clone objects contains in the values and cache arrays [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Added the ::__clone() method to properly duplicate a record [wb, 2008-12-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-08-04]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__call" id="__call"></a><div class="element clickable method public __call" data-toggle="collapse" data-target=".__call .collapse">
+<h2>Handles all method calls for columns, related records and hook callbacks</h2>
+<pre>__call(string $method_name, array $parameters) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Dynamically handles <code>get</code>, <code>set</code>, <code>prepare</code>, <code>encode</code> and <code>inspect</code>
+methods for each column in this record. Method names are in the form
+<code>verbColumName()</code>.</p>
+
+<p>This method also handles <code>associate</code>, <code>build</code>, <code>count</code>, <code>has</code>, and <code>link</code>
+verbs for records in many-to-many relationships; <code>build</code>, <code>count</code>, <code>has</code>
+and <code>populate</code> verbs for all related records in one-to-many relationships
+and <code>create</code>, <code>has</code> and <code>populate</code> verbs for all related records in
+one-to-one relationships, and the <code>create</code> verb for all related records
+in many-to-one relationships.</p>
+
+<p>Method callbacks registered through fORM::registerActiveRecordMethod()
+will be delegated via this method.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The name of the method called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value returned by the method called</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded</h2>
+<pre>__construct(mixed $key) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>mixed</code><p>The primary key or unique key value(s) - single column primary keys will accept a scalar value, all others must be an associative array of <code>(string) {column} => (mixed) {value}</code></p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNotFoundException.html">\fNotFoundException</a></code></th>
+<td>When the record specified by `$key` can not be found in the database</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code></div>
+</div></div>
+</div>
+<a name="clearIdentityMap" id="clearIdentityMap"></a><div class="element clickable method public clearIdentityMap" data-toggle="collapse" data-target=".clearIdentityMap .collapse">
+<h2>Clears the identity map</h2>
+<pre>clearIdentityMap() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
+<h2>Deletes a record from the database, but does not destroy the object</h2>
+<pre>delete(boolean $force_cascade) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method will start a database transaction if one is not already active.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$force_cascade</h4>
+<code>boolean</code><p>When TRUE, this will cause all child objects to be deleted, even if the ON DELETE clause is RESTRICT or NO ACTION</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="exists" id="exists"></a><div class="element clickable method public exists" data-toggle="collapse" data-target=".exists .collapse">
+<h2>Checks to see if the record exists in the database</h2>
+<pre>exists() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the record exists in the database</div>
+</div></div>
+</div>
+<a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
+<h2>Loads a record from the database</h2>
+<pre>load() : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNotFoundException.html">\fNotFoundException</a></code></th>
+<td>When the record could not be found in the database</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="populate" id="populate"></a><div class="element clickable method public populate" data-toggle="collapse" data-target=".populate .collapse">
+<h2>Sets the values for this record by getting values from the request through the fRequest class</h2>
+<pre>populate() : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="reflect" id="reflect"></a><div class="element clickable method public reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>Generates the method signatures for all methods (including dynamic ones)</h2>
+<pre>reflect(boolean $include_doc_comments) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$include_doc_comments</h4>
+<code>boolean</code><p>If the doc block comments for each method should be included</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of method name => method signature</div>
+</div></div>
+</div>
+<a name="replicate" id="replicate"></a><div class="element clickable method public replicate" data-toggle="collapse" data-target=".replicate .collapse">
+<h2>Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records</h2>
+<pre>replicate(string $related_class) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method will accept three different sets of parameters:</p>
+
+<ul>
+<li>No parameters: this object will be cloned</li>
+<li>A single <code>TRUE</code> value: this object plus all many-to-many associations and all child records (recursively) will be cloned</li>
+<li>Any number of plural related record class names: the many-to-many associations or child records that correspond to the classes specified will be cloned</li>
+</ul>
+
+<p>The class names specified can be a simple class name if there is only a
+single route between the two corresponding database tables. If there is
+more than one route between the two tables, the class name should be
+substituted with a string in the format <code>'RelatedClass{route}'</code>.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$related_class</h4>
+<code>string</code><p>The plural related class to replicate - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The cloned record</div>
+</div></div>
+</div>
+<a name="store" id="store"></a><div class="element clickable method public store" data-toggle="collapse" data-target=".store .collapse">
+<h2>Stores a record in the database, whether existing or new</h2>
+<pre>store(boolean $force_cascade) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method will start database and filesystem transactions if they have
+not already been started.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$force_cascade</h4>
+<code>boolean</code><p>When storing related records, this will force deleting child records even if they have their own children in a relationship with an RESTRICT or NO ACTION for the ON DELETE clause</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When ::validate() throws an exception</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="validate" id="validate"></a><div class="element clickable method public validate" data-toggle="collapse" data-target=".validate .collapse">
+<h2>Validates the values of the record against the database and any additional validation rules</h2>
+<pre>validate(boolean $return_messages, boolean $remove_column_names) : void | array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$return_messages</h4>
+<code>boolean</code><p>If an array of validation messages should be returned instead of an exception being thrown</p></div>
+<div class="subelement argument">
+<h4>$remove_column_names</h4>
+<code>boolean</code><p>If column names should be removed from the returned messages, leaving just the message itself</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the record, or one of the associated records, violates one of the validation rules for the class or can not be properly stored in the database</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>void</code><code>array</code>If $return_messages is TRUE, an array of validation messages will be returned</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="configure" id="configure"></a><div class="element clickable method protected configure" data-toggle="collapse" data-target=".configure .collapse">
+<h2>Allows the programmer to set features for the class</h2>
+<pre>configure() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>This method is only called once per page load for each class.</p></p></div></div>
+</div>
+<a name="constructInsertParams" id="constructInsertParams"></a><div class="element clickable method protected constructInsertParams" data-toggle="collapse" data-target=".constructInsertParams .collapse">
+<h2>Creates the fDatabase::translatedQuery() insert statement params</h2>
+<pre>constructInsertParams() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parameters for an fDatabase::translatedQuery() SQL insert statement</div>
+</div></div>
+</div>
+<a name="constructUpdateParams" id="constructUpdateParams"></a><div class="element clickable method protected constructUpdateParams" data-toggle="collapse" data-target=".constructUpdateParams .collapse">
+<h2>Creates the fDatabase::translatedQuery() update statement params</h2>
+<pre>constructUpdateParams() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parameters for an fDatabase::translatedQuery() SQL update statement</div>
+</div></div>
+</div>
+<a name="encode" id="encode"></a><div class="element clickable method protected encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>Retrieves a value from the record and prepares it for output into an HTML form element.</h2>
+<pre>encode(string $column, string $formatting) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Below are the transformations performed:</p>
+
+<ul>
+<li><strong>varchar, char, text</strong>: will run through fHTML::encode(), if <code>TRUE</code> is passed the text will be run through fHTML::convertNewLinks() and fHTML::makeLinks()</li>
+<li><strong>float</strong>: takes 1 parameter to specify the number of decimal places</li>
+<li><strong>date, time, timestamp</strong>: <code>format()</code> will be called on the fDate/fTime/fTimestamp object with the 1 parameter specified</li>
+<li><strong>objects</strong>: the object will be converted to a string by <code>__toString()</code> or a <code>(string)</code> cast and then will be run through fHTML::encode()</li>
+<li><strong>all other data types</strong>: the value will be run through fHTML::encode()</li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The name of the column to retrieve</p></div>
+<div class="subelement argument">
+<h4>$formatting</h4>
+<code>string</code><p>The formatting string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded value for the column specified</div>
+</div></div>
+</div>
+<a name="fetchResultFromUniqueKey" id="fetchResultFromUniqueKey"></a><div class="element clickable method protected fetchResultFromUniqueKey" data-toggle="collapse" data-target=".fetchResultFromUniqueKey .collapse">
+<h2>Loads a record from the database based on a UNIQUE key</h2>
+<pre>fetchResultFromUniqueKey(array $values) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>The UNIQUE key values to try and load with</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNotFoundException.html">\fNotFoundException</a></code></th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="get" id="get"></a><div class="element clickable method protected get" data-toggle="collapse" data-target=".get .collapse">
+<h2>Retrieves a value from the record</h2>
+<pre>get(string $column) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The name of the column to retrieve</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value for the column specified</div>
+</div></div>
+</div>
+<a name="inspect" id="inspect"></a><div class="element clickable method protected inspect" data-toggle="collapse" data-target=".inspect .collapse">
+<h2>Retrieves information about a column</h2>
+<pre>inspect(string $column, string $element) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The name of the column to inspect</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The metadata element to retrieve</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The metadata array for the column, or the metadata element specified</div>
+</div></div>
+</div>
+<a name="loadFromIdentityMap" id="loadFromIdentityMap"></a><div class="element clickable method protected loadFromIdentityMap" data-toggle="collapse" data-target=".loadFromIdentityMap .collapse">
+<h2>Tries to load the object (via references to class vars) from the fORM identity map</h2>
+<pre>loadFromIdentityMap(array $row, string $hash) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$row</h4>
+<code>array</code><p>The data source for the primary key values</p></div>
+<div class="subelement argument">
+<h4>$hash</h4>
+<code>string</code><p>The unique hash for this record</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the load was successful</div>
+</div></div>
+</div>
+<a name="loadFromResult" id="loadFromResult"></a><div class="element clickable method protected loadFromResult" data-toggle="collapse" data-target=".loadFromResult .collapse">
+<h2>Loads a record from the database directly from a result object</h2>
+<pre>loadFromResult(\Iterator $result, boolean $ignore_identity_map) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>\Iterator</code><p>The result object to use for loading the current object</p></div>
+<div class="subelement argument">
+<h4>$ignore_identity_map</h4>
+<code>boolean</code><p>If the identity map should be ignored and the values loaded no matter what</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the record was loaded from the identity map</div>
+</div></div>
+</div>
+<a name="prepare" id="prepare"></a><div class="element clickable method protected prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>Retrieves a value from the record and prepares it for output into html.</h2>
+<pre>prepare(string $column, mixed $formatting) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Below are the transformations performed:</p>
+
+<ul>
+<li><strong>varchar, char, text</strong>: will run through fHTML::prepare(), if <code>TRUE</code> is passed the text will be run through fHTML::convertNewLinks() and fHTML::makeLinks()</li>
+<li><strong>boolean</strong>: will return <code>'Yes'</code> or <code>'No'</code></li>
+<li><strong>integer</strong>: will add thousands/millions/etc. separators</li>
+<li><strong>float</strong>: will add thousands/millions/etc. separators and takes 1 parameter to specify the number of decimal places</li>
+<li><strong>date, time, timestamp</strong>: <code>format()</code> will be called on the fDate/fTime/fTimestamp object with the 1 parameter specified</li>
+<li><strong>objects</strong>: the object will be converted to a string by <code>__toString()</code> or a <code>(string)</code> cast and then will be run through fHTML::prepare()</li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The name of the column to retrieve</p></div>
+<div class="subelement argument">
+<h4>$formatting</h4>
+<code>mixed</code><p>The formatting parameter, if applicable</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted value for the column specified</div>
+</div></div>
+</div>
+<a name="set" id="set"></a><div class="element clickable method protected set" data-toggle="collapse" data-target=".set .collapse">
+<h2>Sets a value to the record</h2>
+<pre>set(string $column, mixed $value) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set the value to</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>This record, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="determineSubject" id="determineSubject"></a><div class="element clickable method private determineSubject" data-toggle="collapse" data-target=".determineSubject .collapse">
+<h2>Takes information from a method call and determines the subject, route and if subject was plural</h2>
+<pre>determineSubject(string $class, string $subject, string $route) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the method was called on</p></div>
+<div class="subelement argument">
+<h4>$subject</h4>
+<code>string</code><p>An underscore_notation subject - either a singular or plural class name</p>
+</div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route to the subject</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array with the structure: array(0 => $subject, 1 => $route, 2 => $plural)</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24cache" id="$cache"> </a><div class="element clickable property protected $cache" data-toggle="collapse" data-target=".$cache .collapse">
+<h2>A data store for caching data related to a record, the structure of this is completely up to the developer using it</h2>
+<pre>$cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24callback_cache" id="$callback_cache"> </a><div class="element clickable property protected $callback_cache" data-toggle="collapse" data-target=".$callback_cache .collapse">
+<h2>Caches callbacks for methods</h2>
+<pre>$callback_cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24configured" id="$configured"> </a><div class="element clickable property protected $configured" data-toggle="collapse" data-target=".$configured .collapse">
+<h2>An array of flags indicating a class has been configured</h2>
+<pre>$configured : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24identity_map" id="$identity_map"> </a><div class="element clickable property protected $identity_map" data-toggle="collapse" data-target=".$identity_map .collapse">
+<h2>Maps objects via their primary key</h2>
+<pre>$identity_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24method_name_cache" id="$method_name_cache"> </a><div class="element clickable property protected $method_name_cache" data-toggle="collapse" data-target=".$method_name_cache .collapse">
+<h2>Caches method name parsings</h2>
+<pre>$method_name_cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24old_values" id="$old_values"> </a><div class="element clickable property protected $old_values" data-toggle="collapse" data-target=".$old_values .collapse">
+<h2>The old values for this record</h2>
+<pre>$old_values : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>Column names are the keys, but a column key will only be present if a
+value has changed. The value associated with each key is an array of
+old values with the first entry being the oldest value. The static
+methods ::assign(), ::changed(), ::hasOld() and ::retrieveOld() are the
+best way to interact with this array.</p></p></div></div>
+</div>
+<a name="%24related_records" id="$related_records"> </a><div class="element clickable property protected $related_records" data-toggle="collapse" data-target=".$related_records .collapse">
+<h2>Records that are related to the current record via some relationship</h2>
+<pre>$related_records : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>This array is used to cache related records so that a database query
+is not required each time related records are accessed. The fORMRelated
+class handles most of the interaction with this array.</p></p></div></div>
+</div>
+<a name="%24replicate_level" id="$replicate_level"> </a><div class="element clickable property protected $replicate_level" data-toggle="collapse" data-target=".$replicate_level .collapse">
+<h2>Keeps track of the recursive call level of replication so we can clear the map</h2>
+<pre>$replicate_level : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24replicate_map" id="$replicate_map"> </a><div class="element clickable property protected $replicate_map" data-toggle="collapse" data-target=".$replicate_map .collapse">
+<h2>Keeps a list of records that have been replicated</h2>
+<pre>$replicate_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24unescape_map" id="$unescape_map"> </a><div class="element clickable property protected $unescape_map" data-toggle="collapse" data-target=".$unescape_map .collapse">
+<h2>Contains a list of what columns in each class need to be unescaped and what data type they are</h2>
+<pre>$unescape_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24values" id="$values"> </a><div class="element clickable property protected $values" data-toggle="collapse" data-target=".$values .collapse">
+<h2>The values for this record</h2>
+<pre>$values : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>This array always contains every column in the database table as a key
+with the value being the current value.</p></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="assign" id="assign"> </a><div class="element clickable constant  assign" data-toggle="collapse" data-target=".assign .collapse">
+<h2>assign</h2>
+<pre>assign </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="changed" id="changed"> </a><div class="element clickable constant  changed" data-toggle="collapse" data-target=".changed .collapse">
+<h2>changed</h2>
+<pre>changed </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="checkConditions" id="checkConditions"> </a><div class="element clickable constant  checkConditions" data-toggle="collapse" data-target=".checkConditions .collapse">
+<h2>checkConditions</h2>
+<pre>checkConditions </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="forceConfigure" id="forceConfigure"> </a><div class="element clickable constant  forceConfigure" data-toggle="collapse" data-target=".forceConfigure .collapse">
+<h2>forceConfigure</h2>
+<pre>forceConfigure </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="hasOld" id="hasOld"> </a><div class="element clickable constant  hasOld" data-toggle="collapse" data-target=".hasOld .collapse">
+<h2>hasOld</h2>
+<pre>hasOld </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="retrieveOld" id="retrieveOld"> </a><div class="element clickable constant  retrieveOld" data-toggle="collapse" data-target=".retrieveOld .collapse">
+<h2>retrieveOld</h2>
+<pre>retrieveOld </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="validateClass" id="validateClass"> </a><div class="element clickable constant  validateClass" data-toggle="collapse" data-target=".validateClass .collapse">
+<h2>validateClass</h2>
+<pre>validateClass </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

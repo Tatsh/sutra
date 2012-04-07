@@ -1,0 +1,454 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fPagination</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Accepts the record information necessary for printing pagination"><span class="description">Accepts the record information necessary for printing pagination</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#defineTemplate" title="defineTemplate :: Defines a new template to use with the paginator"><span class="description">Defines a new template to use with the paginator</span><pre>defineTemplate()</pre></a></li>
+<li class="method public "><a href="#extend" title="extend :: Adds the methods `printInfo()` and `showLinks()` to fRecordSet"><span class="description">Adds the methods `printInfo()` and `showLinks()` to fRecordSet</span><pre>extend()</pre></a></li>
+<li class="method public "><a href="#printInfo" title="printInfo :: Prints which records are showing on the current page"><span class="description">Prints which records are showing on the current page</span><pre>printInfo()</pre></a></li>
+<li class="method public "><a href="#set" title="set :: Sets data to be available to the templates"><span class="description">Sets data to be available to the templates</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#showLinks" title="showLinks :: Shows links to other pages when more than one page of records exists"><span class="description">Shows links to other pages when more than one page of records exists</span><pre>showLinks()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#extendRecordSetInfo" title="extendRecordSetInfo :: Overlays user data over info from the record set"><span class="description">Overlays user data over info from the record set</span><pre>extendRecordSetInfo()</pre></a></li>
+<li class="method private "><a href="#printPiece" title="printPiece :: Prints out a piece of a template"><span class="description">Prints out a piece of a template</span><pre>printPiece()</pre></a></li>
+<li class="method private "><a href="#printTemplatedInfo" title="printTemplatedInfo :: Prints the info for the displayed records"><span class="description">Prints the info for the displayed records</span><pre>printTemplatedInfo()</pre></a></li>
+<li class="method private "><a href="#showTemplatedLinks" title="showTemplatedLinks :: Prints the links for a set of records"><span class="description">Prints the links for a set of records</span><pre>showTemplatedLinks()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24data" title="$data :: Extra data for the templates"><span class="description">Extra data for the templates</span><pre>$data</pre></a></li>
+<li class="property private "><a href="#%24filters" title="$filters :: The available filters to use in templates"><span class="description">The available filters to use in templates</span><pre>$filters</pre></a></li>
+<li class="property private "><a href="#%24page" title="$page :: The page number"><span class="description">The page number</span><pre>$page</pre></a></li>
+<li class="property private "><a href="#%24per_page" title="$per_page :: The number of records per page"><span class="description">The number of records per page</span><pre>$per_page</pre></a></li>
+<li class="property private "><a href="#%24templates" title="$templates :: The available templates to use for a paginator"><span class="description">The available templates to use for a paginator</span><pre>$templates</pre></a></li>
+<li class="property private "><a href="#%24total_records" title="$total_records :: The total number of records"><span class="description">The total number of records</span><pre>$total_records</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#defineTemplate" title="defineTemplate :: "><span class="description">defineTemplate</span><pre>defineTemplate</pre></a></li>
+<li class="constant  "><a href="#extend" title="extend :: "><span class="description">extend</span><pre>extend</pre></a></li>
+<li class="constant  "><a href="#printRecordSetInfo" title="printRecordSetInfo :: "><span class="description">printRecordSetInfo</span><pre>printRecordSetInfo</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#showRecordSetLinks" title="showRecordSetLinks :: "><span class="description">showRecordSetLinks</span><pre>showRecordSetLinks</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfPagination" id="\fPagination"></a><div href="../classes/fPagination.html" class="element class">
+<p class="short_description">Prints pagination links for fRecordSet or other paginated records</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2010-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fActiveRecord">http://flourishlib.com/fActiveRecord</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    Added the `prev_disabled` and `next_disabled` pieces [wb, 2011-09-06]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Accepts the record information necessary for printing pagination</h2>
+<pre>__construct(integer $records, integer $per_page, integer $page) : \fPaginator</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$records</h4>
+<code>integer</code><p>The total number of records</p></div>
+<div class="subelement argument">
+<h4>$per_page</h4>
+<code>integer</code><p>The number of records per page</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page number</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the `$page` is less than 1 or not an integer</td>
+</tr>
+<tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are not records for the specified `$page` and `$page` is greater than 1</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response"><code>\fPaginator</code></div>
+</div></div>
+</div>
+<a name="defineTemplate" id="defineTemplate"></a><div class="element clickable method public defineTemplate" data-toggle="collapse" data-target=".defineTemplate .collapse">
+<h2>Defines a new template to use with the paginator</h2>
+<pre>defineTemplate(string $name, string $type, integer $size, array $pieces) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The <code>$pieces</code> array must contain the following array keys:</p>
+
+<ul>
+<li><code>info</code>:          the template to use when calling the <code>printInfo()</code> method</li>
+<li><code>start</code>:         the template to start the page list with</li>
+<li><code>prev</code>:          the template for the previous link</li>
+<li><code>prev_disabled</code>: the template for the previous link, when disabled</li>
+<li><code>page</code>:          the template for a single page link</li>
+<li><code>separator</code>:     the template for the separator to use when the type is <code>with_first_last</code></li>
+<li><code>next</code>:          the template for the next link</li>
+<li><code>next_disabled</code>: the template for the next link, when disabled</li>
+<li><code>end</code>:           the template to end the page list with</li>
+</ul>
+
+<p>There are various pre-defined variables available for use in the template
+pieces. These variables are printed by using the syntax <code>{{ variable }}</code>.</p>
+
+<p>The <code>info</code>, <code>start</code> and <code>end</code> pieces may use the following variables:</p>
+
+<ul>
+<li><code>page</code>:          the page of records being shown</li>
+<li><code>total_pages</code>:   the total number of pages of records</li>
+<li><code>first_record</code>:  the record number of the first record being shown</li>
+<li><code>last_record</code>:   the record number of the last record being shown</li>
+<li><code>total_records</code>: the total number of records being paginated</li>
+</ul>
+
+<p>The <code>prev</code> and <code>next</code> pieces may use the following variables:</p>
+
+<ul>
+<li><code>page</code>: the page number of the page of results being linked to</li>
+<li><code>url</code>:  the URL of the page being linked to</li>
+</ul>
+
+<p>The <code>page</code> piece may use the following variables:</p>
+
+<ul>
+<li><code>page</code>:    the page number of the page being linked to</li>
+<li><code>url</code>:     the URL of the page being linked to</li>
+<li><code>first</code>:   the string "first" if the link is to the first page</li>
+<li><code>last</code>:    the string "last" if the link is to the last page</li>
+<li><code>current</code>: the string "current" if the link is to the current page</li>
+</ul>
+
+<p>The <code>separator</code> piece does not have access to any pre-defined variables.</p>
+
+<p>In addition to the pre-defined variables, it is possible to add any other
+variables to be used in any of the pieces by calling the instance method
+::set().</p>
+
+<p>It is possible to use variable filters on a variable to modify it. The
+most common variable to filter would be <code>name</code>. To filter a variable,
+add a <code>|</code> and the filter name after the variable name, in the form
+<code>{{ variable|filter }}</code>. The following filters are available:</p>
+
+<ul>
+<li><code>inflect</code>:    if the total number of records is not 1, pluralize the variable - this only works for nouns</li>
+<li><code>lower</code>:      converts the contents of the variable to lower case</li>
+<li><code>url_encode</code>: encode the value for inclusion in a URL</li>
+<li><code>humanize</code>:   converts a <code>underscore_notation</code> or <code>CamelCase</code> string to a string with spaces between words and in <code>Title Caps</code></li>
+</ul>
+
+<p>Filters can be combined, in which case they are list one after the other
+in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the template</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of pagination: <code>without_first_last</code> or <code>with_first_last</code> - <code>with_first_last</code> always includes links to the first and last pages</p>
+</div>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>integer</code><p>The number of pages to show on either side of the current page</p></div>
+<div class="subelement argument">
+<h4>$pieces</h4>
+<code>array</code><p>The chunks of HTML to create the paginator from - see method description for details</p>
+</div>
+</div></div>
+</div>
+<a name="extend" id="extend"></a><div class="element clickable method public extend" data-toggle="collapse" data-target=".extend .collapse">
+<h2>Adds the methods `printInfo()` and `showLinks()` to fRecordSet</h2>
+<pre>extend() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="printInfo" id="printInfo"></a><div class="element clickable method public printInfo" data-toggle="collapse" data-target=".printInfo .collapse">
+<h2>Prints which records are showing on the current page</h2>
+<pre>printInfo(string $template) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The template to use</p></div>
+</div></div>
+</div>
+<a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
+<h2>Sets data to be available to the templates</h2>
+<pre>set(string $key, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set</p></div>
+</div></div>
+</div>
+<a name="showLinks" id="showLinks"></a><div class="element clickable method public showLinks" data-toggle="collapse" data-target=".showLinks .collapse">
+<h2>Shows links to other pages when more than one page of records exists</h2>
+<pre>showLinks(string $template) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The template to use</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If link were printed</div>
+</div></div>
+</div>
+<a name="extendRecordSetInfo" id="extendRecordSetInfo"></a><div class="element clickable method private extendRecordSetInfo" data-toggle="collapse" data-target=".extendRecordSetInfo .collapse">
+<h2>Overlays user data over info from the record set</h2>
+<pre>extendRecordSetInfo(array $data, string | array $class) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>The user data</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>stringarray</code><p>The class or classes present in the record set</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The merged data</div>
+</div></div>
+</div>
+<a name="printPiece" id="printPiece"></a><div class="element clickable method private printPiece" data-toggle="collapse" data-target=".printPiece .collapse">
+<h2>Prints out a piece of a template</h2>
+<pre>printPiece(string $template, $name, array $data) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The name of the template to print</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code></code>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>The data to replace the variables with</p></div>
+</div></div>
+</div>
+<a name="printTemplatedInfo" id="printTemplatedInfo"></a><div class="element clickable method private printTemplatedInfo" data-toggle="collapse" data-target=".printTemplatedInfo .collapse">
+<h2>Prints the info for the displayed records</h2>
+<pre>printTemplatedInfo(string $template, array $data, integer $page, integer $per_page, integer $total_records) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The template to use</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>The extra data to make available to the template</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page of records being displayed</p></div>
+<div class="subelement argument">
+<h4>$per_page</h4>
+<code>integer</code><p>The number of records being displayed on each page</p></div>
+<div class="subelement argument">
+<h4>$total_records</h4>
+<code>integer</code><p>The total number of records</p></div>
+</div></div>
+</div>
+<a name="showTemplatedLinks" id="showTemplatedLinks"></a><div class="element clickable method private showTemplatedLinks" data-toggle="collapse" data-target=".showTemplatedLinks .collapse">
+<h2>Prints the links for a set of records</h2>
+<pre>showTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template</h4>
+<code>string</code><p>The template to use</p></div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>The extra data to make available to the template</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page of records being displayed</p></div>
+<div class="subelement argument">
+<h4>$per_page</h4>
+<code>integer</code><p>The number of records being displayed on each page</p></div>
+<div class="subelement argument">
+<h4>$total_records</h4>
+<code>integer</code><p>The total number of records</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24data" id="$data"> </a><div class="element clickable property private $data" data-toggle="collapse" data-target=".$data .collapse">
+<h2>Extra data for the templates</h2>
+<pre>$data : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24filters" id="$filters"> </a><div class="element clickable property private $filters" data-toggle="collapse" data-target=".$filters .collapse">
+<h2>The available filters to use in templates</h2>
+<pre>$filters : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24page" id="$page"> </a><div class="element clickable property private $page" data-toggle="collapse" data-target=".$page .collapse">
+<h2>The page number</h2>
+<pre>$page : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24per_page" id="$per_page"> </a><div class="element clickable property private $per_page" data-toggle="collapse" data-target=".$per_page .collapse">
+<h2>The number of records per page</h2>
+<pre>$per_page : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24templates" id="$templates"> </a><div class="element clickable property private $templates" data-toggle="collapse" data-target=".$templates .collapse">
+<h2>The available templates to use for a paginator</h2>
+<pre>$templates : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24total_records" id="$total_records"> </a><div class="element clickable property private $total_records" data-toggle="collapse" data-target=".$total_records .collapse">
+<h2>The total number of records</h2>
+<pre>$total_records : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="defineTemplate" id="defineTemplate"> </a><div class="element clickable constant  defineTemplate" data-toggle="collapse" data-target=".defineTemplate .collapse">
+<h2>defineTemplate</h2>
+<pre>defineTemplate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="extend" id="extend"> </a><div class="element clickable constant  extend" data-toggle="collapse" data-target=".extend .collapse">
+<h2>extend</h2>
+<pre>extend </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="printRecordSetInfo" id="printRecordSetInfo"> </a><div class="element clickable constant  printRecordSetInfo" data-toggle="collapse" data-target=".printRecordSetInfo .collapse">
+<h2>printRecordSetInfo</h2>
+<pre>printRecordSetInfo </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="showRecordSetLinks" id="showRecordSetLinks"> </a><div class="element clickable constant  showRecordSetLinks" data-toggle="collapse" data-target=".showRecordSetLinks .collapse">
+<h2>showRecordSetLinks</h2>
+<pre>showRecordSetLinks </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

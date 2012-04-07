@@ -1,0 +1,347 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fURL</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#get" title="get :: Returns the requested URL, does no include the domain name or query string"><span class="description">Returns the requested URL, does no include the domain name or query string</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#getDomain" title="getDomain :: Returns the current domain name, with protcol prefix. Port will be included if not 80 for HTTP or 443 for HTTPS."><span class="description">Returns the current domain name, with protcol prefix. Port will be included if not 80 for HTTP or 443 for HTTPS.</span><pre>getDomain()</pre></a></li>
+<li class="method public "><a href="#getQueryString" title="getQueryString :: Returns the current query string, does not include parameters added by rewrites"><span class="description">Returns the current query string, does not include parameters added by rewrites</span><pre>getQueryString()</pre></a></li>
+<li class="method public "><a href="#getWithQueryString" title="getWithQueryString :: Returns the current URL including query string, but without domain name - does not include query string parameters from rewrites"><span class="description">Returns the current URL including query string, but without domain name - does not include query string parameters from rewrites</span><pre>getWithQueryString()</pre></a></li>
+<li class="method public "><a href="#makeFriendly" title="makeFriendly :: Changes a string into a URL-friendly string"><span class="description">Changes a string into a URL-friendly string</span><pre>makeFriendly()</pre></a></li>
+<li class="method public "><a href="#redirect" title="redirect :: Redirects to the URL specified, without requiring a full-qualified URL"><span class="description">Redirects to the URL specified, without requiring a full-qualified URL</span><pre>redirect()</pre></a></li>
+<li class="method public "><a href="#removeFromQueryString" title="removeFromQueryString :: Removes one or more parameters from the query string"><span class="description">Removes one or more parameters from the query string</span><pre>removeFromQueryString()</pre></a></li>
+<li class="method public "><a href="#replaceInQueryString" title="replaceInQueryString :: Replaces a value in the query string"><span class="description">Replaces a value in the query string</span><pre>replaceInQueryString()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#get" title="get :: "><span class="description">get</span><pre>get</pre></a></li>
+<li class="constant  "><a href="#getDomain" title="getDomain :: "><span class="description">getDomain</span><pre>getDomain</pre></a></li>
+<li class="constant  "><a href="#getQueryString" title="getQueryString :: "><span class="description">getQueryString</span><pre>getQueryString</pre></a></li>
+<li class="constant  "><a href="#getWithQueryString" title="getWithQueryString :: "><span class="description">getWithQueryString</span><pre>getWithQueryString</pre></a></li>
+<li class="constant  "><a href="#makeFriendly" title="makeFriendly :: "><span class="description">makeFriendly</span><pre>makeFriendly</pre></a></li>
+<li class="constant  "><a href="#redirect" title="redirect :: "><span class="description">redirect</span><pre>redirect</pre></a></li>
+<li class="constant  "><a href="#removeFromQueryString" title="removeFromQueryString :: "><span class="description">removeFromQueryString</span><pre>removeFromQueryString</pre></a></li>
+<li class="constant  "><a href="#replaceInQueryString" title="replaceInQueryString :: "><span class="description">replaceInQueryString</span><pre>replaceInQueryString</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfURL" id="\fURL"></a><div href="../classes/fURL.html" class="element class">
+<p class="short_description">Provides functionality to retrieve and manipulate URL information</p>
+<div class="details">
+<p class="long_description"><p>This class uses <code>$_SERVER['REQUEST_URI']</code> for all operations, meaning that
+the original URL entered by the user will be used, or that any rewrites
+will <strong>not</strong> be reflected by this class.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fURL">http://flourishlib.com/fURL</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b10</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed some method signatures [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed ::redirect() to handle no parameters properly [wb, 2011-06-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added the `$delimiter` parameter to ::makeFriendly() [wb, 2011-06-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed ::redirect() to be able to handle unqualified and relative paths [wb, 2011-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Added the `$max_length` parameter to ::makeFriendly() [wb, 2010-09-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated ::redirect() to not require a URL, using the current URL as the default [wb, 2009-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   ::getDomain() now includes the port number if non-standard [wb, 2009-05-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   ::makeFriendly() now changes _-_ to - and multiple _ to a single _ [wb, 2009-03-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed ::makeFriendly() so that _ doesn't appear at the beginning of URLs [wb, 2009-03-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
+<h2>Returns the requested URL, does no include the domain name or query string</h2>
+<pre>get() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This will return the original URL requested by the user - ignores all
+rewrites.</p></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The requested URL without the query string</div>
+</div></div>
+</div>
+<a name="getDomain" id="getDomain"></a><div class="element clickable method public getDomain" data-toggle="collapse" data-target=".getDomain .collapse">
+<h2>Returns the current domain name, with protcol prefix. Port will be included if not 80 for HTTP or 443 for HTTPS.</h2>
+<pre>getDomain() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The current domain name, prefixed by `http://` or `https://`</div>
+</div></div>
+</div>
+<a name="getQueryString" id="getQueryString"></a><div class="element clickable method public getQueryString" data-toggle="collapse" data-target=".getQueryString .collapse">
+<h2>Returns the current query string, does not include parameters added by rewrites</h2>
+<pre>getQueryString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The query string</div>
+</div></div>
+</div>
+<a name="getWithQueryString" id="getWithQueryString"></a><div class="element clickable method public getWithQueryString" data-toggle="collapse" data-target=".getWithQueryString .collapse">
+<h2>Returns the current URL including query string, but without domain name - does not include query string parameters from rewrites</h2>
+<pre>getWithQueryString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URL with query string</div>
+</div></div>
+</div>
+<a name="makeFriendly" id="makeFriendly"></a><div class="element clickable method public makeFriendly" data-toggle="collapse" data-target=".makeFriendly .collapse">
+<h2>Changes a string into a URL-friendly string</h2>
+<pre>makeFriendly(string $string, integer $max_length, string $delimiter) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<div class="subelement argument">
+<h4>$max_length</h4>
+<code>integer</code><p>The maximum length of the friendly URL</p></div>
+<div class="subelement argument">
+<h4>$delimiter</h4>
+<code>string</code><p>The delimiter to use between words, defaults to <code>_</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URL-friendly version of the string</div>
+</div></div>
+</div>
+<a name="redirect" id="redirect"></a><div class="element clickable method public redirect" data-toggle="collapse" data-target=".redirect .collapse">
+<h2>Redirects to the URL specified, without requiring a full-qualified URL</h2>
+<pre>redirect(string $url) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><ul>
+<li>If the URL starts with <code>/</code>, it is treated as an absolute path on the current site
+
+<ul>
+<li>If the URL starts with <code>http://</code> or <code>https://</code>, it is treated as a fully-qualified URL</li>
+<li>If the URL starts with anything else, including a <code>?</code>, it is appended to the current URL</li>
+<li>If the URL is ommitted, it is treated as the current URL</li>
+</ul></li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The url to redirect to</p></div>
+</div></div>
+</div>
+<a name="removeFromQueryString" id="removeFromQueryString"></a><div class="element clickable method public removeFromQueryString" data-toggle="collapse" data-target=".removeFromQueryString .collapse">
+<h2>Removes one or more parameters from the query string</h2>
+<pre>removeFromQueryString(string $parameter) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method uses the query string from the original URL and will not
+contain any parameters that are from rewrites.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parameter</h4>
+<code>string</code><p>A parameter to remove from the query string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The query string with the parameter(s) specified removed, first character is `?`</div>
+</div></div>
+</div>
+<a name="replaceInQueryString" id="replaceInQueryString"></a><div class="element clickable method public replaceInQueryString" data-toggle="collapse" data-target=".replaceInQueryString .collapse">
+<h2>Replaces a value in the query string</h2>
+<pre>replaceInQueryString(string | array $parameter, string | array $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method uses the query string from the original URL and will not
+contain any parameters that are from rewrites.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parameter</h4>
+<code>stringarray</code><p>The query string parameter</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>stringarray</code><p>The value to set the parameter to</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The full query string with the parameter replaced, first char is `?`</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fURL.html">\fURL</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fURL.html">\fURL</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
+<h2>get</h2>
+<pre>get </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getDomain" id="getDomain"> </a><div class="element clickable constant  getDomain" data-toggle="collapse" data-target=".getDomain .collapse">
+<h2>getDomain</h2>
+<pre>getDomain </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getQueryString" id="getQueryString"> </a><div class="element clickable constant  getQueryString" data-toggle="collapse" data-target=".getQueryString .collapse">
+<h2>getQueryString</h2>
+<pre>getQueryString </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getWithQueryString" id="getWithQueryString"> </a><div class="element clickable constant  getWithQueryString" data-toggle="collapse" data-target=".getWithQueryString .collapse">
+<h2>getWithQueryString</h2>
+<pre>getWithQueryString </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="makeFriendly" id="makeFriendly"> </a><div class="element clickable constant  makeFriendly" data-toggle="collapse" data-target=".makeFriendly .collapse">
+<h2>makeFriendly</h2>
+<pre>makeFriendly </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="redirect" id="redirect"> </a><div class="element clickable constant  redirect" data-toggle="collapse" data-target=".redirect .collapse">
+<h2>redirect</h2>
+<pre>redirect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="removeFromQueryString" id="removeFromQueryString"> </a><div class="element clickable constant  removeFromQueryString" data-toggle="collapse" data-target=".removeFromQueryString .collapse">
+<h2>removeFromQueryString</h2>
+<pre>removeFromQueryString </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="replaceInQueryString" id="replaceInQueryString"> </a><div class="element clickable constant  replaceInQueryString" data-toggle="collapse" data-target=".replaceInQueryString .collapse">
+<h2>replaceInQueryString</h2>
+<pre>replaceInQueryString </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

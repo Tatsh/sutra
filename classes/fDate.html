@@ -1,0 +1,417 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fDate</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Creates the date to represent, no timezone is allowed since dates don't have timezones"><span class="description">Creates the date to represent, no timezone is allowed since dates don't have timezones</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__toString" title="__toString :: Returns this date in `Y-m-d` format"><span class="description">Returns this date in `Y-m-d` format</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#adjust" title="adjust :: Changes the date by the adjustment specified, only adjustments of a day or more will be made"><span class="description">Changes the date by the adjustment specified, only adjustments of a day or more will be made</span><pre>adjust()</pre></a></li>
+<li class="method public "><a href="#eq" title="eq :: If this date is equal to the date passed"><span class="description">If this date is equal to the date passed</span><pre>eq()</pre></a></li>
+<li class="method public "><a href="#format" title="format :: Formats the date"><span class="description">Formats the date</span><pre>format()</pre></a></li>
+<li class="method public "><a href="#getFuzzyDifference" title="getFuzzyDifference :: Returns the approximate difference in time, discarding any unit of measure but the least specific."><span class="description">Returns the approximate difference in time, discarding any unit of measure but the least specific.</span><pre>getFuzzyDifference()</pre></a></li>
+<li class="method public "><a href="#gt" title="gt :: If this date is greater than the date passed"><span class="description">If this date is greater than the date passed</span><pre>gt()</pre></a></li>
+<li class="method public "><a href="#gte" title="gte :: If this date is greater than or equal to the date passed"><span class="description">If this date is greater than or equal to the date passed</span><pre>gte()</pre></a></li>
+<li class="method public "><a href="#lt" title="lt :: If this date is less than the date passed"><span class="description">If this date is less than the date passed</span><pre>lt()</pre></a></li>
+<li class="method public "><a href="#lte" title="lte :: If this date is less than or equal to the date passed"><span class="description">If this date is less than or equal to the date passed</span><pre>lte()</pre></a></li>
+<li class="method public "><a href="#modify" title="modify :: Modifies the current date, creating a new fDate object"><span class="description">Modifies the current date, creating a new fDate object</span><pre>modify()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24date" title="$date :: A timestamp of the date"><span class="description">A timestamp of the date</span><pre>$date</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfDate" id="\fDate"></a><div href="../classes/fDate.html" class="element class">
+<p class="short_description">Represents a date as a value object</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fDate">http://flourishlib.com/fDate</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b11</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed a method signature [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed a bug with the constructor not properly handling unix timestamps that are negative integers [wb, 2011-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Changed the `$date` attribute to be protected [wb, 2011-03-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added the `$simple` parameter to ::getFuzzyDifference() [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Added a call to fTimestamp::callUnformatCallback() in ::__construct() for localization support [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Backwards compatibility break - Removed ::getSecondsDifference(), added ::eq(), ::gt(), ::gte(), ::lt(), ::lte() [wb, 2009-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Fixed ::__construct() to properly handle the 5.0 to 5.1 change in strtotime() [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added support for CURRENT_TIMESTAMP and CURRENT_DATE SQL keywords [wb, 2009-01-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Removed the adjustment amount check from ::adjust() [wb, 2008-12-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-02-10]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Creates the date to represent, no timezone is allowed since dates don't have timezones</h2>
+<pre>__construct(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $date) : <a href="../classes/fDate.html">\fDate</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to represent, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$date` is not a valid date</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fDate.html">\fDate</a></code></div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>Returns this date in `Y-m-d` format</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The `Y-m-d` format of this date</div>
+</div></div>
+</div>
+<a name="adjust" id="adjust"></a><div class="element clickable method public adjust" data-toggle="collapse" data-target=".adjust .collapse">
+<h2>Changes the date by the adjustment specified, only adjustments of a day or more will be made</h2>
+<pre>adjust(string $adjustment) : <a href="../classes/fDate.html">\fDate</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adjustment</h4>
+<code>string</code><p>The adjustment to make</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$adjustment` is not a relative date measurement</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDate.html">\fDate</a></code>The adjusted date</div>
+</div></div>
+</div>
+<a name="eq" id="eq"></a><div class="element clickable method public eq" data-toggle="collapse" data-target=".eq .collapse">
+<h2>If this date is equal to the date passed</h2>
+<pre>eq(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this date is equal to the one passed</div>
+</div></div>
+</div>
+<a name="format" id="format"></a><div class="element clickable method public format" data-toggle="collapse" data-target=".format .collapse">
+<h2>Formats the date</h2>
+<pre>format(string $format) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The [http://php.net/date date()] function compatible formatting string, or a format name from fTimestamp::defineFormat()</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When a non-date formatting character is included in `$format`</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted date</div>
+</div></div>
+</div>
+<a name="getFuzzyDifference" id="getFuzzyDifference"></a><div class="element clickable method public getFuzzyDifference" data-toggle="collapse" data-target=".getFuzzyDifference .collapse">
+<h2>Returns the approximate difference in time, discarding any unit of measure but the least specific.</h2>
+<pre>getFuzzyDifference(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date, boolean $simple) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The output will read like:</p>
+
+<ul>
+<li>"This date is <code>{return value}</code> the provided one" when a date it passed</li>
+<li>"This date is <code>{return value}</code>" when no date is passed and comparing with today</li>
+</ul>
+
+<p>Examples of output for a date passed might be:</p>
+
+<ul>
+<li><code>'2 days after'</code></li>
+<li><code>'1 year before'</code></li>
+<li><code>'same day'</code></li>
+</ul>
+
+<p>Examples of output for no date passed might be:</p>
+
+<ul>
+<li><code>'2 days from now'</code></li>
+<li><code>'1 year ago'</code></li>
+<li><code>'today'</code></li>
+</ul>
+
+<p>You would never get the following output since it includes more than one unit of time measurement:</p>
+
+<ul>
+<li><code>'3 weeks and 1 day'</code></li>
+<li><code>'1 year and 2 months'</code></li>
+</ul>
+
+<p>Values that are close to the next largest unit of measure will be rounded up:</p>
+
+<ul>
+<li><code>6 days</code> would be represented as <code>1 week</code>, however <code>5 days</code> would not</li>
+<li><code>29 days</code> would be represented as <code>1 month</code>, but <code>21 days</code> would be shown as <code>3 weeks</code></li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to create the difference with, <code>NULL</code> is interpreted as today</p>
+</div>
+<div class="subelement argument">
+<h4>$simple</h4>
+<code>boolean</code><p>When <code>TRUE</code>, the returned value will only include the difference in the two dates, but not <code>from now</code>, <code>ago</code>, <code>after</code> or <code>before</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fuzzy difference in time between the this date and the one provided</div>
+</div></div>
+</div>
+<a name="gt" id="gt"></a><div class="element clickable method public gt" data-toggle="collapse" data-target=".gt .collapse">
+<h2>If this date is greater than the date passed</h2>
+<pre>gt(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this date is greater than the one passed</div>
+</div></div>
+</div>
+<a name="gte" id="gte"></a><div class="element clickable method public gte" data-toggle="collapse" data-target=".gte .collapse">
+<h2>If this date is greater than or equal to the date passed</h2>
+<pre>gte(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this date is greater than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="lt" id="lt"></a><div class="element clickable method public lt" data-toggle="collapse" data-target=".lt .collapse">
+<h2>If this date is less than the date passed</h2>
+<pre>lt(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this date is less than the one passed</div>
+</div></div>
+</div>
+<a name="lte" id="lte"></a><div class="element clickable method public lte" data-toggle="collapse" data-target=".lte .collapse">
+<h2>If this date is less than or equal to the date passed</h2>
+<pre>lte(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_date</h4>
+<code><a href="../classes/fDate.html">\fDate</a>objectstringinteger</code><p>The date to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this date is less than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="modify" id="modify"></a><div class="element clickable method public modify" data-toggle="collapse" data-target=".modify .collapse">
+<h2>Modifies the current date, creating a new fDate object</h2>
+<pre>modify(string $format) : <a href="../classes/fDate.html">\fDate</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The purpose of this method is to allow for easy creation of a date
+based on this date. Below are some examples of formats to
+modify the current date:</p>
+
+<ul>
+<li><code>'Y-m-01'</code> to change the date to the first of the month</li>
+<li><code>'Y-m-t'</code> to change the date to the last of the month</li>
+<li><code>'Y-\W5-N'</code> to change the date to the 5th week of the year</li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The current date will be formatted with this string, and the output used to create a new object</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDate.html">\fDate</a></code>The new date</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24date" id="$date"> </a><div class="element clickable property protected $date" data-toggle="collapse" data-target=".$date .collapse">
+<h2>A timestamp of the date</h2>
+<pre>$date : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:33-05:00.<br></footer></div>
+</div>
+</body>
+</html>

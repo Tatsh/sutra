@@ -1,0 +1,419 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fTime</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Creates the time to represent, no timezone is allowed since times don't have timezones"><span class="description">Creates the time to represent, no timezone is allowed since times don't have timezones</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__toString" title="__toString :: Returns this time in `'H:i:s'` format"><span class="description">Returns this time in `'H:i:s'` format</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#adjust" title="adjust :: Changes the time by the adjustment specified, only adjustments of `'hours'`, `'minutes'`, and `'seconds'` are allowed"><span class="description">Changes the time by the adjustment specified, only adjustments of `'hours'`, `'minutes'`, and `'seconds'` are allowed</span><pre>adjust()</pre></a></li>
+<li class="method public "><a href="#eq" title="eq :: If this time is equal to the time passed"><span class="description">If this time is equal to the time passed</span><pre>eq()</pre></a></li>
+<li class="method public "><a href="#format" title="format :: Formats the time"><span class="description">Formats the time</span><pre>format()</pre></a></li>
+<li class="method public "><a href="#getFuzzyDifference" title="getFuzzyDifference :: Returns the approximate difference in time, discarding any unit of measure but the least specific."><span class="description">Returns the approximate difference in time, discarding any unit of measure but the least specific.</span><pre>getFuzzyDifference()</pre></a></li>
+<li class="method public "><a href="#gt" title="gt :: If this time is greater than the time passed"><span class="description">If this time is greater than the time passed</span><pre>gt()</pre></a></li>
+<li class="method public "><a href="#gte" title="gte :: If this time is greater than or equal to the time passed"><span class="description">If this time is greater than or equal to the time passed</span><pre>gte()</pre></a></li>
+<li class="method public "><a href="#lt" title="lt :: If this time is less than the time passed"><span class="description">If this time is less than the time passed</span><pre>lt()</pre></a></li>
+<li class="method public "><a href="#lte" title="lte :: If this time is less than or equal to the time passed"><span class="description">If this time is less than or equal to the time passed</span><pre>lte()</pre></a></li>
+<li class="method public "><a href="#modify" title="modify :: Modifies the current time, creating a new fTime object"><span class="description">Modifies the current time, creating a new fTime object</span><pre>modify()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24time" title="$time :: A timestamp of the time"><span class="description">A timestamp of the time</span><pre>$time</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfTime" id="\fTime"></a><div href="../classes/fTime.html" class="element class">
+<p class="short_description">Represents a time of day as a value object</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fTime">http://flourishlib.com/fTime</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b12</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed a method signature [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed a bug with the constructor not properly handling unix timestamps that are negative integers [wb, 2011-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Changed the `$time` attribute to be protected [wb, 2011-03-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added the `$simple` parameter to ::getFuzzyDifference() [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added a call to fTimestamp::callUnformatCallback() in ::__construct() for localization support [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Backwards compatibility break - Removed ::getSecondsDifference(), added ::eq(), ::gt(), ::gte(), ::lt(), ::lte() [wb, 2009-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed an outdated fCore method call [wb, 2009-02-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Fixed ::__construct() to properly handle the 5.0 to 5.1 change in strtotime() [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added support for CURRENT_TIMESTAMP and CURRENT_TIME SQL keywords [wb, 2009-01-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Removed the adjustment amount check from ::adjust() [wb, 2008-12-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-02-12]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Creates the time to represent, no timezone is allowed since times don't have timezones</h2>
+<pre>__construct(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $time) : <a href="../classes/fTime.html">\fTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to represent, <code>NULL</code> is interpreted as now</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$time` is not a valid time</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fTime.html">\fTime</a></code></div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>Returns this time in `'H:i:s'` format</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The `'H:i:s'` format of this time</div>
+</div></div>
+</div>
+<a name="adjust" id="adjust"></a><div class="element clickable method public adjust" data-toggle="collapse" data-target=".adjust .collapse">
+<h2>Changes the time by the adjustment specified, only adjustments of `'hours'`, `'minutes'`, and `'seconds'` are allowed</h2>
+<pre>adjust(string $adjustment) : <a href="../classes/fTime.html">\fTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adjustment</h4>
+<code>string</code><p>The adjustment to make</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$adjustment` is not a valid relative time measurement</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTime.html">\fTime</a></code>The adjusted time</div>
+</div></div>
+</div>
+<a name="eq" id="eq"></a><div class="element clickable method public eq" data-toggle="collapse" data-target=".eq .collapse">
+<h2>If this time is equal to the time passed</h2>
+<pre>eq(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this time is equal to the one passed</div>
+</div></div>
+</div>
+<a name="format" id="format"></a><div class="element clickable method public format" data-toggle="collapse" data-target=".format .collapse">
+<h2>Formats the time</h2>
+<pre>format(string $format) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The [http://php.net/date date()] function compatible formatting string, or a format name from fTimestamp::defineFormat()</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When a non-time formatting character is included in `$format`</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted time</div>
+</div></div>
+</div>
+<a name="getFuzzyDifference" id="getFuzzyDifference"></a><div class="element clickable method public getFuzzyDifference" data-toggle="collapse" data-target=".getFuzzyDifference .collapse">
+<h2>Returns the approximate difference in time, discarding any unit of measure but the least specific.</h2>
+<pre>getFuzzyDifference(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time, boolean $simple) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The output will read like:</p>
+
+<ul>
+<li>"This time is <code>{return value}</code> the provided one" when a time it passed</li>
+<li>"This time is <code>{return value}</code>" when no time is passed and comparing with the current time</li>
+</ul>
+
+<p>Examples of output for a time passed might be:</p>
+
+<ul>
+<li><code>'5 minutes after'</code></li>
+<li><code>'2 hours before'</code></li>
+<li><code>'at the same time'</code></li>
+</ul>
+
+<p>Examples of output for no time passed might be:</p>
+
+<ul>
+<li><code>'5 minutes ago'</code></li>
+<li><code>'2 hours ago'</code></li>
+<li><code>'right now'</code></li>
+</ul>
+
+<p>You would never get the following output since it includes more than one unit of time measurement:</p>
+
+<ul>
+<li><code>'5 minutes and 28 seconds'</code></li>
+<li><code>'1 hour, 15 minutes'</code></li>
+</ul>
+
+<p>Values that are close to the next largest unit of measure will be rounded up:</p>
+
+<ul>
+<li><code>'55 minutes'</code> would be represented as <code>'1 hour'</code>, however <code>'45 minutes'</code> would not</li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to create the difference with, <code>NULL</code> is interpreted as now</p>
+</div>
+<div class="subelement argument">
+<h4>$simple</h4>
+<code>boolean</code><p>When <code>TRUE</code>, the returned value will only include the difference in the two times, but not <code>from now</code>, <code>ago</code>, <code>after</code> or <code>before</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fuzzy difference in time between the this time and the one provided</div>
+</div></div>
+</div>
+<a name="gt" id="gt"></a><div class="element clickable method public gt" data-toggle="collapse" data-target=".gt .collapse">
+<h2>If this time is greater than the time passed</h2>
+<pre>gt(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to compare with, <code>NULL</code> is interpreted as now</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this time is greater than the one passed</div>
+</div></div>
+</div>
+<a name="gte" id="gte"></a><div class="element clickable method public gte" data-toggle="collapse" data-target=".gte .collapse">
+<h2>If this time is greater than or equal to the time passed</h2>
+<pre>gte(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to compare with, <code>NULL</code> is interpreted as now</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this time is greater than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="lt" id="lt"></a><div class="element clickable method public lt" data-toggle="collapse" data-target=".lt .collapse">
+<h2>If this time is less than the time passed</h2>
+<pre>lt(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this time is less than the one passed</div>
+</div></div>
+</div>
+<a name="lte" id="lte"></a><div class="element clickable method public lte" data-toggle="collapse" data-target=".lte .collapse">
+<h2>If this time is less than or equal to the time passed</h2>
+<pre>lte(<a href="../classes/fTime.html">\fTime</a> | object | string | integer $other_time) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_time</h4>
+<code><a href="../classes/fTime.html">\fTime</a>objectstringinteger</code><p>The time to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this time is less than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="modify" id="modify"></a><div class="element clickable method public modify" data-toggle="collapse" data-target=".modify .collapse">
+<h2>Modifies the current time, creating a new fTime object</h2>
+<pre>modify(string $format) : <a href="../classes/fTime.html">\fTime</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The purpose of this method is to allow for easy creation of a time
+based on this time. Below are some examples of formats to
+modify the current time:</p>
+
+<ul>
+<li><code>'17:i:s'</code> to set the hour of the time to 5 PM</li>
+<li>'H:00:00'` to set the time to the beginning of the current hour</li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The current time will be formatted with this string, and the output used to create a new object</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTime.html">\fTime</a></code>The new time</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24time" id="$time"> </a><div class="element clickable property protected $time" data-toggle="collapse" data-target=".$time .collapse">
+<h2>A timestamp of the time</h2>
+<pre>$time : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

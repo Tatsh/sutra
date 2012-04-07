@@ -1,0 +1,618 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fORMFile</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#addFImageMethodCall" title="addFImageMethodCall :: Adds an fImage method call to the image manipulation for a column if an image file is uploaded"><span class="description">Adds an fImage method call to the image manipulation for a column if an image file is uploaded</span><pre>addFImageMethodCall()</pre></a></li>
+<li class="method public "><a href="#addFUploadMethodCall" title="addFUploadMethodCall :: Adds an fUpload method call to the fUpload initialization for a column"><span class="description">Adds an fUpload method call to the fUpload initialization for a column</span><pre>addFUploadMethodCall()</pre></a></li>
+<li class="method public "><a href="#configureColumnInheritance" title="configureColumnInheritance :: Takes one file or image upload columns and sets it to inherit any uploaded/set files from another column"><span class="description">Takes one file or image upload columns and sets it to inherit any uploaded/set files from another column</span><pre>configureColumnInheritance()</pre></a></li>
+<li class="method public "><a href="#configureFileUploadColumn" title="configureFileUploadColumn :: Sets a column to be a file upload column"><span class="description">Sets a column to be a file upload column</span><pre>configureFileUploadColumn()</pre></a></li>
+<li class="method public "><a href="#configureImageUploadColumn" title="configureImageUploadColumn :: Sets a column to be an image upload column"><span class="description">Sets a column to be an image upload column</span><pre>configureImageUploadColumn()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method private "><a href="#prepareTempDir" title="prepareTempDir :: Takes a directory and creates a temporary directory inside of it - if the temporary folder exists, all files older than 6 hours will be deleted"><span class="description">Takes a directory and creates a temporary directory inside of it - if the temporary folder exists, all files older than 6 hours will be deleted</span><pre>prepareTempDir()</pre></a></li>
+<li class="method private "><a href="#setUpFUpload" title="setUpFUpload :: Sets up an fUpload object for a specific column"><span class="description">Sets up an fUpload object for a specific column</span><pre>setUpFUpload()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24column_inheritence" title="$column_inheritence :: Defines how columns can inherit uploaded files"><span class="description">Defines how columns can inherit uploaded files</span><pre>$column_inheritence</pre></a></li>
+<li class="property private "><a href="#%24file_upload_columns" title="$file_upload_columns :: Columns that can be filled by file uploads"><span class="description">Columns that can be filled by file uploads</span><pre>$file_upload_columns</pre></a></li>
+<li class="property private "><a href="#%24fimage_method_calls" title="$fimage_method_calls :: Methods to be called on the fImage instance"><span class="description">Methods to be called on the fImage instance</span><pre>$fimage_method_calls</pre></a></li>
+<li class="property private "><a href="#%24fupload_method_calls" title="$fupload_method_calls :: Methods to be called on fUpload before the file is uploaded"><span class="description">Methods to be called on fUpload before the file is uploaded</span><pre>$fupload_method_calls</pre></a></li>
+<li class="property private "><a href="#%24image_upload_columns" title="$image_upload_columns :: Columns that can be filled by image uploads"><span class="description">Columns that can be filled by image uploads</span><pre>$image_upload_columns</pre></a></li>
+<li class="property private "><a href="#%24transaction_level" title="$transaction_level :: Keeps track of the nesting level of the filesystem transaction so we know when to start, commit, rollback, etc"><span class="description">Keeps track of the nesting level of the filesystem transaction so we know when to start, commit, rollback, etc</span><pre>$transaction_level</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#addFImageMethodCall" title="addFImageMethodCall :: "><span class="description">addFImageMethodCall</span><pre>addFImageMethodCall</pre></a></li>
+<li class="constant  "><a href="#addFUploadMethodCall" title="addFUploadMethodCall :: "><span class="description">addFUploadMethodCall</span><pre>addFUploadMethodCall</pre></a></li>
+<li class="constant  "><a href="#begin" title="begin :: "><span class="description">begin</span><pre>begin</pre></a></li>
+<li class="constant  "><a href="#commit" title="commit :: "><span class="description">commit</span><pre>commit</pre></a></li>
+<li class="constant  "><a href="#configureColumnInheritance" title="configureColumnInheritance :: "><span class="description">configureColumnInheritance</span><pre>configureColumnInheritance</pre></a></li>
+<li class="constant  "><a href="#configureFileUploadColumn" title="configureFileUploadColumn :: "><span class="description">configureFileUploadColumn</span><pre>configureFileUploadColumn</pre></a></li>
+<li class="constant  "><a href="#configureImageUploadColumn" title="configureImageUploadColumn :: "><span class="description">configureImageUploadColumn</span><pre>configureImageUploadColumn</pre></a></li>
+<li class="constant  "><a href="#delete" title="delete :: "><span class="description">delete</span><pre>delete</pre></a></li>
+<li class="constant  "><a href="#deleteOld" title="deleteOld :: "><span class="description">deleteOld</span><pre>deleteOld</pre></a></li>
+<li class="constant  "><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  "><a href="#inspect" title="inspect :: "><span class="description">inspect</span><pre>inspect</pre></a></li>
+<li class="constant  "><a href="#moveFromTemp" title="moveFromTemp :: "><span class="description">moveFromTemp</span><pre>moveFromTemp</pre></a></li>
+<li class="constant  "><a href="#objectify" title="objectify :: "><span class="description">objectify</span><pre>objectify</pre></a></li>
+<li class="constant  "><a href="#populate" title="populate :: "><span class="description">populate</span><pre>populate</pre></a></li>
+<li class="constant  "><a href="#prepare" title="prepare :: "><span class="description">prepare</span><pre>prepare</pre></a></li>
+<li class="constant  "><a href="#process" title="process :: "><span class="description">process</span><pre>process</pre></a></li>
+<li class="constant  "><a href="#processImage" title="processImage :: "><span class="description">processImage</span><pre>processImage</pre></a></li>
+<li class="constant  "><a href="#reflect" title="reflect :: "><span class="description">reflect</span><pre>reflect</pre></a></li>
+<li class="constant  "><a href="#replicate" title="replicate :: "><span class="description">replicate</span><pre>replicate</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#rollback" title="rollback :: "><span class="description">rollback</span><pre>rollback</pre></a></li>
+<li class="constant  "><a href="#set" title="set :: "><span class="description">set</span><pre>set</pre></a></li>
+<li class="constant  "><a href="#upload" title="upload :: "><span class="description">upload</span><pre>upload</pre></a></li>
+<li class="constant  "><a href="#validate" title="validate :: "><span class="description">validate</span><pre>validate</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfORMFile" id="\fORMFile"></a><div href="../classes/fORMFile.html" class="element class">
+<p class="short_description">Provides file manipulation functionality for fActiveRecord classes</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMFile">http://flourishlib.com/fORMFile</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b30</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Updated code for the new fUpload API [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Fixed a bug when uploading a new file to a column with an existing file that was not found on the filesystem [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Backwards Compatibility Break - ::configureImageUploadColumn() no longer accepts the optional `$image_type` as the fourth parameter, instead ::addFImageMethodCall() must be called with `saveChanges` as the `$method` and the image type as the first parameter [wb, 2010-11-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Fixed column inheritance to properly handle non-images and inheriting into image upload columns [wb, 2010-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Enhanced ::configureColumnInheritance() to ensure both columns specified have been set up as file upload columns [wb, 2010-08-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Updated code to work with the new fORM API [wb, 2010-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Changed validation messages array to use column name keys [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Fixed a bug with ::upload() that could cause a method called on a non-object error in relation to the upload directory not being defined [wb, 2010-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Updated the TEMP_DIRECTORY constant to not include the trailing slash, code now uses DIRECTORY_SEPARATOR to fix issues on Windows [wb, 2010-04-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Fixed ::set() to perform column inheritance, just like ::upload() does [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed the `set` and `process` methods to return the record instance, changed `upload` methods to return the fFile object, updated ::reflect() with new return values [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Fixed a few missed instances of old fFile method names [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Updated code for the new fFile API [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  fImage method calls for file upload columns will no longer cause notices due to a missing image type [wb, 2009-09-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  ::addFImageMethodCall() no longer requires column be an image upload column, inheritance to an image column now only happens for fImage objects [wb, 2009-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Updated to use new fORM::registerInspectCallback() method [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Updated code for new fORM API [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Updated code to use new fValidationException::formatField() method [wb, 2009-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed a bug where an inherited file upload column would not be properly re-set with an `existing-` input [wb, 2009-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   ::upload() and ::set() now set the `$values` entry to `NULL` for filenames that are empty [wb, 2009-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Changed ::set() to accept objects and reject directories [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Changed the class to use the new fFilesystem::createObject() method [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Old files are now checked against the current file to prevent removal of an in-use file [wb, 2008-12-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed ::replicate() to ensure the temp directory exists and ::set() to use the temp directory [wb, 2008-12-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   ::objectify() no longer throws an exception when a file can't be found [wb, 2008-12-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added ::replicate() so that replicated files get pu in the temp directory [wb, 2008-12-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with objectifying file columns [wb, 2008-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-05-28]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addFImageMethodCall" id="addFImageMethodCall"></a><div class="element clickable method public addFImageMethodCall" data-toggle="collapse" data-target=".addFImageMethodCall .collapse">
+<h2>Adds an fImage method call to the image manipulation for a column if an image file is uploaded</h2>
+<pre>addFImageMethodCall(mixed $class, string $column, string $method, array $parameters) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Any call to fImage::saveChanges() will be called last. If no explicit
+method call to fImage::saveChanges() is made, it will be called
+implicitly with default parameters.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to call the method for</p></div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The fImage method to call</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters to pass to the method</p></div>
+</div></div>
+</div>
+<a name="addFUploadMethodCall" id="addFUploadMethodCall"></a><div class="element clickable method public addFUploadMethodCall" data-toggle="collapse" data-target=".addFUploadMethodCall .collapse">
+<h2>Adds an fUpload method call to the fUpload initialization for a column</h2>
+<pre>addFUploadMethodCall(mixed $class, string $column, string $method, array $parameters) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to call the method for</p></div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The fUpload method to call</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters to pass to the method</p></div>
+</div></div>
+</div>
+<a name="configureColumnInheritance" id="configureColumnInheritance"></a><div class="element clickable method public configureColumnInheritance" data-toggle="collapse" data-target=".configureColumnInheritance .collapse">
+<h2>Takes one file or image upload columns and sets it to inherit any uploaded/set files from another column</h2>
+<pre>configureColumnInheritance(mixed $class, string $column, string $inherit_from_column) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column that will inherit the uploaded file</p></div>
+<div class="subelement argument">
+<h4>$inherit_from_column</h4>
+<code>string</code><p>The column to inherit the uploaded file from</p></div>
+</div></div>
+</div>
+<a name="configureFileUploadColumn" id="configureFileUploadColumn"></a><div class="element clickable method public configureFileUploadColumn" data-toggle="collapse" data-target=".configureFileUploadColumn .collapse">
+<h2>Sets a column to be a file upload column</h2>
+<pre>configureFileUploadColumn(mixed $class, string $column, <a href="../classes/fDirectory.html">\fDirectory</a> | string $directory) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Configuring a column to be a file upload column means that whenever
+fActiveRecord::populate() is called for an fActiveRecord object, any
+appropriately named file uploads (via <code>$_FILES</code>) will be moved into
+the directory for this column.</p>
+
+<p>Setting the column to a file path will cause the specified file to
+be copied into the directory for this column.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set as a file upload column</p></div>
+<div class="subelement argument">
+<h4>$directory</h4>
+<code><a href="../classes/fDirectory.html">\fDirectory</a>string</code><p>The directory to upload/move to</p>
+</div>
+</div></div>
+</div>
+<a name="configureImageUploadColumn" id="configureImageUploadColumn"></a><div class="element clickable method public configureImageUploadColumn" data-toggle="collapse" data-target=".configureImageUploadColumn .collapse">
+<h2>Sets a column to be an image upload column</h2>
+<pre>configureImageUploadColumn(mixed $class, string $column, <a href="../classes/fDirectory.html">\fDirectory</a> | string $directory) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method works exactly the same as ::configureFileUploadColumn()
+except that only image files are accepted.</p>
+
+<p>To alter an image, including the file type, use ::addFImageMethodCall().</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set as a file upload column</p></div>
+<div class="subelement argument">
+<h4>$directory</h4>
+<code><a href="../classes/fDirectory.html">\fDirectory</a>string</code><p>The directory to upload to</p></div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fORMFile.html">\fORMFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fORMFile.html">\fORMFile</a></code></div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method private compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="prepareTempDir" id="prepareTempDir"></a><div class="element clickable method private prepareTempDir" data-toggle="collapse" data-target=".prepareTempDir .collapse">
+<h2>Takes a directory and creates a temporary directory inside of it - if the temporary folder exists, all files older than 6 hours will be deleted</h2>
+<pre>prepareTempDir(string $folder) : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$folder</h4>
+<code>string</code><p>The folder to create a temporary directory inside of</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code>The temporary directory for the folder specified</div>
+</div></div>
+</div>
+<a name="setUpFUpload" id="setUpFUpload"></a><div class="element clickable method private setUpFUpload" data-toggle="collapse" data-target=".setUpFUpload .collapse">
+<h2>Sets up an fUpload object for a specific column</h2>
+<pre>setUpFUpload(string $class, string $column) : <a href="../classes/fUpload.html">\fUpload</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to set up for</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set up for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fUpload.html">\fUpload</a></code>The configured fUpload object</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24column_inheritence" id="$column_inheritence"> </a><div class="element clickable property private $column_inheritence" data-toggle="collapse" data-target=".$column_inheritence .collapse">
+<h2>Defines how columns can inherit uploaded files</h2>
+<pre>$column_inheritence : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24file_upload_columns" id="$file_upload_columns"> </a><div class="element clickable property private $file_upload_columns" data-toggle="collapse" data-target=".$file_upload_columns .collapse">
+<h2>Columns that can be filled by file uploads</h2>
+<pre>$file_upload_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24fimage_method_calls" id="$fimage_method_calls"> </a><div class="element clickable property private $fimage_method_calls" data-toggle="collapse" data-target=".$fimage_method_calls .collapse">
+<h2>Methods to be called on the fImage instance</h2>
+<pre>$fimage_method_calls : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24fupload_method_calls" id="$fupload_method_calls"> </a><div class="element clickable property private $fupload_method_calls" data-toggle="collapse" data-target=".$fupload_method_calls .collapse">
+<h2>Methods to be called on fUpload before the file is uploaded</h2>
+<pre>$fupload_method_calls : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24image_upload_columns" id="$image_upload_columns"> </a><div class="element clickable property private $image_upload_columns" data-toggle="collapse" data-target=".$image_upload_columns .collapse">
+<h2>Columns that can be filled by image uploads</h2>
+<pre>$image_upload_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24transaction_level" id="$transaction_level"> </a><div class="element clickable property private $transaction_level" data-toggle="collapse" data-target=".$transaction_level .collapse">
+<h2>Keeps track of the nesting level of the filesystem transaction so we know when to start, commit, rollback, etc</h2>
+<pre>$transaction_level : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="addFImageMethodCall" id="addFImageMethodCall"> </a><div class="element clickable constant  addFImageMethodCall" data-toggle="collapse" data-target=".addFImageMethodCall .collapse">
+<h2>addFImageMethodCall</h2>
+<pre>addFImageMethodCall </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="addFUploadMethodCall" id="addFUploadMethodCall"> </a><div class="element clickable constant  addFUploadMethodCall" data-toggle="collapse" data-target=".addFUploadMethodCall .collapse">
+<h2>addFUploadMethodCall</h2>
+<pre>addFUploadMethodCall </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="begin" id="begin"> </a><div class="element clickable constant  begin" data-toggle="collapse" data-target=".begin .collapse">
+<h2>begin</h2>
+<pre>begin </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="commit" id="commit"> </a><div class="element clickable constant  commit" data-toggle="collapse" data-target=".commit .collapse">
+<h2>commit</h2>
+<pre>commit </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureColumnInheritance" id="configureColumnInheritance"> </a><div class="element clickable constant  configureColumnInheritance" data-toggle="collapse" data-target=".configureColumnInheritance .collapse">
+<h2>configureColumnInheritance</h2>
+<pre>configureColumnInheritance </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureFileUploadColumn" id="configureFileUploadColumn"> </a><div class="element clickable constant  configureFileUploadColumn" data-toggle="collapse" data-target=".configureFileUploadColumn .collapse">
+<h2>configureFileUploadColumn</h2>
+<pre>configureFileUploadColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureImageUploadColumn" id="configureImageUploadColumn"> </a><div class="element clickable constant  configureImageUploadColumn" data-toggle="collapse" data-target=".configureImageUploadColumn .collapse">
+<h2>configureImageUploadColumn</h2>
+<pre>configureImageUploadColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="delete" id="delete"> </a><div class="element clickable constant  delete" data-toggle="collapse" data-target=".delete .collapse">
+<h2>delete</h2>
+<pre>delete </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="deleteOld" id="deleteOld"> </a><div class="element clickable constant  deleteOld" data-toggle="collapse" data-target=".deleteOld .collapse">
+<h2>deleteOld</h2>
+<pre>deleteOld </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
+<h2>inspect</h2>
+<pre>inspect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="moveFromTemp" id="moveFromTemp"> </a><div class="element clickable constant  moveFromTemp" data-toggle="collapse" data-target=".moveFromTemp .collapse">
+<h2>moveFromTemp</h2>
+<pre>moveFromTemp </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="objectify" id="objectify"> </a><div class="element clickable constant  objectify" data-toggle="collapse" data-target=".objectify .collapse">
+<h2>objectify</h2>
+<pre>objectify </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="populate" id="populate"> </a><div class="element clickable constant  populate" data-toggle="collapse" data-target=".populate .collapse">
+<h2>populate</h2>
+<pre>populate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="prepare" id="prepare"> </a><div class="element clickable constant  prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>prepare</h2>
+<pre>prepare </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="process" id="process"> </a><div class="element clickable constant  process" data-toggle="collapse" data-target=".process .collapse">
+<h2>process</h2>
+<pre>process </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="processImage" id="processImage"> </a><div class="element clickable constant  processImage" data-toggle="collapse" data-target=".processImage .collapse">
+<h2>processImage</h2>
+<pre>processImage </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reflect" id="reflect"> </a><div class="element clickable constant  reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>reflect</h2>
+<pre>reflect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="replicate" id="replicate"> </a><div class="element clickable constant  replicate" data-toggle="collapse" data-target=".replicate .collapse">
+<h2>replicate</h2>
+<pre>replicate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="rollback" id="rollback"> </a><div class="element clickable constant  rollback" data-toggle="collapse" data-target=".rollback .collapse">
+<h2>rollback</h2>
+<pre>rollback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
+<h2>set</h2>
+<pre>set </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="upload" id="upload"> </a><div class="element clickable constant  upload" data-toggle="collapse" data-target=".upload .collapse">
+<h2>upload</h2>
+<pre>upload </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="validate" id="validate"> </a><div class="element clickable constant  validate" data-toggle="collapse" data-target=".validate .collapse">
+<h2>validate</h2>
+<pre>validate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

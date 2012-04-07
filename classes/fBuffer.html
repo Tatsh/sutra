@@ -1,0 +1,300 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fBuffer</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#erase" title="erase :: Erases the output buffer"><span class="description">Erases the output buffer</span><pre>erase()</pre></a></li>
+<li class="method public "><a href="#get" title="get :: Returns the contents of output buffer"><span class="description">Returns the contents of output buffer</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#isStarted" title="isStarted :: Checks if buffering has been started"><span class="description">Checks if buffering has been started</span><pre>isStarted()</pre></a></li>
+<li class="method public "><a href="#replace" title="replace :: Replaces a value in the output buffer"><span class="description">Replaces a value in the output buffer</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#start" title="start :: Starts output buffering"><span class="description">Starts output buffering</span><pre>start()</pre></a></li>
+<li class="method public "><a href="#startCapture" title="startCapture :: Starts capturing output, should be used with ::stopCapture() to grab output from code that does not offer an option of returning a value instead of outputting it"><span class="description">Starts capturing output, should be used with ::stopCapture() to grab output from code that does not offer an option of returning a value instead of outputting it</span><pre>startCapture()</pre></a></li>
+<li class="method public "><a href="#stop" title="stop :: Stops output buffering, flushing everything to the browser"><span class="description">Stops output buffering, flushing everything to the browser</span><pre>stop()</pre></a></li>
+<li class="method public "><a href="#stopCapture" title="stopCapture :: Stops capturing output, returning what was captured"><span class="description">Stops capturing output, returning what was captured</span><pre>stopCapture()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24capturing" title="$capturing :: If output capturing is currently active"><span class="description">If output capturing is currently active</span><pre>$capturing</pre></a></li>
+<li class="property private "><a href="#%24started" title="$started :: If output buffering has been started"><span class="description">If output buffering has been started</span><pre>$started</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#erase" title="erase :: "><span class="description">erase</span><pre>erase</pre></a></li>
+<li class="constant  "><a href="#get" title="get :: "><span class="description">get</span><pre>get</pre></a></li>
+<li class="constant  "><a href="#isStarted" title="isStarted :: "><span class="description">isStarted</span><pre>isStarted</pre></a></li>
+<li class="constant  "><a href="#replace" title="replace :: "><span class="description">replace</span><pre>replace</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#start" title="start :: "><span class="description">start</span><pre>start</pre></a></li>
+<li class="constant  "><a href="#startCapture" title="startCapture :: "><span class="description">startCapture</span><pre>startCapture</pre></a></li>
+<li class="constant  "><a href="#stop" title="stop :: "><span class="description">stop</span><pre>stop</pre></a></li>
+<li class="constant  "><a href="#stopCapture" title="stopCapture :: "><span class="description">stopCapture</span><pre>stopCapture</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfBuffer" id="\fBuffer"></a><div href="../classes/fBuffer.html" class="element class">
+<p class="short_description">Provides a single, simplified interface for [http://php.net/outcontrol output buffering] to prevent nested buffering issues and provide a more logical API</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2010 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fBuffer">http://flourishlib.com/fBuffer</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b3</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Added a check to ensure the zlib extension is installd when doing gzipped buffering [wb, 2010-05-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Added the `$gzip` parameter to ::start() [wb, 2010-05-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2008-03-16]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="erase" id="erase"></a><div class="element clickable method public erase" data-toggle="collapse" data-target=".erase .collapse">
+<h2>Erases the output buffer</h2>
+<pre>erase() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
+<h2>Returns the contents of output buffer</h2>
+<pre>get() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The contents of the output buffer</div>
+</div></div>
+</div>
+<a name="isStarted" id="isStarted"></a><div class="element clickable method public isStarted" data-toggle="collapse" data-target=".isStarted .collapse">
+<h2>Checks if buffering has been started</h2>
+<pre>isStarted() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If buffering has been started</div>
+</div></div>
+</div>
+<a name="replace" id="replace"></a><div class="element clickable method public replace" data-toggle="collapse" data-target=".replace .collapse">
+<h2>Replaces a value in the output buffer</h2>
+<pre>replace(string $find, string $replace) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$find</h4>
+<code>string</code><p>The string to find</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace</p></div>
+</div></div>
+</div>
+<a name="start" id="start"></a><div class="element clickable method public start" data-toggle="collapse" data-target=".start .collapse">
+<h2>Starts output buffering</h2>
+<pre>start(boolean $gzip) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$gzip</h4>
+<code>boolean</code><p>If the buffered output should be gzipped using [http://php.net/ob_gzhandler <code>ob_gzhandler()</code>]</p>
+</div>
+</div></div>
+</div>
+<a name="startCapture" id="startCapture"></a><div class="element clickable method public startCapture" data-toggle="collapse" data-target=".startCapture .collapse">
+<h2>Starts capturing output, should be used with ::stopCapture() to grab output from code that does not offer an option of returning a value instead of outputting it</h2>
+<pre>startCapture() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="stop" id="stop"></a><div class="element clickable method public stop" data-toggle="collapse" data-target=".stop .collapse">
+<h2>Stops output buffering, flushing everything to the browser</h2>
+<pre>stop() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="stopCapture" id="stopCapture"></a><div class="element clickable method public stopCapture" data-toggle="collapse" data-target=".stopCapture .collapse">
+<h2>Stops capturing output, returning what was captured</h2>
+<pre>stopCapture() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The captured output</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fBuffer.html">\fBuffer</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fBuffer.html">\fBuffer</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24capturing" id="$capturing"> </a><div class="element clickable property private $capturing" data-toggle="collapse" data-target=".$capturing .collapse">
+<h2>If output capturing is currently active</h2>
+<pre>$capturing : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24started" id="$started"> </a><div class="element clickable property private $started" data-toggle="collapse" data-target=".$started .collapse">
+<h2>If output buffering has been started</h2>
+<pre>$started : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="erase" id="erase"> </a><div class="element clickable constant  erase" data-toggle="collapse" data-target=".erase .collapse">
+<h2>erase</h2>
+<pre>erase </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
+<h2>get</h2>
+<pre>get </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="isStarted" id="isStarted"> </a><div class="element clickable constant  isStarted" data-toggle="collapse" data-target=".isStarted .collapse">
+<h2>isStarted</h2>
+<pre>isStarted </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="replace" id="replace"> </a><div class="element clickable constant  replace" data-toggle="collapse" data-target=".replace .collapse">
+<h2>replace</h2>
+<pre>replace </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="start" id="start"> </a><div class="element clickable constant  start" data-toggle="collapse" data-target=".start .collapse">
+<h2>start</h2>
+<pre>start </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="startCapture" id="startCapture"> </a><div class="element clickable constant  startCapture" data-toggle="collapse" data-target=".startCapture .collapse">
+<h2>startCapture</h2>
+<pre>startCapture </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="stop" id="stop"> </a><div class="element clickable constant  stop" data-toggle="collapse" data-target=".stop .collapse">
+<h2>stop</h2>
+<pre>stop </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="stopCapture" id="stopCapture"> </a><div class="element clickable constant  stopCapture" data-toggle="collapse" data-target=".stopCapture .collapse">
+<h2>stopCapture</h2>
+<pre>stopCapture </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

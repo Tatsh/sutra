@@ -1,0 +1,387 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fHTML</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#containsBlockLevelHTML" title="containsBlockLevelHTML :: Checks a string of HTML for block level elements"><span class="description">Checks a string of HTML for block level elements</span><pre>containsBlockLevelHTML()</pre></a></li>
+<li class="method public "><a href="#convertNewlines" title="convertNewlines :: Converts newlines into `br` tags as long as there aren't any block-level HTML tags present"><span class="description">Converts newlines into `br` tags as long as there aren't any block-level HTML tags present</span><pre>convertNewlines()</pre></a></li>
+<li class="method public "><a href="#decode" title="decode :: Converts all HTML entities to normal characters, using UTF-8"><span class="description">Converts all HTML entities to normal characters, using UTF-8</span><pre>decode()</pre></a></li>
+<li class="method public "><a href="#encode" title="encode :: Converts all special characters to entites, using UTF-8."><span class="description">Converts all special characters to entites, using UTF-8.</span><pre>encode()</pre></a></li>
+<li class="method public "><a href="#makeLinks" title="makeLinks :: Takes a block of text and converts all URLs into HTML links"><span class="description">Takes a block of text and converts all URLs into HTML links</span><pre>makeLinks()</pre></a></li>
+<li class="method public "><a href="#prepare" title="prepare :: Prepares content for display in UTF-8 encoded HTML - allows HTML tags"><span class="description">Prepares content for display in UTF-8 encoded HTML - allows HTML tags</span><pre>prepare()</pre></a></li>
+<li class="method public "><a href="#printOption" title="printOption :: Prints an `option` tag with the provided value, using the selected value to determine if the option should be marked as selected"><span class="description">Prints an `option` tag with the provided value, using the selected value to determine if the option should be marked as selected</span><pre>printOption()</pre></a></li>
+<li class="method public "><a href="#sendHeader" title="sendHeader :: Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page"><span class="description">Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</span><pre>sendHeader()</pre></a></li>
+<li class="method public "><a href="#show" title="show :: Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content"><span class="description">Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content</span><pre>show()</pre></a></li>
+<li class="method public "><a href="#showChecked" title='showChecked :: Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`'><span class="description">Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</span><pre>showChecked()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#containsBlockLevelHTML" title="containsBlockLevelHTML :: "><span class="description">containsBlockLevelHTML</span><pre>containsBlockLevelHTML</pre></a></li>
+<li class="constant  "><a href="#convertNewlines" title="convertNewlines :: "><span class="description">convertNewlines</span><pre>convertNewlines</pre></a></li>
+<li class="constant  "><a href="#decode" title="decode :: "><span class="description">decode</span><pre>decode</pre></a></li>
+<li class="constant  "><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  "><a href="#makeLinks" title="makeLinks :: "><span class="description">makeLinks</span><pre>makeLinks</pre></a></li>
+<li class="constant  "><a href="#prepare" title="prepare :: "><span class="description">prepare</span><pre>prepare</pre></a></li>
+<li class="constant  "><a href="#printOption" title="printOption :: "><span class="description">printOption</span><pre>printOption</pre></a></li>
+<li class="constant  "><a href="#sendHeader" title="sendHeader :: "><span class="description">sendHeader</span><pre>sendHeader</pre></a></li>
+<li class="constant  "><a href="#show" title="show :: "><span class="description">show</span><pre>show</pre></a></li>
+<li class="constant  "><a href="#showChecked" title="showChecked :: "><span class="description">showChecked</span><pre>showChecked</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfHTML" id="\fHTML"></a><div href="../classes/fHTML.html" class="element class">
+<p class="short_description">Provides HTML-related methods</p>
+<div class="details">
+<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2010 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fHTML">http://flourishlib.com/fHTML</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b8</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8  Changed ::encode() and ::prepare() to handle arrays of strings [wb, 2010-05-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7  Fixed a bug where some conditional comments were causing the regex in ::prepare() to break [wb, 2009-11-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6  Updated ::showChecked() to require strict equality if one parameter is `NULL` [wb, 2009-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5  Fixed ::prepare() so it does not encode multi-line HTML comments [wb, 2009-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Added methods ::printOption() and ::showChecked() that were in fCRUD [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Fixed a bug where ::makeLinks() would double-link some URLs [wb, 2009-01-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Fixed a bug where ::makeLinks() would create links out of URLs in HTML tags [wb, 2008-12-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2007-09-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="containsBlockLevelHTML" id="containsBlockLevelHTML"></a><div class="element clickable method public containsBlockLevelHTML" data-toggle="collapse" data-target=".containsBlockLevelHTML .collapse">
+<h2>Checks a string of HTML for block level elements</h2>
+<pre>containsBlockLevelHTML(string $content) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The HTML content to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the content contains a block level tag</div>
+</div></div>
+</div>
+<a name="convertNewlines" id="convertNewlines"></a><div class="element clickable method public convertNewlines" data-toggle="collapse" data-target=".convertNewlines .collapse">
+<h2>Converts newlines into `br` tags as long as there aren't any block-level HTML tags present</h2>
+<pre>convertNewlines(string $content) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to display</p></div>
+</div></div>
+</div>
+<a name="decode" id="decode"></a><div class="element clickable method public decode" data-toggle="collapse" data-target=".decode .collapse">
+<h2>Converts all HTML entities to normal characters, using UTF-8</h2>
+<pre>decode(string $content) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to decode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The decoded content</div>
+</div></div>
+</div>
+<a name="encode" id="encode"></a><div class="element clickable method public encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>Converts all special characters to entites, using UTF-8.</h2>
+<pre>encode(string | array $content) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>stringarray</code><p>The content to encode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded content</div>
+</div></div>
+</div>
+<a name="makeLinks" id="makeLinks"></a><div class="element clickable method public makeLinks" data-toggle="collapse" data-target=".makeLinks .collapse">
+<h2>Takes a block of text and converts all URLs into HTML links</h2>
+<pre>makeLinks(string $content, integer $link_text_length) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to parse for links</p></div>
+<div class="subelement argument">
+<h4>$link_text_length</h4>
+<code>integer</code><p>If non-zero, all link text will be truncated to this many characters</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The content with all URLs converted to HTML link</div>
+</div></div>
+</div>
+<a name="prepare" id="prepare"></a><div class="element clickable method public prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>Prepares content for display in UTF-8 encoded HTML - allows HTML tags</h2>
+<pre>prepare(string | array $content) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>stringarray</code><p>The content to prepare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded html</div>
+</div></div>
+</div>
+<a name="printOption" id="printOption"></a><div class="element clickable method public printOption" data-toggle="collapse" data-target=".printOption .collapse">
+<h2>Prints an `option` tag with the provided value, using the selected value to determine if the option should be marked as selected</h2>
+<pre>printOption(string $text, string $value, string $selected_value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>The text to display in the option tag</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value for the option</p></div>
+<div class="subelement argument">
+<h4>$selected_value</h4>
+<code>string</code><p>If the value is the same as this, the option will be marked as selected</p></div>
+</div></div>
+</div>
+<a name="sendHeader" id="sendHeader"></a><div class="element clickable method public sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
+<h2>Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</h2>
+<pre>sendHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="show" id="show"></a><div class="element clickable method public show" data-toggle="collapse" data-target=".show .collapse">
+<h2>Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content</h2>
+<pre>show(string $content, string $css_class) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to display</p></div>
+<div class="subelement argument">
+<h4>$css_class</h4>
+<code>string</code><p>The CSS class to apply</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the content was shown</div>
+</div></div>
+</div>
+<a name="showChecked" id="showChecked"></a><div class="element clickable method public showChecked" data-toggle="collapse" data-target=".showChecked .collapse">
+<h2>Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</h2>
+<pre>showChecked(string $value, string | array $checked_value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Please note that if either <code>$value</code> or <code>$checked_value</code> is <code>NULL</code>, a
+strict comparison will be performed, whereas normally a non-strict
+comparison is made. Thus <code>0</code> and <code>FALSE</code> will cause the checked
+attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value for the current HTML input tag</p></div>
+<div class="subelement argument">
+<h4>$checked_value</h4>
+<code>stringarray</code><p>The value (or array of values) that has been checked</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the checked attribute was printed</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fHTML.html">\fHTML</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fHTML.html">\fHTML</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="containsBlockLevelHTML" id="containsBlockLevelHTML"> </a><div class="element clickable constant  containsBlockLevelHTML" data-toggle="collapse" data-target=".containsBlockLevelHTML .collapse">
+<h2>containsBlockLevelHTML</h2>
+<pre>containsBlockLevelHTML </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="convertNewlines" id="convertNewlines"> </a><div class="element clickable constant  convertNewlines" data-toggle="collapse" data-target=".convertNewlines .collapse">
+<h2>convertNewlines</h2>
+<pre>convertNewlines </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="decode" id="decode"> </a><div class="element clickable constant  decode" data-toggle="collapse" data-target=".decode .collapse">
+<h2>decode</h2>
+<pre>decode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="makeLinks" id="makeLinks"> </a><div class="element clickable constant  makeLinks" data-toggle="collapse" data-target=".makeLinks .collapse">
+<h2>makeLinks</h2>
+<pre>makeLinks </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="prepare" id="prepare"> </a><div class="element clickable constant  prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>prepare</h2>
+<pre>prepare </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="printOption" id="printOption"> </a><div class="element clickable constant  printOption" data-toggle="collapse" data-target=".printOption .collapse">
+<h2>printOption</h2>
+<pre>printOption </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendHeader" id="sendHeader"> </a><div class="element clickable constant  sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
+<h2>sendHeader</h2>
+<pre>sendHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="show" id="show"> </a><div class="element clickable constant  show" data-toggle="collapse" data-target=".show .collapse">
+<h2>show</h2>
+<pre>show </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="showChecked" id="showChecked"> </a><div class="element clickable constant  showChecked" data-toggle="collapse" data-target=".showChecked .collapse">
+<h2>showChecked</h2>
+<pre>showChecked </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

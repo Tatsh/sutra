@@ -1,0 +1,653 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fAuthorization</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#addNamedIPRange" title="addNamedIPRange :: Adds a named IP address or range, or array of addresses and/or ranges"><span class="description">Adds a named IP address or range, or array of addresses and/or ranges</span><pre>addNamedIPRange()</pre></a></li>
+<li class="method public "><a href="#checkACL" title="checkACL :: Checks to see if the logged in user meets the requirements of the ACL specified"><span class="description">Checks to see if the logged in user meets the requirements of the ACL specified</span><pre>checkACL()</pre></a></li>
+<li class="method public "><a href="#checkAuthLevel" title="checkAuthLevel :: Checks to see if the logged in user has the specified auth level"><span class="description">Checks to see if the logged in user has the specified auth level</span><pre>checkAuthLevel()</pre></a></li>
+<li class="method public "><a href="#checkIP" title="checkIP :: Checks to see if the user is from the IPs or IP ranges specified"><span class="description">Checks to see if the user is from the IPs or IP ranges specified</span><pre>checkIP()</pre></a></li>
+<li class="method public "><a href="#checkLoggedIn" title="checkLoggedIn :: Checks to see if the user has an auth level or ACLs defined"><span class="description">Checks to see if the user has an auth level or ACLs defined</span><pre>checkLoggedIn()</pre></a></li>
+<li class="method public "><a href="#destroyUserInfo" title="destroyUserInfo :: Destroys the user's auth level and/or ACLs"><span class="description">Destroys the user's auth level and/or ACLs</span><pre>destroyUserInfo()</pre></a></li>
+<li class="method public "><a href="#getLoginPage" title="getLoginPage :: Returns the login page set via ::setLoginPage()"><span class="description">Returns the login page set via ::setLoginPage()</span><pre>getLoginPage()</pre></a></li>
+<li class="method public "><a href="#getRequestedURL" title="getRequestedURL :: Returns the URL requested before the user was redirected to the login page"><span class="description">Returns the URL requested before the user was redirected to the login page</span><pre>getRequestedURL()</pre></a></li>
+<li class="method public "><a href="#getUserACLs" title="getUserACLs :: Gets the ACLs for the logged in user"><span class="description">Gets the ACLs for the logged in user</span><pre>getUserACLs()</pre></a></li>
+<li class="method public "><a href="#getUserAuthLevel" title="getUserAuthLevel :: Gets the authorization level for the logged in user"><span class="description">Gets the authorization level for the logged in user</span><pre>getUserAuthLevel()</pre></a></li>
+<li class="method public "><a href="#getUserToken" title="getUserToken :: Gets the value that was set as the user token, `NULL` if no token has been set"><span class="description">Gets the value that was set as the user token, `NULL` if no token has been set</span><pre>getUserToken()</pre></a></li>
+<li class="method public "><a href="#requireACL" title="requireACL :: Redirect the user to the login page if they do not have the permissions required"><span class="description">Redirect the user to the login page if they do not have the permissions required</span><pre>requireACL()</pre></a></li>
+<li class="method public "><a href="#requireAuthLevel" title="requireAuthLevel :: Redirect the user to the login page if they do not have the auth level required"><span class="description">Redirect the user to the login page if they do not have the auth level required</span><pre>requireAuthLevel()</pre></a></li>
+<li class="method public "><a href="#requireLoggedIn" title="requireLoggedIn :: Redirect the user to the login page if they do not have an auth level or ACLs"><span class="description">Redirect the user to the login page if they do not have an auth level or ACLs</span><pre>requireLoggedIn()</pre></a></li>
+<li class="method public "><a href="#setAuthLevels" title="setAuthLevels :: Sets the authorization levels to use for level checking"><span class="description">Sets the authorization levels to use for level checking</span><pre>setAuthLevels()</pre></a></li>
+<li class="method public "><a href="#setLoginPage" title="setLoginPage :: Sets the login page to redirect users to"><span class="description">Sets the login page to redirect users to</span><pre>setLoginPage()</pre></a></li>
+<li class="method public "><a href="#setRequestedURL" title="setRequestedURL :: Sets the restricted URL requested by the user"><span class="description">Sets the restricted URL requested by the user</span><pre>setRequestedURL()</pre></a></li>
+<li class="method public "><a href="#setUserACLs" title="setUserACLs :: Sets the ACLs for the logged in user."><span class="description">Sets the ACLs for the logged in user.</span><pre>setUserACLs()</pre></a></li>
+<li class="method public "><a href="#setUserAuthLevel" title="setUserAuthLevel :: Sets the authorization level for the logged in user"><span class="description">Sets the authorization level for the logged in user</span><pre>setUserAuthLevel()</pre></a></li>
+<li class="method public "><a href="#setUserToken" title="setUserToken :: Sets some piece of information to use to identify the current user"><span class="description">Sets some piece of information to use to identify the current user</span><pre>setUserToken()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#redirect" title="redirect :: Redirects the user to the login page"><span class="description">Redirects the user to the login page</span><pre>redirect()</pre></a></li>
+<li class="method private "><a href="#validateAuthLevel" title="validateAuthLevel :: Makes sure auth levels have been set, and that the specified auth level is valid"><span class="description">Makes sure auth levels have been set, and that the specified auth level is valid</span><pre>validateAuthLevel()</pre></a></li>
+<li class="method private "><a href="#validateLoginPage" title="validateLoginPage :: Makes sure a login page has been defined"><span class="description">Makes sure a login page has been defined</span><pre>validateLoginPage()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24levels" title="$levels :: The valid auth levels"><span class="description">The valid auth levels</span><pre>$levels</pre></a></li>
+<li class="property private "><a href="#%24login_page" title="$login_page :: The login page"><span class="description">The login page</span><pre>$login_page</pre></a></li>
+<li class="property private "><a href="#%24named_ip_ranges" title="$named_ip_ranges :: Named IP ranges"><span class="description">Named IP ranges</span><pre>$named_ip_ranges</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#addNamedIPRange" title="addNamedIPRange :: "><span class="description">addNamedIPRange</span><pre>addNamedIPRange</pre></a></li>
+<li class="constant  "><a href="#checkACL" title="checkACL :: "><span class="description">checkACL</span><pre>checkACL</pre></a></li>
+<li class="constant  "><a href="#checkAuthLevel" title="checkAuthLevel :: "><span class="description">checkAuthLevel</span><pre>checkAuthLevel</pre></a></li>
+<li class="constant  "><a href="#checkIP" title="checkIP :: "><span class="description">checkIP</span><pre>checkIP</pre></a></li>
+<li class="constant  "><a href="#checkLoggedIn" title="checkLoggedIn :: "><span class="description">checkLoggedIn</span><pre>checkLoggedIn</pre></a></li>
+<li class="constant  "><a href="#destroyUserInfo" title="destroyUserInfo :: "><span class="description">destroyUserInfo</span><pre>destroyUserInfo</pre></a></li>
+<li class="constant  "><a href="#getLoginPage" title="getLoginPage :: "><span class="description">getLoginPage</span><pre>getLoginPage</pre></a></li>
+<li class="constant  "><a href="#getRequestedURL" title="getRequestedURL :: "><span class="description">getRequestedURL</span><pre>getRequestedURL</pre></a></li>
+<li class="constant  "><a href="#getUserACLs" title="getUserACLs :: "><span class="description">getUserACLs</span><pre>getUserACLs</pre></a></li>
+<li class="constant  "><a href="#getUserAuthLevel" title="getUserAuthLevel :: "><span class="description">getUserAuthLevel</span><pre>getUserAuthLevel</pre></a></li>
+<li class="constant  "><a href="#getUserToken" title="getUserToken :: "><span class="description">getUserToken</span><pre>getUserToken</pre></a></li>
+<li class="constant  "><a href="#requireACL" title="requireACL :: "><span class="description">requireACL</span><pre>requireACL</pre></a></li>
+<li class="constant  "><a href="#requireAuthLevel" title="requireAuthLevel :: "><span class="description">requireAuthLevel</span><pre>requireAuthLevel</pre></a></li>
+<li class="constant  "><a href="#requireLoggedIn" title="requireLoggedIn :: "><span class="description">requireLoggedIn</span><pre>requireLoggedIn</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#setAuthLevels" title="setAuthLevels :: "><span class="description">setAuthLevels</span><pre>setAuthLevels</pre></a></li>
+<li class="constant  "><a href="#setLoginPage" title="setLoginPage :: "><span class="description">setLoginPage</span><pre>setLoginPage</pre></a></li>
+<li class="constant  "><a href="#setRequestedURL" title="setRequestedURL :: "><span class="description">setRequestedURL</span><pre>setRequestedURL</pre></a></li>
+<li class="constant  "><a href="#setUserACLs" title="setUserACLs :: "><span class="description">setUserACLs</span><pre>setUserACLs</pre></a></li>
+<li class="constant  "><a href="#setUserAuthLevel" title="setUserAuthLevel :: "><span class="description">setUserAuthLevel</span><pre>setUserAuthLevel</pre></a></li>
+<li class="constant  "><a href="#setUserToken" title="setUserToken :: "><span class="description">setUserToken</span><pre>setUserToken</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfAuthorization" id="\fAuthorization"></a><div href="../classes/fAuthorization.html" class="element class">
+<p class="short_description">Allows defining and checking user authentication via ACLs, authorization levels or a simple logged in/not logged in scheme</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fAuthorization">http://flourishlib.com/fAuthorization</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b6</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6  Fixed ::checkIP() to not trigger a notice when `$_SERVER['REMOTE_ADDR']` is not set [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5  Added ::getLoginPage() [wb, 2010-03-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Updated class to use new fSession API [wb, 2009-10-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Updated class to use new fSession API [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Fixed a bug with using named IP ranges in ::checkIP() [wb, 2009-01-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addNamedIPRange" id="addNamedIPRange"></a><div class="element clickable method public addNamedIPRange" data-toggle="collapse" data-target=".addNamedIPRange .collapse">
+<h2>Adds a named IP address or range, or array of addresses and/or ranges</h2>
+<pre>addNamedIPRange(string $name, mixed $ip_ranges) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method allows ::checkIP() to be called with a name instead of the
+actual IPs.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name to give the IP addresses/ranges</p>
+</div>
+<div class="subelement argument">
+<h4>$ip_ranges</h4>
+<code>mixed</code><p>This can be string (or array of strings) of the IPs or IP ranges to restrict to - please see ::checkIP() for format details</p>
+</div>
+</div></div>
+</div>
+<a name="checkACL" id="checkACL"></a><div class="element clickable method public checkACL" data-toggle="collapse" data-target=".checkACL .collapse">
+<h2>Checks to see if the logged in user meets the requirements of the ACL specified</h2>
+<pre>checkACL(string $resource, string $permission) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>string</code><p>The resource we are checking permissions for</p></div>
+<div class="subelement argument">
+<h4>$permission</h4>
+<code>string</code><p>The permission to require from the user</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user has the required permissions</div>
+</div></div>
+</div>
+<a name="checkAuthLevel" id="checkAuthLevel"></a><div class="element clickable method public checkAuthLevel" data-toggle="collapse" data-target=".checkAuthLevel .collapse">
+<h2>Checks to see if the logged in user has the specified auth level</h2>
+<pre>checkAuthLevel(string $level) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to check against the logged in user's level</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user has the required auth level</div>
+</div></div>
+</div>
+<a name="checkIP" id="checkIP"></a><div class="element clickable method public checkIP" data-toggle="collapse" data-target=".checkIP .collapse">
+<h2>Checks to see if the user is from the IPs or IP ranges specified</h2>
+<pre>checkIP(mixed $ip_ranges) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The <code>$ip_ranges</code> parameter can be either a single string, or an array of
+strings, each of which should be in one of the following formats:</p>
+
+<ul>
+<li>A single IP address:
+
+<ul>
+<li>192.168.1.1</li>
+<li>208.77.188.166</li>
+</ul></li>
+<li>A CIDR range
+
+<ul>
+<li>192.168.1.0/24</li>
+<li>208.77.188.160/28</li>
+</ul></li>
+<li>An IP/subnet mask combination
+
+<ul>
+<li>192.168.1.0/255.255.255.0</li>
+<li>208.77.188.160/255.255.255.240</li>
+</ul></li>
+</ul></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ip_ranges</h4>
+<code>mixed</code><p>A string (or array of strings) of the IPs or IP ranges to restrict to - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user is coming from (one of) the IPs or ranges specified</div>
+</div></div>
+</div>
+<a name="checkLoggedIn" id="checkLoggedIn"></a><div class="element clickable method public checkLoggedIn" data-toggle="collapse" data-target=".checkLoggedIn .collapse">
+<h2>Checks to see if the user has an auth level or ACLs defined</h2>
+<pre>checkLoggedIn() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user is logged in</div>
+</div></div>
+</div>
+<a name="destroyUserInfo" id="destroyUserInfo"></a><div class="element clickable method public destroyUserInfo" data-toggle="collapse" data-target=".destroyUserInfo .collapse">
+<h2>Destroys the user's auth level and/or ACLs</h2>
+<pre>destroyUserInfo() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getLoginPage" id="getLoginPage"></a><div class="element clickable method public getLoginPage" data-toggle="collapse" data-target=".getLoginPage .collapse">
+<h2>Returns the login page set via ::setLoginPage()</h2>
+<pre>getLoginPage() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The login page users are redirected to if they don't have the required authorization</div>
+</div></div>
+</div>
+<a name="getRequestedURL" id="getRequestedURL"></a><div class="element clickable method public getRequestedURL" data-toggle="collapse" data-target=".getRequestedURL .collapse">
+<h2>Returns the URL requested before the user was redirected to the login page</h2>
+<pre>getRequestedURL(boolean $clear, string $default_url) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$clear</h4>
+<code>boolean</code><p>If the requested url should be cleared from the session after it is retrieved</p></div>
+<div class="subelement argument">
+<h4>$default_url</h4>
+<code>string</code><p>The default URL to return if the user was not redirected</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URL that was requested before they were redirected to the login page</div>
+</div></div>
+</div>
+<a name="getUserACLs" id="getUserACLs"></a><div class="element clickable method public getUserACLs" data-toggle="collapse" data-target=".getUserACLs .collapse">
+<h2>Gets the ACLs for the logged in user</h2>
+<pre>getUserACLs() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The logged in user's ACLs</div>
+</div></div>
+</div>
+<a name="getUserAuthLevel" id="getUserAuthLevel"></a><div class="element clickable method public getUserAuthLevel" data-toggle="collapse" data-target=".getUserAuthLevel .collapse">
+<h2>Gets the authorization level for the logged in user</h2>
+<pre>getUserAuthLevel() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The logged in user's auth level</div>
+</div></div>
+</div>
+<a name="getUserToken" id="getUserToken"></a><div class="element clickable method public getUserToken" data-toggle="collapse" data-target=".getUserToken .collapse">
+<h2>Gets the value that was set as the user token, `NULL` if no token has been set</h2>
+<pre>getUserToken() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The user token that had been set, `NULL` if none</div>
+</div></div>
+</div>
+<a name="requireACL" id="requireACL"></a><div class="element clickable method public requireACL" data-toggle="collapse" data-target=".requireACL .collapse">
+<h2>Redirect the user to the login page if they do not have the permissions required</h2>
+<pre>requireACL(string $resource, string $permission) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>string</code><p>The resource we are checking permissions for</p></div>
+<div class="subelement argument">
+<h4>$permission</h4>
+<code>string</code><p>The permission to require from the user</p></div>
+</div></div>
+</div>
+<a name="requireAuthLevel" id="requireAuthLevel"></a><div class="element clickable method public requireAuthLevel" data-toggle="collapse" data-target=".requireAuthLevel .collapse">
+<h2>Redirect the user to the login page if they do not have the auth level required</h2>
+<pre>requireAuthLevel(string $level) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to check against the logged in user's level</p>
+</div>
+</div></div>
+</div>
+<a name="requireLoggedIn" id="requireLoggedIn"></a><div class="element clickable method public requireLoggedIn" data-toggle="collapse" data-target=".requireLoggedIn .collapse">
+<h2>Redirect the user to the login page if they do not have an auth level or ACLs</h2>
+<pre>requireLoggedIn() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setAuthLevels" id="setAuthLevels"></a><div class="element clickable method public setAuthLevels" data-toggle="collapse" data-target=".setAuthLevels .collapse">
+<h2>Sets the authorization levels to use for level checking</h2>
+<pre>setAuthLevels(array $levels) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$levels</h4>
+<code>array</code><p>An associative array of <code>(string) {level} => (integer) {value}</code>, for each level</p>
+</div>
+</div></div>
+</div>
+<a name="setLoginPage" id="setLoginPage"></a><div class="element clickable method public setLoginPage" data-toggle="collapse" data-target=".setLoginPage .collapse">
+<h2>Sets the login page to redirect users to</h2>
+<pre>setLoginPage(string $url) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL of the login page</p></div>
+</div></div>
+</div>
+<a name="setRequestedURL" id="setRequestedURL"></a><div class="element clickable method public setRequestedURL" data-toggle="collapse" data-target=".setRequestedURL .collapse">
+<h2>Sets the restricted URL requested by the user</h2>
+<pre>setRequestedURL(string $url) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to save as the requested URL</p></div>
+</div></div>
+</div>
+<a name="setUserACLs" id="setUserACLs"></a><div class="element clickable method public setUserACLs" data-toggle="collapse" data-target=".setUserACLs .collapse">
+<h2>Sets the ACLs for the logged in user.</h2>
+<pre>setUserACLs(array $acls) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Array should be formatted like:</p>
+
+<p>{{{
+array (
+    (string) {resource name} => array(
+        (mixed) {permission}, ...
+    ), ...
+)
+}}}</p>
+
+<p>The resource name or the permission may be the single character <code>'*'</code>
+which acts as a wildcard.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$acls</h4>
+<code>array</code><p>The logged in user's ACLs - see method description for format</p>
+</div>
+</div></div>
+</div>
+<a name="setUserAuthLevel" id="setUserAuthLevel"></a><div class="element clickable method public setUserAuthLevel" data-toggle="collapse" data-target=".setUserAuthLevel .collapse">
+<h2>Sets the authorization level for the logged in user</h2>
+<pre>setUserAuthLevel(string $level) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The logged in user's auth level</p>
+</div>
+</div></div>
+</div>
+<a name="setUserToken" id="setUserToken"></a><div class="element clickable method public setUserToken" data-toggle="collapse" data-target=".setUserToken .collapse">
+<h2>Sets some piece of information to use to identify the current user</h2>
+<pre>setUserToken(mixed $token) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>mixed</code><p>The user's token. This could be a user id, an email address, a user object, etc.</p>
+</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fAuthorization.html">\fAuthorization</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fAuthorization.html">\fAuthorization</a></code></div>
+</div></div>
+</div>
+<a name="redirect" id="redirect"></a><div class="element clickable method private redirect" data-toggle="collapse" data-target=".redirect .collapse">
+<h2>Redirects the user to the login page</h2>
+<pre>redirect() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="validateAuthLevel" id="validateAuthLevel"></a><div class="element clickable method private validateAuthLevel" data-toggle="collapse" data-target=".validateAuthLevel .collapse">
+<h2>Makes sure auth levels have been set, and that the specified auth level is valid</h2>
+<pre>validateAuthLevel(string $level) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to validate</p></div>
+</div></div>
+</div>
+<a name="validateLoginPage" id="validateLoginPage"></a><div class="element clickable method private validateLoginPage" data-toggle="collapse" data-target=".validateLoginPage .collapse">
+<h2>Makes sure a login page has been defined</h2>
+<pre>validateLoginPage() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24levels" id="$levels"> </a><div class="element clickable property private $levels" data-toggle="collapse" data-target=".$levels .collapse">
+<h2>The valid auth levels</h2>
+<pre>$levels : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24login_page" id="$login_page"> </a><div class="element clickable property private $login_page" data-toggle="collapse" data-target=".$login_page .collapse">
+<h2>The login page</h2>
+<pre>$login_page : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24named_ip_ranges" id="$named_ip_ranges"> </a><div class="element clickable property private $named_ip_ranges" data-toggle="collapse" data-target=".$named_ip_ranges .collapse">
+<h2>Named IP ranges</h2>
+<pre>$named_ip_ranges : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="addNamedIPRange" id="addNamedIPRange"> </a><div class="element clickable constant  addNamedIPRange" data-toggle="collapse" data-target=".addNamedIPRange .collapse">
+<h2>addNamedIPRange</h2>
+<pre>addNamedIPRange </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="checkACL" id="checkACL"> </a><div class="element clickable constant  checkACL" data-toggle="collapse" data-target=".checkACL .collapse">
+<h2>checkACL</h2>
+<pre>checkACL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="checkAuthLevel" id="checkAuthLevel"> </a><div class="element clickable constant  checkAuthLevel" data-toggle="collapse" data-target=".checkAuthLevel .collapse">
+<h2>checkAuthLevel</h2>
+<pre>checkAuthLevel </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="checkIP" id="checkIP"> </a><div class="element clickable constant  checkIP" data-toggle="collapse" data-target=".checkIP .collapse">
+<h2>checkIP</h2>
+<pre>checkIP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="checkLoggedIn" id="checkLoggedIn"> </a><div class="element clickable constant  checkLoggedIn" data-toggle="collapse" data-target=".checkLoggedIn .collapse">
+<h2>checkLoggedIn</h2>
+<pre>checkLoggedIn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="destroyUserInfo" id="destroyUserInfo"> </a><div class="element clickable constant  destroyUserInfo" data-toggle="collapse" data-target=".destroyUserInfo .collapse">
+<h2>destroyUserInfo</h2>
+<pre>destroyUserInfo </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getLoginPage" id="getLoginPage"> </a><div class="element clickable constant  getLoginPage" data-toggle="collapse" data-target=".getLoginPage .collapse">
+<h2>getLoginPage</h2>
+<pre>getLoginPage </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getRequestedURL" id="getRequestedURL"> </a><div class="element clickable constant  getRequestedURL" data-toggle="collapse" data-target=".getRequestedURL .collapse">
+<h2>getRequestedURL</h2>
+<pre>getRequestedURL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getUserACLs" id="getUserACLs"> </a><div class="element clickable constant  getUserACLs" data-toggle="collapse" data-target=".getUserACLs .collapse">
+<h2>getUserACLs</h2>
+<pre>getUserACLs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getUserAuthLevel" id="getUserAuthLevel"> </a><div class="element clickable constant  getUserAuthLevel" data-toggle="collapse" data-target=".getUserAuthLevel .collapse">
+<h2>getUserAuthLevel</h2>
+<pre>getUserAuthLevel </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getUserToken" id="getUserToken"> </a><div class="element clickable constant  getUserToken" data-toggle="collapse" data-target=".getUserToken .collapse">
+<h2>getUserToken</h2>
+<pre>getUserToken </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="requireACL" id="requireACL"> </a><div class="element clickable constant  requireACL" data-toggle="collapse" data-target=".requireACL .collapse">
+<h2>requireACL</h2>
+<pre>requireACL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="requireAuthLevel" id="requireAuthLevel"> </a><div class="element clickable constant  requireAuthLevel" data-toggle="collapse" data-target=".requireAuthLevel .collapse">
+<h2>requireAuthLevel</h2>
+<pre>requireAuthLevel </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="requireLoggedIn" id="requireLoggedIn"> </a><div class="element clickable constant  requireLoggedIn" data-toggle="collapse" data-target=".requireLoggedIn .collapse">
+<h2>requireLoggedIn</h2>
+<pre>requireLoggedIn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setAuthLevels" id="setAuthLevels"> </a><div class="element clickable constant  setAuthLevels" data-toggle="collapse" data-target=".setAuthLevels .collapse">
+<h2>setAuthLevels</h2>
+<pre>setAuthLevels </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setLoginPage" id="setLoginPage"> </a><div class="element clickable constant  setLoginPage" data-toggle="collapse" data-target=".setLoginPage .collapse">
+<h2>setLoginPage</h2>
+<pre>setLoginPage </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setRequestedURL" id="setRequestedURL"> </a><div class="element clickable constant  setRequestedURL" data-toggle="collapse" data-target=".setRequestedURL .collapse">
+<h2>setRequestedURL</h2>
+<pre>setRequestedURL </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setUserACLs" id="setUserACLs"> </a><div class="element clickable constant  setUserACLs" data-toggle="collapse" data-target=".setUserACLs .collapse">
+<h2>setUserACLs</h2>
+<pre>setUserACLs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setUserAuthLevel" id="setUserAuthLevel"> </a><div class="element clickable constant  setUserAuthLevel" data-toggle="collapse" data-target=".setUserAuthLevel .collapse">
+<h2>setUserAuthLevel</h2>
+<pre>setUserAuthLevel </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setUserToken" id="setUserToken"> </a><div class="element clickable constant  setUserToken" data-toggle="collapse" data-target=".setUserToken .collapse">
+<h2>setUserToken</h2>
+<pre>setUserToken </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

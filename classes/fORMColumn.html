@@ -1,0 +1,411 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fORMColumn</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#configureEmailColumn" title="configureEmailColumn :: Sets a column to be formatted as an email address"><span class="description">Sets a column to be formatted as an email address</span><pre>configureEmailColumn()</pre></a></li>
+<li class="method public "><a href="#configureLinkColumn" title="configureLinkColumn :: Sets a column to be formatted as a link"><span class="description">Sets a column to be formatted as a link</span><pre>configureLinkColumn()</pre></a></li>
+<li class="method public "><a href="#configureNumberColumn" title="configureNumberColumn :: Sets a column to be returned as an fNumber object from calls to `get{ColumnName}()`"><span class="description">Sets a column to be returned as an fNumber object from calls to `get{ColumnName}()`</span><pre>configureNumberColumn()</pre></a></li>
+<li class="method public "><a href="#configureRandomColumn" title="configureRandomColumn :: Sets a column to be a random string column - a random string will be generated when the record is saved"><span class="description">Sets a column to be a random string column - a random string will be generated when the record is saved</span><pre>configureRandomColumn()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24email_columns" title="$email_columns :: Columns that should be formatted as email addresses"><span class="description">Columns that should be formatted as email addresses</span><pre>$email_columns</pre></a></li>
+<li class="property private "><a href="#%24link_columns" title="$link_columns :: Columns that should be formatted as links"><span class="description">Columns that should be formatted as links</span><pre>$link_columns</pre></a></li>
+<li class="property private "><a href="#%24number_columns" title="$number_columns :: Columns that should be returned as fNumber objects"><span class="description">Columns that should be returned as fNumber objects</span><pre>$number_columns</pre></a></li>
+<li class="property private "><a href="#%24random_columns" title="$random_columns :: Columns that should be formatted as a random string"><span class="description">Columns that should be formatted as a random string</span><pre>$random_columns</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#configureEmailColumn" title="configureEmailColumn :: "><span class="description">configureEmailColumn</span><pre>configureEmailColumn</pre></a></li>
+<li class="constant  "><a href="#configureLinkColumn" title="configureLinkColumn :: "><span class="description">configureLinkColumn</span><pre>configureLinkColumn</pre></a></li>
+<li class="constant  "><a href="#configureNumberColumn" title="configureNumberColumn :: "><span class="description">configureNumberColumn</span><pre>configureNumberColumn</pre></a></li>
+<li class="constant  "><a href="#configureRandomColumn" title="configureRandomColumn :: "><span class="description">configureRandomColumn</span><pre>configureRandomColumn</pre></a></li>
+<li class="constant  "><a href="#encodeNumberColumn" title="encodeNumberColumn :: "><span class="description">encodeNumberColumn</span><pre>encodeNumberColumn</pre></a></li>
+<li class="constant  "><a href="#generate" title="generate :: "><span class="description">generate</span><pre>generate</pre></a></li>
+<li class="constant  "><a href="#inspect" title="inspect :: "><span class="description">inspect</span><pre>inspect</pre></a></li>
+<li class="constant  "><a href="#objectifyNumber" title="objectifyNumber :: "><span class="description">objectifyNumber</span><pre>objectifyNumber</pre></a></li>
+<li class="constant  "><a href="#prepareLinkColumn" title="prepareLinkColumn :: "><span class="description">prepareLinkColumn</span><pre>prepareLinkColumn</pre></a></li>
+<li class="constant  "><a href="#prepareNumberColumn" title="prepareNumberColumn :: "><span class="description">prepareNumberColumn</span><pre>prepareNumberColumn</pre></a></li>
+<li class="constant  "><a href="#reflect" title="reflect :: "><span class="description">reflect</span><pre>reflect</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#setEmailColumn" title="setEmailColumn :: "><span class="description">setEmailColumn</span><pre>setEmailColumn</pre></a></li>
+<li class="constant  "><a href="#setRandomStrings" title="setRandomStrings :: "><span class="description">setRandomStrings</span><pre>setRandomStrings</pre></a></li>
+<li class="constant  "><a href="#validateEmailColumns" title="validateEmailColumns :: "><span class="description">validateEmailColumns</span><pre>validateEmailColumns</pre></a></li>
+<li class="constant  "><a href="#validateLinkColumns" title="validateLinkColumns :: "><span class="description">validateLinkColumns</span><pre>validateLinkColumns</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfORMColumn" id="\fORMColumn"></a><div href="../classes/fORMColumn.html" class="element class">
+<p class="short_description">Provides special column functionality for fActiveRecord classes</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMColumn">http://flourishlib.com/fORMColumn</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b15</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed a bug with empty string email values passing through required validation [wb, 2011-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Updated code to work with the new fORM API [wb, 2010-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed ::reflect() to include some missing parameters [wb, 2010-06-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Changed validation messages array to use column name keys [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed a bug with ::prepareLinkColumn() returning `http://` for empty link columns and not adding `http://` to links that contained a /, but did not start with it [wb, 2010-03-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed ::reflect() to specify the value returned from `set` and `generate` methods, changed ::generate() methods to return the newly generated string [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Changed email columns to be automatically trimmed if they are a value email address surrounded by whitespace [wb, 2010-03-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Made the validation on link columns a bit more strict [wb, 2010-03-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Changed SQL statements to use value placeholders, identifier escaping and schema support [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated to use new fORM::registerInspectCallback() method [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Updated code for new fORM API [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Updated code to use new fValidationException::formatField() method [wb, 2009-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with objectifying number columns [wb, 2008-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-05-27]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="configureEmailColumn" id="configureEmailColumn"></a><div class="element clickable method public configureEmailColumn" data-toggle="collapse" data-target=".configureEmailColumn .collapse">
+<h2>Sets a column to be formatted as an email address</h2>
+<pre>configureEmailColumn(mixed $class, string $column) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to set the column format</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to format as an email address</p></div>
+</div></div>
+</div>
+<a name="configureLinkColumn" id="configureLinkColumn"></a><div class="element clickable method public configureLinkColumn" data-toggle="collapse" data-target=".configureLinkColumn .collapse">
+<h2>Sets a column to be formatted as a link</h2>
+<pre>configureLinkColumn(mixed $class, string $column) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to set the column format</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to format as a link</p></div>
+</div></div>
+</div>
+<a name="configureNumberColumn" id="configureNumberColumn"></a><div class="element clickable method public configureNumberColumn" data-toggle="collapse" data-target=".configureNumberColumn .collapse">
+<h2>Sets a column to be returned as an fNumber object from calls to `get{ColumnName}()`</h2>
+<pre>configureNumberColumn(mixed $class, string $column) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to set the column format</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to return as an fNumber object</p></div>
+</div></div>
+</div>
+<a name="configureRandomColumn" id="configureRandomColumn"></a><div class="element clickable method public configureRandomColumn" data-toggle="collapse" data-target=".configureRandomColumn .collapse">
+<h2>Sets a column to be a random string column - a random string will be generated when the record is saved</h2>
+<pre>configureRandomColumn(mixed $class, string $column, string $type, integer $length) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set as a random column</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of random string, must be one of: <code>'alphanumeric'</code>, <code>'alpha'</code>, <code>'numeric'</code>, <code>'hexadecimal'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>The length of the random string</p></div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fORMColumn.html">\fORMColumn</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fORMColumn.html">\fORMColumn</a></code></div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method private compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24email_columns" id="$email_columns"> </a><div class="element clickable property private $email_columns" data-toggle="collapse" data-target=".$email_columns .collapse">
+<h2>Columns that should be formatted as email addresses</h2>
+<pre>$email_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24link_columns" id="$link_columns"> </a><div class="element clickable property private $link_columns" data-toggle="collapse" data-target=".$link_columns .collapse">
+<h2>Columns that should be formatted as links</h2>
+<pre>$link_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24number_columns" id="$number_columns"> </a><div class="element clickable property private $number_columns" data-toggle="collapse" data-target=".$number_columns .collapse">
+<h2>Columns that should be returned as fNumber objects</h2>
+<pre>$number_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24random_columns" id="$random_columns"> </a><div class="element clickable property private $random_columns" data-toggle="collapse" data-target=".$random_columns .collapse">
+<h2>Columns that should be formatted as a random string</h2>
+<pre>$random_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="configureEmailColumn" id="configureEmailColumn"> </a><div class="element clickable constant  configureEmailColumn" data-toggle="collapse" data-target=".configureEmailColumn .collapse">
+<h2>configureEmailColumn</h2>
+<pre>configureEmailColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureLinkColumn" id="configureLinkColumn"> </a><div class="element clickable constant  configureLinkColumn" data-toggle="collapse" data-target=".configureLinkColumn .collapse">
+<h2>configureLinkColumn</h2>
+<pre>configureLinkColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureNumberColumn" id="configureNumberColumn"> </a><div class="element clickable constant  configureNumberColumn" data-toggle="collapse" data-target=".configureNumberColumn .collapse">
+<h2>configureNumberColumn</h2>
+<pre>configureNumberColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="configureRandomColumn" id="configureRandomColumn"> </a><div class="element clickable constant  configureRandomColumn" data-toggle="collapse" data-target=".configureRandomColumn .collapse">
+<h2>configureRandomColumn</h2>
+<pre>configureRandomColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="encodeNumberColumn" id="encodeNumberColumn"> </a><div class="element clickable constant  encodeNumberColumn" data-toggle="collapse" data-target=".encodeNumberColumn .collapse">
+<h2>encodeNumberColumn</h2>
+<pre>encodeNumberColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="generate" id="generate"> </a><div class="element clickable constant  generate" data-toggle="collapse" data-target=".generate .collapse">
+<h2>generate</h2>
+<pre>generate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
+<h2>inspect</h2>
+<pre>inspect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="objectifyNumber" id="objectifyNumber"> </a><div class="element clickable constant  objectifyNumber" data-toggle="collapse" data-target=".objectifyNumber .collapse">
+<h2>objectifyNumber</h2>
+<pre>objectifyNumber </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="prepareLinkColumn" id="prepareLinkColumn"> </a><div class="element clickable constant  prepareLinkColumn" data-toggle="collapse" data-target=".prepareLinkColumn .collapse">
+<h2>prepareLinkColumn</h2>
+<pre>prepareLinkColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="prepareNumberColumn" id="prepareNumberColumn"> </a><div class="element clickable constant  prepareNumberColumn" data-toggle="collapse" data-target=".prepareNumberColumn .collapse">
+<h2>prepareNumberColumn</h2>
+<pre>prepareNumberColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reflect" id="reflect"> </a><div class="element clickable constant  reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>reflect</h2>
+<pre>reflect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setEmailColumn" id="setEmailColumn"> </a><div class="element clickable constant  setEmailColumn" data-toggle="collapse" data-target=".setEmailColumn .collapse">
+<h2>setEmailColumn</h2>
+<pre>setEmailColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setRandomStrings" id="setRandomStrings"> </a><div class="element clickable constant  setRandomStrings" data-toggle="collapse" data-target=".setRandomStrings .collapse">
+<h2>setRandomStrings</h2>
+<pre>setRandomStrings </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="validateEmailColumns" id="validateEmailColumns"> </a><div class="element clickable constant  validateEmailColumns" data-toggle="collapse" data-target=".validateEmailColumns .collapse">
+<h2>validateEmailColumns</h2>
+<pre>validateEmailColumns </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="validateLinkColumns" id="validateLinkColumns"> </a><div class="element clickable constant  validateLinkColumns" data-toggle="collapse" data-target=".validateLinkColumns .collapse">
+<h2>validateLinkColumns</h2>
+<pre>validateLinkColumns </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

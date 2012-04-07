@@ -1,0 +1,900 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fValidation</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#addBooleanFields" title="addBooleanFields :: Adds fields to be checked for 1/0, t/f, true/false, yes/no"><span class="description">Adds fields to be checked for 1/0, t/f, true/false, yes/no</span><pre>addBooleanFields()</pre></a></li>
+<li class="method public "><a href="#addCallbackRule" title="addCallbackRule :: Adds a callback validation of a field, with a custom error message"><span class="description">Adds a callback validation of a field, with a custom error message</span><pre>addCallbackRule()</pre></a></li>
+<li class="method public "><a href="#addConditionalRule" title="addConditionalRule :: Adds fields to be conditionally required if another field has any value, or specific values"><span class="description">Adds fields to be conditionally required if another field has any value, or specific values</span><pre>addConditionalRule()</pre></a></li>
+<li class="method public "><a href="#addDateFields" title="addDateFields :: Adds form fields to the list of fields to be blank or a valid date"><span class="description">Adds form fields to the list of fields to be blank or a valid date</span><pre>addDateFields()</pre></a></li>
+<li class="method public "><a href="#addEmailFields" title="addEmailFields :: Adds form fields to the list of fields to be blank or a valid email address"><span class="description">Adds form fields to the list of fields to be blank or a valid email address</span><pre>addEmailFields()</pre></a></li>
+<li class="method public "><a href="#addEmailHeaderFields" title="addEmailHeaderFields :: Adds form fields to be checked for email injection"><span class="description">Adds form fields to be checked for email injection</span><pre>addEmailHeaderFields()</pre></a></li>
+<li class="method public "><a href="#addFileUploadRule" title="addFileUploadRule :: Add a file upload field to be validated using an fUpload object"><span class="description">Add a file upload field to be validated using an fUpload object</span><pre>addFileUploadRule()</pre></a></li>
+<li class="method public "><a href="#addFloatFields" title="addFloatFields :: Adds fields to be checked for float values"><span class="description">Adds fields to be checked for float values</span><pre>addFloatFields()</pre></a></li>
+<li class="method public "><a href="#addIntegerFields" title="addIntegerFields :: Adds fields to be checked for integer values"><span class="description">Adds fields to be checked for integer values</span><pre>addIntegerFields()</pre></a></li>
+<li class="method public "><a href="#addOneOrMoreRule" title="addOneOrMoreRule :: Adds a rule to make sure at least one field of multiple has a value"><span class="description">Adds a rule to make sure at least one field of multiple has a value</span><pre>addOneOrMoreRule()</pre></a></li>
+<li class="method public "><a href="#addOnlyOneRule" title="addOnlyOneRule :: Adds a rule to make sure at exactly one field of multiple has a value"><span class="description">Adds a rule to make sure at exactly one field of multiple has a value</span><pre>addOnlyOneRule()</pre></a></li>
+<li class="method public "><a href="#addRegexReplacement" title="addRegexReplacement :: Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message"><span class="description">Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</span><pre>addRegexReplacement()</pre></a></li>
+<li class="method public "><a href="#addRegexRule" title="addRegexRule :: Adds regular expression validation of a field, with a custom error message"><span class="description">Adds regular expression validation of a field, with a custom error message</span><pre>addRegexRule()</pre></a></li>
+<li class="method public "><a href="#addRequiredFields" title="addRequiredFields :: Adds form fields to be required"><span class="description">Adds form fields to be required</span><pre>addRequiredFields()</pre></a></li>
+<li class="method public "><a href="#addStringReplacement" title="addStringReplacement :: Adds a call to [http://php.net/str_replace `str_replace()`] for each message"><span class="description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</span><pre>addStringReplacement()</pre></a></li>
+<li class="method public "><a href="#addURLFields" title="addURLFields :: Adds form fields to the list of fields to be blank or a valid URL"><span class="description">Adds form fields to the list of fields to be blank or a valid URL</span><pre>addURLFields()</pre></a></li>
+<li class="method public "><a href="#addValidValuesRule" title="addValidValuesRule :: Adds a rule to make sure a field has one of the specified valid values"><span class="description">Adds a rule to make sure a field has one of the specified valid values</span><pre>addValidValuesRule()</pre></a></li>
+<li class="method public "><a href="#overrideFieldName" title="overrideFieldName :: Allows overriding the default name used for a field in the error message"><span class="description">Allows overriding the default name used for a field in the error message</span><pre>overrideFieldName()</pre></a></li>
+<li class="method public "><a href="#setMessageOrder" title="setMessageOrder :: Allows setting the order that the individual errors in a message will be displayed"><span class="description">Allows setting the order that the individual errors in a message will be displayed</span><pre>setMessageOrder()</pre></a></li>
+<li class="method public "><a href="#validate" title="validate :: Checks for required fields, email field formatting and email header injection using values previously set"><span class="description">Checks for required fields, email field formatting and email header injection using values previously set</span><pre>validate()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method protected "><a href="#stringlike" title="stringlike :: Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)"><span class="description">Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</span><pre>stringlike()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#castToStrings" title="castToStrings :: Converts an array of values to string, recursively"><span class="description">Converts an array of values to string, recursively</span><pre>castToStrings()</pre></a></li>
+<li class="method private "><a href="#checkCallbackRules" title="checkCallbackRules :: Runs all callback validation rules"><span class="description">Runs all callback validation rules</span><pre>checkCallbackRules()</pre></a></li>
+<li class="method private "><a href="#checkConditionalRules" title="checkConditionalRules :: Checks the conditional validation rules"><span class="description">Checks the conditional validation rules</span><pre>checkConditionalRules()</pre></a></li>
+<li class="method private "><a href="#checkDateFields" title="checkDateFields :: Validates the date fields, requiring that any date fields that have a value that can be interpreted as a date"><span class="description">Validates the date fields, requiring that any date fields that have a value that can be interpreted as a date</span><pre>checkDateFields()</pre></a></li>
+<li class="method private "><a href="#checkFileUploadRules" title="checkFileUploadRules :: Checks the file upload validation rules"><span class="description">Checks the file upload validation rules</span><pre>checkFileUploadRules()</pre></a></li>
+<li class="method private "><a href="#checkOneOrMoreRules" title="checkOneOrMoreRules :: Ensures all of the one-or-more rules is met"><span class="description">Ensures all of the one-or-more rules is met</span><pre>checkOneOrMoreRules()</pre></a></li>
+<li class="method private "><a href="#checkOnlyOneRules" title="checkOnlyOneRules :: Ensures all of the only-one rules is met"><span class="description">Ensures all of the only-one rules is met</span><pre>checkOnlyOneRules()</pre></a></li>
+<li class="method private "><a href="#checkRegexRules" title="checkRegexRules :: Runs all regex validation rules"><span class="description">Runs all regex validation rules</span><pre>checkRegexRules()</pre></a></li>
+<li class="method private "><a href="#checkRequiredFields" title="checkRequiredFields :: Validates the required fields, adding any missing fields to the messages array"><span class="description">Validates the required fields, adding any missing fields to the messages array</span><pre>checkRequiredFields()</pre></a></li>
+<li class="method private "><a href="#checkValidValuesRules" title="checkValidValuesRules :: Runs all valid-values rules"><span class="description">Runs all valid-values rules</span><pre>checkValidValuesRules()</pre></a></li>
+<li class="method private "><a href="#hasValue" title="hasValue :: Check if a field has a value"><span class="description">Check if a field has a value</span><pre>hasValue()</pre></a></li>
+<li class="method private "><a href="#joinRecursive" title="joinRecursive :: Joins a multi-dimensional array recursively"><span class="description">Joins a multi-dimensional array recursively</span><pre>joinRecursive()</pre></a></li>
+<li class="method private "><a href="#makeFieldName" title="makeFieldName :: Creates the name for a field taking into account custom field names"><span class="description">Creates the name for a field taking into account custom field names</span><pre>makeFieldName()</pre></a></li>
+<li class="method private "><a href="#reorderMessages" title="reorderMessages :: Reorders an array of messages based on the requested order"><span class="description">Reorders an array of messages based on the requested order</span><pre>reorderMessages()</pre></a></li>
+<li class="method private "><a href="#sortMessageMatches" title="sortMessageMatches :: Compares the message matching strings by longest first so that the longest matches are made first"><span class="description">Compares the message matching strings by longest first so that the longest matches are made first</span><pre>sortMessageMatches()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24callback_rules" title="$callback_rules :: Rules that run through a callback"><span class="description">Rules that run through a callback</span><pre>$callback_rules</pre></a></li>
+<li class="property private "><a href="#%24conditional_rules" title="$conditional_rules :: Rules for conditionally requiring fields"><span class="description">Rules for conditionally requiring fields</span><pre>$conditional_rules</pre></a></li>
+<li class="property private "><a href="#%24date_fields" title="$date_fields :: Fields that should be valid dates"><span class="description">Fields that should be valid dates</span><pre>$date_fields</pre></a></li>
+<li class="property private "><a href="#%24field_names" title="$field_names :: An array for custom field names"><span class="description">An array for custom field names</span><pre>$field_names</pre></a></li>
+<li class="property private "><a href="#%24file_upload_rules" title="$file_upload_rules :: File upload rules"><span class="description">File upload rules</span><pre>$file_upload_rules</pre></a></li>
+<li class="property private "><a href="#%24message_order" title="$message_order :: An array for ordering the fields in the resulting message"><span class="description">An array for ordering the fields in the resulting message</span><pre>$message_order</pre></a></li>
+<li class="property private "><a href="#%24one_or_more_rules" title="$one_or_more_rules :: Rules for at least one field of multiple having a value"><span class="description">Rules for at least one field of multiple having a value</span><pre>$one_or_more_rules</pre></a></li>
+<li class="property private "><a href="#%24only_one_rules" title="$only_one_rules :: Rules for exactly one field of multiple having a value"><span class="description">Rules for exactly one field of multiple having a value</span><pre>$only_one_rules</pre></a></li>
+<li class="property private "><a href="#%24regex_replacements" title="$regex_replacements :: Regular expression replacements for the validation messages"><span class="description">Regular expression replacements for the validation messages</span><pre>$regex_replacements</pre></a></li>
+<li class="property private "><a href="#%24regex_rules" title="$regex_rules :: Rules to validate fields via regular expressions"><span class="description">Rules to validate fields via regular expressions</span><pre>$regex_rules</pre></a></li>
+<li class="property private "><a href="#%24required_fields" title="$required_fields :: The fields to be required"><span class="description">The fields to be required</span><pre>$required_fields</pre></a></li>
+<li class="property private "><a href="#%24string_replacements" title="$string_replacements :: String replacements for the validation messages"><span class="description">String replacements for the validation messages</span><pre>$string_replacements</pre></a></li>
+<li class="property private "><a href="#%24valid_values_rules" title="$valid_values_rules :: Rules for validating a field against a set of valid values"><span class="description">Rules for validating a field against a set of valid values</span><pre>$valid_values_rules</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfValidation" id="\fValidation"></a><div href="../classes/fValidation.html" class="element class">
+<p class="short_description">Provides validation routines for standalone forms, such as contact forms</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fValidation">http://flourishlib.com/fValidation</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b12</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed some method signatures [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed ::addCallbackRule() to be able to handle multiple rules per field [wb, 2011-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed ::addRegexRule() to be able to handle multiple rules per field [wb, 2010-08-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Enhanced all of the add fields methods to accept one field per parameter, or an array of fields [wb, 2010-06-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added/fixed support for array-syntax fields names [wb, 2010-06-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Added the ability to pass an array of replacements to ::addRegexReplacement() and ::addStringReplacement() [wb, 2010-05-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   BackwardsCompatibilityBreak - moved one-or-more required fields from ::addRequiredFields() to ::addOneOrMoreRule(), moved conditional required fields from ::addRequiredFields() to ::addConditionalRule(), changed returned messages array to have field name keys - added lots of functionality [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Added the `$return_messages` parameter to ::validate() and updated code for new fValidationException API [wb, 2009-09-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Changed date checking from `strtotime()` to fTimestamp for better localization support [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Added support for validating date and URL fields [wb, 2009-01-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="addBooleanFields" id="addBooleanFields"></a><div class="element clickable method public addBooleanFields" data-toggle="collapse" data-target=".addBooleanFields .collapse">
+<h2>Adds fields to be checked for 1/0, t/f, true/false, yes/no</h2>
+<pre>addBooleanFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a boolean value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addCallbackRule" id="addCallbackRule"></a><div class="element clickable method public addCallbackRule" data-toggle="collapse" data-target=".addCallbackRule .collapse">
+<h2>Adds a callback validation of a field, with a custom error message</h2>
+<pre>addCallbackRule(string $field, callback $callback, string $message) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to test with the callback</p></div>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to test the value with - this callback should accept a single string parameter and return a boolean</p>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The error message to return if the regular expression does not match the value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addConditionalRule" id="addConditionalRule"></a><div class="element clickable method public addConditionalRule" data-toggle="collapse" data-target=".addConditionalRule .collapse">
+<h2>Adds fields to be conditionally required if another field has any value, or specific values</h2>
+<pre>addConditionalRule(string | array $main_fields, mixed $conditional_values, string | array $conditional_fields) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$main_fields</h4>
+<code>stringarray</code><p>The fields(s) to check for a value</p>
+</div>
+<div class="subelement argument">
+<h4>$conditional_values</h4>
+<code>mixed</code><p>If <code>NULL</code>, any value in the main field(s) will trigger the conditional field(s), otherwise the value must match this scalar value or be present in the array of values</p>
+</div>
+<div class="subelement argument">
+<h4>$conditional_fields</h4>
+<code>stringarray</code><p>The field(s) that are to be required</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addDateFields" id="addDateFields"></a><div class="element clickable method public addDateFields" data-toggle="collapse" data-target=".addDateFields .collapse">
+<h2>Adds form fields to the list of fields to be blank or a valid date</h2>
+<pre>addDateFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a valid date</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addEmailFields" id="addEmailFields"></a><div class="element clickable method public addEmailFields" data-toggle="collapse" data-target=".addEmailFields .collapse">
+<h2>Adds form fields to the list of fields to be blank or a valid email address</h2>
+<pre>addEmailFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a valid email address</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addEmailHeaderFields" id="addEmailHeaderFields"></a><div class="element clickable method public addEmailHeaderFields" data-toggle="collapse" data-target=".addEmailHeaderFields .collapse">
+<h2>Adds form fields to be checked for email injection</h2>
+<pre>addEmailHeaderFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Every field that is included in email headers should be passed to this
+method.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field to be checked for email injection</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addFileUploadRule" id="addFileUploadRule"></a><div class="element clickable method public addFileUploadRule" data-toggle="collapse" data-target=".addFileUploadRule .collapse">
+<h2>Add a file upload field to be validated using an fUpload object</h2>
+<pre>addFileUploadRule(string $field, mixed $index, <a href="../classes/fUpload.html">\fUpload</a> $uploader) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to validate</p></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>mixed</code><p>The index for array file upload fields</p></div>
+<div class="subelement argument">
+<h4>$uploader</h4>
+<code><a href="../classes/fUpload.html">\fUpload</a></code><p>The uploader to validate the field with</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addFloatFields" id="addFloatFields"></a><div class="element clickable method public addFloatFields" data-toggle="collapse" data-target=".addFloatFields .collapse">
+<h2>Adds fields to be checked for float values</h2>
+<pre>addFloatFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a float value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addIntegerFields" id="addIntegerFields"></a><div class="element clickable method public addIntegerFields" data-toggle="collapse" data-target=".addIntegerFields .collapse">
+<h2>Adds fields to be checked for integer values</h2>
+<pre>addIntegerFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain an integer value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addOneOrMoreRule" id="addOneOrMoreRule"></a><div class="element clickable method public addOneOrMoreRule" data-toggle="collapse" data-target=".addOneOrMoreRule .collapse">
+<h2>Adds a rule to make sure at least one field of multiple has a value</h2>
+<pre>addOneOrMoreRule(string $field, string $field_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>One of the fields to check for a value</p></div>
+<div class="subelement argument">
+<h4>$field_2</h4>
+<code>string</code><p>Another field to check for a value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addOnlyOneRule" id="addOnlyOneRule"></a><div class="element clickable method public addOnlyOneRule" data-toggle="collapse" data-target=".addOnlyOneRule .collapse">
+<h2>Adds a rule to make sure at exactly one field of multiple has a value</h2>
+<pre>addOnlyOneRule(string $field, string $field_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>One of the fields to check for a value</p></div>
+<div class="subelement argument">
+<h4>$field_2</h4>
+<code>string</code><p>Another field to check for a value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addRegexReplacement" id="addRegexReplacement"></a><div class="element clickable method public addRegexReplacement" data-toggle="collapse" data-target=".addRegexReplacement .collapse">
+<h2>Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</h2>
+<pre>addRegexReplacement(string $search, string $replace) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Replacement is done right before the messages are reordered and returned.</p>
+
+<p>If a message is an empty string after replacement, it will be
+removed from the list of messages.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The PCRE regex to search for - see http://php.net/pcre for details</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with - all $ and \ are used in back references and must be escaped with a \ when meant literally</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addRegexRule" id="addRegexRule"></a><div class="element clickable method public addRegexRule" data-toggle="collapse" data-target=".addRegexRule .collapse">
+<h2>Adds regular expression validation of a field, with a custom error message</h2>
+<pre>addRegexRule(string $field, string $regex, string $message) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to test with the regular expression</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>The PCRE regex to search for - see http://php.net/pcre for details</p>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The error message to return if the regular expression does not match the value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addRequiredFields" id="addRequiredFields"></a><div class="element clickable method public addRequiredFields" data-toggle="collapse" data-target=".addRequiredFields .collapse">
+<h2>Adds form fields to be required</h2>
+<pre>addRequiredFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field to require a value for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addStringReplacement" id="addStringReplacement"></a><div class="element clickable method public addStringReplacement" data-toggle="collapse" data-target=".addStringReplacement .collapse">
+<h2>Adds a call to [http://php.net/str_replace `str_replace()`] for each message</h2>
+<pre>addStringReplacement(string $search, string $replace) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Replacement is done right before the messages are reordered and returned.</p>
+
+<p>If a message is an empty string after replacement, it will be
+removed from the list of messages.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addURLFields" id="addURLFields"></a><div class="element clickable method public addURLFields" data-toggle="collapse" data-target=".addURLFields .collapse">
+<h2>Adds form fields to the list of fields to be blank or a valid URL</h2>
+<pre>addURLFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a valid URL</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addValidValuesRule" id="addValidValuesRule"></a><div class="element clickable method public addValidValuesRule" data-toggle="collapse" data-target=".addValidValuesRule .collapse">
+<h2>Adds a rule to make sure a field has one of the specified valid values</h2>
+<pre>addValidValuesRule(string $field, array $valid_values) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>A strict comparison will be made from the string request value to the
+array of valid values.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to check the value of</p></div>
+<div class="subelement argument">
+<h4>$valid_values</h4>
+<code>array</code><p>The valid values</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="overrideFieldName" id="overrideFieldName"></a><div class="element clickable method public overrideFieldName" data-toggle="collapse" data-target=".overrideFieldName .collapse">
+<h2>Allows overriding the default name used for a field in the error message</h2>
+<pre>overrideFieldName(string $field, string $name) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>By default, all fields are referred to by the field name run through
+fGrammar::humanize(). This may not be correct for acronyms or complex
+field names.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to set the custom name for</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The custom name for the field</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setMessageOrder" id="setMessageOrder"></a><div class="element clickable method public setMessageOrder" data-toggle="collapse" data-target=".setMessageOrder .collapse">
+<h2>Allows setting the order that the individual errors in a message will be displayed</h2>
+<pre>setMessageOrder(string $match, string $match_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>All string comparisons during the reordering process are done in a
+case-insensitive manner.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$match</h4>
+<code>string</code><p>The string match to order first</p></div>
+<div class="subelement argument">
+<h4>$match_2</h4>
+<code>string</code><p>The string match to order second</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="validate" id="validate"></a><div class="element clickable method public validate" data-toggle="collapse" data-target=".validate .collapse">
+<h2>Checks for required fields, email field formatting and email header injection using values previously set</h2>
+<pre>validate(boolean $return_messages, boolean $remove_field_names) : void | array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$return_messages</h4>
+<code>boolean</code><p>If an array of validation messages should be returned instead of an exception being thrown</p></div>
+<div class="subelement argument">
+<h4>$remove_field_names</h4>
+<code>boolean</code><p>If field names should be removed from the returned messages, leaving just the message itself</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When one of the options set for the object is violated</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>void</code><code>array</code>If $return_messages is TRUE, an array of validation messages will be returned</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="stringlike" id="stringlike"></a><div class="element clickable method protected stringlike" data-toggle="collapse" data-target=".stringlike .collapse">
+<h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
+<pre>stringlike(mixed $value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value is string-like</div>
+</div></div>
+</div>
+<a name="castToStrings" id="castToStrings"></a><div class="element clickable method private castToStrings" data-toggle="collapse" data-target=".castToStrings .collapse">
+<h2>Converts an array of values to string, recursively</h2>
+<pre>castToStrings(array $values) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>An array of values to cast to strings</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The values, casted to strings, but preserving multi-dimensional arrays</div>
+</div></div>
+</div>
+<a name="checkCallbackRules" id="checkCallbackRules"></a><div class="element clickable method private checkCallbackRules" data-toggle="collapse" data-target=".checkCallbackRules .collapse">
+<h2>Runs all callback validation rules</h2>
+<pre>checkCallbackRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkConditionalRules" id="checkConditionalRules"></a><div class="element clickable method private checkConditionalRules" data-toggle="collapse" data-target=".checkConditionalRules .collapse">
+<h2>Checks the conditional validation rules</h2>
+<pre>checkConditionalRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkDateFields" id="checkDateFields"></a><div class="element clickable method private checkDateFields" data-toggle="collapse" data-target=".checkDateFields .collapse">
+<h2>Validates the date fields, requiring that any date fields that have a value that can be interpreted as a date</h2>
+<pre>checkDateFields(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkFileUploadRules" id="checkFileUploadRules"></a><div class="element clickable method private checkFileUploadRules" data-toggle="collapse" data-target=".checkFileUploadRules .collapse">
+<h2>Checks the file upload validation rules</h2>
+<pre>checkFileUploadRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkOneOrMoreRules" id="checkOneOrMoreRules"></a><div class="element clickable method private checkOneOrMoreRules" data-toggle="collapse" data-target=".checkOneOrMoreRules .collapse">
+<h2>Ensures all of the one-or-more rules is met</h2>
+<pre>checkOneOrMoreRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkOnlyOneRules" id="checkOnlyOneRules"></a><div class="element clickable method private checkOnlyOneRules" data-toggle="collapse" data-target=".checkOnlyOneRules .collapse">
+<h2>Ensures all of the only-one rules is met</h2>
+<pre>checkOnlyOneRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkRegexRules" id="checkRegexRules"></a><div class="element clickable method private checkRegexRules" data-toggle="collapse" data-target=".checkRegexRules .collapse">
+<h2>Runs all regex validation rules</h2>
+<pre>checkRegexRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkRequiredFields" id="checkRequiredFields"></a><div class="element clickable method private checkRequiredFields" data-toggle="collapse" data-target=".checkRequiredFields .collapse">
+<h2>Validates the required fields, adding any missing fields to the messages array</h2>
+<pre>checkRequiredFields(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="checkValidValuesRules" id="checkValidValuesRules"></a><div class="element clickable method private checkValidValuesRules" data-toggle="collapse" data-target=".checkValidValuesRules .collapse">
+<h2>Runs all valid-values rules</h2>
+<pre>checkValidValuesRules(array $messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>&$messages The messages to display to the user</p>
+</div>
+</div></div>
+</div>
+<a name="hasValue" id="hasValue"></a><div class="element clickable method private hasValue" data-toggle="collapse" data-target=".hasValue .collapse">
+<h2>Check if a field has a value</h2>
+<pre>hasValue(string $key) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to check for a value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the key has a value</div>
+</div></div>
+</div>
+<a name="joinRecursive" id="joinRecursive"></a><div class="element clickable method private joinRecursive" data-toggle="collapse" data-target=".joinRecursive .collapse">
+<h2>Joins a multi-dimensional array recursively</h2>
+<pre>joinRecursive(string $glue, array $values) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$glue</h4>
+<code>string</code><p>The string to join the array elements with</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>The array of values to join together</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The joined array</div>
+</div></div>
+</div>
+<a name="makeFieldName" id="makeFieldName"></a><div class="element clickable method private makeFieldName" data-toggle="collapse" data-target=".makeFieldName .collapse">
+<h2>Creates the name for a field taking into account custom field names</h2>
+<pre>makeFieldName(string $field) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to get the name for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The field name</div>
+</div></div>
+</div>
+<a name="reorderMessages" id="reorderMessages"></a><div class="element clickable method private reorderMessages" data-toggle="collapse" data-target=".reorderMessages .collapse">
+<h2>Reorders an array of messages based on the requested order</h2>
+<pre>reorderMessages(array $messages) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>An array of the messages</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The reordered messages</div>
+</div></div>
+</div>
+<a name="sortMessageMatches" id="sortMessageMatches"></a><div class="element clickable method private sortMessageMatches" data-toggle="collapse" data-target=".sortMessageMatches .collapse">
+<h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
+<pre>sortMessageMatches(string $a, string $b) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$a</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$b</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>`-1` if `$a` is longer than `$b`, `0` if they are equal length, `1` if `$a` is shorter than `$b`</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24callback_rules" id="$callback_rules"> </a><div class="element clickable property private $callback_rules" data-toggle="collapse" data-target=".$callback_rules .collapse">
+<h2>Rules that run through a callback</h2>
+<pre>$callback_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24conditional_rules" id="$conditional_rules"> </a><div class="element clickable property private $conditional_rules" data-toggle="collapse" data-target=".$conditional_rules .collapse">
+<h2>Rules for conditionally requiring fields</h2>
+<pre>$conditional_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24date_fields" id="$date_fields"> </a><div class="element clickable property private $date_fields" data-toggle="collapse" data-target=".$date_fields .collapse">
+<h2>Fields that should be valid dates</h2>
+<pre>$date_fields : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24field_names" id="$field_names"> </a><div class="element clickable property private $field_names" data-toggle="collapse" data-target=".$field_names .collapse">
+<h2>An array for custom field names</h2>
+<pre>$field_names : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24file_upload_rules" id="$file_upload_rules"> </a><div class="element clickable property private $file_upload_rules" data-toggle="collapse" data-target=".$file_upload_rules .collapse">
+<h2>File upload rules</h2>
+<pre>$file_upload_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24message_order" id="$message_order"> </a><div class="element clickable property private $message_order" data-toggle="collapse" data-target=".$message_order .collapse">
+<h2>An array for ordering the fields in the resulting message</h2>
+<pre>$message_order : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24one_or_more_rules" id="$one_or_more_rules"> </a><div class="element clickable property private $one_or_more_rules" data-toggle="collapse" data-target=".$one_or_more_rules .collapse">
+<h2>Rules for at least one field of multiple having a value</h2>
+<pre>$one_or_more_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24only_one_rules" id="$only_one_rules"> </a><div class="element clickable property private $only_one_rules" data-toggle="collapse" data-target=".$only_one_rules .collapse">
+<h2>Rules for exactly one field of multiple having a value</h2>
+<pre>$only_one_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24regex_replacements" id="$regex_replacements"> </a><div class="element clickable property private $regex_replacements" data-toggle="collapse" data-target=".$regex_replacements .collapse">
+<h2>Regular expression replacements for the validation messages</h2>
+<pre>$regex_replacements : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24regex_rules" id="$regex_rules"> </a><div class="element clickable property private $regex_rules" data-toggle="collapse" data-target=".$regex_rules .collapse">
+<h2>Rules to validate fields via regular expressions</h2>
+<pre>$regex_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24required_fields" id="$required_fields"> </a><div class="element clickable property private $required_fields" data-toggle="collapse" data-target=".$required_fields .collapse">
+<h2>The fields to be required</h2>
+<pre>$required_fields : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24string_replacements" id="$string_replacements"> </a><div class="element clickable property private $string_replacements" data-toggle="collapse" data-target=".$string_replacements .collapse">
+<h2>String replacements for the validation messages</h2>
+<pre>$string_replacements : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24valid_values_rules" id="$valid_values_rules"> </a><div class="element clickable property private $valid_values_rules" data-toggle="collapse" data-target=".$valid_values_rules .collapse">
+<h2>Rules for validating a field against a set of valid values</h2>
+<pre>$valid_values_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:32-05:00.<br></footer></div>
+</div>
+</body>
+</html>

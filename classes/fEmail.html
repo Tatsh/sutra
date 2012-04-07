@@ -1,0 +1,1150 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \fEmail</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">149</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Initializes fEmail for creating message ids"><span class="description">Initializes fEmail for creating message ids</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#addAttachment" title="addAttachment :: Adds an attachment to the email"><span class="description">Adds an attachment to the email</span><pre>addAttachment()</pre></a></li>
+<li class="method public "><a href="#addBCCRecipient" title="addBCCRecipient :: Adds a blind carbon copy (BCC) email recipient"><span class="description">Adds a blind carbon copy (BCC) email recipient</span><pre>addBCCRecipient()</pre></a></li>
+<li class="method public "><a href="#addCCRecipient" title="addCCRecipient :: Adds a carbon copy (CC) email recipient"><span class="description">Adds a carbon copy (CC) email recipient</span><pre>addCCRecipient()</pre></a></li>
+<li class="method public "><a href="#addCustomHeader" title="addCustomHeader :: Allows adding a custom header to the email"><span class="description">Allows adding a custom header to the email</span><pre>addCustomHeader()</pre></a></li>
+<li class="method public "><a href="#addRecipient" title="addRecipient :: Adds an email recipient"><span class="description">Adds an email recipient</span><pre>addRecipient()</pre></a></li>
+<li class="method public "><a href="#addRelatedFile" title="addRelatedFile :: Adds a “related” file to the email, returning the `Content-ID` for use in HTML"><span class="description">Adds a “related” file to the email, returning the `Content-ID` for use in HTML</span><pre>addRelatedFile()</pre></a></li>
+<li class="method public "><a href="#clearRecipients" title="clearRecipients :: Removes all To, CC and BCC recipients from the email"><span class="description">Removes all To, CC and BCC recipients from the email</span><pre>clearRecipients()</pre></a></li>
+<li class="method public "><a href="#encrypt" title="encrypt :: Sets the email to be encrypted with S/MIME"><span class="description">Sets the email to be encrypted with S/MIME</span><pre>encrypt()</pre></a></li>
+<li class="method public "><a href="#fixQmail" title="fixQmail :: Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`"><span class="description">Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`</span><pre>fixQmail()</pre></a></li>
+<li class="method public "><a href="#loadBody" title="loadBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadBody()</pre></a></li>
+<li class="method public "><a href="#loadHTMLBody" title="loadHTMLBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadHTMLBody()</pre></a></li>
+<li class="method public "><a href="#send" title="send :: Sends the email"><span class="description">Sends the email</span><pre>send()</pre></a></li>
+<li class="method public "><a href="#setBody" title="setBody :: Sets the plaintext version of the email body"><span class="description">Sets the plaintext version of the email body</span><pre>setBody()</pre></a></li>
+<li class="method public "><a href="#setBounceToEmail" title="setBounceToEmail :: Adds the email address the email will be bounced to"><span class="description">Adds the email address the email will be bounced to</span><pre>setBounceToEmail()</pre></a></li>
+<li class="method public "><a href="#setFromEmail" title="setFromEmail :: Adds the `From:` email address to the email"><span class="description">Adds the `From:` email address to the email</span><pre>setFromEmail()</pre></a></li>
+<li class="method public "><a href="#setHTMLBody" title="setHTMLBody :: Sets the HTML version of the email body"><span class="description">Sets the HTML version of the email body</span><pre>setHTMLBody()</pre></a></li>
+<li class="method public "><a href="#setReplyToEmail" title="setReplyToEmail :: Adds the `Reply-To:` email address to the email"><span class="description">Adds the `Reply-To:` email address to the email</span><pre>setReplyToEmail()</pre></a></li>
+<li class="method public "><a href="#setSenderEmail" title="setSenderEmail :: Adds the `Sender:` email address to the email"><span class="description">Adds the `Sender:` email address to the email</span><pre>setSenderEmail()</pre></a></li>
+<li class="method public "><a href="#setSubject" title="setSubject :: Sets the subject of the email"><span class="description">Sets the subject of the email</span><pre>setSubject()</pre></a></li>
+<li class="method public "><a href="#sign" title="sign :: Sets the email to be signed with S/MIME"><span class="description">Sets the email to be signed with S/MIME</span><pre>sign()</pre></a></li>
+<li class="method public "><a href="#unindentExpand" title="unindentExpand :: Takes a block of text, unindents it and replaces {CONSTANT} tokens with the constant's value"><span class="description">Takes a block of text, unindents it and replaces {CONSTANT} tokens with the constant's value</span><pre>unindentExpand()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method protected "><a href="#stringlike" title="stringlike :: Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)"><span class="description">Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</span><pre>stringlike()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#buildMultiAddressHeader" title="buildMultiAddressHeader :: Takes a multi-address email header and builds it out using an array of emails"><span class="description">Takes a multi-address email header and builds it out using an array of emails</span><pre>buildMultiAddressHeader()</pre></a></li>
+<li class="method private "><a href="#createBody" title="createBody :: Builds the body of the email"><span class="description">Builds the body of the email</span><pre>createBody()</pre></a></li>
+<li class="method private "><a href="#createBoundary" title="createBoundary :: Creates a 32-character boundary for a multipart message"><span class="description">Creates a 32-character boundary for a multipart message</span><pre>createBoundary()</pre></a></li>
+<li class="method private "><a href="#createHeaders" title="createHeaders :: Builds the headers for the email"><span class="description">Builds the headers for the email</span><pre>createHeaders()</pre></a></li>
+<li class="method private "><a href="#createSMIMEBody" title="createSMIMEBody :: Takes the body of the message and processes it with S/MIME"><span class="description">Takes the body of the message and processes it with S/MIME</span><pre>createSMIMEBody()</pre></a></li>
+<li class="method private "><a href="#extractEmails" title='extractEmails :: Extracts just the email addresses from an array of strings containing an
+&lt;email@address.com&gt; or "Name" &lt;email@address.com&gt; combination.'><span class="description">Extracts just the email addresses from an array of strings containing an
+&lt;email@address.com&gt; or "Name" &lt;email@address.com&gt; combination.</span><pre>extractEmails()</pre></a></li>
+<li class="method private "><a href="#extrapolateFileInfo" title="extrapolateFileInfo :: Extracts the filename and mime-type from an fFile object"><span class="description">Extracts the filename and mime-type from an fFile object</span><pre>extrapolateFileInfo()</pre></a></li>
+<li class="method private "><a href="#generateNewFilename" title="generateNewFilename :: Generates a new filename in an attempt to create a unique name"><span class="description">Generates a new filename in an attempt to create a unique name</span><pre>generateNewFilename()</pre></a></li>
+<li class="method private "><a href="#makeBase64" title="makeBase64 :: Encodes a string to base64"><span class="description">Encodes a string to base64</span><pre>makeBase64()</pre></a></li>
+<li class="method private "><a href="#makeEncodedWord" title="makeEncodedWord :: Encodes a string to UTF-8 encoded-word"><span class="description">Encodes a string to UTF-8 encoded-word</span><pre>makeEncodedWord()</pre></a></li>
+<li class="method private "><a href="#makeQuotedPrintable" title="makeQuotedPrintable :: Encodes a string to quoted-printable, properly handles UTF-8"><span class="description">Encodes a string to quoted-printable, properly handles UTF-8</span><pre>makeQuotedPrintable()</pre></a></li>
+<li class="method private "><a href="#validate" title="validate :: Validates that all of the parts of the email are valid"><span class="description">Validates that all of the parts of the email are valid</span><pre>validate()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24attachments" title="$attachments :: The file contents to attach"><span class="description">The file contents to attach</span><pre>$attachments</pre></a></li>
+<li class="property private "><a href="#%24bcc_emails" title="$bcc_emails :: The email address(es) to BCC to"><span class="description">The email address(es) to BCC to</span><pre>$bcc_emails</pre></a></li>
+<li class="property private "><a href="#%24bounce_to_email" title="$bounce_to_email :: The email address to bounce to"><span class="description">The email address to bounce to</span><pre>$bounce_to_email</pre></a></li>
+<li class="property private "><a href="#%24cc_emails" title="$cc_emails :: The email address(es) to CC to"><span class="description">The email address(es) to CC to</span><pre>$cc_emails</pre></a></li>
+<li class="property private "><a href="#%24convert_crlf" title="$convert_crlf :: Flags if the class should convert `\r\n` to `\n` for qmail. This makes invalid email headers that may work."><span class="description">Flags if the class should convert `\r\n` to `\n` for qmail. This makes invalid email headers that may work.</span><pre>$convert_crlf</pre></a></li>
+<li class="property private "><a href="#%24custom_headers" title="$custom_headers :: Custom headers"><span class="description">Custom headers</span><pre>$custom_headers</pre></a></li>
+<li class="property private "><a href="#%24fqdn" title="$fqdn :: The local fully-qualified domain name"><span class="description">The local fully-qualified domain name</span><pre>$fqdn</pre></a></li>
+<li class="property private "><a href="#%24from_email" title="$from_email :: The email address being sent from"><span class="description">The email address being sent from</span><pre>$from_email</pre></a></li>
+<li class="property private "><a href="#%24html_body" title="$html_body :: The HTML body of the email"><span class="description">The HTML body of the email</span><pre>$html_body</pre></a></li>
+<li class="property private "><a href="#%24message_id" title="$message_id :: The Message-ID header for the email"><span class="description">The Message-ID header for the email</span><pre>$message_id</pre></a></li>
+<li class="property private "><a href="#%24plaintext_body" title="$plaintext_body :: The plaintext body of the email"><span class="description">The plaintext body of the email</span><pre>$plaintext_body</pre></a></li>
+<li class="property private "><a href="#%24popen_sendmail" title="$popen_sendmail :: Flags if the class should use [http://php.net/popen popen()] to send mail via sendmail"><span class="description">Flags if the class should use [http://php.net/popen popen()] to send mail via sendmail</span><pre>$popen_sendmail</pre></a></li>
+<li class="property private "><a href="#%24recipients_smime_cert_file" title="$recipients_smime_cert_file :: The recipient's S/MIME PEM certificate filename, used for encryption of the message"><span class="description">The recipient's S/MIME PEM certificate filename, used for encryption of the message</span><pre>$recipients_smime_cert_file</pre></a></li>
+<li class="property private "><a href="#%24related_files" title="$related_files :: The files to include as multipart/related"><span class="description">The files to include as multipart/related</span><pre>$related_files</pre></a></li>
+<li class="property private "><a href="#%24reply_to_email" title="$reply_to_email :: The email address to reply to"><span class="description">The email address to reply to</span><pre>$reply_to_email</pre></a></li>
+<li class="property private "><a href="#%24sender_email" title="$sender_email :: The email address actually sending the email"><span class="description">The email address actually sending the email</span><pre>$sender_email</pre></a></li>
+<li class="property private "><a href="#%24senders_smime_cert_file" title="$senders_smime_cert_file :: The senders's S/MIME PEM certificate filename, used for singing the message"><span class="description">The senders's S/MIME PEM certificate filename, used for singing the message</span><pre>$senders_smime_cert_file</pre></a></li>
+<li class="property private "><a href="#%24senders_smime_pk_file" title="$senders_smime_pk_file :: The senders's S/MIME private key filename, used for singing the message"><span class="description">The senders's S/MIME private key filename, used for singing the message</span><pre>$senders_smime_pk_file</pre></a></li>
+<li class="property private "><a href="#%24senders_smime_pk_password" title="$senders_smime_pk_password :: The senders's S/MIME private key password, used for singing the message"><span class="description">The senders's S/MIME private key password, used for singing the message</span><pre>$senders_smime_pk_password</pre></a></li>
+<li class="property private "><a href="#%24smime_encrypt" title="$smime_encrypt :: If the message should be encrypted using the recipient's S/MIME certificate"><span class="description">If the message should be encrypted using the recipient's S/MIME certificate</span><pre>$smime_encrypt</pre></a></li>
+<li class="property private "><a href="#%24smime_sign" title="$smime_sign :: If the message should be signed using the senders's S/MIME private key"><span class="description">If the message should be signed using the senders's S/MIME private key</span><pre>$smime_sign</pre></a></li>
+<li class="property private "><a href="#%24subject" title="$subject :: The subject of the email"><span class="description">The subject of the email</span><pre>$subject</pre></a></li>
+<li class="property private "><a href="#%24to_emails" title="$to_emails :: The email address(es) to send to"><span class="description">The email address(es) to send to</span><pre>$to_emails</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#EMAIL_REGEX" title="EMAIL_REGEX :: A regular expression to match an email address, exluding those with comments and folding whitespace"><span class="description">A regular expression to match an email address, exluding those with comments and folding whitespace</span><pre>EMAIL_REGEX</pre></a></li>
+<li class="constant  "><a href="#NAME_EMAIL_REGEX" title="NAME_EMAIL_REGEX :: A regular expression to match a `name &lt;email&gt;` string, exluding those with comments and folding whitespace"><span class="description">A regular expression to match a `name &lt;email&gt;` string, exluding those with comments and folding whitespace</span><pre>NAME_EMAIL_REGEX</pre></a></li>
+<li class="constant  "><a href="#combineNameEmail" title="combineNameEmail :: "><span class="description">combineNameEmail</span><pre>combineNameEmail</pre></a></li>
+<li class="constant  "><a href="#fixQmail" title="fixQmail :: "><span class="description">fixQmail</span><pre>fixQmail</pre></a></li>
+<li class="constant  "><a href="#getFQDN" title="getFQDN :: "><span class="description">getFQDN</span><pre>getFQDN</pre></a></li>
+<li class="constant  "><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#unindentExpand" title="unindentExpand :: "><span class="description">unindentExpand</span><pre>unindentExpand</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CfEmail" id="\fEmail"></a><div href="../classes/fEmail.html" class="element class">
+<p class="short_description">Allows creating and sending a single email containing plaintext, HTML, attachments and S/MIME encryption</p>
+<div class="details">
+<p class="long_description"><p>Please note that this class uses the [http://php.net/function.mail mail()]
+function by default. Developers that are sending multiple emails, or need
+SMTP support, should use fSMTP with this class.</p>
+
+<p>This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:bill@imarc.net">Bill Bushee, iMarc LLC [bb-imarc]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">netcarver [n] &lt;fContrib@netcarving.com&gt;</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fEmail">http://flourishlib.com/fEmail</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b30</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Changed methods to return instance for method chaining [n, 2011-09-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Changed ::combineNameEmail() to be a static method and to be exposed publicly for use by other classes [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Fixed ::addAttachment() and ::addRelatedFile() to properly handle duplicate filenames [wb, 2011-05-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Fixed a bug with generating FQDNs on some Windows machines [wb, 2011-02-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Added ::addCustomerHeader() [wb, 2011-02-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Fixed a bug with finding the FQDN on non-Windows machines [wb, 2011-01-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Backwards Compatibility Break - the `$contents` parameter of ::addAttachment() is now first instead of third, ::addAttachment() will now accept fFile objects for the `$contents` parameter, added ::addRelatedFile() [wb, 2010-12-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Fixed a bug on Windows where emails starting with a `.` would have the `.` removed [wb, 2010-09-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Revamped the FQDN code and added ::getFQDN() [wb, 2010-09-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Added a check to prevent permissions warnings when getting the FQDN on Windows machines [wb, 2010-09-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed ::send() to only remove the name of a recipient when dealing with the `mail()` function on Windows and to leave it when using fSMTP [wb, 2010-06-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Changed ::send() to return the message id for the email, fixed the email regexes to require [] around IPs [wb, 2010-05-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Fixed the name of the static method ::unindentExpand() [wb, 2010-04-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added the static method ::unindentExpand() [wb, 2010-04-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Added support for sending emails via fSMTP [wb, 2010-04-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Added the `$unindent_expand_constants` parameter to ::setBody(), added ::loadBody() and ::loadHTMLBody(), fixed HTML emails with attachments [wb, 2010-03-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Changed ::send() to not double `.`s at the beginning of lines on Windows since it seemed to break things rather than fix them [wb, 2010-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed the class to work when safe mode is turned on [wb, 2009-10-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Removed duplicate MIME-Version headers that were being included in S/MIME encrypted emails [wb, 2009-10-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Updated to use the new fValidationException API [wb, 2009-09-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed a bug with sending both an HTML and a plaintext body [bb-imarc, 2009-06-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed a bug where the MIME headers were not being set for all emails [wb, 2009-06-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added the method ::clearRecipients() [wb, 2009-05-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Email names with UTF-8 characters are now properly encoded [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed a bug where &lt;&gt; quoted email addresses in validation messages were not showing [wb, 2009-03-27]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   The recipient error message in ::validate() no longer contains a typo [wb, 2009-02-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed a bug with missing content in the fValidationException thrown by ::validate() [wb, 2009-01-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a few bugs with sending S/MIME encrypted/signed emails [wb, 2009-01-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-06-23]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Initializes fEmail for creating message ids</h2>
+<pre>__construct() : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fEmail.html">\fEmail</a></code></div>
+</div></div>
+</div>
+<a name="addAttachment" id="addAttachment"></a><div class="element clickable method public addAttachment" data-toggle="collapse" data-target=".addAttachment .collapse">
+<h2>Adds an attachment to the email</h2>
+<pre>addAttachment(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If a duplicate filename is detected, it will be changed to be unique.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string<a href="../classes/fFile.html">\fFile</a></code><p>The contents of the file</p></div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The name to give the attachement - optional if <code>$contents</code> is an fFile object</p>
+</div>
+<div class="subelement argument">
+<h4>$mime_type</h4>
+<code>string</code><p>The mime type of the file - this allows overriding the mime type of the file if incorrectly detected</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addBCCRecipient" id="addBCCRecipient"></a><div class="element clickable method public addBCCRecipient" data-toggle="collapse" data-target=".addBCCRecipient .collapse">
+<h2>Adds a blind carbon copy (BCC) email recipient</h2>
+<pre>addBCCRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address to BCC</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The recipient's name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addCCRecipient" id="addCCRecipient"></a><div class="element clickable method public addCCRecipient" data-toggle="collapse" data-target=".addCCRecipient .collapse">
+<h2>Adds a carbon copy (CC) email recipient</h2>
+<pre>addCCRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address to BCC</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The recipient's name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addCustomHeader" id="addCustomHeader"></a><div class="element clickable method public addCustomHeader" data-toggle="collapse" data-target=".addCustomHeader .collapse">
+<h2>Allows adding a custom header to the email</h2>
+<pre>addCustomHeader(string $name, string $value) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If the method is called multiple times with the same name, the last
+value will be used.</p>
+
+<p>Please note that this class will properly format the header, including
+adding the <code>:</code> between the name and value and wrapping values that are
+too long for a single line.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the header</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value of the header</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addRecipient" id="addRecipient"></a><div class="element clickable method public addRecipient" data-toggle="collapse" data-target=".addRecipient .collapse">
+<h2>Adds an email recipient</h2>
+<pre>addRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address to send to</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The recipient's name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="addRelatedFile" id="addRelatedFile"></a><div class="element clickable method public addRelatedFile" data-toggle="collapse" data-target=".addRelatedFile .collapse">
+<h2>Adds a “related” file to the email, returning the `Content-ID` for use in HTML</h2>
+<pre>addRelatedFile(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The purpose of a related file is to be able to reference it in part of
+the HTML body. Image <code>src</code> URLs can reference a related file by starting
+the URL with <code>cid:</code> and then inserting the <code>Content-ID</code>.</p>
+
+<p>If a duplicate filename is detected, it will be changed to be unique.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string<a href="../classes/fFile.html">\fFile</a></code><p>The contents of the file</p></div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The name to give the attachement - optional if <code>$contents</code> is an fFile object</p>
+</div>
+<div class="subelement argument">
+<h4>$mime_type</h4>
+<code>string</code><p>The mime type of the file - this allows overriding the mime type of the file if incorrectly detected</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fully-formed `cid:` URL for use in HTML `src` attributes</div>
+</div></div>
+</div>
+<a name="clearRecipients" id="clearRecipients"></a><div class="element clickable method public clearRecipients" data-toggle="collapse" data-target=".clearRecipients .collapse">
+<h2>Removes all To, CC and BCC recipients from the email</h2>
+<pre>clearRecipients() : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="encrypt" id="encrypt"></a><div class="element clickable method public encrypt" data-toggle="collapse" data-target=".encrypt .collapse">
+<h2>Sets the email to be encrypted with S/MIME</h2>
+<pre>encrypt(string $recipients_smime_cert_file) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$recipients_smime_cert_file</h4>
+<code>string</code><p>The file path to the PEM-encoded S/MIME certificate for the recipient</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="fixQmail" id="fixQmail"></a><div class="element clickable method public fixQmail" data-toggle="collapse" data-target=".fixQmail .collapse">
+<h2>Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`</h2>
+<pre>fixQmail() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>Before trying to fix qmail with this method, please try using fSMTP
+to connect to <code>localhost</code> and pass the fSMTP object to ::send().</p></p></div></div>
+</div>
+<a name="loadBody" id="loadBody"></a><div class="element clickable method public loadBody" data-toggle="collapse" data-target=".loadBody .collapse">
+<h2>Loads the plaintext version of the email body from a file and applies replacements</h2>
+<pre>loadBody(string | <a href="../classes/fFile.html">\fFile</a> $file, array $replacements) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The should contain either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string<a href="../classes/fFile.html">\fFile</a></code><p>The plaintext version of the email body</p></div>
+<div class="subelement argument">
+<h4>$replacements</h4>
+<code>array</code><p>The method will search the contents of the file for each key and replace it with the corresponding value</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no file was specified, the file does not exist or the path specified is not a file</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="loadHTMLBody" id="loadHTMLBody"></a><div class="element clickable method public loadHTMLBody" data-toggle="collapse" data-target=".loadHTMLBody .collapse">
+<h2>Loads the plaintext version of the email body from a file and applies replacements</h2>
+<pre>loadHTMLBody(string | <a href="../classes/fFile.html">\fFile</a> $file, array $replacements) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The should contain either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string<a href="../classes/fFile.html">\fFile</a></code><p>The plaintext version of the email body</p></div>
+<div class="subelement argument">
+<h4>$replacements</h4>
+<code>array</code><p>The method will search the contents of the file for each key and replace it with the corresponding value</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no file was specified, the file does not exist or the path specified is not a file</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="send" id="send"></a><div class="element clickable method public send" data-toggle="collapse" data-target=".send .collapse">
+<h2>Sends the email</h2>
+<pre>send(<a href="../classes/fSMTP.html">\fSMTP</a> $connection) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The return value is the message id, which should be included as the
+<code>Message-ID</code> header of the email. While almost all SMTP servers will not
+modify this value, testing has indicated at least one (smtp.live.com
+for Windows Live Mail) does.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$connection</h4>
+<code><a href="../classes/fSMTP.html">\fSMTP</a></code><p>The SMTP connection to send the message over</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When ::validate() throws an exception</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The message id for the message - see method description for details</div>
+</div></div>
+</div>
+<a name="setBody" id="setBody"></a><div class="element clickable method public setBody" data-toggle="collapse" data-target=".setBody .collapse">
+<h2>Sets the plaintext version of the email body</h2>
+<pre>setBody(string $plaintext, boolean $unindent_expand_constants) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plaintext</h4>
+<code>string</code><p>The plaintext version of the email body</p></div>
+<div class="subelement argument">
+<h4>$unindent_expand_constants</h4>
+<code>boolean</code><p>If this is <code>TRUE</code>, the body will be unindented as much as possible and {CONSTANT_NAME} will be replaced with the value of the constant</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setBounceToEmail" id="setBounceToEmail"></a><div class="element clickable method public setBounceToEmail" data-toggle="collapse" data-target=".setBounceToEmail .collapse">
+<h2>Adds the email address the email will be bounced to</h2>
+<pre>setBounceToEmail(string $email) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This email address will be set to the <code>Return-Path</code> header.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address to bounce to</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setFromEmail" id="setFromEmail"></a><div class="element clickable method public setFromEmail" data-toggle="collapse" data-target=".setFromEmail .collapse">
+<h2>Adds the `From:` email address to the email</h2>
+<pre>setFromEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address being sent from</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The from email user's name - unfortunately on windows this is ignored</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setHTMLBody" id="setHTMLBody"></a><div class="element clickable method public setHTMLBody" data-toggle="collapse" data-target=".setHTMLBody .collapse">
+<h2>Sets the HTML version of the email body</h2>
+<pre>setHTMLBody(string $html) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$html</h4>
+<code>string</code><p>The HTML version of the email body</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setReplyToEmail" id="setReplyToEmail"></a><div class="element clickable method public setReplyToEmail" data-toggle="collapse" data-target=".setReplyToEmail .collapse">
+<h2>Adds the `Reply-To:` email address to the email</h2>
+<pre>setReplyToEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address to reply to</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The reply-to email user's name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setSenderEmail" id="setSenderEmail"></a><div class="element clickable method public setSenderEmail" data-toggle="collapse" data-target=".setSenderEmail .collapse">
+<h2>Adds the `Sender:` email address to the email</h2>
+<pre>setSenderEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The <code>Sender:</code> header is used to indicate someone other than the <code>From:</code>
+address is actually submitting the message to the network.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address the message is actually being sent from</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The sender email user's name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setSubject" id="setSubject"></a><div class="element clickable method public setSubject" data-toggle="collapse" data-target=".setSubject .collapse">
+<h2>Sets the subject of the email</h2>
+<pre>setSubject(string $subject) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$subject</h4>
+<code>string</code><p>The subject of the email</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="sign" id="sign"></a><div class="element clickable method public sign" data-toggle="collapse" data-target=".sign .collapse">
+<h2>Sets the email to be signed with S/MIME</h2>
+<pre>sign(string $senders_smime_cert_file, string $senders_smime_pk_file, string $senders_smime_pk_password) : <a href="../classes/fEmail.html">\fEmail</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$senders_smime_cert_file</h4>
+<code>string</code><p>The file path to the sender's PEM-encoded S/MIME certificate</p>
+</div>
+<div class="subelement argument">
+<h4>$senders_smime_pk_file</h4>
+<code>string</code><p>The file path to the sender's S/MIME private key</p>
+</div>
+<div class="subelement argument">
+<h4>$senders_smime_pk_password</h4>
+<code>string</code><p>The password for the sender's S/MIME private key</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="unindentExpand" id="unindentExpand"></a><div class="element clickable method public unindentExpand" data-toggle="collapse" data-target=".unindentExpand .collapse">
+<h2>Takes a block of text, unindents it and replaces {CONSTANT} tokens with the constant's value</h2>
+<pre>unindentExpand(string $text) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>The text to unindent and replace constants in</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The unindented text</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="stringlike" id="stringlike"></a><div class="element clickable method protected stringlike" data-toggle="collapse" data-target=".stringlike .collapse">
+<h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
+<pre>stringlike(mixed $value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value is string-like</div>
+</div></div>
+</div>
+<a name="buildMultiAddressHeader" id="buildMultiAddressHeader"></a><div class="element clickable method private buildMultiAddressHeader" data-toggle="collapse" data-target=".buildMultiAddressHeader .collapse">
+<h2>Takes a multi-address email header and builds it out using an array of emails</h2>
+<pre>buildMultiAddressHeader(string $header, array $emails) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$header</h4>
+<code>string</code><p>The header name without <code>': '</code>, the header is non-blank, <code>': '</code> will be added</p>
+</div>
+<div class="subelement argument">
+<h4>$emails</h4>
+<code>array</code><p>The email addresses for the header</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The email header with a trailing `\r\n`</div>
+</div></div>
+</div>
+<a name="createBody" id="createBody"></a><div class="element clickable method private createBody" data-toggle="collapse" data-target=".createBody .collapse">
+<h2>Builds the body of the email</h2>
+<pre>createBody(string $boundary) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$boundary</h4>
+<code>string</code><p>The boundary to use for the top level mime block</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The message body to be sent to the mail() function</div>
+</div></div>
+</div>
+<a name="createBoundary" id="createBoundary"></a><div class="element clickable method private createBoundary" data-toggle="collapse" data-target=".createBoundary .collapse">
+<h2>Creates a 32-character boundary for a multipart message</h2>
+<pre>createBoundary() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A multipart boundary</div>
+</div></div>
+</div>
+<a name="createHeaders" id="createHeaders"></a><div class="element clickable method private createHeaders" data-toggle="collapse" data-target=".createHeaders .collapse">
+<h2>Builds the headers for the email</h2>
+<pre>createHeaders(string $boundary, string $message_id) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$boundary</h4>
+<code>string</code><p>The boundary to use for the top level mime block</p></div>
+<div class="subelement argument">
+<h4>$message_id</h4>
+<code>string</code><p>The message id for the message</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The headers to be sent to the [http://php.net/function.mail mail()] function</div>
+</div></div>
+</div>
+<a name="createSMIMEBody" id="createSMIMEBody"></a><div class="element clickable method private createSMIMEBody" data-toggle="collapse" data-target=".createSMIMEBody .collapse">
+<h2>Takes the body of the message and processes it with S/MIME</h2>
+<pre>createSMIMEBody(string $to, string $subject, string $headers, string $body) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$to</h4>
+<code>string</code><p>The recipients being sent to</p></div>
+<div class="subelement argument">
+<h4>$subject</h4>
+<code>string</code><p>The subject of the email</p></div>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>string</code><p>The headers for the message</p></div>
+<div class="subelement argument">
+<h4>$body</h4>
+<code>string</code><p>The message body</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>`0` => The message headers, `1` => The message body</div>
+</div></div>
+</div>
+<a name="extractEmails" id="extractEmails"></a><div class="element clickable method private extractEmails" data-toggle="collapse" data-target=".extractEmails .collapse">
+<h2>Extracts just the email addresses from an array of strings containing an
+&lt;email@address.com&gt; or "Name" &lt;email@address.com&gt; combination.</h2>
+<pre>extractEmails(array $list) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$list</h4>
+<code>array</code><p>The list of email or name/email to extract from</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The email addresses</div>
+</div></div>
+</div>
+<a name="extrapolateFileInfo" id="extrapolateFileInfo"></a><div class="element clickable method private extrapolateFileInfo" data-toggle="collapse" data-target=".extrapolateFileInfo .collapse">
+<h2>Extracts the filename and mime-type from an fFile object</h2>
+<pre>extrapolateFileInfo(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string<a href="../classes/fFile.html">\fFile</a></code><p>&$contents The file to extrapolate the info from</p>
+</div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>&$filename The filename to use for the file</p>
+</div>
+<div class="subelement argument">
+<h4>$mime_type</h4>
+<code>string</code><p>&$mime_type The mime type of the file</p>
+</div>
+</div></div>
+</div>
+<a name="generateNewFilename" id="generateNewFilename"></a><div class="element clickable method private generateNewFilename" data-toggle="collapse" data-target=".generateNewFilename .collapse">
+<h2>Generates a new filename in an attempt to create a unique name</h2>
+<pre>generateNewFilename(string $filename) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The filename to generate another name for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The newly generated filename</div>
+</div></div>
+</div>
+<a name="makeBase64" id="makeBase64"></a><div class="element clickable method private makeBase64" data-toggle="collapse" data-target=".makeBase64 .collapse">
+<h2>Encodes a string to base64</h2>
+<pre>makeBase64(string $content) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to encode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded string</div>
+</div></div>
+</div>
+<a name="makeEncodedWord" id="makeEncodedWord"></a><div class="element clickable method private makeEncodedWord" data-toggle="collapse" data-target=".makeEncodedWord .collapse">
+<h2>Encodes a string to UTF-8 encoded-word</h2>
+<pre>makeEncodedWord(string $content, integer $first_line_prefix_length) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to encode</p></div>
+<div class="subelement argument">
+<h4>$first_line_prefix_length</h4>
+<code>integer</code><p>The length of any prefix applied to the first line of the encoded word - this allows properly accounting for a header name</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded string</div>
+</div></div>
+</div>
+<a name="makeQuotedPrintable" id="makeQuotedPrintable"></a><div class="element clickable method private makeQuotedPrintable" data-toggle="collapse" data-target=".makeQuotedPrintable .collapse">
+<h2>Encodes a string to quoted-printable, properly handles UTF-8</h2>
+<pre>makeQuotedPrintable(string $content) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to encode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded string</div>
+</div></div>
+</div>
+<a name="validate" id="validate"></a><div class="element clickable method private validate" data-toggle="collapse" data-target=".validate .collapse">
+<h2>Validates that all of the parts of the email are valid</h2>
+<pre>validate() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When part of the email is missing or formatted incorrectly</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24attachments" id="$attachments"> </a><div class="element clickable property private $attachments" data-toggle="collapse" data-target=".$attachments .collapse">
+<h2>The file contents to attach</h2>
+<pre>$attachments : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24bcc_emails" id="$bcc_emails"> </a><div class="element clickable property private $bcc_emails" data-toggle="collapse" data-target=".$bcc_emails .collapse">
+<h2>The email address(es) to BCC to</h2>
+<pre>$bcc_emails : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24bounce_to_email" id="$bounce_to_email"> </a><div class="element clickable property private $bounce_to_email" data-toggle="collapse" data-target=".$bounce_to_email .collapse">
+<h2>The email address to bounce to</h2>
+<pre>$bounce_to_email : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24cc_emails" id="$cc_emails"> </a><div class="element clickable property private $cc_emails" data-toggle="collapse" data-target=".$cc_emails .collapse">
+<h2>The email address(es) to CC to</h2>
+<pre>$cc_emails : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24convert_crlf" id="$convert_crlf"> </a><div class="element clickable property private $convert_crlf" data-toggle="collapse" data-target=".$convert_crlf .collapse">
+<h2>Flags if the class should convert `\r\n` to `\n` for qmail. This makes invalid email headers that may work.</h2>
+<pre>$convert_crlf : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24custom_headers" id="$custom_headers"> </a><div class="element clickable property private $custom_headers" data-toggle="collapse" data-target=".$custom_headers .collapse">
+<h2>Custom headers</h2>
+<pre>$custom_headers : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24fqdn" id="$fqdn"> </a><div class="element clickable property private $fqdn" data-toggle="collapse" data-target=".$fqdn .collapse">
+<h2>The local fully-qualified domain name</h2>
+<pre>$fqdn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24from_email" id="$from_email"> </a><div class="element clickable property private $from_email" data-toggle="collapse" data-target=".$from_email .collapse">
+<h2>The email address being sent from</h2>
+<pre>$from_email : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24html_body" id="$html_body"> </a><div class="element clickable property private $html_body" data-toggle="collapse" data-target=".$html_body .collapse">
+<h2>The HTML body of the email</h2>
+<pre>$html_body : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24message_id" id="$message_id"> </a><div class="element clickable property private $message_id" data-toggle="collapse" data-target=".$message_id .collapse">
+<h2>The Message-ID header for the email</h2>
+<pre>$message_id : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24plaintext_body" id="$plaintext_body"> </a><div class="element clickable property private $plaintext_body" data-toggle="collapse" data-target=".$plaintext_body .collapse">
+<h2>The plaintext body of the email</h2>
+<pre>$plaintext_body : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24popen_sendmail" id="$popen_sendmail"> </a><div class="element clickable property private $popen_sendmail" data-toggle="collapse" data-target=".$popen_sendmail .collapse">
+<h2>Flags if the class should use [http://php.net/popen popen()] to send mail via sendmail</h2>
+<pre>$popen_sendmail : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24recipients_smime_cert_file" id="$recipients_smime_cert_file"> </a><div class="element clickable property private $recipients_smime_cert_file" data-toggle="collapse" data-target=".$recipients_smime_cert_file .collapse">
+<h2>The recipient's S/MIME PEM certificate filename, used for encryption of the message</h2>
+<pre>$recipients_smime_cert_file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24related_files" id="$related_files"> </a><div class="element clickable property private $related_files" data-toggle="collapse" data-target=".$related_files .collapse">
+<h2>The files to include as multipart/related</h2>
+<pre>$related_files : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24reply_to_email" id="$reply_to_email"> </a><div class="element clickable property private $reply_to_email" data-toggle="collapse" data-target=".$reply_to_email .collapse">
+<h2>The email address to reply to</h2>
+<pre>$reply_to_email : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24sender_email" id="$sender_email"> </a><div class="element clickable property private $sender_email" data-toggle="collapse" data-target=".$sender_email .collapse">
+<h2>The email address actually sending the email</h2>
+<pre>$sender_email : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24senders_smime_cert_file" id="$senders_smime_cert_file"> </a><div class="element clickable property private $senders_smime_cert_file" data-toggle="collapse" data-target=".$senders_smime_cert_file .collapse">
+<h2>The senders's S/MIME PEM certificate filename, used for singing the message</h2>
+<pre>$senders_smime_cert_file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24senders_smime_pk_file" id="$senders_smime_pk_file"> </a><div class="element clickable property private $senders_smime_pk_file" data-toggle="collapse" data-target=".$senders_smime_pk_file .collapse">
+<h2>The senders's S/MIME private key filename, used for singing the message</h2>
+<pre>$senders_smime_pk_file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24senders_smime_pk_password" id="$senders_smime_pk_password"> </a><div class="element clickable property private $senders_smime_pk_password" data-toggle="collapse" data-target=".$senders_smime_pk_password .collapse">
+<h2>The senders's S/MIME private key password, used for singing the message</h2>
+<pre>$senders_smime_pk_password : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24smime_encrypt" id="$smime_encrypt"> </a><div class="element clickable property private $smime_encrypt" data-toggle="collapse" data-target=".$smime_encrypt .collapse">
+<h2>If the message should be encrypted using the recipient's S/MIME certificate</h2>
+<pre>$smime_encrypt : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24smime_sign" id="$smime_sign"> </a><div class="element clickable property private $smime_sign" data-toggle="collapse" data-target=".$smime_sign .collapse">
+<h2>If the message should be signed using the senders's S/MIME private key</h2>
+<pre>$smime_sign : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24subject" id="$subject"> </a><div class="element clickable property private $subject" data-toggle="collapse" data-target=".$subject .collapse">
+<h2>The subject of the email</h2>
+<pre>$subject : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24to_emails" id="$to_emails"> </a><div class="element clickable property private $to_emails" data-toggle="collapse" data-target=".$to_emails .collapse">
+<h2>The email address(es) to send to</h2>
+<pre>$to_emails : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="EMAIL_REGEX" id="EMAIL_REGEX"> </a><div class="element clickable constant  EMAIL_REGEX" data-toggle="collapse" data-target=".EMAIL_REGEX .collapse">
+<h2>A regular expression to match an email address, exluding those with comments and folding whitespace</h2>
+<pre>EMAIL_REGEX : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>The matches will be:</p>
+
+<ul>
+<li><code>[0]</code>: The whole email address</li>
+<li><code>[1]</code>: The name before the <code>@</code></li>
+<li><code>[2]</code>: The domain/ip after the <code>@</code></li>
+</ul></p></div></div>
+</div>
+<a name="NAME_EMAIL_REGEX" id="NAME_EMAIL_REGEX"> </a><div class="element clickable constant  NAME_EMAIL_REGEX" data-toggle="collapse" data-target=".NAME_EMAIL_REGEX .collapse">
+<h2>A regular expression to match a `name &lt;email&gt;` string, exluding those with comments and folding whitespace</h2>
+<pre>NAME_EMAIL_REGEX : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"><p>The matches will be:</p>
+
+<ul>
+<li><code>[0]</code>: The whole name and email address</li>
+<li><code>[1]</code>: The name</li>
+<li><code>[2]</code>: The whole email address</li>
+<li><code>[3]</code>: The email username before the <code>@</code></li>
+<li><code>[4]</code>: The email domain/ip after the <code>@</code></li>
+</ul></p></div></div>
+</div>
+<a name="combineNameEmail" id="combineNameEmail"> </a><div class="element clickable constant  combineNameEmail" data-toggle="collapse" data-target=".combineNameEmail .collapse">
+<h2>combineNameEmail</h2>
+<pre>combineNameEmail </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="fixQmail" id="fixQmail"> </a><div class="element clickable constant  fixQmail" data-toggle="collapse" data-target=".fixQmail .collapse">
+<h2>fixQmail</h2>
+<pre>fixQmail </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="getFQDN" id="getFQDN"> </a><div class="element clickable constant  getFQDN" data-toggle="collapse" data-target=".getFQDN .collapse">
+<h2>getFQDN</h2>
+<pre>getFQDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="unindentExpand" id="unindentExpand"> </a><div class="element clickable constant  unindentExpand" data-toggle="collapse" data-target=".unindentExpand .collapse">
+<h2>unindentExpand</h2>
+<pre>unindentExpand </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-07T05:53:33-05:00.<br></footer></div>
+</div>
+</body>
+</html>
