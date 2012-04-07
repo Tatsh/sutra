@@ -147,6 +147,9 @@ class sImage extends fImage {
         $processor = 'imagemagick';
       }
     }
+    else if ($processor_override == 'gd') {
+      $supported = array('image/gif', 'image/jpeg', 'image/png');
+    }
 
     if (!in_array($mime, $supported)) {
       return $file;
@@ -168,7 +171,13 @@ class sImage extends fImage {
       }
 
       try {
-        $file->write($image->getImageBlob());
+        $data = $image->getImageBlob();
+        if (!$data) {
+          throw new ImagickException('No data returned from Imagick::getImageBlob().');
+        }
+        $file->write($data);
+        $image->clear();
+        $image->destroy();
       }
       catch (ImagickException $e) {
         throw new fUnexpectedException('Caught ImagickException: '.$e->getMessage());
