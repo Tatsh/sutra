@@ -13,11 +13,230 @@
  */
 class sNumber extends fNumber {
   /**
+   * Common list of locales.
+   *
+   * @see http://www.iana.org/assignments/language-subtag-registry
+   * @var array
+   */
+  private static $valid_locales = array(
+    'af-ZA' => TRUE,
+    'am-ET' => TRUE,
+    'ar-AE' => TRUE,
+    'ar-BH' => TRUE,
+    'ar-DZ' => TRUE,
+    'ar-EG' => TRUE,
+    'ar-IQ' => TRUE,
+    'ar-JO' => TRUE,
+    'ar-KW' => TRUE,
+    'ar-LB' => TRUE,
+    'ar-LY' => TRUE,
+    'ar-MA' => TRUE,
+    'arn-CL' => TRUE,
+    'ar-OM' => TRUE,
+    'ar-QA' => TRUE,
+    'ar-SA' => TRUE,
+    'ar-SY' => TRUE,
+    'ar-TN' => TRUE,
+    'ar-YE' => TRUE,
+    'as-IN' => TRUE,
+    'az-Cyrl-AZ' => TRUE,
+    'az-Latn-AZ' => TRUE,
+    'ba-RU' => TRUE,
+    'be-BY' => TRUE,
+    'bg-BG' => TRUE,
+    'bn-BD' => TRUE,
+    'bn-IN' => TRUE,
+    'bo-CN' => TRUE,
+    'br-FR' => TRUE,
+    'bs-Cyrl-BA' => TRUE,
+    'bs-Latn-BA' => TRUE,
+    'ca-ES' => TRUE,
+    'co-FR' => TRUE,
+    'cs-CZ' => TRUE,
+    'cy-GB' => TRUE,
+    'da-DK' => TRUE,
+    'de-AT' => TRUE,
+    'de-CH' => TRUE,
+    'de-DE' => TRUE,
+    'de-LI' => TRUE,
+    'de-LU' => TRUE,
+    'dsb-DE' => TRUE,
+    'dv-MV' => TRUE,
+    'el-GR' => TRUE,
+    'en-029' => TRUE,
+    'en-AU' => TRUE,
+    'en-BZ' => TRUE,
+    'en-CA' => TRUE,
+    'en-GB' => TRUE,
+    'en-IE' => TRUE,
+    'en-IN' => TRUE,
+    'en-JM' => TRUE,
+    'en-MY' => TRUE,
+    'en-NZ' => TRUE,
+    'en-PH' => TRUE,
+    'en-SG' => TRUE,
+    'en-TT' => TRUE,
+    'en-US' => TRUE,
+    'en-ZA' => TRUE,
+    'en-ZW' => TRUE,
+    'es-AR' => TRUE,
+    'es-BO' => TRUE,
+    'es-CL' => TRUE,
+    'es-CO' => TRUE,
+    'es-CR' => TRUE,
+    'es-DO' => TRUE,
+    'es-EC' => TRUE,
+    'es-ES' => TRUE,
+    'es-GT' => TRUE,
+    'es-HN' => TRUE,
+    'es-MX' => TRUE,
+    'es-NI' => TRUE,
+    'es-PA' => TRUE,
+    'es-PE' => TRUE,
+    'es-PR' => TRUE,
+    'es-PY' => TRUE,
+    'es-SV' => TRUE,
+    'es-US' => TRUE,
+    'es-UY' => TRUE,
+    'es-VE' => TRUE,
+    'et-EE' => TRUE,
+    'eu-ES' => TRUE,
+    'fa-IR' => TRUE,
+    'fi-FI' => TRUE,
+    'fil-PH' => TRUE,
+    'fo-FO' => TRUE,
+    'fr-BE' => TRUE,
+    'fr-CA' => TRUE,
+    'fr-CH' => TRUE,
+    'fr-FR' => TRUE,
+    'fr-LU' => TRUE,
+    'fr-MC' => TRUE,
+    'fy-NL' => TRUE,
+    'ga-IE' => TRUE,
+    'gd-GB' => TRUE,
+    'gl-ES' => TRUE,
+    'gsw-FR' => TRUE,
+    'gu-IN' => TRUE,
+    'ha-Latn-NG' => TRUE,
+    'he-IL' => TRUE,
+    'hi-IN' => TRUE,
+    'hr-BA' => TRUE,
+    'hr-HR' => TRUE,
+    'hsb-DE' => TRUE,
+    'hu-HU' => TRUE,
+    'hy-AM' => TRUE,
+    'id-ID' => TRUE,
+    'ig-NG' => TRUE,
+    'ii-CN' => TRUE,
+    'is-IS' => TRUE,
+    'it-CH' => TRUE,
+    'it-IT' => TRUE,
+    'iu-Cans-CA' => TRUE,
+    'iu-Latn-CA' => TRUE,
+    'ja-JP' => TRUE,
+    'ka-GE' => TRUE,
+    'kk-KZ' => TRUE,
+    'kl-GL' => TRUE,
+    'km-KH' => TRUE,
+    'kn-IN' => TRUE,
+    'kok-IN' => TRUE,
+    'ko-KR' => TRUE,
+    'ky-KG' => TRUE,
+    'lb-LU' => TRUE,
+    'lo-LA' => TRUE,
+    'lt-LT' => TRUE,
+    'lv-LV' => TRUE,
+    'mi-NZ' => TRUE,
+    'mk-MK' => TRUE,
+    'ml-IN' => TRUE,
+    'mn-MN' => TRUE,
+    'mn-Mong-CN' => TRUE,
+    'moh-CA' => TRUE,
+    'mr-IN' => TRUE,
+    'ms-BN' => TRUE,
+    'ms-MY' => TRUE,
+    'mt-MT' => TRUE,
+    'nb-NO' => TRUE,
+    'ne-NP' => TRUE,
+    'nl-BE' => TRUE,
+    'nl-NL' => TRUE,
+    'nn-NO' => TRUE,
+    'nso-ZA' => TRUE,
+    'oc-FR' => TRUE,
+    'or-IN' => TRUE,
+    'pa-IN' => TRUE,
+    'pl-PL' => TRUE,
+    'prs-AF' => TRUE,
+    'ps-AF' => TRUE,
+    'pt-BR' => TRUE,
+    'pt-PT' => TRUE,
+    'qut-GT' => TRUE,
+    'quz-BO' => TRUE,
+    'quz-EC' => TRUE,
+    'quz-PE' => TRUE,
+    'rm-CH' => TRUE,
+    'ro-RO' => TRUE,
+    'ru-RU' => TRUE,
+    'rw-RW' => TRUE,
+    'sah-RU' => TRUE,
+    'sa-IN' => TRUE,
+    'se-FI' => TRUE,
+    'se-NO' => TRUE,
+    'se-SE' => TRUE,
+    'si-LK' => TRUE,
+    'sk-SK' => TRUE,
+    'sl-SI' => TRUE,
+    'sma-NO' => TRUE,
+    'sma-SE' => TRUE,
+    'smj-NO' => TRUE,
+    'smj-SE' => TRUE,
+    'smn-FI' => TRUE,
+    'sms-FI' => TRUE,
+    'sq-AL' => TRUE,
+    'sr-Cyrl-BA' => TRUE,
+    'sr-Cyrl-CS' => TRUE,
+    'sr-Cyrl-ME' => TRUE,
+    'sr-Cyrl-RS' => TRUE,
+    'sr-Latn-BA' => TRUE,
+    'sr-Latn-CS' => TRUE,
+    'sr-Latn-ME' => TRUE,
+    'sr-Latn-RS' => TRUE,
+    'sv-FI' => TRUE,
+    'sv-SE' => TRUE,
+    'sw-KE' => TRUE,
+    'syr-SY' => TRUE,
+    'ta-IN' => TRUE,
+    'te-IN' => TRUE,
+    'tg-Cyrl-TJ' => TRUE,
+    'th-TH' => TRUE,
+    'tk-TM' => TRUE,
+    'tn-ZA' => TRUE,
+    'tr-TR' => TRUE,
+    'tt-RU' => TRUE,
+    'tzm-Latn-DZ' => TRUE,
+    'ug-CN' => TRUE,
+    'uk-UA' => TRUE,
+    'ur-PK' => TRUE,
+    'uz-Cyrl-UZ' => TRUE,
+    'uz-Latn-UZ' => TRUE,
+    'vi-VN' => TRUE,
+    'wo-SN' => TRUE,
+    'xh-ZA' => TRUE,
+    'yo-NG' => TRUE,
+    'zh-CN' => TRUE,
+    'zh-HK' => TRUE,
+    'zh-MO' => TRUE,
+    'zh-SG' => TRUE,
+    'zh-TW' => TRUE,
+    'zu-ZA' => TRUE,
+  );
+
+  /**
    * The locale for the class. Defaults to US English.
    *
    * @var string
    */
-  private static $locale = 'en_US';
+  private static $locale = 'en-US';
 
   /**
    * The fallback to use if the locale has no callback for the locale in use.
@@ -25,7 +244,7 @@ class sNumber extends fNumber {
    *
    * @var string
    */
-  private static $fallback_locale = 'en_US';
+  private static $fallback_locale = 'en-US';
 
   /**
    * Callbacks for other languages.
@@ -33,60 +252,83 @@ class sNumber extends fNumber {
    * @var array
    */
   private static $callbacks = array(
-    'en_AU' => array( // Australia
+    'en-AU' => array( // Australia
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_CA' => array( // Canada
+    'en-CA' => array( // Canada
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_GB' => array( // United Kingdom
+    'en-GB' => array( // United Kingdom
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_IE' => array( // Ireland
+    'en-IE' => array( // Ireland
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_IN' => array( // India
+    'en-IN' => array( // India
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_MT' => array( // Malta
+    'en-MT' => array( // Malta
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_NZ' => array( // New Zealand
+    'en-NZ' => array( // New Zealand
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_PH' => array( // Philippines
+    'en-PH' => array( // Philippines
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_SG' => array( // Singapore
+    'en-SG' => array( // Singapore
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_US' => array( // United States
+    'en-US' => array( // United States
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
-    'en_ZA' => array( // South Africa
+    'en-ZA' => array( // South Africa
       'ordinal' => 'sNumber::ordinalNumberPrefixedCallback',
       'ordinalSuffix' => 'sNumber::ordinalSuffix',
     ),
   );
 
   /**
+   * Checks if a locale is valid.
+   *
+   * @throws fProgrammerException If the locale is invalid.
+   *
+   * @param string $locale Locale to check.
+   * @return void
+   */
+  private static function tossIfInvalidLocale($locale) {
+    if (!isset(self::$valid_locales[$locale])) {
+      throw new fProgrammerException('The locale specified, "%s", is not a valid locale. It must be one of: %s. If you think this is a bug or a locale must be added, please file an issue at %s.',
+        $locale,
+        implode(', ', array_keys(self::$valid_locales)),
+        'https://github.com/tatsh/sutra/issues'
+      );
+    }
+  }
+
+  /**
    * Adds an array of callbacks with the default methods in this class for a
    *   specified locale.
    *
-   * @param string $locale Locale name, such as fr_FR.
+   * @throws fProgrammerException If the locale is invalid.
+   *
+   * @param string $locale Locale name, such as fr-FR.
    * @return void
    */
   private static function addDefaultCallbacks($locale) {
+    $locale = str_replace('_', '-', $locale);
+    self::tossIfInvalidLocale($locale);
+
     if (!isset(self::$callbacks[$locale])) {
       self::$callbacks[$locale] = array(
         'oridinal' => __CLASS__.'::ordinal',
@@ -102,19 +344,21 @@ class sNumber extends fNumber {
    *
    * All callbacks must receive one value, an integer, and return a string.
    *
-   * @throws fProgrammerException If the method name is invalid.
+   * @throws fProgrammerException If the method name or locale is invalid.
    *
    * @param string $locale The locale name. Should be a standard locale
-   *   name such as en_GB, fr_FR, etc.
+   *   name such as en-GB, fr-FR, etc.
    * @param string $method_name Method name in this class to override. One of:
    *   ordinal, ordinalSuffix. The instance methods will also use this
    *   callback.
    * @param string|array $callback Callback to use.
    * @return void
-   *
-   * @todo Validate the locale against a list of locales.
    */
   public static function addCallback($locale, $method_name, $callback) {
+    $locale = str_replace('_', '-', $locale);
+
+    self::tossIfInvalidLocale($locale);
+
     $valid_methods = array(
       'ordinal',
       'ordinalSuffix',
@@ -139,6 +383,8 @@ class sNumber extends fNumber {
    * @return void
    */
   public static function removeLocale($locale_name) {
+    $locale_name = str_replace('_', '-', $locale_name);
+
     if (isset(self::$callbacks[$locale_name])) {
       unset(self::$callbacks[$locale_name]);
     }
@@ -153,13 +399,17 @@ class sNumber extends fNumber {
    * Set the current locale in use for this class. If no callbacks yet exist,
    *   the defaults in this class will be assigned.
    *
-   * @param string $locale The language name. Should be a standard locale
-   *   name such as en_GB, fr_FR, etc.
-   * @return void
+   * @throws fProgrammerException If the locale is invalid.
    *
-   * @todo Validate the locale against a list of locales.
+   * @param string $locale The locale name. Should be a standard locale name
+   *   such as en-GB, fr-FR, etc.
+   * @return void
    */
   public static function setLocale($locale) {
+    $locale = str_replace('_', '-', $locale);
+
+    self::tossIfInvalidLocale($locale);
+
     if(!isset(self::$callbacks[$locale])) {
       self::addDefaultCallbacks($locale);
     }
@@ -173,10 +423,12 @@ class sNumber extends fNumber {
    *
    * @param string $locale Locale name.
    * @return void
-   *
-   * @todo Validate the locale against a list of locales.
    */
   public static function setFallbackLocale($locale) {
+    $locale = str_replace('_', '-', $locale);
+
+    self::tossIfInvalidLocale($locale);
+
     if(!isset(self::$callbacks[$locale])) {
       self::addDefaultCallbacks($locale);
     }
@@ -255,7 +507,7 @@ class sNumber extends fNumber {
   }
 
   /**
-   * Checks if a number is equal to its int-casted counterpart.
+   * Checks if a number is equal to its integer-casted counterpart.
    *
    * @param mixed $value Value to check.
    * @return boolean If the int-casted value is the same.
