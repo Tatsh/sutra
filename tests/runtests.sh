@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir -p template
+mkdir -p template/default
 
 cp -f resources/backup/* resources
 rm -f resources/*_copy*
