@@ -14,9 +14,6 @@
  * @link http://www.sutralib.com/
  *
  * @version 1.2
- *
- * @todo Add method to set an image's opacity.
- * @todo Add method to create an image with images as layers.
  */
 class sImage extends fImage {
   /**
@@ -120,7 +117,6 @@ class sImage extends fImage {
    *  part of the operation queue).
    *
    * @todo Accept third argument boolean overwrite.
-   * @todo Use ImageMagick command line instead of Imagick.
    *
    * @param integer $type One of the FLIP_* constants.
    * @param integer $jpeg_quality Because this saves changes to the file
