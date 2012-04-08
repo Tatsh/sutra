@@ -201,7 +201,7 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testAddArgument() {
-	$program = fCore::checkOS('windows') ? 'compact' : 'bc';
+    $program = fCore::checkOS('windows') ? 'compact' : 'bc';
     $proc = $this->getObject($program);
     $proc->addArgument('--help');
   }
