@@ -242,7 +242,7 @@ class sTemplate {
     $mode = strtolower($mode);
 
     if (!in_array($mode, $valid_modes)) {
-      throw new fProgrammerException('Invalid mode, "%s", specified. Must be one of: %s.', implode(', ', $valid_modes));
+      throw new fProgrammerException('Invalid mode, "%s", specified. Must be one of: %s.', $mode, implode(', ', $valid_modes));
     }
 
     self::$in_production_mode = $mode != 'development' ? TRUE : FALSE;
