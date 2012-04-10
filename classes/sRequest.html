@@ -18,7 +18,11 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -54,31 +58,87 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#check" title="check :: Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request"><span class="description">Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request</span><pre>check()</pre></a></li>
 <li class="method public "><a href="#deleteLastPOSTValues" title="deleteLastPOSTValues :: Deletes all POST values stored."><span class="description">Deletes all POST values stored.</span><pre>deleteLastPOSTValues()</pre></a></li>
+<li class="method public inherited"><a href="#encode" title="encode :: Gets a value from ::get() and passes it through fHTML::encode()"><span class="description">Gets a value from ::get() and passes it through fHTML::encode()</span><pre>encode()</pre></a></li>
+<li class="method public inherited"><a href="#generateCSRFToken" title="generateCSRFToken :: Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]"><span class="description">Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</span><pre>generateCSRFToken()</pre></a></li>
+<li class="method public inherited"><a href="#get" title="get :: Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)"><span class="description">Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</span><pre>get()</pre></a></li>
+<li class="method public inherited"><a href="#getAcceptLanguages" title="getAcceptLanguages :: Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)"><span class="description">Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</span><pre>getAcceptLanguages()</pre></a></li>
+<li class="method public inherited"><a href="#getAcceptTypes" title="getAcceptTypes :: Returns the HTTP `Accept` types sorted by their `q` values (from high to low)"><span class="description">Returns the HTTP `Accept` types sorted by their `q` values (from high to low)</span><pre>getAcceptTypes()</pre></a></li>
+<li class="method public inherited"><a href="#getBestAcceptLanguage" title="getBestAcceptLanguage :: Returns the best HTTP `Accept-Language` (based on `q` value) - can be filtered to only allow certain languages"><span class="description">Returns the best HTTP `Accept-Language` (based on `q` value) - can be filtered to only allow certain languages</span><pre>getBestAcceptLanguage()</pre></a></li>
+<li class="method public inherited"><a href="#getBestAcceptType" title="getBestAcceptType :: "><span class="description">getBestAcceptType()
+        </span><pre>getBestAcceptType()</pre></a></li>
+<li class="method public inherited"><a href="#getValid" title="getValid :: Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order), restricting to a specific set of values"><span class="description">Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order), restricting to a specific set of values</span><pre>getValid()</pre></a></li>
+<li class="method public inherited"><a href="#isAjax" title="isAjax :: Indicates if the URL was accessed via an XMLHttpRequest"><span class="description">Indicates if the URL was accessed via an XMLHttpRequest</span><pre>isAjax()</pre></a></li>
+<li class="method public inherited"><a href="#isDelete" title="isDelete :: Indicates if the URL was accessed via the `DELETE` HTTP method"><span class="description">Indicates if the URL was accessed via the `DELETE` HTTP method</span><pre>isDelete()</pre></a></li>
+<li class="method public inherited"><a href="#isGet" title="isGet :: Indicates if the URL was accessed via the `GET` HTTP method"><span class="description">Indicates if the URL was accessed via the `GET` HTTP method</span><pre>isGet()</pre></a></li>
+<li class="method public inherited"><a href="#isPost" title="isPost :: Indicates if the URL was accessed via the `POST` HTTP method"><span class="description">Indicates if the URL was accessed via the `POST` HTTP method</span><pre>isPost()</pre></a></li>
+<li class="method public inherited"><a href="#isPut" title="isPut :: Indicates if the URL was accessed via the `PUT` HTTP method"><span class="description">Indicates if the URL was accessed via the `PUT` HTTP method</span><pre>isPut()</pre></a></li>
+<li class="method public inherited"><a href="#overrideAction" title="overrideAction :: Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value"><span class="description">Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</span><pre>overrideAction()</pre></a></li>
+<li class="method public inherited"><a href="#prepare" title="prepare :: Gets a value from ::get() and passes it through fHTML::prepare()"><span class="description">Gets a value from ::get() and passes it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
 <li class="method public "><a href="#registerCallback" title="registerCallback :: Register a callback to be called after before or after validation."><span class="description">Register a callback to be called after before or after validation.</span><pre>registerCallback()</pre></a></li>
 <li class="method public "><a href="#restoreLastPOSTValues" title="restoreLastPOSTValues :: Restore last POST values so that they may be used in form generation."><span class="description">Restore last POST values so that they may be used in form generation.</span><pre>restoreLastPOSTValues()</pre></a></li>
+<li class="method public inherited"><a href="#set" title="set :: Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request"><span class="description">Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</span><pre>set()</pre></a></li>
+<li class="method public inherited"><a href="#validateCSRFToken" title="validateCSRFToken :: Validates a request token generated by ::generateCSRFToken()"><span class="description">Validates a request token generated by ::generateCSRFToken()</span><pre>validateCSRFToken()</pre></a></li>
 <li class="method public "><a href="#validatePost" title="validatePost :: Validate a request and redirect to a URL. All POST values are saved
   when a validation exception occurs."><span class="description">Validate a request and redirect to a URL. All POST values are saved
   when a validation exception occurs.</span><pre>validatePost()</pre></a></li>
 <li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#callCallbacks" title="callCallbacks :: Calls registered callbacks."><span class="description">Calls registered callbacks.</span><pre>callCallbacks()</pre></a></li>
+<li class="method private inherited"><a href="#cast" title="cast :: Recursively handles casting values"><span class="description">Recursively handles casting values</span><pre>cast()</pre></a></li>
+<li class="method private inherited"><a href="#initPutDelete" title="initPutDelete :: Parses post data for `PUT` and `DELETE` HTTP methods"><span class="description">Parses post data for `PUT` and `DELETE` HTTP methods</span><pre>initPutDelete()</pre></a></li>
+<li class="method private inherited"><a href="#pickBestAcceptItem" title="pickBestAcceptItem :: Returns the best HTTP `Accept-*` header item match (based on `q` value), optionally filtered by an array of options"><span class="description">Returns the best HTTP `Accept-*` header item match (based on `q` value), optionally filtered by an array of options</span><pre>pickBestAcceptItem()</pre></a></li>
+<li class="method private inherited"><a href="#processAcceptHeader" title="processAcceptHeader :: Returns an array of values from one of the HTTP `Accept-*` headers"><span class="description">Returns an array of values from one of the HTTP `Accept-*` headers</span><pre>processAcceptHeader()</pre></a></li>
 <li class="method private "><a href="#savePOSTValues" title="savePOSTValues :: Saves the POST values to sessions."><span class="description">Saves the POST values to sessions.</span><pre>savePOSTValues()</pre></a></li>
+<li class="method private inherited"><a href="#stripLowOrderBytes" title="stripLowOrderBytes :: Removes low-order bytes from a value"><span class="description">Removes low-order bytes from a value</span><pre>stripLowOrderBytes()</pre></a></li>
+<li class="method private inherited"><a href="#stripSlashes" title="stripSlashes :: Removes slashes from a value"><span class="description">Removes slashes from a value</span><pre>stripSlashes()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24backup_files" title="$backup_files :: A backup copy of `$_FILES` for ::unfilter()"><span class="description">A backup copy of `$_FILES` for ::unfilter()</span><pre>$backup_files</pre></a></li>
+<li class="property private inherited"><a href="#%24backup_get" title="$backup_get :: A backup copy of `$_GET` for ::unfilter()"><span class="description">A backup copy of `$_GET` for ::unfilter()</span><pre>$backup_get</pre></a></li>
+<li class="property private inherited"><a href="#%24backup_post" title="$backup_post :: A backup copy of `$_POST` for unfilter()"><span class="description">A backup copy of `$_POST` for unfilter()</span><pre>$backup_post</pre></a></li>
+<li class="property private inherited"><a href="#%24backup_put_delete" title="$backup_put_delete :: A backup copy of the local `PUT`/`DELETE` post data for ::unfilter()"><span class="description">A backup copy of the local `PUT`/`DELETE` post data for ::unfilter()</span><pre>$backup_put_delete</pre></a></li>
+<li class="property private inherited"><a href="#%24put_delete" title="$put_delete :: The key/value pairs from the post data of a `PUT`/`DELETE` request"><span class="description">The key/value pairs from the post data of a `PUT`/`DELETE` request</span><pre>$put_delete</pre></a></li>
 <li class="property private "><a href="#%24registered_callbacks" title="$registered_callbacks :: Registered callbacks."><span class="description">Registered callbacks.</span><pre>$registered_callbacks</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
 <li class="constant  "><a href="#LAST_POST_SESSION_KEY" title="LAST_POST_SESSION_KEY :: The key in session that holds the last POST values. The last POST values
   are only stored when a validation error occurs."><span class="description">The key in session that holds the last POST values. The last POST values
   are only stored when a validation error occurs.</span><pre>LAST_POST_SESSION_KEY</pre></a></li>
+<li class="constant  inherited"><a href="#check" title="check :: "><span class="description">check</span><pre>check</pre></a></li>
+<li class="constant  inherited"><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  inherited"><a href="#filter" title="filter :: "><span class="description">filter</span><pre>filter</pre></a></li>
+<li class="constant  inherited"><a href="#generateCSRFToken" title="generateCSRFToken :: "><span class="description">generateCSRFToken</span><pre>generateCSRFToken</pre></a></li>
+<li class="constant  inherited"><a href="#get" title="get :: "><span class="description">get</span><pre>get</pre></a></li>
+<li class="constant  inherited"><a href="#getAcceptLanguages" title="getAcceptLanguages :: "><span class="description">getAcceptLanguages</span><pre>getAcceptLanguages</pre></a></li>
+<li class="constant  inherited"><a href="#getAcceptTypes" title="getAcceptTypes :: "><span class="description">getAcceptTypes</span><pre>getAcceptTypes</pre></a></li>
+<li class="constant  inherited"><a href="#getBestAcceptLanguage" title="getBestAcceptLanguage :: "><span class="description">getBestAcceptLanguage</span><pre>getBestAcceptLanguage</pre></a></li>
+<li class="constant  inherited"><a href="#getBestAcceptType" title="getBestAcceptType :: "><span class="description">getBestAcceptType</span><pre>getBestAcceptType</pre></a></li>
+<li class="constant  inherited"><a href="#getValid" title="getValid :: "><span class="description">getValid</span><pre>getValid</pre></a></li>
+<li class="constant  inherited"><a href="#isAjax" title="isAjax :: "><span class="description">isAjax</span><pre>isAjax</pre></a></li>
+<li class="constant  inherited"><a href="#isDelete" title="isDelete :: "><span class="description">isDelete</span><pre>isDelete</pre></a></li>
+<li class="constant  inherited"><a href="#isGet" title="isGet :: "><span class="description">isGet</span><pre>isGet</pre></a></li>
+<li class="constant  inherited"><a href="#isPost" title="isPost :: "><span class="description">isPost</span><pre>isPost</pre></a></li>
+<li class="constant  inherited"><a href="#isPut" title="isPut :: "><span class="description">isPut</span><pre>isPut</pre></a></li>
+<li class="constant  inherited"><a href="#overrideAction" title="overrideAction :: "><span class="description">overrideAction</span><pre>overrideAction</pre></a></li>
+<li class="constant  inherited"><a href="#prepare" title="prepare :: "><span class="description">prepare</span><pre>prepare</pre></a></li>
+<li class="constant  inherited"><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  inherited"><a href="#set" title="set :: "><span class="description">set</span><pre>set</pre></a></li>
+<li class="constant  inherited"><a href="#unfilter" title="unfilter :: "><span class="description">unfilter</span><pre>unfilter</pre></a></li>
+<li class="constant  inherited"><a href="#validateCSRFToken" title="validateCSRFToken :: "><span class="description">validateCSRFToken</span><pre>validateCSRFToken</pre></a></li>
 </ul>
 </div>
 <div class="span8">
 <a name="%5CsRequest" id="\sRequest"></a><div href="../classes/sRequest.html" class="element class">
 <p class="short_description">Manages POST requests.</p>
 <div class="details">
-<p class="long_description"></p>
+<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
+
+<p>Please also note that using this class in a PUT or DELETE request will
+cause the php://input stream to be consumed, and thus no longer available.</p></p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -107,11 +167,373 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="check" id="check"></a><div class="element clickable method public check" data-toggle="collapse" data-target=".check .collapse">
+<h2>Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request</h2>
+<pre>check(string $key) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::check()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to check - array elements can be checked via <code>[sub-key]</code> syntax</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the parameter is set</div>
+</div></div>
+</div>
 <a name="deleteLastPOSTValues" id="deleteLastPOSTValues"></a><div class="element clickable method public deleteLastPOSTValues" data-toggle="collapse" data-target=".deleteLastPOSTValues .collapse">
 <h2>Deletes all POST values stored.</h2>
 <pre>deleteLastPOSTValues() : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="encode" id="encode"></a><div class="element clickable method public encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>Gets a value from ::get() and passes it through fHTML::encode()</h2>
+<pre>encode(string $key, string $cast_to, mixed $default_value) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::encode()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to get the value of - array elements can be accessed via <code>[sub-key]</code> syntax</p>
+</div>
+<div class="subelement argument">
+<h4>$cast_to</h4>
+<code>string</code><p>Cast the value to this data type</p></div>
+<div class="subelement argument">
+<h4>$default_value</h4>
+<code>mixed</code><p>If the parameter is not set in the <code>DELETE</code>/<code>PUT</code> post data, <code>$_POST</code> or <code>$_GET</code>, use this value instead</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded value</div>
+</div></div>
+</div>
+<a name="generateCSRFToken" id="generateCSRFToken"></a><div class="element clickable method public generateCSRFToken" data-toggle="collapse" data-target=".generateCSRFToken .collapse">
+<h2>Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</h2>
+<pre>generateCSRFToken(string $url) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method will return a random 15 character string that should be
+placed in a hidden <code>input</code> element on every HTML form. When the form
+contents are being processed, the token should be retrieved and passed
+into ::validateCSRFToken().</p>
+
+<p>The value returned by this method is stored in the session and then
+checked by the validate method, which helps prevent cross site request
+forgeries and (naive) automated form submissions.</p>
+
+<p>Tokens generated by this method are single use, so a user must request
+the page that generates the token at least once per submission.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::generateCSRFToken()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to generate a token for, default to the current page</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The token to be submitted with the form</div>
+</div></div>
+</div>
+<a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
+<h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</h2>
+<pre>get(string $key, string $cast_to, mixed $default_value, boolean $use_default_for_blank) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>A value that exactly equals <code>''</code> and is not cast to a specific type will
+become <code>NULL</code>.</p>
+
+<p>Valid <code>$cast_to</code> types include:
+ - <code>'string'</code>
+ - <code>'binary'</code>
+ - <code>'int'</code>
+ - <code>'integer'</code>
+ - <code>'bool'</code>
+ - <code>'boolean'</code>
+ - <code>'array'</code>
+ - <code>'date'</code>
+ - <code>'time'</code>
+ - <code>'timestamp'</code></p>
+
+<p>It is possible to append a <code>?</code> to a data type to return <code>NULL</code>
+whenever the <code>$key</code> was not specified in the request, or if the value
+was a blank string.</p>
+
+<p>The <code>array</code> and unspecified <code>$cast_to</code> types allow for multi-dimensional
+arrays of string data. It is possible to cast an input value as a
+single-dimensional array of a specific type by appending <code>[]</code> to the
+<code>$cast_to</code>.</p>
+
+<p>All <code>string</code>, <code>array</code> or unspecified <code>$cast_to</code> will result in the value(s)
+being interpreted as UTF-8 string and appropriately cleaned of invalid
+byte sequences. Also, all low-byte, non-printable characters will be
+stripped from the value. This includes all bytes less than the value of
+32 (Space) other than Tab (<code>\t</code>), Newline (<code>\n</code>) and Cariage Return
+(<code>\r</code>).</p>
+
+<p>To preserve low-byte, non-printable characters, or get the raw value
+without cleaning invalid UTF-8 byte sequences, plase use the value of
+<code>binary</code> for the <code>$cast_to</code> parameter.</p>
+
+<p>Any integers that are beyond the range of 32bit storage will be returned
+as a string. The returned value can be forced to always be a real
+integer, which may cause truncation of the value, by passing <code>integer!</code>
+as the <code>$cast_to</code>.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::get()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to get the value of - array elements can be accessed via <code>[sub-key]</code> syntax</p>
+</div>
+<div class="subelement argument">
+<h4>$cast_to</h4>
+<code>string</code><p>Cast the value to this data type - see method description for details</p>
+</div>
+<div class="subelement argument">
+<h4>$default_value</h4>
+<code>mixed</code><p>If the parameter is not set in the <code>DELETE</code>/<code>PUT</code> post data, <code>$_POST</code> or <code>$_GET</code>, use this value instead. This value will get cast if a <code>$cast_to</code> is specified.</p>
+</div>
+<div class="subelement argument">
+<h4>$use_default_for_blank</h4>
+<code>boolean</code><p>If the request value is a blank string and <code>$default_value</code> is specified, this flag will cause the <code>$default_value</code> to be returned</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value</div>
+</div></div>
+</div>
+<a name="getAcceptLanguages" id="getAcceptLanguages"></a><div class="element clickable method public getAcceptLanguages" data-toggle="collapse" data-target=".getAcceptLanguages .collapse">
+<h2>Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</h2>
+<pre>getAcceptLanguages() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getAcceptLanguages()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of `{language} => {q value}` sorted (in a stable-fashion) from highest to lowest `q` - if no header was sent, an empty array will be returned</div>
+</div></div>
+</div>
+<a name="getAcceptTypes" id="getAcceptTypes"></a><div class="element clickable method public getAcceptTypes" data-toggle="collapse" data-target=".getAcceptTypes .collapse">
+<h2>Returns the HTTP `Accept` types sorted by their `q` values (from high to low)</h2>
+<pre>getAcceptTypes() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getAcceptTypes()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of `{type} => {q value}` sorted (in a stable-fashion) from highest to lowest `q` - if no header was sent, an empty array will be returned</div>
+</div></div>
+</div>
+<a name="getBestAcceptLanguage" id="getBestAcceptLanguage"></a><div class="element clickable method public getBestAcceptLanguage" data-toggle="collapse" data-target=".getBestAcceptLanguage .collapse">
+<h2>Returns the best HTTP `Accept-Language` (based on `q` value) - can be filtered to only allow certain languages</h2>
+<pre>getBestAcceptLanguage(array $filter) : string | NULL | FALSE</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Special conditions affecting the return value:
+ - If no <code>$filter</code> is provided and the client does not send the <code>Accept-Language</code> header, <code>NULL</code> will be returned
+ - If no <code>$filter</code> is provided and the client specifies <code>*</code> with the highest <code>q</code>, <code>NULL</code> will be returned
+ - If <code>$filter</code> contains one or more values, but the <code>Accept-Language</code> header does not match any, <code>FALSE</code> will be returned
+ - If <code>$filter</code> contains one or more values, but the client does not send the <code>Accept-Language</code> header, the first entry from <code>$filter</code> will be returned
+ - If <code>$filter</code> contains two or more values, and two of the values have the same <code>q</code> value, the one listed first in <code>$filter</code> will be returned</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getBestAcceptLanguage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>array</code><p>An array of languages that are valid to return - these should be in the form <code>{language}-{territory}</code>, e.g. <code>en-us</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>NULL</code><code>FALSE</code>The best language listed in the `Accept-Language` header - see method description for edge cases</div>
+</div></div>
+</div>
+<a name="getBestAcceptType" id="getBestAcceptType"></a><div class="element clickable method public getBestAcceptType" data-toggle="collapse" data-target=".getBestAcceptType .collapse">
+<h2>getBestAcceptType()
+        </h2>
+<pre>getBestAcceptType($filter) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getBestAcceptType()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code></code>
+</div>
+</div></div>
+</div>
+<a name="getValid" id="getValid"></a><div class="element clickable method public getValid" data-toggle="collapse" data-target=".getValid .collapse">
+<h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order), restricting to a specific set of values</h2>
+<pre>getValid(string $key, array $valid_values) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getValid()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to get the value of - array elements can be accessed via <code>[sub-key]</code> syntax</p>
+</div>
+<div class="subelement argument">
+<h4>$valid_values</h4>
+<code>array</code><p>The array of values that are permissible, if one is not selected, picks first</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value</div>
+</div></div>
+</div>
+<a name="isAjax" id="isAjax"></a><div class="element clickable method public isAjax" data-toggle="collapse" data-target=".isAjax .collapse">
+<h2>Indicates if the URL was accessed via an XMLHttpRequest</h2>
+<pre>isAjax() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isAjax()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via an XMLHttpRequest</div>
+</div></div>
+</div>
+<a name="isDelete" id="isDelete"></a><div class="element clickable method public isDelete" data-toggle="collapse" data-target=".isDelete .collapse">
+<h2>Indicates if the URL was accessed via the `DELETE` HTTP method</h2>
+<pre>isDelete() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isDelete()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via the `DELETE` HTTP method</div>
+</div></div>
+</div>
+<a name="isGet" id="isGet"></a><div class="element clickable method public isGet" data-toggle="collapse" data-target=".isGet .collapse">
+<h2>Indicates if the URL was accessed via the `GET` HTTP method</h2>
+<pre>isGet() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isGet()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via the `GET` HTTP method</div>
+</div></div>
+</div>
+<a name="isPost" id="isPost"></a><div class="element clickable method public isPost" data-toggle="collapse" data-target=".isPost .collapse">
+<h2>Indicates if the URL was accessed via the `POST` HTTP method</h2>
+<pre>isPost() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isPost()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via the `POST` HTTP method</div>
+</div></div>
+</div>
+<a name="isPut" id="isPut"></a><div class="element clickable method public isPut" data-toggle="collapse" data-target=".isPut .collapse">
+<h2>Indicates if the URL was accessed via the `PUT` HTTP method</h2>
+<pre>isPut() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isPut()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via the `PUT` HTTP method</div>
+</div></div>
+</div>
+<a name="overrideAction" id="overrideAction"></a><div class="element clickable method public overrideAction" data-toggle="collapse" data-target=".overrideAction .collapse">
+<h2>Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</h2>
+<pre>overrideAction(string $redirect) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is primarily intended to be used for hanlding multiple
+submit buttons.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::overrideAction()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$redirect</h4>
+<code>string</code><p>The url to redirect to if the action is overriden. <code>%action%</code> will be replaced with the overridden action.</p>
+</div>
+</div></div>
+</div>
+<a name="prepare" id="prepare"></a><div class="element clickable method public prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>Gets a value from ::get() and passes it through fHTML::prepare()</h2>
+<pre>prepare(string $key, string $cast_to, mixed $default_value) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::prepare()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to get the value of - array elements can be accessed via <code>[sub-key]</code> syntax</p>
+</div>
+<div class="subelement argument">
+<h4>$cast_to</h4>
+<code>string</code><p>Cast the value to this data type</p></div>
+<div class="subelement argument">
+<h4>$default_value</h4>
+<code>mixed</code><p>If the parameter is not set in the <code>DELETE</code>/<code>PUT</code> post data, <code>$_POST</code> or <code>$_GET</code>, use this value instead</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The prepared value</div>
+</div></div>
 </div>
 <a name="registerCallback" id="registerCallback"></a><div class="element clickable method public registerCallback" data-toggle="collapse" data-target=".registerCallback .collapse">
 <h2>Register a callback to be called after before or after validation.</h2>
@@ -140,6 +562,51 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
+<h2>Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</h2>
+<pre>set(string $key, mixed $value) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::set()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to set the value to - array elements can be modified via <code>[sub-key]</code> syntax</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set</p></div>
+</div></div>
+</div>
+<a name="validateCSRFToken" id="validateCSRFToken"></a><div class="element clickable method public validateCSRFToken" data-toggle="collapse" data-target=".validateCSRFToken .collapse">
+<h2>Validates a request token generated by ::generateCSRFToken()</h2>
+<pre>validateCSRFToken(string $token, string $url) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method takes a request token and ensures it is valid, otherwise
+it will throw an fValidationException.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::validateCSRFToken()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>string</code><p>The request token to validate</p></div>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to validate the token for, default to the current page</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the CSRF token specified is invalid</td>
+</tr></table>
+</div></div>
+</div>
 <a name="validatePost" id="validatePost"></a><div class="element clickable method public validatePost" data-toggle="collapse" data-target=".validatePost .collapse">
 <h2>Validate a request and redirect to a URL. All POST values are saved
   when a validation exception occurs.</h2>
@@ -160,13 +627,27 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$validation</h4>
-<code>\fValidation</code><p>fValidation instance to try to validate.</p></div>
+<code><a href="../classes/fValidation.html">\fValidation</a></code><p>fValidation instance to try to validate.</p></div>
 <div class="subelement argument">
 <h4>$redirect_to</h4>
 <code>stringcallback</code><p>If not specified, will redirect to the same URL. Also can specify a callback to call on success.</p></div>
 <div class="subelement argument">
 <h4>$error_redirect</h4>
 <code>string</code><p>Where to redirect if an error occurs. Also can specify a callback to call on error.</p></div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fRequest.html">\fRequest</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fRequest.html">\fRequest</a></code></div>
 </div></div>
 </div>
 <a name="callCallbacks" id="callCallbacks"></a><div class="element clickable method private callCallbacks" data-toggle="collapse" data-target=".callCallbacks .collapse">
@@ -182,6 +663,86 @@
 </div>
 </div></div>
 </div>
+<a name="cast" id="cast"></a><div class="element clickable method private cast" data-toggle="collapse" data-target=".cast .collapse">
+<h2>Recursively handles casting values</h2>
+<pre>cast(string | array $value, string $cast_to, integer $level) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::cast()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>stringarray</code><p>The value to be casted</p></div>
+<div class="subelement argument">
+<h4>$cast_to</h4>
+<code>string</code><p>The data type to cast to</p></div>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>integer</code><p>The nesting level of the call</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The casted `$value`</div>
+</div></div>
+</div>
+<a name="initPutDelete" id="initPutDelete"></a><div class="element clickable method private initPutDelete" data-toggle="collapse" data-target=".initPutDelete .collapse">
+<h2>Parses post data for `PUT` and `DELETE` HTTP methods</h2>
+<pre>initPutDelete() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::initPutDelete()</td>
+</tr></table>
+</div></div>
+</div>
+<a name="pickBestAcceptItem" id="pickBestAcceptItem"></a><div class="element clickable method private pickBestAcceptItem" data-toggle="collapse" data-target=".pickBestAcceptItem .collapse">
+<h2>Returns the best HTTP `Accept-*` header item match (based on `q` value), optionally filtered by an array of options</h2>
+<pre>pickBestAcceptItem(string $header_name, array $options) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::pickBestAcceptItem()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$header_name</h4>
+<code>string</code><p>The key in <code>$_SERVER</code> that contains the <code>Accept-*</code> header to pick the best item from</p>
+</div>
+<div class="subelement argument">
+<h4>$options</h4>
+<code>array</code><p>A list of supported options to pick the best from</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The best accept item, `FALSE` if an options array is specified and none are valid, `NULL` if anything is accepted</div>
+</div></div>
+</div>
+<a name="processAcceptHeader" id="processAcceptHeader"></a><div class="element clickable method private processAcceptHeader" data-toggle="collapse" data-target=".processAcceptHeader .collapse">
+<h2>Returns an array of values from one of the HTTP `Accept-*` headers</h2>
+<pre>processAcceptHeader(string $header_name) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::processAcceptHeader()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$header_name</h4>
+<code>string</code><p>The key in <code>$_SERVER</code> to get the header value from</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of `{value} => {quality}` sorted (in a stable-fashion) from highest to lowest `q` - an empty array is returned if the header is empty</div>
+</div></div>
+</div>
 <a name="savePOSTValues" id="savePOSTValues"></a><div class="element clickable method private savePOSTValues" data-toggle="collapse" data-target=".savePOSTValues .collapse">
 <h2>Saves the POST values to sessions.</h2>
 <pre>savePOSTValues() : void</pre>
@@ -194,8 +755,106 @@
 </tr></table>
 </div></div>
 </div>
+<a name="stripLowOrderBytes" id="stripLowOrderBytes"></a><div class="element clickable method private stripLowOrderBytes" data-toggle="collapse" data-target=".stripLowOrderBytes .collapse">
+<h2>Removes low-order bytes from a value</h2>
+<pre>stripLowOrderBytes(string | array $value) : string | array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::stripLowOrderBytes()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>stringarray</code><p>The value to strip</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>array</code>The `$value` with low-order bytes stripped</div>
+</div></div>
+</div>
+<a name="stripSlashes" id="stripSlashes"></a><div class="element clickable method private stripSlashes" data-toggle="collapse" data-target=".stripSlashes .collapse">
+<h2>Removes slashes from a value</h2>
+<pre>stripSlashes(string | array $value) : string | array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::stripSlashes()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>stringarray</code><p>The value to strip</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>array</code>The `$value` with slashes stripped</div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24backup_files" id="$backup_files"> </a><div class="element clickable property private $backup_files" data-toggle="collapse" data-target=".$backup_files .collapse">
+<h2>A backup copy of `$_FILES` for ::unfilter()</h2>
+<pre>$backup_files : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::$$backup_files</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24backup_get" id="$backup_get"> </a><div class="element clickable property private $backup_get" data-toggle="collapse" data-target=".$backup_get .collapse">
+<h2>A backup copy of `$_GET` for ::unfilter()</h2>
+<pre>$backup_get : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::$$backup_get</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24backup_post" id="$backup_post"> </a><div class="element clickable property private $backup_post" data-toggle="collapse" data-target=".$backup_post .collapse">
+<h2>A backup copy of `$_POST` for unfilter()</h2>
+<pre>$backup_post : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::$$backup_post</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24backup_put_delete" id="$backup_put_delete"> </a><div class="element clickable property private $backup_put_delete" data-toggle="collapse" data-target=".$backup_put_delete .collapse">
+<h2>A backup copy of the local `PUT`/`DELETE` post data for ::unfilter()</h2>
+<pre>$backup_put_delete : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::$$backup_put_delete</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24put_delete" id="$put_delete"> </a><div class="element clickable property private $put_delete" data-toggle="collapse" data-target=".$put_delete .collapse">
+<h2>The key/value pairs from the post data of a `PUT`/`DELETE` request</h2>
+<pre>$put_delete : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::$$put_delete</td>
+</tr></table>
+</div></div>
+</div>
 <a name="%24registered_callbacks" id="$registered_callbacks"> </a><div class="element clickable property private $registered_callbacks" data-toggle="collapse" data-target=".$registered_callbacks .collapse">
 <h2>Registered callbacks.</h2>
 <pre>$registered_callbacks : array</pre>
@@ -211,6 +870,258 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="check" id="check"> </a><div class="element clickable constant  check" data-toggle="collapse" data-target=".check .collapse">
+<h2>check</h2>
+<pre>check </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::check</td>
+</tr></table>
+</div></div>
+</div>
+<a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::encode</td>
+</tr></table>
+</div></div>
+</div>
+<a name="filter" id="filter"> </a><div class="element clickable constant  filter" data-toggle="collapse" data-target=".filter .collapse">
+<h2>filter</h2>
+<pre>filter </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::filter</td>
+</tr></table>
+</div></div>
+</div>
+<a name="generateCSRFToken" id="generateCSRFToken"> </a><div class="element clickable constant  generateCSRFToken" data-toggle="collapse" data-target=".generateCSRFToken .collapse">
+<h2>generateCSRFToken</h2>
+<pre>generateCSRFToken </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::generateCSRFToken</td>
+</tr></table>
+</div></div>
+</div>
+<a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
+<h2>get</h2>
+<pre>get </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::get</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getAcceptLanguages" id="getAcceptLanguages"> </a><div class="element clickable constant  getAcceptLanguages" data-toggle="collapse" data-target=".getAcceptLanguages .collapse">
+<h2>getAcceptLanguages</h2>
+<pre>getAcceptLanguages </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getAcceptLanguages</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getAcceptTypes" id="getAcceptTypes"> </a><div class="element clickable constant  getAcceptTypes" data-toggle="collapse" data-target=".getAcceptTypes .collapse">
+<h2>getAcceptTypes</h2>
+<pre>getAcceptTypes </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getAcceptTypes</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getBestAcceptLanguage" id="getBestAcceptLanguage"> </a><div class="element clickable constant  getBestAcceptLanguage" data-toggle="collapse" data-target=".getBestAcceptLanguage .collapse">
+<h2>getBestAcceptLanguage</h2>
+<pre>getBestAcceptLanguage </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getBestAcceptLanguage</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getBestAcceptType" id="getBestAcceptType"> </a><div class="element clickable constant  getBestAcceptType" data-toggle="collapse" data-target=".getBestAcceptType .collapse">
+<h2>getBestAcceptType</h2>
+<pre>getBestAcceptType </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getBestAcceptType</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getValid" id="getValid"> </a><div class="element clickable constant  getValid" data-toggle="collapse" data-target=".getValid .collapse">
+<h2>getValid</h2>
+<pre>getValid </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::getValid</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isAjax" id="isAjax"> </a><div class="element clickable constant  isAjax" data-toggle="collapse" data-target=".isAjax .collapse">
+<h2>isAjax</h2>
+<pre>isAjax </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isAjax</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isDelete" id="isDelete"> </a><div class="element clickable constant  isDelete" data-toggle="collapse" data-target=".isDelete .collapse">
+<h2>isDelete</h2>
+<pre>isDelete </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isDelete</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isGet" id="isGet"> </a><div class="element clickable constant  isGet" data-toggle="collapse" data-target=".isGet .collapse">
+<h2>isGet</h2>
+<pre>isGet </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isGet</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isPost" id="isPost"> </a><div class="element clickable constant  isPost" data-toggle="collapse" data-target=".isPost .collapse">
+<h2>isPost</h2>
+<pre>isPost </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isPost</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isPut" id="isPut"> </a><div class="element clickable constant  isPut" data-toggle="collapse" data-target=".isPut .collapse">
+<h2>isPut</h2>
+<pre>isPut </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::isPut</td>
+</tr></table>
+</div></div>
+</div>
+<a name="overrideAction" id="overrideAction"> </a><div class="element clickable constant  overrideAction" data-toggle="collapse" data-target=".overrideAction .collapse">
+<h2>overrideAction</h2>
+<pre>overrideAction </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::overrideAction</td>
+</tr></table>
+</div></div>
+</div>
+<a name="prepare" id="prepare"> </a><div class="element clickable constant  prepare" data-toggle="collapse" data-target=".prepare .collapse">
+<h2>prepare</h2>
+<pre>prepare </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::prepare</td>
+</tr></table>
+</div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::reset</td>
+</tr></table>
+</div></div>
+</div>
+<a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
+<h2>set</h2>
+<pre>set </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::set</td>
+</tr></table>
+</div></div>
+</div>
+<a name="unfilter" id="unfilter"> </a><div class="element clickable constant  unfilter" data-toggle="collapse" data-target=".unfilter .collapse">
+<h2>unfilter</h2>
+<pre>unfilter </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::unfilter</td>
+</tr></table>
+</div></div>
+</div>
+<a name="validateCSRFToken" id="validateCSRFToken"> </a><div class="element clickable constant  validateCSRFToken" data-toggle="collapse" data-target=".validateCSRFToken .collapse">
+<h2>validateCSRFToken</h2>
+<pre>validateCSRFToken </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fRequest::validateCSRFToken</td>
+</tr></table>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -218,7 +1129,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
+            generated on 2012-04-10T12:29:06-05:00.<br></footer></div>
 </div>
 </body>
 </html>

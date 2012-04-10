@@ -18,7 +18,11 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -54,25 +58,43 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public inherited"><a href="#decode" title="decode :: Decodes a JSON string into native PHP data types"><span class="description">Decodes a JSON string into native PHP data types</span><pre>decode()</pre></a></li>
 <li class="method public "><a href="#encode" title="encode :: Overrides encode method to wrap around the callback received."><span class="description">Overrides encode method to wrap around the callback received.</span><pre>encode()</pre></a></li>
+<li class="method public inherited"><a href="#output" title="output :: Sets the proper `Content-Type` header and outputs the value, encoded as JSON"><span class="description">Sets the proper `Content-Type` header and outputs the value, encoded as JSON</span><pre>output()</pre></a></li>
 <li class="method public "><a href="#sendHeader" title="sendHeader :: Overrides sendHeader to send a text/javascript response instead."><span class="description">Overrides sendHeader to send a text/javascript response instead.</span><pre>sendHeader()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Force use as a static class."><span class="description">Force use as a static class.</span><pre>__construct()</pre></a></li>
+<li class="method private inherited"><a href="#getElementType" title="getElementType :: Determines the type of a parser JSON element"><span class="description">Determines the type of a parser JSON element</span><pre>getElementType()</pre></a></li>
 <li class="method private "><a href="#isValidCallback" title="isValidCallback :: Validate a callback name is not a reserved word in JavaScript and does not have
   invalid characters."><span class="description">Validate a callback name is not a reserved word in JavaScript and does not have
   invalid characters.</span><pre>isValidCallback()</pre></a></li>
+<li class="method private inherited"><a href="#makeUnicodeCodePoint" title="makeUnicodeCodePoint :: Created a unicode code point from a JS escaped unicode character"><span class="description">Created a unicode code point from a JS escaped unicode character</span><pre>makeUnicodeCodePoint()</pre></a></li>
+<li class="method private inherited"><a href="#scalarize" title="scalarize :: Decodes a scalar value"><span class="description">Decodes a scalar value</span><pre>scalarize()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24control_character_map" title="$control_character_map :: An array of special characters in JSON strings"><span class="description">An array of special characters in JSON strings</span><pre>$control_character_map</pre></a></li>
 <li class="property private "><a href="#%24identifier_syntax" title="$identifier_syntax :: The JavaScript identifier syntax regular expression."><span class="description">The JavaScript identifier syntax regular expression.</span><pre>$identifier_syntax</pre></a></li>
 <li class="property private "><a href="#%24reserved_words" title="$reserved_words :: JavaScript reserved words, as per the ECMA 3 standard."><span class="description">JavaScript reserved words, as per the ECMA 3 standard.</span><pre>$reserved_words</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  inherited"><a href="#decode" title="decode :: "><span class="description">decode</span><pre>decode</pre></a></li>
+<li class="constant  inherited"><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  inherited"><a href="#output" title="output :: "><span class="description">output</span><pre>output</pre></a></li>
+<li class="constant  inherited"><a href="#sendHeader" title="sendHeader :: "><span class="description">sendHeader</span><pre>sendHeader</pre></a></li>
 </ul>
 </div>
 <div class="span8">
 <a name="%5CsJSONP" id="\sJSONP"></a><div href="../classes/sJSONP.html" class="element class">
 <p class="short_description">Extension to Flourish fJSON class to provide methods for JSONP support.</p>
 <div class="details">
-<p class="long_description"></p>
+<p class="long_description"><p>This class is a compatibility class for the
+[http://php.net/json json extension] on servers with PHP 5.0 or 5.1, or
+servers with the json extension compiled out.</p>
+
+<p>This class will handle JSON values that are not contained in an array or
+object - such values are not valid according to the JSON spec, but the
+functionality is included for compatiblity with the json extension.</p></p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -101,6 +123,30 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="decode" id="decode"></a><div class="element clickable method public decode" data-toggle="collapse" data-target=".decode .collapse">
+<h2>Decodes a JSON string into native PHP data types</h2>
+<pre>decode(string $json, boolean $assoc) : array | <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This function is very strict about the format of JSON. If the string is
+not a valid JSON string, <code>NULL</code> will be returned.</p></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::decode()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$json</h4>
+<code>string</code><p>This should be the name of a related class</p></div>
+<div class="subelement argument">
+<h4>$assoc</h4>
+<code>boolean</code><p>If this is TRUE, JSON objects will be represented as an assocative array instead of a <code>stdClass</code> object</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code>A PHP equivalent of the JSON string</div>
+</div></div>
+</div>
 <a name="encode" id="encode"></a><div class="element clickable method public encode" data-toggle="collapse" data-target=".encode .collapse">
 <h2>Overrides encode method to wrap around the callback received.</h2>
 <pre>encode(mixed $data, string $callback) : string</pre>
@@ -117,12 +163,28 @@
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code>\fValidationException</code></th>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
 <td>If the callback is invalid.</td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>Encoded JSONP data.</div>
+</div></div>
+</div>
+<a name="output" id="output"></a><div class="element clickable method public output" data-toggle="collapse" data-target=".output .collapse">
+<h2>Sets the proper `Content-Type` header and outputs the value, encoded as JSON</h2>
+<pre>output(mixed $value) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::output()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The PHP value to output as JSON</p></div>
 </div></div>
 </div>
 <a name="sendHeader" id="sendHeader"></a><div class="element clickable method public sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
@@ -141,6 +203,32 @@
 <div class="subelement response"><code><a href="../classes/sJSONP.html">\sJSONP</a></code></div>
 </div></div>
 </div>
+<a name="getElementType" id="getElementType"></a><div class="element clickable method private getElementType" data-toggle="collapse" data-target=".getElementType .collapse">
+<h2>Determines the type of a parser JSON element</h2>
+<pre>getElementType(array $stack, integer $last, string $element) : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::getElementType()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$stack</h4>
+<code>array</code><p>&$stack The stack of arrays/objects being parsed</p>
+</div>
+<div class="subelement argument">
+<h4>$last</h4>
+<code>integer</code><p>The type of the last element parsed</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The element being detected</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The element type</div>
+</div></div>
+</div>
 <a name="isValidCallback" id="isValidCallback"></a><div class="element clickable method private isValidCallback" data-toggle="collapse" data-target=".isValidCallback .collapse">
 <h2>Validate a callback name is not a reserved word in JavaScript and does not have
   invalid characters.</h2>
@@ -157,8 +245,62 @@
 <code>boolean</code>TRUE if the callback can be used, FALSE otherwise.</div>
 </div></div>
 </div>
+<a name="makeUnicodeCodePoint" id="makeUnicodeCodePoint"></a><div class="element clickable method private makeUnicodeCodePoint" data-toggle="collapse" data-target=".makeUnicodeCodePoint .collapse">
+<h2>Created a unicode code point from a JS escaped unicode character</h2>
+<pre>makeUnicodeCodePoint(array $match) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::makeUnicodeCodePoint()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$match</h4>
+<code>array</code><p>A regex match containing the 4 digit code referenced by the key <code>1</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The U+{digits} unicode code point</div>
+</div></div>
+</div>
+<a name="scalarize" id="scalarize"></a><div class="element clickable method private scalarize" data-toggle="collapse" data-target=".scalarize .collapse">
+<h2>Decodes a scalar value</h2>
+<pre>scalarize(integer $type, string $element) : mixed</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::scalarize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>integer</code><p>The type of the element</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The element to be converted to a scalar</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The scalar value or the original string of the element</div>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24control_character_map" id="$control_character_map"> </a><div class="element clickable property private $control_character_map" data-toggle="collapse" data-target=".$control_character_map .collapse">
+<h2>An array of special characters in JSON strings</h2>
+<pre>$control_character_map : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::$$control_character_map</td>
+</tr></table>
+</div></div>
+</div>
 <a name="%24identifier_syntax" id="$identifier_syntax"> </a><div class="element clickable property private $identifier_syntax" data-toggle="collapse" data-target=".$identifier_syntax .collapse">
 <h2>The JavaScript identifier syntax regular expression.</h2>
 <pre>$identifier_syntax : string</pre>
@@ -177,6 +319,56 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="decode" id="decode"> </a><div class="element clickable constant  decode" data-toggle="collapse" data-target=".decode .collapse">
+<h2>decode</h2>
+<pre>decode </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::decode</td>
+</tr></table>
+</div></div>
+</div>
+<a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::encode</td>
+</tr></table>
+</div></div>
+</div>
+<a name="output" id="output"> </a><div class="element clickable constant  output" data-toggle="collapse" data-target=".output .collapse">
+<h2>output</h2>
+<pre>output </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::output</td>
+</tr></table>
+</div></div>
+</div>
+<a name="sendHeader" id="sendHeader"> </a><div class="element clickable constant  sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
+<h2>sendHeader</h2>
+<pre>sendHeader </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fJSON::sendHeader</td>
+</tr></table>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -184,7 +376,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
+            generated on 2012-04-10T12:29:05-05:00.<br></footer></div>
 </div>
 </body>
 </html>

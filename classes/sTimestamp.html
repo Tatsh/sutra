@@ -18,7 +18,11 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -57,7 +61,36 @@
 <li class="method public "><a href="#RFC3339ToTimestamp" title="RFC3339ToTimestamp :: Convert an RFC3339 (HTML 5 version) timestamp to UNIX. Timezone is
   ignored."><span class="description">Convert an RFC3339 (HTML 5 version) timestamp to UNIX. Timezone is
   ignored.</span><pre>RFC3339ToTimestamp()</pre></a></li>
+<li class="method public inherited"><a href="#__construct" title="__construct :: Creates the date/time to represent"><span class="description">Creates the date/time to represent</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__toString" title="__toString :: Returns this date/time"><span class="description">Returns this date/time</span><pre>__toString()</pre></a></li>
+<li class="method public inherited"><a href="#adjust" title="adjust :: Changes the date/time by the adjustment specified"><span class="description">Changes the date/time by the adjustment specified</span><pre>adjust()</pre></a></li>
+<li class="method public inherited"><a href="#defineFormat" title="defineFormat :: Creates a reusable format for formatting fDate, fTime, and fTimestamp objects"><span class="description">Creates a reusable format for formatting fDate, fTime, and fTimestamp objects</span><pre>defineFormat()</pre></a></li>
+<li class="method public inherited"><a href="#eq" title="eq :: If this timestamp is equal to the timestamp passed"><span class="description">If this timestamp is equal to the timestamp passed</span><pre>eq()</pre></a></li>
+<li class="method public inherited"><a href="#format" title="format :: Formats the date/time"><span class="description">Formats the date/time</span><pre>format()</pre></a></li>
 <li class="method public "><a href="#formatTimezoneNumber" title="formatTimezoneNumber :: Get a formatted timezone string such as +08:00 from 8 or -12:00 from -12."><span class="description">Get a formatted timezone string such as +08:00 from 8 or -12:00 from -12.</span><pre>formatTimezoneNumber()</pre></a></li>
+<li class="method public inherited"><a href="#getDefaultTimezone" title="getDefaultTimezone :: Provides a consistent interface to getting the default timezone. Wraps the [http://php.net/date_default_timezone_get date_default_timezone_get()] function."><span class="description">Provides a consistent interface to getting the default timezone. Wraps the [http://php.net/date_default_timezone_get date_default_timezone_get()] function.</span><pre>getDefaultTimezone()</pre></a></li>
+<li class="method public inherited"><a href="#getFuzzyDifference" title="getFuzzyDifference :: Returns the approximate difference in time, discarding any unit of measure but the least specific."><span class="description">Returns the approximate difference in time, discarding any unit of measure but the least specific.</span><pre>getFuzzyDifference()</pre></a></li>
+<li class="method public inherited"><a href="#gt" title="gt :: If this timestamp is greater than the timestamp passed"><span class="description">If this timestamp is greater than the timestamp passed</span><pre>gt()</pre></a></li>
+<li class="method public inherited"><a href="#gte" title="gte :: If this timestamp is greater than or equal to the timestamp passed"><span class="description">If this timestamp is greater than or equal to the timestamp passed</span><pre>gte()</pre></a></li>
+<li class="method public inherited"><a href="#lt" title="lt :: If this timestamp is less than the timestamp passed"><span class="description">If this timestamp is less than the timestamp passed</span><pre>lt()</pre></a></li>
+<li class="method public inherited"><a href="#lte" title="lte :: If this timestamp is less than or equal to the timestamp passed"><span class="description">If this timestamp is less than or equal to the timestamp passed</span><pre>lte()</pre></a></li>
+<li class="method public inherited"><a href="#modify" title="modify :: Modifies the current timestamp, creating a new fTimestamp object"><span class="description">Modifies the current timestamp, creating a new fTimestamp object</span><pre>modify()</pre></a></li>
+<li class="method public inherited"><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()</span><pre>registerFormatCallback()</pre></a></li>
+<li class="method public inherited"><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()"><span class="description">Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()</span><pre>registerUnformatCallback()</pre></a></li>
+<li class="method public inherited"><a href="#setDefaultTimezone" title="setDefaultTimezone :: Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function."><span class="description">Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function.</span><pre>setDefaultTimezone()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected inherited"><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#checkPHPVersion" title="checkPHPVersion :: Checks to make sure the current version of PHP is high enough to support timezone features"><span class="description">Checks to make sure the current version of PHP is high enough to support timezone features</span><pre>checkPHPVersion()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected inherited"><a href="#%24timestamp" title="$timestamp :: The date/time"><span class="description">The date/time</span><pre>$timestamp</pre></a></li>
+<li class="property protected inherited"><a href="#%24timezone" title="$timezone :: The timezone for this date/time"><span class="description">The timezone for this date/time</span><pre>$timezone</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="property private inherited"><a href="#%24format_callback" title="$format_callback :: A callback to process all formatting strings through"><span class="description">A callback to process all formatting strings through</span><pre>$format_callback</pre></a></li>
+<li class="property private inherited"><a href="#%24formats" title="$formats :: Pre-defined formatting styles"><span class="description">Pre-defined formatting styles</span><pre>$formats</pre></a></li>
+<li class="property private inherited"><a href="#%24unformat_callback" title="$unformat_callback :: A callback to parse all date string to allow for locale-specific parsing"><span class="description">A callback to parse all date string to allow for locale-specific parsing</span><pre>$unformat_callback</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
 <li class="constant  "><a href="#DATETIME_REGEX" title="DATETIME_REGEX :: Loose regular expression to match timestamp as defined by W3C for
@@ -65,6 +98,18 @@
   a space between the date and the literal 'T'."><span class="description">Loose regular expression to match timestamp as defined by W3C for
   HTML 5 date/datetime fields. The main difference is allowing for
   a space between the date and the literal 'T'.</span><pre>DATETIME_REGEX</pre></a></li>
+<li class="constant  inherited"><a href="#callFormatCallback" title="callFormatCallback :: "><span class="description">callFormatCallback</span><pre>callFormatCallback</pre></a></li>
+<li class="constant  inherited"><a href="#callUnformatCallback" title="callUnformatCallback :: "><span class="description">callUnformatCallback</span><pre>callUnformatCallback</pre></a></li>
+<li class="constant  inherited"><a href="#combine" title="combine :: "><span class="description">combine</span><pre>combine</pre></a></li>
+<li class="constant  inherited"><a href="#defineFormat" title="defineFormat :: "><span class="description">defineFormat</span><pre>defineFormat</pre></a></li>
+<li class="constant  inherited"><a href="#fixISOWeek" title="fixISOWeek :: "><span class="description">fixISOWeek</span><pre>fixISOWeek</pre></a></li>
+<li class="constant  inherited"><a href="#getDefaultTimezone" title="getDefaultTimezone :: "><span class="description">getDefaultTimezone</span><pre>getDefaultTimezone</pre></a></li>
+<li class="constant  inherited"><a href="#isValidTimezone" title="isValidTimezone :: "><span class="description">isValidTimezone</span><pre>isValidTimezone</pre></a></li>
+<li class="constant  inherited"><a href="#registerFormatCallback" title="registerFormatCallback :: "><span class="description">registerFormatCallback</span><pre>registerFormatCallback</pre></a></li>
+<li class="constant  inherited"><a href="#registerUnformatCallback" title="registerUnformatCallback :: "><span class="description">registerUnformatCallback</span><pre>registerUnformatCallback</pre></a></li>
+<li class="constant  inherited"><a href="#reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  inherited"><a href="#setDefaultTimezone" title="setDefaultTimezone :: "><span class="description">setDefaultTimezone</span><pre>setDefaultTimezone</pre></a></li>
+<li class="constant  inherited"><a href="#translateFormat" title="translateFormat :: "><span class="description">translateFormat</span><pre>translateFormat</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -120,12 +165,140 @@
 <code>boolean</code><p>Throw an fValidationException if the timestamp is is invalid. Defaults to FALSE.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code>\fValidationException</code></th>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
 <td>If $throw is set to TRUE and the timestamp is invalid.</td>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>integer</code><code>boolean</code>UNIX timestamp or boolean FALSE. If FALSE is returned, the string was invalid.</div>
+</div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Creates the date/time to represent</h2>
+<pre>__construct(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $datetime, string $timezone) : <a href="../classes/fTimestamp.html">\fTimestamp</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$datetime</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The date/time to represent, <code>NULL</code> is interpreted as now</p>
+</div>
+<div class="subelement argument">
+<h4>$timezone</h4>
+<code>string</code><p>The timezone for the date/time. This causes the date/time to be interpretted as being in the specified timezone. If not specified, will default to timezone set by ::setDefaultTimezone().</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$datetime` is not a valid date/time, date or time value</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fTimestamp.html">\fTimestamp</a></code></div>
+</div></div>
+</div>
+<a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
+<h2>Returns this date/time</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::__toString()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The `'Y-m-d H:i:s'` format of this date/time</div>
+</div></div>
+</div>
+<a name="adjust" id="adjust"></a><div class="element clickable method public adjust" data-toggle="collapse" data-target=".adjust .collapse">
+<h2>Changes the date/time by the adjustment specified</h2>
+<pre>adjust(string $adjustment) : <a href="../classes/fTimestamp.html">\fTimestamp</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::adjust()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$adjustment</h4>
+<code>string</code><p>The adjustment to make - may be a relative adjustment or a different timezone</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When `$adjustment` is not a valid relative date/time measurement or timezone</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a></code>The adjusted date/time</div>
+</div></div>
+</div>
+<a name="defineFormat" id="defineFormat"></a><div class="element clickable method public defineFormat" data-toggle="collapse" data-target=".defineFormat .collapse">
+<h2>Creates a reusable format for formatting fDate, fTime, and fTimestamp objects</h2>
+<pre>defineFormat(string $name, string $formatting_string) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::defineFormat()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name of the format</p></div>
+<div class="subelement argument">
+<h4>$formatting_string</h4>
+<code>string</code><p>The format string compatible with the [http://php.net/date date()] function</p>
+</div>
+</div></div>
+</div>
+<a name="eq" id="eq"></a><div class="element clickable method public eq" data-toggle="collapse" data-target=".eq .collapse">
+<h2>If this timestamp is equal to the timestamp passed</h2>
+<pre>eq(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::eq()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this timestamp is equal to the one passed</div>
+</div></div>
+</div>
+<a name="format" id="format"></a><div class="element clickable method public format" data-toggle="collapse" data-target=".format .collapse">
+<h2>Formats the date/time</h2>
+<pre>format(string $format) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::format()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The [http://php.net/date date()] function compatible formatting string, or a format name from ::defineFormat()</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted date/time</div>
 </div></div>
 </div>
 <a name="formatTimezoneNumber" id="formatTimezoneNumber"></a><div class="element clickable method public formatTimezoneNumber" data-toggle="collapse" data-target=".formatTimezoneNumber .collapse">
@@ -143,6 +316,338 @@
 <code>string</code>String, such as +08:00.</div>
 </div></div>
 </div>
+<a name="getDefaultTimezone" id="getDefaultTimezone"></a><div class="element clickable method public getDefaultTimezone" data-toggle="collapse" data-target=".getDefaultTimezone .collapse">
+<h2>Provides a consistent interface to getting the default timezone. Wraps the [http://php.net/date_default_timezone_get date_default_timezone_get()] function.</h2>
+<pre>getDefaultTimezone() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::getDefaultTimezone()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The default timezone used for all date/time calculations</div>
+</div></div>
+</div>
+<a name="getFuzzyDifference" id="getFuzzyDifference"></a><div class="element clickable method public getFuzzyDifference" data-toggle="collapse" data-target=".getFuzzyDifference .collapse">
+<h2>Returns the approximate difference in time, discarding any unit of measure but the least specific.</h2>
+<pre>getFuzzyDifference(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp, boolean $simple) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The output will read like:</p>
+
+<ul>
+<li>"This timestamp is <code>{return value}</code> the provided one" when a timestamp it passed</li>
+<li>"This timestamp is <code>{return value}</code>" when no timestamp is passed and comparing with the current timestamp</li>
+</ul>
+
+<p>Examples of output for a timestamp passed might be:</p>
+
+<ul>
+<li><code>'5 minutes after'</code></li>
+<li><code>'2 hours before'</code></li>
+<li><code>'2 days after'</code></li>
+<li><code>'at the same time'</code></li>
+</ul>
+
+<p>Examples of output for no timestamp passed might be:</p>
+
+<ul>
+<li><code>'5 minutes ago'</code></li>
+<li><code>'2 hours ago'</code></li>
+<li><code>'2 days from now'</code></li>
+<li><code>'1 year ago'</code></li>
+<li><code>'right now'</code></li>
+</ul>
+
+<p>You would never get the following output since it includes more than one unit of time measurement:</p>
+
+<ul>
+<li><code>'5 minutes and 28 seconds'</code></li>
+<li><code>'3 weeks, 1 day and 4 hours'</code></li>
+</ul>
+
+<p>Values that are close to the next largest unit of measure will be rounded up:</p>
+
+<ul>
+<li><code>'55 minutes'</code> would be represented as <code>'1 hour'</code>, however <code>'45 minutes'</code> would not</li>
+<li><code>'29 days'</code> would be represented as <code>'1 month'</code>, but <code>'21 days'</code> would be shown as <code>'3 weeks'</code></li>
+</ul></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::getFuzzyDifference()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to create the difference with, <code>NULL</code> is interpreted as now</p>
+</div>
+<div class="subelement argument">
+<h4>$simple</h4>
+<code>boolean</code><p>When <code>TRUE</code>, the returned value will only include the difference in the two timestamps, but not <code>from now</code>, <code>ago</code>, <code>after</code> or <code>before</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fuzzy difference in time between the this timestamp and the one provided</div>
+</div></div>
+</div>
+<a name="gt" id="gt"></a><div class="element clickable method public gt" data-toggle="collapse" data-target=".gt .collapse">
+<h2>If this timestamp is greater than the timestamp passed</h2>
+<pre>gt(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::gt()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to compare with, <code>NULL</code> is interpreted as now</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this timestamp is greater than the one passed</div>
+</div></div>
+</div>
+<a name="gte" id="gte"></a><div class="element clickable method public gte" data-toggle="collapse" data-target=".gte .collapse">
+<h2>If this timestamp is greater than or equal to the timestamp passed</h2>
+<pre>gte(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::gte()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to compare with, <code>NULL</code> is interpreted as now</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this timestamp is greater than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="lt" id="lt"></a><div class="element clickable method public lt" data-toggle="collapse" data-target=".lt .collapse">
+<h2>If this timestamp is less than the timestamp passed</h2>
+<pre>lt(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::lt()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this timestamp is less than the one passed</div>
+</div></div>
+</div>
+<a name="lte" id="lte"></a><div class="element clickable method public lte" data-toggle="collapse" data-target=".lte .collapse">
+<h2>If this timestamp is less than or equal to the timestamp passed</h2>
+<pre>lte(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::lte()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$other_timestamp</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a>objectstringinteger</code><p>The timestamp to compare with, <code>NULL</code> is interpreted as today</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If this timestamp is less than or equal to the one passed</div>
+</div></div>
+</div>
+<a name="modify" id="modify"></a><div class="element clickable method public modify" data-toggle="collapse" data-target=".modify .collapse">
+<h2>Modifies the current timestamp, creating a new fTimestamp object</h2>
+<pre>modify(string $format, string $timezone) : <a href="../classes/fTimestamp.html">\fTimestamp</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The purpose of this method is to allow for easy creation of a timestamp
+based on this timestamp. Below are some examples of formats to
+modify the current timestamp:</p>
+
+<ul>
+<li><code>'Y-m-01 H:i:s'</code> to change the date of the timestamp to the first of the month:</li>
+<li><code>'Y-m-t H:i:s'</code> to change the date of the timestamp to the last of the month:</li>
+<li><code>'Y-m-d 17:i:s'</code> to set the hour of the timestamp to 5 PM:</li>
+</ul></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::modify()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The current timestamp will be formatted with this string, and the output used to create a new object. The format should <strong>not</strong> include the timezone (character <code>e</code>).</p>
+</div>
+<div class="subelement argument">
+<h4>$timezone</h4>
+<code>string</code><p>The timezone for the new object if different from the current timezone</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a></code>The new timestamp</div>
+</div></div>
+</div>
+<a name="registerFormatCallback" id="registerFormatCallback"></a><div class="element clickable method public registerFormatCallback" data-toggle="collapse" data-target=".registerFormatCallback .collapse">
+<h2>Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()</h2>
+<pre>registerFormatCallback(callback $callback) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::registerFormatCallback()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to pass all formatted dates/times/timestamps through. Should accept a single string and return a single string.</p>
+</div>
+</div></div>
+</div>
+<a name="registerUnformatCallback" id="registerUnformatCallback"></a><div class="element clickable method public registerUnformatCallback" data-toggle="collapse" data-target=".registerUnformatCallback .collapse">
+<h2>Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()</h2>
+<pre>registerUnformatCallback(callback $callback) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::registerUnformatCallback()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to pass all date/time/timestamp strings through. Should accept a single string and return a single string that is parsable by [http://php.net/strtotime <code>strtotime()</code>].</p>
+</div>
+</div></div>
+</div>
+<a name="setDefaultTimezone" id="setDefaultTimezone"></a><div class="element clickable method public setDefaultTimezone" data-toggle="collapse" data-target=".setDefaultTimezone .collapse">
+<h2>Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function.</h2>
+<pre>setDefaultTimezone(string $timezone) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::setDefaultTimezone()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$timezone</h4>
+<code>string</code><p>The default timezone to use for all date/time calculations</p>
+</div>
+</div></div>
+</div>
+<a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::compose()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a name="checkPHPVersion" id="checkPHPVersion"></a><div class="element clickable method private checkPHPVersion" data-toggle="collapse" data-target=".checkPHPVersion .collapse">
+<h2>Checks to make sure the current version of PHP is high enough to support timezone features</h2>
+<pre>checkPHPVersion() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::checkPHPVersion()</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24timestamp" id="$timestamp"> </a><div class="element clickable property protected $timestamp" data-toggle="collapse" data-target=".$timestamp .collapse">
+<h2>The date/time</h2>
+<pre>$timestamp : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::$$timestamp</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24timezone" id="$timezone"> </a><div class="element clickable property protected $timezone" data-toggle="collapse" data-target=".$timezone .collapse">
+<h2>The timezone for this date/time</h2>
+<pre>$timezone : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::$$timezone</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24format_callback" id="$format_callback"> </a><div class="element clickable property private $format_callback" data-toggle="collapse" data-target=".$format_callback .collapse">
+<h2>A callback to process all formatting strings through</h2>
+<pre>$format_callback : callback</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::$$format_callback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24formats" id="$formats"> </a><div class="element clickable property private $formats" data-toggle="collapse" data-target=".$formats .collapse">
+<h2>Pre-defined formatting styles</h2>
+<pre>$formats : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::$$formats</td>
+</tr></table>
+</div></div>
+</div>
+<a name="%24unformat_callback" id="$unformat_callback"> </a><div class="element clickable property private $unformat_callback" data-toggle="collapse" data-target=".$unformat_callback .collapse">
+<h2>A callback to parse all date string to allow for locale-specific parsing</h2>
+<pre>$unformat_callback : callback</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::$$unformat_callback</td>
+</tr></table>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
 <a name="DATETIME_REGEX" id="DATETIME_REGEX"> </a><div class="element clickable constant  DATETIME_REGEX" data-toggle="collapse" data-target=".DATETIME_REGEX .collapse">
@@ -153,6 +658,150 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="callFormatCallback" id="callFormatCallback"> </a><div class="element clickable constant  callFormatCallback" data-toggle="collapse" data-target=".callFormatCallback .collapse">
+<h2>callFormatCallback</h2>
+<pre>callFormatCallback </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::callFormatCallback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="callUnformatCallback" id="callUnformatCallback"> </a><div class="element clickable constant  callUnformatCallback" data-toggle="collapse" data-target=".callUnformatCallback .collapse">
+<h2>callUnformatCallback</h2>
+<pre>callUnformatCallback </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::callUnformatCallback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="combine" id="combine"> </a><div class="element clickable constant  combine" data-toggle="collapse" data-target=".combine .collapse">
+<h2>combine</h2>
+<pre>combine </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::combine</td>
+</tr></table>
+</div></div>
+</div>
+<a name="defineFormat" id="defineFormat"> </a><div class="element clickable constant  defineFormat" data-toggle="collapse" data-target=".defineFormat .collapse">
+<h2>defineFormat</h2>
+<pre>defineFormat </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::defineFormat</td>
+</tr></table>
+</div></div>
+</div>
+<a name="fixISOWeek" id="fixISOWeek"> </a><div class="element clickable constant  fixISOWeek" data-toggle="collapse" data-target=".fixISOWeek .collapse">
+<h2>fixISOWeek</h2>
+<pre>fixISOWeek </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::fixISOWeek</td>
+</tr></table>
+</div></div>
+</div>
+<a name="getDefaultTimezone" id="getDefaultTimezone"> </a><div class="element clickable constant  getDefaultTimezone" data-toggle="collapse" data-target=".getDefaultTimezone .collapse">
+<h2>getDefaultTimezone</h2>
+<pre>getDefaultTimezone </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::getDefaultTimezone</td>
+</tr></table>
+</div></div>
+</div>
+<a name="isValidTimezone" id="isValidTimezone"> </a><div class="element clickable constant  isValidTimezone" data-toggle="collapse" data-target=".isValidTimezone .collapse">
+<h2>isValidTimezone</h2>
+<pre>isValidTimezone </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::isValidTimezone</td>
+</tr></table>
+</div></div>
+</div>
+<a name="registerFormatCallback" id="registerFormatCallback"> </a><div class="element clickable constant  registerFormatCallback" data-toggle="collapse" data-target=".registerFormatCallback .collapse">
+<h2>registerFormatCallback</h2>
+<pre>registerFormatCallback </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::registerFormatCallback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="registerUnformatCallback" id="registerUnformatCallback"> </a><div class="element clickable constant  registerUnformatCallback" data-toggle="collapse" data-target=".registerUnformatCallback .collapse">
+<h2>registerUnformatCallback</h2>
+<pre>registerUnformatCallback </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::registerUnformatCallback</td>
+</tr></table>
+</div></div>
+</div>
+<a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::reset</td>
+</tr></table>
+</div></div>
+</div>
+<a name="setDefaultTimezone" id="setDefaultTimezone"> </a><div class="element clickable constant  setDefaultTimezone" data-toggle="collapse" data-target=".setDefaultTimezone .collapse">
+<h2>setDefaultTimezone</h2>
+<pre>setDefaultTimezone </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::setDefaultTimezone</td>
+</tr></table>
+</div></div>
+</div>
+<a name="translateFormat" id="translateFormat"> </a><div class="element clickable constant  translateFormat" data-toggle="collapse" data-target=".translateFormat .collapse">
+<h2>translateFormat</h2>
+<pre>translateFormat </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fTimestamp::translateFormat</td>
+</tr></table>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -160,7 +809,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
+            generated on 2012-04-10T12:29:06-05:00.<br></footer></div>
 </div>
 </body>
 </html>

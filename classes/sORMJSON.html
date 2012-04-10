@@ -18,7 +18,11 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -63,6 +67,7 @@
   there are validations to perform on these columns when they are in their
   original data type, those callbacks should be registered before calling
   this method.</span><pre>configureJSONSerializedColumn()</pre></a></li>
+<li class="method public inherited"><a href="#extend" title="extend :: Adds the method `toJSON()` to fActiveRecord and fRecordSet instances"><span class="description">Adds the method `toJSON()` to fActiveRecord and fRecordSet instances</span><pre>extend()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -70,6 +75,12 @@
 <li class="nav-header private">» Private</li>
 <li class="property private "><a href="#%24callbacks_registered" title="$callbacks_registered :: If the callbacks are registered."><span class="description">If the callbacks are registered.</span><pre>$callbacks_registered</pre></a></li>
 <li class="property private "><a href="#%24json_columns" title="$json_columns :: Columns =&gt; class names registered."><span class="description">Columns =&gt; class names registered.</span><pre>$json_columns</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  inherited"><a href="#extend" title="extend :: "><span class="description">extend</span><pre>extend</pre></a></li>
+<li class="constant  inherited"><a href="#reflect" title="reflect :: "><span class="description">reflect</span><pre>reflect</pre></a></li>
+<li class="constant  inherited"><a href="#toJSON" title="toJSON :: "><span class="description">toJSON</span><pre>toJSON</pre></a></li>
+<li class="constant  inherited"><a href="#toJSONRecordSet" title="toJSONRecordSet :: "><span class="description">toJSONRecordSet</span><pre>toJSONRecordSet</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -127,6 +138,18 @@
 <code>boolean</code><p>Force the JSON to be converted to be an array.</p></div>
 </div></div>
 </div>
+<a name="extend" id="extend"></a><div class="element clickable method public extend" data-toggle="collapse" data-target=".extend .collapse">
+<h2>Adds the method `toJSON()` to fActiveRecord and fRecordSet instances</h2>
+<pre>extend() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fORMJSON::extend()</td>
+</tr></table>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sORMJSON.html">\sORMJSON</a></pre>
@@ -151,6 +174,56 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="extend" id="extend"> </a><div class="element clickable constant  extend" data-toggle="collapse" data-target=".extend .collapse">
+<h2>extend</h2>
+<pre>extend </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fORMJSON::extend</td>
+</tr></table>
+</div></div>
+</div>
+<a name="reflect" id="reflect"> </a><div class="element clickable constant  reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>reflect</h2>
+<pre>reflect </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fORMJSON::reflect</td>
+</tr></table>
+</div></div>
+</div>
+<a name="toJSON" id="toJSON"> </a><div class="element clickable constant  toJSON" data-toggle="collapse" data-target=".toJSON .collapse">
+<h2>toJSON</h2>
+<pre>toJSON </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fORMJSON::toJSON</td>
+</tr></table>
+</div></div>
+</div>
+<a name="toJSONRecordSet" id="toJSONRecordSet"> </a><div class="element clickable constant  toJSONRecordSet" data-toggle="collapse" data-target=".toJSONRecordSet .collapse">
+<h2>toJSONRecordSet</h2>
+<pre>toJSONRecordSet </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fORMJSON::toJSONRecordSet</td>
+</tr></table>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -158,7 +231,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
+            generated on 2012-04-10T12:29:05-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -18,7 +18,11 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">149</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">1</span>
@@ -56,8 +60,11 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#best" title="best :: Override best() method."><span class="description">Override best() method.</span><pre>best()</pre></a></li>
 <li class="method public "><a href="#eagar" title="eagar :: Override eager() method to load Sutra classes after Flourish's."><span class="description">Override eager() method to load Sutra classes after Flourish's.</span><pre>eagar()</pre></a></li>
+<li class="method public inherited"><a href="#eager" title="eager :: Loads all Flourish classes when called"><span class="description">Loads all Flourish classes when called</span><pre>eager()</pre></a></li>
+<li class="method public inherited"><a href="#hasOpcodeCache" title="hasOpcodeCache :: Check if a PHP opcode cache is installed"><span class="description">Check if a PHP opcode cache is installed</span><pre>hasOpcodeCache()</pre></a></li>
 <li class="method public "><a href="#lazy" title="lazy :: Registers a class auto-loader to load Sutra classes."><span class="description">Registers a class auto-loader to load Sutra classes.</span><pre>lazy()</pre></a></li>
 <li class="nav-header private">» Private</li>
+<li class="method private inherited"><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#createConstructorFunctions" title="createConstructorFunctions :: Creates constructor functions. This makes it possible to write:"><span class="description">Creates constructor functions. This makes it possible to write:</span><pre>createConstructorFunctions()</pre></a></li>
 <li class="method private "><a href="#setPath" title="setPath :: Determines where Sutra is installed."><span class="description">Determines where Sutra is installed.</span><pre>setPath()</pre></a></li>
 <li class="nav-header">
@@ -65,6 +72,13 @@
 <li class="nav-header private">» Private</li>
 <li class="property private "><a href="#%24classes" title="$classes :: All the Sutra classes."><span class="description">All the Sutra classes.</span><pre>$classes</pre></a></li>
 <li class="property private "><a href="#%24path" title="$path :: Path where Sutra is installed."><span class="description">Path where Sutra is installed.</span><pre>$path</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  inherited"><a href="#autoload" title="autoload :: "><span class="description">autoload</span><pre>autoload</pre></a></li>
+<li class="constant  inherited"><a href="#best" title="best :: "><span class="description">best</span><pre>best</pre></a></li>
+<li class="constant  inherited"><a href="#eager" title="eager :: "><span class="description">eager</span><pre>eager</pre></a></li>
+<li class="constant  inherited"><a href="#hasOpcodeCache" title="hasOpcodeCache :: "><span class="description">hasOpcodeCache</span><pre>hasOpcodeCache</pre></a></li>
+<li class="constant  inherited"><a href="#lazy" title="lazy :: "><span class="description">lazy</span><pre>lazy</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -118,11 +132,62 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="eager" id="eager"></a><div class="element clickable method public eager" data-toggle="collapse" data-target=".eager .collapse">
+<h2>Loads all Flourish classes when called</h2>
+<pre>eager() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::eager()</td>
+</tr></table>
+</div></div>
+</div>
+<a name="hasOpcodeCache" id="hasOpcodeCache"></a><div class="element clickable method public hasOpcodeCache" data-toggle="collapse" data-target=".hasOpcodeCache .collapse">
+<h2>Check if a PHP opcode cache is installed</h2>
+<pre>hasOpcodeCache() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The following opcode caches are currently detected:</p>
+
+<ul>
+<li>[http://pecl.php.net/package/APC APC]</li>
+<li>[http://eaccelerator.net eAccelerator]</li>
+<li>[http://www.nusphere.com/products/phpexpress.htm Nusphere PhpExpress]</li>
+<li>[http://turck-mmcache.sourceforge.net/index_old.html Turck MMCache]</li>
+<li>[http://xcache.lighttpd.net XCache]</li>
+<li>[http://www.zend.com/en/products/server/ Zend Server (Optimizer+)]</li>
+<li>[http://www.zend.com/en/products/platform/ Zend Platform (Code Acceleration)]</li>
+</ul></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::hasOpcodeCache()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If a PHP opcode cache is loaded</div>
+</div></div>
+</div>
 <a name="lazy" id="lazy"></a><div class="element clickable method public lazy" data-toggle="collapse" data-target=".lazy .collapse">
 <h2>Registers a class auto-loader to load Sutra classes.</h2>
 <pre>lazy() : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fLoader.html">\fLoader</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fLoader.html">\fLoader</a></code></div>
+</div></div>
 </div>
 <a name="createConstructorFunctions" id="createConstructorFunctions"></a><div class="element clickable method private createConstructorFunctions" data-toggle="collapse" data-target=".createConstructorFunctions .collapse">
 <h2>Creates constructor functions. This makes it possible to write:</h2>
@@ -150,6 +215,68 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="autoload" id="autoload"> </a><div class="element clickable constant  autoload" data-toggle="collapse" data-target=".autoload .collapse">
+<h2>autoload</h2>
+<pre>autoload </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::autoload</td>
+</tr></table>
+</div></div>
+</div>
+<a name="best" id="best"> </a><div class="element clickable constant  best" data-toggle="collapse" data-target=".best .collapse">
+<h2>best</h2>
+<pre>best </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::best</td>
+</tr></table>
+</div></div>
+</div>
+<a name="eager" id="eager"> </a><div class="element clickable constant  eager" data-toggle="collapse" data-target=".eager .collapse">
+<h2>eager</h2>
+<pre>eager </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::eager</td>
+</tr></table>
+</div></div>
+</div>
+<a name="hasOpcodeCache" id="hasOpcodeCache"> </a><div class="element clickable constant  hasOpcodeCache" data-toggle="collapse" data-target=".hasOpcodeCache .collapse">
+<h2>hasOpcodeCache</h2>
+<pre>hasOpcodeCache </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::hasOpcodeCache</td>
+</tr></table>
+</div></div>
+</div>
+<a name="lazy" id="lazy"> </a><div class="element clickable constant  lazy" data-toggle="collapse" data-target=".lazy .collapse">
+<h2>lazy</h2>
+<pre>lazy </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fLoader::lazy</td>
+</tr></table>
+</div></div>
+</div>
 </div>
 </div>
 </div>
@@ -157,7 +284,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
+            generated on 2012-04-10T12:29:05-05:00.<br></footer></div>
 </div>
 </body>
 </html>
