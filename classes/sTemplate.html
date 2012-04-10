@@ -18,11 +18,7 @@
 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
 <li class="dropdown">
 <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
-                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
-<li><a>Packages</a></li>
-<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
-<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
-</ul>
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu"></ul>
 </li>
 <li class="dropdown" id="charts-menu">
 <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
@@ -32,9 +28,11 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">149</span></a></li>
+                <span class="label label-info">0</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
-                <ul></ul></a></li>
+                <ul><li>todo 
+                <span class="label label-info">1</span>
+</li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
 </ul>
@@ -69,6 +67,7 @@
 <li class="method public "><a href="#enableQueryStrings" title="enableQueryStrings :: Enable or disable query strings on resource URLs such as CSS while in
   development mode."><span class="description">Enable or disable query strings on resource URLs such as CSS while in
   development mode.</span><pre>enableQueryStrings()</pre></a></li>
+<li class="method public "><a href="#getACDN" title="getACDN :: Get a CDN to use."><span class="description">Get a CDN to use.</span><pre>getACDN()</pre></a></li>
 <li class="method public "><a href="#getBodyClasses" title="getBodyClasses :: Get the body classes."><span class="description">Get the body classes.</span><pre>getBodyClasses()</pre></a></li>
 <li class="method public "><a href="#getCDNs" title="getCDNs :: Get the CDNs in currently in use."><span class="description">Get the CDNs in currently in use.</span><pre>getCDNs()</pre></a></li>
 <li class="method public "><a href="#getCache" title="getCache :: Gets the sCache instance this is using."><span class="description">Gets the sCache instance this is using.</span><pre>getCache()</pre></a></li>
@@ -103,27 +102,29 @@
 <li class="method public "><a href="#setSiteSlogan" title="setSiteSlogan :: Set the site slogan."><span class="description">Set the site slogan.</span><pre>setSiteSlogan()</pre></a></li>
 <li class="method public "><a href="#setTemplatesPath" title="setTemplatesPath :: Set the templates path."><span class="description">Set the templates path.</span><pre>setTemplatesPath()</pre></a></li>
 <li class="method public "><a href="#templateExists" title="templateExists :: Check if a certain template file exists."><span class="description">Check if a certain template file exists.</span><pre>templateExists()</pre></a></li>
+<li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#getJavaScriptHTML" title="getJavaScriptHTML :: Get string of HTML scripts for use in the head element."><span class="description">Get string of HTML scripts for use in the head element.</span><pre>getJavaScriptHTML()</pre></a></li>
+<li class="method protected "><a href="#getPageTemplate" title="getPageTemplate :: Get the correct page template for this URL."><span class="description">Get the correct page template for this URL.</span><pre>getPageTemplate()</pre></a></li>
+<li class="method protected "><a href="#getStylesheetsHTML" title="getStylesheetsHTML :: Get the list of stylesheets in order."><span class="description">Get the list of stylesheets in order.</span><pre>getStylesheetsHTML()</pre></a></li>
+<li class="method protected "><a href="#getStylesheetsHTMLProductionMode" title="getStylesheetsHTMLProductionMode :: Makes the stylesheets HTML when in production mode."><span class="description">Makes the stylesheets HTML when in production mode.</span><pre>getStylesheetsHTMLProductionMode()</pre></a></li>
+<li class="method protected "><a href="#getTemplatesPath" title="getTemplatesPath :: Gets the correct templates path."><span class="description">Gets the correct templates path.</span><pre>getTemplatesPath()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#callCallbacks" title="callCallbacks :: Calls all the registered callback for * and this template."><span class="description">Calls all the registered callback for * and this template.</span><pre>callCallbacks()</pre></a></li>
-<li class="method private "><a href="#getACDN" title="getACDN :: Get a CDN to use."><span class="description">Get a CDN to use.</span><pre>getACDN()</pre></a></li>
-<li class="method private "><a href="#getJavaScriptHTML" title="getJavaScriptHTML :: Get string of HTML scripts for use in the head element."><span class="description">Get string of HTML scripts for use in the head element.</span><pre>getJavaScriptHTML()</pre></a></li>
-<li class="method private "><a href="#getPageTemplate" title="getPageTemplate :: Get the correct page template for this URL."><span class="description">Get the correct page template for this URL.</span><pre>getPageTemplate()</pre></a></li>
-<li class="method private "><a href="#getStylesheetsHTML" title="getStylesheetsHTML :: Get the list of stylesheets in order."><span class="description">Get the list of stylesheets in order.</span><pre>getStylesheetsHTML()</pre></a></li>
-<li class="method private "><a href="#getStylesheetsHTMLProductionMode" title="getStylesheetsHTMLProductionMode :: Makes the stylesheets HTML when in production mode."><span class="description">Makes the stylesheets HTML when in production mode.</span><pre>getStylesheetsHTMLProductionMode()</pre></a></li>
-<li class="method private "><a href="#getTemplatesPath" title="getTemplatesPath :: Gets the correct templates path."><span class="description">Gets the correct templates path.</span><pre>getTemplatesPath()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header protected">» Protected</li>
+<li class="property protected "><a href="#%24body_classes" title="$body_classes :: Array of strings of class names to apply to the body element."><span class="description">Array of strings of class names to apply to the body element.</span><pre>$body_classes</pre></a></li>
+<li class="property protected "><a href="#%24cache" title="$cache :: The sCache instance."><span class="description">The sCache instance.</span><pre>$cache</pre></a></li>
+<li class="property protected "><a href="#%24in_production_mode" title="$in_production_mode :: Whether or not the site is in production mode or not."><span class="description">Whether or not the site is in production mode or not.</span><pre>$in_production_mode</pre></a></li>
+<li class="property protected "><a href="#%24language" title="$language :: The language of the page."><span class="description">The language of the page.</span><pre>$language</pre></a></li>
+<li class="property protected "><a href="#%24text_direction" title="$text_direction :: The text direction of the page."><span class="description">The text direction of the page.</span><pre>$text_direction</pre></a></li>
 <li class="nav-header private">» Private</li>
-<li class="property private "><a href="#%24body_classes" title="$body_classes :: Array of strings of class names to apply to the body element."><span class="description">Array of strings of class names to apply to the body element.</span><pre>$body_classes</pre></a></li>
-<li class="property private "><a href="#%24cache" title="$cache :: The sCache instance."><span class="description">The sCache instance.</span><pre>$cache</pre></a></li>
 <li class="property private "><a href="#%24cdns" title="$cdns :: Array of CDN URL prefixes."><span class="description">Array of CDN URL prefixes.</span><pre>$cdns</pre></a></li>
 <li class="property private "><a href="#%24compiled_javascript_files" title="$compiled_javascript_files :: The minified/compiled JavaScript files used in production mode."><span class="description">The minified/compiled JavaScript files used in production mode.</span><pre>$compiled_javascript_files</pre></a></li>
 <li class="property private "><a href="#%24css_files" title="$css_files :: CSS file paths. The keys are the media types."><span class="description">CSS file paths. The keys are the media types.</span><pre>$css_files</pre></a></li>
 <li class="property private "><a href="#%24css_media_order" title="$css_media_order :: CSS media order."><span class="description">CSS media order.</span><pre>$css_media_order</pre></a></li>
-<li class="property private "><a href="#%24in_production_mode" title="$in_production_mode :: Whether or not the site is in production mode or not."><span class="description">Whether or not the site is in production mode or not.</span><pre>$in_production_mode</pre></a></li>
 <li class="property private "><a href="#%24javascript_files" title="$javascript_files :: The JavaScript files (which appear normally at the bottom of the page)."><span class="description">The JavaScript files (which appear normally at the bottom of the page).</span><pre>$javascript_files</pre></a></li>
-<li class="property private "><a href="#%24language" title="$language :: The language of the page."><span class="description">The language of the page.</span><pre>$language</pre></a></li>
 <li class="property private "><a href="#%24minifed_css_path" title="$minifed_css_path :: Where minified CSS should be stored."><span class="description">Where minified CSS should be stored.</span><pre>$minifed_css_path</pre></a></li>
 <li class="property private "><a href="#%24production_mode_template_path" title="$production_mode_template_path :: The templates path used when production mode is enabled."><span class="description">The templates path used when production mode is enabled.</span><pre>$production_mode_template_path</pre></a></li>
 <li class="property private "><a href="#%24query_strings_enabled" title="$query_strings_enabled :: If resources such as CSS and JavaScript while not in production mode
@@ -139,7 +140,6 @@
   'default'."><span class="description">The template name. Matches directory name in './template'. Defaults to
   'default'.</span><pre>$template_name</pre></a></li>
 <li class="property private "><a href="#%24templates_path" title="$templates_path :: The templates path without any ending directory separator (like /)."><span class="description">The templates path without any ending directory separator (like /).</span><pre>$templates_path</pre></a></li>
-<li class="property private "><a href="#%24text_direction" title="$text_direction :: The text direction of the page."><span class="description">The text direction of the page.</span><pre>$text_direction</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -272,7 +272,7 @@
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<th><code>\fProgrammerException</code></th>
 <td>If the file cannot be found.</td>
 </tr></table>
 <h3>Returns</h3>
@@ -291,6 +291,17 @@
 <div class="subelement argument">
 <h4>$bool</h4>
 <code>boolean</code><p>Value to set. TRUE or FALSE.</p></div>
+</div></div>
+</div>
+<a name="getACDN" id="getACDN"></a><div class="element clickable method public getACDN" data-toggle="collapse" data-target=".getACDN .collapse">
+<h2>Get a CDN to use.</h2>
+<pre>getACDN() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Empty string, or CDN URL prefix.</div>
 </div></div>
 </div>
 <a name="getBodyClasses" id="getBodyClasses"></a><div class="element clickable method public getBodyClasses" data-toggle="collapse" data-target=".getBodyClasses .collapse">
@@ -328,7 +339,7 @@
 </tr></table>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<th><code>\fProgrammerException</code></th>
 <td>If cache is NULL.</td>
 </tr></table>
 <h3>Returns</h3>
@@ -419,11 +430,11 @@
 <h3>Exceptions</h3>
 <table class="table table-bordered">
 <tr>
-<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<th><code>\fUnexpectedException</code></th>
 <td>If the template cannot be found.</td>
 </tr>
 <tr>
-<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<th><code>\fProgrammerException</code></th>
 <td>If the keys title or content are missing.</td>
 </tr>
 </table>
@@ -444,7 +455,7 @@
 <code>string</code><p>The fallback template.</p></div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<th><code>\fProgrammerException</code></th>
 <td>If any directory is not found or not readable.</td>
 </tr></table>
 </div></div>
@@ -500,7 +511,7 @@
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
-<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<th><code>\fProgrammerException</code></th>
 <td>If the directory is not writable.</td>
 </tr></table>
 </div></div>
@@ -603,6 +614,86 @@
 <code>boolean</code>TRUE if the template exists, otherwise FALSE.</div>
 </div></div>
 </div>
+<a name="getJavaScriptHTML" id="getJavaScriptHTML"></a><div class="element clickable method protected getJavaScriptHTML" data-toggle="collapse" data-target=".getJavaScriptHTML .collapse">
+<h2>Get string of HTML scripts for use in the head element.</h2>
+<pre>getJavaScriptHTML(string $where) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>JavaScript here can only be dependent on scripts that are also
+  in the head element.
+Make this script optionally compile-able.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Which scripts to get. One of: 'head', 'body'.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a name="getPageTemplate" id="getPageTemplate"></a><div class="element clickable method protected getPageTemplate" data-toggle="collapse" data-target=".getPageTemplate .collapse">
+<h2>Get the correct page template for this URL.</h2>
+<pre>getPageTemplate() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\fUnexpectedException</code></th>
+<td>If a candidate file cannot be found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Template file name (with .tpl.php) to use.</div>
+</div></div>
+</div>
+<a name="getStylesheetsHTML" id="getStylesheetsHTML"></a><div class="element clickable method protected getStylesheetsHTML" data-toggle="collapse" data-target=".getStylesheetsHTML .collapse">
+<h2>Get the list of stylesheets in order.</h2>
+<pre>getStylesheetsHTML() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sTemplate::setCSSMediaOrder()</td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\fUnexpectedException</code></th>
+<td>If the CSS file cannot be read (production mode only).</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>String of link HTML tags.</div>
+</div></div>
+</div>
+<a name="getStylesheetsHTMLProductionMode" id="getStylesheetsHTMLProductionMode"></a><div class="element clickable method protected getStylesheetsHTMLProductionMode" data-toggle="collapse" data-target=".getStylesheetsHTMLProductionMode .collapse">
+<h2>Makes the stylesheets HTML when in production mode.</h2>
+<pre>getStylesheetsHTMLProductionMode() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code>\fUnexpectedException</code></th>
+<td>If a file is unable to read or found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The HTML link tags.</div>
+</div></div>
+</div>
+<a name="getTemplatesPath" id="getTemplatesPath"></a><div class="element clickable method protected getTemplatesPath" data-toggle="collapse" data-target=".getTemplatesPath .collapse">
+<h2>Gets the correct templates path.</h2>
+<pre>getTemplatesPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The path.</div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sTemplate.html">\sTemplate</a></pre>
@@ -628,108 +719,35 @@
 <code>array</code>Array of key => value pairs for use in the template.</div>
 </div></div>
 </div>
-<a name="getACDN" id="getACDN"></a><div class="element clickable method private getACDN" data-toggle="collapse" data-target=".getACDN .collapse">
-<h2>Get a CDN to use.</h2>
-<pre>getACDN() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>Empty string, or CDN URL prefix.</div>
-</div></div>
-</div>
-<a name="getJavaScriptHTML" id="getJavaScriptHTML"></a><div class="element clickable method private getJavaScriptHTML" data-toggle="collapse" data-target=".getJavaScriptHTML .collapse">
-<h2>Get string of HTML scripts for use in the head element.</h2>
-<pre>getJavaScriptHTML(string $where) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>JavaScript here can only be dependent on scripts that are also
-  in the head element.
-Make this script optionally compile-able.</p></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$where</h4>
-<code>string</code><p>Which scripts to get. One of: 'head', 'body'.</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response"><code>string</code></div>
-</div></div>
-</div>
-<a name="getPageTemplate" id="getPageTemplate"></a><div class="element clickable method private getPageTemplate" data-toggle="collapse" data-target=".getPageTemplate .collapse">
-<h2>Get the correct page template for this URL.</h2>
-<pre>getPageTemplate() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
-<td>If a candidate file cannot be found.</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>Template file name (with .tpl.php) to use.</div>
-</div></div>
-</div>
-<a name="getStylesheetsHTML" id="getStylesheetsHTML"></a><div class="element clickable method private getStylesheetsHTML" data-toggle="collapse" data-target=".getStylesheetsHTML .collapse">
-<h2>Get the list of stylesheets in order.</h2>
-<pre>getStylesheetsHTML() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>see</th>
-<td>\sTemplate::setCSSMediaOrder()</td>
-</tr></table>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
-<td>If the CSS file cannot be read (production mode only).</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>String of link HTML tags.</div>
-</div></div>
-</div>
-<a name="getStylesheetsHTMLProductionMode" id="getStylesheetsHTMLProductionMode"></a><div class="element clickable method private getStylesheetsHTMLProductionMode" data-toggle="collapse" data-target=".getStylesheetsHTMLProductionMode .collapse">
-<h2>Makes the stylesheets HTML when in production mode.</h2>
-<pre>getStylesheetsHTMLProductionMode() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
-<td>If a file is unable to read or found.</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The HTML link tags.</div>
-</div></div>
-</div>
-<a name="getTemplatesPath" id="getTemplatesPath"></a><div class="element clickable method private getTemplatesPath" data-toggle="collapse" data-target=".getTemplatesPath .collapse">
-<h2>Gets the correct templates path.</h2>
-<pre>getTemplatesPath() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The path.</div>
-</div></div>
-</div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
-<a name="%24body_classes" id="$body_classes"> </a><div class="element clickable property private $body_classes" data-toggle="collapse" data-target=".$body_classes .collapse">
+<a name="%24body_classes" id="$body_classes"> </a><div class="element clickable property protected $body_classes" data-toggle="collapse" data-target=".$body_classes .collapse">
 <h2>Array of strings of class names to apply to the body element.</h2>
 <pre>$body_classes : array</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
-<a name="%24cache" id="$cache"> </a><div class="element clickable property private $cache" data-toggle="collapse" data-target=".$cache .collapse">
+<a name="%24cache" id="$cache"> </a><div class="element clickable property protected $cache" data-toggle="collapse" data-target=".$cache .collapse">
 <h2>The sCache instance.</h2>
 <pre>$cache : <a href="../classes/sCache.html">\sCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24in_production_mode" id="$in_production_mode"> </a><div class="element clickable property protected $in_production_mode" data-toggle="collapse" data-target=".$in_production_mode .collapse">
+<h2>Whether or not the site is in production mode or not.</h2>
+<pre>$in_production_mode : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24language" id="$language"> </a><div class="element clickable property protected $language" data-toggle="collapse" data-target=".$language .collapse">
+<h2>The language of the page.</h2>
+<pre>$language : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24text_direction" id="$text_direction"> </a><div class="element clickable property protected $text_direction" data-toggle="collapse" data-target=".$text_direction .collapse">
+<h2>The text direction of the page.</h2>
+<pre>$text_direction : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
@@ -757,21 +775,9 @@ Make this script optionally compile-able.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
-<a name="%24in_production_mode" id="$in_production_mode"> </a><div class="element clickable property private $in_production_mode" data-toggle="collapse" data-target=".$in_production_mode .collapse">
-<h2>Whether or not the site is in production mode or not.</h2>
-<pre>$in_production_mode : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
 <a name="%24javascript_files" id="$javascript_files"> </a><div class="element clickable property private $javascript_files" data-toggle="collapse" data-target=".$javascript_files .collapse">
 <h2>The JavaScript files (which appear normally at the bottom of the page).</h2>
 <pre>$javascript_files : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
-<a name="%24language" id="$language"> </a><div class="element clickable property private $language" data-toggle="collapse" data-target=".$language .collapse">
-<h2>The language of the page.</h2>
-<pre>$language : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
@@ -832,12 +838,6 @@ Make this script optionally compile-able.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
-<a name="%24text_direction" id="$text_direction"> </a><div class="element clickable property private $text_direction" data-toggle="collapse" data-target=".$text_direction .collapse">
-<h2>The text direction of the page.</h2>
-<pre>$text_direction : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
 </div>
 </div>
 </div>
@@ -845,7 +845,7 @@ Make this script optionally compile-able.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-07T17:54:22-05:00.<br></footer></div>
+            generated on 2012-04-10T12:26:09-05:00.<br></footer></div>
 </div>
 </body>
 </html>
