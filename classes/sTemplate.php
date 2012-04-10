@@ -17,7 +17,7 @@ class sTemplate {
    *
    * @var sCache
    */
-  private static $cache = NULL;
+  protected static $cache = NULL;
 
   /**
    * The template name. Matches directory name in './template'. Defaults to
@@ -73,14 +73,14 @@ class sTemplate {
    *
    * @var boolean
    */
-  private static $in_production_mode = FALSE;
+  protected static $in_production_mode = FALSE;
 
   /**
    * Array of strings of class names to apply to the body element.
    *
    * @var array
    */
-  private static $body_classes = array();
+  protected static $body_classes = array();
 
   /**
    * Array of CDN URL prefixes.
@@ -128,14 +128,14 @@ class sTemplate {
    *
    * @var string
    */
-  private static $language = 'en';
+  protected static $language = 'en';
 
   /**
    * The text direction of the page.
    *
    * @var string
    */
-  private static $text_direction = 'ltr';
+  protected static $text_direction = 'ltr';
 
   /**
    * The site name.
@@ -293,17 +293,9 @@ class sTemplate {
   private static function callCallbacks($template_name) {
     $variables = array();
 
-    foreach (self::$registered_callbacks['*'] as $callback) {
-      $ret = $callback();
-      if (!is_array($ret)) {
-        throw new fProgrammerException('Callback "%s" did not return an array.', $callback);
-      }
-      $variables = array_merge($variables, $ret);
-    }
-
     if (isset(self::$registered_callbacks[$template_name])) {
       foreach (self::$registered_callbacks[$template_name] as $callback) {
-        $ret = $callback();
+        $ret = fCore::call($callback);
         if (!is_array($ret)) {
           throw new fProgrammerException('Callback "%s" for template "%s" did not return an array.', $callback, $template_name);
         }
@@ -340,7 +332,7 @@ class sTemplate {
   public static function addJavaScriptFile($filename, $where = 'body') {
     $valid_where = array('head', 'body');
     $where = strtolower($where);
-    $filename = preg_replace('/\.?\//', '', $filename);
+    $filename = preg_replace('/^\.?\//', '', $filename);
 
     if (!in_array($where, $valid_where)) {
       throw new fProgrammerException('The $where argument specified, "%s", is invalid. It must be one of: %s.', $where, implode(', ', $valid_where));
@@ -399,7 +391,7 @@ class sTemplate {
    *
    * @return string The path.
    */
-  private static function getTemplatesPath() {
+  protected static function getTemplatesPath() {
     return self::$in_production_mode ? self::$production_mode_template_path : self::$templates_path;
   }
 
@@ -514,7 +506,7 @@ class sTemplate {
    *
    * @return string The HTML link tags.
    */
-  private static function getStylesheetsHTMLProductionMode() {
+  protected static function getStylesheetsHTMLProductionMode() {
     fCore::startErrorCapture(E_ALL);
 
     $html = '';
@@ -639,7 +631,7 @@ class sTemplate {
    * @return string String of link HTML tags.
    * @see sTemplate::setCSSMediaOrder()
    */
-  private static function getStylesheetsHTML() {
+  protected static function getStylesheetsHTML() {
     if (self::$template_name == 'default') {
       return '';
     }
@@ -701,7 +693,7 @@ class sTemplate {
    * @param string $where Which scripts to get. One of: 'head', 'body'.
    * @return string
    */
-  private static function getJavaScriptHTML($where) {
+  protected static function getJavaScriptHTML($where) {
     $html = '';
     $qs = !self::$in_production_mode && self::$query_strings_enabled ? '?_='.time() : '';
     $cdn = '';
@@ -792,7 +784,7 @@ class sTemplate {
    *
    * @return string Empty string, or CDN URL prefix.
    */
-  private static function getACDN() {
+  public static function getACDN() {
     if (!self::$in_production_mode || empty(self::$cdns)) {
       return '';
     }
@@ -829,7 +821,7 @@ class sTemplate {
    *
    * @return string Template file name (with .tpl.php) to use.
    */
-  private static function getPageTemplate() {
+  protected static function getPageTemplate() {
     $route = str_replace('/', '-', substr(fURL::get(), 1));
     $templates_path = self::getTemplatesPath();
     $candidates = array(
@@ -885,7 +877,7 @@ class sTemplate {
       'is_front' => fURL::get() == '/',
       'css' => self::getStylesheetsHTML(),
       'head_js' => self::getJavaScriptHTML('head'),
-      'conditional_head_js' => self::getConditionalHeadJavaScriptFromJSONFile(),
+//       'conditional_head_js' => self::getConditionalHeadJavaScriptFromJSONFile(),
       'body_id' => '',
       'body_class' => $classes,
       'site_name' => fHTML::encode(self::$site_name),
