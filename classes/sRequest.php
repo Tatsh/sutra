@@ -43,16 +43,21 @@ class sRequest extends fRequest {
    * @see sRequest::restoreLastPOSTValues()
    * @see sRequest::deleteLastPOSTValues()
    */
-  public static function validatePOST(fValidation $validation, $redirect_to = NULL, $error_redirect = NULL) {
+  public static function validatePost(fValidation $validation, $redirect_to = NULL, $error_redirect = NULL) {
     try {
       $url = fURL::get();
+
+      if (!$error_redirect) {
+        $error_redirect = $url;
+      }
 
       self::callCallbacks('before');
       $validation->validate();
       self::callCallbacks('after');
 
-      if (is_callable(fCore::callback($redirect_to))) {
-        $redirect_to();
+      $cb = fCore::callback($redirect_to);
+      if (is_callable($cb)) {
+        $cb();
       }
 
       fURL::redirect($redirect_to ? $redirect_to : $url);
@@ -60,12 +65,17 @@ class sRequest extends fRequest {
     catch (fValidationException $e) {
       self::savePOSTValues();
 
-      if (is_callable(fCore::callback($error_redirect))) {
-        $error_redirect($e);
+      $cb = fCore::callback($error_redirect);
+      if (is_callable($cb)) {
+        $cb($e);
         return;
       }
 
-      fURL::redirect($error_redirect ? $error_redirect : $url);
+      $message = strip_tags($message);
+      $message = str_replace("\n", ' ', $message);
+
+      fMessaging::create('validation', '/', $message);
+      fURL::redirect($error_redirect);
     }
   }
 
@@ -99,14 +109,14 @@ class sRequest extends fRequest {
    */
   private static function callCallbacks($when) {
     foreach (self::$registered_callbacks[$when]['*'] as $callback) {
-      $callback();
+      fCore::call($callback);
     }
 
     $url = fURL::get();
 
     if (isset(self::$registered_callbacks[$when][$url])) {
       foreach (self::$registered_callbacks[$when][$url] as $callback) {
-        $callback();
+        fCore::call($callback);
       }
     }
   }
