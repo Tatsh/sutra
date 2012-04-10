@@ -1,6 +1,6 @@
 #!/bin/sh
 DOCDIR="/home/tatsh/dev/sutra-doc"
-FLOURISH="/home/tatsh/dev/flourish"
+FLOURISH="/home/tatsh/dev/php/flourish"
 SUTRA="/home/tatsh/dev/sutra/classes"
 
 phpdoc -ti "Sutra documentation (generated $(date))" \
