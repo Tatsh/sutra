@@ -69,6 +69,8 @@ class sGrammar extends fGrammar {
   /**
    * Converts an underscore_notation or camelCase notation to dash-notation.
    *
+   * @todo camelCase must work.
+   *
    * @param string $string String to convert.
    * @return string Converted string.
    * @see sGrammar::addDashizeRule()
