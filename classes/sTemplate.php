@@ -557,7 +557,7 @@ class sTemplate {
           $text = str_replace("\n", '', $text);
         }
 
-        $media = sHTML::stripNonASCIIFromString($key);
+        $media = fURL::makeFriendly($key, '-');
         $filename = './'.self::$minifed_css_path.'/css-'.$media.'-'.$time.'.min.css';
         $names[$key] = preg_replace('/^\./', '', $filename);
         $ret = file_put_contents($filename, $text, LOCK_EX);
