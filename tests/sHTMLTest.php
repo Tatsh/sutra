@@ -293,23 +293,6 @@ class sHTMLTest extends PHPUnit_Framework_TestCase {
   }
 
   /**
-   * @covers sHTML::stripNonASCIIFromString
-   */
-  public function testStripNonASCIIFromString() {
-    $str = 'this string just needs dashes';
-    $result = sHTML::stripNonASCIIFromString($str);
-    $this->assertEquals('this-string-just-needs-dashes', $result);
-
-    $str = 'This string will be lower-cased and have dashes';
-    $result = sHTML::stripNonASCIIFromString($str, TRUE);
-    $this->assertEquals('this-string-will-be-lower-cased-and-have-dashes', $result);
-
-    $str = '---This string has garbage !@#$%^&*()___+----';
-    $result = sHTML::stripNonASCIIFromString($str, FALSE);
-    $this->assertEquals('This-string-has-garbage', $result);
-  }
-
-  /**
    * @covers sHTML::attributesString
    * @covers sHTML::validAttributeValue
    */
