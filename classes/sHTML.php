@@ -21,78 +21,6 @@ class sHTML extends fHTML {
   private static $form_element_ids = array();
 
   /**
-   * ASCII safe values used by stripNonASCIIFromString.
-   *
-   * @var array
-   */
-  private static $safe_ascii = array(
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z',
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '0',
-    '-',
-  );
-
-  /**
    * Valid values for the element input type attribute.
    *
    * @link http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute
@@ -177,7 +105,7 @@ class sHTML extends fHTML {
    * @return string Unique identifier for use with the id attribute.
    */
   private static function formElementIDWithName($name) {
-    $id = 'edit-'.self::stripNonASCIIFromString($name);
+    $id = 'edit-'.fURL::makeFriendly($name, '-');
 
     if (in_array($id, self::$form_element_ids)) {
       $in_array = TRUE;
@@ -354,35 +282,6 @@ class sHTML extends fHTML {
     }
 
     return $label.'<input '.self::attributesString($attributes).'>';
-  }
-
-  /**
-   * Strip out non-ASCII characters and accents out of the string.
-   *   Basically, this removes all characters NOT within the range of:
-   *   ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890-
-   *
-   * @param string $str String to process.
-   * @param boolean $lower Lower case if set to TRUE (default).
-   * @return string String, processed.
-   */
-  public static function stripNonASCIIFromString($str, $lower = TRUE) {
-    $safe = self::$safe_ascii;
-
-    $str = str_replace(array(' ', '_'), '-', $str);
-    $str = str_split($str);
-    foreach ($str as $key => $char) {
-      if (!in_array($char, $safe)) {
-        unset($str[$key]);
-      }
-    }
-    $str = implode($str);
-
-    // Strip out on-going dashes
-    $str = preg_replace('/\-+/', '-', $str);
-    // Strip out the end and beginning dashes if present
-    $str = preg_replace(array('/^\-+(.*)/', '/([A-Za-z])\-+$/'), '$1', $str);
-
-    return $lower ? strtolower($str) : $str;
   }
 
   /**
