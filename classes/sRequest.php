@@ -74,9 +74,24 @@ class sRequest extends fRequest {
       $message = strip_tags($message);
       $message = str_replace("\n", ' ', $message);
 
-      fMessaging::create('validation', '/', $message);
+      fMessaging::create('validation', $error_redirect, $message);
       fURL::redirect($error_redirect);
     }
+  }
+
+  /**
+   * Validates a CSRF token in the 'csrf' parameter.
+   *
+   * @internal
+   *
+   * @throws fValidationException If the CSRF is invalid.
+   *
+   * @param string $url URL to validate with.
+   * @return void
+   */
+  public static function validateToken($url = NULL) {
+    $token = self::get('csrf', 'string');
+    self::validateCSRFToken($token, $url);
   }
 
   /**
