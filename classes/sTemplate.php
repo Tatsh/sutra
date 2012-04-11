@@ -511,12 +511,13 @@ class sTemplate {
 
     $html = '';
     $cache = self::getCache();
-    $names = $cache->get(__CLASS__.'::last_combined_css_names', array());
+    $cache_key = __CLASS__.'::last_combined_css_names';
+    $names = $cache->get($cache_key, array());
     $cdn = self::getACDN();
     $css = array();
 
     //$names = array(); // for debugging
-    if (empty($names)) {
+    if (!count($names)) {
       foreach (self::$css_files as $media => $files) {
         if (!isset($css[$media])) {
           $css[$media] = '';
@@ -567,8 +568,7 @@ class sTemplate {
         }
       }
 
-      // Save to cache for the set time
-      $cache->set(__CLASS__.'::last_combined_css_names', $names);
+      $cache->set($cache_key, $names, 86400 / 2);
     }
 
     $used = array();
@@ -593,15 +593,15 @@ class sTemplate {
     }
 
     foreach ($names as $media => $css) {
-      if (!is_file('.'.$css)) {
-        $recache = TRUE;
-        break;
-      }
-
       $href = $cdn.$css;
 
       if (isset($used[$href])) {
         continue;
+      }
+
+      if (!is_file('.'.$css)) {
+        $recache = TRUE;
+        break;
       }
 
       $html .= sHTML::tag('link', array(
@@ -613,6 +613,7 @@ class sTemplate {
     }
 
     if ($recache) {
+      fCore::stopErrorCapture();
       fCore::debug('A minified CSS file was not found. All files are being re-generated.');
       $cache->delete(__CLASS__.'::last_combined_css_names');
       return self::getStylesheetsHTMLProductionMode();
@@ -697,12 +698,14 @@ class sTemplate {
     $html = '';
     $qs = !self::$in_production_mode && self::$query_strings_enabled ? '?_='.time() : '';
     $cdn = '';
+    $files = self::$javascript_files[$where];
 
     if (self::$in_production_mode) {
       $cdn = self::getACDN();
+      $files = self::$compiled_javascript_files[$where];
     }
 
-    foreach (self::$javascript_files[$where] as $path) {
+    foreach ($files as $path) {
       $url = $cdn.'/'.$path.$qs;
       if (sHTML::linkIsURI($path)) {
         $url = $path;
