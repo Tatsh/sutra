@@ -4,7 +4,7 @@ if (!defined('AUTOLOAD_INC')) {
 define('AUTOLOAD_INC', 1);
 
 function flourishAutoload($class_name) {
-  $file = '../../flourish/'.$class_name.'.php';
+  $file = '../../php/flourish/'.$class_name.'.php';
   if (file_exists($file)) {
     require_once $file;
   }
