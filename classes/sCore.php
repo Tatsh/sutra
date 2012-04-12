@@ -32,7 +32,7 @@ abstract class sCore extends fCore {
    *
    * @return sCache|fCache The fCache/sCache instance.
    */
-  protected static function getCache() {
+  public static function getCache() {
     throw new fProgrammerException('The function, "%s", must be implemented.', __CLASS__.'::'.__FUNCTION__);
   }
 
@@ -47,7 +47,7 @@ abstract class sCore extends fCore {
    * @see fDatabase::translatedExcecute()
    * @see fORMDatabase::attach()
    */
-  protected static function getDatabase() {
+  public static function getDatabase() {
     throw new fProgrammerException('The function, "%s", must be implemented.', __CLASS__.'::'.__FUNCTION__);
   }
 
