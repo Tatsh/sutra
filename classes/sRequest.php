@@ -25,6 +25,7 @@ class sRequest extends fRequest {
    *
    * @param string $csrf CSRF token to validate.
    * @return boolean If the CSRF token is valid.
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function validateCSRFTokenCallback($csrf) {
     try {
