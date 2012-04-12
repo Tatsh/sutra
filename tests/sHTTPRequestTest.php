@@ -39,6 +39,13 @@ class sHTTPRequestTest extends PHPUnit_Framework_TestCase {
     $this->assertInternalType('array', $a->getHeaders());
   }
 
+  public function testSetHeader() {
+    $a = new sHTTPRequest('http://localhost');
+    $a->setHeader('X-Requested-With', 'blah');
+    $headers = $a->getHeaders();
+    $this->assertArrayHasKey('X-Requested-With', $headers);
+  }
+
   public function testSetUserAgent() {
     $agent = 'aaaaaa';
     $a = new sHTTPRequest('http://localhost');
@@ -50,6 +57,14 @@ class sHTTPRequestTest extends PHPUnit_Framework_TestCase {
 
   public function testGetData() {
     $a = new sHTTPRequest('http://am.php.net/manual/en/context.http.php');
+    $data = $a->getData();
+    $this->assertTag(array(
+      'tag' => 'title',
+      'content' => 'PHP: HTTP context options - Manual',
+    ), $data);
+
+    $a = new sHTTPRequest('http://am.php.net/manual/en/context.http.php');
+    $a->send();
     $data = $a->getData();
     $this->assertTag(array(
       'tag' => 'title',

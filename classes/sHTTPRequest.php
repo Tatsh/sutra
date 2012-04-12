@@ -20,7 +20,7 @@ class sHTTPRequest {
   private $url = NULL;
 
   /**
-   * The data retrieved.
+   * The data received.
    *
    * @var string
    */
@@ -38,7 +38,7 @@ class sHTTPRequest {
    *
    * @var array
    */
-  private $headers = array('User-Agent' => 'Mozilla/5.0 Sutra-sHTTP/1.2');
+  private $headers = array('User-Agent' => 'Mozilla/5.0 Sutra-sHTTPRequest/1.2');
 
   /**
    * The HTTP method.
@@ -77,7 +77,7 @@ class sHTTPRequest {
    * @param string $method HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'.
    * @param integer $timeout Timeout. Will default to default_socket_timeout
    *   in php.ini if not specified.
-   * @return sHTTP The object.
+   * @return sHTTPRequest The object.
    */
   public function __construct($url, $method = 'GET', $timeout = NULL) {
     $matches = array();
@@ -104,7 +104,7 @@ class sHTTPRequest {
    *   'X-GData-Authorization-Key' => 'key');
    *
    * @param array $headers Header to set.
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function setHeaders(array $headers) {
     $this->headers = $headers;
@@ -112,10 +112,22 @@ class sHTTPRequest {
   }
 
   /**
+   * Set a specific header.
+   *
+   * @param string $name Name of the header.
+   * @param string $value Value of the header.
+   * @return sHTTPRequest The object to allow method chaining.
+   */
+  public function setHeader($name, $value) {
+    $this->headers = array_merge($this->headers, array($name => $value));
+    return $this;
+  }
+
+  /**
    * Set the user agent header.
    *
    * @param string $agent User agent string.
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function setUserAgent($agent) {
     $this->headers = array_merge($this->headers, array('User-Agent' => $agent));
@@ -128,7 +140,7 @@ class sHTTPRequest {
    * @throws fProgrammerException If the method is not a valid HTTP method.
    *
    * @param string $method HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'.
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function setMethod($method = 'GET') {
     $valid = array('GET', 'POST', 'PUT', 'DELETE');
@@ -162,11 +174,10 @@ class sHTTPRequest {
   }
 
   /**
-   * Gets the data from the source URI. Will call sHTTP->connect() if
-   *   necessary.
+   * Gets the data from the source URI. Will call connect() if necessary.
    *
    * @return string The data retrieved.
-   * @see sHTTP::connect()
+   * @see sHTTPRequest::connect()
    */
   public function getData() {
     $this->connect();
@@ -177,7 +188,7 @@ class sHTTPRequest {
    * Set the content. This is mainly for use with POST and PUT requests.
    *
    * @param string $content Content to POST or PUT.
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function setContent($content) {
     $this->content = $content;
@@ -198,7 +209,7 @@ class sHTTPRequest {
    * Set a proxy to use.
    *
    * @param string $proxy Proxy URI.
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function setProxy($proxy) {
     $this->proxy = $proxy;
@@ -218,7 +229,7 @@ class sHTTPRequest {
   /**
    * Removes the proxy in use with this object.
    *
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function removeProxy() {
     $this->proxy = NULL;
@@ -230,7 +241,7 @@ class sHTTPRequest {
    *
    * @throws fUnexpectedException If the connection fails.
    *
-   * @return sHTTP The object to allow method chaining.
+   * @return sHTTPRequest The object to allow method chaining.
    */
   public function connect($reconnect = FALSE) {
     if ($this->data === NULL || $reconnect) {
@@ -264,5 +275,15 @@ class sHTTPRequest {
       $this->data = $data;
     }
     return $this;
+  }
+
+  /**
+   * Alias for connect().
+   *
+   * @return sHTTPRequest The object to allow method chaining.
+   * @see sHTTPRequest::connect()
+   */
+  public function send($reconnect = FALSE) {
+    return $this->connect($reconnect);
   }
 }
