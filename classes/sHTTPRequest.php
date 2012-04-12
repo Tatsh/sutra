@@ -241,6 +241,7 @@ class sHTTPRequest {
    *
    * @throws fUnexpectedException If the connection fails.
    *
+   * @param boolean $reconnect Force re-fetching of the data.
    * @return sHTTPRequest The object to allow method chaining.
    */
   public function connect($reconnect = FALSE) {
@@ -280,6 +281,7 @@ class sHTTPRequest {
   /**
    * Alias for connect().
    *
+   * @param boolean $reconnect Force re-fetching of the data.
    * @return sHTTPRequest The object to allow method chaining.
    * @see sHTTPRequest::connect()
    */
