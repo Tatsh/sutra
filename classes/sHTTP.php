@@ -71,6 +71,8 @@ class sHTTP {
   /**
    * Constructor.
    *
+   * @throws fProgrammerException If the URL is not valid.
+   *
    * @param string $url Full URL to the resource.
    * @param string $method HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'.
    * @param integer $timeout Timeout. Will default to default_socket_timeout
@@ -122,6 +124,8 @@ class sHTTP {
 
   /**
    * Set the method.
+   *
+   * @throws fProgrammerException If the method is not a valid HTTP method.
    *
    * @param string $method HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'.
    * @return sHTTP The object to allow method chaining.
@@ -223,6 +227,8 @@ class sHTTP {
 
   /**
    * Connect to the URI and get the data.
+   *
+   * @throws fUnexpectedException If the connection fails.
    *
    * @return sHTTP The object to allow method chaining.
    */
