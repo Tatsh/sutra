@@ -87,9 +87,9 @@ abstract class sCore extends fCore {
    *   request.
    *
    * @return void
-   * @see fCore::getDatabase()
-   * @see fCore::configureSession()
-   * @see fCore::configureAuthorization()
+   * @see sCore::getDatabase()
+   * @see sCore::configureSession()
+   * @see sCore::configureAuthorization()
    */
   public static function main() {
     $class = get_called_class();
