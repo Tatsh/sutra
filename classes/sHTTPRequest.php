@@ -11,7 +11,7 @@
  *
  * @version 1.2
  */
-class sHTTP {
+class sHTTPRequest {
   /**
    * The URI to request from.
    *

@@ -1,13 +1,13 @@
 <?php
 require './includes/global.inc';
 
-class sHTTPTest extends PHPUnit_Framework_TestCase {
+class sHTTPRequestTest extends PHPUnit_Framework_TestCase {
   /**
    * @expectedException fProgrammerException
    * @expectedExceptionMessage The argument specified, "aaa", is not a valid HTTP URL.
    */
   public function testConstructorBadURL() {
-    new sHTTP('aaa');
+    new sHTTPRequest('aaa');
   }
 
   /**
@@ -15,7 +15,7 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
    * @expectedExceptionMessage The method specified, "bad", is not a valid HTTP method.
    */
   public function testConstructorBadMethod() {
-    new sHTTP('http://localhost', 'bad');
+    new sHTTPRequest('http://localhost', 'bad');
   }
 
   public function testGetHeadersAsString() {
@@ -23,7 +23,7 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
       'User-Agent' => 'my user agent',
       'custom-header' => 'custom header',
     );
-    $a = new sHTTP('http://localhost');
+    $a = new sHTTPRequest('http://localhost');
     $a->setHeaders($headers);
     $str = $a->getHeaders(TRUE);
     $this->assertEquals("User-Agent: my user agent\r\ncustom-header: custom header\r\n", $str);
@@ -34,14 +34,14 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
       'User-Agent' => 'my user agent',
       'custom-header' => 'custom header',
     );
-    $a = new sHTTP('http://localhost');
+    $a = new sHTTPRequest('http://localhost');
     $a->setHeaders($headers);
     $this->assertInternalType('array', $a->getHeaders());
   }
 
   public function testSetUserAgent() {
     $agent = 'aaaaaa';
-    $a = new sHTTP('http://localhost');
+    $a = new sHTTPRequest('http://localhost');
     $a->setUserAgent($agent);
     $headers = $a->getHeaders();
     $this->assertArrayHasKey('User-Agent', $headers);
@@ -49,7 +49,7 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testGetData() {
-    $a = new sHTTP('http://am.php.net/manual/en/context.http.php');
+    $a = new sHTTPRequest('http://am.php.net/manual/en/context.http.php');
     $data = $a->getData();
     $this->assertTag(array(
       'tag' => 'title',
@@ -63,12 +63,12 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
    */
   public function testBadRequest() {
     $url = 'http://hope-it-doesnt-exist';
-    $a = new sHTTP($url);
+    $a = new sHTTPRequest($url);
     $a->getData();
   }
 
   public function testPOST() {
-    $a = new sHTTP('http://am.php.net/manual/en/context.http.php', 'POST');
+    $a = new sHTTPRequest('http://am.php.net/manual/en/context.http.php', 'POST');
 
     $this->assertEquals('', $a->getContent());
 
@@ -84,7 +84,7 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
 
   public function testSetProxy() {
     $url = 'http://hope-it-doesnt-exist';
-    $a = new sHTTP($url);
+    $a = new sHTTPRequest($url);
     $a->setProxy('tcp://proxy.example.com:5100');
     $this->assertEquals('tcp://proxy.example.com:5100', $a->getProxy());
     $a->removeProxy();
@@ -98,7 +98,7 @@ class sHTTPTest extends PHPUnit_Framework_TestCase {
    */
   public function testWithProxy() {
     $url = 'http://www.google.com';
-    $a = new sHTTP($url);
+    $a = new sHTTPRequest($url);
     $a->setProxy('tcp://proxy.example.com:5100');
     $data = $a->getData();
   }
