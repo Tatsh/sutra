@@ -1,4 +1,5 @@
 #!/bin/sh
+TESTS="${1:-.}"
 mkdir -p template/default
 
 cp -f resources/backup/* resources
@@ -7,7 +8,7 @@ rm -f resources/*_copy*
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
 
-phpunit --stderr -c config.xml .
+phpunit --stderr -c config.xml "$TESTS"
 
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
