@@ -38,7 +38,7 @@
                 <span class="label label-info">1</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
-                <span class="label label-info">0</span></a></li>
+                <span class="label label-info">6</span></a></li>
 </ul>
 </li>
 </ul></div>
@@ -78,7 +78,6 @@
 <li class="method public inherited"><a href="#sendHeader" title="sendHeader :: Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page"><span class="description">Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</span><pre>sendHeader()</pre></a></li>
 <li class="method public inherited"><a href="#show" title="show :: Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content"><span class="description">Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content</span><pre>show()</pre></a></li>
 <li class="method public inherited"><a href="#showChecked" title='showChecked :: Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`'><span class="description">Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</span><pre>showChecked()</pre></a></li>
-<li class="method public "><a href="#stripNonASCIIFromString" title="stripNonASCIIFromString :: Strip out non-ASCII characters and accents out of the string."><span class="description">Strip out non-ASCII characters and accents out of the string.</span><pre>stripNonASCIIFromString()</pre></a></li>
 <li class="method public "><a href="#tag" title="tag :: Create a tag HTML string."><span class="description">Create a tag HTML string.</span><pre>tag()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#tagRequiresEnd" title="tagRequiresEnd :: Some tags require end tags while some others do not. Example: &lt;p&gt; does
@@ -102,7 +101,6 @@
 <li class="property private "><a href="#%24boolean_attributes" title="$boolean_attributes :: Boolean attributes that must be omitted if the state is to be off."><span class="description">Boolean attributes that must be omitted if the state is to be off.</span><pre>$boolean_attributes</pre></a></li>
 <li class="property private "><a href="#%24form_element_ids" title="$form_element_ids :: Stores all form element IDs so that all generated via this class are unique."><span class="description">Stores all form element IDs so that all generated via this class are unique.</span><pre>$form_element_ids</pre></a></li>
 <li class="property private "><a href="#%24input_type_values" title="$input_type_values :: Valid values for the element input type attribute."><span class="description">Valid values for the element input type attribute.</span><pre>$input_type_values</pre></a></li>
-<li class="property private "><a href="#%24safe_ascii" title="$safe_ascii :: ASCII safe values used by stripNonASCIIFromString."><span class="description">ASCII safe values used by stripNonASCIIFromString.</span><pre>$safe_ascii</pre></a></li>
 <li class="property private "><a href="#%24special_enumerated_attributes" title="$special_enumerated_attributes :: Special attributes like spellcheck and their valid values for states on
   and off (enumerated attributes that only have on/off states)."><span class="description">Special attributes like spellcheck and their valid values for states on
   and off (enumerated attributes that only have on/off states).</span><pre>$special_enumerated_attributes</pre></a></li>
@@ -478,26 +476,6 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <code>boolean</code>If the checked attribute was printed</div>
 </div></div>
 </div>
-<a name="stripNonASCIIFromString" id="stripNonASCIIFromString"></a><div class="element clickable method public stripNonASCIIFromString" data-toggle="collapse" data-target=".stripNonASCIIFromString .collapse">
-<h2>Strip out non-ASCII characters and accents out of the string.</h2>
-<pre>stripNonASCIIFromString(string $str, boolean $lower) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Basically, this removes all characters NOT within the range of:
-  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890-</p></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$str</h4>
-<code>string</code><p>String to process.</p></div>
-<div class="subelement argument">
-<h4>$lower</h4>
-<code>boolean</code><p>Lower case if set to TRUE (default).</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>String, processed.</div>
-</div></div>
-</div>
 <a name="tag" id="tag"></a><div class="element clickable method public tag" data-toggle="collapse" data-target=".tag .collapse">
 <h2>Create a tag HTML string.</h2>
 <pre>tag(string $tag, array $attr, string $content) : string</pre>
@@ -644,12 +622,6 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 </tr></table>
 </div></div>
 </div>
-<a name="%24safe_ascii" id="$safe_ascii"> </a><div class="element clickable property private $safe_ascii" data-toggle="collapse" data-target=".$safe_ascii .collapse">
-<h2>ASCII safe values used by stripNonASCIIFromString.</h2>
-<pre>$safe_ascii : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
 <a name="%24special_enumerated_attributes" id="$special_enumerated_attributes"> </a><div class="element clickable property private $special_enumerated_attributes" data-toggle="collapse" data-target=".$special_enumerated_attributes .collapse">
 <h2>Special attributes like spellcheck and their valid values for states on
   and off (enumerated attributes that only have on/off states).</h2>
@@ -786,7 +758,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-10T12:33:01-05:00.<br></footer></div>
+            generated on 2012-04-12T02:10:42-05:00.<br></footer></div>
 </div>
 </body>
 </html>

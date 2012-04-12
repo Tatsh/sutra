@@ -1266,7 +1266,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sLoader.php" hash="fb26b03015c19cab04898ab880e909fe" package="Sutra">
+  <file path="sutra/classes/sLoader.php" hash="730e9bc42c332fef9514c98a69cc2021" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages loading of classes.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -1308,6 +1308,7 @@
     'sArray',
     'sAuthorization',
     'sCache',
+    'sCore',
     'sGrammar',
     'sHTML',
     'sImage',
@@ -1329,77 +1330,77 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="51" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="52" package="">
         <name>best</name>
         <type>function</type>
-        <docblock line="45">
+        <docblock line="46">
           <description><![CDATA[Override best() method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="45" name="return" description="" type="void">
+          <tag line="46" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="45" name="see" description="\sLoader::eagar()" refers="\sLoader::eagar()"/>
+          <tag line="46" name="see" description="\sLoader::eagar()" refers="\sLoader::eagar()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="66" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="67" package="">
         <name>createConstructorFunctions</name>
         <type>function</type>
-        <docblock line="59">
+        <docblock line="60">
           <description><![CDATA[Creates constructor functions. This makes it possible to write:]]></description>
           <long-description><![CDATA[<pre><code>new sProcess('node myscript')->execute();</code></pre>]]></long-description>
-          <tag line="59" name="return" description="" type="void">
+          <tag line="60" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="90" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="91" package="">
         <name>eagar</name>
         <type>function</type>
-        <docblock line="85">
+        <docblock line="86">
           <description><![CDATA[Override eager() method to load Sutra classes after Flourish's.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="85" name="return" description="" type="void">
+          <tag line="86" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="106" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="107" package="">
         <name>setPath</name>
         <type>function</type>
-        <docblock line="101">
+        <docblock line="102">
           <description><![CDATA[Determines where Sutra is installed.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="101" name="return" description="" type="void">
+          <tag line="102" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="117" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="118" package="">
         <name>lazy</name>
         <type>function</type>
-        <docblock line="112">
+        <docblock line="113">
           <description><![CDATA[Registers a class auto-loader to load Sutra classes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="112" name="return" description="" type="void">
+          <tag line="113" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="134" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="135" package="">
         <name>autoload</name>
         <type>function</type>
-        <docblock line="126">
+        <docblock line="127">
           <description><![CDATA[Tries to load a Sutra class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="126" name="internal" description=""/>
-          <tag line="126" name="param" description="The class to load." type="string" variable="$class">
+          <tag line="127" name="internal" description=""/>
+          <tag line="127" name="param" description="The class to load." type="string" variable="$class">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="126" name="return" description="" type="void">
+          <tag line="127" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="134">
+        <argument line="135">
           <name>$class</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -1407,7 +1408,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sTemplate.php" hash="056bb9b99da6bdbf6c8e29465eb99f57" package="Sutra">
+  <file path="sutra/classes/sTemplate.php" hash="5ebef713b5cc903ce1317167ea51ea4b" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages templating.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2110,227 +2111,227 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="634" package="">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="635" package="">
         <name>getStylesheetsHTML</name>
         <type>function</type>
-        <docblock line="626">
+        <docblock line="627">
           <description><![CDATA[Get the list of stylesheets in order.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="626" name="throws" description="If the CSS file cannot be read (production mode only)." type="\fUnexpectedException">
+          <tag line="627" name="throws" description="If the CSS file cannot be read (production mode only)." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="626" name="return" description="String of link HTML tags." type="string">
+          <tag line="627" name="return" description="String of link HTML tags." type="string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="626" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
+          <tag line="627" name="see" description="\sTemplate::setCSSMediaOrder()" refers="\sTemplate::setCSSMediaOrder()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="696" package="">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="697" package="">
         <name>getJavaScriptHTML</name>
         <type>function</type>
-        <docblock line="686">
+        <docblock line="687">
           <description><![CDATA[Get string of HTML scripts for use in the head element.]]></description>
           <long-description><![CDATA[<p>JavaScript here can only be dependent on scripts that are also
   in the head element.
 Make this script optionally compile-able.</p>]]></long-description>
-          <tag line="686" name="param" description="Which scripts to get. One of: 'head', 'body'." type="string" variable="$where">
+          <tag line="687" name="param" description="Which scripts to get. One of: 'head', 'body'." type="string" variable="$where">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="686" name="return" description="" type="string">
+          <tag line="687" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="696">
+        <argument line="697">
           <name>$where</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="725" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="728" package="">
         <name>templateExists</name>
         <type>function</type>
-        <docblock line="719">
+        <docblock line="722">
           <description><![CDATA[Check if a certain template file exists.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="719" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
+          <tag line="722" name="param" description="Template name to check, without .tpl.php." type="string" variable="$template_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="719" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
+          <tag line="722" name="return" description="TRUE if the template exists, otherwise FALSE." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="725">
+        <argument line="728">
           <name>$template_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="735" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="738" package="">
         <name>addCDN</name>
         <type>function</type>
-        <docblock line="729">
+        <docblock line="732">
           <description><![CDATA[Add a CDN URL prefix WITHOUT including the final slash.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="729" name="param" description="The prefix URL to use." type="string" variable="$url">
+          <tag line="732" name="param" description="The prefix URL to use." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="729" name="return" description="" type="void">
+          <tag line="732" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="735">
+        <argument line="738">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="745" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="748" package="">
         <name>removeCDN</name>
         <type>function</type>
-        <docblock line="739">
+        <docblock line="742">
           <description><![CDATA[Remove a specified CDN URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="739" name="param" description="The URL to remove." type="string" variable="$url">
+          <tag line="742" name="param" description="The URL to remove." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="739" name="return" description="" type="void">
+          <tag line="742" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="745">
+        <argument line="748">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="760" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="763" package="">
         <name>setCDNs</name>
         <type>function</type>
-        <docblock line="754">
+        <docblock line="757">
           <description><![CDATA[Set the CDNs to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="754" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
+          <tag line="757" name="param" description="Array of URL prefixes WITHOUT the ending /." type="array" variable="$urls">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="754" name="return" description="" type="void">
+          <tag line="757" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="760">
+        <argument line="763">
           <name>$urls</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="769" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="772" package="">
         <name>getCDNs</name>
         <type>function</type>
-        <docblock line="764">
+        <docblock line="767">
           <description><![CDATA[Get the CDNs in currently in use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="764" name="returns" description="array Array of string URLs."/>
+          <tag line="767" name="returns" description="array Array of string URLs."/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="778" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="781" package="">
         <name>removeCDNs</name>
         <type>function</type>
-        <docblock line="773">
+        <docblock line="776">
           <description><![CDATA[Remove all CDNs.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="773" name="return" description="" type="void">
+          <tag line="776" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="787" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="790" package="">
         <name>getACDN</name>
         <type>function</type>
-        <docblock line="782">
+        <docblock line="785">
           <description><![CDATA[Get a CDN to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="782" name="return" description="Empty string, or CDN URL prefix." type="string">
+          <tag line="785" name="return" description="Empty string, or CDN URL prefix." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="804" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="807" package="">
         <name>addBodyClass</name>
         <type>function</type>
-        <docblock line="797">
+        <docblock line="800">
           <description><![CDATA[Add a body class. This would normally be output in the class attribute of
   the <body> element.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="797" name="param" description="Class name to add." type="string" variable="$class_name">
+          <tag line="800" name="param" description="Class name to add." type="string" variable="$class_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="797" name="return" description="" type="void">
+          <tag line="800" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="804">
+        <argument line="807">
           <name>$class_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="813" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="816" package="">
         <name>getBodyClasses</name>
         <type>function</type>
-        <docblock line="808">
+        <docblock line="811">
           <description><![CDATA[Get the body classes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="808" name="return" description="Array of strings." type="array">
+          <tag line="811" name="return" description="Array of strings." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="824" package="">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="827" package="">
         <name>getPageTemplate</name>
         <type>function</type>
-        <docblock line="817">
+        <docblock line="820">
           <description><![CDATA[Get the correct page template for this URL.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="817" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
+          <tag line="820" name="throws" description="If a candidate file cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="817" name="return" description="Template file name (with .tpl.php) to use." type="string">
+          <tag line="820" name="return" description="Template file name (with .tpl.php) to use." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="855" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="858" package="">
         <name>render</name>
         <type>function</type>
-        <docblock line="843">
+        <docblock line="846">
           <description><![CDATA[Perform final rendering. Call this at the end of the router's main action
   method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="843" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
+          <tag line="846" name="throws" description="If the template cannot be found." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="843" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
+          <tag line="846" name="throws" description="If the keys title or content are missing." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="843" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
+          <tag line="846" name="param" description="Array of key =&gt; value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title." type="array" variable="$variables">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="843" name="return" description="" type="void">
+          <tag line="846" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="855">
+        <argument line="858">
           <name>$variables</name>
           <default><![CDATA[]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="923" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="926" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="918">
+        <docblock line="921">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="918" name="return" description="" type="\sTemplate">
+          <tag line="921" name="return" description="" type="\sTemplate">
             <type by_reference="false">\sTemplate</type>
           </tag>
         </docblock>
@@ -2943,7 +2944,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sRequest.php" hash="85e4343d04c982e0d88ebf72d0ad21f3" package="Sutra">
+  <file path="sutra/classes/sRequest.php" hash="c5f8ad6a1b25b807ea9a664a58c7466c" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages POST requests.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2969,7 +2970,7 @@ Make this script optionally compile-able.</p>]]></long-description>
         <tag line="2" name="version" description="1.2"/>
       </docblock>
       <constant namespace="default" line="21" package="Sutra">
-        <name>LAST_POST_SESSION_KEY</name>
+        <name>LAST_POST_SESSION_KEY_PREFIX</name>
         <value><![CDATA['sPostRequest::last_post']]></value>
         <docblock line="15">
           <description><![CDATA[The key in session that holds the last POST values. The last POST values
@@ -2980,147 +2981,255 @@ Make this script optionally compile-able.</p>]]></long-description>
           </tag>
         </docblock>
       </constant>
-      <property final="false" static="true" visibility="private" line="28" package="Sutra">
+      <property final="false" static="true" visibility="private" line="166" package="Sutra">
         <name>$registered_callbacks</name>
         <default><![CDATA[array(
     'after' => array('*' => array()),
     'before' => array('*' => array()),
   )]]></default>
-        <docblock line="23">
+        <docblock line="160">
           <description><![CDATA[Registered callbacks.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="23" name="var" description="" type="array">
+          <tag line="160" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
+          <tag line="160" name="deprecated" description=""/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="46" package="">
-        <name>validatePost</name>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="29" package="">
+        <name>validateCSRFTokenCallback</name>
         <type>function</type>
-        <docblock line="33">
-          <description><![CDATA[Validate a request and redirect to a URL. All POST values are saved
-  when a validation exception occurs.]]></description>
+        <docblock line="23">
+          <description><![CDATA[Callback to validate a CSRF token. For use with fValidation.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="33" name="param" description="fValidation instance to try to validate." type="\fValidation" variable="$validation">
-            <type by_reference="false">\fValidation</type>
-          </tag>
-          <tag line="33" name="param" description="If not specified, will redirect to the same URL. Also can specify a callback to call on success." type="string|callback" variable="$redirect_to">
-            <type by_reference="false">string</type>
-            <type by_reference="false">callback</type>
-          </tag>
-          <tag line="33" name="param" description="Where to redirect if an error occurs. Also can specify a callback to call on error." type="string" variable="$error_redirect">
+          <tag line="23" name="param" description="CSRF token to validate." type="string" variable="$csrf">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="33" name="return" description="" type="void">
-            <type by_reference="false">void</type>
+          <tag line="23" name="return" description="If the CSRF token is valid." type="boolean">
+            <type by_reference="false">boolean</type>
           </tag>
-          <tag line="33" name="see" description="\sRequest::restoreLastPOSTValues()" refers="\sRequest::restoreLastPOSTValues()"/>
-          <tag line="33" name="see" description="\sRequest::deleteLastPOSTValues()" refers="\sRequest::deleteLastPOSTValues()"/>
         </docblock>
-        <argument line="46">
-          <name>$validation</name>
+        <argument line="29">
+          <name>$csrf</name>
           <default><![CDATA[]]></default>
-          <type>fValidation</type>
-        </argument>
-        <argument line="46">
-          <name>$redirect_to</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
-        <argument line="46">
-          <name>$error_redirect</name>
-          <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="94" package="">
-        <name>registerCallback</name>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="45" package="">
+        <name>savePostValues</name>
         <type>function</type>
-        <docblock line="82">
-          <description><![CDATA[Register a callback to be called after before or after validation.]]></description>
-          <long-description><![CDATA[<p>Callbacks registered should have no knowledge of other registered
-  callbacks.</p>]]></long-description>
-          <tag line="82" name="param" description="Callback." type="callback" variable="$callback">
-            <type by_reference="false">callback</type>
-          </tag>
-          <tag line="82" name="param" description="When to call. One of: 'after' for after successful validation,'before' for before any processing by the routing method." type="string" variable="$when">
+        <docblock line="38">
+          <description><![CDATA[Saves the POST values to sessions.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="82" name="param" description="URL (beginning with /) that this will be called for. By default, this is all URLs." type="string" variable="$url">
+          <tag line="38" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="38" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
+        </docblock>
+        <argument line="45">
+          <name>$id</name>
+          <default><![CDATA['main']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="60" package="">
+        <name>setPostValues</name>
+        <type>function</type>
+        <docblock line="53">
+          <description><![CDATA[Restores the last POST values for a specified ID to $_GET, $_POST, or
+  $_REQUEST.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="82" name="return" description="" type="void">
+          <tag line="53" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="94">
+        <argument line="60">
+          <name>$id</name>
+          <default><![CDATA['default']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="73" package="">
+        <name>retrievePostValues</name>
+        <type>function</type>
+        <docblock line="67">
+          <description><![CDATA[Get the saved POST values for a unique ID.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="param" description="Unique ID of the values." type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="return" description="Array of values. Can return an empty array." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$id</name>
+          <default><![CDATA['default']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="87" package="">
+        <name>deletePostValues</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[Deletes all POST values stored for a particular ID.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="81" name="param" description="Unique ID of the values." type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="81" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="87">
+          <name>$id</name>
+          <default><![CDATA['default']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="98" package="">
+        <name>restoreLastPOSTValues</name>
+        <type>function</type>
+        <docblock line="91">
+          <description><![CDATA[Restore last POST values so that they may be used in form generation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="91" name="param" description="Unique ID of the values." type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="91" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="91" name="deprecated" description=""/>
+        </docblock>
+        <argument line="98">
+          <name>$id</name>
+          <default><![CDATA['default']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="115" package="">
+        <name>registerCallback</name>
+        <type>function</type>
+        <docblock line="102">
+          <description><![CDATA[Register a callback to be called after before or after validation.]]></description>
+          <long-description><![CDATA[<p>Callbacks registered should have no knowledge of other registered
+  callbacks.</p>]]></long-description>
+          <tag line="102" name="param" description="Callback." type="callback" variable="$callback">
+            <type by_reference="false">callback</type>
+          </tag>
+          <tag line="102" name="param" description="When to call. One of: 'after' for after successful validation,'before' for before any processing by the routing method." type="string" variable="$when">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="102" name="param" description="URL (beginning with /) that this will be called for. By default, this is all URLs." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="102" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="102" name="deprecated" description=""/>
+        </docblock>
+        <argument line="115">
           <name>$callback</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="94">
+        <argument line="115">
           <name>$when</name>
           <default><![CDATA['after']]></default>
           <type/>
         </argument>
-        <argument line="94">
+        <argument line="115">
           <name>$url</name>
           <default><![CDATA['*']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="110" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="132" package="">
         <name>callCallbacks</name>
         <type>function</type>
-        <docblock line="104">
+        <docblock line="125">
           <description><![CDATA[Calls registered callbacks.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="104" name="param" description="One of: 'after', 'before'." type="string" variable="$when">
+          <tag line="125" name="param" description="One of: 'after', 'before'." type="string" variable="$when">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="104" name="return" description="" type="void">
+          <tag line="125" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
+          <tag line="125" name="deprecated" description=""/>
         </docblock>
-        <argument line="110">
+        <argument line="132">
           <name>$when</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="130" package="">
-        <name>savePOSTValues</name>
-        <type>function</type>
-        <docblock line="124">
-          <description><![CDATA[Saves the POST values to sessions.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="124" name="return" description="" type="void">
-            <type by_reference="false">void</type>
-          </tag>
-          <tag line="124" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="143" package="">
-        <name>restoreLastPOSTValues</name>
-        <type>function</type>
-        <docblock line="138">
-          <description><![CDATA[Restore last POST values so that they may be used in form generation.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="138" name="return" description="" type="void">
-            <type by_reference="false">void</type>
-          </tag>
-        </docblock>
-      </method>
       <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="155" package="">
-        <name>deleteLastPOSTValues</name>
+        <name>validateToken</name>
         <type>function</type>
-        <docblock line="150">
-          <description><![CDATA[Deletes all POST values stored.]]></description>
+        <docblock line="146">
+          <description><![CDATA[Validates a CSRF token in the 'csrf' POST/GET/PUT parameter.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="150" name="return" description="" type="void">
+          <tag line="146" name="internal" description=""/>
+          <tag line="146" name="param" description="URL to validate with." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="146" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
+          <tag line="146" name="deprecated" description=""/>
         </docblock>
+        <argument line="155">
+          <name>$url</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="185" package="">
+        <name>validatePost</name>
+        <type>function</type>
+        <docblock line="171">
+          <description><![CDATA[Validate a request and redirect to a URL. All POST values are saved
+  when a validation exception occurs.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="171" name="param" description="fValidation instance to try to validate." type="\fValidation" variable="$validation">
+            <type by_reference="false">\fValidation</type>
+          </tag>
+          <tag line="171" name="param" description="If not specified, will redirect to the same URL. Also can specify a callback to call on success." type="string|callback" variable="$redirect_to">
+            <type by_reference="false">string</type>
+            <type by_reference="false">callback</type>
+          </tag>
+          <tag line="171" name="param" description="Where to redirect if an error occurs. Also can specify a callback to call on error." type="string" variable="$error_redirect">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="171" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="171" name="see" description="\sRequest::restoreLastPOSTValues()" refers="\sRequest::restoreLastPOSTValues()"/>
+          <tag line="171" name="see" description="\sRequest::deleteLastPOSTValues()" refers="\sRequest::deleteLastPOSTValues()"/>
+          <tag line="171" name="deprecated" description=""/>
+        </docblock>
+        <argument line="185">
+          <name>$validation</name>
+          <default><![CDATA[]]></default>
+          <type>fValidation</type>
+        </argument>
+        <argument line="185">
+          <name>$redirect_to</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+        <argument line="185">
+          <name>$error_redirect</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
       </method>
     </class>
   </file>
@@ -3426,7 +3535,131 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sHTML.php" hash="0c87fe59c79fcb1ec2f4be0bc8ea41c5" package="Sutra">
+  <file path="sutra/classes/sCore.php" hash="c4cf5ba972c6ab94f020559557ae1091" package="Sutra">
+    <docblock line="2">
+      <description><![CDATA[This class is optional to use. It is generally for use as the core class of
+  the site.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 bne1."/>
+      <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@bne1.com&gt;"/>
+      <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="package" description="Sutra"/>
+      <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
+      <tag line="2" name="version" description="1.2"/>
+    </docblock>
+    <class final="false" abstract="true" namespace="default" line="15" package="Sutra">
+      <name>sCore</name>
+      <full_name>\sCore</full_name>
+      <extends>\fCore</extends>
+      <docblock line="2">
+        <description><![CDATA[This class is optional to use. It is generally for use as the core class of
+  the site.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="copyright" description="Copyright (c) 2012 bne1."/>
+        <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@bne1.com&gt;"/>
+        <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
+        <tag line="2" name="package" description="Sutra"/>
+        <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
+        <tag line="2" name="version" description="1.2"/>
+      </docblock>
+      <property final="false" static="true" visibility="protected" line="21" package="Sutra">
+        <name>$cache</name>
+        <default><![CDATA[NULL]]></default>
+        <docblock line="16">
+          <description><![CDATA[The cache.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="16" name="var" description="" type="\sCache|\fCache">
+            <type by_reference="false">\sCache</type>
+            <type by_reference="false">\fCache</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="true" visibility="protected" line="28" package="Sutra">
+        <name>$db</name>
+        <default><![CDATA[NULL]]></default>
+        <docblock line="23">
+          <description><![CDATA[The fDatabase instance.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="\fDatabase">
+            <type by_reference="false">\fDatabase</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="35" package="">
+        <name>getCache</name>
+        <type>function</type>
+        <docblock line="30">
+          <description><![CDATA[Get the site cache. Can use sCache or fCache. They are both compatible.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="30" name="return" description="The fCache/sCache instance." type="\sCache|\fCache">
+            <type by_reference="false">\sCache</type>
+            <type by_reference="false">\fCache</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="50" package="">
+        <name>getDatabase</name>
+        <type>function</type>
+        <docblock line="39">
+          <description><![CDATA[Get the site database instance. This is useful for getting database
+  information or using SQL queries with methods such as
+  translatedExcecute.]]></description>
+          <long-description><![CDATA[<p>This method can also be used to configure fORM if that is desired.</p>]]></long-description>
+          <tag line="39" name="return" description="The fDatabase instance." type="\fDatabase">
+            <type by_reference="false">\fDatabase</type>
+          </tag>
+          <tag line="39" name="see" description="\fDatabase::translatedExcecute()" refers="\fDatabase::translatedExcecute()"/>
+          <tag line="39" name="see" description="\fORMDatabase::attach()" refers="\fORMDatabase::attach()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="61" package="">
+        <name>configureSession</name>
+        <type>function</type>
+        <docblock line="54">
+          <description><![CDATA[Configures session settings.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="54" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="54" name="see" description="\fSession::setLength()" refers="\fSession::setLength()"/>
+          <tag line="54" name="see" description="\fSession::setBackend()" refers="\fSession::setBackend()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="74" package="">
+        <name>configureAuthorization</name>
+        <type>function</type>
+        <docblock line="67">
+          <description><![CDATA[Configures authorisation.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="67" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="67" name="see" description="\fAuthorization::setAuthLevels()" refers="\fAuthorization::setAuthLevels()"/>
+          <tag line="67" name="see" description="\fAuthorization::setLoginPage()" refers="\fAuthorization::setLoginPage()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="94" package="">
+        <name>main</name>
+        <type>function</type>
+        <docblock line="79">
+          <description><![CDATA[Example entry point. This would be called from index.php or similar file.]]></description>
+          <long-description><![CDATA[<p>Calls to set up the database, configure session, configure authorisation,
+  and set up the exception handler.</p>
+
+<p>After these calls, it's expected that the template (sTemplate) will be
+  set up and that a router (such as Moor) will be used to continue the
+  request.</p>]]></long-description>
+          <tag line="79" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="79" name="see" description="\fCore::getDatabase()" refers="\fCore::getDatabase()"/>
+          <tag line="79" name="see" description="\fCore::configureSession()" refers="\fCore::configureSession()"/>
+          <tag line="79" name="see" description="\fCore::configureAuthorization()" refers="\fCore::configureAuthorization()"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="sutra/classes/sHTML.php" hash="cf5d76cbf1a47dacc7f40f9636b4999b" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Library to help with rendering HTML tags cleanly and validly. Note that
   only some element attributes are checked for validity and fixed.]]></description>
@@ -3464,83 +3697,7 @@ Make this script optionally compile-able.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="true" visibility="private" line="28" package="Sutra">
-        <name>$safe_ascii</name>
-        <default><![CDATA[array(
-    'A',
-    'B',
-    'C',
-    'D',
-    'E',
-    'F',
-    'G',
-    'H',
-    'I',
-    'J',
-    'K',
-    'L',
-    'M',
-    'N',
-    'O',
-    'P',
-    'Q',
-    'R',
-    'S',
-    'T',
-    'U',
-    'V',
-    'W',
-    'X',
-    'Y',
-    'Z',
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
-    '0',
-    '1',
-    '2',
-    '3',
-    '4',
-    '5',
-    '6',
-    '7',
-    '8',
-    '9',
-    '0',
-    '-',
-  )]]></default>
-        <docblock line="23">
-          <description><![CDATA[ASCII safe values used by stripNonASCIIFromString.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="23" name="var" description="" type="array">
-            <type by_reference="false">array</type>
-          </tag>
-        </docblock>
-      </property>
-      <property final="false" static="true" visibility="private" line="102" package="Sutra">
+      <property final="false" static="true" visibility="private" line="30" package="Sutra">
         <name>$input_type_values</name>
         <default><![CDATA[array(
     'hidden',
@@ -3568,16 +3725,16 @@ Make this script optionally compile-able.</p>]]></long-description>
     'reset',
     'button',
   )]]></default>
-        <docblock line="95">
+        <docblock line="23">
           <description><![CDATA[Valid values for the element input type attribute.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="95" name="link" description="http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute" link="http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute"/>
-          <tag line="95" name="var" description="" type="array">
+          <tag line="23" name="link" description="http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute" link="http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute"/>
+          <tag line="23" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="true" visibility="private" line="135" package="Sutra">
+      <property final="false" static="true" visibility="private" line="63" package="Sutra">
         <name>$special_enumerated_attributes</name>
         <default><![CDATA[array(
     'spellcheck' => array(
@@ -3589,16 +3746,16 @@ Make this script optionally compile-able.</p>]]></long-description>
       FALSE => 'off',
     ),
   )]]></default>
-        <docblock line="129">
+        <docblock line="57">
           <description><![CDATA[Special attributes like spellcheck and their valid values for states on
   and off (enumerated attributes that only have on/off states).]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="129" name="var" description="" type="array">
+          <tag line="57" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <property final="false" static="true" visibility="private" line="151" package="Sutra">
+      <property final="false" static="true" visibility="private" line="79" package="Sutra">
         <name>$boolean_attributes</name>
         <default><![CDATA[array(
     'scoped',
@@ -3621,403 +3778,375 @@ Make this script optionally compile-able.</p>]]></long-description>
     'hidden',
     'truespeed',
   )]]></default>
-        <docblock line="146">
+        <docblock line="74">
           <description><![CDATA[Boolean attributes that must be omitted if the state is to be off.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="146" name="var" description="" type="array">
+          <tag line="74" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="179" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="107" package="">
         <name>formElementIDWithName</name>
         <type>function</type>
-        <docblock line="173">
+        <docblock line="101">
           <description><![CDATA[Create a form element ID.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="173" name="param" description="Name attribute of the element." type="string" variable="$name">
+          <tag line="101" name="param" description="Name attribute of the element." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="173" name="return" description="Unique identifier for use with the id attribute." type="string">
+          <tag line="101" name="return" description="Unique identifier for use with the id attribute." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="179">
+        <argument line="107">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="210" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="138" package="">
         <name>makeTextarea</name>
         <type>function</type>
-        <docblock line="203">
+        <docblock line="131">
           <description><![CDATA[Handles creating textarea tags.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="203" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="131" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="203" name="param" description="Label HTML." type="string" variable="$label">
+          <tag line="131" name="param" description="Label HTML." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="203" name="param" description="Attributes." type="array" variable="$attributes">
+          <tag line="131" name="param" description="Attributes." type="array" variable="$attributes">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="210">
+        <argument line="138">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="210">
+        <argument line="138">
           <name>$label</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
-        <argument line="210">
+        <argument line="138">
           <name>$attributes</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="232" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="160" package="">
         <name>makeSelectElement</name>
         <type>function</type>
-        <docblock line="225">
+        <docblock line="153">
           <description><![CDATA[Handles creating select fields with options.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="225" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="153" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="225" name="param" description="Label HTML." type="string" variable="$label">
+          <tag line="153" name="param" description="Label HTML." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="225" name="param" description="Attributes." type="array" variable="$attributes">
+          <tag line="153" name="param" description="Attributes." type="array" variable="$attributes">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="232">
+        <argument line="160">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="232">
+        <argument line="160">
           <name>$label</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
-        <argument line="232">
+        <argument line="160">
           <name>$attributes</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="295" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="223" package="">
         <name>makeFormElement</name>
         <type>function</type>
-        <docblock line="277">
+        <docblock line="205">
           <description><![CDATA[Create a form element.]]></description>
           <long-description><![CDATA[<p>If specifying a select element, it may be desirable to have a default
   selected option. To do so, specify a 'value' key with a string value
   in the $attr argument. For optgroups, use a 2-dimensional array in
   the 'options' key in the $attr argument.</p>]]></long-description>
-          <tag line="277" name="throws" description="If the type argument is invalid." type="\fProgrammerException">
+          <tag line="205" name="throws" description="If the type argument is invalid." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="277" name="param" description="One of the HTML 5 element types for use with the input tags, 'select', and 'textarea'." type="string" variable="$type">
+          <tag line="205" name="param" description="One of the HTML 5 element types for use with the input tags, 'select', and 'textarea'." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="277" name="param" description="Form element name, unique to the form." type="string" variable="$name">
+          <tag line="205" name="param" description="Form element name, unique to the form." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="277" name="param" description="Array of key =&gt; value attributes. Use 'label' to provide a string for use with a label element (which will have the for attribute set properly)." type="array" variable="$attr">
+          <tag line="205" name="param" description="Array of key =&gt; value attributes. Use 'label' to provide a string for use with a label element (which will have the for attribute set properly)." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="277" name="return" description="HTML tags ready for use." type="string">
+          <tag line="205" name="return" description="HTML tags ready for use." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="295">
+        <argument line="223">
           <name>$type</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="295">
+        <argument line="223">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="295">
+        <argument line="223">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="368" package="">
-        <name>stripNonASCIIFromString</name>
-        <type>function</type>
-        <docblock line="359">
-          <description><![CDATA[Strip out non-ASCII characters and accents out of the string.]]></description>
-          <long-description><![CDATA[<p>Basically, this removes all characters NOT within the range of:
-  ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890-</p>]]></long-description>
-          <tag line="359" name="param" description="String to process." type="string" variable="$str">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="359" name="param" description="Lower case if set to TRUE (default)." type="boolean" variable="$lower">
-            <type by_reference="false">boolean</type>
-          </tag>
-          <tag line="359" name="return" description="String, processed." type="string">
-            <type by_reference="false">string</type>
-          </tag>
-        </docblock>
-        <argument line="368">
-          <name>$str</name>
-          <default><![CDATA[]]></default>
-          <type/>
-        </argument>
-        <argument line="368">
-          <name>$lower</name>
-          <default><![CDATA[TRUE]]></default>
-          <type/>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="397" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="296" package="">
         <name>validAttributeValue</name>
         <type>function</type>
-        <docblock line="388">
+        <docblock line="287">
           <description><![CDATA[Get a valid value for an enumerated (only ones that represent on or off)
   or boolean attribute.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="388" name="param" description="Attribute name." type="string" variable="$attribute_name">
+          <tag line="287" name="param" description="Attribute name." type="string" variable="$attribute_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="388" name="param" description="Boolean value for the attribute." type="boolean" variable="$value">
+          <tag line="287" name="param" description="Boolean value for the attribute." type="boolean" variable="$value">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="388" name="return" description="If this function returns FALSE, the attribute must be omitted." type="boolean">
+          <tag line="287" name="return" description="If this function returns FALSE, the attribute must be omitted." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
-        <argument line="397">
+        <argument line="296">
           <name>$attribute_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="397">
+        <argument line="296">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="413" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="312" package="">
         <name>attributesString</name>
         <type>function</type>
-        <docblock line="406">
+        <docblock line="305">
           <description><![CDATA[Convert an array of key => value attributes for an HTML tag to a
   string for use in HTML.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="406" name="param" description="Attributes array." type="array" variable="$attr">
+          <tag line="305" name="param" description="Attributes array." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="406" name="return" description="String ready for use within HTML tag." type="string">
+          <tag line="305" name="return" description="String ready for use within HTML tag." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="413">
+        <argument line="312">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="468" package="">
+      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="367" package="">
         <name>tagRequiresEnd</name>
         <type>function</type>
-        <docblock line="459">
+        <docblock line="358">
           <description><![CDATA[Some tags require end tags while some others do not. Example: <p> does
   not in HTML, but in XHTML like all tags requires an end tag. However,
   some browsers are not going to do the same thing when encountering
   several <p> tags with no endings, so it returns TRUE.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="459" name="param" description="Tag name." type="string" variable="$tag">
+          <tag line="358" name="param" description="Tag name." type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="459" name="return" description="TRUE if the end tag is required, FALSE otherwise." type="bool">
+          <tag line="358" name="return" description="TRUE if the end tag is required, FALSE otherwise." type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
-        <argument line="468">
+        <argument line="367">
           <name>$tag</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="488" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="387" package="">
         <name>tag</name>
         <type>function</type>
-        <docblock line="480">
+        <docblock line="379">
           <description><![CDATA[Create a tag HTML string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="480" name="param" description="Tag name." type="string" variable="$tag">
+          <tag line="379" name="param" description="Tag name." type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="480" name="param" description="Attributes array." type="array" variable="$attr">
+          <tag line="379" name="param" description="Attributes array." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="480" name="param" description="Content to place within HTML. If the tag never uses an end tag, this parameter will be ignored. In particular, &lt;input&gt;, &lt;link&gt; and similar tags." type="string" variable="$content">
+          <tag line="379" name="param" description="Content to place within HTML. If the tag never uses an end tag, this parameter will be ignored. In particular, &lt;input&gt;, &lt;link&gt; and similar tags." type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="480" name="return" description="HTML tag, ready to be displayed." type="string">
+          <tag line="379" name="return" description="HTML tag, ready to be displayed." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="488">
+        <argument line="387">
           <name>$tag</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="488">
+        <argument line="387">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
-        <argument line="488">
+        <argument line="387">
           <name>$content</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="516" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="415" package="">
         <name>conditionalTag</name>
         <type>function</type>
-        <docblock line="507">
+        <docblock line="406">
           <description><![CDATA[Create a tag HTML string wrapped by a MSIE conditional comment.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="507" name="param" description="The IE rule. Examples: 'lt IE 9', 'IE 8', 'gt IE 6'." type="string" variable="$rule">
+          <tag line="406" name="param" description="The IE rule. Examples: 'lt IE 9', 'IE 8', 'gt IE 6'." type="string" variable="$rule">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="507" name="param" description="Tag name." type="string" variable="$tag">
+          <tag line="406" name="param" description="Tag name." type="string" variable="$tag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="507" name="param" description="Attributes array." type="array" variable="$attr">
+          <tag line="406" name="param" description="Attributes array." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="507" name="param" description="Content to place within the HTML." type="string" variable="$content">
+          <tag line="406" name="param" description="Content to place within the HTML." type="string" variable="$content">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="507" name="return" description="The HTML tag, ready to be displayed." type="string">
+          <tag line="406" name="return" description="The HTML tag, ready to be displayed." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="516">
+        <argument line="415">
           <name>$rule</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="516">
+        <argument line="415">
           <name>$tag</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="516">
+        <argument line="415">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
-        <argument line="516">
+        <argument line="415">
           <name>$content</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="528" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="427" package="">
         <name>linkIsURI</name>
         <type>function</type>
-        <docblock line="521">
+        <docblock line="420">
           <description><![CDATA[Check if a URL is a full URI or not.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="521" name="param" description="URL to check." type="string" variable="$url">
+          <tag line="420" name="param" description="URL to check." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="521" name="param" description="Other protocols to check." type="array" variable="$other_protocols">
+          <tag line="420" name="param" description="Other protocols to check." type="array" variable="$other_protocols">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="521" name="return" description="TRUE if the path is full URI beginning with http or https, FALSE otherwise." type="bool">
+          <tag line="420" name="return" description="TRUE if the path is full URI beginning with http or https, FALSE otherwise." type="bool">
             <type by_reference="false">bool</type>
           </tag>
         </docblock>
-        <argument line="528">
+        <argument line="427">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="528">
+        <argument line="427">
           <name>$other_protocols</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="549" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="448" package="">
         <name>paragraphify</name>
         <type>function</type>
-        <docblock line="543">
+        <docblock line="442">
           <description><![CDATA[Create paragraphs from 2 or more new lines.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="543" name="param" description="Unfiltered string to paragraphify." type="string" variable="$html">
+          <tag line="442" name="param" description="Unfiltered string to paragraphify." type="string" variable="$html">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="543" name="return" description="" type="string">
+          <tag line="442" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="549">
+        <argument line="448">
           <name>$html</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="580" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="479" package="">
         <name>makeList</name>
         <type>function</type>
-        <docblock line="569">
+        <docblock line="468">
           <description><![CDATA[Create a list. 'first', 'last', 'odd', 'even', 'item-INDEX' classes
   will be automatically added to each li element.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="569" name="param" description="Array of strings." type="array" variable="$items">
+          <tag line="468" name="param" description="Array of strings." type="array" variable="$items">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="569" name="param" description="'ul' or 'ol', defaults to 'ul' even if an invalid value is passed." type="string" variable="$type">
+          <tag line="468" name="param" description="'ul' or 'ol', defaults to 'ul' even if an invalid value is passed." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="569" name="param" description="Array of attributes for the parent element." type="array" variable="$attr">
+          <tag line="468" name="param" description="Array of attributes for the parent element." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="569" name="return" description="" type="string">
+          <tag line="468" name="return" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="580">
+        <argument line="479">
           <name>$items</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="580">
+        <argument line="479">
           <name>$type</name>
           <default><![CDATA['ul']]></default>
           <type/>
         </argument>
-        <argument line="580">
+        <argument line="479">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="628" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="527" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="623">
+        <docblock line="522">
           <description><![CDATA[Private to force use as static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="623" name="return" description="" type="\sHTML">
+          <tag line="522" name="return" description="" type="\sHTML">
             <type by_reference="false">\sHTML</type>
           </tag>
         </docblock>
@@ -48152,5 +48281,5 @@ except for the last, which will contain between 1 and ceil(…) records.</p>]]><
   <namespace name="default" full_name="default"/>
   <marker count="1">todo</marker>
   <marker count="0">fixme</marker>
-  <deprecated count="0"/>
+  <deprecated count="6"/>
 </project>
