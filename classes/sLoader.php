@@ -28,6 +28,7 @@ class sLoader extends fLoader {
     'sArray',
     'sAuthorization',
     'sCache',
+    'sCore',
     'sGrammar',
     'sHTML',
     'sImage',

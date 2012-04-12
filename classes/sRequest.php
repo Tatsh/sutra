@@ -99,7 +99,6 @@ class sRequest extends fRequest {
     self::setPostValues($id);
   }
 
-
   /**
    * Register a callback to be called after before or after validation.
    *   Callbacks registered should have no knowledge of other registered
