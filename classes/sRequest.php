@@ -13,6 +13,15 @@
  */
 class sRequest extends fRequest {
   /**
+   * This is for a nice looking callback when using
+   *   fValidation::addCallbackRule().
+   *
+   * @var string
+   * @see fValidation::addCallbackRule()
+   */
+  const validateCSRFTokenCallback = 'sRequest::validateCSRFTokenCallback';
+
+  /**
    * The key in session that holds the last POST values. The last POST values
    *   are only stored when a validation error occurs.
    *
