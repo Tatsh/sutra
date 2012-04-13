@@ -288,4 +288,42 @@ class sHTTPRequest {
   public function send($reconnect = FALSE) {
     return $this->connect($reconnect);
   }
+
+  /**
+   * Gets data from a JSON source and parses it through fJSON::decode() or
+   *   json_decode() (if available).
+   *
+   * @throws fProgrammerException If the JSON decoding functions are not
+   *   available.
+   *
+   * @param string $url Full HTTP URL.
+   * @param boolean $assoc If the data should be returned as associative array.
+   * @param integer $timeout Timeout in seconds.
+   * @return mixed JSON decoded value. Can return NULL.
+   *
+   * @see fJSON::decode()
+   * @see json_decode()
+   */
+  public static function getJSON($url, $assoc = FALSE, $timeout = NULL) {
+    $use_fjson = $use_json_decode = FALSE;
+
+    if (class_exists('fJSON')) {
+      $use_fjson = TRUE;
+    }
+    else if (function_exists('json_decode')) {
+      $use_json_decode = TRUE;
+    }
+    if (!$use_fjson && !$use_json_decode) {
+      throw new fProgrammerException('You need to have the fJSON class or the json_decode() function available.');
+    }
+
+    $req = new self($url, 'GET', $timeout);
+    $data = $req->getData();
+
+    if ($use_json_decode) {
+      return json_decode($data, $assoc);
+    }
+
+    return fJSON::decode($data, $assoc);
+  }
 }
