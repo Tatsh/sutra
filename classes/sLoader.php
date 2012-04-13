@@ -31,7 +31,7 @@ class sLoader extends fLoader {
     'sCore',
     'sGrammar',
     'sHTML',
-    'sHTTP',
+    'sHTTPRequest',
     'sImage',
     'sJSONP',
     'sNumber',
