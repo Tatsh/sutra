@@ -72,6 +72,12 @@
 <li class="method public inherited"><a href="#enableErrorHandling" title="enableErrorHandling :: Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps"><span class="description">Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps</span><pre>enableErrorHandling()</pre></a></li>
 <li class="method public inherited"><a href="#enableExceptionHandling" title="enableExceptionHandling :: Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps"><span class="description">Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps</span><pre>enableExceptionHandling()</pre></a></li>
 <li class="method public inherited"><a href="#expose" title="expose :: Prints the ::dump() of a value"><span class="description">Prints the ::dump() of a value</span><pre>expose()</pre></a></li>
+<li class="method public "><a href="#getCache" title="getCache :: Get the site cache. Can use sCache or fCache. They are both compatible."><span class="description">Get the site cache. Can use sCache or fCache. They are both compatible.</span><pre>getCache()</pre></a></li>
+<li class="method public "><a href="#getDatabase" title="getDatabase :: Get the site database instance. This is useful for getting database
+  information or using SQL queries with methods such as
+  translatedExcecute."><span class="description">Get the site database instance. This is useful for getting database
+  information or using SQL queries with methods such as
+  translatedExcecute.</span><pre>getDatabase()</pre></a></li>
 <li class="method public inherited"><a href="#getDebug" title="getDebug :: If debugging is enabled"><span class="description">If debugging is enabled</span><pre>getDebug()</pre></a></li>
 <li class="method public "><a href="#main" title="main :: Example entry point. This would be called from index.php or similar file."><span class="description">Example entry point. This would be called from index.php or similar file.</span><pre>main()</pre></a></li>
 <li class="method public inherited"><a href="#registerDebugCallback" title="registerDebugCallback :: Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message"><span class="description">Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</span><pre>registerDebugCallback()</pre></a></li>
@@ -80,12 +86,6 @@
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#configureAuthorization" title="configureAuthorization :: Configures authorisation."><span class="description">Configures authorisation.</span><pre>configureAuthorization()</pre></a></li>
 <li class="method protected "><a href="#configureSession" title="configureSession :: Configures session settings."><span class="description">Configures session settings.</span><pre>configureSession()</pre></a></li>
-<li class="method protected "><a href="#getCache" title="getCache :: Get the site cache. Can use sCache or fCache. They are both compatible."><span class="description">Get the site cache. Can use sCache or fCache. They are both compatible.</span><pre>getCache()</pre></a></li>
-<li class="method protected "><a href="#getDatabase" title="getDatabase :: Get the site database instance. This is useful for getting database
-  information or using SQL queries with methods such as
-  translatedExcecute."><span class="description">Get the site database instance. This is useful for getting database
-  information or using SQL queries with methods such as
-  translatedExcecute.</span><pre>getDatabase()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private inherited"><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private inherited"><a href="#checkDestination" title="checkDestination :: Checks an error/exception destination to make sure it is valid"><span class="description">Checks an error/exception destination to make sure it is valid</span><pre>checkDestination()</pre></a></li>
@@ -545,6 +545,40 @@ line break (<code>\n</code>).</p>
 <code>mixed</code><p>The value to show</p></div>
 </div></div>
 </div>
+<a name="getCache" id="getCache"></a><div class="element clickable method public getCache" data-toggle="collapse" data-target=".getCache .collapse">
+<h2>Get the site cache. Can use sCache or fCache. They are both compatible.</h2>
+<pre>getCache() : <a href="../classes/sCache.html">\sCache</a> | <a href="../classes/fCache.html">\fCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCache.html">\sCache</a></code><code><a href="../classes/fCache.html">\fCache</a></code>The fCache/sCache instance.</div>
+</div></div>
+</div>
+<a name="getDatabase" id="getDatabase"></a><div class="element clickable method public getDatabase" data-toggle="collapse" data-target=".getDatabase .collapse">
+<h2>Get the site database instance. This is useful for getting database
+  information or using SQL queries with methods such as
+  translatedExcecute.</h2>
+<pre>getDatabase() : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method can also be used to configure fORM if that is desired.</p></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\fDatabase::translatedExcecute()</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\fORMDatabase::attach()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code>The fDatabase instance.</div>
+</div></div>
+</div>
 <a name="getDebug" id="getDebug"></a><div class="element clickable method public getDebug" data-toggle="collapse" data-target=".getDebug .collapse">
 <h2>If debugging is enabled</h2>
 <pre>getDebug(boolean $force) : boolean</pre>
@@ -680,40 +714,6 @@ line break (<code>\n</code>).</p>
 <td>\fSession::setBackend()</td>
 </tr>
 </table>
-</div></div>
-</div>
-<a name="getCache" id="getCache"></a><div class="element clickable method protected getCache" data-toggle="collapse" data-target=".getCache .collapse">
-<h2>Get the site cache. Can use sCache or fCache. They are both compatible.</h2>
-<pre>getCache() : <a href="../classes/sCache.html">\sCache</a> | <a href="../classes/fCache.html">\fCache</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/sCache.html">\sCache</a></code><code><a href="../classes/fCache.html">\fCache</a></code>The fCache/sCache instance.</div>
-</div></div>
-</div>
-<a name="getDatabase" id="getDatabase"></a><div class="element clickable method protected getDatabase" data-toggle="collapse" data-target=".getDatabase .collapse">
-<h2>Get the site database instance. This is useful for getting database
-  information or using SQL queries with methods such as
-  translatedExcecute.</h2>
-<pre>getDatabase() : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method can also be used to configure fORM if that is desired.</p></p>
-<table class="table table-bordered">
-<tr>
-<th>see</th>
-<td>\fDatabase::translatedExcecute()</td>
-</tr>
-<tr>
-<th>see</th>
-<td>\fORMDatabase::attach()</td>
-</tr>
-</table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code>The fDatabase instance.</div>
 </div></div>
 </div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
@@ -1347,7 +1347,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-12T12:43:55-05:00.<br></footer></div>
+            generated on 2012-04-12T19:49:07-05:00.<br></footer></div>
 </div>
 </body>
 </html>

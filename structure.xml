@@ -168,7 +168,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sHTTPRequest.php" hash="85d331e85cde5c7df962887f74ef60be" package="Sutra">
+  <file path="sutra/classes/sHTTPRequest.php" hash="efb255db8f166296fa60a5d24e7047b5" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Interface to making HTTP requests.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -549,6 +549,47 @@
         <argument line="288">
           <name>$reconnect</name>
           <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="307" package="">
+        <name>getJSON</name>
+        <type>function</type>
+        <docblock line="292">
+          <description><![CDATA[Gets data from a JSON source and parses it through fJSON::decode() or
+  json_decode() (if available).]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="292" name="throws" description="If the JSON decoding functions are not available." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="292" name="param" description="Full HTTP URL." type="string" variable="$url">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="292" name="param" description="If the data should be returned as associative array." type="boolean" variable="$assoc">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="292" name="param" description="Timeout in seconds." type="integer" variable="$timeout">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="292" name="return" description="JSON decoded value. Can return NULL." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="292" name="see" description="\fJSON::decode()" refers="\fJSON::decode()"/>
+          <tag line="292" name="see" description="\json_decode()" refers="\json_decode()"/>
+        </docblock>
+        <argument line="307">
+          <name>$url</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="307">
+          <name>$assoc</name>
+          <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
+        <argument line="307">
+          <name>$timeout</name>
+          <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
@@ -1652,7 +1693,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sLoader.php" hash="20affec3db10a7a3f56c2924a28d4c9a" package="Sutra">
+  <file path="sutra/classes/sLoader.php" hash="2659820ce2ce93c8a6702bbd2e4f7437" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages loading of classes.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -1697,7 +1738,7 @@
     'sCore',
     'sGrammar',
     'sHTML',
-    'sHTTP',
+    'sHTTPRequest',
     'sImage',
     'sJSONP',
     'sNumber',
@@ -3331,7 +3372,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sRequest.php" hash="7f92722c3a28ad81f471965044d99582" package="Sutra">
+  <file path="sutra/classes/sRequest.php" hash="3d62b9e94961dd67c00b2bee747ccc24" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages POST requests.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -3356,264 +3397,277 @@ Make this script optionally compile-able.</p>]]></long-description>
         <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
         <tag line="2" name="version" description="1.2"/>
       </docblock>
-      <constant namespace="default" line="21" package="Sutra">
-        <name>LAST_POST_SESSION_KEY_PREFIX</name>
-        <value><![CDATA['sPostRequest::last_post']]></value>
+      <constant namespace="default" line="22" package="Sutra">
+        <name>validateCSRFTokenCallback</name>
+        <value><![CDATA['sRequest::validateCSRFTokenCallback']]></value>
         <docblock line="15">
-          <description><![CDATA[The key in session that holds the last POST values. The last POST values
-  are only stored when a validation error occurs.]]></description>
+          <description><![CDATA[This is for a nice looking callback when using
+  fValidation::addCallbackRule().]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="15" name="var" description="" type="string">
             <type by_reference="false">string</type>
           </tag>
+          <tag line="15" name="see" description="\fValidation::addCallbackRule()" refers="\fValidation::addCallbackRule()"/>
         </docblock>
       </constant>
-      <property final="false" static="true" visibility="private" line="167" package="Sutra">
+      <constant namespace="default" line="30" package="Sutra">
+        <name>LAST_POST_SESSION_KEY_PREFIX</name>
+        <value><![CDATA['sPostRequest::last_post']]></value>
+        <docblock line="24">
+          <description><![CDATA[The key in session that holds the last POST values. The last POST values
+  are only stored when a validation error occurs.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="true" visibility="private" line="176" package="Sutra">
         <name>$registered_callbacks</name>
         <default><![CDATA[array(
     'after' => array('*' => array()),
     'before' => array('*' => array()),
   )]]></default>
-        <docblock line="161">
+        <docblock line="170">
           <description><![CDATA[Registered callbacks.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="161" name="var" description="" type="array">
+          <tag line="170" name="var" description="" type="array">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="161" name="deprecated" description=""/>
+          <tag line="170" name="deprecated" description=""/>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="30" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="39" package="">
         <name>validateCSRFTokenCallback</name>
         <type>function</type>
-        <docblock line="23">
+        <docblock line="32">
           <description><![CDATA[Callback to validate a CSRF token. For use with fValidation.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="23" name="param" description="CSRF token to validate." type="string" variable="$csrf">
+          <tag line="32" name="param" description="CSRF token to validate." type="string" variable="$csrf">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="23" name="return" description="If the CSRF token is valid." type="boolean">
+          <tag line="32" name="return" description="If the CSRF token is valid." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="23" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
+          <tag line="32" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
         </docblock>
-        <argument line="30">
+        <argument line="39">
           <name>$csrf</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="46" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="55" package="">
         <name>savePostValues</name>
         <type>function</type>
-        <docblock line="39">
+        <docblock line="48">
           <description><![CDATA[Saves the POST values to sessions.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="39" name="param" description="Unique ID of the values." type="string" variable="$id">
+          <tag line="48" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="39" name="return" description="" type="void">
+          <tag line="48" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="39" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
+          <tag line="48" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
         </docblock>
-        <argument line="46">
+        <argument line="55">
           <name>$id</name>
           <default><![CDATA['main']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="61" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="70" package="">
         <name>setPostValues</name>
         <type>function</type>
-        <docblock line="54">
+        <docblock line="63">
           <description><![CDATA[Restores the last POST values for a specified ID to $_GET, $_POST, or
   $_REQUEST.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="54" name="param" description="Unique ID of the values." type="string" variable="$id">
+          <tag line="63" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="54" name="return" description="" type="void">
+          <tag line="63" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="61">
+        <argument line="70">
           <name>$id</name>
           <default><![CDATA['default']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="74" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="83" package="">
         <name>retrievePostValues</name>
         <type>function</type>
-        <docblock line="68">
+        <docblock line="77">
           <description><![CDATA[Get the saved POST values for a unique ID.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="68" name="param" description="Unique ID of the values." type="string" variable="$id">
+          <tag line="77" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="68" name="return" description="Array of values. Can return an empty array." type="array">
+          <tag line="77" name="return" description="Array of values. Can return an empty array." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="74">
+        <argument line="83">
           <name>$id</name>
           <default><![CDATA['default']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="88" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="97" package="">
         <name>deletePostValues</name>
         <type>function</type>
-        <docblock line="82">
+        <docblock line="91">
           <description><![CDATA[Deletes all POST values stored for a particular ID.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="82" name="param" description="Unique ID of the values." type="string" variable="$id">
+          <tag line="91" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="82" name="return" description="" type="void">
+          <tag line="91" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="88">
+        <argument line="97">
           <name>$id</name>
           <default><![CDATA['default']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="99" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="108" package="">
         <name>restoreLastPOSTValues</name>
         <type>function</type>
-        <docblock line="92">
+        <docblock line="101">
           <description><![CDATA[Restore last POST values so that they may be used in form generation.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="92" name="param" description="Unique ID of the values." type="string" variable="$id">
+          <tag line="101" name="param" description="Unique ID of the values." type="string" variable="$id">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="92" name="return" description="" type="void">
+          <tag line="101" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="92" name="deprecated" description=""/>
+          <tag line="101" name="deprecated" description=""/>
         </docblock>
-        <argument line="99">
+        <argument line="108">
           <name>$id</name>
           <default><![CDATA['default']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="116" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="125" package="">
         <name>registerCallback</name>
         <type>function</type>
-        <docblock line="103">
+        <docblock line="112">
           <description><![CDATA[Register a callback to be called after before or after validation.]]></description>
           <long-description><![CDATA[<p>Callbacks registered should have no knowledge of other registered
   callbacks.</p>]]></long-description>
-          <tag line="103" name="param" description="Callback." type="callback" variable="$callback">
+          <tag line="112" name="param" description="Callback." type="callback" variable="$callback">
             <type by_reference="false">callback</type>
           </tag>
-          <tag line="103" name="param" description="When to call. One of: 'after' for after successful validation,'before' for before any processing by the routing method." type="string" variable="$when">
+          <tag line="112" name="param" description="When to call. One of: 'after' for after successful validation,'before' for before any processing by the routing method." type="string" variable="$when">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="103" name="param" description="URL (beginning with /) that this will be called for. By default, this is all URLs." type="string" variable="$url">
+          <tag line="112" name="param" description="URL (beginning with /) that this will be called for. By default, this is all URLs." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="103" name="return" description="" type="void">
+          <tag line="112" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="103" name="deprecated" description=""/>
+          <tag line="112" name="deprecated" description=""/>
         </docblock>
-        <argument line="116">
+        <argument line="125">
           <name>$callback</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="116">
+        <argument line="125">
           <name>$when</name>
           <default><![CDATA['after']]></default>
           <type/>
         </argument>
-        <argument line="116">
+        <argument line="125">
           <name>$url</name>
           <default><![CDATA['*']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="133" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="142" package="">
         <name>callCallbacks</name>
         <type>function</type>
-        <docblock line="126">
+        <docblock line="135">
           <description><![CDATA[Calls registered callbacks.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="126" name="param" description="One of: 'after', 'before'." type="string" variable="$when">
+          <tag line="135" name="param" description="One of: 'after', 'before'." type="string" variable="$when">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="126" name="return" description="" type="void">
+          <tag line="135" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="126" name="deprecated" description=""/>
+          <tag line="135" name="deprecated" description=""/>
         </docblock>
-        <argument line="133">
+        <argument line="142">
           <name>$when</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="156" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="165" package="">
         <name>validateToken</name>
         <type>function</type>
-        <docblock line="147">
+        <docblock line="156">
           <description><![CDATA[Validates a CSRF token in the 'csrf' POST/GET/PUT parameter.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="147" name="internal" description=""/>
-          <tag line="147" name="param" description="URL to validate with." type="string" variable="$url">
+          <tag line="156" name="internal" description=""/>
+          <tag line="156" name="param" description="URL to validate with." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="147" name="return" description="" type="void">
+          <tag line="156" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="147" name="deprecated" description=""/>
+          <tag line="156" name="deprecated" description=""/>
         </docblock>
-        <argument line="156">
+        <argument line="165">
           <name>$url</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="186" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="195" package="">
         <name>validatePost</name>
         <type>function</type>
-        <docblock line="172">
+        <docblock line="181">
           <description><![CDATA[Validate a request and redirect to a URL. All POST values are saved
   when a validation exception occurs.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="172" name="param" description="fValidation instance to try to validate." type="\fValidation" variable="$validation">
+          <tag line="181" name="param" description="fValidation instance to try to validate." type="\fValidation" variable="$validation">
             <type by_reference="false">\fValidation</type>
           </tag>
-          <tag line="172" name="param" description="If not specified, will redirect to the same URL. Also can specify a callback to call on success." type="string|callback" variable="$redirect_to">
+          <tag line="181" name="param" description="If not specified, will redirect to the same URL. Also can specify a callback to call on success." type="string|callback" variable="$redirect_to">
             <type by_reference="false">string</type>
             <type by_reference="false">callback</type>
           </tag>
-          <tag line="172" name="param" description="Where to redirect if an error occurs. Also can specify a callback to call on error." type="string" variable="$error_redirect">
+          <tag line="181" name="param" description="Where to redirect if an error occurs. Also can specify a callback to call on error." type="string" variable="$error_redirect">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="172" name="return" description="" type="void">
+          <tag line="181" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="172" name="see" description="\sRequest::restoreLastPOSTValues()" refers="\sRequest::restoreLastPOSTValues()"/>
-          <tag line="172" name="see" description="\sRequest::deleteLastPOSTValues()" refers="\sRequest::deleteLastPOSTValues()"/>
-          <tag line="172" name="deprecated" description=""/>
+          <tag line="181" name="see" description="\sRequest::restoreLastPOSTValues()" refers="\sRequest::restoreLastPOSTValues()"/>
+          <tag line="181" name="see" description="\sRequest::deleteLastPOSTValues()" refers="\sRequest::deleteLastPOSTValues()"/>
+          <tag line="181" name="deprecated" description=""/>
         </docblock>
-        <argument line="186">
+        <argument line="195">
           <name>$validation</name>
           <default><![CDATA[]]></default>
           <type>fValidation</type>
         </argument>
-        <argument line="186">
+        <argument line="195">
           <name>$redirect_to</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
-        <argument line="186">
+        <argument line="195">
           <name>$error_redirect</name>
           <default><![CDATA[NULL]]></default>
           <type/>
@@ -3923,7 +3977,7 @@ Make this script optionally compile-able.</p>]]></long-description>
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sCore.php" hash="7e9f81044e78f881597490e3dbf97125" package="Sutra">
+  <file path="sutra/classes/sCore.php" hash="ccbb4e3f54d3b08d7c781f172c5b9136" package="Sutra">
     <docblock line="2">
       <description><![CDATA[This class is optional to use. It is generally for use as the core class of
   the site.]]></description>
@@ -3973,7 +4027,7 @@ Make this script optionally compile-able.</p>]]></long-description>
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="35" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="35" package="">
         <name>getCache</name>
         <type>function</type>
         <docblock line="30">
@@ -3985,7 +4039,7 @@ Make this script optionally compile-able.</p>]]></long-description>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="protected" namespace="default" line="50" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="50" package="">
         <name>getDatabase</name>
         <type>function</type>
         <docblock line="39">

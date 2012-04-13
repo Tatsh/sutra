@@ -63,6 +63,9 @@
 <li class="method public "><a href="#getContent" title="getContent :: Get the content set."><span class="description">Get the content set.</span><pre>getContent()</pre></a></li>
 <li class="method public "><a href="#getData" title="getData :: Gets the data from the source URI. Will call connect() if necessary."><span class="description">Gets the data from the source URI. Will call connect() if necessary.</span><pre>getData()</pre></a></li>
 <li class="method public "><a href="#getHeaders" title="getHeaders :: Get the HTTP headers."><span class="description">Get the HTTP headers.</span><pre>getHeaders()</pre></a></li>
+<li class="method public "><a href="#getJSON" title="getJSON :: Gets data from a JSON source and parses it through fJSON::decode() or
+  json_decode() (if available)."><span class="description">Gets data from a JSON source and parses it through fJSON::decode() or
+  json_decode() (if available).</span><pre>getJSON()</pre></a></li>
 <li class="method public "><a href="#getProxy" title="getProxy :: Gets the proxy in use."><span class="description">Gets the proxy in use.</span><pre>getProxy()</pre></a></li>
 <li class="method public "><a href="#removeProxy" title="removeProxy :: Removes the proxy in use with this object."><span class="description">Removes the proxy in use with this object.</span><pre>removeProxy()</pre></a></li>
 <li class="method public "><a href="#send" title="send :: Alias for connect()."><span class="description">Alias for connect().</span><pre>send()</pre></a></li>
@@ -206,6 +209,43 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code>array</code><code>string</code>Headers either as string or array.</div>
+</div></div>
+</div>
+<a name="getJSON" id="getJSON"></a><div class="element clickable method public getJSON" data-toggle="collapse" data-target=".getJSON .collapse">
+<h2>Gets data from a JSON source and parses it through fJSON::decode() or
+  json_decode() (if available).</h2>
+<pre>getJSON(string $url, boolean $assoc, integer $timeout) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td>\fJSON::decode()</td>
+</tr>
+<tr>
+<th>see</th>
+<td>\json_decode()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>Full HTTP URL.</p></div>
+<div class="subelement argument">
+<h4>$assoc</h4>
+<code>boolean</code><p>If the data should be returned as associative array.</p></div>
+<div class="subelement argument">
+<h4>$timeout</h4>
+<code>integer</code><p>Timeout in seconds.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the JSON decoding functions are not available.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>JSON decoded value. Can return NULL.</div>
 </div></div>
 </div>
 <a name="getProxy" id="getProxy"></a><div class="element clickable method public getProxy" data-toggle="collapse" data-target=".getProxy .collapse">
@@ -407,7 +447,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-12T12:43:55-05:00.<br></footer></div>
+            generated on 2012-04-12T19:49:07-05:00.<br></footer></div>
 </div>
 </body>
 </html>
