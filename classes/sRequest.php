@@ -52,7 +52,7 @@ class sRequest extends fRequest {
    * @return void
    * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
-  public static function savePostValues($id = 'main') {
+  public static function savePostValues($id = 'default') {
     $safe_post = array();
     foreach ($_POST as $key => $value) {
       $safe_post[$key] = fRequest::get($key);
