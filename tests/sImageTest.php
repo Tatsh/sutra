@@ -42,10 +42,10 @@ CODE;
       if ($func == 'exif_read_data') {
         return FALSE;
       }
-      return fe_original($func);
+      return fe_original2($func);
 CODE;
 
-    runkit_function_copy('function_exists', 'fe_original');
+    runkit_function_copy('function_exists', 'fe_original2');
     runkit_function_redefine('function_exists', '$func', $function_exists);
     try {
       $image = new sImage('./resources/rotate-this-no-exif.jpg');
@@ -56,7 +56,7 @@ CODE;
       $this->assertTrue(TRUE);
     }
     runkit_function_remove('function_exists');
-    runkit_function_rename('fe_original', 'function_exists');
+    runkit_function_rename('fe_original2', 'function_exists');
 
     runkit_method_copy('fImage', 'dp_original', 'fImage', 'determineProcessor');
     runkit_method_redefine('fImage', 'determineProcessor', '', 'return "none";', RUNKIT_ACC_STATIC);
