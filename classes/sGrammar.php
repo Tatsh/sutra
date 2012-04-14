@@ -41,10 +41,7 @@ class sGrammar extends fGrammar {
    */
   public static function addDashizeRule($original, $returnString) {
     if (!strlen($returnString) || !strlen($original)) {
-      throw new fProgrammerException(
-        "An empty string was passed to %s",
-        __CLASS__ . '::dashize()'
-        );
+      throw new fProgrammerException('An empty string was passed to %s', self::addDashizeRule);
     }
 
     self::$dashize_rules[$original] = $returnString;
@@ -59,10 +56,7 @@ class sGrammar extends fGrammar {
    */
   public static function removeDashizeRule($original) {
     if (!strlen($original)) {
-      throw new fProgrammerException(
-        "An empty string was passed to %s",
-        __CLASS__ . '::removeDashizeRule()'
-        );
+      throw new fProgrammerException('An empty string was passed to %s', self::removeDashizeRule);
     }
 
     if (isset(self::$dashize_rules[$original])) {
@@ -73,18 +67,13 @@ class sGrammar extends fGrammar {
   /**
    * Converts an underscore_notation or camelCase notation to dash-notation.
    *
-   * @todo camelCase must work.
-   *
    * @param string $string String to convert.
    * @return string Converted string.
    * @see sGrammar::addDashizeRule()
    */
   public static function dashize($string) {
     if (!strlen($string)) {
-      throw new fProgrammerException(
-        "An empty string was passed to %s",
-        __CLASS__ . '::dashize()'
-      );
+      throw new fProgrammerException('An empty string was passed to %s', self::dashize);
     }
 
     if (isset(self::$dashize_cache[$string])) {
@@ -92,14 +81,20 @@ class sGrammar extends fGrammar {
     }
 
     $original = $string;
-    $string = strtolower($string[0]) . substr($string, 1);
+    $string = trim(strtolower($string[0]) . substr($string, 1));
 
     // Handle custom rules
     if (isset(self::$dashize_rules[$string])) {
       $string = self::$dashize_rules[$string];
     }
+    else if (strpos($string, ' ') === FALSE) {
+      // Handle camelCase
+      $string = self::underscorize($string);
+      $string = str_replace('_', '-', $string);
+    }
     else {
       $string = fURL::makeFriendly($string, NULL, '-');
+      $string = str_replace('_', '-', $string);
     }
 
     self::$dashize_cache[$original] = $string;
