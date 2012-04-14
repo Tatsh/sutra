@@ -12,6 +12,10 @@
  * @version 1.2
  */
 class sProcess {
+  const checkOS = 'sProcess::checkOS';
+  const setPath = 'sProcess::setPath';
+  const getPath = 'sProcess::getPath';
+
   /**
    * The process that will be run.
    *
@@ -195,12 +199,12 @@ class sProcess {
    *
    * @see fCore::checkOS()
    */
-  static public function checkOS($os) {
-    return call_user_func_array(array('fCore', 'checkOS'), func_get_args());
+  public static function checkOS($os) {
+    return fCore::call(fCore::checkOS, func_get_args());
   }
 
   /**
-   * Set the PATH or in the case of Windows 'Path' variable to this object.
+   * Set the PATH or in the case of Windows 'Path' variable for all objects.
    *
    * By default, this class will use the environment variable PATH
    *   (Windows: 'Path').
