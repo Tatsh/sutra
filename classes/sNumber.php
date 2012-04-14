@@ -12,6 +12,14 @@
  * @version 1.2
  */
 class sNumber extends fNumber {
+  const ordinalSuffix     = 'sNumber::ordinalSuffix';
+  const addCallback       = 'sNumber::addCallback';
+  const removeLocale      = 'sNumber::removeLocale';
+  const setLocale         = 'sNumber::setLocale';
+  const setFallbackLocale = 'sNumber::setFallbackLocale';
+  const ordinal           = 'sNumber::ordinal';
+  const isEqualToIntCast  = 'sNumber::isEqualToIntCast';
+
   /**
    * Common list of locales.
    *
@@ -464,8 +472,7 @@ class sNumber extends fNumber {
    * Callback for English ordinal numbers (where numbers come before the
    *   ordinal keyword).
    *
-   * @internal For internal use.
-   * @access private
+   * @internal
    *
    * @param integer $value
    * @return string The value, formatted.

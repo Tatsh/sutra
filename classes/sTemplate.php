@@ -12,6 +12,35 @@
  * @version 1.2
  */
 class sTemplate {
+  const addBodyClass                   = 'sTemplate::addBodyClass';
+  const addCDN                         = 'sTemplate::addCDN';
+  const addCSSFile                     = 'sTemplate::addCSSFile';
+  const addJavaScriptFile              = 'sTemplate::addJavaScriptFile';
+  const addMinifiedJavaScriptFile      = 'sTemplate::addMinifiedJavaScriptFile';
+  const buffer                         = 'sTemplate::buffer';
+  const enableQueryStrings             = 'sTemplate::enableQueryStrings';
+  const getACDN                        = 'sTemplate::getACDN';
+  const getBodyClasses                 = 'sTemplate::getBodyClasses';
+  const getCDNs                        = 'sTemplate::getCDNs';
+  const getCache                       = 'sTemplate::getCache';
+  const getJavaScriptFiles             = 'sTemplate::getJavaScriptFiles';
+  const getMode                        = 'sTemplate::getMode';
+  const registerCallback               = 'sTemplate::registerCallback';
+  const removeCDN                      = 'sTemplate::removeCDN';
+  const removeCDNs                     = 'sTemplate::removeCDNs';
+  const render                         = 'sTemplate::render';
+  const setActiveTemplate              = 'sTemplate::setActiveTemplate';
+  const setCDNs                        = 'sTemplate::setCDNs';
+  const setCSSMediaOrder               = 'sTemplate::setCSSMediaOrder';
+  const setCache                       = 'sTemplate::setCache';
+  const setMinifiedCSSPath             = 'sTemplate::setMinifiedCSSPath';
+  const setMode                        = 'sTemplate::setMode';
+  const setProductionModeTemplatesPath = 'sTemplate::setProductionModeTemplatesPath';
+  const setSiteName                    = 'sTemplate::setSiteName';
+  const setSiteSlogan                  = 'sTemplate::setSiteSlogan';
+  const setTemplatesPath               = 'sTemplate::setTemplatesPath';
+  const templateExists                 = 'sTemplate::templateExists';
+
   /**
    * The sCache instance.
    *

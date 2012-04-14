@@ -12,6 +12,8 @@
  * @version 1.2
  */
 class sArray {
+  const hasRequiredKeys = 'sArray::hasRequiredKeys';
+
   /**
    * Checks if an array has all required keys.
    *

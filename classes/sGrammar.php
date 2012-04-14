@@ -12,6 +12,10 @@
  * @version 1.2
  */
 class sGrammar extends fGrammar {
+  const addDashizeRule    = 'sGrammar::addDashizeRule';
+  const removeDashizeRule = 'sGrammar::removeDashizeRule';
+  const dashize           = 'sGrammar::dashize';
+
   /**
    * Cache of strings that have been run through sGrammar::dashize().
    *

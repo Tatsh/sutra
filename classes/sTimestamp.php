@@ -12,6 +12,9 @@
  * @version 1.2
  */
 class sTimestamp extends fTimestamp {
+  const formatTimezoneNumber = 'sTimestamp::formatTimezoneNumber';
+  const RFC3339ToTimestamp   = 'sTimestamp::RFC3339ToTimestamp';
+
   /**
    * Loose regular expression to match timestamp as defined by W3C for
    *   HTML 5 date/datetime fields. The main difference is allowing for

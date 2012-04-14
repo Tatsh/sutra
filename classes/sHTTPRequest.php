@@ -12,6 +12,8 @@
  * @version 1.2
  */
 class sHTTPRequest {
+  const getJSON = 'sHTTPRequest::getJSON';
+
   /**
    * The URI to request from.
    *

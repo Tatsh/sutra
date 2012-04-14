@@ -12,6 +12,10 @@
  * @version 1.2
  */
 class sLoader extends fLoader {
+  const best  = 'sLoader::best';
+  const eagar = 'sLoader::eagar';
+  const lazy  = 'sLoader::lazy';
+
   /**
    * Path where Sutra is installed.
    *

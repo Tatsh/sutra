@@ -12,6 +12,8 @@
  * @version 1.2
  */
 class sResponse {
+  const sendNotModifiedHeader = 'sResponse::sendNotModifiedHeader';
+
   /**
    * Send a 304 not modified header, if the content hasn't changed according to
    *   the headers sent in by the client.

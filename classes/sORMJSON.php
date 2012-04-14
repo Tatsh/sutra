@@ -12,6 +12,8 @@
  * @version 1.2
  */
 class sORMJSON extends fORMJSON {
+  const configureJSONSerializedColumn = 'sORMJSON::configureJSONSerializedColumn';
+
   /**
    * Columns => class names registered.
    *

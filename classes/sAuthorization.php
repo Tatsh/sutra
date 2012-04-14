@@ -12,6 +12,8 @@
  * @version 1.2
  */
 class sAuthorization extends fAuthorization {
+  const requireNotLoggedIn = 'sAuthorization::requireNotLoggedIn';
+
   /**
    * Require that a user not be logged in.
    *

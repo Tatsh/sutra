@@ -13,6 +13,14 @@
  * @version 1.2
  */
 class sHTML extends fHTML {
+  const attributesString = 'sHTML::attributesString';
+  const conditionalTag   = 'sHTML::conditionalTag';
+  const linkIsURI        = 'sHTML::linkIsURI';
+  const makeFormElement  = 'sHTML::makeFormElement';
+  const makeList         = 'sHTML::makeList';
+  const paragraphify     = 'sHTML::paragraphify';
+  const tag              = 'sHTML::tag';
+
   /**
    * Stores all form element IDs so that all generated via this class are unique.
    *

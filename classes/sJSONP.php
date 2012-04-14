@@ -12,6 +12,9 @@
  * @version 1.2
  */
 class sJSONP extends fJSON {
+  const encode = 'sJSONP::encode';
+  const sendHeader = 'sJSONP::sendHeader';
+
   /**
    * JavaScript reserved words, as per the ECMA 3 standard.
    *
