@@ -12,14 +12,11 @@
  * @version 1.2
  */
 class sRequest extends fRequest {
-  /**
-   * This is for a nice looking callback when using
-   *   fValidation::addCallbackRule().
-   *
-   * @var string
-   * @see fValidation::addCallbackRule()
-   */
-  const validateCSRFTokenCallback = 'sRequest::validateCSRFTokenCallback';
+  const checkCSRFToken     = 'sRequest::checkCSRFToken';
+  const savePostValues     = 'sRequest::savePostValues';
+  const setPostValues      = 'sRequest::setPostValues';
+  const retrievePostValues = 'sRequest::setPostValues';
+  const deletePostValues   = 'sRequest::deletePostValues';
 
   /**
    * The key in session that holds the last POST values. The last POST values
@@ -28,17 +25,17 @@ class sRequest extends fRequest {
    * @var string
    */
   const LAST_POST_SESSION_KEY_PREFIX = 'sPostRequest::last_post';
-
   /**
-   * Callback to validate a CSRF token. For use with fValidation.
+   * Non-throwing check of a CSRF token. Compatible with fValidation as a
+   *   callback but the URL must be the same as the current page.
    *
-   * @param string $csrf CSRF token to validate.
-   * @return boolean If the CSRF token is valid.
-   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
+   * @param string $csrf CSRF token string.
+   * @param string $url URL to use.
+   * @return boolean If the CSRF token is valid for the URL.
    */
-  public static function validateCSRFTokenCallback($csrf) {
+  public static function checkCSRFToken($csrf, $url = NULL) {
     try {
-      self::validateCSRFToken($csrf);
+      self::validateCSRFToken($csrf, $url);
       return TRUE;
     }
     catch (fValidationException $e) {}
@@ -46,7 +43,7 @@ class sRequest extends fRequest {
   }
 
   /**
-   * Saves the POST values to sessions.
+   * Saves the POST values to session.
    *
    * @param string $id Unique ID of the values.
    * @return void
@@ -61,8 +58,7 @@ class sRequest extends fRequest {
   }
 
   /**
-   * Restores the last POST values for a specified ID to $_GET, $_POST, or
-   *   $_REQUEST.
+   * Restores the last POST values for a specified ID to $_GET or $_POST.
    *
    * @param string $id Unique ID of the values.
    * @return void
@@ -75,7 +71,7 @@ class sRequest extends fRequest {
   }
 
   /**
-   * Get the saved POST values for a unique ID.
+   * Gets the saved POST values for a unique ID.
    *
    * @param string $id Unique ID of the values.
    * @return array Array of values. Can return an empty array.
@@ -96,135 +92,5 @@ class sRequest extends fRequest {
    */
   public static function deletePostValues($id = 'default') {
     fSession::delete(self::LAST_POST_SESSION_KEY_PREFIX.'::'.$id);
-  }
-
-  /**
-   * Restore last POST values so that they may be used in form generation.
-   *
-   * @param string $id Unique ID of the values.
-   * @return void
-   * @deprecated
-   */
-  public static function restoreLastPOSTValues($id = 'default') {
-    self::setPostValues($id);
-  }
-
-  /**
-   * Register a callback to be called after before or after validation.
-   *   Callbacks registered should have no knowledge of other registered
-   *   callbacks.
-   *
-   * @param callback $callback Callback.
-   * @param string $when When to call. One of: 'after' for after successful
-   *   validation,'before' for before any processing by the routing method.
-   * @param string $url URL (beginning with /) that this will be called for. By
-   *   default, this is all URLs.
-   * @return void
-   * @deprecated
-   */
-  public static function registerCallback($callback, $when = 'after', $url = '*') {
-    $when = strtolower($when);
-
-    if ($when !== 'after' && $when !== 'before') {
-      throw new fProgrammerException('Invalid when value specified, "%s". Must be one of: before, after.', $when);
-    }
-
-    self::$registered_callbacks[$when][$url][] = $callback;
-  }
-
-  /**
-   * Calls registered callbacks.
-   *
-   * @param string $when One of: 'after', 'before'.
-   * @return void
-   * @deprecated
-   */
-  private static function callCallbacks($when) {
-    foreach (self::$registered_callbacks[$when]['*'] as $callback) {
-      fCore::call($callback);
-    }
-
-    $url = fURL::get();
-
-    if (isset(self::$registered_callbacks[$when][$url])) {
-      foreach (self::$registered_callbacks[$when][$url] as $callback) {
-        fCore::call($callback);
-      }
-    }
-  }
-
-  /**
-   * Validates a CSRF token in the 'csrf' POST/GET/PUT parameter.
-   *
-   * @internal
-   *
-   * @param string $url URL to validate with.
-   * @return void
-   * @deprecated
-   */
-  public static function validateToken($url = NULL) {
-    $token = self::get('csrf', 'string');
-    self::validateCSRFToken($token, $url);
-  }
-
-  /**
-   * Registered callbacks.
-   *
-   * @var array
-   * @deprecated
-   */
-  private static $registered_callbacks = array(
-    'after' => array('*' => array()),
-    'before' => array('*' => array()),
-  );
-
-  /**
-   * Validate a request and redirect to a URL. All POST values are saved
-   *   when a validation exception occurs.
-   *
-   * @param fValidation $validation fValidation instance to try to validate.
-   * @param string|callback $redirect_to If not specified, will redirect to
-   *   the same URL. Also can specify a callback to call on success.
-   * @param string $error_redirect Where to redirect if an error occurs. Also
-   *   can specify a callback to call on error.
-   * @return void
-   * @see sRequest::restoreLastPOSTValues()
-   * @see sRequest::deleteLastPOSTValues()
-   * @deprecated
-   */
-  public static function validatePost(fValidation $validation, $redirect_to = NULL, $error_redirect = NULL) {
-    try {
-      $url = fURL::get();
-
-      if (!$error_redirect) {
-        $error_redirect = $url;
-      }
-
-      self::callCallbacks('before');
-      $validation->validate();
-      self::callCallbacks('after');
-
-      $cb = fCore::callback($redirect_to);
-      if (is_callable($cb)) {
-        $cb();
-      }
-
-      fURL::redirect($redirect_to ? $redirect_to : $url);
-    }
-    catch (fValidationException $e) {
-      self::savePOSTValues();
-
-      $cb = fCore::callback($error_redirect);
-      if (is_callable($cb)) {
-        $cb($e);
-        return;
-      }
-
-      $message = strip_tags($message);
-      $message = str_replace("\n", ' ', $message);
-
-      fMessaging::create('validation', $error_redirect, $message);
-      fURL::redirect($error_redirect);
-    }
   }
 }
