@@ -52,4 +52,13 @@ class sResponse {
       header('HTTP/1.1 304 Not Modified');
     }
   }
+
+  /**
+   * Sends a 403 restricted content header.
+   *
+   * @return void
+   */
+  public static function sendForbiddenHeader() {
+    header('HTTP/1.1 403 Forbidden');
+  }
 }

@@ -26,4 +26,8 @@ class sResponseTest extends PHPUnit_Framework_TestCase {
     sResponse::sendNotModifiedHeader($age_timestamp, 'a');
     unset($_SERVER['HTTP_IF_MODIFIED_SINCE']);
   }
+
+  public static function testSendForbiddenHeader() {
+    sResponse::sendForbiddenHeader();
+  }
 }
