@@ -23,4 +23,8 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
     sAuthorization::setUserAuthLevel('admin');
     sAuthorization::requireNotLoggedIn('/404');
   }
+
+  public function tearDown() {
+    fSession::reset();
+  }
 }

@@ -9,7 +9,9 @@ class t2Core extends sCore {
 
 class t3Core extends sCore {
   public static function getDatabase() {}
-  public static function getCache() {}
+  public static function getCache() {
+    return new fCache('file', 'test.cache');
+  }
 }
 
 class sCoreTest extends PHPUnit_Framework_TestCase {
@@ -41,5 +43,9 @@ class sCoreTest extends PHPUnit_Framework_TestCase {
    */
   public function testMain() {
     t3Core::main();
+  }
+
+  public function tearDown() {
+    fSession::reset();
   }
 }

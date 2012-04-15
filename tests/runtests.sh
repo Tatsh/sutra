@@ -1,9 +1,9 @@
 #!/bin/sh
 TESTS="${1:-.}"
+
 mkdir -p template/default
 mkdir -p template/custom
 mkdir mincss
-
 echo '<?php print $abc; ?>' > template/default/something.tpl.php
 echo '<?php print $abc; ?>' > template/custom/something2.tpl.php
 echo '<!DOCTYPE html>
@@ -31,12 +31,14 @@ rm -f resources/*_copy*
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
 
+touch test.cache
+
 phpunit --stderr -c config.xml "$TESTS"
 
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
 
 rm -rf flourish__* template mincss test*.css
-rm -f resources/*_copy*
+rm -f resources/*_copy* test.cache
 
 echo
