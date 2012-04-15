@@ -662,10 +662,6 @@ class sTemplate {
    * @see sTemplate::setCSSMediaOrder()
    */
   protected static function getStylesheetsHTML() {
-    if (self::$template_name == 'default') {
-      return '';
-    }
-
     $html = '';
 
     if (self::$in_production_mode) {
@@ -718,7 +714,6 @@ class sTemplate {
    *
    * JavaScript here can only be dependent on scripts that are also
    *   in the head element.
-   * Make this script optionally compile-able.
    *
    * @param string $where Which scripts to get. One of: 'head', 'body'.
    * @return string
@@ -727,11 +722,10 @@ class sTemplate {
     $html = '';
     $qs = !self::$in_production_mode && self::$query_strings_enabled ? '?_='.time() : '';
     $cdn = '';
-    $files = self::$javascript_files[$where];
+    $files = self::getJavaScriptFiles($where);
 
     if (self::$in_production_mode) {
       $cdn = self::getACDN();
-      $files = self::$compiled_javascript_files[$where];
     }
 
     foreach ($files as $path) {
@@ -778,7 +772,7 @@ class sTemplate {
     foreach (self::$cdns as $key => $value) {
       if ($value === $url) {
         unset(self::$cdns[$key]);
-        return;
+        break;
       }
     }
   }
