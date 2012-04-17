@@ -109,6 +109,10 @@ class sImage extends fImage {
     $file = $this;
 
     if ($type == self::FLIP_NONE) {
+      if (!$overwrite) {
+        $file = clone $this;
+        $file->rename($this->getName(), FALSE);
+      }
       return $file;
     }
 
@@ -116,7 +120,7 @@ class sImage extends fImage {
     $args = func_get_args();
     if (isset($args[1]) && is_bool($args[1])) {
       $jpeg_quality = 90;
-      $overwite = $args[1];
+      $overwrite = $args[1];
       $processor_override = isset($args[2]) ? (string)$args[2] : NULL;
     }
 
