@@ -1,5 +1,5 @@
 <?php
-require 'global.inc';
+require './includes/global.inc';
 
 class sImageTest extends PHPUnit_Framework_TestCase {
   const IMAGE_FILE_NO_EXIF_PNG = './resources/flip-this.png';
@@ -71,19 +71,6 @@ CODE;
     }
     runkit_method_remove('fImage', 'determineProcessor');
     runkit_method_rename('fImage', 'dp_original', 'determineProcessor');
-
-//     runkit_method_copy('Imagick', 'gib_original', 'Imagick', 'getImageBlob');
-//     runkit_method_redefine('Imagick', 'getImageBlob', '', 'throw new ImagickException("hacks");');
-//     try {
-//       $image = new sImage('./resources/rotate-this-no-exif.jpg');
-//       $image->flip(sImage::FLIP_HORIZONTAL);
-//       $this->assertTrue(FALSE);
-//     }
-//     catch (fUnexpectedException $e) {
-//       $this->assertEquals('Caught ImagickException: hacks', $e->getMessage());
-//     }
-//     runkit_method_remove('Imagick', 'getImageBlob');
-//     runkit_method_rename('Imagick', 'gib_original', 'getImageBlob');
 
     runkit_function_copy('imagejpeg', 'ijpeg_original');
     runkit_function_redefine('imagejpeg', '', 'return FALSE;');
@@ -208,8 +195,8 @@ CODE;
   public function testFlipGIF() {
     $image = new sImage(self::IMAGE_FILE_NO_EXIF_GIF);
     $new = $image->flip(sImage::FLIP_HORIZONTAL, FALSE, 'gd');
-    $this->assertNotEquals($new->read(), $image->read());
     $this->assertNotEquals($new->getName(), $image->getName());
+    $this->assertNotEquals(md5_file($new->getPath()), md5_file($image->getPath()));
     $new->delete();
   }
 
