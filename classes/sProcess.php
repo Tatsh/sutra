@@ -53,6 +53,7 @@ class sProcess {
 
   /**
    * File to pipe output to when using mode 'w' with popen().
+   *
    * @var fFile
    */
   private $pipe_file;
