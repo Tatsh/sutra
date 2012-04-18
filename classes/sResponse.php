@@ -54,6 +54,7 @@ class sResponse {
     }
   }
 
+  // @codeCoverageIgnoreStart
   /**
    * Sends a 403 restricted content header.
    *
@@ -62,6 +63,14 @@ class sResponse {
   public static function sendForbiddenHeader() {
     header('HTTP/1.1 403 Forbidden');
   }
+
+  /**
+   * Forces use as a static class.
+   *
+   * @return sResponse
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**

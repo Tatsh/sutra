@@ -148,6 +148,15 @@ class sLoader extends fLoader {
 
     require self::$path.$class.'.php';
   }
+
+  // @codeCoverageIgnoreStart
+  /**
+   * Forces use as a static class.
+   *
+   * @return sLoader
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**

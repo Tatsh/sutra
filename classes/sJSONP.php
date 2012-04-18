@@ -118,9 +118,7 @@ class sJSONP extends fJSON {
   public static function sendHeader() {
     header('Content-Type: text/javascript; charset=utf-8');
   }
-  // @codeCoverageIgnoreEnd
 
-  // @codeCoverageIgnoreStart
   /**
    * Force use as a static class.
    *

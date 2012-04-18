@@ -101,6 +101,15 @@ class sGrammar extends fGrammar {
 
     return $string;
   }
+
+  // @codeCoverageIgnoreStart
+  /**
+   * Forces use as a static class.
+   *
+   * @return sGrammar
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**

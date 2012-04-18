@@ -93,6 +93,15 @@ class sRequest extends fRequest {
   public static function deletePostValues($id = 'default') {
     fSession::delete(self::LAST_POST_SESSION_KEY_PREFIX.'::'.$id);
   }
+
+  // @codeCoverageIgnoreStart
+  /**
+   * Forces use as a static class.
+   *
+   * @return sRequest
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**

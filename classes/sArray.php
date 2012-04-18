@@ -46,6 +46,15 @@ class sArray {
 
     return TRUE;
   }
+
+  // @codeCoverageIgnoreStart
+  /**
+   * Forces use as a static class.
+   *
+   * @return sArray
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**

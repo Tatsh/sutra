@@ -101,6 +101,15 @@ abstract class sCore extends fCore {
     self::call($class.'::configureSession');
     self::call($class.'::configureAuthorization');
   }
+
+  // @codeCoverageIgnoreStart
+  /**
+   * Forces use as a static class.
+   *
+   * @return sCore
+   */
+  private function __construct() {}
+  // @codeCoverageIgnoreEnd
 }
 
 /**
