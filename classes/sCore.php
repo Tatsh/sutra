@@ -13,6 +13,10 @@
  * @version 1.2
  */
 abstract class sCore extends fCore {
+  const main        = 'sCore::main';
+  const getDatabase = 'sCore::getDatabase';
+  const getCache    = 'sCore::getCache';
+
   /**
    * The cache.
    *

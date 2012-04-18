@@ -13,6 +13,7 @@
  */
 class sResponse {
   const sendNotModifiedHeader = 'sResponse::sendNotModifiedHeader';
+  const sendForbiddenHeader   = 'sResponse::sendForbiddenHeader';
 
   /**
    * Send a 304 not modified header, if the content hasn't changed according to
