@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 require 'flourish/fLoader.php';
 require 'classes/sLoader.php';
@@ -10,6 +11,7 @@ $exceptions = array(
   'sProcessException' => array('registerCallback'),
 );
 $classes = get_declared_classes();
+$printed = FALSE;
 
 foreach ($classes as $class_name) {
   $reflect = new ReflectionClass($class_name);
@@ -22,10 +24,14 @@ foreach ($classes as $class_name) {
 
     if ($class_name[0] == 's' && $method->isPublic() && !$reflect->hasConstant($method->name)) {
       print $class_name.' lacks constant: '.$method->name."\n";
+      $printed = TRUE;
     }
   }
 }
-print "\n";
+
+if ($printed) {
+  print "\n";
+}
 
 $exceptions = array(
   'fORMValidation' => TRUE,
