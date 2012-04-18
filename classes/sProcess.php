@@ -240,7 +240,7 @@ class sProcess {
    */
   public static function getPath($array = FALSE) {
     self::setPath();
-	$delimiter = fCore::checkOS('windows') ? ';' : ':';
+    $delimiter = self::checkOS('windows') ? ';' : ':';
     return $array ? explode($delimiter, self::$path) : self::$path;
   }
 
