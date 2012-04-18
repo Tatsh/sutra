@@ -39,6 +39,7 @@ chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
 
 rm -rf flourish__* template mincss test*.css
-rm -f resources/*_copy* test.cache
+rm -f resources/*_copy*
+rm -f test.cache
 
 echo
