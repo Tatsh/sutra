@@ -32,6 +32,7 @@ class sRequest extends fRequest {
    * @param string $csrf CSRF token string.
    * @param string $url URL to use.
    * @return boolean If the CSRF token is valid for the URL.
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public static function checkCSRFToken($csrf, $url = NULL) {
     try {
