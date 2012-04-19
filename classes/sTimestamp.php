@@ -31,7 +31,8 @@ class sTimestamp extends fTimestamp {
   const DATETIME_TYPE_RFC3339 = 1;
 
   /**
-   * Overrides __construct() to accept a third argument $type, which specifies the type of date/time string this is.
+   * Overrides __construct() to accept a third argument $type, which specifies
+   *   the type of date/time string this is.
    *
    * @param fTimestamp|object|string|integer $str  The date/time to represent,
    *   NULL is interpreted as now.
