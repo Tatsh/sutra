@@ -56,6 +56,7 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#addBooleanFields" title="addBooleanFields :: Adds fields to be checked for 1/0, t/f, true/false, yes/no"><span class="description">Adds fields to be checked for 1/0, t/f, true/false, yes/no</span><pre>addBooleanFields()</pre></a></li>
 <li class="method public "><a href="#addCallbackRule" title="addCallbackRule :: Adds a callback validation of a field, with a custom error message"><span class="description">Adds a callback validation of a field, with a custom error message</span><pre>addCallbackRule()</pre></a></li>
 <li class="method public "><a href="#addConditionalRule" title="addConditionalRule :: Adds fields to be conditionally required if another field has any value, or specific values"><span class="description">Adds fields to be conditionally required if another field has any value, or specific values</span><pre>addConditionalRule()</pre></a></li>
@@ -194,6 +195,25 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="addBooleanFields" id="addBooleanFields"></a><div class="element clickable method public addBooleanFields" data-toggle="collapse" data-target=".addBooleanFields .collapse">
 <h2>Adds fields to be checked for 1/0, t/f, true/false, yes/no</h2>
 <pre>addBooleanFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
@@ -895,7 +915,7 @@ case-insensitive manner.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>

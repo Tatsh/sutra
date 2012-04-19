@@ -57,6 +57,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Initializes fEmail for creating message ids"><span class="description">Initializes fEmail for creating message ids</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#addAttachment" title="addAttachment :: Adds an attachment to the email"><span class="description">Adds an attachment to the email</span><pre>addAttachment()</pre></a></li>
 <li class="method public "><a href="#addBCCRecipient" title="addBCCRecipient :: Adds a blind carbon copy (BCC) email recipient"><span class="description">Adds a blind carbon copy (BCC) email recipient</span><pre>addBCCRecipient()</pre></a></li>
 <li class="method public "><a href="#addCCRecipient" title="addCCRecipient :: Adds a carbon copy (CC) email recipient"><span class="description">Adds a carbon copy (CC) email recipient</span><pre>addCCRecipient()</pre></a></li>
@@ -64,10 +65,13 @@
 <li class="method public "><a href="#addRecipient" title="addRecipient :: Adds an email recipient"><span class="description">Adds an email recipient</span><pre>addRecipient()</pre></a></li>
 <li class="method public "><a href="#addRelatedFile" title="addRelatedFile :: Adds a “related” file to the email, returning the `Content-ID` for use in HTML"><span class="description">Adds a “related” file to the email, returning the `Content-ID` for use in HTML</span><pre>addRelatedFile()</pre></a></li>
 <li class="method public "><a href="#clearRecipients" title="clearRecipients :: Removes all To, CC and BCC recipients from the email"><span class="description">Removes all To, CC and BCC recipients from the email</span><pre>clearRecipients()</pre></a></li>
+<li class="method public "><a href="#combineNameEmail" title='combineNameEmail :: Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided'><span class="description">Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided</span><pre>combineNameEmail()</pre></a></li>
 <li class="method public "><a href="#encrypt" title="encrypt :: Sets the email to be encrypted with S/MIME"><span class="description">Sets the email to be encrypted with S/MIME</span><pre>encrypt()</pre></a></li>
 <li class="method public "><a href="#fixQmail" title="fixQmail :: Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`"><span class="description">Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`</span><pre>fixQmail()</pre></a></li>
+<li class="method public "><a href="#getFQDN" title="getFQDN :: Returns the fully-qualified domain name of the server"><span class="description">Returns the fully-qualified domain name of the server</span><pre>getFQDN()</pre></a></li>
 <li class="method public "><a href="#loadBody" title="loadBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadBody()</pre></a></li>
 <li class="method public "><a href="#loadHTMLBody" title="loadHTMLBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadHTMLBody()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#send" title="send :: Sends the email"><span class="description">Sends the email</span><pre>send()</pre></a></li>
 <li class="method public "><a href="#setBody" title="setBody :: Sets the plaintext version of the email body"><span class="description">Sets the plaintext version of the email body</span><pre>setBody()</pre></a></li>
 <li class="method public "><a href="#setBounceToEmail" title="setBounceToEmail :: Adds the email address the email will be bounced to"><span class="description">Adds the email address the email will be bounced to</span><pre>setBounceToEmail()</pre></a></li>
@@ -309,6 +313,25 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <div class="subelement response"><code><a href="../classes/fEmail.html">\fEmail</a></code></div>
 </div></div>
 </div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="addAttachment" id="addAttachment"></a><div class="element clickable method public addAttachment" data-toggle="collapse" data-target=".addAttachment .collapse">
 <h2>Adds an attachment to the email</h2>
 <pre>addAttachment(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : <a href="../classes/fEmail.html">\fEmail</a></pre>
@@ -450,6 +473,30 @@ the URL with <code>cid:</code> and then inserting the <code>Content-ID</code>.</
 <code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
 </div></div>
 </div>
+<a name="combineNameEmail" id="combineNameEmail"></a><div class="element clickable method public combineNameEmail" data-toggle="collapse" data-target=".combineNameEmail .collapse">
+<h2>Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided</h2>
+<pre>combineNameEmail(string $name, string $email) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method will remove newline characters from the name and email, and
+will remove any backslash (<code>\</code>) and double quote (<code>"</code>) characters from
+the name.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name associated with the email address</p></div>
+<div class="subelement argument">
+<h4>$email</h4>
+<code>string</code><p>The email address</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The '"name" <email>' or 'email' string</div>
+</div></div>
+</div>
 <a name="encrypt" id="encrypt"></a><div class="element clickable method public encrypt" data-toggle="collapse" data-target=".encrypt .collapse">
 <h2>Sets the email to be encrypted with S/MIME</h2>
 <pre>encrypt(string $recipients_smime_cert_file) : <a href="../classes/fEmail.html">\fEmail</a></pre>
@@ -472,6 +519,21 @@ the URL with <code>cid:</code> and then inserting the <code>Content-ID</code>.</
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"><p>Before trying to fix qmail with this method, please try using fSMTP
 to connect to <code>localhost</code> and pass the fSMTP object to ::send().</p></p></div></div>
+</div>
+<a name="getFQDN" id="getFQDN"></a><div class="element clickable method public getFQDN" data-toggle="collapse" data-target=".getFQDN .collapse">
+<h2>Returns the fully-qualified domain name of the server</h2>
+<pre>getFQDN() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fully-qualified domain name of the server</div>
+</div></div>
 </div>
 <a name="loadBody" id="loadBody"></a><div class="element clickable method public loadBody" data-toggle="collapse" data-target=".loadBody .collapse">
 <h2>Loads the plaintext version of the email body from a file and applies replacements</h2>
@@ -519,6 +581,18 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="send" id="send"></a><div class="element clickable method public send" data-toggle="collapse" data-target=".send .collapse">
@@ -1145,7 +1219,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

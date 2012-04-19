@@ -69,8 +69,23 @@
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
 <li class="property private "><a href="#%24control_character_map" title="$control_character_map :: An array of special characters in JSON strings"><span class="description">An array of special characters in JSON strings</span><pre>$control_character_map</pre></a></li>
+<li class="property private "><a href="#%24next_values" title="$next_values :: An array of what values are allowed after other values"><span class="description">An array of what values are allowed after other values</span><pre>$next_values</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#J_ARRAY_CLOSE" title="J_ARRAY_CLOSE :: An abstract representation of ]"><span class="description">An abstract representation of ]</span><pre>J_ARRAY_CLOSE</pre></a></li>
+<li class="constant  "><a href="#J_ARRAY_COMMA" title="J_ARRAY_COMMA :: An abstract representation of , in a JSON array"><span class="description">An abstract representation of , in a JSON array</span><pre>J_ARRAY_COMMA</pre></a></li>
+<li class="constant  "><a href="#J_ARRAY_OPEN" title="J_ARRAY_OPEN :: An abstract representation of ["><span class="description">An abstract representation of [</span><pre>J_ARRAY_OPEN</pre></a></li>
+<li class="constant  "><a href="#J_COLON" title="J_COLON :: An abstract representation of :"><span class="description">An abstract representation of :</span><pre>J_COLON</pre></a></li>
+<li class="constant  "><a href="#J_FALSE" title="J_FALSE :: An abstract representation of a boolean false"><span class="description">An abstract representation of a boolean false</span><pre>J_FALSE</pre></a></li>
+<li class="constant  "><a href="#J_FLOAT" title="J_FLOAT :: An abstract representation of a floating value"><span class="description">An abstract representation of a floating value</span><pre>J_FLOAT</pre></a></li>
+<li class="constant  "><a href="#J_INTEGER" title="J_INTEGER :: An abstract representation of an integer"><span class="description">An abstract representation of an integer</span><pre>J_INTEGER</pre></a></li>
+<li class="constant  "><a href="#J_KEY" title="J_KEY :: An abstract representation of a JSON object key"><span class="description">An abstract representation of a JSON object key</span><pre>J_KEY</pre></a></li>
+<li class="constant  "><a href="#J_NULL" title="J_NULL :: An abstract representation of null"><span class="description">An abstract representation of null</span><pre>J_NULL</pre></a></li>
+<li class="constant  "><a href="#J_OBJ_CLOSE" title="J_OBJ_CLOSE :: An abstract representation of }"><span class="description">An abstract representation of }</span><pre>J_OBJ_CLOSE</pre></a></li>
+<li class="constant  "><a href="#J_OBJ_COMMA" title="J_OBJ_COMMA :: An abstract representation of , in a JSON object"><span class="description">An abstract representation of , in a JSON object</span><pre>J_OBJ_COMMA</pre></a></li>
+<li class="constant  "><a href="#J_OBJ_OPEN" title="J_OBJ_OPEN :: An abstract representation of {"><span class="description">An abstract representation of {</span><pre>J_OBJ_OPEN</pre></a></li>
+<li class="constant  "><a href="#J_STRING" title="J_STRING :: An abstract representation of a string"><span class="description">An abstract representation of a string</span><pre>J_STRING</pre></a></li>
+<li class="constant  "><a href="#J_TRUE" title="J_TRUE :: An abstract representation of a boolean true"><span class="description">An abstract representation of a boolean true</span><pre>J_TRUE</pre></a></li>
 <li class="constant  "><a href="#decode" title="decode :: "><span class="description">decode</span><pre>decode</pre></a></li>
 <li class="constant  "><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
 <li class="constant  "><a href="#output" title="output :: "><span class="description">output</span><pre>output</pre></a></li>
@@ -267,8 +282,188 @@ not a valid JSON string, <code>NULL</code> will be returned.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="%24next_values" id="$next_values"> </a><div class="element clickable property private $next_values" data-toggle="collapse" data-target=".$next_values .collapse">
+<h2>An array of what values are allowed after other values</h2>
+<pre>$next_values : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="J_ARRAY_CLOSE" id="J_ARRAY_CLOSE"> </a><div class="element clickable constant  J_ARRAY_CLOSE" data-toggle="collapse" data-target=".J_ARRAY_CLOSE .collapse">
+<h2>An abstract representation of ]</h2>
+<pre>J_ARRAY_CLOSE : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_ARRAY_COMMA" id="J_ARRAY_COMMA"> </a><div class="element clickable constant  J_ARRAY_COMMA" data-toggle="collapse" data-target=".J_ARRAY_COMMA .collapse">
+<h2>An abstract representation of , in a JSON array</h2>
+<pre>J_ARRAY_COMMA : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_ARRAY_OPEN" id="J_ARRAY_OPEN"> </a><div class="element clickable constant  J_ARRAY_OPEN" data-toggle="collapse" data-target=".J_ARRAY_OPEN .collapse">
+<h2>An abstract representation of [</h2>
+<pre>J_ARRAY_OPEN : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_COLON" id="J_COLON"> </a><div class="element clickable constant  J_COLON" data-toggle="collapse" data-target=".J_COLON .collapse">
+<h2>An abstract representation of :</h2>
+<pre>J_COLON : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_FALSE" id="J_FALSE"> </a><div class="element clickable constant  J_FALSE" data-toggle="collapse" data-target=".J_FALSE .collapse">
+<h2>An abstract representation of a boolean false</h2>
+<pre>J_FALSE : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_FLOAT" id="J_FLOAT"> </a><div class="element clickable constant  J_FLOAT" data-toggle="collapse" data-target=".J_FLOAT .collapse">
+<h2>An abstract representation of a floating value</h2>
+<pre>J_FLOAT : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_INTEGER" id="J_INTEGER"> </a><div class="element clickable constant  J_INTEGER" data-toggle="collapse" data-target=".J_INTEGER .collapse">
+<h2>An abstract representation of an integer</h2>
+<pre>J_INTEGER : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_KEY" id="J_KEY"> </a><div class="element clickable constant  J_KEY" data-toggle="collapse" data-target=".J_KEY .collapse">
+<h2>An abstract representation of a JSON object key</h2>
+<pre>J_KEY : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_NULL" id="J_NULL"> </a><div class="element clickable constant  J_NULL" data-toggle="collapse" data-target=".J_NULL .collapse">
+<h2>An abstract representation of null</h2>
+<pre>J_NULL : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_OBJ_CLOSE" id="J_OBJ_CLOSE"> </a><div class="element clickable constant  J_OBJ_CLOSE" data-toggle="collapse" data-target=".J_OBJ_CLOSE .collapse">
+<h2>An abstract representation of }</h2>
+<pre>J_OBJ_CLOSE : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_OBJ_COMMA" id="J_OBJ_COMMA"> </a><div class="element clickable constant  J_OBJ_COMMA" data-toggle="collapse" data-target=".J_OBJ_COMMA .collapse">
+<h2>An abstract representation of , in a JSON object</h2>
+<pre>J_OBJ_COMMA : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_OBJ_OPEN" id="J_OBJ_OPEN"> </a><div class="element clickable constant  J_OBJ_OPEN" data-toggle="collapse" data-target=".J_OBJ_OPEN .collapse">
+<h2>An abstract representation of {</h2>
+<pre>J_OBJ_OPEN : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_STRING" id="J_STRING"> </a><div class="element clickable constant  J_STRING" data-toggle="collapse" data-target=".J_STRING .collapse">
+<h2>An abstract representation of a string</h2>
+<pre>J_STRING : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="J_TRUE" id="J_TRUE"> </a><div class="element clickable constant  J_TRUE" data-toggle="collapse" data-target=".J_TRUE .collapse">
+<h2>An abstract representation of a boolean true</h2>
+<pre>J_TRUE : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="decode" id="decode"> </a><div class="element clickable constant  decode" data-toggle="collapse" data-target=".decode .collapse">
 <h2>decode</h2>
 <pre>decode </pre>
@@ -300,7 +495,7 @@ not a valid JSON string, <code>NULL</code> will be returned.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

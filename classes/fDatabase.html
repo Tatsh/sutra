@@ -57,6 +57,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Configures the connection to a database - connection is not made until the first query is executed"><span class="description">Configures the connection to a database - connection is not made until the first query is executed</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__destruct" title="__destruct :: Closes the open database connection"><span class="description">Closes the open database connection</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the database connection"><span class="description">Closes the database connection</span><pre>close()</pre></a></li>
 <li class="method public "><a href="#connect" title="connect :: Connects to the database specified, if no connection exists"><span class="description">Connects to the database specified, if no connection exists</span><pre>connect()</pre></a></li>
@@ -66,14 +68,17 @@
 <li class="method public "><a href="#execute" title="execute :: Executes one or more SQL queries without returning any results"><span class="description">Executes one or more SQL queries without returning any results</span><pre>execute()</pre></a></li>
 <li class="method public "><a href="#getConnection" title="getConnection :: Returns the database connection resource or object"><span class="description">Returns the database connection resource or object</span><pre>getConnection()</pre></a></li>
 <li class="method public "><a href="#getDatabase" title="getDatabase :: Gets the name of the database currently connected to"><span class="description">Gets the name of the database currently connected to</span><pre>getDatabase()</pre></a></li>
+<li class="method public "><a href="#getExtension" title="getExtension :: Gets the php extension being used"><span class="description">Gets the php extension being used</span><pre>getExtension()</pre></a></li>
 <li class="method public "><a href="#getHost" title="getHost :: Gets the host for this database"><span class="description">Gets the host for this database</span><pre>getHost()</pre></a></li>
 <li class="method public "><a href="#getPort" title="getPort :: Gets the port for this database"><span class="description">Gets the port for this database</span><pre>getPort()</pre></a></li>
 <li class="method public "><a href="#getSQLTranslation" title="getSQLTranslation :: Gets the fSQLTranslation object used for translated queries"><span class="description">Gets the fSQLTranslation object used for translated queries</span><pre>getSQLTranslation()</pre></a></li>
 <li class="method public "><a href="#getType" title="getType :: Gets the database type"><span class="description">Gets the database type</span><pre>getType()</pre></a></li>
 <li class="method public "><a href="#getUsername" title="getUsername :: Gets the username for this database"><span class="description">Gets the username for this database</span><pre>getUsername()</pre></a></li>
 <li class="method public "><a href="#getVersion" title="getVersion :: Gets the version of the database system"><span class="description">Gets the version of the database system</span><pre>getVersion()</pre></a></li>
+<li class="method public "><a href="#inject" title="inject :: Injects an fSQLTranslation object to handle translation"><span class="description">Injects an fSQLTranslation object to handle translation</span><pre>inject()</pre></a></li>
 <li class="method public "><a href="#isInsideTransaction" title="isInsideTransaction :: Will indicate if a transaction is currently in progress"><span class="description">Will indicate if a transaction is currently in progress</span><pre>isInsideTransaction()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Prepares a single fStatement object to execute prepared statements"><span class="description">Prepares a single fStatement object to execute prepared statements</span><pre>prepare()</pre></a></li>
+<li class="method public "><a href="#preprocess" title="preprocess :: Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating"><span class="description">Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating</span><pre>preprocess()</pre></a></li>
 <li class="method public "><a href="#query" title="query :: Executes one or more SQL queries and returns the result(s)"><span class="description">Executes one or more SQL queries and returns the result(s)</span><pre>query()</pre></a></li>
 <li class="method public "><a href="#registerHookCallback" title="registerHookCallback :: Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook"><span class="description">Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</span><pre>registerHookCallback()</pre></a></li>
 <li class="method public "><a href="#translatedExecute" title="translatedExecute :: Translates one or more SQL statements using fSQLTranslation and executes them without returning any results"><span class="description">Translates one or more SQL statements using fSQLTranslation and executes them without returning any results</span><pre>translatedExecute()</pre></a></li>
@@ -452,6 +457,37 @@ cause the default value to be used.</p></p>
 <div class="subelement response"><code><a href="../classes/fDatabase.html">\fDatabase</a></code></div>
 </div></div>
 </div>
+<a name="__destruct" id="__destruct"></a><div class="element clickable method public __destruct" data-toggle="collapse" data-target=".__destruct .collapse">
+<h2>Closes the open database connection</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="clearCache" id="clearCache"></a><div class="element clickable method public clearCache" data-toggle="collapse" data-target=".clearCache .collapse">
 <h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
 <pre>clearCache() : void</pre>
@@ -620,6 +656,21 @@ An example would look like the following:</p>
 <code>string</code>The name of the database currently connected to</div>
 </div></div>
 </div>
+<a name="getExtension" id="getExtension"></a><div class="element clickable method public getExtension" data-toggle="collapse" data-target=".getExtension .collapse">
+<h2>Gets the php extension being used</h2>
+<pre>getExtension() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The php extension used for database interaction</div>
+</div></div>
+</div>
 <a name="getHost" id="getHost"></a><div class="element clickable method public getHost" data-toggle="collapse" data-target=".getHost .collapse">
 <h2>Gets the host for this database</h2>
 <pre>getHost() : string</pre>
@@ -686,6 +737,22 @@ An example would look like the following:</p>
 <code>string</code>The database system version</div>
 </div></div>
 </div>
+<a name="inject" id="inject"></a><div class="element clickable method public inject" data-toggle="collapse" data-target=".inject .collapse">
+<h2>Injects an fSQLTranslation object to handle translation</h2>
+<pre>inject(<a href="../classes/fSQLTranslation.html">\fSQLTranslation</a> $sql_translation) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql_translation</h4>
+<code><a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></code><p>The SQL translation object</p></div>
+</div></div>
+</div>
 <a name="isInsideTransaction" id="isInsideTransaction"></a><div class="element clickable method public isInsideTransaction" data-toggle="collapse" data-target=".isInsideTransaction .collapse">
 <h2>Will indicate if a transaction is currently in progress</h2>
 <pre>isInsideTransaction() : boolean</pre>
@@ -712,6 +779,35 @@ a single value can be provided.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fStatement.html">\fStatement</a></code>A prepared statement object that can be passed to ::query(), ::unbufferedQuery() or ::execute()</div>
+</div></div>
+</div>
+<a name="preprocess" id="preprocess"></a><div class="element clickable method public preprocess" data-toggle="collapse" data-target=".preprocess .collapse">
+<h2>Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating</h2>
+<pre>preprocess(string $sql, array $values, boolean $translate, array $rollback_queries) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to process</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>Literal values to escape into the SQL</p></div>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If the SQL should be translated</p></div>
+<div class="subelement argument">
+<h4>$rollback_queries</h4>
+<code>array</code><p>&$rollback_queries MySQL doesn't allow transactions around <code>ALTER TABLE</code> statements, and some of those require multiple statements, so this is an array of "undo" SQL statements</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The split out SQL queries, queries that have been translated will have a string key of a number, `:` and the original SQL, non-translated SQL will have a numeric key</div>
 </div></div>
 </div>
 <a name="query" id="query"></a><div class="element clickable method public query" data-toggle="collapse" data-target=".query .collapse">
@@ -1581,7 +1677,7 @@ array(
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

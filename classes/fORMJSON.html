@@ -57,6 +57,9 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#extend" title="extend :: Adds the method `toJSON()` to fActiveRecord and fRecordSet instances"><span class="description">Adds the method `toJSON()` to fActiveRecord and fRecordSet instances</span><pre>extend()</pre></a></li>
+<li class="method public "><a href="#reflect" title="reflect :: Adjusts the fActiveRecord::reflect() signatures of columns that have been added by this class"><span class="description">Adjusts the fActiveRecord::reflect() signatures of columns that have been added by this class</span><pre>reflect()</pre></a></li>
+<li class="method public "><a href="#toJSON" title="toJSON :: Returns a JSON object representation of the record"><span class="description">Returns a JSON object representation of the record</span><pre>toJSON()</pre></a></li>
+<li class="method public "><a href="#toJSONRecordSet" title="toJSONRecordSet :: Returns a JSON object representation of a record set"><span class="description">Returns a JSON object representation of a record set</span><pre>toJSONRecordSet()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -118,6 +121,96 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="reflect" id="reflect"></a><div class="element clickable method public reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>Adjusts the fActiveRecord::reflect() signatures of columns that have been added by this class</h2>
+<pre>reflect(string $class, array $signatures, boolean $include_doc_comments) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to reflect</p></div>
+<div class="subelement argument">
+<h4>$signatures</h4>
+<code>array</code><p>&$signatures The associative array of <code>{method name} => {signature}</code></p>
+</div>
+<div class="subelement argument">
+<h4>$include_doc_comments</h4>
+<code>boolean</code><p>If doc comments should be included with the signature</p></div>
+</div></div>
+</div>
+<a name="toJSON" id="toJSON"></a><div class="element clickable method public toJSON" data-toggle="collapse" data-target=".toJSON .collapse">
+<h2>Returns a JSON object representation of the record</h2>
+<pre>toJSON(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The JSON object that represents the values of this record</div>
+</div></div>
+</div>
+<a name="toJSONRecordSet" id="toJSONRecordSet"></a><div class="element clickable method public toJSONRecordSet" data-toggle="collapse" data-target=".toJSONRecordSet .collapse">
+<h2>Returns a JSON object representation of a record set</h2>
+<pre>toJSONRecordSet(<a href="../classes/fRecordSet.html">\fRecordSet</a> $record_set, string $class, array $records) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$record_set</h4>
+<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The fRecordSet instance</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class of the records</p></div>
+<div class="subelement argument">
+<h4>$records</h4>
+<code>array</code><p>&$records The fActiveRecord objects</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The JSON object that represents an array of all of the fActiveRecord objects</div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMJSON.html">\fORMJSON</a></pre>
@@ -161,7 +254,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

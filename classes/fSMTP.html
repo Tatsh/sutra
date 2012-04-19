@@ -58,9 +58,11 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Configures the SMTP connection"><span class="description">Configures the SMTP connection</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#__destruct" title="__destruct :: Closes the connection to the SMTP server"><span class="description">Closes the connection to the SMTP server</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#authenticate" title="authenticate :: Authenticates with the SMTP server"><span class="description">Authenticates with the SMTP server</span><pre>authenticate()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the connection to the SMTP server"><span class="description">Closes the connection to the SMTP server</span><pre>close()</pre></a></li>
 <li class="method public "><a href="#enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
+<li class="method public "><a href="#send" title="send :: Sends a message via the SMTP server"><span class="description">Sends a message via the SMTP server</span><pre>send()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#connect" title="connect :: Initiates the connection to the server"><span class="description">Initiates the connection to the server</span><pre>connect()</pre></a></li>
 <li class="method private "><a href="#find" title="find :: Searches the response array for the the regex and returns any matches"><span class="description">Searches the response array for the the regex and returns any matches</span><pre>find()</pre></a></li>
@@ -197,6 +199,25 @@ requested. This helps to keep authentication information secure.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="authenticate" id="authenticate"></a><div class="element clickable method public authenticate" data-toggle="collapse" data-target=".authenticate .collapse">
 <h2>Authenticates with the SMTP server</h2>
 <pre>authenticate(string $username, string $password) : void</pre>
@@ -236,6 +257,39 @@ in the clear.</p></p>
 <div class="subelement argument">
 <h4>$flag</h4>
 <code>boolean</code><p>If debugging messages should be shown</p></div>
+</div></div>
+</div>
+<a name="send" id="send"></a><div class="element clickable method public send" data-toggle="collapse" data-target=".send .collapse">
+<h2>Sends a message via the SMTP server</h2>
+<pre>send(string $from, array $to, string $headers, string $body) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$from</h4>
+<code>string</code><p>The email address being sent from - this will be used as the <code>Return-Path</code> header</p>
+</div>
+<div class="subelement argument">
+<h4>$to</h4>
+<code>array</code><p>All of the To, Cc and Bcc email addresses to send the message to - this does not affect the message headers in any way</p>
+</div>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>string</code><p>The message headers - the Bcc header will be removed if present</p>
+</div>
+<div class="subelement argument">
+<h4>$body</h4>
+<code>string</code><p>The mail body</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the message is too large for the server</td>
+</tr></table>
 </div></div>
 </div>
 <a name="connect" id="connect"></a><div class="element clickable method private connect" data-toggle="collapse" data-target=".connect .collapse">
@@ -400,7 +454,7 @@ in the clear.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

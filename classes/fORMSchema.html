@@ -57,6 +57,12 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#attach" title="attach :: Allows attaching an fSchema-compatible object as the schema singleton for ORM code"><span class="description">Allows attaching an fSchema-compatible object as the schema singleton for ORM code</span><pre>attach()</pre></a></li>
+<li class="method public "><a href="#getRoute" title="getRoute :: Returns information about the specified route"><span class="description">Returns information about the specified route</span><pre>getRoute()</pre></a></li>
+<li class="method public "><a href="#getRouteName" title="getRouteName :: Returns the name of the only route from the specified table to one of its related tables"><span class="description">Returns the name of the only route from the specified table to one of its related tables</span><pre>getRouteName()</pre></a></li>
+<li class="method public "><a href="#getRouteNameFromRelationship" title="getRouteNameFromRelationship :: Returns the name of the route specified by the relationship"><span class="description">Returns the name of the route specified by the relationship</span><pre>getRouteNameFromRelationship()</pre></a></li>
+<li class="method public "><a href="#getRoutes" title="getRoutes :: Returns an array of all routes from a table to one of its related tables"><span class="description">Returns an array of all routes from a table to one of its related tables</span><pre>getRoutes()</pre></a></li>
+<li class="method public "><a href="#isOneToOne" title="isOneToOne :: Indicates if the relationship specified is a one-to-one relationship"><span class="description">Indicates if the relationship specified is a one-to-one relationship</span><pre>isOneToOne()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#retrieve" title="retrieve :: Return the instance of the fSchema class"><span class="description">Return the instance of the fSchema class</span><pre>retrieve()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
@@ -161,6 +167,160 @@
 <code>string</code><p>The name of the database this schema is for</p></div>
 </div></div>
 </div>
+<a name="getRoute" id="getRoute"></a><div class="element clickable method public getRoute" data-toggle="collapse" data-target=".getRoute .collapse">
+<h2>Returns information about the specified route</h2>
+<pre>getRoute(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $related_table, string $route, string $relationship_type) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object to get the route from</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The main table we are searching on behalf of</p></div>
+<div class="subelement argument">
+<h4>$related_table</h4>
+<code>string</code><p>The related table we are searching under</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route to get info about</p></div>
+<div class="subelement argument">
+<h4>$relationship_type</h4>
+<code>string</code><p>The relationship type: <code>NULL</code>, <code>'*-to-many'</code>, <code>'*-to-one'</code>, <code>'!many-to-one'</code>, <code>'one-to-one'</code>, <code>'one-to-meny'</code>, <code>'many-to-one'</code>, <code>'many-to-many'</code></p>
+</div>
+</div></div>
+</div>
+<a name="getRouteName" id="getRouteName"></a><div class="element clickable method public getRouteName" data-toggle="collapse" data-target=".getRouteName .collapse">
+<h2>Returns the name of the only route from the specified table to one of its related tables</h2>
+<pre>getRouteName(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $related_table, string $route, string $relationship_type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object to get the route name from</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The main table we are searching on behalf of</p></div>
+<div class="subelement argument">
+<h4>$related_table</h4>
+<code>string</code><p>The related table we are trying to find the routes for</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route that was preselected, will be verified if present</p></div>
+<div class="subelement argument">
+<h4>$relationship_type</h4>
+<code>string</code><p>The relationship type: <code>NULL</code>, <code>'*-to-many'</code>, <code>'*-to-one'</code>, <code>'!many-to-one'</code>, <code>'one-to-one'</code>, <code>'one-to-many'</code>, <code>'many-to-one'</code>, <code>'many-to-many'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The only route from the main table to the related table</div>
+</div></div>
+</div>
+<a name="getRouteNameFromRelationship" id="getRouteNameFromRelationship"></a><div class="element clickable method public getRouteNameFromRelationship" data-toggle="collapse" data-target=".getRouteNameFromRelationship .collapse">
+<h2>Returns the name of the route specified by the relationship</h2>
+<pre>getRouteNameFromRelationship(string $type, array $relationship) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of relationship: <code>'*-to-one'</code>, <code>'one-to-one'</code>, <code>'one-to-many'</code>, <code>'many-to-one'</code>, <code>'many-to-many'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$relationship</h4>
+<code>array</code><p>The relationship array from fSchema::getKeys()</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the route</div>
+</div></div>
+</div>
+<a name="getRoutes" id="getRoutes"></a><div class="element clickable method public getRoutes" data-toggle="collapse" data-target=".getRoutes .collapse">
+<h2>Returns an array of all routes from a table to one of its related tables</h2>
+<pre>getRoutes(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $related_table, string $relationship_type) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object to get the routes for</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The main table we are searching on behalf of</p></div>
+<div class="subelement argument">
+<h4>$related_table</h4>
+<code>string</code><p>The related table we are trying to find the routes for</p></div>
+<div class="subelement argument">
+<h4>$relationship_type</h4>
+<code>string</code><p>The relationship type: <code>NULL</code>, <code>'*-to-many'</code>, <code>'*-to-one'</code>, <code>'!many-to-one'</code>, <code>'one-to-one'</code>, <code>'one-to-many'</code>, <code>'many-to-one'</code>, <code>'many-to-many'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>All of the routes from the main table to the related table</div>
+</div></div>
+</div>
+<a name="isOneToOne" id="isOneToOne"></a><div class="element clickable method public isOneToOne" data-toggle="collapse" data-target=".isOneToOne .collapse">
+<h2>Indicates if the relationship specified is a one-to-one relationship</h2>
+<pre>isOneToOne(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $related_table, string $route) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object the tables are from</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The main table we are searching on behalf of</p></div>
+<div class="subelement argument">
+<h4>$related_table</h4>
+<code>string</code><p>The related table we are trying to find the routes for</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route between the two tables</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the table is in a one-to-one relationship with the related table over the route specified</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="retrieve" id="retrieve"></a><div class="element clickable method public retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
 <h2>Return the instance of the fSchema class</h2>
 <pre>retrieve(string $class) : <a href="../classes/fSchema.html">\fSchema</a></pre>
@@ -257,7 +417,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

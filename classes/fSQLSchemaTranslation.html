@@ -57,6 +57,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Sets up the class"><span class="description">Sets up the class</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#translate" title="translate :: Translates a Flourish SQL DDL statement into the dialect for the current database"><span class="description">Translates a Flourish SQL DDL statement into the dialect for the current database</span><pre>translate()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -181,6 +183,48 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database being translated for</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
+<a name="translate" id="translate"></a><div class="element clickable method public translate" data-toggle="collapse" data-target=".translate .collapse">
+<h2>Translates a Flourish SQL DDL statement into the dialect for the current database</h2>
+<pre>translate(string $sql, array $rollback_statements) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statement to translate</p></div>
+<div class="subelement argument">
+<h4>$rollback_statements</h4>
+<code>array</code><p>&$rollback_statements SQL statements to rollback the returned SQL statements if something goes wrong - only applicable for MySQL <code>ALTER TABLE</code> statements</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array containing the translated `$sql` statement and an array of extra statements</div>
 </div></div>
 </div>
 <a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
@@ -1062,7 +1106,7 @@ statements for SQLite</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>

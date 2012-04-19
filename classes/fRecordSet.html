@@ -57,7 +57,9 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__call" title="__call :: Allows for preloading various data related to the record set in single database queries, as opposed to one query per record"><span class="description">Allows for preloading various data related to the record set in single database queries, as opposed to one query per record</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#build" title="build :: Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules"><span class="description">Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules</span><pre>build()</pre></a></li>
+<li class="method public "><a href="#buildFromArray" title="buildFromArray :: Creates an fRecordSet from an array of records"><span class="description">Creates an fRecordSet from an array of records</span><pre>buildFromArray()</pre></a></li>
 <li class="method public "><a href="#buildFromCall" title="buildFromCall :: Calls a specific method on each object, returning an fRecordSet of the results"><span class="description">Calls a specific method on each object, returning an fRecordSet of the results</span><pre>buildFromCall()</pre></a></li>
 <li class="method public "><a href="#buildFromMap" title="buildFromMap :: Maps each record in the set to a callback function, returning an fRecordSet of the results"><span class="description">Maps each record in the set to a callback function, returning an fRecordSet of the results</span><pre>buildFromMap()</pre></a></li>
 <li class="method public "><a href="#buildFromSQL" title="buildFromSQL :: Creates an fRecordSet from an SQL statement"><span class="description">Creates an fRecordSet from an SQL statement</span><pre>buildFromSQL()</pre></a></li>
@@ -68,6 +70,7 @@
 <li class="method public "><a href="#diff" title="diff :: Removes all passed records from the current record set"><span class="description">Removes all passed records from the current record set</span><pre>diff()</pre></a></li>
 <li class="method public "><a href="#filter" title="filter :: Filters the records in the record set via a callback"><span class="description">Filters the records in the record set via a callback</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#getClass" title="getClass :: Returns the class name of the record being stored"><span class="description">Returns the class name of the record being stored</span><pre>getClass()</pre></a></li>
+<li class="method public "><a href="#getIterator" title="getIterator :: Returns an iterator for the record set"><span class="description">Returns an iterator for the record set</span><pre>getIterator()</pre></a></li>
 <li class="method public "><a href="#getLimit" title="getLimit :: Returns the number of records the set was limited to"><span class="description">Returns the number of records the set was limited to</span><pre>getLimit()</pre></a></li>
 <li class="method public "><a href="#getPage" title="getPage :: Returns the page of records this set represents"><span class="description">Returns the page of records this set represents</span><pre>getPage()</pre></a></li>
 <li class="method public "><a href="#getPages" title="getPages :: Returns the number of pages of records exist for the limit used when creating this set"><span class="description">Returns the number of pages of records exist for the limit used when creating this set</span><pre>getPages()</pre></a></li>
@@ -77,6 +80,10 @@
 <li class="method public "><a href="#intersect" title="intersect :: Returns all records in the current record set that are also present in the passed records"><span class="description">Returns all records in the current record set that are also present in the passed records</span><pre>intersect()</pre></a></li>
 <li class="method public "><a href="#map" title="map :: Performs an [http://php.net/array_map array_map()] on the record in the set"><span class="description">Performs an [http://php.net/array_map array_map()] on the record in the set</span><pre>map()</pre></a></li>
 <li class="method public "><a href="#merge" title="merge :: Merges the record set with more records"><span class="description">Merges the record set with more records</span><pre>merge()</pre></a></li>
+<li class="method public "><a href="#offsetExists" title="offsetExists :: Checks to see if an offset exists"><span class="description">Checks to see if an offset exists</span><pre>offsetExists()</pre></a></li>
+<li class="method public "><a href="#offsetGet" title="offsetGet :: Returns a record based on the offset"><span class="description">Returns a record based on the offset</span><pre>offsetGet()</pre></a></li>
+<li class="method public "><a href="#offsetSet" title="offsetSet :: Prevents setting values to the record set"><span class="description">Prevents setting values to the record set</span><pre>offsetSet()</pre></a></li>
+<li class="method public "><a href="#offsetUnset" title="offsetUnset :: Prevents unsetting values from the record set"><span class="description">Prevents unsetting values from the record set</span><pre>offsetUnset()</pre></a></li>
 <li class="method public "><a href="#reduce" title="reduce :: Reduces the record set to a single value via a callback"><span class="description">Reduces the record set to a single value via a callback</span><pre>reduce()</pre></a></li>
 <li class="method public "><a href="#slice" title="slice :: Slices a section of records from the set and returns a new set containing those"><span class="description">Slices a section of records from the set and returns a new set containing those</span><pre>slice()</pre></a></li>
 <li class="method public "><a href="#sort" title="sort :: Sorts the set by the return value of a method from the class created and rewind the interator"><span class="description">Sorts the set by the return value of a method from the class created and rewind the interator</span><pre>sort()</pre></a></li>
@@ -349,6 +356,25 @@ for every record in the record set.</p></p>
 <code>string</code><p>The parameters passed</p></div>
 </div></div>
 </div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="build" id="build"></a><div class="element clickable method public build" data-toggle="collapse" data-target=".build .collapse">
 <h2>Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules</h2>
 <pre>build(string $class, array $where_conditions, array $order_bys, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
@@ -499,6 +525,40 @@ be normal PHP values.</p>
 <div class="subelement argument">
 <h4>$page</h4>
 <code>integer</code><p>The page offset to use when limiting records</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>A set of fActiveRecord objects</div>
+</div></div>
+</div>
+<a name="buildFromArray" id="buildFromArray"></a><div class="element clickable method public buildFromArray" data-toggle="collapse" data-target=".buildFromArray .collapse">
+<h2>Creates an fRecordSet from an array of records</h2>
+<pre>buildFromArray(string | array $class, array $records, integer $total_records, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>stringarray</code><p>The class or classes of the records</p></div>
+<div class="subelement argument">
+<h4>$records</h4>
+<code>array</code><p>The records to create the set from, the order of the record set will be the same as the order of the array.</p></div>
+<div class="subelement argument">
+<h4>$total_records</h4>
+<code>integer</code><p>The total number of records - this should only be provided if the array is a segment of a larger array - this is informational only and does not affect the array</p>
+</div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The maximum number of records the array was limited to - this is informational only and does not affect the array</p>
+</div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page of records the array is from - this is informational only and does not affect the array</p>
+</div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>A set of fActiveRecord objects</div>
@@ -777,6 +837,21 @@ names followed by a comparison operator.</p>
 <code>string</code><code>array</code>The class name(s) of the records in the set</div>
 </div></div>
 </div>
+<a name="getIterator" id="getIterator"></a><div class="element clickable method public getIterator" data-toggle="collapse" data-target=".getIterator .collapse">
+<h2>Returns an iterator for the record set</h2>
+<pre>getIterator() : <a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is required by the IteratorAggregate interface.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></code>An iterator for the record set</div>
+</div></div>
+</div>
 <a name="getLimit" id="getLimit"></a><div class="element clickable method public getLimit" data-toggle="collapse" data-target=".getLimit .collapse">
 <h2>Returns the number of records the set was limited to</h2>
 <pre>getLimit() : integer</pre>
@@ -921,6 +996,84 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>The merged record sets</div>
+</div></div>
+</div>
+<a name="offsetExists" id="offsetExists"></a><div class="element clickable method public offsetExists" data-toggle="collapse" data-target=".offsetExists .collapse">
+<h2>Checks to see if an offset exists</h2>
+<pre>offsetExists(mixed $offset) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>mixed</code><p>The offset to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the offset exists</div>
+</div></div>
+</div>
+<a name="offsetGet" id="offsetGet"></a><div class="element clickable method public offsetGet" data-toggle="collapse" data-target=".offsetGet .collapse">
+<h2>Returns a record based on the offset</h2>
+<pre>offsetGet(mixed $offset) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>mixed</code><p>The offset of the record to get</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When the offset specified is beyond the last record</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The requested record</div>
+</div></div>
+</div>
+<a name="offsetSet" id="offsetSet"></a><div class="element clickable method public offsetSet" data-toggle="collapse" data-target=".offsetSet .collapse">
+<h2>Prevents setting values to the record set</h2>
+<pre>offsetSet(mixed $offset, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>mixed</code><p>The offset to set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set to the offset</p></div>
+</div></div>
+</div>
+<a name="offsetUnset" id="offsetUnset"></a><div class="element clickable method public offsetUnset" data-toggle="collapse" data-target=".offsetUnset .collapse">
+<h2>Prevents unsetting values from the record set</h2>
+<pre>offsetUnset(mixed $offset) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>mixed</code><p>The offset to unset</p></div>
 </div></div>
 </div>
 <a name="reduce" id="reduce"></a><div class="element clickable method public reduce" data-toggle="collapse" data-target=".reduce .collapse">
@@ -1316,7 +1469,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

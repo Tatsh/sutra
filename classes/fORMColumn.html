@@ -60,6 +60,18 @@
 <li class="method public "><a href="#configureLinkColumn" title="configureLinkColumn :: Sets a column to be formatted as a link"><span class="description">Sets a column to be formatted as a link</span><pre>configureLinkColumn()</pre></a></li>
 <li class="method public "><a href="#configureNumberColumn" title="configureNumberColumn :: Sets a column to be returned as an fNumber object from calls to `get{ColumnName}()`"><span class="description">Sets a column to be returned as an fNumber object from calls to `get{ColumnName}()`</span><pre>configureNumberColumn()</pre></a></li>
 <li class="method public "><a href="#configureRandomColumn" title="configureRandomColumn :: Sets a column to be a random string column - a random string will be generated when the record is saved"><span class="description">Sets a column to be a random string column - a random string will be generated when the record is saved</span><pre>configureRandomColumn()</pre></a></li>
+<li class="method public "><a href="#encodeNumberColumn" title="encodeNumberColumn :: Encodes a number column by calling fNumber::__toString()"><span class="description">Encodes a number column by calling fNumber::__toString()</span><pre>encodeNumberColumn()</pre></a></li>
+<li class="method public "><a href="#generate" title="generate :: Generates a new random value for the column"><span class="description">Generates a new random value for the column</span><pre>generate()</pre></a></li>
+<li class="method public "><a href="#inspect" title="inspect :: Adds metadata about features added by this class"><span class="description">Adds metadata about features added by this class</span><pre>inspect()</pre></a></li>
+<li class="method public "><a href="#objectifyNumber" title="objectifyNumber :: Turns a numeric value into an fNumber object"><span class="description">Turns a numeric value into an fNumber object</span><pre>objectifyNumber()</pre></a></li>
+<li class="method public "><a href="#prepareLinkColumn" title="prepareLinkColumn :: Prepares a link column so that the link will work properly in an `a` tag"><span class="description">Prepares a link column so that the link will work properly in an `a` tag</span><pre>prepareLinkColumn()</pre></a></li>
+<li class="method public "><a href="#prepareNumberColumn" title="prepareNumberColumn :: Prepares a number column by calling fNumber::format()"><span class="description">Prepares a number column by calling fNumber::format()</span><pre>prepareNumberColumn()</pre></a></li>
+<li class="method public "><a href="#reflect" title="reflect :: Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class"><span class="description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</span><pre>reflect()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
+<li class="method public "><a href="#setEmailColumn" title="setEmailColumn :: Sets the value for an email column, trimming the value if it is a valid email"><span class="description">Sets the value for an email column, trimming the value if it is a valid email</span><pre>setEmailColumn()</pre></a></li>
+<li class="method public "><a href="#setRandomStrings" title="setRandomStrings :: Sets the appropriate column values to a random string if the object is new"><span class="description">Sets the appropriate column values to a random string if the object is new</span><pre>setRandomStrings()</pre></a></li>
+<li class="method public "><a href="#validateEmailColumns" title="validateEmailColumns :: Validates all email columns"><span class="description">Validates all email columns</span><pre>validateEmailColumns()</pre></a></li>
+<li class="method public "><a href="#validateLinkColumns" title="validateLinkColumns :: Validates all link columns"><span class="description">Validates all link columns</span><pre>validateLinkColumns()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
@@ -250,6 +262,401 @@
 <code>integer</code><p>The length of the random string</p></div>
 </div></div>
 </div>
+<a name="encodeNumberColumn" id="encodeNumberColumn"></a><div class="element clickable method public encodeNumberColumn" data-toggle="collapse" data-target=".encodeNumberColumn .collapse">
+<h2>Encodes a number column by calling fNumber::__toString()</h2>
+<pre>encodeNumberColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded number</div>
+</div></div>
+</div>
+<a name="generate" id="generate"></a><div class="element clickable method public generate" data-toggle="collapse" data-target=".generate .collapse">
+<h2>Generates a new random value for the column</h2>
+<pre>generate(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The newly generated random value</div>
+</div></div>
+</div>
+<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
+<h2>Adds metadata about features added by this class</h2>
+<pre>inspect(string $class, string $column, array $metadata) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class being inspected</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column being inspected</p></div>
+<div class="subelement argument">
+<h4>$metadata</h4>
+<code>array</code><p>&$metadata The array of metadata about a column</p>
+</div>
+</div></div>
+</div>
+<a name="objectifyNumber" id="objectifyNumber"></a><div class="element clickable method public objectifyNumber" data-toggle="collapse" data-target=".objectifyNumber .collapse">
+<h2>Turns a numeric value into an fNumber object</h2>
+<pre>objectifyNumber(string $class, string $column, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class this value is for</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column the value is in</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The fNumber object or raw value</div>
+</div></div>
+</div>
+<a name="prepareLinkColumn" id="prepareLinkColumn"></a><div class="element clickable method public prepareLinkColumn" data-toggle="collapse" data-target=".prepareLinkColumn .collapse">
+<h2>Prepares a link column so that the link will work properly in an `a` tag</h2>
+<pre>prepareLinkColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted link</div>
+</div></div>
+</div>
+<a name="prepareNumberColumn" id="prepareNumberColumn"></a><div class="element clickable method public prepareNumberColumn" data-toggle="collapse" data-target=".prepareNumberColumn .collapse">
+<h2>Prepares a number column by calling fNumber::format()</h2>
+<pre>prepareNumberColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted link</div>
+</div></div>
+</div>
+<a name="reflect" id="reflect"></a><div class="element clickable method public reflect" data-toggle="collapse" data-target=".reflect .collapse">
+<h2>Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</h2>
+<pre>reflect(string $class, array $signatures, boolean $include_doc_comments) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to reflect</p></div>
+<div class="subelement argument">
+<h4>$signatures</h4>
+<code>array</code><p>&$signatures The associative array of <code>{method name} => {signature}</code></p>
+</div>
+<div class="subelement argument">
+<h4>$include_doc_comments</h4>
+<code>boolean</code><p>If doc comments should be included with the signature</p></div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="setEmailColumn" id="setEmailColumn"></a><div class="element clickable method public setEmailColumn" data-toggle="collapse" data-target=".setEmailColumn .collapse">
+<h2>Sets the value for an email column, trimming the value if it is a valid email</h2>
+<pre>setEmailColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setRandomStrings" id="setRandomStrings"></a><div class="element clickable method public setRandomStrings" data-toggle="collapse" data-target=".setRandomStrings .collapse">
+<h2>Sets the appropriate column values to a random string if the object is new</h2>
+<pre>setRandomStrings(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted link</div>
+</div></div>
+</div>
+<a name="validateEmailColumns" id="validateEmailColumns"></a><div class="element clickable method public validateEmailColumns" data-toggle="collapse" data-target=".validateEmailColumns .collapse">
+<h2>Validates all email columns</h2>
+<pre>validateEmailColumns(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, array $validation_messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$validation_messages</h4>
+<code>array</code><p>&$validation_messages An array of ordered validation messages</p>
+</div>
+</div></div>
+</div>
+<a name="validateLinkColumns" id="validateLinkColumns"></a><div class="element clickable method public validateLinkColumns" data-toggle="collapse" data-target=".validateLinkColumns .collapse">
+<h2>Validates all link columns</h2>
+<pre>validateLinkColumns(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, array $validation_messages) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Any records related to this record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$validation_messages</h4>
+<code>array</code><p>&$validation_messages An array of ordered validation messages</p>
+</div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMColumn.html">\fORMColumn</a></pre>
@@ -406,7 +813,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>

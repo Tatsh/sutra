@@ -57,6 +57,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates an object to represent a directory on the filesystem"><span class="description">Creates an object to represent a directory on the filesystem</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns the full filesystem path for the directory"><span class="description">Returns the full filesystem path for the directory</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#clear" title="clear :: Removes all files and directories inside of the directory"><span class="description">Removes all files and directories inside of the directory</span><pre>clear()</pre></a></li>
 <li class="method public "><a href="#create" title="create :: Creates a directory on the filesystem and returns an object representing it"><span class="description">Creates a directory on the filesystem and returns an object representing it</span><pre>create()</pre></a></li>
@@ -200,6 +201,25 @@ actions.</p></p>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fDirectory.html">\fDirectory</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
 </div></div>
 </div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
@@ -471,7 +491,7 @@ comparing with the <code>$filter</code>.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

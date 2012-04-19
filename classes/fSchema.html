@@ -57,6 +57,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Sets the database"><span class="description">Sets the database</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
 <li class="method public "><a href="#enableCaching" title="enableCaching :: Sets the schema to be cached to the fCache object specified"><span class="description">Sets the schema to be cached to the fCache object specified</span><pre>enableCaching()</pre></a></li>
 <li class="method public "><a href="#getColumnInfo" title="getColumnInfo :: Returns column information for the table specified"><span class="description">Returns column information for the table specified</span><pre>getColumnInfo()</pre></a></li>
 <li class="method public "><a href="#getDatabases" title="getDatabases :: Returns the databases on the current server"><span class="description">Returns the databases on the current server</span><pre>getDatabases()</pre></a></li>
@@ -356,6 +358,37 @@
 <code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The fDatabase instance</p></div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fSchema.html">\fSchema</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
+<a name="clearCache" id="clearCache"></a><div class="element clickable method public clearCache" data-toggle="collapse" data-target=".clearCache .collapse">
+<h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
+<pre>clearCache() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="enableCaching" id="enableCaching"></a><div class="element clickable method public enableCaching" data-toggle="collapse" data-target=".enableCaching .collapse">
@@ -1075,7 +1108,7 @@ see ::getColumnInfo() for a description of each.
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -66,8 +66,17 @@
 <li class="method public "><a href="#addRequiredRule" title="addRequiredRule :: Requires that a column have a non-`NULL` value"><span class="description">Requires that a column have a non-`NULL` value</span><pre>addRequiredRule()</pre></a></li>
 <li class="method public "><a href="#addStringReplacement" title="addStringReplacement :: Adds a call to [http://php.net/str_replace `str_replace()`] for each message"><span class="description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</span><pre>addStringReplacement()</pre></a></li>
 <li class="method public "><a href="#addValidValuesRule" title="addValidValuesRule :: Restricts a column to having only a value from the list of valid values"><span class="description">Restricts a column to having only a value from the list of valid values</span><pre>addValidValuesRule()</pre></a></li>
+<li class="method public "><a href="#hasValue" title="hasValue :: Checks to see if a columns has a value, but based on the schema and if the column allows NULL"><span class="description">Checks to see if a columns has a value, but based on the schema and if the column allows NULL</span><pre>hasValue()</pre></a></li>
+<li class="method public "><a href="#inspect" title="inspect :: Adds metadata about features added by this class"><span class="description">Adds metadata about features added by this class</span><pre>inspect()</pre></a></li>
+<li class="method public "><a href="#removeRegexReplacement" title="removeRegexReplacement :: Removes a regex replacement"><span class="description">Removes a regex replacement</span><pre>removeRegexReplacement()</pre></a></li>
+<li class="method public "><a href="#removeStringReplacement" title="removeStringReplacement :: Removes a string replacement"><span class="description">Removes a string replacement</span><pre>removeStringReplacement()</pre></a></li>
+<li class="method public "><a href="#reorderMessages" title="reorderMessages :: Reorders list items in an html string based on their contents"><span class="description">Reorders list items in an html string based on their contents</span><pre>reorderMessages()</pre></a></li>
+<li class="method public "><a href="#replaceMessages" title="replaceMessages :: Takes a list of messages and performs string and regex replacements on them"><span class="description">Takes a list of messages and performs string and regex replacements on them</span><pre>replaceMessages()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setColumnCaseInsensitive" title="setColumnCaseInsensitive :: Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints"><span class="description">Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</span><pre>setColumnCaseInsensitive()</pre></a></li>
 <li class="method public "><a href="#setMessageOrder" title="setMessageOrder :: Allows setting the order that the list items in a message will be displayed"><span class="description">Allows setting the order that the list items in a message will be displayed</span><pre>setMessageOrder()</pre></a></li>
+<li class="method public "><a href="#validate" title="validate :: Validates values for an fActiveRecord object against the database schema and any additional rules that have been added"><span class="description">Validates values for an fActiveRecord object against the database schema and any additional rules that have been added</span><pre>validate()</pre></a></li>
+<li class="method public "><a href="#validateRelated" title="validateRelated :: Validates related records for an fActiveRecord object"><span class="description">Validates related records for an fActiveRecord object</span><pre>validateRelated()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#checkAgainstSchema" title="checkAgainstSchema :: Validates a value against the database schema"><span class="description">Validates a value against the database schema</span><pre>checkAgainstSchema()</pre></a></li>
 <li class="method private "><a href="#checkConditionalRule" title="checkConditionalRule :: Validates against a conditional rule"><span class="description">Validates against a conditional rule</span><pre>checkConditionalRule()</pre></a></li>
@@ -81,6 +90,8 @@
 <li class="method private "><a href="#checkUniqueConstraints" title="checkUniqueConstraints :: Validates values against unique constraints"><span class="description">Validates values against unique constraints</span><pre>checkUniqueConstraints()</pre></a></li>
 <li class="method private "><a href="#checkValidValuesRule" title="checkValidValuesRule :: Validates against a valid values rule"><span class="description">Validates against a valid values rule</span><pre>checkValidValuesRule()</pre></a></li>
 <li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method private "><a href="#initializeRuleArrays" title="initializeRuleArrays :: Makes sure each rule array is set to at least an empty array"><span class="description">Makes sure each rule array is set to at least an empty array</span><pre>initializeRuleArrays()</pre></a></li>
+<li class="method private "><a href="#isCaseInsensitive" title="isCaseInsensitive :: Checks to see if a column has been set as case insensitive"><span class="description">Checks to see if a column has been set as case insensitive</span><pre>isCaseInsensitive()</pre></a></li>
 <li class="method private "><a href="#isNonBlankString" title="isNonBlankString :: Returns FALSE if the string is empty - used for array filtering"><span class="description">Returns FALSE if the string is empty - used for array filtering</span><pre>isNonBlankString()</pre></a></li>
 <li class="method private "><a href="#sortMessageMatches" title="sortMessageMatches :: Compares the message matching strings by longest first so that the longest matches are made first"><span class="description">Compares the message matching strings by longest first so that the longest matches are made first</span><pre>sortMessageMatches()</pre></a></li>
 <li class="method private "><a href="#stringlike" title="stringlike :: Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)"><span class="description">Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</span><pre>stringlike()</pre></a></li>
@@ -487,6 +498,174 @@ on the column in the database, or using a MySQL <code>ENUM</code> data type.</p>
 </div>
 </div></div>
 </div>
+<a name="hasValue" id="hasValue"></a><div class="element clickable method public hasValue" data-toggle="collapse" data-target=".hasValue .collapse">
+<h2>Checks to see if a columns has a value, but based on the schema and if the column allows NULL</h2>
+<pre>hasValue(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, $column) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If the columns allows NULL values, than anything other than NULL
+will be returned as TRUE. If the column does not allow NULL and
+the value is anything other than the "empty" value for that data type,
+then TRUE will be returned.</p>
+
+<p>The values that are considered "empty" for each data type are as follows.
+Please note that there is no "empty" value for dates, times or
+timestamps.</p>
+
+<ul>
+<li>Blob: ''</li>
+<li>Boolean: FALSE</li>
+<li>Float: 0.0</li>
+<li>Integer: 0</li>
+<li>String: ''</li>
+</ul></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the table</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code></code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the rule</div>
+</div></div>
+</div>
+<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
+<h2>Adds metadata about features added by this class</h2>
+<pre>inspect(string $class, string $column, array $metadata) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class being inspected</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column being inspected</p></div>
+<div class="subelement argument">
+<h4>$metadata</h4>
+<code>array</code><p>&$metadata The array of metadata about a column</p>
+</div>
+</div></div>
+</div>
+<a name="removeRegexReplacement" id="removeRegexReplacement"></a><div class="element clickable method public removeRegexReplacement" data-toggle="collapse" data-target=".removeRegexReplacement .collapse">
+<h2>Removes a regex replacement</h2>
+<pre>removeRegexReplacement(mixed $class, string $search, string $replace) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with</p></div>
+</div></div>
+</div>
+<a name="removeStringReplacement" id="removeStringReplacement"></a><div class="element clickable method public removeStringReplacement" data-toggle="collapse" data-target=".removeStringReplacement .collapse">
+<h2>Removes a string replacement</h2>
+<pre>removeStringReplacement(mixed $class, string $search, string $replace) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with</p></div>
+</div></div>
+</div>
+<a name="reorderMessages" id="reorderMessages"></a><div class="element clickable method public reorderMessages" data-toggle="collapse" data-target=".reorderMessages .collapse">
+<h2>Reorders list items in an html string based on their contents</h2>
+<pre>reorderMessages(string $class, array $messages) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to reorder messages for</p></div>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>An array of the messages</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The reordered messages</div>
+</div></div>
+</div>
+<a name="replaceMessages" id="replaceMessages"></a><div class="element clickable method public replaceMessages" data-toggle="collapse" data-target=".replaceMessages .collapse">
+<h2>Takes a list of messages and performs string and regex replacements on them</h2>
+<pre>replaceMessages(string $class, array $messages) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to reorder messages for</p></div>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>The array of messages</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The new array of messages</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="setColumnCaseInsensitive" id="setColumnCaseInsensitive"></a><div class="element clickable method public setColumnCaseInsensitive" data-toggle="collapse" data-target=".setColumnCaseInsensitive .collapse">
 <h2>Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</h2>
 <pre>setColumnCaseInsensitive(mixed $class, string $column) : void</pre>
@@ -517,6 +696,58 @@ case-insensitive manner.</p></p>
 <div class="subelement argument">
 <h4>$matches</h4>
 <code>array</code><p>This should be an ordered array of strings. If a line contains the string it will be displayed in the relative order it occurs in this array.</p></div>
+</div></div>
+</div>
+<a name="validate" id="validate"></a><div class="element clickable method public validate" data-toggle="collapse" data-target=".validate .collapse">
+<h2>Validates values for an fActiveRecord object against the database schema and any additional rules that have been added</h2>
+<pre>validate(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class to validate</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>The values to validate</p></div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>The old values for the record</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of messages</div>
+</div></div>
+</div>
+<a name="validateRelated" id="validateRelated"></a><div class="element clickable method public validateRelated" data-toggle="collapse" data-target=".validateRelated .collapse">
+<h2>Validates related records for an fActiveRecord object</h2>
+<pre>validateRelated(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $related_records) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The object to validate</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values for the object</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records The related records for the object</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of messages</div>
 </div></div>
 </div>
 <a name="checkAgainstSchema" id="checkAgainstSchema"></a><div class="element clickable method private checkAgainstSchema" data-toggle="collapse" data-target=".checkAgainstSchema .collapse">
@@ -828,6 +1059,44 @@ case-insensitive manner.</p></p>
 <code>string</code>The composed and possible translated message</div>
 </div></div>
 </div>
+<a name="initializeRuleArrays" id="initializeRuleArrays"></a><div class="element clickable method private initializeRuleArrays" data-toggle="collapse" data-target=".initializeRuleArrays .collapse">
+<h2>Makes sure each rule array is set to at least an empty array</h2>
+<pre>initializeRuleArrays(string $class) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to initilize the arrays for</p></div>
+</div></div>
+</div>
+<a name="isCaseInsensitive" id="isCaseInsensitive"></a><div class="element clickable method private isCaseInsensitive" data-toggle="collapse" data-target=".isCaseInsensitive .collapse">
+<h2>Checks to see if a column has been set as case insensitive</h2>
+<pre>isCaseInsensitive(string $class, string $column) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to check</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the column is set to be case insensitive</div>
+</div></div>
+</div>
 <a name="isNonBlankString" id="isNonBlankString"></a><div class="element clickable method private isNonBlankString" data-toggle="collapse" data-target=".isNonBlankString .collapse">
 <h2>Returns FALSE if the string is empty - used for array filtering</h2>
 <pre>isNonBlankString(string $string) : boolean</pre>
@@ -1079,7 +1348,7 @@ case-insensitive manner.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

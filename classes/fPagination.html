@@ -60,8 +60,11 @@
 <li class="method public "><a href="#defineTemplate" title="defineTemplate :: Defines a new template to use with the paginator"><span class="description">Defines a new template to use with the paginator</span><pre>defineTemplate()</pre></a></li>
 <li class="method public "><a href="#extend" title="extend :: Adds the methods `printInfo()` and `showLinks()` to fRecordSet"><span class="description">Adds the methods `printInfo()` and `showLinks()` to fRecordSet</span><pre>extend()</pre></a></li>
 <li class="method public "><a href="#printInfo" title="printInfo :: Prints which records are showing on the current page"><span class="description">Prints which records are showing on the current page</span><pre>printInfo()</pre></a></li>
+<li class="method public "><a href="#printRecordSetInfo" title="printRecordSetInfo :: Handles the `printInfo()` method for fRecordSet"><span class="description">Handles the `printInfo()` method for fRecordSet</span><pre>printRecordSetInfo()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets data to be available to the templates"><span class="description">Sets data to be available to the templates</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#showLinks" title="showLinks :: Shows links to other pages when more than one page of records exists"><span class="description">Shows links to other pages when more than one page of records exists</span><pre>showLinks()</pre></a></li>
+<li class="method public "><a href="#showRecordSetLinks" title="showRecordSetLinks :: Handles the `showLinks()` method for fRecordSet"><span class="description">Handles the `showLinks()` method for fRecordSet</span><pre>showRecordSetLinks()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#extendRecordSetInfo" title="extendRecordSetInfo :: Overlays user data over info from the record set"><span class="description">Overlays user data over info from the record set</span><pre>extendRecordSetInfo()</pre></a></li>
 <li class="method private "><a href="#printPiece" title="printPiece :: Prints out a piece of a template"><span class="description">Prints out a piece of a template</span><pre>printPiece()</pre></a></li>
@@ -257,6 +260,48 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <code>string</code><p>The template to use</p></div>
 </div></div>
 </div>
+<a name="printRecordSetInfo" id="printRecordSetInfo"></a><div class="element clickable method public printRecordSetInfo" data-toggle="collapse" data-target=".printRecordSetInfo .collapse">
+<h2>Handles the `printInfo()` method for fRecordSet</h2>
+<pre>printRecordSetInfo(<a href="../classes/fRecordSet.html">\fRecordSet</a> $object, string | array $class, array $records, string $method_name, array $parameters) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The record set</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>stringarray</code><p>The class(es) contained in the record set</p>
+</div>
+<div class="subelement argument">
+<h4>$records</h4>
+<code>array</code><p>&$records The records</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
 <h2>Sets data to be available to the templates</h2>
 <pre>set(string $key, mixed $value) : void</pre>
@@ -285,6 +330,39 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>If link were printed</div>
+</div></div>
+</div>
+<a name="showRecordSetLinks" id="showRecordSetLinks"></a><div class="element clickable method public showRecordSetLinks" data-toggle="collapse" data-target=".showRecordSetLinks .collapse">
+<h2>Handles the `showLinks()` method for fRecordSet</h2>
+<pre>showRecordSetLinks(<a href="../classes/fRecordSet.html">\fRecordSet</a> $object, string | array $class, array $records, string $method_name, array $parameters) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The record set</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>stringarray</code><p>The class(es) contained in the record set</p>
+</div>
+<div class="subelement argument">
+<h4>$records</h4>
+<code>array</code><p>&$records The records</p>
+</div>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The method that was called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed to the method</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the links were shown</div>
 </div></div>
 </div>
 <a name="extendRecordSetInfo" id="extendRecordSetInfo"></a><div class="element clickable method private extendRecordSetInfo" data-toggle="collapse" data-target=".extendRecordSetInfo .collapse">
@@ -449,7 +527,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>

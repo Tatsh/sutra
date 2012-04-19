@@ -57,21 +57,28 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates the date/time to represent"><span class="description">Creates the date/time to represent</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns this date/time"><span class="description">Returns this date/time</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#adjust" title="adjust :: Changes the date/time by the adjustment specified"><span class="description">Changes the date/time by the adjustment specified</span><pre>adjust()</pre></a></li>
+<li class="method public "><a href="#callFormatCallback" title="callFormatCallback :: If a format callback is defined, call it"><span class="description">If a format callback is defined, call it</span><pre>callFormatCallback()</pre></a></li>
+<li class="method public "><a href="#callUnformatCallback" title="callUnformatCallback :: If an unformat callback is defined, call it"><span class="description">If an unformat callback is defined, call it</span><pre>callUnformatCallback()</pre></a></li>
 <li class="method public "><a href="#defineFormat" title="defineFormat :: Creates a reusable format for formatting fDate, fTime, and fTimestamp objects"><span class="description">Creates a reusable format for formatting fDate, fTime, and fTimestamp objects</span><pre>defineFormat()</pre></a></li>
 <li class="method public "><a href="#eq" title="eq :: If this timestamp is equal to the timestamp passed"><span class="description">If this timestamp is equal to the timestamp passed</span><pre>eq()</pre></a></li>
+<li class="method public "><a href="#fixISOWeek" title="fixISOWeek :: Fixes an ISO week format into `'Y-m-d'` so [http://php.net/strtotime strtotime()] will accept it"><span class="description">Fixes an ISO week format into `'Y-m-d'` so [http://php.net/strtotime strtotime()] will accept it</span><pre>fixISOWeek()</pre></a></li>
 <li class="method public "><a href="#format" title="format :: Formats the date/time"><span class="description">Formats the date/time</span><pre>format()</pre></a></li>
 <li class="method public "><a href="#getDefaultTimezone" title="getDefaultTimezone :: Provides a consistent interface to getting the default timezone. Wraps the [http://php.net/date_default_timezone_get date_default_timezone_get()] function."><span class="description">Provides a consistent interface to getting the default timezone. Wraps the [http://php.net/date_default_timezone_get date_default_timezone_get()] function.</span><pre>getDefaultTimezone()</pre></a></li>
 <li class="method public "><a href="#getFuzzyDifference" title="getFuzzyDifference :: Returns the approximate difference in time, discarding any unit of measure but the least specific."><span class="description">Returns the approximate difference in time, discarding any unit of measure but the least specific.</span><pre>getFuzzyDifference()</pre></a></li>
 <li class="method public "><a href="#gt" title="gt :: If this timestamp is greater than the timestamp passed"><span class="description">If this timestamp is greater than the timestamp passed</span><pre>gt()</pre></a></li>
 <li class="method public "><a href="#gte" title="gte :: If this timestamp is greater than or equal to the timestamp passed"><span class="description">If this timestamp is greater than or equal to the timestamp passed</span><pre>gte()</pre></a></li>
+<li class="method public "><a href="#isValidTimezone" title="isValidTimezone :: Checks to see if a timezone is valid"><span class="description">Checks to see if a timezone is valid</span><pre>isValidTimezone()</pre></a></li>
 <li class="method public "><a href="#lt" title="lt :: If this timestamp is less than the timestamp passed"><span class="description">If this timestamp is less than the timestamp passed</span><pre>lt()</pre></a></li>
 <li class="method public "><a href="#lte" title="lte :: If this timestamp is less than or equal to the timestamp passed"><span class="description">If this timestamp is less than or equal to the timestamp passed</span><pre>lte()</pre></a></li>
 <li class="method public "><a href="#modify" title="modify :: Modifies the current timestamp, creating a new fTimestamp object"><span class="description">Modifies the current timestamp, creating a new fTimestamp object</span><pre>modify()</pre></a></li>
 <li class="method public "><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format(), fDate::format() and fTime::format()</span><pre>registerFormatCallback()</pre></a></li>
 <li class="method public "><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()"><span class="description">Allows setting a callback to parse any date strings passed into ::__construct(), fDate::__construct() and fTime::__construct()</span><pre>registerUnformatCallback()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setDefaultTimezone" title="setDefaultTimezone :: Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function."><span class="description">Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function.</span><pre>setDefaultTimezone()</pre></a></li>
+<li class="method public "><a href="#translateFormat" title="translateFormat :: Takes a format name set via ::defineFormat() and returns the [http://php.net/date date()] function formatting string"><span class="description">Takes a format name set via ::defineFormat() and returns the [http://php.net/date date()] function formatting string</span><pre>translateFormat()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -210,6 +217,25 @@
 <div class="subelement response"><code><a href="../classes/fTimestamp.html">\fTimestamp</a></code></div>
 </div></div>
 </div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Returns this date/time</h2>
 <pre>__toString() : string</pre>
@@ -242,6 +268,46 @@
 <code><a href="../classes/fTimestamp.html">\fTimestamp</a></code>The adjusted date/time</div>
 </div></div>
 </div>
+<a name="callFormatCallback" id="callFormatCallback"></a><div class="element clickable method public callFormatCallback" data-toggle="collapse" data-target=".callFormatCallback .collapse">
+<h2>If a format callback is defined, call it</h2>
+<pre>callFormatCallback(string $formatted_string) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$formatted_string</h4>
+<code>string</code><p>The formatted date/time/timestamp string to be (possibly) modified</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The (possibly) modified formatted string</div>
+</div></div>
+</div>
+<a name="callUnformatCallback" id="callUnformatCallback"></a><div class="element clickable method public callUnformatCallback" data-toggle="collapse" data-target=".callUnformatCallback .collapse">
+<h2>If an unformat callback is defined, call it</h2>
+<pre>callUnformatCallback(string $date_time_string) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date_time_string</h4>
+<code>string</code><p>A raw date/time/timestamp string to be (possibly) parsed/modified</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The (possibly) parsed or modified date/time/timestamp</div>
+</div></div>
+</div>
 <a name="defineFormat" id="defineFormat"></a><div class="element clickable method public defineFormat" data-toggle="collapse" data-target=".defineFormat .collapse">
 <h2>Creates a reusable format for formatting fDate, fTime, and fTimestamp objects</h2>
 <pre>defineFormat(string $name, string $formatting_string) : void</pre>
@@ -272,6 +338,25 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>If this timestamp is equal to the one passed</div>
+</div></div>
+</div>
+<a name="fixISOWeek" id="fixISOWeek"></a><div class="element clickable method public fixISOWeek" data-toggle="collapse" data-target=".fixISOWeek .collapse">
+<h2>Fixes an ISO week format into `'Y-m-d'` so [http://php.net/strtotime strtotime()] will accept it</h2>
+<pre>fixISOWeek(string $date) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>The date to fix</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fixed date</div>
 </div></div>
 </div>
 <a name="format" id="format"></a><div class="element clickable method public format" data-toggle="collapse" data-target=".format .collapse">
@@ -391,6 +476,25 @@
 <code>boolean</code>If this timestamp is greater than or equal to the one passed</div>
 </div></div>
 </div>
+<a name="isValidTimezone" id="isValidTimezone"></a><div class="element clickable method public isValidTimezone" data-toggle="collapse" data-target=".isValidTimezone .collapse">
+<h2>Checks to see if a timezone is valid</h2>
+<pre>isValidTimezone(string $timezone) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$timezone</h4>
+<code>string</code><p>The timezone to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the timezone is valid</div>
+</div></div>
+</div>
 <a name="lt" id="lt"></a><div class="element clickable method public lt" data-toggle="collapse" data-target=".lt .collapse">
 <h2>If this timestamp is less than the timestamp passed</h2>
 <pre>lt(<a href="../classes/fTimestamp.html">\fTimestamp</a> | object | string | integer $other_timestamp) : boolean</pre>
@@ -476,6 +580,18 @@ modify the current timestamp:</p>
 </div>
 </div></div>
 </div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="setDefaultTimezone" id="setDefaultTimezone"></a><div class="element clickable method public setDefaultTimezone" data-toggle="collapse" data-target=".setDefaultTimezone .collapse">
 <h2>Provides a consistent interface to setting the default timezone. Wraps the [http://php.net/date_default_timezone_set date_default_timezone_set()] function.</h2>
 <pre>setDefaultTimezone(string $timezone) : void</pre>
@@ -487,6 +603,25 @@ modify the current timestamp:</p>
 <h4>$timezone</h4>
 <code>string</code><p>The default timezone to use for all date/time calculations</p>
 </div>
+</div></div>
+</div>
+<a name="translateFormat" id="translateFormat"></a><div class="element clickable method public translateFormat" data-toggle="collapse" data-target=".translateFormat .collapse">
+<h2>Takes a format name set via ::defineFormat() and returns the [http://php.net/date date()] function formatting string</h2>
+<pre>translateFormat(string $format) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>The format to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatting string. If no matching format was found, this will be the same as the `$format` parameter.</div>
 </div></div>
 </div>
 <a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
@@ -623,7 +758,7 @@ modify the current timestamp:</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

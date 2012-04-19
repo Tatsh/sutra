@@ -59,17 +59,25 @@
 <li class="method public "><a href="#add" title="add :: Adds a value to an already-existing array value, or to a new array value"><span class="description">Adds a value to an already-existing array value, or to a new array value</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#clear" title="clear :: Removes all session values with the provided prefix"><span class="description">Removes all session values with the provided prefix</span><pre>clear()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the session for writing, allowing other pages to open the session"><span class="description">Closes the session for writing, allowing other pages to open the session</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#closeCache" title="closeCache :: Callback to close the session"><span class="description">Callback to close the session</span><pre>closeCache()</pre></a></li>
 <li class="method public "><a href="#delete" title="delete :: Deletes a value from the session"><span class="description">Deletes a value from the session</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#destroy" title="destroy :: Destroys the session, removing all values"><span class="description">Destroys the session, removing all values</span><pre>destroy()</pre></a></li>
+<li class="method public "><a href="#destroyCache" title="destroyCache :: Callback to destroy a session"><span class="description">Callback to destroy a session</span><pre>destroyCache()</pre></a></li>
 <li class="method public "><a href="#enablePersistence" title="enablePersistence :: Changed the session to use a time-based cookie instead of a session-based cookie"><span class="description">Changed the session to use a time-based cookie instead of a session-based cookie</span><pre>enablePersistence()</pre></a></li>
+<li class="method public "><a href="#gcCache" title="gcCache :: Callback to garbage-collect the session cache"><span class="description">Callback to garbage-collect the session cache</span><pre>gcCache()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets data from the `$_SESSION` superglobal"><span class="description">Gets data from the `$_SESSION` superglobal</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#ignoreSubdomain" title="ignoreSubdomain :: Sets the session to run on the main domain, not just the specific subdomain currently being accessed"><span class="description">Sets the session to run on the main domain, not just the specific subdomain currently being accessed</span><pre>ignoreSubdomain()</pre></a></li>
 <li class="method public "><a href="#open" title="open :: Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()"><span class="description">Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()</span><pre>open()</pre></a></li>
+<li class="method public "><a href="#openCache" title="openCache :: Callback to open the session"><span class="description">Callback to open the session</span><pre>openCache()</pre></a></li>
+<li class="method public "><a href="#readCache" title="readCache :: Callback to read a session's values"><span class="description">Callback to read a session's values</span><pre>readCache()</pre></a></li>
+<li class="method public "><a href="#regenerateID" title="regenerateID :: Regenerates the session ID, but only once per script execution"><span class="description">Regenerates the session ID, but only once per script execution</span><pre>regenerateID()</pre></a></li>
 <li class="method public "><a href="#remove" title="remove :: Removes and returns the value from the end of an array value"><span class="description">Removes and returns the value from the end of an array value</span><pre>remove()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets data to the `$_SESSION` superglobal"><span class="description">Sets data to the `$_SESSION` superglobal</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#setBackend" title="setBackend :: Sets an fCache object to store sessions in"><span class="description">Sets an fCache object to store sessions in</span><pre>setBackend()</pre></a></li>
 <li class="method public "><a href="#setLength" title="setLength :: Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed"><span class="description">Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed</span><pre>setLength()</pre></a></li>
 <li class="method public "><a href="#setPath" title="setPath :: Sets the path to store session files in"><span class="description">Sets the path to store session files in</span><pre>setPath()</pre></a></li>
+<li class="method public "><a href="#writeCache" title="writeCache :: Callback to write a session's values"><span class="description">Callback to write a session's values</span><pre>writeCache()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -265,6 +273,21 @@ are prefixed with <code>fSession::</code>.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="closeCache" id="closeCache"></a><div class="element clickable method public closeCache" data-toggle="collapse" data-target=".closeCache .collapse">
+<h2>Callback to close the session</h2>
+<pre>closeCache() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the operation succeeded</div>
+</div></div>
+</div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>Deletes a value from the session</h2>
 <pre>delete(string $key, mixed $default_value) : mixed</pre>
@@ -291,6 +314,25 @@ are prefixed with <code>fSession::</code>.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="destroyCache" id="destroyCache"></a><div class="element clickable method public destroyCache" data-toggle="collapse" data-target=".destroyCache .collapse">
+<h2>Callback to destroy a session</h2>
+<pre>destroyCache(string $id) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session to destroy</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the operation succeeded</div>
+</div></div>
+</div>
 <a name="enablePersistence" id="enablePersistence"></a><div class="element clickable method public enablePersistence" data-toggle="collapse" data-target=".enablePersistence .collapse">
 <h2>Changed the session to use a time-based cookie instead of a session-based cookie</h2>
 <pre>enablePersistence() : void</pre>
@@ -304,6 +346,21 @@ occurs.</p>
 <p>This method should be called during the login process and will normally
 be controlled by a checkbox or similar where the user can indicate if
 they want to stay logged in for an extended period of time.</p></p></div></div>
+</div>
+<a name="gcCache" id="gcCache"></a><div class="element clickable method public gcCache" data-toggle="collapse" data-target=".gcCache .collapse">
+<h2>Callback to garbage-collect the session cache</h2>
+<pre>gcCache() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the operation succeeded</div>
+</div></div>
 </div>
 <a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
 <h2>Gets data from the `$_SESSION` superglobal</h2>
@@ -347,6 +404,52 @@ this method before generating any output.</p></p>
 </div>
 </div></div>
 </div>
+<a name="openCache" id="openCache"></a><div class="element clickable method public openCache" data-toggle="collapse" data-target=".openCache .collapse">
+<h2>Callback to open the session</h2>
+<pre>openCache() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the operation succeeded</div>
+</div></div>
+</div>
+<a name="readCache" id="readCache"></a><div class="element clickable method public readCache" data-toggle="collapse" data-target=".readCache .collapse">
+<h2>Callback to read a session's values</h2>
+<pre>readCache(string $id) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session to read</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session's serialized data</div>
+</div></div>
+</div>
+<a name="regenerateID" id="regenerateID"></a><div class="element clickable method public regenerateID" data-toggle="collapse" data-target=".regenerateID .collapse">
+<h2>Regenerates the session ID, but only once per script execution</h2>
+<pre>regenerateID() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="remove" id="remove"></a><div class="element clickable method public remove" data-toggle="collapse" data-target=".remove .collapse">
 <h2>Removes and returns the value from the end of an array value</h2>
 <pre>remove(string $key, boolean $beginning) : mixed</pre>
@@ -364,6 +467,18 @@ this method before generating any output.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The value that was removed</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
@@ -457,6 +572,28 @@ server does not garbage collect the session files for this site.</p>
 <div class="subelement argument">
 <h4>$directory</h4>
 <code>string<a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to store session files in</p></div>
+</div></div>
+</div>
+<a name="writeCache" id="writeCache"></a><div class="element clickable method public writeCache" data-toggle="collapse" data-target=".writeCache .collapse">
+<h2>Callback to write a session's values</h2>
+<pre>writeCache(string $id, string $values) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>The session to write</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>string</code><p>The serialized values</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The session's serialized data</div>
 </div></div>
 </div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
@@ -648,7 +785,7 @@ server does not garbage collect the session files for this site.</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>

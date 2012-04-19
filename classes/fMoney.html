@@ -57,6 +57,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates the monetary to represent, with an optional currency"><span class="description">Creates the monetary to represent, with an optional currency</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns the monetary value without a currency symbol or thousand separator (e.g. `2000.12`)"><span class="description">Returns the monetary value without a currency symbol or thousand separator (e.g. `2000.12`)</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#add" title="add :: Adds the passed monetary value to the current one"><span class="description">Adds the passed monetary value to the current one</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#allocate" title="allocate :: Splits the current value into multiple parts ensuring that the sum of the results is exactly equal to this amount"><span class="description">Splits the current value into multiple parts ensuring that the sum of the results is exactly equal to this amount</span><pre>allocate()</pre></a></li>
@@ -76,6 +77,7 @@
 <li class="method public "><a href="#mul" title="mul :: Mupltiplies this monetary value times the number passed"><span class="description">Mupltiplies this monetary value times the number passed</span><pre>mul()</pre></a></li>
 <li class="method public "><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format()</span><pre>registerFormatCallback()</pre></a></li>
 <li class="method public "><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to clean any formatted values so they can be passed to fNumber"><span class="description">Allows setting a callback to clean any formatted values so they can be passed to fNumber</span><pre>registerUnformatCallback()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setDefaultCurrency" title="setDefaultCurrency :: Sets the default currency to use when creating fMoney objects"><span class="description">Sets the default currency to use when creating fMoney objects</span><pre>setDefaultCurrency()</pre></a></li>
 <li class="method public "><a href="#sub" title="sub :: Subtracts the passed monetary value from the current one"><span class="description">Subtracts the passed monetary value from the current one</span><pre>sub()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -167,6 +169,25 @@
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fMoney.html">\fMoney</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
 </div></div>
 </div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
@@ -497,6 +518,18 @@ fractions that when added together equal 1.</p></p>
 <code>callback</code><p>The callback to pass formatted strings to. Should accept a formatted string and a currency code and return a string suitable to passing to the fNumber constructor.</p></div>
 </div></div>
 </div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
 <a name="setDefaultCurrency" id="setDefaultCurrency"></a><div class="element clickable method public setDefaultCurrency" data-toggle="collapse" data-target=".setDefaultCurrency .collapse">
 <h2>Sets the default currency to use when creating fMoney objects</h2>
 <pre>setDefaultCurrency(string $iso_code) : void</pre>
@@ -646,7 +679,7 @@ fractions that when added together equal 1.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:08-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

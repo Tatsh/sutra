@@ -56,12 +56,18 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__clone" title="__clone :: Duplicates a file in the current directory when the object is cloned"><span class="description">Duplicates a file in the current directory when the object is cloned</span><pre>__clone()</pre></a></li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates an object to represent a file on the filesystem"><span class="description">Creates an object to represent a file on the filesystem</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#__sleep" title="__sleep :: The iterator information doesn't need to be serialized since a resource can't be"><span class="description">The iterator information doesn't need to be serialized since a resource can't be</span><pre>__sleep()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns the filename of the file"><span class="description">Returns the filename of the file</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#__wakeup" title="__wakeup :: Re-inserts the file back into the filesystem map when unserialized"><span class="description">Re-inserts the file back into the filesystem map when unserialized</span><pre>__wakeup()</pre></a></li>
 <li class="method public "><a href="#append" title="append :: Appends the provided data to the file"><span class="description">Appends the provided data to the file</span><pre>append()</pre></a></li>
 <li class="method public "><a href="#count" title="count :: Returns the number of lines in the file"><span class="description">Returns the number of lines in the file</span><pre>count()</pre></a></li>
 <li class="method public "><a href="#create" title="create :: Creates a file on the filesystem and returns an object representing it."><span class="description">Creates a file on the filesystem and returns an object representing it.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#current" title="current :: Returns the current line of the file (required by iterator interface)"><span class="description">Returns the current line of the file (required by iterator interface)</span><pre>current()</pre></a></li>
 <li class="method public "><a href="#delete" title="delete :: Deletes the current file"><span class="description">Deletes the current file</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#determineMimeType" title="determineMimeType :: Determines the file's mime type by either looking at the file contents or matching the extension"><span class="description">Determines the file's mime type by either looking at the file contents or matching the extension</span><pre>determineMimeType()</pre></a></li>
 <li class="method public "><a href="#duplicate" title="duplicate :: Creates a new file object with a copy of this file"><span class="description">Creates a new file object with a copy of this file</span><pre>duplicate()</pre></a></li>
 <li class="method public "><a href="#getExtension" title="getExtension :: Gets the file extension"><span class="description">Gets the file extension</span><pre>getExtension()</pre></a></li>
 <li class="method public "><a href="#getMTime" title="getMTime :: Returns the last modification time of the file"><span class="description">Returns the last modification time of the file</span><pre>getMTime()</pre></a></li>
@@ -71,10 +77,14 @@
 <li class="method public "><a href="#getPath" title="getPath :: Gets the file's current path (directory and filename)"><span class="description">Gets the file's current path (directory and filename)</span><pre>getPath()</pre></a></li>
 <li class="method public "><a href="#getSize" title="getSize :: Gets the size of the file"><span class="description">Gets the size of the file</span><pre>getSize()</pre></a></li>
 <li class="method public "><a href="#isWritable" title="isWritable :: Check to see if the current file is writable"><span class="description">Check to see if the current file is writable</span><pre>isWritable()</pre></a></li>
+<li class="method public "><a href="#key" title="key :: Returns the current one-based line number (required by iterator interface)"><span class="description">Returns the current one-based line number (required by iterator interface)</span><pre>key()</pre></a></li>
 <li class="method public "><a href="#move" title="move :: Moves the current file to a different directory"><span class="description">Moves the current file to a different directory</span><pre>move()</pre></a></li>
+<li class="method public "><a href="#next" title="next :: Advances to the next line in the file (required by iterator interface)"><span class="description">Advances to the next line in the file (required by iterator interface)</span><pre>next()</pre></a></li>
 <li class="method public "><a href="#output" title="output :: Prints the contents of the file"><span class="description">Prints the contents of the file</span><pre>output()</pre></a></li>
 <li class="method public "><a href="#read" title="read :: Reads the data from the file"><span class="description">Reads the data from the file</span><pre>read()</pre></a></li>
 <li class="method public "><a href="#rename" title="rename :: Renames the current file"><span class="description">Renames the current file</span><pre>rename()</pre></a></li>
+<li class="method public "><a href="#rewind" title="rewind :: Rewinds the file handle (required by iterator interface)"><span class="description">Rewinds the file handle (required by iterator interface)</span><pre>rewind()</pre></a></li>
+<li class="method public "><a href="#valid" title="valid :: Returns if the file has any lines left (required by iterator interface)"><span class="description">Returns if the file has any lines left (required by iterator interface)</span><pre>valid()</pre></a></li>
 <li class="method public "><a href="#write" title="write :: Writes the provided data to the file"><span class="description">Writes the provided data to the file</span><pre>write()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#tossIfDeleted" title="tossIfDeleted :: Throws an fProgrammerException if the file has been deleted"><span class="description">Throws an fProgrammerException if the file has been deleted</span><pre>tossIfDeleted()</pre></a></li>
@@ -288,6 +298,21 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__clone" id="__clone"></a><div class="element clickable method public __clone" data-toggle="collapse" data-target=".__clone .collapse">
+<h2>Duplicates a file in the current directory when the object is cloned</h2>
+<pre>__clone() : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The new fFile object</div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Creates an object to represent a file on the filesystem</h2>
 <pre>__construct(string $file, boolean $skip_checks) : <a href="../classes/fFile.html">\fFile</a></pre>
@@ -312,6 +337,40 @@ reflect changes in each other including rename and delete actions.</p></p>
 <div class="subelement response"><code><a href="../classes/fFile.html">\fFile</a></code></div>
 </div></div>
 </div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
+<a name="__sleep" id="__sleep"></a><div class="element clickable method public __sleep" data-toggle="collapse" data-target=".__sleep .collapse">
+<h2>The iterator information doesn't need to be serialized since a resource can't be</h2>
+<pre>__sleep() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The instance variables to serialize</div>
+</div></div>
+</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Returns the filename of the file</h2>
 <pre>__toString() : string</pre>
@@ -321,6 +380,18 @@ reflect changes in each other including rename and delete actions.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The filename</div>
+</div></div>
+</div>
+<a name="__wakeup" id="__wakeup"></a><div class="element clickable method public __wakeup" data-toggle="collapse" data-target=".__wakeup .collapse">
+<h2>Re-inserts the file back into the filesystem map when unserialized</h2>
+<pre>__wakeup() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="append" id="append"></a><div class="element clickable method public append" data-toggle="collapse" data-target=".append .collapse">
@@ -373,6 +444,26 @@ data will be removed.</p></p>
 <div class="subelement response"><code><a href="../classes/fFile.html">\fFile</a></code></div>
 </div></div>
 </div>
+<a name="current" id="current"></a><div class="element clickable method public current" data-toggle="collapse" data-target=".current .collapse">
+<h2>Returns the current line of the file (required by iterator interface)</h2>
+<pre>current() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are no remaining lines in the file</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The current row</div>
+</div></div>
+</div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>Deletes the current file</h2>
 <pre>delete() : void</pre>
@@ -381,6 +472,31 @@ data will be removed.</p></p>
 has been committed, if a transaction is in progress. Any non-Flourish
 code (PHP or system) will still see this file as existing until that
 point.</p></p></div></div>
+</div>
+<a name="determineMimeType" id="determineMimeType"></a><div class="element clickable method public determineMimeType" data-toggle="collapse" data-target=".determineMimeType .collapse">
+<h2>Determines the file's mime type by either looking at the file contents or matching the extension</h2>
+<pre>determineMimeType(string $file, string $contents) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Please see the ::getMimeType() description for details about how the
+mime type is determined and what mime types are detected.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The file to check the mime type for - must be a valid filesystem path if no <code>$contents</code> are provided, otherwise just a filename</p>
+</div>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string</code><p>The first 4096 bytes of the file content - the <code>$file</code> parameter only need be a filename if this is provided</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
 </div>
 <a name="duplicate" id="duplicate"></a><div class="element clickable method public duplicate" data-toggle="collapse" data-target=".duplicate .collapse">
 <h2>Creates a new file object with a copy of this file</h2>
@@ -597,6 +713,26 @@ fFilesystem::addWebPathTranslation()</p></p>
 <code>boolean</code>If the file is writable</div>
 </div></div>
 </div>
+<a name="key" id="key"></a><div class="element clickable method public key" data-toggle="collapse" data-target=".key .collapse">
+<h2>Returns the current one-based line number (required by iterator interface)</h2>
+<pre>key() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are no remaining lines in the file</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The current line number</div>
+</div></div>
+</div>
 <a name="move" id="move"></a><div class="element clickable method public move" data-toggle="collapse" data-target=".move .collapse">
 <h2>Moves the current file to a different directory</h2>
 <pre>move(<a href="../classes/fDirectory.html">\fDirectory</a> | string $new_directory, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
@@ -627,6 +763,23 @@ progress and is later rolled back.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="next" id="next"></a><div class="element clickable method public next" data-toggle="collapse" data-target=".next .collapse">
+<h2>Advances to the next line in the file (required by iterator interface)</h2>
+<pre>next() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are no remaining lines in the file</td>
+</tr></table>
 </div></div>
 </div>
 <a name="output" id="output"></a><div class="element clickable method public output" data-toggle="collapse" data-target=".output .collapse">
@@ -687,6 +840,33 @@ progress and is later rolled back.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="rewind" id="rewind"></a><div class="element clickable method public rewind" data-toggle="collapse" data-target=".rewind .collapse">
+<h2>Rewinds the file handle (required by iterator interface)</h2>
+<pre>rewind() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="valid" id="valid"></a><div class="element clickable method public valid" data-toggle="collapse" data-target=".valid .collapse">
+<h2>Returns if the file has any lines left (required by iterator interface)</h2>
+<pre>valid() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the iterator is still valid</div>
 </div></div>
 </div>
 <a name="write" id="write"></a><div class="element clickable method public write" data-toggle="collapse" data-target=".write .collapse">
@@ -794,7 +974,7 @@ previous data will be restored.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

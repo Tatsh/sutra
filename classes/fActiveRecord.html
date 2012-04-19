@@ -57,16 +57,29 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__call" title="__call :: Handles all method calls for columns, related records and hook callbacks"><span class="description">Handles all method calls for columns, related records and hook callbacks</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#__clone" title="__clone :: Creates a clone of a record"><span class="description">Creates a clone of a record</span><pre>__clone()</pre></a></li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded"><span class="description">Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
+<li class="method public "><a href="#__wakeup" title="__wakeup :: Configure itself when coming out of the session. Records from the session are NOT hooked into the identity map."><span class="description">Configure itself when coming out of the session. Records from the session are NOT hooked into the identity map.</span><pre>__wakeup()</pre></a></li>
+<li class="method public "><a href="#assign" title="assign :: Sets a value to the `$values` array, preserving the old value in `$old_values`"><span class="description">Sets a value to the `$values` array, preserving the old value in `$old_values`</span><pre>assign()</pre></a></li>
+<li class="method public "><a href="#changed" title="changed :: Checks to see if a value has changed"><span class="description">Checks to see if a value has changed</span><pre>changed()</pre></a></li>
+<li class="method public "><a href="#checkClass" title="checkClass :: Ensures a class extends fActiveRecord"><span class="description">Ensures a class extends fActiveRecord</span><pre>checkClass()</pre></a></li>
+<li class="method public "><a href="#checkConditions" title="checkConditions :: Checks to see if a record matches all of the conditions"><span class="description">Checks to see if a record matches all of the conditions</span><pre>checkConditions()</pre></a></li>
 <li class="method public "><a href="#clearIdentityMap" title="clearIdentityMap :: Clears the identity map"><span class="description">Clears the identity map</span><pre>clearIdentityMap()</pre></a></li>
 <li class="method public "><a href="#delete" title="delete :: Deletes a record from the database, but does not destroy the object"><span class="description">Deletes a record from the database, but does not destroy the object</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#exists" title="exists :: Checks to see if the record exists in the database"><span class="description">Checks to see if the record exists in the database</span><pre>exists()</pre></a></li>
+<li class="method public "><a href="#forceConfigure" title="forceConfigure :: Ensures that ::configure() has been called for the class"><span class="description">Ensures that ::configure() has been called for the class</span><pre>forceConfigure()</pre></a></li>
+<li class="method public "><a href="#hasOld" title="hasOld :: Checks to see if an old value exists for a column"><span class="description">Checks to see if an old value exists for a column</span><pre>hasOld()</pre></a></li>
+<li class="method public "><a href="#hash" title="hash :: Takes a row of data or a primary key and makes a hash from the primary key"><span class="description">Takes a row of data or a primary key and makes a hash from the primary key</span><pre>hash()</pre></a></li>
 <li class="method public "><a href="#load" title="load :: Loads a record from the database"><span class="description">Loads a record from the database</span><pre>load()</pre></a></li>
 <li class="method public "><a href="#populate" title="populate :: Sets the values for this record by getting values from the request through the fRequest class"><span class="description">Sets the values for this record by getting values from the request through the fRequest class</span><pre>populate()</pre></a></li>
 <li class="method public "><a href="#reflect" title="reflect :: Generates the method signatures for all methods (including dynamic ones)"><span class="description">Generates the method signatures for all methods (including dynamic ones)</span><pre>reflect()</pre></a></li>
 <li class="method public "><a href="#replicate" title="replicate :: Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records"><span class="description">Generates a clone of the current record, removing any auto incremented primary key value and allowing for replicating related records</span><pre>replicate()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
+<li class="method public "><a href="#retrieveOld" title="retrieveOld :: Retrieves the oldest value for a column or all old values"><span class="description">Retrieves the oldest value for a column or all old values</span><pre>retrieveOld()</pre></a></li>
 <li class="method public "><a href="#store" title="store :: Stores a record in the database, whether existing or new"><span class="description">Stores a record in the database, whether existing or new</span><pre>store()</pre></a></li>
 <li class="method public "><a href="#validate" title="validate :: Validates the values of the record against the database and any additional validation rules"><span class="description">Validates the values of the record against the database and any additional validation rules</span><pre>validate()</pre></a></li>
+<li class="method public "><a href="#validateClass" title="validateClass :: Ensures a class extends fActiveRecord"><span class="description">Ensures a class extends fActiveRecord</span><pre>validateClass()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
 <li class="method protected "><a href="#configure" title="configure :: Allows the programmer to set features for the class"><span class="description">Allows the programmer to set features for the class</span><pre>configure()</pre></a></li>
@@ -81,6 +94,7 @@
 <li class="method protected "><a href="#prepare" title="prepare :: Retrieves a value from the record and prepares it for output into html."><span class="description">Retrieves a value from the record and prepares it for output into html.</span><pre>prepare()</pre></a></li>
 <li class="method protected "><a href="#set" title="set :: Sets a value to the record"><span class="description">Sets a value to the record</span><pre>set()</pre></a></li>
 <li class="nav-header private">» Private</li>
+<li class="method private "><a href="#checkCondition" title="checkCondition :: Checks to see if a record matches a condition"><span class="description">Checks to see if a record matches a condition</span><pre>checkCondition()</pre></a></li>
 <li class="method private "><a href="#determineSubject" title="determineSubject :: Takes information from a method call and determines the subject, route and if subject was plural"><span class="description">Takes information from a method call and determines the subject, route and if subject was plural</span><pre>determineSubject()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -502,6 +516,24 @@ will be delegated via this method.</p></p>
 <code>mixed</code>The value returned by the method called</div>
 </div></div>
 </div>
+<a name="__clone" id="__clone"></a><div class="element clickable method public __clone" data-toggle="collapse" data-target=".__clone .collapse">
+<h2>Creates a clone of a record</h2>
+<pre>__clone() : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>If the record has an auto incrementing primary key, the primary key will
+be erased in the clone. If the primary key is not auto incrementing,
+the primary key will be left as-is in the clone. In either situation the
+clone will return <code>FALSE</code> from the ::exists() method until ::store() is
+called.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code></div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded</h2>
 <pre>__construct(mixed $key) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
@@ -520,6 +552,133 @@ will be delegated via this method.</p></p>
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
+</div></div>
+</div>
+<a name="__wakeup" id="__wakeup"></a><div class="element clickable method public __wakeup" data-toggle="collapse" data-target=".__wakeup .collapse">
+<h2>Configure itself when coming out of the session. Records from the session are NOT hooked into the identity map.</h2>
+<pre>__wakeup() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="assign" id="assign"></a><div class="element clickable method public assign" data-toggle="collapse" data-target=".assign .collapse">
+<h2>Sets a value to the `$values` array, preserving the old value in `$old_values`</h2>
+<pre>assign(array $values, array $old_values, string $column, mixed $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to set</p></div>
+</div></div>
+</div>
+<a name="changed" id="changed"></a><div class="element clickable method public changed" data-toggle="collapse" data-target=".changed .collapse">
+<h2>Checks to see if a value has changed</h2>
+<pre>changed(array $values, array $old_values, string $column) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value for the column specified has changed</div>
+</div></div>
+</div>
+<a name="checkClass" id="checkClass"></a><div class="element clickable method public checkClass" data-toggle="collapse" data-target=".checkClass .collapse">
+<h2>Ensures a class extends fActiveRecord</h2>
+<pre>checkClass(string $class) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the class is an fActiveRecord descendant</div>
+</div></div>
+</div>
+<a name="checkConditions" id="checkConditions"></a><div class="element clickable method public checkConditions" data-toggle="collapse" data-target=".checkConditions .collapse">
+<h2>Checks to see if a record matches all of the conditions</h2>
+<pre>checkConditions(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $record, array $conditions) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$record</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The record to check</p></div>
+<div class="subelement argument">
+<h4>$conditions</h4>
+<code>array</code><p>The conditions to check - see fRecordSet::filter() for format details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the record meets all conditions</div>
 </div></div>
 </div>
 <a name="clearIdentityMap" id="clearIdentityMap"></a><div class="element clickable method public clearIdentityMap" data-toggle="collapse" data-target=".clearIdentityMap .collapse">
@@ -552,6 +711,68 @@ will be delegated via this method.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>If the record exists in the database</div>
+</div></div>
+</div>
+<a name="forceConfigure" id="forceConfigure"></a><div class="element clickable method public forceConfigure" data-toggle="collapse" data-target=".forceConfigure .collapse">
+<h2>Ensures that ::configure() has been called for the class</h2>
+<pre>forceConfigure(string $class) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to configure</p></div>
+</div></div>
+</div>
+<a name="hasOld" id="hasOld"></a><div class="element clickable method public hasOld" data-toggle="collapse" data-target=".hasOld .collapse">
+<h2>Checks to see if an old value exists for a column</h2>
+<pre>hasOld(array $old_values, string $column) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If an old value for that column exists</div>
+</div></div>
+</div>
+<a name="hash" id="hash"></a><div class="element clickable method public hash" data-toggle="collapse" data-target=".hash .collapse">
+<h2>Takes a row of data or a primary key and makes a hash from the primary key</h2>
+<pre>hash(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> | array | string | int $record, string $class) : string | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$record</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a>arraystringint</code><p>An fActiveRecord object, an array of the records data, an array of primary key data or a scalar primary key value</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name, if $record isn't an fActiveRecord</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>NULL</code>A hash of the record's primary key value or NULL if the record doesn't exist yet</div>
 </div></div>
 </div>
 <a name="load" id="load"></a><div class="element clickable method public load" data-toggle="collapse" data-target=".load .collapse">
@@ -623,6 +844,47 @@ substituted with a string in the format <code>'RelatedClass{route}'</code>.</p><
 <code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The cloned record</div>
 </div></div>
 </div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="retrieveOld" id="retrieveOld"></a><div class="element clickable method public retrieveOld" data-toggle="collapse" data-target=".retrieveOld .collapse">
+<h2>Retrieves the oldest value for a column or all old values</h2>
+<pre>retrieveOld(array $old_values, string $column, mixed $default, boolean $return_all) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to get</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The default value to return if no value exists</p></div>
+<div class="subelement argument">
+<h4>$return_all</h4>
+<code>boolean</code><p>Return the array of all old values for this column instead of just the oldest</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The old value for the column</div>
+</div></div>
+</div>
 <a name="store" id="store"></a><div class="element clickable method public store" data-toggle="collapse" data-target=".store .collapse">
 <h2>Stores a record in the database, whether existing or new</h2>
 <pre>store(boolean $force_cascade) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
@@ -665,6 +927,22 @@ not already been started.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>void</code><code>array</code>If $return_messages is TRUE, an array of validation messages will be returned</div>
+</div></div>
+</div>
+<a name="validateClass" id="validateClass"></a><div class="element clickable method public validateClass" data-toggle="collapse" data-target=".validateClass .collapse">
+<h2>Ensures a class extends fActiveRecord</h2>
+<pre>validateClass(string $class) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to verify</p></div>
 </div></div>
 </div>
 <a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
@@ -867,6 +1145,32 @@ not already been started.</p></p>
 <code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>This record, to allow for method chaining</div>
 </div></div>
 </div>
+<a name="checkCondition" id="checkCondition"></a><div class="element clickable method private checkCondition" data-toggle="collapse" data-target=".checkCondition .collapse">
+<h2>Checks to see if a record matches a condition</h2>
+<pre>checkCondition(string $operator, mixed $value, mixed $result) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$operator</h4>
+<code>string</code><p>The record to check</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to compare to</p></div>
+<div class="subelement argument">
+<h4>$result</h4>
+<code>mixed</code><p>The result of the method call(s)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the comparison was successful</div>
+</div></div>
+</div>
 <a name="determineSubject" id="determineSubject"></a><div class="element clickable method private determineSubject" data-toggle="collapse" data-target=".determineSubject .collapse">
 <h2>Takes information from a method call and determines the subject, route and if subject was plural</h2>
 <pre>determineSubject(string $class, string $subject, string $route) : array</pre>
@@ -1021,7 +1325,7 @@ with the value being the current value.</p></p></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

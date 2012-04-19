@@ -57,6 +57,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#checkPasswordHash" title="checkPasswordHash :: Checks a password against a hash created with ::hashPassword()"><span class="description">Checks a password against a hash created with ::hashPassword()</span><pre>checkPasswordHash()</pre></a></li>
+<li class="method public "><a href="#hashHMAC" title="hashHMAC :: Provides a pure PHP implementation of `hash_hmac()` for when the hash extension is not installed"><span class="description">Provides a pure PHP implementation of `hash_hmac()` for when the hash extension is not installed</span><pre>hashHMAC()</pre></a></li>
 <li class="method public "><a href="#hashPassword" title="hashPassword :: Hashes a password using a loop of sha1 hashes and a salt, making rainbow table attacks infeasible"><span class="description">Hashes a password using a loop of sha1 hashes and a salt, making rainbow table attacks infeasible</span><pre>hashPassword()</pre></a></li>
 <li class="method public "><a href="#publicKeyDecrypt" title="publicKeyDecrypt :: Decrypts ciphertext encrypted using public-key encryption via ::publicKeyEncrypt()"><span class="description">Decrypts ciphertext encrypted using public-key encryption via ::publicKeyEncrypt()</span><pre>publicKeyDecrypt()</pre></a></li>
 <li class="method public "><a href="#publicKeyEncrypt" title="publicKeyEncrypt :: Encrypts the passed data using public key encryption via OpenSSL"><span class="description">Encrypts the passed data using public key encryption via OpenSSL</span><pre>publicKeyEncrypt()</pre></a></li>
@@ -194,6 +195,32 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code>boolean</code>If the password matches the hash</div>
+</div></div>
+</div>
+<a name="hashHMAC" id="hashHMAC"></a><div class="element clickable method public hashHMAC" data-toggle="collapse" data-target=".hashHMAC .collapse">
+<h2>Provides a pure PHP implementation of `hash_hmac()` for when the hash extension is not installed</h2>
+<pre>hashHMAC(string $algorithm, string $data, string $key) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$algorithm</h4>
+<code>string</code><p>The hashing algorithm to use: <code>'md5'</code> or <code>'sha1'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>The data to create an HMAC for</p></div>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to generate the HMAC with</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The HMAC</div>
 </div></div>
 </div>
 <a name="hashPassword" id="hashPassword"></a><div class="element clickable method public hashPassword" data-toggle="collapse" data-target=".hashPassword .collapse">
@@ -555,7 +582,7 @@ encryption and decryption.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

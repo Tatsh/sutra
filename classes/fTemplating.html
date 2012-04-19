@@ -57,6 +57,8 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Initializes this templating engine"><span class="description">Initializes this templating engine</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#__destruct" title="__destruct :: Finishing placing elements if buffering was used"><span class="description">Finishing placing elements if buffering was used</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#add" title="add :: Adds a value to an array element"><span class="description">Adds a value to an array element</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#attach" title="attach :: Attaches a named template that can be accessed from any scope via ::retrieve()"><span class="description">Attaches a named template that can be accessed from any scope via ::retrieve()</span><pre>attach()</pre></a></li>
 <li class="method public "><a href="#buffer" title="buffer :: Enables buffered output, allowing ::set() and ::add() to happen after a ::place() but act as if they were done before"><span class="description">Enables buffered output, allowing ::set() and ::add() to happen after a ::place() but act as if they were done before</span><pre>buffer()</pre></a></li>
@@ -68,10 +70,12 @@
 <li class="method public "><a href="#filter" title="filter :: Removes a value from an array element"><span class="description">Removes a value from an array element</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets the value of an element"><span class="description">Gets the value of an element</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#inject" title="inject :: Includes the file specified - this is identical to ::place() except a filename is specified instead of an element"><span class="description">Includes the file specified - this is identical to ::place() except a filename is specified instead of an element</span><pre>inject()</pre></a></li>
+<li class="method public "><a href="#minify" title="minify :: Minifies JS or CSS"><span class="description">Minifies JS or CSS</span><pre>minify()</pre></a></li>
 <li class="method public "><a href="#minifyJavaScript" title="minifyJavaScript :: Minifies JS (static version)."><span class="description">Minifies JS (static version).</span><pre>minifyJavaScript()</pre></a></li>
 <li class="method public "><a href="#place" title="place :: Includes the element specified - element must be set through ::set() first"><span class="description">Includes the element specified - element must be set through ::set() first</span><pre>place()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Gets the value of an element and runs it through fHTML::prepare()"><span class="description">Gets the value of an element and runs it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
 <li class="method public "><a href="#remove" title="remove :: Removes and returns the value from the end of an array element"><span class="description">Removes and returns the value from the end of an array element</span><pre>remove()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#retrieve" title="retrieve :: Retrieves a named template"><span class="description">Retrieves a named template</span><pre>retrieve()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets the value for an element"><span class="description">Sets the value for an element</span><pre>set()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -254,6 +258,37 @@
 </div>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fTemplating.html">\fTemplating</a></code></div>
+</div></div>
+</div>
+<a name="__destruct" id="__destruct"></a><div class="element clickable method public __destruct" data-toggle="collapse" data-target=".__destruct .collapse">
+<h2>Finishing placing elements if buffering was used</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
 </div></div>
 </div>
 <a name="add" id="add"></a><div class="element clickable method public add" data-toggle="collapse" data-target=".add .collapse">
@@ -458,6 +493,33 @@ that do not have their own explicit short tag settings.</p></p>
 </div>
 </div></div>
 </div>
+<a name="minify" id="minify"></a><div class="element clickable method public minify" data-toggle="collapse" data-target=".minify .collapse">
+<h2>Minifies JS or CSS</h2>
+<pre>minify(string $code, string $type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>For JS, this function is based on the JSMin algorithm (not the code) from
+http://www.crockford.com/javascript/jsmin.html with the addition of
+preserving /*! comment blocks for things like licenses. Some other
+versions of JSMin change the contents of special comment blocks, but
+this version does not.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$code</h4>
+<code>string</code><p>The code to minify</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of code, 'css' or 'js'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The minified code</div>
+</div></div>
+</div>
 <a name="minifyJavaScript" id="minifyJavaScript"></a><div class="element clickable method public minifyJavaScript" data-toggle="collapse" data-target=".minifyJavaScript .collapse">
 <h2>Minifies JS (static version).</h2>
 <pre>minifyJavaScript(string $code) : string</pre>
@@ -547,6 +609,18 @@ array(
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The value that was removed</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="retrieve" id="retrieve"></a><div class="element clickable method public retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
@@ -858,7 +932,7 @@ array(
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

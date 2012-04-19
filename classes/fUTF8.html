@@ -56,6 +56,7 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#ascii" title="ascii :: Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII"><span class="description">Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII</span><pre>ascii()</pre></a></li>
 <li class="method public "><a href="#chr" title="chr :: Converts a unicode value into a UTF-8 character"><span class="description">Converts a unicode value into a UTF-8 character</span><pre>chr()</pre></a></li>
 <li class="method public "><a href="#clean" title="clean :: Removes any invalid UTF-8 characters from a string or array of strings"><span class="description">Removes any invalid UTF-8 characters from a string or array of strings</span><pre>clean()</pre></a></li>
 <li class="method public "><a href="#cmp" title="cmp :: Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>cmp()</pre></a></li>
@@ -74,6 +75,7 @@
 <li class="method public "><a href="#pad" title="pad :: Pads a string to the number of characters specified"><span class="description">Pads a string to the number of characters specified</span><pre>pad()</pre></a></li>
 <li class="method public "><a href="#pos" title="pos :: Finds the first position (in characters) of the search value in the string"><span class="description">Finds the first position (in characters) of the search value in the string</span><pre>pos()</pre></a></li>
 <li class="method public "><a href="#replace" title="replace :: Replaces matching parts of the string"><span class="description">Replaces matching parts of the string</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#rev" title="rev :: Reverses a string"><span class="description">Reverses a string</span><pre>rev()</pre></a></li>
 <li class="method public "><a href="#rpos" title="rpos :: Finds the last position (in characters) of the search value in the string"><span class="description">Finds the last position (in characters) of the search value in the string</span><pre>rpos()</pre></a></li>
 <li class="method public "><a href="#rtrim" title="rtrim :: Trims whitespace, or any specified characters, from the end of a string"><span class="description">Trims whitespace, or any specified characters, from the end of a string</span><pre>rtrim()</pre></a></li>
@@ -234,6 +236,41 @@ http://flourishlib.com/docs/UTF-8.</p></p>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="ascii" id="ascii"></a><div class="element clickable method public ascii" data-toggle="collapse" data-target=".ascii .collapse">
+<h2>Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII</h2>
+<pre>ascii(string $string) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>Any characters or symbols that can not be translated will be removed.</p>
+
+<p>This function is most useful for situation that only allows ASCII, such
+as in URLs.</p>
+
+<p>Translates elements form the following unicode blocks:</p>
+
+<ul>
+<li>Latin-1 Supplement</li>
+<li>Latin Extended-A</li>
+<li>Latin Extended-B</li>
+<li>IPA Extensions</li>
+<li>Latin Extended Additional</li>
+<li>General Punctuation</li>
+<li>Letterlike symbols</li>
+<li>Number Forms</li>
+</ul></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string in pure ASCII</div>
+</div></div>
+</div>
 <a name="chr" id="chr"></a><div class="element clickable method public chr" data-toggle="collapse" data-target=".chr .collapse">
 <h2>Converts a unicode value into a UTF-8 character</h2>
 <pre>chr(mixed $unicode_code_point) : string</pre>
@@ -595,6 +632,18 @@ will be replaced with the string specified.</p></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The input string with the specified replacements</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
 </div></div>
 </div>
 <a name="rev" id="rev"></a><div class="element clickable method public rev" data-toggle="collapse" data-target=".rev .collapse">
@@ -1114,7 +1163,7 @@ does work when returning the value.</h2>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -56,13 +56,27 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#callHookCallbacks" title="callHookCallbacks :: Calls the hook callbacks for the class and hook specified"><span class="description">Calls the hook callbacks for the class and hook specified</span><pre>callHookCallbacks()</pre></a></li>
+<li class="method public "><a href="#callInspectCallbacks" title="callInspectCallbacks :: Calls all inspect callbacks for the class and column specified"><span class="description">Calls all inspect callbacks for the class and column specified</span><pre>callInspectCallbacks()</pre></a></li>
+<li class="method public "><a href="#callReflectCallbacks" title="callReflectCallbacks :: Calls all reflect callbacks for the class passed"><span class="description">Calls all reflect callbacks for the class passed</span><pre>callReflectCallbacks()</pre></a></li>
+<li class="method public "><a href="#checkHookCallback" title="checkHookCallback :: Checks to see if any (or a specific) callback has been registered for a specific hook"><span class="description">Checks to see if any (or a specific) callback has been registered for a specific hook</span><pre>checkHookCallback()</pre></a></li>
 <li class="method public "><a href="#classize" title="classize :: Takes a table and turns it into a class name - uses custom mapping if set"><span class="description">Takes a table and turns it into a class name - uses custom mapping if set</span><pre>classize()</pre></a></li>
 <li class="method public "><a href="#defineActiveRecordClass" title="defineActiveRecordClass :: Will dynamically create an fActiveRecord-based class for a database table"><span class="description">Will dynamically create an fActiveRecord-based class for a database table</span><pre>defineActiveRecordClass()</pre></a></li>
 <li class="method public "><a href="#enableSchemaCaching" title="enableSchemaCaching :: Enables caching on the fDatabase, fSQLTranslation and fSchema objects used for the ORM"><span class="description">Enables caching on the fDatabase, fSQLTranslation and fSchema objects used for the ORM</span><pre>enableSchemaCaching()</pre></a></li>
+<li class="method public "><a href="#getActiveRecordMethod" title="getActiveRecordMethod :: Returns a matching callback for the class and method specified"><span class="description">Returns a matching callback for the class and method specified</span><pre>getActiveRecordMethod()</pre></a></li>
+<li class="method public "><a href="#getClass" title="getClass :: Takes a class name or class and returns the class name"><span class="description">Takes a class name or class and returns the class name</span><pre>getClass()</pre></a></li>
+<li class="method public "><a href="#getColumnName" title="getColumnName :: Returns the column name"><span class="description">Returns the column name</span><pre>getColumnName()</pre></a></li>
+<li class="method public "><a href="#getDatabaseName" title="getDatabaseName :: Returns the name for the database used by the class specified"><span class="description">Returns the name for the database used by the class specified</span><pre>getDatabaseName()</pre></a></li>
+<li class="method public "><a href="#getRecordName" title="getRecordName :: Returns the record name for a class"><span class="description">Returns the record name for a class</span><pre>getRecordName()</pre></a></li>
+<li class="method public "><a href="#getRecordSetMethod" title="getRecordSetMethod :: Returns a matching callback for the method specified"><span class="description">Returns a matching callback for the method specified</span><pre>getRecordSetMethod()</pre></a></li>
+<li class="method public "><a href="#getRelatedClass" title="getRelatedClass :: Takes a class name and related class name and ensures the related class has the appropriate namespace prefix"><span class="description">Takes a class name and related class name and ensures the related class has the appropriate namespace prefix</span><pre>getRelatedClass()</pre></a></li>
+<li class="method public "><a href="#isClassMappedToTable" title="isClassMappedToTable :: Checks if a class has been mapped to a table"><span class="description">Checks if a class has been mapped to a table</span><pre>isClassMappedToTable()</pre></a></li>
 <li class="method public "><a href="#mapClassToDatabase" title='mapClassToDatabase :: Sets a class to use a database other than the "default"'><span class="description">Sets a class to use a database other than the "default"</span><pre>mapClassToDatabase()</pre></a></li>
 <li class="method public "><a href="#mapClassToTable" title="mapClassToTable :: Allows non-standard class to table mapping"><span class="description">Allows non-standard class to table mapping</span><pre>mapClassToTable()</pre></a></li>
+<li class="method public "><a href="#objectify" title="objectify :: Takes a scalar value and turns it into an object if applicable"><span class="description">Takes a scalar value and turns it into an object if applicable</span><pre>objectify()</pre></a></li>
 <li class="method public "><a href="#overrideColumnName" title="overrideColumnName :: Allows overriding of default column names"><span class="description">Allows overriding of default column names</span><pre>overrideColumnName()</pre></a></li>
 <li class="method public "><a href="#overrideRecordName" title="overrideRecordName :: Allows overriding of default record names"><span class="description">Allows overriding of default record names</span><pre>overrideRecordName()</pre></a></li>
+<li class="method public "><a href="#parseMethod" title="parseMethod :: Parses a `camelCase` method name for an action and subject in the form `actionSubject()`"><span class="description">Parses a `camelCase` method name for an action and subject in the form `actionSubject()`</span><pre>parseMethod()</pre></a></li>
 <li class="method public "><a href="#registerActiveRecordMethod" title="registerActiveRecordMethod :: Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__call() or hits a predefined method hook"><span class="description">Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__call() or hits a predefined method hook</span><pre>registerActiveRecordMethod()</pre></a></li>
 <li class="method public "><a href="#registerHookCallback" title="registerHookCallback :: Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook"><span class="description">Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook</span><pre>registerHookCallback()</pre></a></li>
 <li class="method public "><a href="#registerInspectCallback" title="registerInspectCallback :: Registers a callback to modify the results of fActiveRecord::inspect() methods"><span class="description">Registers a callback to modify the results of fActiveRecord::inspect() methods</span><pre>registerInspectCallback()</pre></a></li>
@@ -71,6 +85,9 @@
 <li class="method public "><a href="#registerReflectCallback" title="registerReflectCallback :: Registers a callback to modify the results of fActiveRecord::reflect()"><span class="description">Registers a callback to modify the results of fActiveRecord::reflect()</span><pre>registerReflectCallback()</pre></a></li>
 <li class="method public "><a href="#registerReplicateCallback" title="registerReplicateCallback :: Registers a callback for when a value is replicated for a specific column"><span class="description">Registers a callback for when a value is replicated for a specific column</span><pre>registerReplicateCallback()</pre></a></li>
 <li class="method public "><a href="#registerScalarizeCallback" title="registerScalarizeCallback :: Registers a callback for when ::scalarize() is called on a specific column"><span class="description">Registers a callback for when ::scalarize() is called on a specific column</span><pre>registerScalarizeCallback()</pre></a></li>
+<li class="method public "><a href="#replicate" title="replicate :: Takes and value and returns a copy is scalar or a clone if an object"><span class="description">Takes and value and returns a copy is scalar or a clone if an object</span><pre>replicate()</pre></a></li>
+<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
+<li class="method public "><a href="#scalarize" title="scalarize :: If the value passed is an object, calls `__toString()` on it"><span class="description">If the value passed is an object, calls `__toString()` on it</span><pre>scalarize()</pre></a></li>
 <li class="method public "><a href="#tablize" title="tablize :: Takes a class name (or class) and turns it into a table name - Uses custom mapping if set"><span class="description">Takes a class name (or class) and turns it into a table name - Uses custom mapping if set</span><pre>tablize()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
@@ -273,6 +290,116 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="callHookCallbacks" id="callHookCallbacks"></a><div class="element clickable method public callHookCallbacks" data-toggle="collapse" data-target=".callHookCallbacks .collapse">
+<h2>Calls the hook callbacks for the class and hook specified</h2>
+<pre>callHookCallbacks(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, string $hook, array $values, array $old_values, array $related_records, array $cache, mixed $parameter) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class to call the hook for</p></div>
+<div class="subelement argument">
+<h4>$hook</h4>
+<code>string</code><p>The hook to call</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The current values of the record</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values of the record</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records Records related to the current record</p>
+</div>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code>array</code><p>&$cache The cache array of the record</p>
+</div>
+<div class="subelement argument">
+<h4>$parameter</h4>
+<code>mixed</code><p>&$parameter The parameter to send the callback</p>
+</div>
+</div></div>
+</div>
+<a name="callInspectCallbacks" id="callInspectCallbacks"></a><div class="element clickable method public callInspectCallbacks" data-toggle="collapse" data-target=".callInspectCallbacks .collapse">
+<h2>Calls all inspect callbacks for the class and column specified</h2>
+<pre>callInspectCallbacks(string $class, string $column, array $metadata) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to inspect the column of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to inspect</p></div>
+<div class="subelement argument">
+<h4>$metadata</h4>
+<code>array</code><p>&$metadata The associative array of data about the column</p>
+</div>
+</div></div>
+</div>
+<a name="callReflectCallbacks" id="callReflectCallbacks"></a><div class="element clickable method public callReflectCallbacks" data-toggle="collapse" data-target=".callReflectCallbacks .collapse">
+<h2>Calls all reflect callbacks for the class passed</h2>
+<pre>callReflectCallbacks(string $class, array $signatures, boolean $include_doc_comments) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to call the callbacks for</p></div>
+<div class="subelement argument">
+<h4>$signatures</h4>
+<code>array</code><p>&$signatures The associative array of <code>{method_name} => {signature}</code></p>
+</div>
+<div class="subelement argument">
+<h4>$include_doc_comments</h4>
+<code>boolean</code><p>If the doc comments should be included in the signature</p></div>
+</div></div>
+</div>
+<a name="checkHookCallback" id="checkHookCallback"></a><div class="element clickable method public checkHookCallback" data-toggle="collapse" data-target=".checkHookCallback .collapse">
+<h2>Checks to see if any (or a specific) callback has been registered for a specific hook</h2>
+<pre>checkHookCallback(string $class, string $hook, array $callback) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The name of the class</p></div>
+<div class="subelement argument">
+<h4>$hook</h4>
+<code>string</code><p>The hook to check</p></div>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>array</code><p>The specific callback to check for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the specified callback exists</div>
+</div></div>
+</div>
 <a name="classize" id="classize"></a><div class="element clickable method public classize" data-toggle="collapse" data-target=".classize .collapse">
 <h2>Takes a table and turns it into a class name - uses custom mapping if set</h2>
 <pre>classize(string $table) : string</pre>
@@ -328,6 +455,181 @@ fUnexpectedException objects are thrown.</p>
 </div>
 </div></div>
 </div>
+<a name="getActiveRecordMethod" id="getActiveRecordMethod"></a><div class="element clickable method public getActiveRecordMethod" data-toggle="collapse" data-target=".getActiveRecordMethod .collapse">
+<h2>Returns a matching callback for the class and method specified</h2>
+<pre>getActiveRecordMethod(string $class, string $method) : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The callback returned will be determined by the following logic:</p>
+
+<ol>
+<li>If an exact callback has been defined for the method, it will be returned</li>
+<li>If a callback in the form <code>{prefix}*</code> has been defined that matches the method, it will be returned</li>
+<li><code>NULL</code> will be returned</li>
+</ol></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The name of the class</p></div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to get the callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>The callback for the method or `NULL` if none exists - see method description for details</div>
+</div></div>
+</div>
+<a name="getClass" id="getClass"></a><div class="element clickable method public getClass" data-toggle="collapse" data-target=".getClass .collapse">
+<h2>Takes a class name or class and returns the class name</h2>
+<pre>getClass(mixed $class) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The object to get the name of, or possibly a string already containing the class</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The class name</div>
+</div></div>
+</div>
+<a name="getColumnName" id="getColumnName"></a><div class="element clickable method public getColumnName" data-toggle="collapse" data-target=".getColumnName .collapse">
+<h2>Returns the column name</h2>
+<pre>getColumnName(string $class, string $column) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The default column name is the result of calling fGrammar::humanize()
+on the column.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The database column</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The column name for the column specified</div>
+</div></div>
+</div>
+<a name="getDatabaseName" id="getDatabaseName"></a><div class="element clickable method public getDatabaseName" data-toggle="collapse" data-target=".getDatabaseName .collapse">
+<h2>Returns the name for the database used by the class specified</h2>
+<pre>getDatabaseName(string $class) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name to get the database name for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the database to use</div>
+</div></div>
+</div>
+<a name="getRecordName" id="getRecordName"></a><div class="element clickable method public getRecordName" data-toggle="collapse" data-target=".getRecordName .collapse">
+<h2>Returns the record name for a class</h2>
+<pre>getRecordName(string $class) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The default record name is the result of calling fGrammar::humanize()
+on the class.</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name to get the record name of</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The record name for the class specified</div>
+</div></div>
+</div>
+<a name="getRecordSetMethod" id="getRecordSetMethod"></a><div class="element clickable method public getRecordSetMethod" data-toggle="collapse" data-target=".getRecordSetMethod .collapse">
+<h2>Returns a matching callback for the method specified</h2>
+<pre>getRecordSetMethod(string $method) : string | null</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The callback returned will be determined by the following logic:</p>
+
+<ol>
+<li>If an exact callback has been defined for the method, it will be returned</li>
+<li>If a callback in the form <code>{action}*</code> has been defined that matches the method, it will be returned</li>
+<li><code>NULL</code> will be returned</li>
+</ol></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to get the callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>null</code>The callback for the method or `NULL` if none exists - see method description for details</div>
+</div></div>
+</div>
+<a name="getRelatedClass" id="getRelatedClass"></a><div class="element clickable method public getRelatedClass" data-toggle="collapse" data-target=".getRelatedClass .collapse">
+<h2>Takes a class name and related class name and ensures the related class has the appropriate namespace prefix</h2>
+<pre>getRelatedClass(string $class, string $related_class) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The primary class</p></div>
+<div class="subelement argument">
+<h4>$related_class</h4>
+<code>string</code><p>The related class name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The related class name, with the appropriate namespace prefix</div>
+</div></div>
+</div>
+<a name="isClassMappedToTable" id="isClassMappedToTable"></a><div class="element clickable method public isClassMappedToTable" data-toggle="collapse" data-target=".isClassMappedToTable .collapse">
+<h2>Checks if a class has been mapped to a table</h2>
+<pre>isClassMappedToTable(mixed $class) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The name of the class</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the class has been mapped to a table</div>
+</div></div>
+</div>
 <a name="mapClassToDatabase" id="mapClassToDatabase"></a><div class="element clickable method public mapClassToDatabase" data-toggle="collapse" data-target=".mapClassToDatabase .collapse">
 <h2>Sets a class to use a database other than the "default"</h2>
 <pre>mapClassToDatabase(mixed $class, string $database_name) : void</pre>
@@ -363,6 +665,31 @@ table mapping.</p></p>
 <code>string</code><p>The name of the database table</p></div>
 </div></div>
 </div>
+<a name="objectify" id="objectify"></a><div class="element clickable method public objectify" data-toggle="collapse" data-target=".objectify .collapse">
+<h2>Takes a scalar value and turns it into an object if applicable</h2>
+<pre>objectify(string $class, string $column, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class name of the class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The database column</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to possibly objectify</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The scalar or object version of the value, depending on the column type and column options</div>
+</div></div>
+</div>
 <a name="overrideColumnName" id="overrideColumnName"></a><div class="element clickable method public overrideColumnName" data-toggle="collapse" data-target=".overrideColumnName .collapse">
 <h2>Allows overriding of default column names</h2>
 <pre>overrideColumnName(mixed $class, string $column, string $column_name) : void</pre>
@@ -396,6 +723,25 @@ on the class.</p></p>
 <div class="subelement argument">
 <h4>$record_name</h4>
 <code>string</code><p>The human version of the record</p></div>
+</div></div>
+</div>
+<a name="parseMethod" id="parseMethod"></a><div class="element clickable method public parseMethod" data-toggle="collapse" data-target=".parseMethod .collapse">
+<h2>Parses a `camelCase` method name for an action and subject in the form `actionSubject()`</h2>
+<pre>parseMethod(string $method) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method name to parse</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of `0 => {action}, 1 => {subject}`</div>
 </div></div>
 </div>
 <a name="registerActiveRecordMethod" id="registerActiveRecordMethod"></a><div class="element clickable method public registerActiveRecordMethod" data-toggle="collapse" data-target=".registerActiveRecordMethod .collapse">
@@ -620,6 +966,69 @@ will override these signatures.</p>
 <div class="subelement argument">
 <h4>$callback</h4>
 <code>callback</code><p>The callback to register. Callback should accept a single parameter, the value to scalarize and should return the scalarized value.</p></div>
+</div></div>
+</div>
+<a name="replicate" id="replicate"></a><div class="element clickable method public replicate" data-toggle="collapse" data-target=".replicate .collapse">
+<h2>Takes and value and returns a copy is scalar or a clone if an object</h2>
+<pre>replicate(string $class, string $column, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>The ::registerReplicateCallback() allows for custom replication code</p></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The database column</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to copy/clone</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The copied/cloned value</div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+</div></div>
+</div>
+<a name="scalarize" id="scalarize"></a><div class="element clickable method public scalarize" data-toggle="collapse" data-target=".scalarize .collapse">
+<h2>If the value passed is an object, calls `__toString()` on it</h2>
+<pre>scalarize(mixed $class, string $column, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The database column</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to get the scalar value of</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The scalar value of the value</div>
 </div></div>
 </div>
 <a name="tablize" id="tablize"></a><div class="element clickable method public tablize" data-toggle="collapse" data-target=".tablize .collapse">
@@ -940,7 +1349,7 @@ will override these signatures.</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:46-05:00.<br></footer></div>
 </div>
 </body>
 </html>

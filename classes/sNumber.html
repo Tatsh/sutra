@@ -57,6 +57,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public inherited"><a href="#__construct" title="__construct :: Creates a large/precise number"><span class="description">Creates a large/precise number</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public inherited"><a href="#__toString" title="__toString :: Converts the object to an string"><span class="description">Converts the object to an string</span><pre>__toString()</pre></a></li>
 <li class="method public inherited"><a href="#abs" title="abs :: Returns the absolute value of this number"><span class="description">Returns the absolute value of this number</span><pre>abs()</pre></a></li>
 <li class="method public inherited"><a href="#add" title="add :: Adds two numbers together"><span class="description">Adds two numbers together</span><pre>add()</pre></a></li>
@@ -80,6 +81,9 @@
 <li class="method public inherited"><a href="#mul" title="mul :: Multiplies two numbers"><span class="description">Multiplies two numbers</span><pre>mul()</pre></a></li>
 <li class="method public inherited"><a href="#neg" title="neg :: Negates this number"><span class="description">Negates this number</span><pre>neg()</pre></a></li>
 <li class="method public "><a href="#ordinal" title="ordinal :: Format a number to be ordinal."><span class="description">Format a number to be ordinal.</span><pre>ordinal()</pre></a></li>
+<li class="method public "><a href="#ordinalNumberPrefixedCallback" title="ordinalNumberPrefixedCallback :: Callback for English ordinal numbers (where numbers come before the
+  ordinal keyword)."><span class="description">Callback for English ordinal numbers (where numbers come before the
+  ordinal keyword).</span><pre>ordinalNumberPrefixedCallback()</pre></a></li>
 <li class="method public "><a href="#ordinalSuffix" title="ordinalSuffix :: Get the correct oridinal suffix for a number."><span class="description">Get the correct oridinal suffix for a number.</span><pre>ordinalSuffix()</pre></a></li>
 <li class="method public inherited"><a href="#pi" title="pi :: Returns the value for pi with a scale of up to 500"><span class="description">Returns the value for pi with a scale of up to 500</span><pre>pi()</pre></a></li>
 <li class="method public inherited"><a href="#pow" title="pow :: Raise this number to the power specified"><span class="description">Raise this number to the power specified</span><pre>pow()</pre></a></li>
@@ -87,6 +91,7 @@
 <li class="method public inherited"><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format()</span><pre>registerFormatCallback()</pre></a></li>
 <li class="method public inherited"><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to clean any formatted values so they can be properly parsed - useful for languages where `,` is used as the decimal point"><span class="description">Allows setting a callback to clean any formatted values so they can be properly parsed - useful for languages where `,` is used as the decimal point</span><pre>registerUnformatCallback()</pre></a></li>
 <li class="method public "><a href="#removeLocale" title="removeLocale :: Remove a locale's set of callbacks."><span class="description">Remove a locale's set of callbacks.</span><pre>removeLocale()</pre></a></li>
+<li class="method public inherited"><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public inherited"><a href="#round" title="round :: Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal"><span class="description">Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal</span><pre>round()</pre></a></li>
 <li class="method public "><a href="#setFallbackLocale" title="setFallbackLocale :: Set the fallback locale if the current locale set does not have a
   callback for the method requested. If no callbacks yet exist,
@@ -207,6 +212,31 @@
 </tr></table>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fNumber.html">\fNumber</a></code></div>
+</div></div>
+</div>
+<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
+<h2>All requests that hit this method should be requests for callbacks</h2>
+<pre>__get(string $method) : callback</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fNumber::__get()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to create a callback for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>callback</code>The callback for the method requested</div>
 </div></div>
 </div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
@@ -714,6 +744,27 @@
 <code>string</code>Number with proper English suffix.</div>
 </div></div>
 </div>
+<a name="ordinalNumberPrefixedCallback" id="ordinalNumberPrefixedCallback"></a><div class="element clickable method public ordinalNumberPrefixedCallback" data-toggle="collapse" data-target=".ordinalNumberPrefixedCallback .collapse">
+<h2>Callback for English ordinal numbers (where numbers come before the
+  ordinal keyword).</h2>
+<pre>ordinalNumberPrefixedCallback(integer $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>integer</code>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The value, formatted.</div>
+</div></div>
+</div>
 <a name="ordinalSuffix" id="ordinalSuffix"></a><div class="element clickable method public ordinalSuffix" data-toggle="collapse" data-target=".ordinalSuffix .collapse">
 <h2>Get the correct oridinal suffix for a number.</h2>
 <pre>ordinalSuffix(integer $value) : string</pre>
@@ -855,6 +906,24 @@ and is primarily useful for cryptographic functionality.</p></p>
 <div class="subelement argument">
 <h4>$locale_name</h4>
 <code>string</code><p>Locale name.</p></div>
+</div></div>
+</div>
+<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
+<h2>Resets the configuration of the class</h2>
+<pre>reset() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>internal</th>
+<td></td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fNumber::reset()</td>
+</tr>
+</table>
 </div></div>
 </div>
 <a name="round" id="round"></a><div class="element clickable method public round" data-toggle="collapse" data-target=".round .collapse">
@@ -1566,7 +1635,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-14T23:55:07-05:00.<br></footer></div>
+            generated on 2012-04-18T19:57:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>
