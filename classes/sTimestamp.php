@@ -24,31 +24,24 @@ class sTimestamp extends fTimestamp {
   const DATETIME_RFC3339_REGEX = '/^([1-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])(?:\s+)?T([0-2][0-9])\:([0-5][0-9])\:([0-5][0-9](?:\.\d+)?)(?:Z|(?:[\-\+]([0-1][0-9])\:00))?$/';
 
   /**
-   * Type specified when the date/time string is RFC3339 standard.
-   *
-   * @var integer
-   */
-  const DATETIME_TYPE_RFC3339 = 1;
-
-  /**
    * Overrides __construct() and tries to validate the string as an RFC3339
    *   date-time string. If that fails, the parent constructor is called.
    *
-   * @param fTimestamp|object|string|integer $str The date/time to represent,
-   *   NULL is interpreted as now.
+   * @param fTimestamp|object|string|integer $datetime The date/time to
+   *   represent, NULL is interpreted as now.
    * @param string $timezone The timezone for the date/time. This causes the
    *   date/time to be interpretted as being in the specified timezone. If not
    *   specified, will default to timezone set by ::setDefaultTimezone().
    * @return sTimestamp Timestamp object.
    * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
-  public function __construct($str, $timezone = NULL) {
+  public function __construct($datetime, $timezone = NULL) {
     try {
-      $str = self::convertFromRFC3339($str);
+      $datetime = self::convertFromRFC3339($datetime);
     }
     catch (fValidationException $e) {}
 
-    parent::__construct($str, $timezone);
+    parent::__construct($datetime, $timezone);
   }
 
   /**
@@ -90,16 +83,13 @@ class sTimestamp extends fTimestamp {
    * - the date-fullyear production is instead defined as four or more digits
    *     representing a number greater than 0
    *
-   * @throws fValidationException If $throw is set to TRUE and the timestamp
-   *   is invalid.
-   *
    * @param string $rfc The RFC value, like: 1990-12-31T23:59:60Z or
    *   1996-12-19T16:39:57-08:00.
-   * @return integer|boolean UNIX timestamp or boolean FALSE. If FALSE is
-   *   returned, the string was invalid.
+   * @return sTimestamp Timestamp object.
    */
   private static function convertFromRFC3339($rfc) {
     $matches = array();
+    $timestamp = NULL;
 
     if (preg_match(self::DATETIME_RFC3339_REGEX, $rfc, $matches)) {
       $year = abs((int)$matches[1]);
@@ -111,11 +101,8 @@ class sTimestamp extends fTimestamp {
       $datetime = $year.'-'.$month.'-'.$day.' '.$hour.':'.$minute.':'.$second;
       $timestamp = new self($datetime);
     }
-    else {
-      throw new fValidationException('The value specified could not be validated as a RFC3339 timestamp.');
-    }
 
-    return (int)$timestamp->format('U');
+    return $timestamp;
   }
 }
 
