@@ -190,7 +190,6 @@ CODE;
   // For code coverage purposes
   /**
    * @depends testEdgeCases
-   * @todo Doesn't pass yet, but works in normal code.
    */
   public function testFlipGIF() {
     $image = new sImage(self::IMAGE_FILE_NO_EXIF_GIF);
