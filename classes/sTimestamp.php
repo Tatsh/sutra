@@ -31,23 +31,22 @@ class sTimestamp extends fTimestamp {
   const DATETIME_TYPE_RFC3339 = 1;
 
   /**
-   * Overrides __construct() to accept a third argument $type, which specifies
-   *   the type of date/time string this is.
+   * Overrides __construct() and tries to validate the string as an RFC3339
+   *   date-time string. If that fails, the parent constructor is called.
    *
-   * @param fTimestamp|object|string|integer $str  The date/time to represent,
+   * @param fTimestamp|object|string|integer $str The date/time to represent,
    *   NULL is interpreted as now.
    * @param string $timezone The timezone for the date/time. This causes the
    *   date/time to be interpretted as being in the specified timezone. If not
    *   specified, will default to timezone set by ::setDefaultTimezone().
-   * @param integer $type One of the DATETIME_TYPE_* constants.
    * @return sTimestamp Timestamp object.
+   * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
-  public function __construct($str, $timezone = NULL, $type = NULL) {
-    switch ($type) {
-      case self::DATETIME_TYPE_RFC3339:
-        $str = self::convertFromRFC3339($str);
-        break;
+  public function __construct($str, $timezone = NULL) {
+    try {
+      $str = self::convertFromRFC3339($str);
     }
+    catch (fValidationException $e) {}
 
     parent::__construct($str, $timezone);
   }
