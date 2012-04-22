@@ -45,6 +45,7 @@ class sLoader extends fLoader {
     'sProcessException',
     'sRequest',
     'sResponse',
+    'sString',
     'sTemplate',
     'sTimestamp',
   );
