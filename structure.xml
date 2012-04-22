@@ -2633,7 +2633,7 @@
       </docblock>
     </class>
   </file>
-  <file path="sutra/classes/sString.php" hash="e7513397638605645136963feb06bdc3" package="Sutra">
+  <file path="sutra/classes/sString.php" hash="7b59f82258c4b7362a7a3b12c6dd1258" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides object-oriented interface to strings.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2919,8 +2919,8 @@
         <docblock line="191">
           <description><![CDATA[Get the string double-quoted.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="191" name="return" description="The string, double-quoted." type="string">
-            <type by_reference="false">string</type>
+          <tag line="191" name="return" description="The string, double-quoted." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -2986,8 +2986,8 @@
           <description><![CDATA[Converts the string to time.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="227" name="see" description="\fTime::__construct()" refers="\fTime::__construct()"/>
-          <tag line="227" name="return" description="The string converted to time." type="string">
-            <type by_reference="false">string</type>
+          <tag line="227" name="return" description="The string converted to time." type="\fTime">
+            <type by_reference="false">\fTime</type>
           </tag>
         </docblock>
       </method>
@@ -2998,8 +2998,8 @@
           <description><![CDATA[Converts the string to a timestamp.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="237" name="see" description="\sTimestamp::__construct()" refers="\sTimestamp::__construct()"/>
-          <tag line="237" name="return" description="The string converted to a timestamp." type="string">
-            <type by_reference="false">string</type>
+          <tag line="237" name="return" description="The string converted to a timestamp." type="\sTimestamp">
+            <type by_reference="false">\sTimestamp</type>
           </tag>
         </docblock>
       </method>
@@ -3010,8 +3010,8 @@
           <description><![CDATA[Converts the string to a date.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="247" name="see" description="\fDate::__construct()" refers="\fDate::__construct()"/>
-          <tag line="247" name="return" description="The string converted to a date." type="string">
-            <type by_reference="false">string</type>
+          <tag line="247" name="return" description="The string converted to a date." type="\fDate">
+            <type by_reference="false">\fDate</type>
           </tag>
         </docblock>
       </method>
@@ -3033,8 +3033,8 @@
           <description><![CDATA[Converts the string to a fNumber object.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="266" name="see" description="\sNumber::__construct()" refers="\sNumber::__construct()"/>
-          <tag line="266" name="return" description="The integer from the converted string." type="integer">
-            <type by_reference="false">integer</type>
+          <tag line="266" name="return" description="The number from the converted string." type="\sNumber">
+            <type by_reference="false">\sNumber</type>
           </tag>
         </docblock>
       </method>
@@ -3099,10 +3099,10 @@
         <name>toURIComponent</name>
         <type>function</type>
         <docblock line="327">
-          <description><![CDATA[Encodes the string to a uri component.]]></description>
+          <description><![CDATA[Encodes the string to a URI component.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="327" name="see" description="\urlencode()" refers="\urlencode()"/>
-          <tag line="327" name="return" description="The encoded url." type="string">
+          <tag line="327" name="return" description="The encoded URI." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
@@ -3114,7 +3114,7 @@
           <description><![CDATA[Encodes the string to a rawURIcomponent.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="337" name="see" description="\rawurlencode()" refers="\rawurlencode()"/>
-          <tag line="337" name="return" description="The encoded raw url." type="string">
+          <tag line="337" name="return" description="The encoded raw URI." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
@@ -3126,8 +3126,8 @@
           <description><![CDATA[Convert the string to all lowercase.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="347" name="see" description="\fUTF8::lower()" refers="\fUTF8::lower()"/>
-          <tag line="347" name="return" description="The string lowercased." type="string">
-            <type by_reference="false">string</type>
+          <tag line="347" name="return" description="The string lowercased." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -3138,8 +3138,8 @@
           <description><![CDATA[Convert the string to all uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="357" name="see" description="\fUTF8::upper()" refers="\fUTF8::upper()"/>
-          <tag line="357" name="return" description="The string uppercased." type="string">
-            <type by_reference="false">string</type>
+          <tag line="357" name="return" description="The string uppercased." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -3150,8 +3150,8 @@
           <description><![CDATA[Convert the beginning of each word to uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="367" name="see" description="\fUTF8::ucwords()" refers="\fUTF8::ucwords()"/>
-          <tag line="367" name="return" description="The beginning of each word uppcased." type="string">
-            <type by_reference="false">string</type>
+          <tag line="367" name="return" description="The beginning of each word uppcased." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -3162,8 +3162,8 @@
           <description><![CDATA[Converts the first character to uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="377" name="see" description="\fUTF8::ucfirst()" refers="\fUTF8::ucfirst()"/>
-          <tag line="377" name="return" description="The first character uppercased." type="string">
-            <type by_reference="false">string</type>
+          <tag line="377" name="return" description="The first character uppercased." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -3180,8 +3180,8 @@
           <tag line="387" name="param" description="The length to subtract from the string." type="integer" variable="$length">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="387" name="return" description="The subtracted string." type="string">
-            <type by_reference="false">string</type>
+          <tag line="387" name="return" description="The subtracted string." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
         <argument line="396">
@@ -3225,8 +3225,8 @@
           <tag line="412" name="param" description="The characters to trim." type="string" variable="$charlist">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="412" name="return" description="The string trimmed." type="string">
-            <type by_reference="false">string</type>
+          <tag line="412" name="return" description="The string trimmed." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
         <argument line="420">
@@ -3245,8 +3245,8 @@
           <tag line="424" name="param" description="The characters to trim." type="string" variable="$charlist">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="424" name="return" description="The string trimmed." type="string">
-            <type by_reference="false">string</type>
+          <tag line="424" name="return" description="The string trimmed." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
         <argument line="432">
@@ -3318,8 +3318,8 @@
           <description><![CDATA[Reverses the string.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="474" name="see" description="\fUTF8::rev()" refers="\fUTF8::rev()"/>
-          <tag line="474" name="return" description="The string reversed." type="string">
-            <type by_reference="false">string</type>
+          <tag line="474" name="return" description="The string reversed." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
@@ -3339,8 +3339,8 @@
           <tag line="484" name="param" description="If TRUE we will cut the words to match the width." type="boolean" variable="$cut">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="484" name="return" description="The string with all lowercase characters to uppercase." type="string">
-            <type by_reference="false">string</type>
+          <tag line="484" name="return" description="The string with all lowercase characters to uppercase." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
         <argument line="494">
@@ -3375,8 +3375,8 @@
           <tag line="498" name="param" description="Types: 'left','right','both'." type="string" variable="$pad_type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="498" name="return" description="The padded string." type="string">
-            <type by_reference="false">string</type>
+          <tag line="498" name="return" description="The padded string." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
         <argument line="508">
@@ -3402,8 +3402,8 @@
           <description><![CDATA[Removes any non-UTF-8 characters.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="512" name="see" description="\fUTF8::clean()" refers="\fUTF8::clean()"/>
-          <tag line="512" name="return" description="The cleaned string." type="string">
-            <type by_reference="false">string</type>
+          <tag line="512" name="return" description="The cleaned string." type="\sString">
+            <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
