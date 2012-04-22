@@ -317,6 +317,30 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
     return $this;
   }
 
+  /**
+   * Sorts the elements of the array.
+   *
+   * @param integer $flags Flags for sorting.
+   * @return sArray The object to allow method chaining.
+   * @see sort()
+   */
+  public function sort($flags = SORT_STRING) {
+    sort($this->data, $flags);
+    return $this;
+  }
+
+  /**
+   * Sorts the elements of the array reversed.
+   *
+   * @param integer $flags Flags for sorting.
+   * @return sArray The object to allow method chaining.
+   * @see rsort()
+   */
+  public function reverseSort($flags = SORT_STRING) {
+    rsort($this->data, $flags);
+    return $this;
+  }
+
   // Non-mutators
   /**
    * Recursively converts an array to an array of strings.

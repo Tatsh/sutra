@@ -277,4 +277,16 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
     $a = new sArray(1, 2, 3);
     $this->assertNull($a->unknown_property);
   }
+
+  public function testSort() {
+    $a = new sArray(10,2,3,1);
+    $a->sort(SORT_NUMERIC);
+    $this->assertEquals(array(1,2,3,10), $a->getData());
+  }
+
+  public function testReverseSort() {
+    $a = new sArray(10,2,3,1);
+    $a->reverseSort(SORT_NUMERIC);
+    $this->assertEquals(array(10,3,2,1), $a->getData());
+  }
 }
