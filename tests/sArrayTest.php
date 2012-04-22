@@ -215,7 +215,6 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals(array(2), $a->slice(1, 1)->getData());
   }
 
-
   public static function filterCallback1() {
     return TRUE;
   }
