@@ -114,6 +114,21 @@ class sHTTPRequest {
   }
 
   /**
+   * Set the Accept header. Some servers read this header and based upon its
+   *   value, decide which content (and format) to return.
+   *
+   * Example:
+   *   text/html,application/xhtml+xml
+   *
+   * @param string $content_types Comma-delimited list of content types.
+   * @return sHTTPRequest The object to allow method chaining.
+   */
+  public function setAcceptHeader($content_types) {
+    $this->headers['Accept'] = $content_types;
+    return $this;
+  }
+
+  /**
    * Set a specific header.
    *
    * @param string $name Name of the header.
@@ -320,6 +335,7 @@ class sHTTPRequest {
     }
 
     $req = new self($url, 'GET', $timeout);
+    $req->setAcceptHeader('application/json');
     $data = $req->getData();
 
     if ($use_json_decode) {
