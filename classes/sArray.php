@@ -110,6 +110,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * @param integer $offset Offset to set to. Ignored.
    * @param mixed $value Value to set.
    * @return boolean If the offset exists.
+   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public function offsetSet($offset, $value) {
     $this->data[] = $value;
@@ -232,7 +233,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * Applies a user-defined function to each element of this object.
    *
    * @param string $func Callback function. The callback takes two parameters:
-   *   the sObject parameter first (can be a reference) and the key second.
+   *   the sArray parameter first (can be a reference) and the key second.
    * @param mixed $user_data If specified, this will be passed to the callback
    *   as the third parameter.
    * @return sArray The object to allow method chaining.
@@ -279,7 +280,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
   /**
    * Callback used with walkRecursive.
    *
-   * @param sObject $instance Object instance.
+   * @param sArray $instance Object instance.
    * @param mixed $array_like Mixed variable, checked if is array-like.
    * @param string $func Function to call on each item.
    * @param mixed $user_data User data to add as third argument to callback.
@@ -303,10 +304,10 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    *   method will recurse into deeper arrays. Any key sets will be ignored.
    *
    * @param string $func Callback function. The callback takes two parameters:
-   *   the sObject parameter first (can be a reference) and the key second.
+   *   the sArray parameter first (can be a reference) and the key second.
    * @param mixed $user_data If specified, this will be passed to the callback
    *   as the third parameter.
-   * @return sObject The object to allow method chaining.
+   * @return sArray The object to allow method chaining.
    */
   public function walkRecursive($func, $user_data = NULL) {
     foreach ($this->data as $key => $value) {
