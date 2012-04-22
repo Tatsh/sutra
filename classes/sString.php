@@ -200,7 +200,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   /**
    * Explode a string, optionally with a separator.
    *
-   * @param string $separator Separator, optional. If not specified, separator will be '' (empty string).
+   * @param string $separator Separator, optional.
    * @return array String as array.
    */
   public function split($separator = NULL) {
@@ -549,7 +549,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @return mixed The length of the array or NULL if the key is invalid.
    */
   public function __get($name) {
-    if($name == 'length') {
+    if ($name == 'length') {
       return fUTF8::len($this->string);
     }
     return NULL;
