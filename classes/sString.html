@@ -1,0 +1,776 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sString</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">160</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#charAt" title="charAt :: Get the character within the string specified by numerical index."><span class="description">Get the character within the string specified by numerical index.</span><pre>charAt()</pre></a></li>
+<li class="method public "><a href="#charCodeAt" title="charCodeAt :: Get the character code at an index."><span class="description">Get the character code at an index.</span><pre>charCodeAt()</pre></a></li>
+<li class="method public "><a href="#clean" title="clean :: Removes any non-UTF-8 characters."><span class="description">Removes any non-UTF-8 characters.</span><pre>clean()</pre></a></li>
+<li class="method public "><a href="#count" title="count :: Returns the length of the string"><span class="description">Returns the length of the string</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#firstCharToUpper" title="firstCharToUpper :: Converts the first character to uppercase."><span class="description">Converts the first character to uppercase.</span><pre>firstCharToUpper()</pre></a></li>
+<li class="method public "><a href="#getLength" title="getLength :: Gets the length of the string."><span class="description">Gets the length of the string.</span><pre>getLength()</pre></a></li>
+<li class="method public "><a href="#indexOf" title="indexOf :: Finds the first position of the search in the string."><span class="description">Finds the first position of the search in the string.</span><pre>indexOf()</pre></a></li>
+<li class="method public "><a href="#lastIndexOf" title="lastIndexOf :: Finds the last position of the search value in the string."><span class="description">Finds the last position of the search value in the string.</span><pre>lastIndexOf()</pre></a></li>
+<li class="method public "><a href="#pad" title="pad :: Pads the string to the number of characters specified."><span class="description">Pads the string to the number of characters specified.</span><pre>pad()</pre></a></li>
+<li class="method public "><a href="#quote" title="quote :: Get the string double-quoted."><span class="description">Get the string double-quoted.</span><pre>quote()</pre></a></li>
+<li class="method public "><a href="#replace" title="replace :: Replaces matching parts of the string."><span class="description">Replaces matching parts of the string.</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#replaceRegex" title="replaceRegex :: Replaces the regular expression."><span class="description">Replaces the regular expression.</span><pre>replaceRegex()</pre></a></li>
+<li class="method public "><a href="#reverse" title="reverse :: Reverses the string."><span class="description">Reverses the string.</span><pre>reverse()</pre></a></li>
+<li class="method public "><a href="#split" title="split :: Explode a string, optionally with a separator."><span class="description">Explode a string, optionally with a separator.</span><pre>split()</pre></a></li>
+<li class="method public "><a href="#substr" title="substr :: Subtracts part of the string."><span class="description">Subtracts part of the string.</span><pre>substr()</pre></a></li>
+<li class="method public "><a href="#toArray" title="toArray :: Converts the string to a array."><span class="description">Converts the string to a array.</span><pre>toArray()</pre></a></li>
+<li class="method public "><a href="#toBase64" title="toBase64 :: Encodes the string to base64."><span class="description">Encodes the string to base64.</span><pre>toBase64()</pre></a></li>
+<li class="method public "><a href="#toBoolean" title="toBoolean :: Converts our string to a boolean."><span class="description">Converts our string to a boolean.</span><pre>toBoolean()</pre></a></li>
+<li class="method public "><a href="#toDate" title="toDate :: Converts the string to a date."><span class="description">Converts the string to a date.</span><pre>toDate()</pre></a></li>
+<li class="method public "><a href="#toFloat" title="toFloat :: Converts the string to a float."><span class="description">Converts the string to a float.</span><pre>toFloat()</pre></a></li>
+<li class="method public "><a href="#toInt" title="toInt :: Converts the string to a integer."><span class="description">Converts the string to a integer.</span><pre>toInt()</pre></a></li>
+<li class="method public "><a href="#toJSON" title="toJSON :: Encodes the string to JSON data."><span class="description">Encodes the string to JSON data.</span><pre>toJSON()</pre></a></li>
+<li class="method public "><a href="#toLowerCase" title="toLowerCase :: Convert the string to all lowercase."><span class="description">Convert the string to all lowercase.</span><pre>toLowerCase()</pre></a></li>
+<li class="method public "><a href="#toNumber" title="toNumber :: Converts the string to a fNumber object."><span class="description">Converts the string to a fNumber object.</span><pre>toNumber()</pre></a></li>
+<li class="method public "><a href="#toRawURIComponent" title="toRawURIComponent :: Encodes the string to a rawURIcomponent."><span class="description">Encodes the string to a rawURIcomponent.</span><pre>toRawURIComponent()</pre></a></li>
+<li class="method public "><a href="#toTime" title="toTime :: Converts the string to time."><span class="description">Converts the string to time.</span><pre>toTime()</pre></a></li>
+<li class="method public "><a href="#toTimeStamp" title="toTimeStamp :: Converts the string to a timestamp."><span class="description">Converts the string to a timestamp.</span><pre>toTimeStamp()</pre></a></li>
+<li class="method public "><a href="#toURIComponent" title="toURIComponent :: Encodes the string to a uri component."><span class="description">Encodes the string to a uri component.</span><pre>toURIComponent()</pre></a></li>
+<li class="method public "><a href="#toUpperCase" title="toUpperCase :: Convert the string to all uppercase."><span class="description">Convert the string to all uppercase.</span><pre>toUpperCase()</pre></a></li>
+<li class="method public "><a href="#trim" title="trim :: Trims whitespaces or defined characters from the full string."><span class="description">Trims whitespaces or defined characters from the full string.</span><pre>trim()</pre></a></li>
+<li class="method public "><a href="#trimLeft" title="trimLeft :: Trims whitespaces or defined characters from the beginning of the string."><span class="description">Trims whitespaces or defined characters from the beginning of the string.</span><pre>trimLeft()</pre></a></li>
+<li class="method public "><a href="#trimRight" title="trimRight :: Trims whitespaces or defined characters from the end of the string."><span class="description">Trims whitespaces or defined characters from the end of the string.</span><pre>trimRight()</pre></a></li>
+<li class="method public "><a href="#wordWrap" title="wordWrap :: Wraps the string to the specified width."><span class="description">Wraps the string to the specified width.</span><pre>wordWrap()</pre></a></li>
+<li class="method public "><a href="#wordsToUpper" title="wordsToUpper :: Convert the beginning of each word to uppercase."><span class="description">Convert the beginning of each word to uppercase.</span><pre>wordsToUpper()</pre></a></li>
+<li class="nav-header private">» Private</li>
+<li class="method private "><a href="#encode" title="encode :: Executes the encoder functions/methods."><span class="description">Executes the encoder functions/methods.</span><pre>encode()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24string" title="$string :: The string."><span class="description">The string.</span><pre>$string</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#ENCODING_BASE64" title="ENCODING_BASE64 :: The callback to encode into base64."><span class="description">The callback to encode into base64.</span><pre>ENCODING_BASE64</pre></a></li>
+<li class="constant  "><a href="#ENCODING_JSON" title="ENCODING_JSON :: The callback to encode into JSON."><span class="description">The callback to encode into JSON.</span><pre>ENCODING_JSON</pre></a></li>
+<li class="constant  "><a href="#ENCODING_RAWURL" title="ENCODING_RAWURL :: The callback to encode into Raw URI Component."><span class="description">The callback to encode into Raw URI Component.</span><pre>ENCODING_RAWURL</pre></a></li>
+<li class="constant  "><a href="#ENCODING_URL" title="ENCODING_URL :: The callback to encode into URI Component."><span class="description">The callback to encode into URI Component.</span><pre>ENCODING_URL</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5CsString" id="\sString"></a><div href="../classes/sString.html" class="element class">
+<p class="short_description">Provides object-oriented interface to strings.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 Charles S, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:xxstonerariesxx@gmail.com">Charles S [cs]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="..//packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://github.com/tatsh/sutra">https://github.com/tatsh/sutra</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.3</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(string $string) : <a href="../classes/sString.html">\sString</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to manipulate.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sString.html">\sString</a></code></div>
+</div></div>
+</div>
+<a name="charAt" id="charAt"></a><div class="element clickable method public charAt" data-toggle="collapse" data-target=".charAt .collapse">
+<h2>Get the character within the string specified by numerical index.</h2>
+<pre>charAt(integer $index) : <a href="../classes/sString.html">\sString</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>integer</code><p>Index to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sString.html">\sString</a></code>The character at $index or NULL.</div>
+</div></div>
+</div>
+<a name="charCodeAt" id="charCodeAt"></a><div class="element clickable method public charCodeAt" data-toggle="collapse" data-target=".charCodeAt .collapse">
+<h2>Get the character code at an index.</h2>
+<pre>charCodeAt(integer $index) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>integer</code><p>Index to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>If the index is not usable, NULL is returned. Otherwise, the character number (int) is returned.</div>
+</div></div>
+</div>
+<a name="clean" id="clean"></a><div class="element clickable method public clean" data-toggle="collapse" data-target=".clean .collapse">
+<h2>Removes any non-UTF-8 characters.</h2>
+<pre>clean() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::clean()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cleaned string.</div>
+</div></div>
+</div>
+<a name="count" id="count"></a><div class="element clickable method public count" data-toggle="collapse" data-target=".count .collapse">
+<h2>Returns the length of the string</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The length of the string</div>
+</div></div>
+</div>
+<a name="firstCharToUpper" id="firstCharToUpper"></a><div class="element clickable method public firstCharToUpper" data-toggle="collapse" data-target=".firstCharToUpper .collapse">
+<h2>Converts the first character to uppercase.</h2>
+<pre>firstCharToUpper() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::ucfirst()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The first character uppercased.</div>
+</div></div>
+</div>
+<a name="getLength" id="getLength"></a><div class="element clickable method public getLength" data-toggle="collapse" data-target=".getLength .collapse">
+<h2>Gets the length of the string.</h2>
+<pre>getLength() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The string length.</div>
+</div></div>
+</div>
+<a name="indexOf" id="indexOf"></a><div class="element clickable method public indexOf" data-toggle="collapse" data-target=".indexOf .collapse">
+<h2>Finds the first position of the search in the string.</h2>
+<pre>indexOf(string $needle, integer $offset) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::pos()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for.</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The character position, or -1.</div>
+</div></div>
+</div>
+<a name="lastIndexOf" id="lastIndexOf"></a><div class="element clickable method public lastIndexOf" data-toggle="collapse" data-target=".lastIndexOf .collapse">
+<h2>Finds the last position of the search value in the string.</h2>
+<pre>lastIndexOf(string $needle, integer $offset) : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::rpos()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for.</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The character position.</div>
+</div></div>
+</div>
+<a name="pad" id="pad"></a><div class="element clickable method public pad" data-toggle="collapse" data-target=".pad .collapse">
+<h2>Pads the string to the number of characters specified.</h2>
+<pre>pad(integer $pad_length, string $pad_string, string $pad_type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::pad()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pad_length</h4>
+<code>integer</code><p>The character length to pad.</p></div>
+<div class="subelement argument">
+<h4>$pad_string</h4>
+<code>string</code><p>The string to pad with our string.</p></div>
+<div class="subelement argument">
+<h4>$pad_type</h4>
+<code>string</code><p>Types: 'left','right','both'.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The padded string.</div>
+</div></div>
+</div>
+<a name="quote" id="quote"></a><div class="element clickable method public quote" data-toggle="collapse" data-target=".quote .collapse">
+<h2>Get the string double-quoted.</h2>
+<pre>quote() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string, double-quoted.</div>
+</div></div>
+</div>
+<a name="replace" id="replace"></a><div class="element clickable method public replace" data-toggle="collapse" data-target=".replace .collapse">
+<h2>Replaces matching parts of the string.</h2>
+<pre>replace(mixed $search, mixed $replace, boolean $case_sensitive) : <a href="../classes/sString.html">\sString</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::replace()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>mixed</code><p>The string or array to search for.</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>mixed</code><p>The string or array of replacements.</p></div>
+<div class="subelement argument">
+<h4>$case_sensitive</h4>
+<code>boolean</code><p>Determines to check for case sensitive strings</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sString.html">\sString</a></code>The replaced string.</div>
+</div></div>
+</div>
+<a name="replaceRegex" id="replaceRegex"></a><div class="element clickable method public replaceRegex" data-toggle="collapse" data-target=".replaceRegex .collapse">
+<h2>Replaces the regular expression.</h2>
+<pre>replaceRegex(string $pattern, string $replacement, integer $limit) : <a href="../classes/sString.html">\sString</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\preg_replace()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pattern</h4>
+<code>string</code><p>The regular expression.</p></div>
+<div class="subelement argument">
+<h4>$replacement</h4>
+<code>string</code><p>The replacement string.</p></div>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The limit.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sString.html">\sString</a></code>The string with replacements made.</div>
+</div></div>
+</div>
+<a name="reverse" id="reverse"></a><div class="element clickable method public reverse" data-toggle="collapse" data-target=".reverse .collapse">
+<h2>Reverses the string.</h2>
+<pre>reverse() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::rev()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string reversed.</div>
+</div></div>
+</div>
+<a name="split" id="split"></a><div class="element clickable method public split" data-toggle="collapse" data-target=".split .collapse">
+<h2>Explode a string, optionally with a separator.</h2>
+<pre>split(string $separator) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$separator</h4>
+<code>string</code><p>Separator, optional.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>String as array.</div>
+</div></div>
+</div>
+<a name="substr" id="substr"></a><div class="element clickable method public substr" data-toggle="collapse" data-target=".substr .collapse">
+<h2>Subtracts part of the string.</h2>
+<pre>substr(integer $start, integer $length) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::sub()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>integer</code><p>The starting point to extract from.</p></div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>The length to subtract from the string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The subtracted string.</div>
+</div></div>
+</div>
+<a name="toArray" id="toArray"></a><div class="element clickable method public toArray" data-toggle="collapse" data-target=".toArray .collapse">
+<h2>Converts the string to a array.</h2>
+<pre>toArray() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array from the converted string.</div>
+</div></div>
+</div>
+<a name="toBase64" id="toBase64"></a><div class="element clickable method public toBase64" data-toggle="collapse" data-target=".toBase64 .collapse">
+<h2>Encodes the string to base64.</h2>
+<pre>toBase64() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\base64_encode()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string encoded to base64.</div>
+</div></div>
+</div>
+<a name="toBoolean" id="toBoolean"></a><div class="element clickable method public toBoolean" data-toggle="collapse" data-target=".toBoolean .collapse">
+<h2>Converts our string to a boolean.</h2>
+<pre>toBoolean() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>The boolean from the converted string.</div>
+</div></div>
+</div>
+<a name="toDate" id="toDate"></a><div class="element clickable method public toDate" data-toggle="collapse" data-target=".toDate .collapse">
+<h2>Converts the string to a date.</h2>
+<pre>toDate() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fDate::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string converted to a date.</div>
+</div></div>
+</div>
+<a name="toFloat" id="toFloat"></a><div class="element clickable method public toFloat" data-toggle="collapse" data-target=".toFloat .collapse">
+<h2>Converts the string to a float.</h2>
+<pre>toFloat() : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>float</code>The float from the converted string.</div>
+</div></div>
+</div>
+<a name="toInt" id="toInt"></a><div class="element clickable method public toInt" data-toggle="collapse" data-target=".toInt .collapse">
+<h2>Converts the string to a integer.</h2>
+<pre>toInt() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The integer from the converted string.</div>
+</div></div>
+</div>
+<a name="toJSON" id="toJSON"></a><div class="element clickable method public toJSON" data-toggle="collapse" data-target=".toJSON .collapse">
+<h2>Encodes the string to JSON data.</h2>
+<pre>toJSON() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fJSON::encode()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string encoded to JSON.</div>
+</div></div>
+</div>
+<a name="toLowerCase" id="toLowerCase"></a><div class="element clickable method public toLowerCase" data-toggle="collapse" data-target=".toLowerCase .collapse">
+<h2>Convert the string to all lowercase.</h2>
+<pre>toLowerCase() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::lower()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string lowercased.</div>
+</div></div>
+</div>
+<a name="toNumber" id="toNumber"></a><div class="element clickable method public toNumber" data-toggle="collapse" data-target=".toNumber .collapse">
+<h2>Converts the string to a fNumber object.</h2>
+<pre>toNumber() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sNumber::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The integer from the converted string.</div>
+</div></div>
+</div>
+<a name="toRawURIComponent" id="toRawURIComponent"></a><div class="element clickable method public toRawURIComponent" data-toggle="collapse" data-target=".toRawURIComponent .collapse">
+<h2>Encodes the string to a rawURIcomponent.</h2>
+<pre>toRawURIComponent() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\rawurlencode()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded raw url.</div>
+</div></div>
+</div>
+<a name="toTime" id="toTime"></a><div class="element clickable method public toTime" data-toggle="collapse" data-target=".toTime .collapse">
+<h2>Converts the string to time.</h2>
+<pre>toTime() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fTime::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string converted to time.</div>
+</div></div>
+</div>
+<a name="toTimeStamp" id="toTimeStamp"></a><div class="element clickable method public toTimeStamp" data-toggle="collapse" data-target=".toTimeStamp .collapse">
+<h2>Converts the string to a timestamp.</h2>
+<pre>toTimeStamp() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sTimestamp::__construct()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string converted to a timestamp.</div>
+</div></div>
+</div>
+<a name="toURIComponent" id="toURIComponent"></a><div class="element clickable method public toURIComponent" data-toggle="collapse" data-target=".toURIComponent .collapse">
+<h2>Encodes the string to a uri component.</h2>
+<pre>toURIComponent() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\urlencode()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded url.</div>
+</div></div>
+</div>
+<a name="toUpperCase" id="toUpperCase"></a><div class="element clickable method public toUpperCase" data-toggle="collapse" data-target=".toUpperCase .collapse">
+<h2>Convert the string to all uppercase.</h2>
+<pre>toUpperCase() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::upper()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string uppercased.</div>
+</div></div>
+</div>
+<a name="trim" id="trim"></a><div class="element clickable method public trim" data-toggle="collapse" data-target=".trim .collapse">
+<h2>Trims whitespaces or defined characters from the full string.</h2>
+<pre>trim(string $charlist) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::trim()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string trimmed.</div>
+</div></div>
+</div>
+<a name="trimLeft" id="trimLeft"></a><div class="element clickable method public trimLeft" data-toggle="collapse" data-target=".trimLeft .collapse">
+<h2>Trims whitespaces or defined characters from the beginning of the string.</h2>
+<pre>trimLeft(string $charlist) : \The</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::ltrim()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\The</code>string trimmed.</div>
+</div></div>
+</div>
+<a name="trimRight" id="trimRight"></a><div class="element clickable method public trimRight" data-toggle="collapse" data-target=".trimRight .collapse">
+<h2>Trims whitespaces or defined characters from the end of the string.</h2>
+<pre>trimRight(string $charlist) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::rtrim()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string trimmed.</div>
+</div></div>
+</div>
+<a name="wordWrap" id="wordWrap"></a><div class="element clickable method public wordWrap" data-toggle="collapse" data-target=".wordWrap .collapse">
+<h2>Wraps the string to the specified width.</h2>
+<pre>wordWrap(integer $width, string $break, boolean $cut) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::wordwrap()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code><p>The width to wrap too.</p></div>
+<div class="subelement argument">
+<h4>$break</h4>
+<code>string</code><p>The break to insert.</p></div>
+<div class="subelement argument">
+<h4>$cut</h4>
+<code>boolean</code><p>If TRUE we will cut the words to match the width.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string with all lowercase characters to uppercase.</div>
+</div></div>
+</div>
+<a name="wordsToUpper" id="wordsToUpper"></a><div class="element clickable method public wordsToUpper" data-toggle="collapse" data-target=".wordsToUpper .collapse">
+<h2>Convert the beginning of each word to uppercase.</h2>
+<pre>wordsToUpper() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fUTF8::ucwords()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The beginning of each word uppcased.</div>
+</div></div>
+</div>
+<a name="encode" id="encode"></a><div class="element clickable method private encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>Executes the encoder functions/methods.</h2>
+<pre>encode(string $encoder) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$encoder</h4>
+<code>string</code><p>The encoder that will encode the string.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded string.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24string" id="$string"> </a><div class="element clickable property private $string" data-toggle="collapse" data-target=".$string .collapse">
+<h2>The string.</h2>
+<pre>$string : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="ENCODING_BASE64" id="ENCODING_BASE64"> </a><div class="element clickable constant  ENCODING_BASE64" data-toggle="collapse" data-target=".ENCODING_BASE64 .collapse">
+<h2>The callback to encode into base64.</h2>
+<pre>ENCODING_BASE64 : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="ENCODING_JSON" id="ENCODING_JSON"> </a><div class="element clickable constant  ENCODING_JSON" data-toggle="collapse" data-target=".ENCODING_JSON .collapse">
+<h2>The callback to encode into JSON.</h2>
+<pre>ENCODING_JSON : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="ENCODING_RAWURL" id="ENCODING_RAWURL"> </a><div class="element clickable constant  ENCODING_RAWURL" data-toggle="collapse" data-target=".ENCODING_RAWURL .collapse">
+<h2>The callback to encode into Raw URI Component.</h2>
+<pre>ENCODING_RAWURL : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="ENCODING_URL" id="ENCODING_URL"> </a><div class="element clickable constant  ENCODING_URL" data-toggle="collapse" data-target=".ENCODING_URL .collapse">
+<h2>The callback to encode into URI Component.</h2>
+<pre>ENCODING_URL : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
+            generated on 2012-04-22T04:25:31-05:00.<br></footer></div>
+</div>
+</body>
+</html>

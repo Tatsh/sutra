@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">158</span></a></li>
+                <span class="label label-info">160</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -79,11 +79,13 @@
 <li class="method public "><a href="#push" title="push :: Pushes the value into the last position of the array."><span class="description">Pushes the value into the last position of the array.</span><pre>push()</pre></a></li>
 <li class="method public "><a href="#rand" title="rand :: Picks one or more random keys."><span class="description">Picks one or more random keys.</span><pre>rand()</pre></a></li>
 <li class="method public "><a href="#reverse" title="reverse :: Returns a copy of this array reversed."><span class="description">Returns a copy of this array reversed.</span><pre>reverse()</pre></a></li>
+<li class="method public "><a href="#reverseSort" title="reverseSort :: Sorts the elements of the array reversed."><span class="description">Sorts the elements of the array reversed.</span><pre>reverseSort()</pre></a></li>
 <li class="method public "><a href="#search" title="search :: Searches the array for a given value and returns the corresponding key if
   successful. Can return boolean FALSE."><span class="description">Searches the array for a given value and returns the corresponding key if
   successful. Can return boolean FALSE.</span><pre>search()</pre></a></li>
 <li class="method public "><a href="#shift" title="shift :: Shifts the first value off the array and returns it."><span class="description">Shifts the first value off the array and returns it.</span><pre>shift()</pre></a></li>
 <li class="method public "><a href="#slice" title="slice :: Extract a slice of the array."><span class="description">Extract a slice of the array.</span><pre>slice()</pre></a></li>
+<li class="method public "><a href="#sort" title="sort :: Sorts the elements of the array."><span class="description">Sorts the elements of the array.</span><pre>sort()</pre></a></li>
 <li class="method public "><a href="#toJSON" title="toJSON :: Returns the JSON-encoded array."><span class="description">Returns the JSON-encoded array.</span><pre>toJSON()</pre></a></li>
 <li class="method public "><a href="#unique" title="unique :: Removes duplicate values from the array."><span class="description">Removes duplicate values from the array.</span><pre>unique()</pre></a></li>
 <li class="method public "><a href="#unshift" title="unshift :: Puts a new element at the beginning of the array."><span class="description">Puts a new element at the beginning of the array.</span><pre>unshift()</pre></a></li>
@@ -353,6 +355,25 @@
 <code><a href="../classes/sArray.html">\sArray</a></code>The array, reversed.</div>
 </div></div>
 </div>
+<a name="reverseSort" id="reverseSort"></a><div class="element clickable method public reverseSort" data-toggle="collapse" data-target=".reverseSort .collapse">
+<h2>Sorts the elements of the array reversed.</h2>
+<pre>reverseSort(integer $flags) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\rsort()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>integer</code><p>Flags for sorting.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
 <a name="search" id="search"></a><div class="element clickable method public search" data-toggle="collapse" data-target=".search .collapse">
 <h2>Searches the array for a given value and returns the corresponding key if
   successful. Can return boolean FALSE.</h2>
@@ -400,6 +421,25 @@
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/sArray.html">\sArray</a></code>Array slice.</div>
+</div></div>
+</div>
+<a name="sort" id="sort"></a><div class="element clickable method public sort" data-toggle="collapse" data-target=".sort .collapse">
+<h2>Sorts the elements of the array.</h2>
+<pre>sort(integer $flags) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\sort()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>integer</code><p>Flags for sorting.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
 <a name="toJSON" id="toJSON"></a><div class="element clickable method public toJSON" data-toggle="collapse" data-target=".toJSON .collapse">
@@ -572,7 +612,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-22T02:04:10-05:00.<br></footer></div>
+            generated on 2012-04-22T04:25:31-05:00.<br></footer></div>
 </div>
 </body>
 </html>
