@@ -1,0 +1,17 @@
+<phpunit verbose="true"
+  colors="true">
+  <logging>
+    <log type="coverage-html"
+      target="./report"
+      charset="UTF-8"
+      yui="true"
+      highlight="true"
+      lowUpperBound="35"
+      highLowerBound="70"/>
+  </logging>
+  <php>
+    <ini name="apc.enable_cli" value="1"/>
+    <ini name="apc.cache_by_default" value="0"/>
+    <ini name="apc.slam_defense" value="0"/>
+  </php>
+</phpunit>
