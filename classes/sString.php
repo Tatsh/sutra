@@ -28,14 +28,14 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   const ENCODING_JSON = 'fJSON::encoding';
 
   /**
-   * The callback to encode into URIComponent.
+   * The callback to encode into URI Component.
    * 
    * @var string
    */
   const ENCODING_URL = 'urlencode';
 
   /**
-   * The callback to encode into RawURIComponent.
+   * The callback to encode into Raw URI Component.
    * 
    * @var string
    */
