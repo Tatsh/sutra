@@ -1,7 +1,7 @@
 <?php
 /**
- * Provides object-oriented interface to associative arrays. This class is not
- *   concerned with the order of the keys.
+ * Provides an object-oriented interface to associative arrays. This class is
+ *   not concerned with the order of the keys.
  *
  * @copyright Copyright (c) 2012 bne1.
  * @author Andrew Udvare [au] <andrew@bne1.com>
