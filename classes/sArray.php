@@ -116,6 +116,16 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
     $this->data = array_values($this->data);
   }
 
+  /**
+   * Unsets the value at an offset.
+   *
+   * @internal
+   *
+   * @throws fProgrammerException If the offset is not an integer.
+   *
+   * @param integer $offset Offset.
+   * @return void
+   */
   public function offsetUnset($offset) {
     if (!is_numeric($offset) || is_float($offset)) {
       throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
