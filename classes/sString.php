@@ -1,56 +1,56 @@
 <?php
 /**
  * Provides object-oriented interface to strings.
- * 
+ *
  * @copyright Copyright (c) 2012 Charles S, others
  * @author Charles S [cs] <xxstonerariesxx@gmail.com>
  * @author Andrew Udvare [au] <andrew@bne1.com>
  * @license http://www.opensource.org/licenses/mit-license.php
- * 
+ *
  * @package Sutra
  * @link https://github.com/tatsh/sutra
- * 
+ *
  * @version 1.3
  */
 class sString implements ArrayAccess, Countable, IteratorAggregate {
   /**
    * The callback to encode into base64.
-   * 
+   *
    * @var string
    */
   const ENCODING_BASE64 = 'base64_encode';
 
   /**
    * The callback to encode into JSON.
-   * 
+   *
    * @var string
    */
-  const ENCODING_JSON = 'fJSON::encoding';
+  const ENCODING_JSON = 'fJSON::encode';
 
   /**
    * The callback to encode into URI Component.
-   * 
+   *
    * @var string
    */
   const ENCODING_URL = 'urlencode';
 
   /**
    * The callback to encode into Raw URI Component.
-   * 
+   *
    * @var string
    */
   const ENCODING_RAWURL = 'rawurlencode';
 
   /**
    * The string.
-   * 
+   *
    * @var string
    */
   private $string;
 
   /**
    * Constructor.
-   * 
+   *
    * @param string $string The string to manipulate.
    * @return sString
    */
@@ -58,25 +58,25 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
     if(fUTF8::len($string) === 0) {
       throw new fProgrammerException('String argument must be non-zero-length string.');
     }
-    $this->string = (string )$string;
+    $this->string = (string)$string;
   }
 
   /**
    * Replaces matching parts of the string.
-   * 
+   *
    * @see fUTF8::replace()
-   * 
+   *
    * @param mixed The string or array to search for.
    * @param mixed The string or array of replacements.
    * @param boolean $case_sensitive Determines to check for case sensitive
    *   strings
-   * @return string The replaced string.
+   * @return sString The replaced string.
    */
   public function replace($search, $replace,$case_sensitive = TRUE) {
     if($case_sensitive){
-        return fUTF8::replace($this->string, $search, $replace);
-    } 
-    return fUTF8::ireplace($this->string,$search,$replace);
+      return new self(fUTF8::replace($this->string, $search, $replace));
+    }
+    return new self(fUTF8::ireplace($this->string, $search, $replace));
   }
   /**
    * Checks if the offset exists.
@@ -131,7 +131,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
       throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
     }
     if(fUTF8::len($value) !== 1){
-      throw new fProgrammerException('The value may not be greater than 1');
+      throw new fProgrammerException('The value length may not be greater than 1');
     }
     $offset = (int)$offset;
     $this->string[$offset] = $value;
@@ -152,97 +152,81 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
       throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
     }
 
-    $offset = (int)$offset;
-    unset($this->string[$offset]);
+    $arr = fUTF8::explode($this->string);
+    unset($arr[$offset]);
+    $this->string = implode('', $arr);
   }
-  
+
   /**
    * Get the character within the string specified by numerical index.
-   * 
+   *
    * @param integer $index Index to use.
-   * @return integer The character at index or an empty string.
+   * @return sString The character at $index or NULL.
    */
   public function charAt($index) {
     if($index < 0) {
-      return '';
+      return NULL;
     }
     if($index > ($this->getLength() - 1)) {
-      return '';
+      return NULL;
     }
-    return $this->string[$index];
+    return new self($this->string[$index]);
   }
 
   /**
    * Get the character code at an index.
-   * 
+   *
    * @param integer $index Index to use.
-   * @return mixed If the index is not usable, NULL is returned. Otherwise, the character number (int) is returned.
+   * @return mixed If the index is not usable, NULL is returned. Otherwise, the
+   *   character number (int) is returned.
    */
   public function charCodeAt($index) {
-    if($index < 0 || $index > $this->getLength()) {
+    if($index < 0 || $index > $this->length) {
       return NULL;
     }
 
-    $arr = str_split($this->string);
-    return intval(ord($arr[$index]));
+    return ord($this[$index]);
   }
-  
+
   /**
    * Get the string double-quoted.
-   * 
+   *
    * @return string The string, double-quoted.
    */
   public function quote() {
-    return '"' . $this->string . '"';
+    return new self('"' . $this->string . '"');
   }
-  
-  /**
-   * Get a substring.
-   * 
-   * @param integer $begin Where to begin.
-   * @param integer $end Where to end, optional. If not passed, end is the strlen() return value of the string.
-   * @return string Substring.
-   */
-  public function slice($begin, $end = NULL) {
-    if(is_null($end)) {
-      $end = $this->getLength() - 1;
-    } 
-    else {
-      $end = intval($end);
-    }
-    return $this->substr($begin,$end,$this->string);
-  }
-  
+
   /**
    * Explode a string, optionally with a separator.
-   * 
+   *
    * @param string $separator Separator, optional. If not specified, separator will be '' (empty string).
-   * @return array String as array, or parts.
+   * @return array String as array.
    */
   public function split($separator = NULL) {
     if(is_null($separator)) {
       return str_split($this->string);
     }
-    return fUTF8::explode($separator,$this->string);
+    return fUTF8::explode($this->string, $separator);
   }
 
   /**
    * Replaces the regular expression.
-   * 
+   *
    * @see preg_replace()
-   * 
+   *
    * @param string $pattern The regular expression.
    * @param string $replacement The replacement string.
    * @param integer $limit The limit.
-   * @return string The string with replacements made.
+   * @return sString The string with replacements made.
    */
   public function replaceRegex($pattern, $replacement, $limit = -1) {
-    return preg_replace($pattern, $replacement, $this->string, $limit);
+    return new self(preg_replace($pattern, $replacement, $this->string, $limit));
   }
-  
+
   /**
    * Converts the string to time.
-   * 
+   *
    * @see fTime::__construct()
    * @return string The string converted to time.
    */
@@ -252,17 +236,17 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the string to a timestamp.
-   * 
+   *
    * @see  sTimestamp::__construct()
    * @return string The string converted to a timestamp.
    */
   public function toTimeStamp() {
-    return new sTimeStamp($this->string);
+    return new sTimestamp($this->string);
   }
 
   /**
    * Converts the string to a date.
-   * 
+   *
    * @see fDate::__construct()
    * @return string The string converted to a date.
    */
@@ -272,7 +256,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the string to a integer.
-   * 
+   *
    * @return integer The integer from the converted string.
    */
   public function toInt() {
@@ -281,7 +265,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the string to a fNumber object.
-   * 
+   *
    * @see sNumber::__construct()
    * @return integer The integer from the converted string.
    */
@@ -291,7 +275,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the string to a array.
-   * 
+   *
    * @return array The array from the converted string.
    */
   public function toArray() {
@@ -300,7 +284,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the string to a float.
-   * 
+   *
    * @return float The float from the converted string.
    */
   public function toFloat() {
@@ -309,7 +293,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Encodes the string to base64.
-   * 
+   *
    * @see base64_encode()
    * @return string The string encoded to base64.
    */
@@ -319,7 +303,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts our string to a boolean.
-   * 
+   *
    * @return boolean The boolean from the converted string.
    */
   public function toBoolean() {
@@ -332,7 +316,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Encodes the string to JSON data.
-   * 
+   *
    * @see fJSON::encode()
    * @return string The string encoded to JSON.
    */
@@ -342,7 +326,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Encodes the string to a uri component.
-   * 
+   *
    * @see urlencode()
    * @return string The encoded url.
    */
@@ -352,7 +336,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Encodes the string to a rawURIcomponent.
-   * 
+   *
    * @see rawurlencode()
    * @return string The encoded raw url.
    */
@@ -362,7 +346,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Convert the string to all lowercase.
-   * 
+   *
    * @see fUTF8::lower()
    * @return string The string lowercased.
    */
@@ -372,7 +356,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Convert the string to all uppercase.
-   * 
+   *
    * @see fUTF8::upper()
    * @return string The string uppercased.
    */
@@ -382,7 +366,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Convert the beginning of each word to uppercase.
-   * 
+   *
    * @see fUTF8::ucwords()
    * @return string The beginning of each word uppcased.
    */
@@ -392,7 +376,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Converts the first character to uppercase.
-   * 
+   *
    * @see fUTF8::ucfirst()
    * @return string The first character uppercased.
    */
@@ -402,140 +386,144 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Subtracts part of the string.
-   * 
+   *
    * @see fUTF8::sub()
-   * 
+   *
    * @param integer $start The starting point to extract from.
    * @param integer $length The length to subtract from the string.
    * @return string The subtracted string.
    */
   public function substr($start, $length = NULL) {
-    return fUTF8::sub($this->string, $start, $length);
+    return new self(fUTF8::sub($this->string, $start, $length));
   }
-  
+
   /**
    * Trims whitespaces or defined characters from the beginning of the string.
-   * 
+   *
    * @see fUTF8::ltrim()
-   * 
+   *
    * @param string $charlist The characters to trim.
    * @return The string trimmed.
    */
   public function trimLeft($charlist = NULL) {
-    return fUTF8::ltrim($this->string, $charlist);
+    return new self(fUTF8::ltrim($this->string, $charlist));
   }
 
   /**
    * Trims whitespaces or defined characters from the full string.
-   * 
+   *
    * @see fUTF8::trim()
-   * 
+   *
    * @param string $charlist The characters to trim.
    * @return string The string trimmed.
    */
   public function trim($charlist = NULL) {
-    return fUTF8::trim($this->string, $charlist);
+    return new self(fUTF8::trim($this->string, $charlist));
   }
 
   /**
    * Trims whitespaces or defined characters from the end of the string.
-   * 
+   *
    * @see fUTF8::rtrim()
-   * 
+   *
    * @param string $charlist The characters to trim.
    * @return string The string trimmed.
    */
   public function trimRight($charlist = NULL) {
-    return fUTF8::rtrim($this->string, $charlist);
+    return new self(fUTF8::rtrim($this->string, $charlist));
   }
 
   /**
    * Finds the first position of the search in the string.
-   * 
+   *
    * @see fUTF8::pos()
-   * 
+   *
    * @param string $needle The string to search for.
    * @param integer $offset The character position to start searching from.
-   * @return integer The character position.
+   * @return integer The character position, or -1.
    */
   public function indexOf($needle, $offset = 0) {
     $pos = fUTF8::pos($this->string, $needle, $offset);
-    if($pos === false) {
+
+    if ($pos === FALSE) {
       return -1;
     }
+
     return $pos;
   }
 
   /**
    * Finds the last position of the search value in the string.
-   * 
+   *
    * @see fUTF8::rpos()
-   * 
+   *
    * @param string $needle The string to search for.
    * @param integer $offset The character position to start searching from.
    * @return integer The character position.
    */
   public function lastIndexOf($needle, $offset = 0) {
     $pos = fUTF8::rpos($this->string, $needle, $offset);
-    if($pos === false) {
+
+    if ($pos === FALSE) {
       return -1;
     }
+
     return $pos;
   }
 
   /**
    * Reverses the string.
-   * 
+   *
    * @see fUTF8::rev()
    * @return string The string reversed.
    */
   public function reverse() {
-    return fUTF8::rev($this->string);
+    return new self(fUTF8::rev($this->string));
   }
 
   /**
    * Wraps the string to the specified width.
-   * 
+   *
    * @see fUTF8::wordwrap()
-   * 
+   *
    * @param integer $width The width to wrap too.
    * @param string $break The break to insert.
    * @param boolean $cut If TRUE we will cut the words to match the width.
    * @return string The string with all lowercase characters to uppercase.
    */
   public function wordWrap($width = 75, $break = '', $cut = FALSE) {
-    return fUTF8::wordwrap($this->string, $width, $break, $cut);
+    return new self(fUTF8::wordwrap($this->string, $width, $break, $cut));
   }
 
   /**
    * Pads the string to the number of characters specified.
-   * 
+   *
    * @see fUTF8::pad()
-   * 
+   *
    * @param integer $pad_length The character length to pad.
    * @param string $pad_string The string to pad with our string.
-   * @param string $pad_type Types: 'left','right','both'.    
+   * @param string $pad_type Types: 'left','right','both'.
    * @return string The padded string.
    */
   public function pad($pad_length, $pad_string = '', $pad_type = 'right') {
-    return fUTF8::pad($this->string, $pad_length, $pad_string, $pad_type);
+    return new self(fUTF8::pad($this->string, $pad_length, $pad_string, $pad_type));
   }
 
   /**
    * Removes any non-UTF-8 characters.
-   * 
+   *
    * @see fUTF8::clean()
    * @return string The cleaned string.
    */
   public function clean() {
-    return fUTF8::clean($this->string);
+    return new self(fUTF8::clean($this->string));
   }
 
   /**
    * Returns the string.
-   * 
+   *
    * @internal
-   * 
+   *
    * @return string The string defined.
    */
   public function __toString() {
@@ -544,7 +532,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 
   /**
    * Gets the length of the string.
-   * 
+   *
    * @return integer The string length.
    */
   public function getLength() {
@@ -562,9 +550,9 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    */
   public function __get($name) {
     if($name == 'length') {
-      return count($this);
+      return fUTF8::len($this->string);
     }
-    return null;
+    return NULL;
   }
 
   /**
@@ -585,14 +573,10 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   public function count(){
     return $this->length;
   }
+
   /**
-   * Sets and executes the encoders.
-   * 
-   * @see base64_encode()
-   * @see fJSON::encode()
-   * @see urlencode()
-   * @see rawurlencode()
-   * 
+   * Executes the encoder functions/methods.
+   *
    * @param string $encoder The encoder that will encode the string.
    * @return string The encoded string.
    */
