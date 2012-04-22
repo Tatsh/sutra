@@ -42,7 +42,7 @@ class sObject implements ArrayAccess, IteratorAggregate, Countable {
   public function __construct(array $data = array()) {
     foreach ($data as $key => $value) {
       if (!$key) {
-        throw new fProgrammerException('All keys must be a non-empty strings. Error at key: "%s"', $key);
+        throw new fProgrammerException('All keys must be non-empty strings. Error at key: "%s"', $key);
       }
     }
 
