@@ -71,12 +71,24 @@ class sLoader extends fLoader {
    * @return void
    */
   private static function createConstructorFunctions() {
-    if (function_exists('sImage')) {
+    if (function_exists('sHTTPRequest')) {
       return;
+    }
+
+    function sHTTPRequest($url, $method = 'GET', $timeout = NULL) {
+      return new sHTTPRequest($url, $method, $timeout);
     }
 
     function sImage($file_path, $skip_checks = FALSE) {
       return new sImage($file_path, $skip_checks);
+    }
+
+    function sNumber($value, $scale = NULL) {
+      return new sNumber($value, $scale);
+    }
+
+    function sObject(array $arg) {
+      return new sObject($arg);
     }
 
     // Limited signature support
