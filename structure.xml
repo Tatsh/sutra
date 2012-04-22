@@ -1014,6 +1014,672 @@
       </method>
     </class>
   </file>
+  <file path="sutra/classes/sObject.php" hash="78dd8f00ccf2c0058a508435557e29f8" package="Sutra">
+    <docblock line="2">
+      <description><![CDATA[Provides object-oriented interface to associative arrays. This class is not
+  concerned with the order of the keys.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="copyright" description="Copyright (c) 2012 bne1."/>
+      <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@bne1.com&gt;"/>
+      <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
+      <tag line="2" name="package" description="Sutra"/>
+      <tag line="2" name="link" description="https://github.com/tatsh/sutra" link="https://github.com/tatsh/sutra"/>
+      <tag line="2" name="version" description="1.3"/>
+      <tag line="2" name="todo" description="Create sOrderedObject class."/>
+    </docblock>
+    <parse_markers>
+      <notice line="333" code="50013">Parameter  could not be found in merge()</notice>
+      <notice line="355" code="50013">Parameter  could not be found in checkRequiredKeys()</notice>
+      <notice line="389" code="50013">Parameter  could not be found in validateRequiredKeys()</notice>
+      <notice line="434" code="50013">Parameter  could not be found in diff()</notice>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="default" line="17" package="Sutra">
+      <name>sObject</name>
+      <full_name>\sObject</full_name>
+      <extends/>
+      <implements>\ArrayAccess</implements>
+      <implements>\IteratorAggregate</implements>
+      <implements>\Countable</implements>
+      <docblock line="2">
+        <description><![CDATA[Provides object-oriented interface to associative arrays. This class is not
+  concerned with the order of the keys.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="2" name="copyright" description="Copyright (c) 2012 bne1."/>
+        <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@bne1.com&gt;"/>
+        <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
+        <tag line="2" name="package" description="Sutra"/>
+        <tag line="2" name="link" description="https://github.com/tatsh/sutra" link="https://github.com/tatsh/sutra"/>
+        <tag line="2" name="version" description="1.3"/>
+        <tag line="2" name="todo" description="Create sOrderedObject class."/>
+      </docblock>
+      <property final="false" static="false" visibility="private" line="23" package="Sutra">
+        <name>$data</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="18">
+          <description><![CDATA[The actual 'array' of data this object manages.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="30" package="Sutra">
+        <name>$last_missing_key</name>
+        <default><![CDATA[NULL]]></default>
+        <docblock line="25">
+          <description><![CDATA[The last missing key, checked by checkRequiredKeys().]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="42" package="">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="32">
+          <description><![CDATA[Constructor.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="32" name="throws" description="If any keys are false-like. This includes 0, FALSE, NULL, '', and others but not strings like '0'." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="32" name="param" description="Data to use. Keys should all be non-empty strings." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="32" name="return" description="" type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+          <tag line="32" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
+        </docblock>
+        <argument line="42">
+          <name>$data</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="57" package="">
+        <name>getData</name>
+        <type>function</type>
+        <docblock line="52">
+          <description><![CDATA[Gets the data as a regular array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="return" description="Array of data." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="69" package="">
+        <name>offsetExists</name>
+        <type>function</type>
+        <docblock line="61">
+          <description><![CDATA[Whether an offset exists.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="61" name="internal" description=""/>
+          <tag line="61" name="param" description="Offset value." type="mixed" variable="$offset">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="61" name="return" description="If the offset exists." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="69">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="81" package="">
+        <name>offsetGet</name>
+        <type>function</type>
+        <docblock line="73">
+          <description><![CDATA[Gets the item at an offset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="internal" description=""/>
+          <tag line="73" name="param" description="Offset value." type="mixed" variable="$offset">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="73" name="return" description="The value at the offset." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="81">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="96" package="">
+        <name>offsetSet</name>
+        <type>function</type>
+        <docblock line="85">
+          <description><![CDATA[Sets the item at an offset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="internal" description=""/>
+          <tag line="85" name="throws" description="If the offset is a false-like value." type="\fProgrammerException">
+            <type by_reference="false">\fProgrammerException</type>
+          </tag>
+          <tag line="85" name="param" description="Offset to set." type="mixed" variable="$offset">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="85" name="param" description="Value to set." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="85" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="96">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="96">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="109" package="">
+        <name>count</name>
+        <type>function</type>
+        <docblock line="104">
+          <description><![CDATA[Returns the amount of items in the object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="104" name="return" description="The amount of items." type="integer">
+            <type by_reference="false">integer</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="121" package="">
+        <name>offsetUnset</name>
+        <type>function</type>
+        <docblock line="113">
+          <description><![CDATA[Unsets the item at a specified offset.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="internal" description=""/>
+          <tag line="113" name="param" description="Offset to unset." type="mixed" variable="$offset">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="113" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="121">
+          <name>$offset</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="132" package="">
+        <name>getIterator</name>
+        <type>function</type>
+        <docblock line="125">
+          <description><![CDATA[Gets the ArrayIterator instance for use with foreach.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="125" name="internal" description=""/>
+          <tag line="125" name="return" description="Iterator for use with foreach." type="\ArrayIterator">
+            <type by_reference="false">\ArrayIterator</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="142" package="">
+        <name>keys</name>
+        <type>function</type>
+        <docblock line="136">
+          <description><![CDATA[Gets the keys to this object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="136" name="param" description="If the keys should be sorted." type="boolean" variable="$sorted">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="136" name="return" description="Array of keys." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="142">
+          <name>$sorted</name>
+          <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="160" package="">
+        <name>__toString</name>
+        <type>function</type>
+        <docblock line="152">
+          <description><![CDATA[Returns the class name, to be similar to how printing an array results in
+  the text 'Array'.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="152" name="internal" description=""/>
+          <tag line="152" name="return" description="The class name." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="172" package="">
+        <name>__get</name>
+        <type>function</type>
+        <docblock line="164">
+          <description><![CDATA[Utilized for reading data for inaccessible properties.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="164" name="internal" description=""/>
+          <tag line="164" name="param" description="Key to get the value of." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="164" name="return" description="The value or NULL." type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="172">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="185" package="">
+        <name>__set</name>
+        <type>function</type>
+        <docblock line="176">
+          <description><![CDATA[Utilized for setting data for inaccessible properties.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="internal" description=""/>
+          <tag line="176" name="param" description="Key to set the value of." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="176" name="param" description="Value to set." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="176" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="185">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="185">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="195" package="">
+        <name>printJSON</name>
+        <type>function</type>
+        <docblock line="189">
+          <description><![CDATA[Prints the data in JSON format. Does not send a JSON header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="189" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="189" name="see" description="\fJSON::sendHeader" refers="\fJSON::sendHeader"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="205" package="">
+        <name>toJSON</name>
+        <type>function</type>
+        <docblock line="199">
+          <description><![CDATA[Returns the data in JSON format.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="199" name="return" description="The data in JSON format." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="199" name="see" description="\fJSON::sendHeader" refers="\fJSON::sendHeader"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="219" package="">
+        <name>walk</name>
+        <type>function</type>
+        <docblock line="209">
+          <description><![CDATA[Applies a user-defined function to each element of this object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="209" name="param" description="Callback function. The callback takes two parameters: the sObject parameter first (can be a reference) and the key second." type="string" variable="$func">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="209" name="param" description="If specified, this will be passed to the callback as the third parameter." type="mixed" variable="$user_data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="209" name="return" description="The object to allow method chaining." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+          <tag line="209" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
+        </docblock>
+        <argument line="219">
+          <name>$func</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="219">
+          <name>$user_data</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="236" package="">
+        <name>isArrayLike</name>
+        <type>function</type>
+        <docblock line="226">
+          <description><![CDATA[Checks if value is an array or is array-like (implementing the correct
+  interfaces).]]></description>
+          <long-description><![CDATA[<p>To be array-like, a class must implement both ArrayAccess and
+  IteratorAggregate. Optionally, it can implement the Countable interface.</p>]]></long-description>
+          <tag line="226" name="param" description="Value to check." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="226" name="return" description="If the value is an array or is array-like." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="236">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="264" package="">
+        <name>walkRecursiveCallback</name>
+        <type>function</type>
+        <docblock line="256">
+          <description><![CDATA[Callback used with walkRecursive.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="256" name="param" description="Object instance." type="\sObject" variable="$instance">
+            <type by_reference="false">\sObject</type>
+          </tag>
+          <tag line="256" name="param" description="Mixed variable, checked if is array-like." type="mixed" variable="$array_like">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="256" name="param" description="Function to call on each item." type="string" variable="$func">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="256" name="param" description="User data to add as third argument to callback." type="mixed" variable="$user_data">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+        <argument line="264">
+          <name>$instance</name>
+          <default><![CDATA[]]></default>
+          <type>sObject</type>
+        </argument>
+        <argument line="264">
+          <name>$array_like</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="264">
+          <name>$func</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="264">
+          <name>$user_data</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="287" package="">
+        <name>walkRecursive</name>
+        <type>function</type>
+        <docblock line="277">
+          <description><![CDATA[Applies a user-defined function to each element of this object. This
+  method will recurse into deeper arrays.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="277" name="param" description="Callback function. The callback takes two parameters: the sObject parameter first (can be a reference) and the key second." type="string" variable="$func">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="277" name="param" description="If specified, this will be passed to the callback as the third parameter." type="mixed" variable="$user_data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="277" name="return" description="The object to allow method chaining." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="287">
+          <name>$func</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="287">
+          <name>$user_data</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="300" package="">
+        <name>values</name>
+        <type>function</type>
+        <docblock line="295">
+          <description><![CDATA[Gets the values of the object as normal, numerically-index array.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="295" name="return" description="Array of values." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="313" package="">
+        <name>search</name>
+        <type>function</type>
+        <docblock line="304">
+          <description><![CDATA[Searches the array for a given value and returns the corresponding key if
+  successful. Can return boolean FALSE.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="304" name="param" description="Value to search for." type="mixed" variable="$needle">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="304" name="param" description="If the value should be identical." type="boolean" variable="$strict">
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="304" name="return" description="If the key is found, a string will be returned. Otherwise boolean FALSE will be returned." type="boolean|string">
+            <type by_reference="false">boolean</type>
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="313">
+          <name>$needle</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="313">
+          <name>$strict</name>
+          <default><![CDATA[FALSE]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="323" package="">
+        <name>rand</name>
+        <type>function</type>
+        <docblock line="317">
+          <description><![CDATA[Picks one or more random keys.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="317" name="param" description="Number of items to get." type="integer" variable="$num_req">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="317" name="return" description="Array of keys." type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+        <argument line="323">
+          <name>$num_req</name>
+          <default><![CDATA[1]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="340" package="">
+        <name>merge</name>
+        <type>function</type>
+        <docblock line="333">
+          <description><![CDATA[Merges the values of the arguments with the values of this object.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="333" name="param" description="Array or sObject instance." type="\sObject|array" variable="$array_like">
+            <type by_reference="false">\sObject</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="333" name="param" description="..." type="mixed" variable="">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="333" name="return" description="The object to allow method chaining." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="340">
+          <name>$array_like</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="365" package="">
+        <name>checkRequiredKeys</name>
+        <type>function</type>
+        <docblock line="355">
+          <description><![CDATA[Checks that the object has the required keys specified. The first missing
+  key will be retrievable by using getLastMissingKey().]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="355" name="throws" description="If any key is missing." type="\fValidationException">
+            <type by_reference="false">\fValidationException</type>
+          </tag>
+          <tag line="355" name="param" description="Key to check." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="355" name="param" description="..." type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="355" name="return" description="If all required keys are present." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="365">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="385" package="">
+        <name>getLastMissingKey</name>
+        <type>function</type>
+        <docblock line="380">
+          <description><![CDATA[Gets the last missing key. NULL is the default value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="380" name="return" description="String of the last missing key, or NULL." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="398" package="">
+        <name>validateRequiredKeys</name>
+        <type>function</type>
+        <docblock line="389">
+          <description><![CDATA[Validates that the object has the required keys specified.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="389" name="throws" description="If any key is missing." type="\fValidationException">
+            <type by_reference="false">\fValidationException</type>
+          </tag>
+          <tag line="389" name="param" description="Key to check." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="389" name="param" description="..." type="string" variable="">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="389" name="return" description="The object to allow method chaining." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="398">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="417" package="">
+        <name>filter</name>
+        <type>function</type>
+        <docblock line="408">
+          <description><![CDATA[Calls a callback on each item in the object. If the callback returns TRUE,
+  then the value will be returned in the resulting sObject instance of this
+  method.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="408" name="param" description="Callback to call on each key." type="string" variable="$cb">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="408" name="return" description="New filtered sObject." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+          <tag line="408" name="see" description="\array_filter()" refers="\array_filter()"/>
+        </docblock>
+        <argument line="417">
+          <name>$cb</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="429" package="">
+        <name>fill</name>
+        <type>function</type>
+        <docblock line="421">
+          <description><![CDATA[Fills the object with keys (replacing old ones if present) with the same
+  value.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="421" name="param" description="Keys to add." type="array" variable="$keys">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="421" name="param" description="Value to set." type="mixed" variable="$value">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="421" name="return" description="The object to allow method chaining." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="429">
+          <name>$keys</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="429">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="442" package="">
+        <name>diff</name>
+        <type>function</type>
+        <docblock line="434">
+          <description><![CDATA[Compares this object's data with associative arrays.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="434" name="param" description="Array or array-like object." type="mixed" variable="$array1">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="434" name="param" description="..." type="mixed" variable="">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="434" name="return" description="Object containing all the entries from $array1 that are not present in any of the other arrays." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="442">
+          <name>$array1</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="454" package="">
+        <name>convertKeyCase</name>
+        <type>function</type>
+        <docblock line="448">
+          <description><![CDATA[Returns a new sObject instance with keys changed to the case specified.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="448" name="param" description="One of: CASE_LOWER, CASE_UPPER." type="integer" variable="$case">
+            <type by_reference="false">integer</type>
+          </tag>
+          <tag line="448" name="return" description="New sObject instance with keys changed." type="\sObject">
+            <type by_reference="false">\sObject</type>
+          </tag>
+        </docblock>
+        <argument line="454">
+          <name>$case</name>
+          <default><![CDATA[CASE_LOWER]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
   <file path="sutra/classes/sORMJSON.php" hash="5eb1dc58ae5bfe20b417a7f859b188ec" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Extension to fORMJSON.]]></description>
@@ -1758,7 +2424,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sLoader.php" hash="90d31bbd782664e28f7daa43641d92ef" package="Sutra">
+  <file path="sutra/classes/sLoader.php" hash="8c7b724ec9b1fa2c05e47439c5eeba43" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages loading of classes.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -1819,6 +2485,7 @@
     'sImage',
     'sJSONP',
     'sNumber',
+    'sObject',
     'sORMJSON',
     'sProcess',
     'sProcessException',
@@ -1835,89 +2502,89 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="57" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="58" package="">
         <name>best</name>
         <type>function</type>
-        <docblock line="51">
+        <docblock line="52">
           <description><![CDATA[Override best() method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="51" name="return" description="" type="void">
+          <tag line="52" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="51" name="see" description="\sLoader::eagar()" refers="\sLoader::eagar()"/>
+          <tag line="52" name="see" description="\sLoader::eagar()" refers="\sLoader::eagar()"/>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="72" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="73" package="">
         <name>createConstructorFunctions</name>
         <type>function</type>
-        <docblock line="65">
+        <docblock line="66">
           <description><![CDATA[Creates constructor functions. This makes it possible to write:]]></description>
           <long-description><![CDATA[<pre><code>new sProcess('node myscript')->execute();</code></pre>]]></long-description>
-          <tag line="65" name="return" description="" type="void">
+          <tag line="66" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="96" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="97" package="">
         <name>eagar</name>
         <type>function</type>
-        <docblock line="91">
+        <docblock line="92">
           <description><![CDATA[Override eager() method to load Sutra classes after Flourish's.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="91" name="return" description="" type="void">
+          <tag line="92" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="112" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="113" package="">
         <name>setPath</name>
         <type>function</type>
-        <docblock line="107">
+        <docblock line="108">
           <description><![CDATA[Determines where Sutra is installed.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="107" name="return" description="" type="void">
+          <tag line="108" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="123" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="124" package="">
         <name>lazy</name>
         <type>function</type>
-        <docblock line="118">
+        <docblock line="119">
           <description><![CDATA[Registers a class auto-loader to load Sutra classes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="118" name="return" description="" type="void">
+          <tag line="119" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="140" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="141" package="">
         <name>autoload</name>
         <type>function</type>
-        <docblock line="132">
+        <docblock line="133">
           <description><![CDATA[Tries to load a Sutra class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="132" name="internal" description=""/>
-          <tag line="132" name="param" description="The class to load." type="string" variable="$class">
+          <tag line="133" name="internal" description=""/>
+          <tag line="133" name="param" description="The class to load." type="string" variable="$class">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="132" name="return" description="" type="void">
+          <tag line="133" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="140">
+        <argument line="141">
           <name>$class</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="158" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="159" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="153">
+        <docblock line="154">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="153" name="return" description="" type="\sLoader">
+          <tag line="154" name="return" description="" type="\sLoader">
             <type by_reference="false">\sLoader</type>
           </tag>
         </docblock>
@@ -4113,7 +4780,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sTimestamp.php" hash="9dc3beba0900e6cd43c2abbf5aed53a1" package="Sutra">
+  <file path="sutra/classes/sTimestamp.php" hash="469080ac6e49f9ed681c2d0583eaa94b" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Utility functions for timestamp and time/date/time zone representations.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -4155,96 +4822,75 @@
           </tag>
         </docblock>
       </constant>
-      <constant namespace="default" line="31" package="Sutra">
-        <name>DATETIME_TYPE_RFC3339</name>
-        <value><![CDATA[1]]></value>
-        <docblock line="26">
-          <description><![CDATA[Type specified when the date/time string is RFC3339 standard.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="26" name="var" description="" type="integer">
-            <type by_reference="false">integer</type>
-          </tag>
-        </docblock>
-      </constant>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="44" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="38" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="33">
-          <description><![CDATA[Overrides __construct() to accept a third argument $type, which specifies the type of date/time string this is.]]></description>
+        <docblock line="26">
+          <description><![CDATA[Overrides __construct() and tries to validate the string as an RFC3339
+  date-time string. If that fails, the parent constructor is called.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="33" name="param" description="The date/time to represent, NULL is interpreted as now." type="\fTimestamp|object|string|integer" variable="$str">
+          <tag line="26" name="param" description="The date/time to represent, NULL is interpreted as now." type="\fTimestamp|object|string|integer" variable="$datetime">
             <type by_reference="false">\fTimestamp</type>
             <type by_reference="false">object</type>
             <type by_reference="false">string</type>
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="33" name="param" description="The timezone for the date/time. This causes the date/time to be interpretted as being in the specified timezone. If not specified, will default to timezone set by ::setDefaultTimezone()." type="string" variable="$timezone">
+          <tag line="26" name="param" description="The timezone for the date/time. This causes the date/time to be interpretted as being in the specified timezone. If not specified, will default to timezone set by ::setDefaultTimezone()." type="string" variable="$timezone">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="33" name="param" description="One of the DATETIME_TYPE_* constants." type="integer" variable="$type">
-            <type by_reference="false">integer</type>
-          </tag>
-          <tag line="33" name="return" description="Timestamp object." type="\sTimestamp">
+          <tag line="26" name="return" description="Timestamp object." type="\sTimestamp">
             <type by_reference="false">\sTimestamp</type>
           </tag>
+          <tag line="26" name="SuppressWarnings" description="(PHPMD.UnusedLocalVariable)"/>
         </docblock>
-        <argument line="44">
-          <name>$str</name>
+        <argument line="38">
+          <name>$datetime</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="44">
+        <argument line="38">
           <name>$timezone</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
-        <argument line="44">
-          <name>$type</name>
-          <default><![CDATA[NULL]]></default>
-          <type/>
-        </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="60" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="53" package="">
         <name>formatTimezoneNumber</name>
         <type>function</type>
-        <docblock line="54">
+        <docblock line="47">
           <description><![CDATA[Get a formatted timezone string such as +08:00 from 8 or -12:00 from -12.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="54" name="param" description="The timezone, can be decimal." type="float" variable="$value">
+          <tag line="47" name="param" description="The timezone, can be decimal." type="float" variable="$value">
             <type by_reference="false">float</type>
           </tag>
-          <tag line="54" name="return" description="String, such as +08:00." type="string">
+          <tag line="47" name="return" description="String, such as +08:00." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="60">
+        <argument line="53">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="101" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="90" package="">
         <name>convertFromRFC3339</name>
         <type>function</type>
-        <docblock line="84">
+        <docblock line="77">
           <description><![CDATA[Convert an RFC3339 (HTML 5 version) timestamp to UNIX. Timezone is
   ignored.]]></description>
           <long-description><![CDATA[<p>HTML 5 mandates 2 extra constraints:
 - the literal letters T and Z in the date/time syntax must always be uppercase
 - the date-fullyear production is instead defined as four or more digits
     representing a number greater than 0</p>]]></long-description>
-          <tag line="84" name="throws" description="If $throw is set to TRUE and the timestamp is invalid." type="\fValidationException">
-            <type by_reference="false">\fValidationException</type>
-          </tag>
-          <tag line="84" name="param" description="The RFC value, like: 1990-12-31T23:59:60Z or 1996-12-19T16:39:57-08:00." type="string" variable="$rfc">
+          <tag line="77" name="param" description="The RFC value, like: 1990-12-31T23:59:60Z or 1996-12-19T16:39:57-08:00." type="string" variable="$rfc">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="84" name="return" description="UNIX timestamp or boolean FALSE. If FALSE is returned, the string was invalid." type="integer|boolean">
-            <type by_reference="false">integer</type>
-            <type by_reference="false">boolean</type>
+          <tag line="77" name="return" description="Timestamp object." type="\sTimestamp">
+            <type by_reference="false">\sTimestamp</type>
           </tag>
         </docblock>
-        <argument line="101">
+        <argument line="90">
           <name>$rfc</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -49081,7 +49727,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p>]]><
   <package name="Flourish" full_name="Flourish"/>
   <package name="Sutra" full_name="Sutra"/>
   <namespace name="default" full_name="default"/>
-  <marker count="0">todo</marker>
+  <marker count="2">todo</marker>
   <marker count="0">fixme</marker>
   <deprecated count="0"/>
 </project>
