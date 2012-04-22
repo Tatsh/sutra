@@ -577,7 +577,14 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   public function getIterator() {
     return new ArrayIterator($this->toArray());
   }
-
+  /**
+   * Returns the length of the string
+   *
+   * @return integer The length of the string
+   */
+  public function count(){
+    return $this->length;
+  }
   /**
    * Sets and executes the encoders.
    * 
