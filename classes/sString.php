@@ -55,7 +55,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @return sString
    */
   public function __construct($string) {
-    if(fUTF8::len($string) === 0) {
+    if (fUTF8::len($string) === 0) {
       throw new fProgrammerException('String argument must be non-zero-length string.');
     }
     $this->string = (string)$string;
@@ -73,7 +73,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @return sString The replaced string.
    */
   public function replace($search, $replace,$case_sensitive = TRUE) {
-    if($case_sensitive){
+    if ($case_sensitive) {
       return new self(fUTF8::replace($this->string, $search, $replace));
     }
     return new self(fUTF8::ireplace($this->string, $search, $replace));
@@ -191,7 +191,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   /**
    * Get the string double-quoted.
    *
-   * @return string The string, double-quoted.
+   * @return sString The string, double-quoted.
    */
   public function quote() {
     return new self('"' . $this->string . '"');
@@ -228,7 +228,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Converts the string to time.
    *
    * @see fTime::__construct()
-   * @return string The string converted to time.
+   * @return fTime The string converted to time.
    */
   public function toTime() {
     return new fTime($this->string);
@@ -238,7 +238,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Converts the string to a timestamp.
    *
    * @see  sTimestamp::__construct()
-   * @return string The string converted to a timestamp.
+   * @return sTimestamp The string converted to a timestamp.
    */
   public function toTimeStamp() {
     return new sTimestamp($this->string);
@@ -248,7 +248,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Converts the string to a date.
    *
    * @see fDate::__construct()
-   * @return string The string converted to a date.
+   * @return fDate The string converted to a date.
    */
   public function toDate() {
     return new fDate($this->string);
@@ -267,7 +267,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Converts the string to a fNumber object.
    *
    * @see sNumber::__construct()
-   * @return integer The integer from the converted string.
+   * @return sNumber The number from the converted string.
    */
   public function toNumber() {
     return new sNumber($this->string);
@@ -325,10 +325,10 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
   }
 
   /**
-   * Encodes the string to a uri component.
+   * Encodes the string to a URI component.
    *
    * @see urlencode()
-   * @return string The encoded url.
+   * @return string The encoded URI.
    */
   public function toURIComponent() {
     return $this->encode(self::ENCODING_URL);
@@ -338,7 +338,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Encodes the string to a rawURIcomponent.
    *
    * @see rawurlencode()
-   * @return string The encoded raw url.
+   * @return string The encoded raw URI.
    */
   public function toRawURIComponent() {
     return $this->encode(self::ENCODING_RAWURL);
@@ -348,40 +348,40 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Convert the string to all lowercase.
    *
    * @see fUTF8::lower()
-   * @return string The string lowercased.
+   * @return sString The string lowercased.
    */
   public function toLowerCase() {
-    return fUTF8::lower($this->string);
+    return new self(fUTF8::lower($this->string));
   }
 
   /**
    * Convert the string to all uppercase.
    *
    * @see fUTF8::upper()
-   * @return string The string uppercased.
+   * @return sString The string uppercased.
    */
   public function toUpperCase() {
-    return fUTF8::upper($this->string);
+    return new self(fUTF8::upper($this->string));
   }
 
   /**
    * Convert the beginning of each word to uppercase.
    *
    * @see fUTF8::ucwords()
-   * @return string The beginning of each word uppcased.
+   * @return sString The beginning of each word uppcased.
    */
   public function wordsToUpper() {
-    return fUTF8::ucwords($this->string);
+    return new self(fUTF8::ucwords($this->string));
   }
 
   /**
    * Converts the first character to uppercase.
    *
    * @see fUTF8::ucfirst()
-   * @return string The first character uppercased.
+   * @return sString The first character uppercased.
    */
   public function firstCharToUpper() {
-    return fUTF8::ucfirst($this->string);
+    return new self(fUTF8::ucfirst($this->string));
   }
 
   /**
@@ -391,7 +391,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    *
    * @param integer $start The starting point to extract from.
    * @param integer $length The length to subtract from the string.
-   * @return string The subtracted string.
+   * @return sString The subtracted string.
    */
   public function substr($start, $length = NULL) {
     return new self(fUTF8::sub($this->string, $start, $length));
@@ -415,7 +415,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @see fUTF8::trim()
    *
    * @param string $charlist The characters to trim.
-   * @return string The string trimmed.
+   * @return sString The string trimmed.
    */
   public function trim($charlist = NULL) {
     return new self(fUTF8::trim($this->string, $charlist));
@@ -427,7 +427,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @see fUTF8::rtrim()
    *
    * @param string $charlist The characters to trim.
-   * @return string The string trimmed.
+   * @return sString The string trimmed.
    */
   public function trimRight($charlist = NULL) {
     return new self(fUTF8::rtrim($this->string, $charlist));
@@ -475,7 +475,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Reverses the string.
    *
    * @see fUTF8::rev()
-   * @return string The string reversed.
+   * @return sString The string reversed.
    */
   public function reverse() {
     return new self(fUTF8::rev($this->string));
@@ -489,7 +489,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @param integer $width The width to wrap too.
    * @param string $break The break to insert.
    * @param boolean $cut If TRUE we will cut the words to match the width.
-   * @return string The string with all lowercase characters to uppercase.
+   * @return sString The string with all lowercase characters to uppercase.
    */
   public function wordWrap($width = 75, $break = '', $cut = FALSE) {
     return new self(fUTF8::wordwrap($this->string, $width, $break, $cut));
@@ -503,7 +503,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @param integer $pad_length The character length to pad.
    * @param string $pad_string The string to pad with our string.
    * @param string $pad_type Types: 'left','right','both'.
-   * @return string The padded string.
+   * @return sString The padded string.
    */
   public function pad($pad_length, $pad_string = '', $pad_type = 'right') {
     return new self(fUTF8::pad($this->string, $pad_length, $pad_string, $pad_type));
@@ -513,7 +513,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * Removes any non-UTF-8 characters.
    *
    * @see fUTF8::clean()
-   * @return string The cleaned string.
+   * @return sString The cleaned string.
    */
   public function clean() {
     return new self(fUTF8::clean($this->string));
