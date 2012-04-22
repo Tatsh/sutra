@@ -2,7 +2,7 @@
 /**
  * Provides object-oriented interface to strings.
  * 
- * @copyright Copyright 2012 Charles S, others
+ * @copyright Copyright (c) 2012 Charles S, others
  * @author Charles S [cs] <xxstonerariesxx@gmail.com>
  * @author Andrew Udvare [au] <andrew@bne1.com>
  * @license http://www.opensource.org/licenses/mit-license.php
@@ -78,7 +78,84 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
     } 
     return fUTF8::ireplace($this->string,$search,$replace);
   }
+  /**
+   * Checks if the offset exists.
+   *
+   * @internal
+   *
+   * @throws fProgrammerException If the offset is not an integer.
+   *
+   * @param integer $offset Offset.
+   * @return boolean If the offset exists.
+   */
+  public function offsetExists($offset) {
+    if (!is_numeric($offset) || is_float($offset)) {
+      throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
+    }
 
+    $offset = (int)$offset;
+    return isset($this->string[$offset]);
+  }
+
+  /**
+   * Gets the value at a specific offset.
+   *
+   * @internal
+   *
+   * @throws fProgrammerException If the offset is not an integer.
+   *
+   * @param integer $offset Offset.
+   * @return mixed The value or NULL.
+   */
+  public function offsetGet($offset) {
+    if (!is_numeric($offset) || is_float($offset)) {
+      throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
+    }
+
+    $offset = (int)$offset;
+    return isset($this->string[$offset]) ? $this->string[$offset] : NULL;
+  }
+
+  /**
+   * Sets the value at an offset. The offset is ignored.
+   *
+   * @internal
+   *
+   * @param integer $offset Offset to set to. Ignored.
+   * @param mixed $value Value to set.
+   * @return void
+   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+   */
+  public function offsetSet($offset, $value) {
+    if (!is_numeric($offset) || is_float($offset)) {
+      throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
+    }
+    if(fUTF8::len($value) !== 1){
+      throw new fProgrammerException('The value may not be greater than 1');
+    }
+    $offset = (int)$offset;
+    $this->string[$offset] = $value;
+  }
+
+  /**
+   * Unsets the value at an offset.
+   *
+   * @internal
+   *
+   * @throws fProgrammerException If the offset is not an integer.
+   *
+   * @param integer $offset Offset.
+   * @return void
+   */
+  public function offsetUnset($offset) {
+    if (!is_numeric($offset) || is_float($offset)) {
+      throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
+    }
+
+    $offset = (int)$offset;
+    unset($this->string[$offset]);
+  }
+  
   /**
    * Get the character within the string specified by numerical index.
    * 
@@ -518,7 +595,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 }
 
 /**
- * Copyright (c) 2012 Charles S <xxstonerariesxx@gmail.com>
+ * Copyright (c) 2012 Charles S <xxstonerariesxx@gmail.com>, others
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
