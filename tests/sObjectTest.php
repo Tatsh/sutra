@@ -1,7 +1,7 @@
 <?php
 require './includes/global.inc';
 
-class testSpecialContainer implements ArrayAccess, IteratorAggregate {
+class testSpecialContainer4 implements ArrayAccess, IteratorAggregate {
   private $data = array();
   public function getIterator() {
     return new ArrayIterator($this->data);
@@ -23,7 +23,7 @@ class testSpecialContainer implements ArrayAccess, IteratorAggregate {
   }
 }
 
-class testSpecialContainer2 implements IteratorAggregate {
+class testSpecialContainer5 implements IteratorAggregate {
   private $data = array();
   public function getIterator() {
     return new ArrayIterator($this->data);
@@ -43,7 +43,7 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fProgrammerException
-   * @expectedExceptionMessage All keys must be a non-empty strings. Error at key: "{empty_string}"
+   * @expectedExceptionMessage All keys must be non-empty strings. Error at key: "{empty_string}"
    */
   public function testConstructorBadKey() {
     new sObject(array('' => 'my value'));
@@ -231,7 +231,7 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWalk() {
-    $contained = new testSpecialContainer;
+    $contained = new testSpecialContainer4;
     $contained['a'] = 1;
 
     $this->expectOutputString('sObject=>a,sObject=>b,sObject=>d,sObject=>e,');
@@ -240,11 +240,11 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWalkRecursive() {
-    $contained = new testSpecialContainer;
+    $contained = new testSpecialContainer4;
     $contained['a'] = 1;
-    $non_array = new testSpecialContainer2;
+    $non_array = new testSpecialContainer5;
 
-    $this->expectOutputString('a=>b,b=>c,d=>Array,0=>1,1=>Array,0=>2,1=>3,e=>sObject,b=>c,f=>testSpecialContainer,a=>1,g=>testSpecialContainer2,');
+    $this->expectOutputString('a=>b,b=>c,d=>Array,0=>1,1=>Array,0=>2,1=>3,e=>sObject,b=>c,f=>testSpecialContainer4,a=>1,g=>testSpecialContainer5,');
     $obj1 = new sObject(array('b' => 'c'));
     $obj = new sObject(array('a' => 'b', 'b' => 'c', 'd' => array(1, array(2, 3)), 'e' => $obj1, 'f' => $contained, 'g' => $non_array));
     $obj->walkRecursive('sObjectTest::walkCallback');
