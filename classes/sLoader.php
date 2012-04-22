@@ -39,6 +39,7 @@ class sLoader extends fLoader {
     'sImage',
     'sJSONP',
     'sNumber',
+    'sObject',
     'sORMJSON',
     'sProcess',
     'sProcessException',
