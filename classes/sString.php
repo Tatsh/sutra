@@ -403,7 +403,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @see fUTF8::ltrim()
    *
    * @param string $charlist The characters to trim.
-   * @return The string trimmed.
+   * @return sString The string trimmed.
    */
   public function trimLeft($charlist = NULL) {
     return new self(fUTF8::ltrim($this->string, $charlist));
