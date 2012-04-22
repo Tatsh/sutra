@@ -109,7 +109,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    *
    * @param integer $offset Offset to set to. Ignored.
    * @param mixed $value Value to set.
-   * @return boolean If the offset exists.
+   * @return void
    * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public function offsetSet($offset, $value) {
