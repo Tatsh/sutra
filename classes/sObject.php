@@ -389,16 +389,27 @@ class sObject implements ArrayAccess, IteratorAggregate, Countable {
   /**
    * Validates that the object has the required keys specified.
    *
+   * If the first argument is an array, that will be considered the set of
+   *   keys.
+   *
    * @throws fValidationException If any key is missing.
    *
-   * @param string $key Key to check.
+   * @param string|array $key Key to check, or array of keys.
    * @param string ...
    * @return sObject The object to allow method chaining.
    */
   public function validateRequiredKeys($key) {
     $cb = array($this, 'checkRequiredKeys');
+    $args = array();
 
-    if (!fCore::call($cb, func_get_args())) {
+    if (is_array($key)) {
+      $args = $key;
+    }
+    else {
+      $args = func_get_args();
+    }
+
+    if (!fCore::call($cb, $args)) {
       throw new fValidationException('The object is missing a key: "%s"', $this->last_missing_key);
     }
 
