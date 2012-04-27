@@ -17,7 +17,7 @@ class sLoader extends fLoader {
   const lazy  = 'sLoader::lazy';
 
   /**
-   * Path where Sutra is installed.
+   * Path where libraries are installed.
    *
    * @var string
    */
