@@ -95,6 +95,46 @@ class sRequest extends fRequest {
     fSession::delete(self::LAST_POST_SESSION_KEY_PREFIX.'::'.$id);
   }
 
+  /**
+   * Get the request method.
+   *
+   * @return string GET, DELETE, PUT, HEAD, or POST. Always upper-case.
+   */
+  public static function getMethod() {
+    return strtoupper($_SERVER['REQUEST_METHOD']);
+  }
+
+  /**
+   * Get the content type of the data sent.
+   *
+   * @return string The mimetype. This is always in lower-case.
+   */
+  public static function getContentType() {
+    return strtolower($_SERVER['CONTENT_TYPE']);
+  }
+
+  /**
+   * Checks if the browser is Internet Explorer. This is solely based on the
+   *   user-agent and is to be used as a last resort.
+   *
+   * @param string|array $version Version number to check for.
+   * @return boolean If the browser is IE.
+   */
+  public static function isInternetExplorer($version = NULL) {
+    if (!is_null($version)) {
+      if (is_array($version)) {
+        $versions = implode('', $version);
+        $regex = '/^Mozilla\/4\.0\s+\(compatible\;\sMSIE\s+['.$versions.']\.0\;/';
+        return (bool)preg_match($regex, $_SERVER['HTTP_USER_AGENT']);
+      }
+
+      $regex = '/^Mozilla\/4\.0\s+\(compatible\;\s+MSIE\s+'.(int)$version.'\.0\;/';
+      return (bool)preg_match($regex, $_SERVER['HTTP_USER_AGENT']);
+    }
+
+    return (bool)preg_match('/^Mozilla\/4\.0\s+\(compatible;\s+MSIE\s+\d\.0;/', $_SERVER['HTTP_USER_AGENT']);
+  }
+
   // @codeCoverageIgnoreStart
   /**
    * Forces use as a static class.
