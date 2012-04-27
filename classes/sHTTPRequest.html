@@ -73,18 +73,22 @@
   value, decide which content (and format) to return."><span class="description">Set the Accept header. Some servers read this header and based upon its
   value, decide which content (and format) to return.</span><pre>setAcceptHeader()</pre></a></li>
 <li class="method public "><a href="#setContent" title="setContent :: Set the content. This is mainly for use with POST and PUT requests."><span class="description">Set the content. This is mainly for use with POST and PUT requests.</span><pre>setContent()</pre></a></li>
+<li class="method public "><a href="#setCredentials" title="setCredentials :: Set authentication details."><span class="description">Set authentication details.</span><pre>setCredentials()</pre></a></li>
 <li class="method public "><a href="#setHeader" title="setHeader :: Set a specific header."><span class="description">Set a specific header.</span><pre>setHeader()</pre></a></li>
 <li class="method public "><a href="#setHeaders" title="setHeaders :: Set HTTP headers in simple array key =&gt; value format."><span class="description">Set HTTP headers in simple array key =&gt; value format.</span><pre>setHeaders()</pre></a></li>
 <li class="method public "><a href="#setMethod" title="setMethod :: Set the method."><span class="description">Set the method.</span><pre>setMethod()</pre></a></li>
+<li class="method public "><a href="#setPostDataContentType" title="setPostDataContentType :: Sets the POST data content type."><span class="description">Sets the POST data content type.</span><pre>setPostDataContentType()</pre></a></li>
 <li class="method public "><a href="#setProxy" title="setProxy :: Set a proxy to use."><span class="description">Set a proxy to use.</span><pre>setProxy()</pre></a></li>
 <li class="method public "><a href="#setUserAgent" title="setUserAgent :: Set the user agent header."><span class="description">Set the user agent header.</span><pre>setUserAgent()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
 <li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24authentication" title="$authentication :: Authentication details."><span class="description">Authentication details.</span><pre>$authentication</pre></a></li>
 <li class="property private "><a href="#%24content" title="$content :: The content to POST or PUT."><span class="description">The content to POST or PUT.</span><pre>$content</pre></a></li>
 <li class="property private "><a href="#%24data" title="$data :: The data received."><span class="description">The data received.</span><pre>$data</pre></a></li>
 <li class="property private "><a href="#%24headers" title="$headers :: The HTTP headers to use."><span class="description">The HTTP headers to use.</span><pre>$headers</pre></a></li>
 <li class="property private "><a href="#%24method" title="$method :: The HTTP method."><span class="description">The HTTP method.</span><pre>$method</pre></a></li>
+<li class="property private "><a href="#%24post_data_content_type" title="$post_data_content_type :: POST data content type."><span class="description">POST data content type.</span><pre>$post_data_content_type</pre></a></li>
 <li class="property private "><a href="#%24protocol" title="$protocol :: The protocol. Either https or http."><span class="description">The protocol. Either https or http.</span><pre>$protocol</pre></a></li>
 <li class="property private "><a href="#%24proxy" title="$proxy :: The proxy to use."><span class="description">The proxy to use.</span><pre>$proxy</pre></a></li>
 <li class="property private "><a href="#%24timeout" title="$timeout :: HTTP timeout."><span class="description">HTTP timeout.</span><pre>$timeout</pre></a></li>
@@ -316,14 +320,36 @@
 </div>
 <a name="setContent" id="setContent"></a><div class="element clickable method public setContent" data-toggle="collapse" data-target=".setContent .collapse">
 <h2>Set the content. This is mainly for use with POST and PUT requests.</h2>
-<pre>setContent(string $content) : <a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></pre>
+<pre>setContent(string | array $content) : <a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\http_build_query()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>stringarray</code><p>Content to POST or PUT.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a name="setCredentials" id="setCredentials"></a><div class="element clickable method public setCredentials" data-toggle="collapse" data-target=".setCredentials .collapse">
+<h2>Set authentication details.</h2>
+<pre>setCredentials(string $user_name, string $password) : <a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
-<h4>$content</h4>
-<code>string</code><p>Content to POST or PUT.</p></div>
+<h4>$user_name</h4>
+<code>string</code><p>User name.</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>Password.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></code>The object to allow method chaining.</div>
@@ -338,7 +364,8 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
-<code>string</code><p>Name of the header.</p></div>
+<code>string</code><p>Name of the header. Content-Length is not supported (it is added dynamically).</p>
+</div>
 <div class="subelement argument">
 <h4>$value</h4>
 <code>string</code><p>Value of the header.</p></div>
@@ -384,6 +411,21 @@
 <code><a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
+<a name="setPostDataContentType" id="setPostDataContentType"></a><div class="element clickable method public setPostDataContentType" data-toggle="collapse" data-target=".setPostDataContentType .collapse">
+<h2>Sets the POST data content type.</h2>
+<pre>setPostDataContentType(string $type) : <a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>A mimetype.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
 <a name="setProxy" id="setProxy"></a><div class="element clickable method public setProxy" data-toggle="collapse" data-target=".setProxy .collapse">
 <h2>Set a proxy to use.</h2>
 <pre>setProxy(string $proxy) : <a href="../classes/sHTTPRequest.html">\sHTTPRequest</a></pre>
@@ -416,6 +458,12 @@
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24authentication" id="$authentication"> </a><div class="element clickable property private $authentication" data-toggle="collapse" data-target=".$authentication .collapse">
+<h2>Authentication details.</h2>
+<pre>$authentication : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="%24content" id="$content"> </a><div class="element clickable property private $content" data-toggle="collapse" data-target=".$content .collapse">
 <h2>The content to POST or PUT.</h2>
 <pre>$content : string</pre>
@@ -437,6 +485,12 @@
 <a name="%24method" id="$method"> </a><div class="element clickable property private $method" data-toggle="collapse" data-target=".$method .collapse">
 <h2>The HTTP method.</h2>
 <pre>$method : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="%24post_data_content_type" id="$post_data_content_type"> </a><div class="element clickable property private $post_data_content_type" data-toggle="collapse" data-target=".$post_data_content_type .collapse">
+<h2>POST data content type.</h2>
+<pre>$post_data_content_type : string</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
@@ -479,7 +533,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-22T04:33:45-05:00.<br></footer></div>
+            generated on 2012-04-27T09:33:31-05:00.<br></footer></div>
 </div>
 </body>
 </html>

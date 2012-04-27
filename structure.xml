@@ -176,7 +176,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sHTTPRequest.php" hash="addc3cc7eec72278d080c246a3417654" package="Sutra">
+  <file path="sutra/classes/sHTTPRequest.php" hash="af7296ac7b75eac0514882b61cd18140" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Interface to making HTTP requests.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -293,334 +293,404 @@
           </tag>
         </docblock>
       </property>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="84" package="">
+      <property final="false" static="false" visibility="private" line="78" package="Sutra">
+        <name>$post_data_content_type</name>
+        <default><![CDATA['application/x-www-form-urlencoded']]></default>
+        <docblock line="73">
+          <description><![CDATA[POST data content type.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="private" line="85" package="Sutra">
+        <name>$authentication</name>
+        <default><![CDATA[array()]]></default>
+        <docblock line="80">
+          <description><![CDATA[Authentication details.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="80" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="98" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="73">
+        <docblock line="87">
           <description><![CDATA[Constructor.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="73" name="throws" description="If the URL is not valid." type="\fProgrammerException">
+          <tag line="87" name="throws" description="If the URL is not valid." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="73" name="param" description="Full URL to the resource." type="string" variable="$url">
+          <tag line="87" name="param" description="Full URL to the resource." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="73" name="param" description="HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'." type="string" variable="$method">
+          <tag line="87" name="param" description="HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'." type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="73" name="param" description="Timeout. Will default to default_socket_timeout in php.ini if not specified." type="integer" variable="$timeout">
+          <tag line="87" name="param" description="Timeout. Will default to default_socket_timeout in php.ini if not specified." type="integer" variable="$timeout">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="73" name="return" description="The object." type="\sHTTPRequest">
+          <tag line="87" name="return" description="The object." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="84">
+        <argument line="98">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="84">
+        <argument line="98">
           <name>$method</name>
           <default><![CDATA['GET']]></default>
           <type/>
         </argument>
-        <argument line="84">
+        <argument line="98">
           <name>$timeout</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="111" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="125" package="">
         <name>setHeaders</name>
         <type>function</type>
-        <docblock line="102">
+        <docblock line="116">
           <description><![CDATA[Set HTTP headers in simple array key => value format.]]></description>
           <long-description><![CDATA[<p>Example: array('User-Agent' => 'my custom user agent',
   'X-GData-Authorization-Key' => 'key');</p>]]></long-description>
-          <tag line="102" name="param" description="Header to set." type="array" variable="$headers">
+          <tag line="116" name="param" description="Header to set." type="array" variable="$headers">
             <type by_reference="false">array</type>
-          </tag>
-          <tag line="102" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
-            <type by_reference="false">\sHTTPRequest</type>
-          </tag>
-        </docblock>
-        <argument line="111">
-          <name>$headers</name>
-          <default><![CDATA[]]></default>
-          <type>array</type>
-        </argument>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="126" package="">
-        <name>setAcceptHeader</name>
-        <type>function</type>
-        <docblock line="116">
-          <description><![CDATA[Set the Accept header. Some servers read this header and based upon its
-  value, decide which content (and format) to return.]]></description>
-          <long-description><![CDATA[<p>Example:
-  text/html,application/xhtml+xml</p>]]></long-description>
-          <tag line="116" name="param" description="Comma-delimited list of content types." type="string" variable="$content_types">
-            <type by_reference="false">string</type>
           </tag>
           <tag line="116" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="126">
-          <name>$content_types</name>
+        <argument line="125">
+          <name>$headers</name>
           <default><![CDATA[]]></default>
-          <type/>
+          <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="138" package="">
-        <name>setHeader</name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="141" package="">
+        <name>setAcceptHeader</name>
         <type>function</type>
         <docblock line="131">
-          <description><![CDATA[Set a specific header.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="131" name="param" description="Name of the header." type="string" variable="$name">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="131" name="param" description="Value of the header." type="string" variable="$value">
+          <description><![CDATA[Set the Accept header. Some servers read this header and based upon its
+  value, decide which content (and format) to return.]]></description>
+          <long-description><![CDATA[<p>Example:
+  text/html,application/xhtml+xml</p>]]></long-description>
+          <tag line="131" name="param" description="Comma-delimited list of content types." type="string" variable="$content_types">
             <type by_reference="false">string</type>
           </tag>
           <tag line="131" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="138">
+        <argument line="141">
+          <name>$content_types</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="153" package="">
+        <name>setCredentials</name>
+        <type>function</type>
+        <docblock line="146">
+          <description><![CDATA[Set authentication details.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="146" name="param" description="User name." type="string" variable="$user_name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="146" name="param" description="Password." type="string" variable="$password">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="146" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+            <type by_reference="false">\sHTTPRequest</type>
+          </tag>
+        </docblock>
+        <argument line="153">
+          <name>$user_name</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="153">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="165" package="">
+        <name>setHeader</name>
+        <type>function</type>
+        <docblock line="157">
+          <description><![CDATA[Set a specific header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="157" name="param" description="Name of the header. Content-Length is not supported (it is added dynamically)." type="string" variable="$name">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="157" name="param" description="Value of the header." type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="157" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+            <type by_reference="false">\sHTTPRequest</type>
+          </tag>
+        </docblock>
+        <argument line="165">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="138">
+        <argument line="165">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="149" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="180" package="">
         <name>setUserAgent</name>
         <type>function</type>
-        <docblock line="143">
+        <docblock line="174">
           <description><![CDATA[Set the user agent header.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="143" name="param" description="User agent string." type="string" variable="$agent">
+          <tag line="174" name="param" description="User agent string." type="string" variable="$agent">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="143" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="174" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="149">
+        <argument line="180">
           <name>$agent</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="162" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="193" package="">
         <name>setMethod</name>
         <type>function</type>
-        <docblock line="154">
+        <docblock line="185">
           <description><![CDATA[Set the method.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="154" name="throws" description="If the method is not a valid HTTP method." type="\fProgrammerException">
+          <tag line="185" name="throws" description="If the method is not a valid HTTP method." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="154" name="param" description="HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'." type="string" variable="$method">
+          <tag line="185" name="param" description="HTTP method. One of: 'GET', 'POST', 'PUT', 'DELETE'." type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="154" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="185" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="162">
+        <argument line="193">
           <name>$method</name>
           <default><![CDATA['GET']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="182" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="213" package="">
         <name>getHeaders</name>
         <type>function</type>
-        <docblock line="175">
+        <docblock line="206">
           <description><![CDATA[Get the HTTP headers.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="175" name="param" description="If TRUE, return the headers as a string according to standards (\r\n at the end of each header value)." type="boolean" variable="$as_string">
+          <tag line="206" name="param" description="If TRUE, return the headers as a string according to standards (\r\n at the end of each header value)." type="boolean" variable="$as_string">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="175" name="return" description="Headers either as string or array." type="array|string">
+          <tag line="206" name="return" description="Headers either as string or array." type="array|string">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="182">
+        <argument line="213">
           <name>$as_string</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="199" package="">
-        <name>getData</name>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="240" package="">
+        <name>setPostDataContentType</name>
         <type>function</type>
-        <docblock line="193">
-          <description><![CDATA[Gets the data from the source URI. Will call connect() if necessary.]]></description>
+        <docblock line="234">
+          <description><![CDATA[Sets the POST data content type.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="193" name="return" description="The data retrieved." type="string">
+          <tag line="234" name="param" description="A mimetype." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="193" name="see" description="\sHTTPRequest::connect()" refers="\sHTTPRequest::connect()"/>
-        </docblock>
-      </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="210" package="">
-        <name>setContent</name>
-        <type>function</type>
-        <docblock line="204">
-          <description><![CDATA[Set the content. This is mainly for use with POST and PUT requests.]]></description>
-          <long-description><![CDATA[]]></long-description>
-          <tag line="204" name="param" description="Content to POST or PUT." type="string" variable="$content">
-            <type by_reference="false">string</type>
-          </tag>
-          <tag line="204" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="234" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="210">
+        <argument line="240">
+          <name>$type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="251" package="">
+        <name>getData</name>
+        <type>function</type>
+        <docblock line="245">
+          <description><![CDATA[Gets the data from the source URI. Will call connect() if necessary.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="245" name="return" description="The data retrieved." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="245" name="see" description="\sHTTPRequest::connect()" refers="\sHTTPRequest::connect()"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="263" package="">
+        <name>setContent</name>
+        <type>function</type>
+        <docblock line="256">
+          <description><![CDATA[Set the content. This is mainly for use with POST and PUT requests.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="256" name="param" description="Content to POST or PUT." type="string|array" variable="$content">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="256" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+            <type by_reference="false">\sHTTPRequest</type>
+          </tag>
+          <tag line="256" name="see" description="\http_build_query()" refers="\http_build_query()"/>
+        </docblock>
+        <argument line="263">
           <name>$content</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="221" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="277" package="">
         <name>getContent</name>
         <type>function</type>
-        <docblock line="215">
+        <docblock line="271">
           <description><![CDATA[Get the content set.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="215" name="return" description="The content set. Will return empty string if no content has been set." type="string">
+          <tag line="271" name="return" description="The content set. Will return empty string if no content has been set." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="231" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="287" package="">
         <name>setProxy</name>
         <type>function</type>
-        <docblock line="225">
+        <docblock line="281">
           <description><![CDATA[Set a proxy to use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="225" name="param" description="Proxy URI." type="string" variable="$proxy">
+          <tag line="281" name="param" description="Proxy URI." type="string" variable="$proxy">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="225" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="281" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="231">
+        <argument line="287">
           <name>$proxy</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="242" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="298" package="">
         <name>getProxy</name>
         <type>function</type>
-        <docblock line="236">
+        <docblock line="292">
           <description><![CDATA[Gets the proxy in use.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="236" name="return" description="The proxy in use. Will return empty string if no proxy has been set." type="string">
+          <tag line="292" name="return" description="The proxy in use. Will return empty string if no proxy has been set." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="251" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="307" package="">
         <name>removeProxy</name>
         <type>function</type>
-        <docblock line="246">
+        <docblock line="302">
           <description><![CDATA[Removes the proxy in use with this object.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="246" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="302" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="264" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="320" package="">
         <name>connect</name>
         <type>function</type>
-        <docblock line="256">
+        <docblock line="312">
           <description><![CDATA[Connect to the URI and get the data.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="256" name="throws" description="If the connection fails." type="\fUnexpectedException">
+          <tag line="312" name="throws" description="If the connection fails." type="\fUnexpectedException">
             <type by_reference="false">\fUnexpectedException</type>
           </tag>
-          <tag line="256" name="param" description="Force re-fetching of the data." type="boolean" variable="$reconnect">
+          <tag line="312" name="param" description="Force re-fetching of the data." type="boolean" variable="$reconnect">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="256" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="312" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
         </docblock>
-        <argument line="264">
+        <argument line="320">
           <name>$reconnect</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="305" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="361" package="">
         <name>send</name>
         <type>function</type>
-        <docblock line="298">
+        <docblock line="354">
           <description><![CDATA[Alias for connect().]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="298" name="param" description="Force re-fetching of the data." type="boolean" variable="$reconnect">
+          <tag line="354" name="param" description="Force re-fetching of the data." type="boolean" variable="$reconnect">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="298" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
+          <tag line="354" name="return" description="The object to allow method chaining." type="\sHTTPRequest">
             <type by_reference="false">\sHTTPRequest</type>
           </tag>
-          <tag line="298" name="see" description="\sHTTPRequest::connect()" refers="\sHTTPRequest::connect()"/>
+          <tag line="354" name="see" description="\sHTTPRequest::connect()" refers="\sHTTPRequest::connect()"/>
         </docblock>
-        <argument line="305">
+        <argument line="361">
           <name>$reconnect</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="324" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="380" package="">
         <name>getJSON</name>
         <type>function</type>
-        <docblock line="309">
+        <docblock line="365">
           <description><![CDATA[Gets data from a JSON source and parses it through fJSON::decode() or
   json_decode() (if available).]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="309" name="throws" description="If the JSON decoding functions are not available." type="\fProgrammerException">
+          <tag line="365" name="throws" description="If the JSON decoding functions are not available." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="309" name="param" description="Full HTTP URL." type="string" variable="$url">
+          <tag line="365" name="param" description="Full HTTP URL." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="309" name="param" description="If the data should be returned as associative array." type="boolean" variable="$assoc">
+          <tag line="365" name="param" description="If the data should be returned as associative array." type="boolean" variable="$assoc">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="309" name="param" description="Timeout in seconds." type="integer" variable="$timeout">
+          <tag line="365" name="param" description="Timeout in seconds." type="integer" variable="$timeout">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="309" name="return" description="JSON decoded value. Can return NULL." type="mixed">
+          <tag line="365" name="return" description="JSON decoded value. Can return NULL." type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
-          <tag line="309" name="see" description="\fJSON::decode()" refers="\fJSON::decode()"/>
-          <tag line="309" name="see" description="\json_decode()" refers="\json_decode()"/>
+          <tag line="365" name="see" description="\fJSON::decode()" refers="\fJSON::decode()"/>
+          <tag line="365" name="see" description="\json_decode()" refers="\json_decode()"/>
         </docblock>
-        <argument line="324">
+        <argument line="380">
           <name>$url</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="324">
+        <argument line="380">
           <name>$assoc</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
-        <argument line="324">
+        <argument line="380">
           <name>$timeout</name>
           <default><![CDATA[NULL]]></default>
           <type/>
@@ -4003,7 +4073,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sLoader.php" hash="5c8842610f14f37e70323751f21cbd97" package="Sutra">
+  <file path="sutra/classes/sLoader.php" hash="7ab703bdda26678d8e81453f2283576f" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages loading of classes.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -4044,7 +4114,7 @@
         <name>$path</name>
         <default><![CDATA['']]></default>
         <docblock line="19">
-          <description><![CDATA[Path where Sutra is installed.]]></description>
+          <description><![CDATA[Path where libraries are installed.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="19" name="var" description="" type="string">
             <type by_reference="false">string</type>
@@ -5976,7 +6046,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sRequest.php" hash="05221a50d61157ad3e947da0031a3d23" package="Sutra">
+  <file path="sutra/classes/sRequest.php" hash="4f8a569b2a13f87ad60d031be8fe6202" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Manages POST requests.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -6139,13 +6209,56 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="104" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="103" package="">
+        <name>getMethod</name>
+        <type>function</type>
+        <docblock line="98">
+          <description><![CDATA[Get the request method.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="98" name="return" description="GET, DELETE, PUT, HEAD, or POST. Always upper-case." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="112" package="">
+        <name>getContentType</name>
+        <type>function</type>
+        <docblock line="107">
+          <description><![CDATA[Get the content type of the data sent.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="107" name="return" description="The mimetype. This is always in lower-case." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="123" package="">
+        <name>isInternetExplorer</name>
+        <type>function</type>
+        <docblock line="116">
+          <description><![CDATA[Checks if the browser is Internet Explorer. This is solely based on the
+  user-agent and is to be used as a last resort.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="116" name="param" description="Version number to check for." type="string|array" variable="$version">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="116" name="return" description="If the browser is IE." type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="123">
+          <name>$version</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="144" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="99">
+        <docblock line="139">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="99" name="return" description="" type="\sRequest">
+          <tag line="139" name="return" description="" type="\sRequest">
             <type by_reference="false">\sRequest</type>
           </tag>
         </docblock>
@@ -7208,7 +7321,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sResponse.php" hash="d2dbc09e48c4b8433e6ca62114d95e35" package="Sutra">
+  <file path="sutra/classes/sResponse.php" hash="222dda8cd64fdb2bf0a915c7e8ad47a9" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Common non-file related HTTP response helper class.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -7216,8 +7329,8 @@
       <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@poluza.com&gt;"/>
       <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
       <tag line="2" name="package" description="Sutra"/>
-      <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
-      <tag line="2" name="version" description="1.2"/>
+      <tag line="2" name="link" description="https://github.com/tatsh/sutra" link="https://github.com/tatsh/sutra"/>
+      <tag line="2" name="version" description="1.3"/>
     </docblock>
     <class final="false" abstract="false" namespace="default" line="14" package="Sutra">
       <name>sResponse</name>
@@ -7230,80 +7343,310 @@
         <tag line="2" name="author" description="Andrew Udvare [au] &lt;andrew@poluza.com&gt;"/>
         <tag line="2" name="license" description="http://www.opensource.org/licenses/mit-license.php"/>
         <tag line="2" name="package" description="Sutra"/>
-        <tag line="2" name="link" description="http://www.sutralib.com/" link="http://www.sutralib.com/"/>
-        <tag line="2" name="version" description="1.2"/>
+        <tag line="2" name="link" description="https://github.com/tatsh/sutra" link="https://github.com/tatsh/sutra"/>
+        <tag line="2" name="version" description="1.3"/>
       </docblock>
       <constant namespace="default" line="15" package="Sutra">
-        <name>sendNotModifiedHeader</name>
-        <value><![CDATA['sResponse::sendNotModifiedHeader']]></value>
+        <name>encode</name>
+        <value><![CDATA['sResponse::encode']]></value>
       </constant>
       <constant namespace="default" line="16" package="Sutra">
+        <name>printData</name>
+        <value><![CDATA['sResponse::printData']]></value>
+      </constant>
+      <constant namespace="default" line="17" package="Sutra">
+        <name>sendCreatedHeader</name>
+        <value><![CDATA['sResponse::sendCreatedHeader']]></value>
+      </constant>
+      <constant namespace="default" line="18" package="Sutra">
+        <name>sendHeader</name>
+        <value><![CDATA['sResponse::sendHeader']]></value>
+      </constant>
+      <constant namespace="default" line="19" package="Sutra">
         <name>sendForbiddenHeader</name>
         <value><![CDATA['sResponse::sendForbiddenHeader']]></value>
       </constant>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="31" package="">
+      <constant namespace="default" line="20" package="Sutra">
+        <name>sendNotAcceptableHeader</name>
+        <value><![CDATA['sResponse::sendNotAcceptableHeader']]></value>
+      </constant>
+      <constant namespace="default" line="21" package="Sutra">
+        <name>sendNotFoundHeader</name>
+        <value><![CDATA['sResponse::sendNotFoundHeader']]></value>
+      </constant>
+      <constant namespace="default" line="22" package="Sutra">
+        <name>sendNotModifiedHeader</name>
+        <value><![CDATA['sResponse::sendNotModifiedHeader']]></value>
+      </constant>
+      <constant namespace="default" line="23" package="Sutra">
+        <name>sendPlainTextResponse</name>
+        <value><![CDATA['sResponse::sendPlainTextResponse']]></value>
+      </constant>
+      <constant namespace="default" line="24" package="Sutra">
+        <name>setEncodeCallback</name>
+        <value><![CDATA['sResponse::setEncodeCallback']]></value>
+      </constant>
+      <property final="false" static="true" visibility="private" line="31" package="Sutra">
+        <name>$encode_callbacks</name>
+        <default><![CDATA[array(
+    'application/json' => 'fJSON::encode',
+    'text/html' => 'fHTML::encode',
+    'application/x-www-form-urlencoded' => 'http_build_query',
+  )]]></default>
+        <docblock line="26">
+          <description><![CDATA[Encoding callbacks.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="26" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="50" package="">
         <name>sendNotModifiedHeader</name>
         <type>function</type>
-        <docblock line="18">
+        <docblock line="37">
           <description><![CDATA[Send a 304 not modified header, if the content hasn't changed according to
   the headers sent in by the client.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="18" name="param" description="Time the file was last modified (fTimestamp object or UNIX timestamp)." type="\fTimestamp|integer" variable="$last_modified">
+          <tag line="37" name="param" description="Time the file was last modified (fTimestamp object or UNIX timestamp)." type="\fTimestamp|integer" variable="$last_modified">
             <type by_reference="false">\fTimestamp</type>
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="18" name="param" description="Etag to use for this request." type="string" variable="$etag">
+          <tag line="37" name="param" description="Etag to use for this request." type="string" variable="$etag">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="18" name="param" description="Time in seconds to cache for. Default is 2 weeks." type="integer" variable="$cache_time">
+          <tag line="37" name="param" description="Time in seconds to cache for. Default is 2 weeks." type="integer" variable="$cache_time">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="18" name="param" description="Send Vary: Accept-Encoding header. Default is TRUE." type="boolean" variable="$accept_encoding">
+          <tag line="37" name="param" description="Send Vary: Accept-Encoding header. Default is TRUE." type="boolean" variable="$accept_encoding">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="18" name="return" description="" type="void">
+          <tag line="37" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="31">
+        <argument line="50">
           <name>$last_modified</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="31">
+        <argument line="50">
           <name>$etag</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="31">
+        <argument line="50">
           <name>$cache_time</name>
           <default><![CDATA[1209600]]></default>
           <type/>
         </argument>
-        <argument line="31">
+        <argument line="50">
           <name>$accept_encoding</name>
           <default><![CDATA[TRUE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="63" package="">
+      <method final="false" abstract="false" static="true" visibility="private" namespace="default" line="82" package="">
+        <name>encodeKeyedArray</name>
+        <type>function</type>
+        <docblock line="76">
+          <description><![CDATA[Recursively encodes a keyed array to string.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="76" name="param" description="Data to encode." type="array" variable="$data">
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="76" name="return" description="The encoded data." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="82">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="106" package="">
+        <name>encode</name>
+        <type>function</type>
+        <docblock line="97">
+          <description><![CDATA[Encodes data in a specified content type. Default is
+  application/x-www-form-urlencoded.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="param" description="Data to encode. Note that if the callback can only handle strings and the data is of type array, 'Array' will be printed." type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="97" name="param" description="Content type to encode to." type="string" variable="$content_type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="return" description="The encoded data." type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="106">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$content_type</name>
+          <default><![CDATA[NULL]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="127" package="">
+        <name>printData</name>
+        <type>function</type>
+        <docblock line="119">
+          <description><![CDATA[Prints the data and sends the appropriate Content-Type header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="119" name="param" description="Data to print." type="mixed" variable="$data">
+            <type by_reference="false">mixed</type>
+          </tag>
+          <tag line="119" name="param" description="Content type of the data. This is only the mimetype. It should NOT have other parts such as 'charset=utf-8'." type="string" variable="$content_type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="119" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="127">
+          <name>$data</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="127">
+          <name>$content_type</name>
+          <default><![CDATA['application/x-www-form-urlencoded']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="139" package="">
+        <name>setEncodeCallback</name>
+        <type>function</type>
+        <docblock line="132">
+          <description><![CDATA[Set the encoding callback for a particular content type.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="132" name="param" description="Content type such as 'application/xml'." type="string" variable="$content_type">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="132" name="param" description="Callback." type="string|array" variable="$cb">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+          </tag>
+          <tag line="132" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="139">
+          <name>$content_type</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="139">
+          <name>$cb</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="150" package="">
+        <name>sendPlainTextResponse</name>
+        <type>function</type>
+        <docblock line="143">
+          <description><![CDATA[Send a plain text response. Accepts variable arguments.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="143" name="param" description="Text to send." type="string" variable="$text">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="143" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+          <tag line="143" name="see" description="\fText::compose()" refers="\fText::compose()"/>
+        </docblock>
+        <argument line="150">
+          <name>$text</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="161" package="">
         <name>sendForbiddenHeader</name>
         <type>function</type>
-        <docblock line="58">
+        <docblock line="156">
           <description><![CDATA[Sends a 403 restricted content header.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="58" name="return" description="" type="void">
+          <tag line="156" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="72" package="">
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="172" package="">
+        <name>sendHeader</name>
+        <type>function</type>
+        <docblock line="165">
+          <description><![CDATA[Sends a custom header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="165" name="param" description="Header name." type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="165" name="param" description="Value." type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="165" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="172">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="172">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="181" package="">
+        <name>sendCreatedHeader</name>
+        <type>function</type>
+        <docblock line="176">
+          <description><![CDATA[Sends a 201 created HTTP header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="191" package="">
+        <name>sendNotAcceptableHeader</name>
+        <type>function</type>
+        <docblock line="185">
+          <description><![CDATA[Sends a 406 not acceptable header. This is for when the client sends an
+  Accept header of types none of which can be satisfied by the server.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="185" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="default" line="200" package="">
+        <name>sendNotFoundHeader</name>
+        <type>function</type>
+        <docblock line="195">
+          <description><![CDATA[Sends a 404 not found header.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="195" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="209" package="">
         <name>__construct</name>
         <type>function</type>
-        <docblock line="67">
+        <docblock line="204">
           <description><![CDATA[Forces use as a static class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="67" name="return" description="" type="\sResponse">
+          <tag line="204" name="return" description="" type="\sResponse">
             <type by_reference="false">\sResponse</type>
           </tag>
         </docblock>

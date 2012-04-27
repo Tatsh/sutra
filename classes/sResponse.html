@@ -58,16 +58,41 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#encode" title="encode :: Encodes data in a specified content type. Default is
+  application/x-www-form-urlencoded."><span class="description">Encodes data in a specified content type. Default is
+  application/x-www-form-urlencoded.</span><pre>encode()</pre></a></li>
+<li class="method public "><a href="#printData" title="printData :: Prints the data and sends the appropriate Content-Type header."><span class="description">Prints the data and sends the appropriate Content-Type header.</span><pre>printData()</pre></a></li>
+<li class="method public "><a href="#sendCreatedHeader" title="sendCreatedHeader :: Sends a 201 created HTTP header."><span class="description">Sends a 201 created HTTP header.</span><pre>sendCreatedHeader()</pre></a></li>
 <li class="method public "><a href="#sendForbiddenHeader" title="sendForbiddenHeader :: Sends a 403 restricted content header."><span class="description">Sends a 403 restricted content header.</span><pre>sendForbiddenHeader()</pre></a></li>
+<li class="method public "><a href="#sendHeader" title="sendHeader :: Sends a custom header."><span class="description">Sends a custom header.</span><pre>sendHeader()</pre></a></li>
+<li class="method public "><a href="#sendNotAcceptableHeader" title="sendNotAcceptableHeader :: Sends a 406 not acceptable header. This is for when the client sends an
+  Accept header of types none of which can be satisfied by the server."><span class="description">Sends a 406 not acceptable header. This is for when the client sends an
+  Accept header of types none of which can be satisfied by the server.</span><pre>sendNotAcceptableHeader()</pre></a></li>
+<li class="method public "><a href="#sendNotFoundHeader" title="sendNotFoundHeader :: Sends a 404 not found header."><span class="description">Sends a 404 not found header.</span><pre>sendNotFoundHeader()</pre></a></li>
 <li class="method public "><a href="#sendNotModifiedHeader" title="sendNotModifiedHeader :: Send a 304 not modified header, if the content hasn't changed according to
   the headers sent in by the client."><span class="description">Send a 304 not modified header, if the content hasn't changed according to
   the headers sent in by the client.</span><pre>sendNotModifiedHeader()</pre></a></li>
+<li class="method public "><a href="#sendPlainTextResponse" title="sendPlainTextResponse :: Send a plain text response. Accepts variable arguments."><span class="description">Send a plain text response. Accepts variable arguments.</span><pre>sendPlainTextResponse()</pre></a></li>
+<li class="method public "><a href="#setEncodeCallback" title="setEncodeCallback :: Set the encoding callback for a particular content type."><span class="description">Set the encoding callback for a particular content type.</span><pre>setEncodeCallback()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#encodeKeyedArray" title="encodeKeyedArray :: Recursively encodes a keyed array to string."><span class="description">Recursively encodes a keyed array to string.</span><pre>encodeKeyedArray()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="nav-header private">» Private</li>
+<li class="property private "><a href="#%24encode_callbacks" title="$encode_callbacks :: Encoding callbacks."><span class="description">Encoding callbacks.</span><pre>$encode_callbacks</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  "><a href="#printData" title="printData :: "><span class="description">printData</span><pre>printData</pre></a></li>
+<li class="constant  "><a href="#sendCreatedHeader" title="sendCreatedHeader :: "><span class="description">sendCreatedHeader</span><pre>sendCreatedHeader</pre></a></li>
 <li class="constant  "><a href="#sendForbiddenHeader" title="sendForbiddenHeader :: "><span class="description">sendForbiddenHeader</span><pre>sendForbiddenHeader</pre></a></li>
+<li class="constant  "><a href="#sendHeader" title="sendHeader :: "><span class="description">sendHeader</span><pre>sendHeader</pre></a></li>
+<li class="constant  "><a href="#sendNotAcceptableHeader" title="sendNotAcceptableHeader :: "><span class="description">sendNotAcceptableHeader</span><pre>sendNotAcceptableHeader</pre></a></li>
+<li class="constant  "><a href="#sendNotFoundHeader" title="sendNotFoundHeader :: "><span class="description">sendNotFoundHeader</span><pre>sendNotFoundHeader</pre></a></li>
 <li class="constant  "><a href="#sendNotModifiedHeader" title="sendNotModifiedHeader :: "><span class="description">sendNotModifiedHeader</span><pre>sendNotModifiedHeader</pre></a></li>
+<li class="constant  "><a href="#sendPlainTextResponse" title="sendPlainTextResponse :: "><span class="description">sendPlainTextResponse</span><pre>sendPlainTextResponse</pre></a></li>
+<li class="constant  "><a href="#setEncodeCallback" title="setEncodeCallback :: "><span class="description">setEncodeCallback</span><pre>setEncodeCallback</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -94,18 +119,88 @@
 </tr>
 <tr>
 <th>link</th>
-<td><a href="http://www.sutralib.com/">http://www.sutralib.com/</a></td>
+<td><a href="https://github.com/tatsh/sutra">https://github.com/tatsh/sutra</a></td>
 </tr>
 <tr>
 <th>version</th>
-<td>1.2</td>
+<td>1.3</td>
 </tr>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
+<a name="encode" id="encode"></a><div class="element clickable method public encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>Encodes data in a specified content type. Default is
+  application/x-www-form-urlencoded.</h2>
+<pre>encode(mixed $data, string $content_type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Data to encode. Note that if the callback can only handle strings and the data is of type array, 'Array' will be printed.</p>
+</div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type to encode to.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded data.</div>
+</div></div>
+</div>
+<a name="printData" id="printData"></a><div class="element clickable method public printData" data-toggle="collapse" data-target=".printData .collapse">
+<h2>Prints the data and sends the appropriate Content-Type header.</h2>
+<pre>printData(mixed $data, string $content_type) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Data to print.</p></div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type of the data. This is only the mimetype. It should NOT have other parts such as 'charset=utf-8'.</p>
+</div>
+</div></div>
+</div>
+<a name="sendCreatedHeader" id="sendCreatedHeader"></a><div class="element clickable method public sendCreatedHeader" data-toggle="collapse" data-target=".sendCreatedHeader .collapse">
+<h2>Sends a 201 created HTTP header.</h2>
+<pre>sendCreatedHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="sendForbiddenHeader" id="sendForbiddenHeader"></a><div class="element clickable method public sendForbiddenHeader" data-toggle="collapse" data-target=".sendForbiddenHeader .collapse">
 <h2>Sends a 403 restricted content header.</h2>
 <pre>sendForbiddenHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendHeader" id="sendHeader"></a><div class="element clickable method public sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
+<h2>Sends a custom header.</h2>
+<pre>sendHeader(string $key, string $value) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Header name.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>Value.</p></div>
+</div></div>
+</div>
+<a name="sendNotAcceptableHeader" id="sendNotAcceptableHeader"></a><div class="element clickable method public sendNotAcceptableHeader" data-toggle="collapse" data-target=".sendNotAcceptableHeader .collapse">
+<h2>Sends a 406 not acceptable header. This is for when the client sends an
+  Accept header of types none of which can be satisfied by the server.</h2>
+<pre>sendNotAcceptableHeader() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendNotFoundHeader" id="sendNotFoundHeader"></a><div class="element clickable method public sendNotFoundHeader" data-toggle="collapse" data-target=".sendNotFoundHeader .collapse">
+<h2>Sends a 404 not found header.</h2>
+<pre>sendNotFoundHeader() : void</pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
@@ -133,6 +228,38 @@
 </div>
 </div></div>
 </div>
+<a name="sendPlainTextResponse" id="sendPlainTextResponse"></a><div class="element clickable method public sendPlainTextResponse" data-toggle="collapse" data-target=".sendPlainTextResponse .collapse">
+<h2>Send a plain text response. Accepts variable arguments.</h2>
+<pre>sendPlainTextResponse(string $text) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td>\fText::compose()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>Text to send.</p></div>
+</div></div>
+</div>
+<a name="setEncodeCallback" id="setEncodeCallback"></a><div class="element clickable method public setEncodeCallback" data-toggle="collapse" data-target=".setEncodeCallback .collapse">
+<h2>Set the encoding callback for a particular content type.</h2>
+<pre>setEncodeCallback(string $content_type, string | array $cb) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type such as 'application/xml'.</p>
+</div>
+<div class="subelement argument">
+<h4>$cb</h4>
+<code>stringarray</code><p>Callback.</p></div>
+</div></div>
+</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sResponse.html">\sResponse</a></pre>
@@ -143,17 +270,88 @@
 <div class="subelement response"><code><a href="../classes/sResponse.html">\sResponse</a></code></div>
 </div></div>
 </div>
+<a name="encodeKeyedArray" id="encodeKeyedArray"></a><div class="element clickable method private encodeKeyedArray" data-toggle="collapse" data-target=".encodeKeyedArray .collapse">
+<h2>Recursively encodes a keyed array to string.</h2>
+<pre>encodeKeyedArray(array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data to encode.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded data.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24encode_callbacks" id="$encode_callbacks"> </a><div class="element clickable property private $encode_callbacks" data-toggle="collapse" data-target=".$encode_callbacks .collapse">
+<h2>Encoding callbacks.</h2>
+<pre>$encode_callbacks : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="printData" id="printData"> </a><div class="element clickable constant  printData" data-toggle="collapse" data-target=".printData .collapse">
+<h2>printData</h2>
+<pre>printData </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendCreatedHeader" id="sendCreatedHeader"> </a><div class="element clickable constant  sendCreatedHeader" data-toggle="collapse" data-target=".sendCreatedHeader .collapse">
+<h2>sendCreatedHeader</h2>
+<pre>sendCreatedHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="sendForbiddenHeader" id="sendForbiddenHeader"> </a><div class="element clickable constant  sendForbiddenHeader" data-toggle="collapse" data-target=".sendForbiddenHeader .collapse">
 <h2>sendForbiddenHeader</h2>
 <pre>sendForbiddenHeader </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="sendHeader" id="sendHeader"> </a><div class="element clickable constant  sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
+<h2>sendHeader</h2>
+<pre>sendHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendNotAcceptableHeader" id="sendNotAcceptableHeader"> </a><div class="element clickable constant  sendNotAcceptableHeader" data-toggle="collapse" data-target=".sendNotAcceptableHeader .collapse">
+<h2>sendNotAcceptableHeader</h2>
+<pre>sendNotAcceptableHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendNotFoundHeader" id="sendNotFoundHeader"> </a><div class="element clickable constant  sendNotFoundHeader" data-toggle="collapse" data-target=".sendNotFoundHeader .collapse">
+<h2>sendNotFoundHeader</h2>
+<pre>sendNotFoundHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="sendNotModifiedHeader" id="sendNotModifiedHeader"> </a><div class="element clickable constant  sendNotModifiedHeader" data-toggle="collapse" data-target=".sendNotModifiedHeader .collapse">
 <h2>sendNotModifiedHeader</h2>
 <pre>sendNotModifiedHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="sendPlainTextResponse" id="sendPlainTextResponse"> </a><div class="element clickable constant  sendPlainTextResponse" data-toggle="collapse" data-target=".sendPlainTextResponse .collapse">
+<h2>sendPlainTextResponse</h2>
+<pre>sendPlainTextResponse </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
+<a name="setEncodeCallback" id="setEncodeCallback"> </a><div class="element clickable constant  setEncodeCallback" data-toggle="collapse" data-target=".setEncodeCallback .collapse">
+<h2>setEncodeCallback</h2>
+<pre>setEncodeCallback </pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
@@ -164,7 +362,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-22T04:33:46-05:00.<br></footer></div>
+            generated on 2012-04-27T09:33:32-05:00.<br></footer></div>
 </div>
 </body>
 </html>
