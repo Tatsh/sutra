@@ -12,8 +12,27 @@
  * @version 1.2
  */
 class sResponse {
-  const sendNotModifiedHeader = 'sResponse::sendNotModifiedHeader';
-  const sendForbiddenHeader   = 'sResponse::sendForbiddenHeader';
+  const encode                  = 'sResponse::encode';
+  const printData               = 'sResponse::printData';
+  const sendCreatedHeader       = 'sResponse::sendCreatedHeader';
+  const sendHeader              = 'sResponse::sendHeader';
+  const sendForbiddenHeader     = 'sResponse::sendForbiddenHeader';
+  const sendNotAcceptableHeader = 'sResponse::sendNotAcceptableHeader';
+  const sendNotFoundHeader      = 'sResponse::sendNotFoundHeader';
+  const sendNotModifiedHeader   = 'sResponse::sendNotModifiedHeader';
+  const sendPlainTextResponse   = 'sResponse::sendPlainTextResponse';
+  const setEncodeCallback       = 'sResponse::setEncodeCallback';
+
+  /**
+   * Encoding callbacks.
+   *
+   * @var array
+   */
+  private static $encode_callbacks = array(
+    'application/json' => 'fJSON::encode',
+    'text/html' => 'fHTML::encode',
+    'application/x-www-form-urlencoded' => 'http_build_query',
+  );
 
   /**
    * Send a 304 not modified header, if the content hasn't changed according to
@@ -54,6 +73,85 @@ class sResponse {
     }
   }
 
+  /**
+   * Recursively encodes a keyed array to string.
+   *
+   * @param array $data Data to encode.
+   * @return string The encoded data.
+   */
+  private static function encodeKeyedArray(array $data) {
+    $ret = array();
+
+    foreach ($data as $key => $value) {
+      if (is_array($value)) {
+        $ret[] = self::encodeKeyedArray($value);
+      }
+      else {
+        $ret[] = $key.'='.$value;
+      }
+    }
+
+    return implode(',', $ret);
+  }
+
+  /**
+   * Encodes data in a specified content type. Default is
+   *   application/x-www-form-urlencoded.
+   *
+   * @param mixed $data Data to encode. Note that if the callback can only
+   *   handle strings and the data is of type array, 'Array' will be printed.
+   * @param string $content_type Content type to encode to.
+   * @return string The encoded data.
+   */
+  public static function encode($data, $content_type = NULL) {
+    $ret = $data;
+
+    if (isset(self::$encode_callbacks[$content_type])) {
+      $ret = fCore::call(self::$encode_callbacks[$content_type], array($data));
+    }
+    else {
+      $ret = is_array($data) ? http_build_query($data) : $data;
+    }
+
+    return $ret;
+  }
+
+  /**
+   * Prints the data and sends the appropriate Content-Type header.
+   *
+   * @param mixed $data Data to print.
+   * @param string $content_type Content type of the data. This is only the
+   *   mimetype. It should NOT have other parts such as 'charset=utf-8'.
+   * @return void
+   */
+  public static function printData($data, $content_type = 'application/x-www-form-urlencoded') {
+    sResponse::sendHeader('Content-Type', $content_type.'; charset=utf-8');
+    print self::encode($data, $content_type);
+  }
+
+  /**
+   * Set the encoding callback for a particular content type.
+   *
+   * @param string $content_type Content type such as 'application/xml'.
+   * @param string|array $cb Callback.
+   * @return void
+   */
+  public static function setEncodeCallback($content_type, $cb) {
+    self::$encode_callbacks[$content_type] = $cb;
+  }
+
+  /**
+   * Send a plain text response. Accepts variable arguments.
+   *
+   * @param string $text Text to send.
+   * @return void
+   * @see fText::compose()
+   */
+  public static function sendPlainTextResponse($text) {
+    header('Content-Type: text/plain; charset=utf-8');
+    print fCore::call(fText::compose, func_get_args());
+  }
+
   // @codeCoverageIgnoreStart
   /**
    * Sends a 403 restricted content header.
@@ -62,6 +160,45 @@ class sResponse {
    */
   public static function sendForbiddenHeader() {
     header('HTTP/1.1 403 Forbidden');
+  }
+
+  /**
+   * Sends a custom header.
+   *
+   * @param string $key Header name.
+   * @param string $value Value.
+   * @return void
+   */
+  public static function sendHeader($key, $value) {
+    header($key.': '.$value);
+  }
+
+  /**
+   * Sends a 201 created HTTP header.
+   *
+   * @return void
+   */
+  public static function sendCreatedHeader() {
+    header('HTTP/1.1 201 Created');
+  }
+
+  /**
+   * Sends a 406 not acceptable header. This is for when the client sends an
+   *   Accept header of types none of which can be satisfied by the server.
+   *
+   * @return void
+   */
+  public static function sendNotAcceptableHeader() {
+    header('HTTP/1.1 406 Not Acceptable');
+  }
+
+  /**
+   * Sends a 404 not found header.
+   *
+   * @return void
+   */
+  public static function sendNotFoundHeader() {
+    header('HTTP/1.1 404 Not Found');
   }
 
   /**
