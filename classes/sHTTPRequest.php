@@ -71,6 +71,20 @@ class sHTTPRequest {
   private $proxy = NULL;
 
   /**
+   * POST data content type.
+   *
+   * @var string
+   */
+  private $post_data_content_type = 'application/x-www-form-urlencoded';
+
+  /**
+   * Authentication details.
+   *
+   * @var array
+   */
+  private $authentication = array();
+
+  /**
    * Constructor.
    *
    * @throws fProgrammerException If the URL is not valid.
@@ -110,6 +124,7 @@ class sHTTPRequest {
    */
   public function setHeaders(array $headers) {
     $this->headers = $headers;
+    unset($this->headers['Content-Length']);
     return $this;
   }
 
@@ -129,13 +144,29 @@ class sHTTPRequest {
   }
 
   /**
+   * Set authentication details.
+   *
+   * @param string $user_name User name.
+   * @param string $password Password.
+   * @return sHTTPRequest The object to allow method chaining.
+   */
+  public function setCredentials($user_name, $password) {
+    $this->authentication = array($user_name, $password);
+  }
+
+  /**
    * Set a specific header.
    *
-   * @param string $name Name of the header.
+   * @param string $name Name of the header. Content-Length is not supported
+   *   (it is added dynamically).
    * @param string $value Value of the header.
    * @return sHTTPRequest The object to allow method chaining.
    */
   public function setHeader($name, $value) {
+    if (strtolower($name) === 'content-length') {
+      return $this;
+    }
+
     $this->headers = array_merge($this->headers, array($name => $value));
     return $this;
   }
@@ -180,14 +211,35 @@ class sHTTPRequest {
    * @return array|string Headers either as string or array.
    */
   public function getHeaders($as_string = FALSE) {
+    $headers = $this->headers;
+    $headers['Content-Length'] = strlen($this->content);
+
+    if (!empty($this->authentication)) {
+      $auth = base64_encode($this->authentication[0].':'.$this->authentication[1]);
+      $headers['Authorization'] = 'Basic '.$auth;
+    }
+
     if ($as_string) {
       $ret = '';
-      foreach ($this->headers as $key => $value) {
+      foreach ($headers as $key => $value) {
         $ret .= "$key: $value\r\n";
       }
+
       return $ret;
     }
-    return $this->headers;
+
+    return $headers;
+  }
+
+  /**
+   * Sets the POST data content type.
+   *
+   * @param string $type A mimetype.
+   * @return sHTTPRequest The object to allow method chaining.
+   */
+  public function setPostDataContentType($type) {
+    $this->post_data_content_type = $type;
+    return $this;
   }
 
   /**
@@ -204,10 +256,14 @@ class sHTTPRequest {
   /**
    * Set the content. This is mainly for use with POST and PUT requests.
    *
-   * @param string $content Content to POST or PUT.
+   * @param string|array $content Content to POST or PUT.
    * @return sHTTPRequest The object to allow method chaining.
+   * @see http_build_query()
    */
   public function setContent($content) {
+    if (is_array($content)) {
+      $content = http_build_query($content);
+    }
     $this->content = $content;
     return $this;
   }
