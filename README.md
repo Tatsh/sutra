@@ -6,7 +6,13 @@ Sutra is a PHP unframework based on the Flourish unframework. What is an 'unfram
 
 5 minute tutorial: https://github.com/tatsh/sutra/wiki/Tutorial
 
-Generated documentation: http://tatsh.github.com/sutra/
+# Class reference (Wiki)
+
+[sCRUDForm](https://github.com/tatsh/sutra/wiki/sCRUDForm)
+
+# Generated documentation
+
+http://tatsh.github.com/sutra/
 
 # What's coming?
 
