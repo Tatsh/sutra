@@ -7,9 +7,9 @@
  * @license http://www.opensource.org/licenses/mit-license.php
  *
  * @package Sutra
- * @link http://www.sutralib.com/
+ * @link https://github.com/tatsh/sutra
  *
- * @version 1.2
+ * @version 1.3
  */
 class sResponse {
   const encode                  = 'sResponse::encode';
