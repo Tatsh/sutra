@@ -240,6 +240,7 @@ class sCRUDForm {
    * @param string $action URL for the action attribute of the form element.
    * @param string $method Method type for the form element. One of: 'post',
    *   'get'.
+   * @param array $attr Array of HTML attributes for the form elemement.
    * @return sCRUDForm The form object.
    */
   public function __construct($class, $action, $method = 'post', array $attr = array()) {
