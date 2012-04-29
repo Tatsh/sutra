@@ -497,6 +497,7 @@ class sCRUDForm {
    *
    * @param boolean $bool If the CSRF field should be added.
    * @param string $name Name of the field.
+   * @param string $url URL for the CSRF.
    * @return sCRUDForm The object to allow method chaining.
    */
   public function enableCSRFField($bool, $name = 'csrf', $url = NULL) {
