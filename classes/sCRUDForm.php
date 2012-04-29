@@ -253,6 +253,7 @@ class sCRUDForm {
     }
     $this->action_url = (string)$action;
 
+    $original = $class;
     $class = fORM::getClass($class);
     $this->class_name = $class;
     $table = fORM::tablize($class);
@@ -263,6 +264,13 @@ class sCRUDForm {
     $pk_should_be_printed = count($keys) == 1 && $columns[$keys[0]]['type']['auto_increment'] != TRUE;
     $pk_field_name = count($keys) == 1 ? $keys[0] : NULL;
     $related_columns = array();
+
+    if ($original instanceof fActiveRecord) {
+      foreach ($columns as $column_name => $info) {
+        $method = 'get'.fGrammar::camelize($column_name, TRUE);
+        fRequest::set($column_name, $original->$method());
+      }
+    }
 
     foreach ($relationships['many-to-one'] as $info) {
       $related_columns[$info['column']] = array(
