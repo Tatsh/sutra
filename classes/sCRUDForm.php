@@ -434,13 +434,20 @@ class sCRUDForm {
       }
 
       if ($info['related']) {
-        $sql = 'SELECT %r FROM %r ORDER BY %r';
+        $sql = 'SELECT %r,%r FROM %r ORDER BY %r';
         $column = $info['related_column'];
+        $related_column = isset($info['original_related_column']) ? $info['original_related_column'] : $column;
         $options = array();
-        $result = $db->translatedQuery($sql, $column, $info['related_table'], $column);
+        $result = $db->translatedQuery($sql, $related_column, $column, $info['related_table'], $column);
 
         foreach ($result as $result) {
-          $options[] = $result[$column];
+          if (count($result) > 1) {
+            $key = current($result);
+            $options[$key] = $result[$column];
+          }
+          else {
+            $options[$result[$column]] = $result[$column];
+          }
         }
 
         $info['attributes'] = array_merge($info['attributes'], array(
@@ -619,6 +626,7 @@ class sCRUDForm {
    */
   public function overrideRelatedColumn($column_name, $related_table_column_name) {
     $this->validateFieldName($column_name);
+    $this->fields[$column_name]['original_related_column'] = $this->fields[$column_name]['related_column'];
     $this->fields[$column_name]['related_column'] = $related_table_column_name;
     return $this;
   }
