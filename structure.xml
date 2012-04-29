@@ -5414,7 +5414,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sCRUDForm.php" hash="1fd23478bae13dfbf0fdb0c181997c7c" package="Sutra">
+  <file path="sutra/classes/sCRUDForm.php" hash="2894eca487a3fd127a61a066f0617ef1" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Creates an HTML form based on an fActiveRecord class.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -5425,9 +5425,6 @@
       <tag line="2" name="link" description="https://github.com/tatsh/sutra" link="https://github.com/tatsh/sutra"/>
       <tag line="2" name="version" description="1.3"/>
     </docblock>
-    <parse_markers>
-      <error line="236" code="50015">Argument $attr is missing from the Docblock of __construct()</error>
-    </parse_markers>
     <class final="false" abstract="false" namespace="default" line="14" package="Sutra">
       <name>sCRUDForm</name>
       <full_name>\sCRUDForm</full_name>
@@ -5758,7 +5755,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="245" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="246" package="">
         <name>__construct</name>
         <type>function</type>
         <docblock line="236">
@@ -5774,269 +5771,272 @@
           <tag line="236" name="param" description="Method type for the form element. One of: 'post', 'get'." type="string" variable="$method">
             <type by_reference="false">string</type>
           </tag>
+          <tag line="236" name="param" description="Array of HTML attributes for the form elemement." type="array" variable="$attr">
+            <type by_reference="false">array</type>
+          </tag>
           <tag line="236" name="return" description="The form object." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="245">
+        <argument line="246">
           <name>$class</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="245">
+        <argument line="246">
           <name>$action</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="245">
+        <argument line="246">
           <name>$method</name>
           <default><![CDATA['post']]></default>
           <type/>
         </argument>
-        <argument line="245">
+        <argument line="246">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="366" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="367" package="">
         <name>enableFileUpload</name>
         <type>function</type>
-        <docblock line="359">
+        <docblock line="360">
           <description><![CDATA[Changes the form content type to allow file uploads, regardless if there
   are file (blob) fields.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="359" name="param" description="TRUE or FALSE." type="boolean" variable="$bool">
+          <tag line="360" name="param" description="TRUE or FALSE." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="359" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="360" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="366">
+        <argument line="367">
           <name>$bool</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="377" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="378" package="">
         <name>setMaxFileUploadSize</name>
         <type>function</type>
-        <docblock line="371">
+        <docblock line="372">
           <description><![CDATA[Set the maximum file upload size. This affects all file upload fields.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="371" name="param" description="Size to allow." type="integer" variable="$size">
+          <tag line="372" name="param" description="Size to allow." type="integer" variable="$size">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="371" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="372" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="377">
+        <argument line="378">
           <name>$size</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="390" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="391" package="">
         <name>validateFieldName</name>
         <type>function</type>
-        <docblock line="382">
+        <docblock line="383">
           <description><![CDATA[Validates if a field name exists in this class.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="382" name="throws" description="If the field name is invalid." type="\fProgrammerException">
+          <tag line="383" name="throws" description="If the field name is invalid." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="382" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="383" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="382" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="383" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="390">
+        <argument line="391">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="405" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="406" package="">
         <name>make</name>
         <type>function</type>
-        <docblock line="400">
+        <docblock line="401">
           <description><![CDATA[Generates the form HTML. Should be called last.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="400" name="return" description="The form HTML." type="string">
+          <tag line="401" name="return" description="The form HTML." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="474" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="475" package="">
         <name>hideField</name>
         <type>function</type>
-        <docblock line="468">
+        <docblock line="469">
           <description><![CDATA[Hides a field.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="468" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="469" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="468" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="469" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="474">
+        <argument line="475">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="488" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="489" package="">
         <name>addAction</name>
         <type>function</type>
-        <docblock line="480">
+        <docblock line="481">
           <description><![CDATA[Adds a button.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="480" name="param" description="Action name. This is for use with fRequest during the request." type="string" variable="$action_name">
+          <tag line="481" name="param" description="Action name. This is for use with fRequest during the request." type="string" variable="$action_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="480" name="param" description="Label of the button." type="string" variable="$label">
+          <tag line="481" name="param" description="Label of the button." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="480" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="481" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="488">
+        <argument line="489">
           <name>$action_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="488">
+        <argument line="489">
           <name>$label</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="504" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="505" package="">
         <name>enableCSRFField</name>
         <type>function</type>
-        <docblock line="496">
+        <docblock line="497">
           <description><![CDATA[Enables adding a CSRF field.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="496" name="param" description="If the CSRF field should be added." type="boolean" variable="$bool">
+          <tag line="497" name="param" description="If the CSRF field should be added." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="496" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="497" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="496" name="param" description="URL for the CSRF." type="string" variable="$url">
+          <tag line="497" name="param" description="URL for the CSRF." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="496" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="497" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="504">
+        <argument line="505">
           <name>$bool</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="504">
+        <argument line="505">
           <name>$name</name>
           <default><![CDATA['csrf']]></default>
           <type/>
         </argument>
-        <argument line="504">
+        <argument line="505">
           <name>$url</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="520" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="521" package="">
         <name>overrideFieldType</name>
         <type>function</type>
-        <docblock line="511">
+        <docblock line="512">
           <description><![CDATA[Override a field types attributes. This is mainly so that an e-mail or
   date field column will render a different field from the default.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="511" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="512" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="511" name="param" description="Type of the field." type="string" variable="$type">
+          <tag line="512" name="param" description="Type of the field." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="511" name="param" description="Array of other attributes." type="array" variable="$attr">
+          <tag line="512" name="param" description="Array of other attributes." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="511" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="512" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="520">
+        <argument line="521">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="520">
+        <argument line="521">
           <name>$type</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="520">
+        <argument line="521">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="545" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="546" package="">
         <name>overrideLabel</name>
         <type>function</type>
-        <docblock line="538">
+        <docblock line="539">
           <description><![CDATA[Override the label name for a column.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="538" name="param" description="Column name." type="string" variable="$column_name">
+          <tag line="539" name="param" description="Column name." type="string" variable="$column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="538" name="param" description="Label to use." type="string" variable="$label">
+          <tag line="539" name="param" description="Label to use." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="538" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="539" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="545">
+        <argument line="546">
           <name>$column_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="545">
+        <argument line="546">
           <name>$label</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="559" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="560" package="">
         <name>overrideRelatedColumn</name>
         <type>function</type>
-        <docblock line="551">
+        <docblock line="552">
           <description><![CDATA[Override the related column for a related table.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="551" name="param" description="Column name of this table." type="string" variable="$column_name">
+          <tag line="552" name="param" description="Column name of this table." type="string" variable="$column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="551" name="param" description="Column name that should be read from the related table." type="string" variable="$related_table_column_name">
+          <tag line="552" name="param" description="Column name that should be read from the related table." type="string" variable="$related_table_column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="551" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="552" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="559">
+        <argument line="560">
           <name>$column_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="559">
+        <argument line="560">
           <name>$related_table_column_name</name>
           <default><![CDATA[]]></default>
           <type/>
