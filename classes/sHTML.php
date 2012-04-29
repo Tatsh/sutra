@@ -289,6 +289,10 @@ class sHTML extends fHTML {
       return self::makeSelectElement($name, $label, $attributes);
     }
 
+    if ($type == 'checkbox') {
+      return '<input '.self::attributesString($attributes).'>'.$label;
+    }
+
     return $label.'<input '.self::attributesString($attributes).'>';
   }
 
