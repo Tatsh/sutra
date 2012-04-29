@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">163</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -76,7 +76,9 @@
 <li class="method public "><a href="#addStringReplacement" title="addStringReplacement :: Adds a call to [http://php.net/str_replace `str_replace()`] for each message"><span class="description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</span><pre>addStringReplacement()</pre></a></li>
 <li class="method public "><a href="#addURLFields" title="addURLFields :: Adds form fields to the list of fields to be blank or a valid URL"><span class="description">Adds form fields to the list of fields to be blank or a valid URL</span><pre>addURLFields()</pre></a></li>
 <li class="method public "><a href="#addValidValuesRule" title="addValidValuesRule :: Adds a rule to make sure a field has one of the specified valid values"><span class="description">Adds a rule to make sure a field has one of the specified valid values</span><pre>addValidValuesRule()</pre></a></li>
+<li class="method public "><a href="#checkCSRFToken" title="checkCSRFToken :: Validates a CSRF token."><span class="description">Validates a CSRF token.</span><pre>checkCSRFToken()</pre></a></li>
 <li class="method public "><a href="#overrideFieldName" title="overrideFieldName :: Allows overriding the default name used for a field in the error message"><span class="description">Allows overriding the default name used for a field in the error message</span><pre>overrideFieldName()</pre></a></li>
+<li class="method public "><a href="#setCSRFTokenField" title="setCSRFTokenField :: Set the CSRF token field to validate."><span class="description">Set the CSRF token field to validate.</span><pre>setCSRFTokenField()</pre></a></li>
 <li class="method public "><a href="#setMessageOrder" title="setMessageOrder :: Allows setting the order that the individual errors in a message will be displayed"><span class="description">Allows setting the order that the individual errors in a message will be displayed</span><pre>setMessageOrder()</pre></a></li>
 <li class="method public "><a href="#validate" title="validate :: Checks for required fields, email field formatting and email header injection using values previously set"><span class="description">Checks for required fields, email field formatting and email header injection using values previously set</span><pre>validate()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -103,6 +105,7 @@
 <li class="nav-header private">» Private</li>
 <li class="property private "><a href="#%24callback_rules" title="$callback_rules :: Rules that run through a callback"><span class="description">Rules that run through a callback</span><pre>$callback_rules</pre></a></li>
 <li class="property private "><a href="#%24conditional_rules" title="$conditional_rules :: Rules for conditionally requiring fields"><span class="description">Rules for conditionally requiring fields</span><pre>$conditional_rules</pre></a></li>
+<li class="property private "><a href="#%24csrf_url" title="$csrf_url :: CSRF token URL"><span class="description">CSRF token URL</span><pre>$csrf_url</pre></a></li>
 <li class="property private "><a href="#%24date_fields" title="$date_fields :: Fields that should be valid dates"><span class="description">Fields that should be valid dates</span><pre>$date_fields</pre></a></li>
 <li class="property private "><a href="#%24field_names" title="$field_names :: An array for custom field names"><span class="description">An array for custom field names</span><pre>$field_names</pre></a></li>
 <li class="property private "><a href="#%24file_upload_rules" title="$file_upload_rules :: File upload rules"><span class="description">File upload rules</span><pre>$file_upload_rules</pre></a></li>
@@ -124,11 +127,15 @@
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2007-2011 Will Bond</td>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
 </tr>
 <tr>
 <th>author</th>
 <td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
 </tr>
 <tr>
 <th>license</th>
@@ -144,7 +151,11 @@
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b12</td>
+<td>1.0.0b13</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Added ::setCSRFTokenField() [au, 2012-04-27]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -525,6 +536,25 @@ array of valid values.</p></p>
 <code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
 </div></div>
 </div>
+<a name="checkCSRFToken" id="checkCSRFToken"></a><div class="element clickable method public checkCSRFToken" data-toggle="collapse" data-target=".checkCSRFToken .collapse">
+<h2>Validates a CSRF token.</h2>
+<pre>checkCSRFToken(string $field_value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<table class="table table-bordered"><tr>
+<th>internal</th>
+<td></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field_value</h4>
+<code>string</code><p>Field value to check.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the field value is correct.</div>
+</div></div>
+</div>
 <a name="overrideFieldName" id="overrideFieldName"></a><div class="element clickable method public overrideFieldName" data-toggle="collapse" data-target=".overrideFieldName .collapse">
 <h2>Allows overriding the default name used for a field in the error message</h2>
 <pre>overrideFieldName(string $field, string $name) : <a href="../classes/fValidation.html">\fValidation</a></pre>
@@ -540,6 +570,24 @@ field names.</p></p>
 <div class="subelement argument">
 <h4>$name</h4>
 <code>string</code><p>The custom name for the field</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
+</div></div>
+</div>
+<a name="setCSRFTokenField" id="setCSRFTokenField"></a><div class="element clickable method public setCSRFTokenField" data-toggle="collapse" data-target=".setCSRFTokenField .collapse">
+<h2>Set the CSRF token field to validate.</h2>
+<pre>setCSRFTokenField(string $field, string $url) : <a href="../classes/fValidation.html">\fValidation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>A field that should contain a CSRF token string</p></div>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>URL to validate with</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fValidation.html">\fValidation</a></code>The validation object, to allow for method chaining</div>
@@ -844,6 +892,12 @@ case-insensitive manner.</p></p>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<a name="%24csrf_url" id="$csrf_url"> </a><div class="element clickable property private $csrf_url" data-toggle="collapse" data-target=".$csrf_url .collapse">
+<h2>CSRF token URL</h2>
+<pre>$csrf_url : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="%24date_fields" id="$date_fields"> </a><div class="element clickable property private $date_fields" data-toggle="collapse" data-target=".$date_fields .collapse">
 <h2>Fields that should be valid dates</h2>
 <pre>$date_fields : array</pre>
@@ -917,7 +971,7 @@ case-insensitive manner.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-27T09:33:32-05:00.<br></footer></div>
+            generated on 2012-04-28T22:31:59-05:00.<br></footer></div>
 </div>
 </body>
 </html>

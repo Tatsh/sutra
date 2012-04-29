@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">163</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -72,8 +72,6 @@
 <li class="method public "><a href="#filter" title="filter :: Removes a value from an array element"><span class="description">Removes a value from an array element</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets the value of an element"><span class="description">Gets the value of an element</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#inject" title="inject :: Includes the file specified - this is identical to ::place() except a filename is specified instead of an element"><span class="description">Includes the file specified - this is identical to ::place() except a filename is specified instead of an element</span><pre>inject()</pre></a></li>
-<li class="method public "><a href="#minify" title="minify :: Minifies JS or CSS"><span class="description">Minifies JS or CSS</span><pre>minify()</pre></a></li>
-<li class="method public "><a href="#minifyJavaScript" title="minifyJavaScript :: Minifies JS (static version)."><span class="description">Minifies JS (static version).</span><pre>minifyJavaScript()</pre></a></li>
 <li class="method public "><a href="#place" title="place :: Includes the element specified - element must be set through ::set() first"><span class="description">Includes the element specified - element must be set through ::set() first</span><pre>place()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Gets the value of an element and runs it through fHTML::prepare()"><span class="description">Gets the value of an element and runs it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
 <li class="method public "><a href="#remove" title="remove :: Removes and returns the value from the end of an array element"><span class="description">Removes and returns the value from the end of an array element</span><pre>remove()</pre></a></li>
@@ -82,6 +80,7 @@
 <li class="method public "><a href="#set" title="set :: Sets the value for an element"><span class="description">Sets the value for an element</span><pre>set()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#handleMinified" title="handleMinified :: Combines an array of CSS or JS files and places them as a single file"><span class="description">Combines an array of CSS or JS files and places them as a single file</span><pre>handleMinified()</pre></a></li>
+<li class="method protected "><a href="#minify" title="minify :: Minifies JS or CSS"><span class="description">Minifies JS or CSS</span><pre>minify()</pre></a></li>
 <li class="method protected "><a href="#minifyCode" title="minifyCode :: Takes a block of CSS or JS and reduces the number of characters"><span class="description">Takes a block of CSS or JS and reduces the number of characters</span><pre>minifyCode()</pre></a></li>
 <li class="method protected "><a href="#minifyLiteral" title="minifyLiteral :: Takes a literal and either discards or keeps it"><span class="description">Takes a literal and either discards or keeps it</span><pre>minifyLiteral()</pre></a></li>
 <li class="method protected "><a href="#placeCSS" title="placeCSS :: Prints a CSS `link` HTML tag to the output"><span class="description">Prints a CSS `link` HTML tag to the output</span><pre>placeCSS()</pre></a></li>
@@ -495,48 +494,6 @@ that do not have their own explicit short tag settings.</p></p>
 </div>
 </div></div>
 </div>
-<a name="minify" id="minify"></a><div class="element clickable method public minify" data-toggle="collapse" data-target=".minify .collapse">
-<h2>Minifies JS or CSS</h2>
-<pre>minify(string $code, string $type) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>For JS, this function is based on the JSMin algorithm (not the code) from
-http://www.crockford.com/javascript/jsmin.html with the addition of
-preserving /*! comment blocks for things like licenses. Some other
-versions of JSMin change the contents of special comment blocks, but
-this version does not.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$code</h4>
-<code>string</code><p>The code to minify</p></div>
-<div class="subelement argument">
-<h4>$type</h4>
-<code>string</code><p>The type of code, 'css' or 'js'</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The minified code</div>
-</div></div>
-</div>
-<a name="minifyJavaScript" id="minifyJavaScript"></a><div class="element clickable method public minifyJavaScript" data-toggle="collapse" data-target=".minifyJavaScript .collapse">
-<h2>Minifies JS (static version).</h2>
-<pre>minifyJavaScript(string $code) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$code</h4>
-<code>string</code><p>JavaScript code.</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The minified code.</div>
-</div></div>
-</div>
 <a name="place" id="place"></a><div class="element clickable method public place" data-toggle="collapse" data-target=".place .collapse">
 <h2>Includes the element specified - element must be set through ::set() first</h2>
 <pre>place(string $element, string $file_type) : void</pre>
@@ -676,6 +633,29 @@ array(
 <div class="subelement argument">
 <h4>$values</h4>
 <code>array</code><p>An array of file paths</p></div>
+</div></div>
+</div>
+<a name="minify" id="minify"></a><div class="element clickable method protected minify" data-toggle="collapse" data-target=".minify .collapse">
+<h2>Minifies JS or CSS</h2>
+<pre>minify(string $code, string $type) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"><p>For JS, this function is based on the JSMin algorithm (not the code) from
+http://www.crockford.com/javascript/jsmin.html with the addition of
+preserving /*! comment blocks for things like licenses. Some other
+versions of JSMin change the contents of special comment blocks, but
+this version does not.</p></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$code</h4>
+<code>string</code><p>The code to minify</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of code, 'css' or 'js'</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The minified code</div>
 </div></div>
 </div>
 <a name="minifyCode" id="minifyCode"></a><div class="element clickable method protected minifyCode" data-toggle="collapse" data-target=".minifyCode .collapse">
@@ -934,7 +914,7 @@ array(
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-27T09:33:33-05:00.<br></footer></div>
+            generated on 2012-04-28T22:31:59-05:00.<br></footer></div>
 </div>
 </body>
 </html>
