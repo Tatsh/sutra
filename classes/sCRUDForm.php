@@ -401,7 +401,7 @@ class sCRUDForm {
     if (!isset($this->fields[$name])) {
       throw new fProgrammerException('The field name specified, "%s", does not exist. Must be one of: %s',
         $name,
-        implode(',', $this->fields)
+        implode(', ', array_keys($this->fields))
       );
     }
     return $this;
@@ -415,6 +415,7 @@ class sCRUDForm {
   public function make() {
     $fields = '';
     $db = fORMDatabase::retrieve($this->class_name);
+    $no_value_types = array('checkbox', 'radio', 'select');
 
     foreach ($this->fields as $column_name => $info) {
       if ($info['type'] == 'file') {
@@ -440,6 +441,11 @@ class sCRUDForm {
         $fields .= $html.sHTML::makeFormElement($info['type'], $column_name, $info['attributes']).'</div>';
 
         continue;
+      }
+
+      $value = fRequest::get($column_name);
+      if ($value && !in_array($info['type'], $no_value_types)) {
+        $info['attributes']['value'] = $value;
       }
 
       $fields .= self::makeElement($info['type'], $column_name, $info['label'], $info['attributes']);
@@ -472,18 +478,28 @@ class sCRUDForm {
       }
     }
 
+    $this->form_attr['action'] = $this->action_url;
+    $this->form_attr['method'] = $this->request_method;
+
     return sHTML::tag('form', $this->form_attr, $fields);
   }
 
   /**
-   * Hides a field.
+   * Hides fields. Allows for variable arguments.
    *
-   * @param string $name Name of the field.
+   * @param string|array $name Name of the field.
    * @return sCRUDForm The object to allow method chaining.
    */
-  public function hideField($name) {
-    $this->validateFieldName($name);
-    unset($this->fields[$name]);
+  public function hideFields($name) {
+    if (!is_array($name)) {
+      $name = func_get_args();
+    }
+
+    foreach ($name as $field_name) {
+      $this->validateFieldName($field_name);
+      unset($this->fields[$field_name]);
+    }
+
     return $this;
   }
 
@@ -501,6 +517,30 @@ class sCRUDForm {
     }
     $this->buttons[] = array($action_name, $label);
     return $this;
+  }
+
+  /**
+   * Adds a custom field.
+   *
+   * @param string $name Name attribute of the field.
+   * @param string $label Label text.
+   * @param string $type Type of the field.
+   * @param array $attr Attributes array.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function addField($name, $label, $type = 'text', array $attr = array()) {
+    $attr['label'] = $label;
+    $required = isset($attr['required']) ? $attr['required'] : FALSE;
+
+    $this->fields[$name] = array(
+      'type' => $type,
+      'required' => $required,
+      'attributes' => $attr,
+      'label' => $label,
+      'related' => FALSE,
+      'related_column' => NULL,
+      'related_table' => NULL,
+    );
   }
 
   /**
@@ -569,6 +609,41 @@ class sCRUDForm {
   public function overrideRelatedColumn($column_name, $related_table_column_name) {
     $this->validateFieldName($column_name);
     $this->fields[$column_name]['related_column'] = $related_table_column_name;
+    return $this;
+  }
+
+  /**
+   * Sets the field order.
+   *
+   * @param array|string $fields Array of field names.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function setFieldOrder($fields) {
+    if (!is_array($fields)) {
+      $fields = func_get_args();
+    }
+
+    $new = array();
+    foreach ($fields as $field) {
+      $this->validateFieldName($field);
+      $new[$field] = $this->fields[$field];
+    }
+    $not_set = array_diff_key($this->fields, $new);
+    $this->fields = array_merge($new, $not_set);
+
+    return $this;
+  }
+
+  /**
+   * Set a specific field's attributes.
+   *
+   * @param string $field Field name.
+   * @param array $attr Array of attribute values.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function setFieldAttributes($field, array $attr) {
+    $this->validateFieldName($field);
+    $this->fields[$field]['attributes'] = array_merge($this->fields[$field]['attributes'], $attr);
     return $this;
   }
 }
