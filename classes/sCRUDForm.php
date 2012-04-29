@@ -470,7 +470,7 @@ class sCRUDForm {
     }
 
     if (isset($this->action)) {
-      $fields .= sHTML::makeFormElement('hidden', 'action', array('name' => 'action', 'value' => $this->action));
+      $fields .= '<input type="hidden" name="action" value="'.$this->action.'">';
     }
 
     if (count($this->buttons)) {
@@ -486,7 +486,7 @@ class sCRUDForm {
     }
 
     if ($this->print_csrf) {
-      $fields .= sHTML::makeFormElement('hidden', $this->csrf_field_name, array('value' => fRequest::generateCSRFToken($this->csrf_field_url)));
+      $fields .= '<input type="hidden" name="'.$this->csrf_field_name.'" value="'.fRequest::generateCSRFToken($this->csrf_field_url).'">';
     }
 
     if ($this->file_uploads) {
@@ -596,7 +596,12 @@ class sCRUDForm {
     unset($attr['required']);
     unset($attr['label']);
 
-    $this->fields[$type] = $type;
+    if ($type != 'number') {
+      unset($this->fields[$name]['attributes']['min']);
+      unset($this->fields[$name]['attributes']['max']);
+    }
+
+    $this->fields[$name]['type'] = $type;
     $this->fields[$name]['attributes'] = array_merge($this->fields[$name]['attributes'], $attr);
     $this->fields[$name]['attributes']['required'] = $required;
 
