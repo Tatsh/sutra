@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">163</span></a></li>
+                <span class="label label-info">161</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -104,6 +104,9 @@
 <li class="property private "><a href="#%24valid_field_types" title="$valid_field_types :: Valid field types. Ones that have a value of TRUE are separate elements
   and are not part of the 'type' attribute of the input element."><span class="description">Valid field types. Ones that have a value of TRUE are separate elements
   and are not part of the 'type' attribute of the input element.</span><pre>$valid_field_types</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#hideFieldNames" title="hideFieldNames :: "><span class="description">hideFieldNames</span><pre>hideFieldNames</pre></a></li>
 </ul>
 </div>
 <div class="span8">
@@ -141,15 +144,14 @@
 <i class="icon-custom icon-method"></i> Methods</h3>
 <a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Creates a form based on the schema of a table.</h2>
-<pre>__construct($class, string $action, string $method, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<pre>__construct(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> | string $class, string $action, string $method, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
 <div class="row collapse"><div class="span8">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
-<code></code>
-</div>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a>string</code><p>fActiveRecord instance, or class name.</p></div>
 <div class="subelement argument">
 <h4>$action</h4>
 <code>string</code><p>URL for the action attribute of the form element.</p></div>
@@ -512,6 +514,14 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a name="hideFieldNames" id="hideFieldNames"> </a><div class="element clickable constant  hideFieldNames" data-toggle="collapse" data-target=".hideFieldNames .collapse">
+<h2>hideFieldNames</h2>
+<pre>hideFieldNames </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 </div>
 </div>
 </div>
@@ -519,7 +529,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-28T22:31:58-05:00.<br></footer></div>
+            generated on 2012-04-28T22:38:28-05:00.<br></footer></div>
 </div>
 </body>
 </html>
