@@ -268,7 +268,10 @@ class sCRUDForm {
     if ($original instanceof fActiveRecord) {
       foreach ($columns as $column_name => $info) {
         $method = 'get'.fGrammar::camelize($column_name, TRUE);
-        fRequest::set($column_name, $original->$method());
+        $value = $original->$method();
+        if ($value) {
+          fRequest::set($column_name, $value);
+        }
       }
     }
 
