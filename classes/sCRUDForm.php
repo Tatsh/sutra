@@ -292,7 +292,7 @@ class sCRUDForm {
         continue;
       }
 
-      $field_type = isset($info['valid_values']) ? 'select' : self::$column_to_form_mappings[$info['type']];
+      $field_type = count($info['valid_values']) ? 'select' : self::$column_to_form_mappings[$info['type']];
       if (strpos($column_name, 'password') !== FALSE) {
         $field_type = 'password';
       }
@@ -301,7 +301,7 @@ class sCRUDForm {
         'required' => is_null($info['default']) && $info['type'] != 'boolean' ? TRUE : FALSE,
       );
 
-      if (!is_null($info['default'])) {
+      if (!isset($info['default'])) {
         $attr['value'] = $info['default'];
       }
 
@@ -331,6 +331,15 @@ class sCRUDForm {
               $attr['max'] = $info['max_value'];
             }
           }
+          break;
+
+        case 'select':
+          $options = array();
+          foreach ($info['valid_values'] as $value) {
+            $options[$value] = $value;
+          }
+          $attr['options'] = $options;
+          break;
       }
 
       $this->fields[$column_name] = array(
