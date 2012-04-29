@@ -12,6 +12,8 @@
  * @version 1.3
  */
 class sCRUDForm {
+  const hideFieldNames = 'sCRUDForm::hideFieldNames';
+
   /**
    * Mappings.
    *
