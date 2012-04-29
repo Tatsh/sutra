@@ -60,22 +60,25 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates a form based on the schema of a table."><span class="description">Creates a form based on the schema of a table.</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#addAction" title="addAction :: Adds a button."><span class="description">Adds a button.</span><pre>addAction()</pre></a></li>
+<li class="method public "><a href="#addField" title="addField :: Adds a custom field."><span class="description">Adds a custom field.</span><pre>addField()</pre></a></li>
 <li class="method public "><a href="#enableCSRFField" title="enableCSRFField :: Enables adding a CSRF field."><span class="description">Enables adding a CSRF field.</span><pre>enableCSRFField()</pre></a></li>
 <li class="method public "><a href="#enableFileUpload" title="enableFileUpload :: Changes the form content type to allow file uploads, regardless if there
   are file (blob) fields."><span class="description">Changes the form content type to allow file uploads, regardless if there
   are file (blob) fields.</span><pre>enableFileUpload()</pre></a></li>
-<li class="method public "><a href="#hideField" title="hideField :: Hides a field."><span class="description">Hides a field.</span><pre>hideField()</pre></a></li>
 <li class="method public "><a href="#hideFieldNames" title="hideFieldNames :: Configures the class to always ignore certain column names. This may be
   useful for fields that are managed by Flourish such as timestamp fields
   managed by fORMDate."><span class="description">Configures the class to always ignore certain column names. This may be
   useful for fields that are managed by Flourish such as timestamp fields
   managed by fORMDate.</span><pre>hideFieldNames()</pre></a></li>
+<li class="method public "><a href="#hideFields" title="hideFields :: Hides fields. Allows for variable arguments."><span class="description">Hides fields. Allows for variable arguments.</span><pre>hideFields()</pre></a></li>
 <li class="method public "><a href="#make" title="make :: Generates the form HTML. Should be called last."><span class="description">Generates the form HTML. Should be called last.</span><pre>make()</pre></a></li>
 <li class="method public "><a href="#overrideFieldType" title="overrideFieldType :: Override a field types attributes. This is mainly so that an e-mail or
   date field column will render a different field from the default."><span class="description">Override a field types attributes. This is mainly so that an e-mail or
   date field column will render a different field from the default.</span><pre>overrideFieldType()</pre></a></li>
 <li class="method public "><a href="#overrideLabel" title="overrideLabel :: Override the label name for a column."><span class="description">Override the label name for a column.</span><pre>overrideLabel()</pre></a></li>
 <li class="method public "><a href="#overrideRelatedColumn" title="overrideRelatedColumn :: Override the related column for a related table."><span class="description">Override the related column for a related table.</span><pre>overrideRelatedColumn()</pre></a></li>
+<li class="method public "><a href="#setFieldAttributes" title="setFieldAttributes :: Set a specific field's attributes."><span class="description">Set a specific field's attributes.</span><pre>setFieldAttributes()</pre></a></li>
+<li class="method public "><a href="#setFieldOrder" title="setFieldOrder :: Sets the field order."><span class="description">Sets the field order.</span><pre>setFieldOrder()</pre></a></li>
 <li class="method public "><a href="#setMaxFileUploadSize" title="setMaxFileUploadSize :: Set the maximum file upload size. This affects all file upload fields."><span class="description">Set the maximum file upload size. This affects all file upload fields.</span><pre>setMaxFileUploadSize()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#makeElement" title="makeElement :: Makes an HTML form element wrapped in a div."><span class="description">Makes an HTML form element wrapped in a div.</span><pre>makeElement()</pre></a></li>
@@ -185,6 +188,30 @@
 <code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
+<a name="addField" id="addField"></a><div class="element clickable method public addField" data-toggle="collapse" data-target=".addField .collapse">
+<h2>Adds a custom field.</h2>
+<pre>addField(string $name, string $label, string $type, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name attribute of the field.</p></div>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>string</code><p>Label text.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of the field.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Attributes array.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
 <a name="enableCSRFField" id="enableCSRFField"></a><div class="element clickable method public enableCSRFField" data-toggle="collapse" data-target=".enableCSRFField .collapse">
 <h2>Enables adding a CSRF field.</h2>
 <pre>enableCSRFField(boolean $bool, string $name, string $url) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
@@ -222,21 +249,6 @@
 <code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
-<a name="hideField" id="hideField"></a><div class="element clickable method public hideField" data-toggle="collapse" data-target=".hideField .collapse">
-<h2>Hides a field.</h2>
-<pre>hideField(string $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>Name of the field.</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
-</div></div>
-</div>
 <a name="hideFieldNames" id="hideFieldNames"></a><div class="element clickable method public hideFieldNames" data-toggle="collapse" data-target=".hideFieldNames .collapse">
 <h2>Configures the class to always ignore certain column names. This may be
   useful for fields that are managed by Flourish such as timestamp fields
@@ -249,6 +261,21 @@
 <div class="subelement argument">
 <h4>$field_name</h4>
 <code>arraystring</code><p>Field name or array or names to ignore.</p></div>
+</div></div>
+</div>
+<a name="hideFields" id="hideFields"></a><div class="element clickable method public hideFields" data-toggle="collapse" data-target=".hideFields .collapse">
+<h2>Hides fields. Allows for variable arguments.</h2>
+<pre>hideFields(string | array $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>stringarray</code><p>Name of the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
 <a name="make" id="make"></a><div class="element clickable method public make" data-toggle="collapse" data-target=".make .collapse">
@@ -315,6 +342,39 @@
 <div class="subelement argument">
 <h4>$related_table_column_name</h4>
 <code>string</code><p>Column name that should be read from the related table.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a name="setFieldAttributes" id="setFieldAttributes"></a><div class="element clickable method public setFieldAttributes" data-toggle="collapse" data-target=".setFieldAttributes .collapse">
+<h2>Set a specific field's attributes.</h2>
+<pre>setFieldAttributes(string $field, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>Field name.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Array of attribute values.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a name="setFieldOrder" id="setFieldOrder"></a><div class="element clickable method public setFieldOrder" data-toggle="collapse" data-target=".setFieldOrder .collapse">
+<h2>Sets the field order.</h2>
+<pre>setFieldOrder(array | string $fields) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8">
+<p class="long_description"></p>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>arraystring</code><p>Array of field names.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
@@ -528,7 +588,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-29T00:48:03-05:00.<br></footer></div>
+            generated on 2012-04-29T02:48:02-05:00.<br></footer></div>
 </div>
 </body>
 </html>
