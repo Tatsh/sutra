@@ -236,8 +236,7 @@ class sCRUDForm {
   /**
    * Creates a form based on the schema of a table.
    *
-   * @param fActiveRecord $class_or_schema Active record object, or class
-   *   name.
+   * @param fActiveRecord|string $class fActiveRecord instance, or class name.
    * @param string $action URL for the action attribute of the form element.
    * @param string $method Method type for the form element. One of: 'post',
    *   'get'.
