@@ -33,6 +33,7 @@ class sLoader extends fLoader {
     'sAuthorization',
     'sCache',
     'sCore',
+    'sCRUDForm',
     'sGrammar',
     'sHTML',
     'sHTTPRequest',
