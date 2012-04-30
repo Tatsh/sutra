@@ -482,13 +482,14 @@ class sCRUDForm {
    * Creates a form based on the schema of a table.
    *
    * @param fActiveRecord|string $class fActiveRecord instance, or class name.
-   * @param string $action URL for the action attribute of the form element.
+   * @param string $action URL for the action attribute of the form element. If
+   *   not specified, will default to the current URL.
    * @param string $method Method type for the form element. One of: 'post',
    *   'get'.
    * @param array $attr Array of HTML attributes for the form elemement.
    * @return sCRUDForm The form object.
    */
-  public function __construct($class, $action, $method = 'post', array $attr = array()) {
+  public function __construct($class, $action = NULL, $method = 'post', array $attr = array()) {
     $method = strtolower($method);
     self::validateRequestMethod($method);
 
@@ -498,9 +499,9 @@ class sCRUDForm {
     $this->class_name = fORM::getClass($class);
     $this->table_name = fORM::tablize($class);
     $this->schema = fORMSchema::retrieve($class);
-    $this->table_columns =  $this->schema->getColumnInfo($this->table_name);
+    $this->table_columns = $this->schema->getColumnInfo($this->table_name);
     $this->table_relationships = $this->schema->getRelationships($this->table_name);
-    $this->action_url = (string)$action;
+    $this->action_url = isset($action) ? (string)$action : fURL::get();
 
     $this->parseSchema();
     $this->setPostValues();
