@@ -158,6 +158,41 @@ class sCRUDForm {
   private $csrf_field_url = NULL;
 
   /**
+   * The table name.
+   *
+   * @var string
+   */
+  private $table_name = NULL;
+
+  /**
+   * The columns array of the table.
+   *
+   * @var array
+   */
+  private $table_columns = array();
+
+  /**
+   * The fActiveRecord instance, if one was passed to the constructor.
+   *
+   * @var fActiveRecord
+   */
+  private $active_record = NULL;
+
+  /**
+   * The relationships array of the table.
+   *
+   * @var array
+   */
+  private $table_relationships = array();
+
+  /**
+   * The schema instance.
+   *
+   * @var fSchema
+   */
+  private $schema = NULL;
+
+  /**
    * Validate the field type.
    *
    * @throws fProgrammerException If the field type is invalid.
@@ -234,55 +269,166 @@ class sCRUDForm {
   }
 
   /**
-   * Creates a form based on the schema of a table.
+   * Sets POST values from the fActiveRecord instance.
    *
-   * @param fActiveRecord|string $class fActiveRecord instance, or class name.
-   * @param string $action URL for the action attribute of the form element.
-   * @param string $method Method type for the form element. One of: 'post',
-   *   'get'.
-   * @param array $attr Array of HTML attributes for the form elemement.
-   * @return sCRUDForm The form object.
+   * @param fActiveRecord|string|null $active_record This method does nothing
+   *   if this argument is not of type fActiveRecord.
+   * @return sCRUDForm The object to allow method chaining.
+   * @SuppressWarnings(UnusedLocalVariable)
    */
-  public function __construct($class, $action, $method = 'post', array $attr = array()) {
-    $method = strtolower($method);
-    self::validateRequestMethod($method);
-    $this->request_method = $method;
-
-    if (!strlen($action)) {
-      throw new fProgrammerException('Action URL is invalid. Must be at least 1 character long');
-    }
-    $this->action_url = (string)$action;
-
-    $original = $class;
-    $class = fORM::getClass($class);
-    $this->class_name = $class;
-    $table = fORM::tablize($class);
-    $schema = fORMSchema::retrieve($class);
-    $columns = $schema->getColumnInfo($table);
-    $relationships = $schema->getRelationships($table);
-    $keys = $schema->getKeys($table, 'primary');
-    $pk_should_be_printed = count($keys) == 1 && $columns[$keys[0]]['type']['auto_increment'] != TRUE;
-    $pk_field_name = count($keys) == 1 ? $keys[0] : NULL;
-    $related_columns = array();
-
-    if ($original instanceof fActiveRecord) {
-      foreach ($columns as $column_name => $info) {
+  private function setPostValues() {
+    if ($this->active_record instanceof fActiveRecord) {
+      foreach ($this->table_columns as $column_name => $info) {
         $method = 'get'.fGrammar::camelize($column_name, TRUE);
-        $value = $original->$method();
+        $value = $this->active_record->$method();
         if ($value) {
           fRequest::set($column_name, $value);
         }
       }
     }
+    return $this;
+  }
 
-    foreach ($relationships['many-to-one'] as $info) {
+  /**
+   * Parses the many-to-one relationships of the table.
+   *
+   * @return array Array of data about the related columns.
+   */
+  private function parseRelationships() {
+    $related_columns = array();
+    foreach ($this->table_relationships['many-to-one'] as $info) {
       $related_columns[$info['column']] = array(
         'column' => $info['related_column'],
         'table' => $info['related_table'],
       );
     }
+    return $related_columns;
+  }
 
-    foreach ($columns as $column_name => $info) {
+  /**
+   * Gets the correct field type based on the column type and name.
+   *
+   * If the column name has password within its name, the type password will
+   *   be returned.
+   *
+   * If the column name has email within its name, the type email will be
+   *   returned.
+   *
+   * If $valid_values has any values, type select will be returned.
+   *
+   * @param string $column_name Column name.
+   * @param string $type Column type.
+   * @param array $valid_values Valid values array.
+   * @return void
+   */
+  private static function getFieldType($column_name, $type, array $valid_values = array()) {
+    if (strpos($column_name, 'password') !== FALSE) {
+      return 'password';
+    }
+    if (strpos($column_name, 'email') !== FALSE) {
+      return 'email';
+    }
+    if (count($valid_values)) {
+      return 'select';
+    }
+    return self::$column_to_form_mappings[$type];
+  }
+
+  /**
+   * Checks if the field is required.
+   *
+   * @param string $type Field type.
+   * @param array|null $default_values Array of default values or NULL.
+   * @return boolean If the field is required.
+   */
+  private static function isRequiredField($type, $default_values = NULL) {
+    if (isset($default_values) && $type != 'boolean') {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
+  /**
+   * Adds special attributes to the attributes array depending on field type.
+   *
+   * @param array $attr Attributes array to modify.
+   * @param array $info Information array as from schema.
+   * @param string $field_type Field type.
+   * @return void
+   */
+  private static function addSpecialAttributes(array &$attr, array $info, $field_type) {
+    switch ($field_type) {
+      case 'textarea':
+      case 'textfield':
+        if (isset($info['max_length'])) {
+          $attr['maxlength'] = $info['max_length'];
+        }
+        $attr['spellcheck'] = TRUE;
+        break;
+
+      case 'number':
+        $mapping = array(
+          'min_value' => 'min',
+          'max_value' => 'max',
+        );
+        foreach ($mapping as $key => $attribute_name) {
+          if (isset($info[$key])) {
+            if ($info[$key] instanceof fNumber) {
+              $attr[$attribute_name] = $info[$key]->__toString();
+            }
+            else if (is_scalar($info[$key])) {
+              $attr[$attribute_name] = $info[$key];
+            }
+          }
+        }
+        break;
+
+      case 'select':
+        $options = array();
+        foreach ($info['valid_values'] as $value) {
+          $options[$value] = $value;
+        }
+        $attr['options'] = $options;
+        break;
+    }
+  }
+
+  /**
+   * Makes the attributes array for the field.
+   *
+   * @param string $column_name Column name (will be used for 'name' attribute).
+   * @param array $info Information array as retrieved from schema.
+   * @param string $field_type Field type.
+   * @return array Attributes array.
+   */
+  private static function makeAttributesArray($column_name, array $info, $field_type) {
+    $attr = array(
+      'name' => $column_name,
+      'required' => self::isRequiredField($info['type'], $info['default']),
+    );
+
+    if (isset($info['default'])) {
+      $attr['value'] = $info['default'];
+    }
+
+    self::addSpecialAttributes($attr, $info, $field_type);
+
+    return $attr;
+  }
+
+  /**
+   * Parses the fields of the schema.
+   *
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  private function parseSchema() {
+    $keys = $this->schema->getKeys($this->table_name, 'primary');
+    $keys_count_is_one = count($keys) == 1;
+    $pk_should_be_printed = $keys_count_is_one && $this->table_columns[$keys[0]]['type']['auto_increment'] != TRUE;
+    $pk_field_name = $keys_count_is_one ? $keys[0] : NULL;
+    $related_columns = $this->parseRelationships();
+
+    foreach ($this->table_columns as $column_name => $info) {
       if ($pk_field_name == $column_name) {
         continue;
       }
@@ -303,55 +449,8 @@ class sCRUDForm {
         continue;
       }
 
-      $field_type = count($info['valid_values']) ? 'select' : self::$column_to_form_mappings[$info['type']];
-      if (strpos($column_name, 'password') !== FALSE) {
-        $field_type = 'password';
-      }
-      $attr = array(
-        'name' => $column_name,
-        'required' => is_null($info['default']) && $info['type'] != 'boolean' ? TRUE : FALSE,
-      );
-
-      if (!isset($info['default'])) {
-        $attr['value'] = $info['default'];
-      }
-
-      switch ($field_type) {
-        case 'textarea':
-        case 'textfield':
-          if (isset($info['max_length'])) {
-            $attr['maxlength'] = $info['max_length'];
-          }
-          $attr['spellcheck'] = TRUE;
-          break;
-
-        case 'number':
-          if (isset($info['min_value'])) {
-            if ($info['min_value'] instanceof fNumber) {
-              $attr['min'] = $info['min_value']->__toString();
-            }
-            else if (is_scalar($info['min'])) {
-              $attr['min'] = $info['min_value'];
-            }
-          }
-          if (isset($info['max_value'])) {
-            if ($info['max_value'] instanceof fNumber) {
-              $attr['max'] = $info['max_value']->__toString();
-            }
-            else if (is_scalar($info['min'])) {
-              $attr['max'] = $info['max_value'];
-            }
-          }
-          break;
-
-        case 'select':
-          $options = array();
-          foreach ($info['valid_values'] as $value) {
-            $options[$value] = $value;
-          }
-          $attr['options'] = $options;
-          break;
-      }
+      $field_type = self::getFieldType($column_name, $info['type'], isset($info['valid_values']) ? $info['valid_values'] : array());
+      $attr = self::makeAttributesArray($column_name, $info, $field_type);
 
       $this->fields[$column_name] = array(
         'type' => $field_type,
@@ -365,7 +464,7 @@ class sCRUDForm {
 
     if ($pk_should_be_printed) {
       array_unshift($this->fields, array(
-        'type' => self::$column_to_form_mappings[$columns[$pk_field_name]['type']],
+        'type' => self::$column_to_form_mappings[$this->table_columns[$pk_field_name]['type']],
         'label' => fGrammar::humanize($pk_field_name),
         'attributes' => array(
           'required' => TRUE,
@@ -375,6 +474,36 @@ class sCRUDForm {
         'related_table' => NULL,
       ));
     }
+
+    return $this;
+  }
+
+  /**
+   * Creates a form based on the schema of a table.
+   *
+   * @param fActiveRecord|string $class fActiveRecord instance, or class name.
+   * @param string $action URL for the action attribute of the form element.
+   * @param string $method Method type for the form element. One of: 'post',
+   *   'get'.
+   * @param array $attr Array of HTML attributes for the form elemement.
+   * @return sCRUDForm The form object.
+   */
+  public function __construct($class, $action, $method = 'post', array $attr = array()) {
+    $method = strtolower($method);
+    self::validateRequestMethod($method);
+
+    $this->request_method = $method;
+    $this->active_record = $class;
+    $this->form_attr = $attr;
+    $this->class_name = fORM::getClass($class);
+    $this->table_name = fORM::tablize($class);
+    $this->schema = fORMSchema::retrieve($class);
+    $this->table_columns =  $this->schema->getColumnInfo($this->table_name);
+    $this->table_relationships = $this->schema->getRelationships($this->table_name);
+    $this->action_url = (string)$action;
+
+    $this->parseSchema();
+    $this->setPostValues();
   }
 
   /**
@@ -419,6 +548,33 @@ class sCRUDForm {
   }
 
   /**
+   * Fetches the values to display for the related column.
+   *
+   * @param fDatabase $db fDatabase instance.
+   * @param string $value_column Column with the values to use.
+   * @param string $title_column Column with values to display to the user.
+   * @param string $related_table Table name to fetch values from.
+   * @return array Array of options with keys as the values.
+   */
+  private function fetchRelatedValues(fDatabase $db, $value_column, $title_column, $related_table) {
+    $sql = 'SELECT %r,%r FROM %r ORDER BY %r';
+    $result = $db->translatedQuery($sql, $value_column, $title_column, $related_table, $title_column);
+    $options = array();
+
+    foreach ($result as $result) {
+      if (count($result) > 1) {
+        $key = current($result);
+        $options[$key] = $result[$title_column];
+      }
+      else {
+        $options[$result[$value_column]] = $result[$value_column];
+      }
+    }
+
+    return $options;
+  }
+
+  /**
    * Generates the form HTML. Should be called last.
    *
    * @return string The form HTML.
@@ -434,21 +590,9 @@ class sCRUDForm {
       }
 
       if ($info['related']) {
-        $sql = 'SELECT %r,%r FROM %r ORDER BY %r';
         $column = $info['related_column'];
         $related_column = isset($info['original_related_column']) ? $info['original_related_column'] : $column;
-        $options = array();
-        $result = $db->translatedQuery($sql, $related_column, $column, $info['related_table'], $column);
-
-        foreach ($result as $result) {
-          if (count($result) > 1) {
-            $key = current($result);
-            $options[$key] = $result[$column];
-          }
-          else {
-            $options[$result[$column]] = $result[$column];
-          }
-        }
+        $options = $this->fetchRelatedValues($db, $related_column, $column, $info['related_table']);
 
         $info['attributes'] = array_merge($info['attributes'], array(
           'options' => $options,
@@ -631,7 +775,9 @@ class sCRUDForm {
    */
   public function overrideRelatedColumn($column_name, $related_table_column_name) {
     $this->validateFieldName($column_name);
-    $this->fields[$column_name]['original_related_column'] = $this->fields[$column_name]['related_column'];
+    if (!isset($this->fields[$column_name]['original_related_column'])) {
+      $this->fields[$column_name]['original_related_column'] = $this->fields[$column_name]['related_column'];
+    }
     $this->fields[$column_name]['related_column'] = $related_table_column_name;
     return $this;
   }
