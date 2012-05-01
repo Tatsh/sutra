@@ -251,7 +251,7 @@ class sCRUDForm {
   }
 
   /**
-   * Valides the request method.
+   * Validates the request method.
    *
    * @throws fProgrammerException If the request method is invalid.
    *
@@ -623,7 +623,6 @@ class sCRUDForm {
       foreach ($this->buttons as $button) {
         $action_name = $button[0];
         $label = $button[1];
-
         $container .= sHTML::makeFormElement('submit', 'action::'.$action_name, array('value' => $label));
       }
       $container .= '</div>';
