@@ -12,7 +12,7 @@ Sutra is a PHP unframework based on the Flourish unframework. What is an 'unfram
 
 # Generated documentation
 
-http://tatsh.github.com/sutra/
+http://tatsh.github.com/sutra/documentation
 
 # What's coming?
 
