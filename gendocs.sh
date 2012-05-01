@@ -1,5 +1,5 @@
 #!/bin/sh
-DOCDIR="/home/tatsh/dev/sutra-doc"
+DOCDIR="/home/tatsh/dev/sutra-doc/documentation"
 FLOURISH="/home/tatsh/dev/php/flourish"
 SUTRA="/home/tatsh/dev/sutra/classes"
 
