@@ -124,13 +124,12 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    * @param integer $offset Offset to set to. Ignored.
    * @param mixed $value Value to set.
    * @return void
-   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public function offsetSet($offset, $value) {
     if (!is_numeric($offset) || is_float($offset)) {
       throw new fProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
     }
-    if(fUTF8::len($value) !== 1){
+    if (fUTF8::len($value) !== 1) {
       throw new fProgrammerException('The value length may not be greater than 1');
     }
     $offset = (int)$offset;
