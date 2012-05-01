@@ -103,18 +103,21 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
   }
 
   /**
-   * Sets the value at an offset. The offset is ignored.
+   * Sets the value at an offset.
    *
    * @internal
    *
-   * @param integer $offset Offset to set to. Ignored.
+   * @param integer $offset Offset to set to.
    * @param mixed $value Value to set.
    * @return void
-   * @SuppressWarnings(PHPMD.UnusedFormalParameter)
    */
   public function offsetSet($offset, $value) {
-    $this->data[] = $value;
-    $this->data = array_values($this->data);
+    if (isset($this->data[$offset])) {
+      $this->data[$offset] = $value;
+    }
+    else {
+      $this->data[] = $value;
+    }
   }
 
   /**
