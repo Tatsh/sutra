@@ -2703,7 +2703,7 @@
       </docblock>
     </class>
   </file>
-  <file path="sutra/classes/sString.php" hash="620502cf12a0ae55632638d83ce4c77a" package="Sutra">
+  <file path="sutra/classes/sString.php" hash="fcb7cfccaa5fa975a4a9e19f0485169a" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Provides object-oriented interface to strings.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -2716,8 +2716,8 @@
       <tag line="2" name="version" description="1.3"/>
     </docblock>
     <parse_markers>
-      <error line="542" code="50014">Name of argument $name does not match with the DocBlock's name $key in __get()</error>
-      <notice line="542" code="50013">Parameter $key could not be found in __get()</notice>
+      <error line="541" code="50014">Name of argument $name does not match with the DocBlock's name $key in __get()</error>
+      <notice line="541" code="50013">Parameter $key could not be found in __get()</notice>
     </parse_markers>
     <class final="false" abstract="false" namespace="default" line="15" package="Sutra">
       <name>sString</name>
@@ -2893,7 +2893,7 @@
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="129" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="128" package="">
         <name>offsetSet</name>
         <type>function</type>
         <docblock line="119">
@@ -2909,655 +2909,654 @@
           <tag line="119" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
-          <tag line="119" name="SuppressWarnings" description="(PHPMD.UnusedFormalParameter)"/>
         </docblock>
-        <argument line="129">
+        <argument line="128">
           <name>$offset</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="129">
+        <argument line="128">
           <name>$value</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="150" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="149" package="">
         <name>offsetUnset</name>
         <type>function</type>
-        <docblock line="140">
+        <docblock line="139">
           <description><![CDATA[Unsets the value at an offset.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="140" name="internal" description=""/>
-          <tag line="140" name="throws" description="If the offset is not an integer." type="\fProgrammerException">
+          <tag line="139" name="internal" description=""/>
+          <tag line="139" name="throws" description="If the offset is not an integer." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
           </tag>
-          <tag line="140" name="param" description="Offset." type="integer" variable="$offset">
+          <tag line="139" name="param" description="Offset." type="integer" variable="$offset">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="140" name="return" description="" type="void">
+          <tag line="139" name="return" description="" type="void">
             <type by_reference="false">void</type>
           </tag>
         </docblock>
-        <argument line="150">
+        <argument line="149">
           <name>$offset</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="166" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="165" package="">
         <name>charAt</name>
         <type>function</type>
-        <docblock line="160">
+        <docblock line="159">
           <description><![CDATA[Get the character within the string specified by numerical index.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="160" name="param" description="Index to use." type="integer" variable="$index">
+          <tag line="159" name="param" description="Index to use." type="integer" variable="$index">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="160" name="return" description="The character at $index or NULL." type="\sString">
+          <tag line="159" name="return" description="The character at $index or NULL." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="166">
+        <argument line="165">
           <name>$index</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="183" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="182" package="">
         <name>charCodeAt</name>
         <type>function</type>
-        <docblock line="176">
+        <docblock line="175">
           <description><![CDATA[Get the character code at an index.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="176" name="param" description="Index to use." type="integer" variable="$index">
+          <tag line="175" name="param" description="Index to use." type="integer" variable="$index">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="176" name="return" description="If the index is not usable, NULL is returned. Otherwise, the character number (int) is returned." type="mixed">
+          <tag line="175" name="return" description="If the index is not usable, NULL is returned. Otherwise, the character number (int) is returned." type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
-        <argument line="183">
+        <argument line="182">
           <name>$index</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="196" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="195" package="">
         <name>quote</name>
         <type>function</type>
-        <docblock line="191">
+        <docblock line="190">
           <description><![CDATA[Get the string double-quoted.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="191" name="return" description="The string, double-quoted." type="\sString">
+          <tag line="190" name="return" description="The string, double-quoted." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="206" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="205" package="">
         <name>split</name>
         <type>function</type>
-        <docblock line="200">
+        <docblock line="199">
           <description><![CDATA[Explode a string, optionally with a separator.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="200" name="param" description="Separator, optional." type="string" variable="$separator">
+          <tag line="199" name="param" description="Separator, optional." type="string" variable="$separator">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="200" name="return" description="String as array." type="array">
+          <tag line="199" name="return" description="String as array." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
-        <argument line="206">
+        <argument line="205">
           <name>$separator</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="223" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="222" package="">
         <name>replaceRegex</name>
         <type>function</type>
-        <docblock line="213">
+        <docblock line="212">
           <description><![CDATA[Replaces the regular expression.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="213" name="see" description="\preg_replace()" refers="\preg_replace()"/>
-          <tag line="213" name="param" description="The regular expression." type="string" variable="$pattern">
+          <tag line="212" name="see" description="\preg_replace()" refers="\preg_replace()"/>
+          <tag line="212" name="param" description="The regular expression." type="string" variable="$pattern">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="213" name="param" description="The replacement string." type="string" variable="$replacement">
+          <tag line="212" name="param" description="The replacement string." type="string" variable="$replacement">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="213" name="param" description="The limit." type="integer" variable="$limit">
+          <tag line="212" name="param" description="The limit." type="integer" variable="$limit">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="213" name="return" description="The string with replacements made." type="\sString">
+          <tag line="212" name="return" description="The string with replacements made." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="223">
+        <argument line="222">
           <name>$pattern</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="223">
+        <argument line="222">
           <name>$replacement</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="223">
+        <argument line="222">
           <name>$limit</name>
           <default><![CDATA[-1]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="233" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="232" package="">
         <name>toTime</name>
         <type>function</type>
-        <docblock line="227">
+        <docblock line="226">
           <description><![CDATA[Converts the string to time.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="227" name="see" description="\fTime::__construct()" refers="\fTime::__construct()"/>
-          <tag line="227" name="return" description="The string converted to time." type="\fTime">
+          <tag line="226" name="see" description="\fTime::__construct()" refers="\fTime::__construct()"/>
+          <tag line="226" name="return" description="The string converted to time." type="\fTime">
             <type by_reference="false">\fTime</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="243" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="242" package="">
         <name>toTimeStamp</name>
         <type>function</type>
-        <docblock line="237">
+        <docblock line="236">
           <description><![CDATA[Converts the string to a timestamp.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="237" name="see" description="\sTimestamp::__construct()" refers="\sTimestamp::__construct()"/>
-          <tag line="237" name="return" description="The string converted to a timestamp." type="\sTimestamp">
+          <tag line="236" name="see" description="\sTimestamp::__construct()" refers="\sTimestamp::__construct()"/>
+          <tag line="236" name="return" description="The string converted to a timestamp." type="\sTimestamp">
             <type by_reference="false">\sTimestamp</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="253" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="252" package="">
         <name>toDate</name>
         <type>function</type>
-        <docblock line="247">
+        <docblock line="246">
           <description><![CDATA[Converts the string to a date.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="247" name="see" description="\fDate::__construct()" refers="\fDate::__construct()"/>
-          <tag line="247" name="return" description="The string converted to a date." type="\fDate">
+          <tag line="246" name="see" description="\fDate::__construct()" refers="\fDate::__construct()"/>
+          <tag line="246" name="return" description="The string converted to a date." type="\fDate">
             <type by_reference="false">\fDate</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="262" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="261" package="">
         <name>toInt</name>
         <type>function</type>
-        <docblock line="257">
+        <docblock line="256">
           <description><![CDATA[Converts the string to a integer.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="257" name="return" description="The integer from the converted string." type="integer">
+          <tag line="256" name="return" description="The integer from the converted string." type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="272" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="271" package="">
         <name>toNumber</name>
         <type>function</type>
-        <docblock line="266">
+        <docblock line="265">
           <description><![CDATA[Converts the string to a fNumber object.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="266" name="see" description="\sNumber::__construct()" refers="\sNumber::__construct()"/>
-          <tag line="266" name="return" description="The number from the converted string." type="\sNumber">
+          <tag line="265" name="see" description="\sNumber::__construct()" refers="\sNumber::__construct()"/>
+          <tag line="265" name="return" description="The number from the converted string." type="\sNumber">
             <type by_reference="false">\sNumber</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="281" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="280" package="">
         <name>toArray</name>
         <type>function</type>
-        <docblock line="276">
+        <docblock line="275">
           <description><![CDATA[Converts the string to a array.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="276" name="return" description="The array from the converted string." type="array">
+          <tag line="275" name="return" description="The array from the converted string." type="array">
             <type by_reference="false">array</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="290" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="289" package="">
         <name>toFloat</name>
         <type>function</type>
-        <docblock line="285">
+        <docblock line="284">
           <description><![CDATA[Converts the string to a float.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="285" name="return" description="The float from the converted string." type="float">
+          <tag line="284" name="return" description="The float from the converted string." type="float">
             <type by_reference="false">float</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="300" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="299" package="">
         <name>toBase64</name>
         <type>function</type>
-        <docblock line="294">
+        <docblock line="293">
           <description><![CDATA[Encodes the string to base64.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="294" name="see" description="\base64_encode()" refers="\base64_encode()"/>
-          <tag line="294" name="return" description="The string encoded to base64." type="string">
+          <tag line="293" name="see" description="\base64_encode()" refers="\base64_encode()"/>
+          <tag line="293" name="return" description="The string encoded to base64." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="309" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="308" package="">
         <name>toBoolean</name>
         <type>function</type>
-        <docblock line="304">
+        <docblock line="303">
           <description><![CDATA[Converts our string to a boolean.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="304" name="return" description="The boolean from the converted string." type="boolean">
+          <tag line="303" name="return" description="The boolean from the converted string." type="boolean">
             <type by_reference="false">boolean</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="323" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="322" package="">
         <name>toJSON</name>
         <type>function</type>
-        <docblock line="317">
+        <docblock line="316">
           <description><![CDATA[Encodes the string to JSON data.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="317" name="see" description="\fJSON::encode()" refers="\fJSON::encode()"/>
-          <tag line="317" name="return" description="The string encoded to JSON." type="string">
+          <tag line="316" name="see" description="\fJSON::encode()" refers="\fJSON::encode()"/>
+          <tag line="316" name="return" description="The string encoded to JSON." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="333" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="332" package="">
         <name>toURIComponent</name>
         <type>function</type>
-        <docblock line="327">
+        <docblock line="326">
           <description><![CDATA[Encodes the string to a URI component.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="327" name="see" description="\urlencode()" refers="\urlencode()"/>
-          <tag line="327" name="return" description="The encoded URI." type="string">
+          <tag line="326" name="see" description="\urlencode()" refers="\urlencode()"/>
+          <tag line="326" name="return" description="The encoded URI." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="343" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="342" package="">
         <name>toRawURIComponent</name>
         <type>function</type>
-        <docblock line="337">
+        <docblock line="336">
           <description><![CDATA[Encodes the string to a rawURIcomponent.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="337" name="see" description="\rawurlencode()" refers="\rawurlencode()"/>
-          <tag line="337" name="return" description="The encoded raw URI." type="string">
+          <tag line="336" name="see" description="\rawurlencode()" refers="\rawurlencode()"/>
+          <tag line="336" name="return" description="The encoded raw URI." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="353" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="352" package="">
         <name>toLowerCase</name>
         <type>function</type>
-        <docblock line="347">
+        <docblock line="346">
           <description><![CDATA[Convert the string to all lowercase.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="347" name="see" description="\fUTF8::lower()" refers="\fUTF8::lower()"/>
-          <tag line="347" name="return" description="The string lowercased." type="\sString">
+          <tag line="346" name="see" description="\fUTF8::lower()" refers="\fUTF8::lower()"/>
+          <tag line="346" name="return" description="The string lowercased." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="363" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="362" package="">
         <name>toUpperCase</name>
         <type>function</type>
-        <docblock line="357">
+        <docblock line="356">
           <description><![CDATA[Convert the string to all uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="357" name="see" description="\fUTF8::upper()" refers="\fUTF8::upper()"/>
-          <tag line="357" name="return" description="The string uppercased." type="\sString">
+          <tag line="356" name="see" description="\fUTF8::upper()" refers="\fUTF8::upper()"/>
+          <tag line="356" name="return" description="The string uppercased." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="373" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="372" package="">
         <name>wordsToUpper</name>
         <type>function</type>
-        <docblock line="367">
+        <docblock line="366">
           <description><![CDATA[Convert the beginning of each word to uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="367" name="see" description="\fUTF8::ucwords()" refers="\fUTF8::ucwords()"/>
-          <tag line="367" name="return" description="The beginning of each word uppcased." type="\sString">
+          <tag line="366" name="see" description="\fUTF8::ucwords()" refers="\fUTF8::ucwords()"/>
+          <tag line="366" name="return" description="The beginning of each word uppcased." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="383" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="382" package="">
         <name>firstCharToUpper</name>
         <type>function</type>
-        <docblock line="377">
+        <docblock line="376">
           <description><![CDATA[Converts the first character to uppercase.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="377" name="see" description="\fUTF8::ucfirst()" refers="\fUTF8::ucfirst()"/>
-          <tag line="377" name="return" description="The first character uppercased." type="\sString">
+          <tag line="376" name="see" description="\fUTF8::ucfirst()" refers="\fUTF8::ucfirst()"/>
+          <tag line="376" name="return" description="The first character uppercased." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="396" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="395" package="">
         <name>substr</name>
         <type>function</type>
-        <docblock line="387">
+        <docblock line="386">
           <description><![CDATA[Subtracts part of the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="387" name="see" description="\fUTF8::sub()" refers="\fUTF8::sub()"/>
-          <tag line="387" name="param" description="The starting point to extract from." type="integer" variable="$start">
+          <tag line="386" name="see" description="\fUTF8::sub()" refers="\fUTF8::sub()"/>
+          <tag line="386" name="param" description="The starting point to extract from." type="integer" variable="$start">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="387" name="param" description="The length to subtract from the string." type="integer" variable="$length">
+          <tag line="386" name="param" description="The length to subtract from the string." type="integer" variable="$length">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="387" name="return" description="The subtracted string." type="\sString">
+          <tag line="386" name="return" description="The subtracted string." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="396">
+        <argument line="395">
           <name>$start</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="396">
+        <argument line="395">
           <name>$length</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="408" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="407" package="">
         <name>trimLeft</name>
         <type>function</type>
-        <docblock line="400">
+        <docblock line="399">
           <description><![CDATA[Trims whitespaces or defined characters from the beginning of the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="400" name="see" description="\fUTF8::ltrim()" refers="\fUTF8::ltrim()"/>
-          <tag line="400" name="param" description="The characters to trim." type="string" variable="$charlist">
+          <tag line="399" name="see" description="\fUTF8::ltrim()" refers="\fUTF8::ltrim()"/>
+          <tag line="399" name="param" description="The characters to trim." type="string" variable="$charlist">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="400" name="return" description="The string trimmed." type="\sString">
+          <tag line="399" name="return" description="The string trimmed." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="408">
+        <argument line="407">
           <name>$charlist</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="420" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="419" package="">
         <name>trim</name>
         <type>function</type>
-        <docblock line="412">
+        <docblock line="411">
           <description><![CDATA[Trims whitespaces or defined characters from the full string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="412" name="see" description="\fUTF8::trim()" refers="\fUTF8::trim()"/>
-          <tag line="412" name="param" description="The characters to trim." type="string" variable="$charlist">
+          <tag line="411" name="see" description="\fUTF8::trim()" refers="\fUTF8::trim()"/>
+          <tag line="411" name="param" description="The characters to trim." type="string" variable="$charlist">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="412" name="return" description="The string trimmed." type="\sString">
+          <tag line="411" name="return" description="The string trimmed." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="420">
+        <argument line="419">
           <name>$charlist</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="432" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="431" package="">
         <name>trimRight</name>
         <type>function</type>
-        <docblock line="424">
+        <docblock line="423">
           <description><![CDATA[Trims whitespaces or defined characters from the end of the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="424" name="see" description="\fUTF8::rtrim()" refers="\fUTF8::rtrim()"/>
-          <tag line="424" name="param" description="The characters to trim." type="string" variable="$charlist">
+          <tag line="423" name="see" description="\fUTF8::rtrim()" refers="\fUTF8::rtrim()"/>
+          <tag line="423" name="param" description="The characters to trim." type="string" variable="$charlist">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="424" name="return" description="The string trimmed." type="\sString">
+          <tag line="423" name="return" description="The string trimmed." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="432">
+        <argument line="431">
           <name>$charlist</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="445" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="444" package="">
         <name>indexOf</name>
         <type>function</type>
-        <docblock line="436">
+        <docblock line="435">
           <description><![CDATA[Finds the first position of the search in the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="436" name="see" description="\fUTF8::pos()" refers="\fUTF8::pos()"/>
-          <tag line="436" name="param" description="The string to search for." type="string" variable="$needle">
+          <tag line="435" name="see" description="\fUTF8::pos()" refers="\fUTF8::pos()"/>
+          <tag line="435" name="param" description="The string to search for." type="string" variable="$needle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="436" name="param" description="The character position to start searching from." type="integer" variable="$offset">
+          <tag line="435" name="param" description="The character position to start searching from." type="integer" variable="$offset">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="436" name="return" description="The character position, or -1." type="integer">
+          <tag line="435" name="return" description="The character position, or -1." type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
-        <argument line="445">
+        <argument line="444">
           <name>$needle</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="445">
+        <argument line="444">
           <name>$offset</name>
           <default><![CDATA[0]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="464" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="463" package="">
         <name>lastIndexOf</name>
         <type>function</type>
-        <docblock line="455">
+        <docblock line="454">
           <description><![CDATA[Finds the last position of the search value in the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="455" name="see" description="\fUTF8::rpos()" refers="\fUTF8::rpos()"/>
-          <tag line="455" name="param" description="The string to search for." type="string" variable="$needle">
+          <tag line="454" name="see" description="\fUTF8::rpos()" refers="\fUTF8::rpos()"/>
+          <tag line="454" name="param" description="The string to search for." type="string" variable="$needle">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="455" name="param" description="The character position to start searching from." type="integer" variable="$offset">
+          <tag line="454" name="param" description="The character position to start searching from." type="integer" variable="$offset">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="455" name="return" description="The character position." type="integer">
+          <tag line="454" name="return" description="The character position." type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
-        <argument line="464">
+        <argument line="463">
           <name>$needle</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="464">
+        <argument line="463">
           <name>$offset</name>
           <default><![CDATA[0]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="480" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="479" package="">
         <name>reverse</name>
         <type>function</type>
-        <docblock line="474">
+        <docblock line="473">
           <description><![CDATA[Reverses the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="474" name="see" description="\fUTF8::rev()" refers="\fUTF8::rev()"/>
-          <tag line="474" name="return" description="The string reversed." type="\sString">
+          <tag line="473" name="see" description="\fUTF8::rev()" refers="\fUTF8::rev()"/>
+          <tag line="473" name="return" description="The string reversed." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="494" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="493" package="">
         <name>wordWrap</name>
         <type>function</type>
-        <docblock line="484">
+        <docblock line="483">
           <description><![CDATA[Wraps the string to the specified width.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="484" name="see" description="\fUTF8::wordwrap()" refers="\fUTF8::wordwrap()"/>
-          <tag line="484" name="param" description="The width to wrap too." type="integer" variable="$width">
+          <tag line="483" name="see" description="\fUTF8::wordwrap()" refers="\fUTF8::wordwrap()"/>
+          <tag line="483" name="param" description="The width to wrap too." type="integer" variable="$width">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="484" name="param" description="The break to insert." type="string" variable="$break">
+          <tag line="483" name="param" description="The break to insert." type="string" variable="$break">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="484" name="param" description="If TRUE we will cut the words to match the width." type="boolean" variable="$cut">
+          <tag line="483" name="param" description="If TRUE we will cut the words to match the width." type="boolean" variable="$cut">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="484" name="return" description="The string with all lowercase characters to uppercase." type="\sString">
+          <tag line="483" name="return" description="The string with all lowercase characters to uppercase." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="494">
+        <argument line="493">
           <name>$width</name>
           <default><![CDATA[75]]></default>
           <type/>
         </argument>
-        <argument line="494">
+        <argument line="493">
           <name>$break</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
-        <argument line="494">
+        <argument line="493">
           <name>$cut</name>
           <default><![CDATA[FALSE]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="508" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="507" package="">
         <name>pad</name>
         <type>function</type>
-        <docblock line="498">
+        <docblock line="497">
           <description><![CDATA[Pads the string to the number of characters specified.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="498" name="see" description="\fUTF8::pad()" refers="\fUTF8::pad()"/>
-          <tag line="498" name="param" description="The character length to pad." type="integer" variable="$pad_length">
+          <tag line="497" name="see" description="\fUTF8::pad()" refers="\fUTF8::pad()"/>
+          <tag line="497" name="param" description="The character length to pad." type="integer" variable="$pad_length">
             <type by_reference="false">integer</type>
           </tag>
-          <tag line="498" name="param" description="The string to pad with our string." type="string" variable="$pad_string">
+          <tag line="497" name="param" description="The string to pad with our string." type="string" variable="$pad_string">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="498" name="param" description="Types: 'left','right','both'." type="string" variable="$pad_type">
+          <tag line="497" name="param" description="Types: 'left','right','both'." type="string" variable="$pad_type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="498" name="return" description="The padded string." type="\sString">
+          <tag line="497" name="return" description="The padded string." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
-        <argument line="508">
+        <argument line="507">
           <name>$pad_length</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="508">
+        <argument line="507">
           <name>$pad_string</name>
           <default><![CDATA['']]></default>
           <type/>
         </argument>
-        <argument line="508">
+        <argument line="507">
           <name>$pad_type</name>
           <default><![CDATA['right']]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="518" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="517" package="">
         <name>clean</name>
         <type>function</type>
-        <docblock line="512">
+        <docblock line="511">
           <description><![CDATA[Removes any non-UTF-8 characters.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="512" name="see" description="\fUTF8::clean()" refers="\fUTF8::clean()"/>
-          <tag line="512" name="return" description="The cleaned string." type="\sString">
+          <tag line="511" name="see" description="\fUTF8::clean()" refers="\fUTF8::clean()"/>
+          <tag line="511" name="return" description="The cleaned string." type="\sString">
             <type by_reference="false">\sString</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="529" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="528" package="">
         <name>__toString</name>
         <type>function</type>
-        <docblock line="522">
+        <docblock line="521">
           <description><![CDATA[Returns the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="522" name="internal" description=""/>
-          <tag line="522" name="return" description="The string defined." type="string">
+          <tag line="521" name="internal" description=""/>
+          <tag line="521" name="return" description="The string defined." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="538" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="537" package="">
         <name>getLength</name>
         <type>function</type>
-        <docblock line="533">
+        <docblock line="532">
           <description><![CDATA[Gets the length of the string.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="533" name="return" description="The string length." type="integer">
+          <tag line="532" name="return" description="The string length." type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="551" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="550" package="">
         <name>__get</name>
         <type>function</type>
-        <docblock line="542">
+        <docblock line="541">
           <description><![CDATA[This is only for getting the 'length' attribute, to be similar to
   JavaScript.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="542" name="internal" description=""/>
-          <tag line="542" name="param" description="Key to get value of. Only 'length' is accepted." type="string" variable="$key">
+          <tag line="541" name="internal" description=""/>
+          <tag line="541" name="param" description="Key to get value of. Only 'length' is accepted." type="string" variable="$key">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="542" name="return" description="The length of the array or NULL if the key is invalid." type="mixed">
+          <tag line="541" name="return" description="The length of the array or NULL if the key is invalid." type="mixed">
             <type by_reference="false">mixed</type>
           </tag>
         </docblock>
-        <argument line="551">
+        <argument line="550">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="565" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="564" package="">
         <name>getIterator</name>
         <type>function</type>
-        <docblock line="558">
+        <docblock line="557">
           <description><![CDATA[So the object can be used with foreach.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="558" name="internal" description=""/>
-          <tag line="558" name="return" description="Iterator object." type="\ArrayIterator">
+          <tag line="557" name="internal" description=""/>
+          <tag line="557" name="return" description="Iterator object." type="\ArrayIterator">
             <type by_reference="false">\ArrayIterator</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="573" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="572" package="">
         <name>count</name>
         <type>function</type>
-        <docblock line="568">
+        <docblock line="567">
           <description><![CDATA[Returns the length of the string]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="568" name="return" description="The length of the string" type="integer">
+          <tag line="567" name="return" description="The length of the string" type="integer">
             <type by_reference="false">integer</type>
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="583" package="">
+      <method final="false" abstract="false" static="false" visibility="private" namespace="default" line="582" package="">
         <name>encode</name>
         <type>function</type>
-        <docblock line="577">
+        <docblock line="576">
           <description><![CDATA[Executes the encoder functions/methods.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="577" name="param" description="The encoder that will encode the string." type="string" variable="$encoder">
+          <tag line="576" name="param" description="The encoder that will encode the string." type="string" variable="$encoder">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="577" name="return" description="The encoded string." type="string">
+          <tag line="576" name="return" description="The encoded string." type="string">
             <type by_reference="false">string</type>
           </tag>
         </docblock>
-        <argument line="583">
+        <argument line="582">
           <name>$encoder</name>
           <default><![CDATA[]]></default>
           <type/>
@@ -5414,7 +5413,7 @@
       </method>
     </class>
   </file>
-  <file path="sutra/classes/sCRUDForm.php" hash="6dd922e0e514c00b7d940b52e8f89bb5" package="Sutra">
+  <file path="sutra/classes/sCRUDForm.php" hash="46f9c48cedb98952c36c5312167a0df1" package="Sutra">
     <docblock line="2">
       <description><![CDATA[Creates an HTML form based on an fActiveRecord class.]]></description>
       <long-description><![CDATA[]]></long-description>
@@ -5795,7 +5794,7 @@
         <name>validateRequestMethod</name>
         <type>function</type>
         <docblock line="253">
-          <description><![CDATA[Valides the request method.]]></description>
+          <description><![CDATA[Validates the request method.]]></description>
           <long-description><![CDATA[]]></long-description>
           <tag line="253" name="throws" description="If the request method is invalid." type="\fProgrammerException">
             <type by_reference="false">\fProgrammerException</type>
@@ -6150,263 +6149,263 @@
           </tag>
         </docblock>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="656" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="655" package="">
         <name>hideFields</name>
         <type>function</type>
-        <docblock line="650">
+        <docblock line="649">
           <description><![CDATA[Hides fields. Allows for variable arguments.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="650" name="param" description="Name of the field." type="string|array" variable="$name">
+          <tag line="649" name="param" description="Name of the field." type="string|array" variable="$name">
             <type by_reference="false">string</type>
             <type by_reference="false">array</type>
           </tag>
-          <tag line="650" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="649" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="656">
+        <argument line="655">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="677" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="676" package="">
         <name>addAction</name>
         <type>function</type>
-        <docblock line="669">
+        <docblock line="668">
           <description><![CDATA[Adds a button.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="669" name="param" description="Action name. This is for use with fRequest during the request." type="string" variable="$action_name">
+          <tag line="668" name="param" description="Action name. This is for use with fRequest during the request." type="string" variable="$action_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="669" name="param" description="Label of the button." type="string" variable="$label">
+          <tag line="668" name="param" description="Label of the button." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="669" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="668" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="677">
+        <argument line="676">
           <name>$action_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="677">
+        <argument line="676">
           <name>$label</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="694" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="693" package="">
         <name>addField</name>
         <type>function</type>
-        <docblock line="685">
+        <docblock line="684">
           <description><![CDATA[Adds a custom field.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="685" name="param" description="Name attribute of the field." type="string" variable="$name">
+          <tag line="684" name="param" description="Name attribute of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="685" name="param" description="Label text." type="string" variable="$label">
+          <tag line="684" name="param" description="Label text." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="685" name="param" description="Type of the field." type="string" variable="$type">
+          <tag line="684" name="param" description="Type of the field." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="685" name="param" description="Attributes array." type="array" variable="$attr">
+          <tag line="684" name="param" description="Attributes array." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="685" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="684" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="694">
+        <argument line="693">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="694">
+        <argument line="693">
           <name>$label</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="694">
+        <argument line="693">
           <name>$type</name>
           <default><![CDATA['text']]></default>
           <type/>
         </argument>
-        <argument line="694">
+        <argument line="693">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="717" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="716" package="">
         <name>enableCSRFField</name>
         <type>function</type>
-        <docblock line="709">
+        <docblock line="708">
           <description><![CDATA[Enables adding a CSRF field.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="709" name="param" description="If the CSRF field should be added." type="boolean" variable="$bool">
+          <tag line="708" name="param" description="If the CSRF field should be added." type="boolean" variable="$bool">
             <type by_reference="false">boolean</type>
           </tag>
-          <tag line="709" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="708" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="709" name="param" description="URL for the CSRF." type="string" variable="$url">
+          <tag line="708" name="param" description="URL for the CSRF." type="string" variable="$url">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="709" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="708" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="717">
+        <argument line="716">
           <name>$bool</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="717">
+        <argument line="716">
           <name>$name</name>
           <default><![CDATA['csrf']]></default>
           <type/>
         </argument>
-        <argument line="717">
+        <argument line="716">
           <name>$url</name>
           <default><![CDATA[NULL]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="733" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="732" package="">
         <name>overrideFieldType</name>
         <type>function</type>
-        <docblock line="724">
+        <docblock line="723">
           <description><![CDATA[Override a field types attributes. This is mainly so that an e-mail or
   date field column will render a different field from the default.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="724" name="param" description="Name of the field." type="string" variable="$name">
+          <tag line="723" name="param" description="Name of the field." type="string" variable="$name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="724" name="param" description="Type of the field." type="string" variable="$type">
+          <tag line="723" name="param" description="Type of the field." type="string" variable="$type">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="724" name="param" description="Array of other attributes." type="array" variable="$attr">
+          <tag line="723" name="param" description="Array of other attributes." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="724" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="723" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="733">
+        <argument line="732">
           <name>$name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="733">
+        <argument line="732">
           <name>$type</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="733">
+        <argument line="732">
           <name>$attr</name>
           <default><![CDATA[array()]]></default>
           <type>array</type>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="763" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="762" package="">
         <name>overrideLabel</name>
         <type>function</type>
-        <docblock line="756">
+        <docblock line="755">
           <description><![CDATA[Override the label name for a column.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="756" name="param" description="Column name." type="string" variable="$column_name">
+          <tag line="755" name="param" description="Column name." type="string" variable="$column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="756" name="param" description="Label to use." type="string" variable="$label">
+          <tag line="755" name="param" description="Label to use." type="string" variable="$label">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="756" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="755" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="763">
+        <argument line="762">
           <name>$column_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="763">
+        <argument line="762">
           <name>$label</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="777" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="776" package="">
         <name>overrideRelatedColumn</name>
         <type>function</type>
-        <docblock line="769">
+        <docblock line="768">
           <description><![CDATA[Override the related column for a related table.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="769" name="param" description="Column name of this table." type="string" variable="$column_name">
+          <tag line="768" name="param" description="Column name of this table." type="string" variable="$column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="769" name="param" description="Column name that should be read from the related table." type="string" variable="$related_table_column_name">
+          <tag line="768" name="param" description="Column name that should be read from the related table." type="string" variable="$related_table_column_name">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="769" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="768" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="777">
+        <argument line="776">
           <name>$column_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="777">
+        <argument line="776">
           <name>$related_table_column_name</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="792" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="791" package="">
         <name>setFieldOrder</name>
         <type>function</type>
-        <docblock line="786">
+        <docblock line="785">
           <description><![CDATA[Sets the field order.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="786" name="param" description="Array of field names." type="array|string" variable="$fields">
+          <tag line="785" name="param" description="Array of field names." type="array|string" variable="$fields">
             <type by_reference="false">array</type>
             <type by_reference="false">string</type>
           </tag>
-          <tag line="786" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="785" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="792">
+        <argument line="791">
           <name>$fields</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
       </method>
-      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="815" package="">
+      <method final="false" abstract="false" static="false" visibility="public" namespace="default" line="814" package="">
         <name>setFieldAttributes</name>
         <type>function</type>
-        <docblock line="808">
+        <docblock line="807">
           <description><![CDATA[Set a specific field's attributes.]]></description>
           <long-description><![CDATA[]]></long-description>
-          <tag line="808" name="param" description="Field name." type="string" variable="$field">
+          <tag line="807" name="param" description="Field name." type="string" variable="$field">
             <type by_reference="false">string</type>
           </tag>
-          <tag line="808" name="param" description="Array of attribute values." type="array" variable="$attr">
+          <tag line="807" name="param" description="Array of attribute values." type="array" variable="$attr">
             <type by_reference="false">array</type>
           </tag>
-          <tag line="808" name="return" description="The object to allow method chaining." type="\sCRUDForm">
+          <tag line="807" name="return" description="The object to allow method chaining." type="\sCRUDForm">
             <type by_reference="false">\sCRUDForm</type>
           </tag>
         </docblock>
-        <argument line="815">
+        <argument line="814">
           <name>$field</name>
           <default><![CDATA[]]></default>
           <type/>
         </argument>
-        <argument line="815">
+        <argument line="814">
           <name>$attr</name>
           <default><![CDATA[]]></default>
           <type>array</type>
