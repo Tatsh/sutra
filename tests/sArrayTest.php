@@ -58,6 +58,12 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
     }
   }
 
+  public function testArraySetting() {
+    $a = new sArray(1, 2, 3);
+    $a[0] = 2;
+    $this->assertEquals(array(2,2,3), $a->getData());
+  }
+
   /**
    * @expectedException fProgrammerException
    * @expectedExceptionMessage Offsets can only be integer. Given: "1.2"
