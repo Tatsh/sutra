@@ -466,9 +466,14 @@ class sHTML extends fHTML {
     foreach ($matches as $potentials) {
       foreach ($potentials as $potential) {
         $potential = trim($potential);
+        $length = strlen($potential);
 
-        if (strlen($potential) != 0) {
-          $str .= '<p>'.htmlspecialchars($potential, ENT_QUOTES, 'UTF-8').'</p>';
+        // Attempt to leave HTML tags alone; assume they are block-level
+        if ($length > 0 && $potential[0] !== '<' && $potential[$length - 1] !== '>') {
+          $str .= '<p>'.fHTML::prepare($potential).'</p>';
+        }
+        else {
+          $str .= fHTML::prepare($potential);
         }
       }
       break;
