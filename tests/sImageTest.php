@@ -98,7 +98,7 @@ CODE;
 
     $renamed = self::$image->flip(sImage::FLIP_HORIZONTAL);
     $this->assertNotEquals(self::$image->getName(), $renamed->getName());
-    $this->assertNotEquals(self::$image->read(), $renamed->read());
+    $this->assertNotEquals(md5(self::$image->read()), md5($renamed->read()));
     $renamed->delete();
   }
 
@@ -114,21 +114,21 @@ CODE;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_VERTICAL, TRUE, 'imagemagick');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
 
     $new = clone self::$image;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_HORIZONTAL, 90, TRUE, 'imagemagick');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
 
     $new = clone self::$image;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_BOTH, 90, TRUE, 'imagemagick');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
   }
 
@@ -142,7 +142,7 @@ CODE;
 
     $renamed = self::$image->flip(sImage::FLIP_HORIZONTAL, 90, FALSE, 'gd');
     $this->assertNotEquals(self::$image->getName(), $renamed->getName());
-    $this->assertNotEquals(self::$image->read(), $renamed->read());
+    $this->assertNotEquals(md5(self::$image->read()), md5($renamed->read()));
     $renamed->delete();
   }
 
@@ -169,21 +169,21 @@ CODE;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_VERTICAL, TRUE, 'gd');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
 
     $new = clone self::$image;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_HORIZONTAL, 90, TRUE, 'gd');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
 
     $new = clone self::$image;
     $new->rename(self::$image->getName(), FALSE);
     $old_data = $new->read();
     $new->flip(sImage::FLIP_BOTH, 90, TRUE, 'gd');
-    $this->assertNotEquals($new->read(), $old_data);
+    $this->assertNotEquals(md5($new->read()), md5($old_data));
     $new->delete();
   }
 
@@ -205,7 +205,7 @@ CODE;
   public function testFlipJPEG() {
     $image = new sImage(self::IMAGE_FILE_NO_EXIF_JPG);
     $new = $image->flip(sImage::FLIP_HORIZONTAL, 90, FALSE, 'gd');
-    $this->assertNotEquals($new->read(), $image->read());
+    $this->assertNotEquals(md5($new->read()), md5($image->read()));
     $this->assertNotEquals($new->getName(), $image->getName());
     $new->delete();
   }
@@ -215,7 +215,7 @@ CODE;
    */
   public function testFlipNone() {
     $file = self::$image->flip(sImage::FLIP_NONE);
-    $this->assertEquals($file->read(), self::$image->read());
+    $this->assertEquals(md5($file->read()), md5(self::$image->read()));
   }
 
   /**
@@ -241,42 +241,42 @@ CODE;
     $image = new sImage('./resources/rotate-this-no-exif.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP, TRUE);
     $this->assertEquals($image, $file);
-    $this->assertEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
 
     $image = clone self::$image;
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
 
     $image = clone self::$image;
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP, TRUE);
     $this->assertEquals($image, $file);
-    $this->assertEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
 
     // Original is mirrored horizontally
     $image = new sImage('./resources/rotate-this-exif-case-2.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals($image->read(), $file->read());
 
     // Original is upside-down and mirrored horizontally
     $image = new sImage('./resources/rotate-this-exif-case-4.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
     $this->assertEquals($image->getHeight(), $file->getHeight());
 
     // Original is mirrored horizontally and rotated CCW 90
     $image = new sImage('./resources/rotate-this-exif-case-5.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_DOWN);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
     $this->assertNotEquals($image->getHeight(), $file->getHeight());
 
     $image = new sImage('./resources/rotate-this-exif-case-7.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_RIGHT);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals(md5($image->read()), md5($file->read()));
     $this->assertEquals($image->getHeight(), $file->getHeight());
   }
 
@@ -287,7 +287,7 @@ CODE;
     $image = new sImage('./resources/rotate-this-exif-case-3.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_DOWN);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals($image->read(), $file->read());
   }
 
   /**
@@ -297,7 +297,7 @@ CODE;
     $image = new sImage('./resources/rotate-this-exif-case-6.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_UP);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals($image->read(), $file->read());
     $this->assertNotEquals($image->getHeight(), $file->getHeight());
   }
 
@@ -308,7 +308,7 @@ CODE;
     $image = new sImage('./resources/rotate-this-exif-case-8.jpg');
     $file = $image->rotateAccordingToEXIFData(sImage::DIRECTION_UPSIDE_LEFT);
     $this->assertNotEquals($image->getName(), $file->getName());
-    $this->assertNotEquals($image->read(), $file->read());
+    $this->assertEquals($image->read(), $file->read());
     $this->assertEquals($image->getHeight(), $file->getHeight());
   }
 }
