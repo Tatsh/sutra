@@ -63,6 +63,7 @@ class sCRUDForm {
     'color' => FALSE,
     'checkbox' => FALSE,
     'file' => FALSE,
+    'hidden' => FALSE,
   );
 
   /**
@@ -342,7 +343,7 @@ class sCRUDForm {
    * @return boolean If the field is required.
    */
   private static function isRequiredField($type, $default_values = NULL) {
-    if (isset($default_values) && $type != 'boolean') {
+    if (!isset($default_values) && $type != 'boolean') {
       return TRUE;
     }
     return FALSE;
