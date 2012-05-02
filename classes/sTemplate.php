@@ -919,7 +919,7 @@ class sTemplate {
     $vars = array_merge($vars, self::callCallbacks('page-'.$route));
 
     // Do not let a template override the title or content
-    $vars['title'] = $variables['title'];
+    $vars['title'] = fHTML::encode($variables['title']);
     $vars['content'] = $variables['content'];
     extract($vars);
 
