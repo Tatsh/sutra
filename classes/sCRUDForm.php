@@ -497,8 +497,8 @@ class sCRUDForm {
     $this->active_record = $class;
     $this->form_attr = $attr;
     $this->class_name = fORM::getClass($class);
-    $this->table_name = fORM::tablize($class);
-    $this->schema = fORMSchema::retrieve($class);
+    $this->table_name = fORM::tablize($this->class_name);
+    $this->schema = fORMSchema::retrieve($this->class_name);
     $this->table_columns = $this->schema->getColumnInfo($this->table_name);
     $this->table_relationships = $this->schema->getRelationships($this->table_name);
     $this->action_url = isset($action) ? (string)$action : fURL::get();
