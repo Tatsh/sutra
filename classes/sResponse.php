@@ -21,6 +21,7 @@ class sResponse {
   const sendNotFoundHeader      = 'sResponse::sendNotFoundHeader';
   const sendNotModifiedHeader   = 'sResponse::sendNotModifiedHeader';
   const sendPlainTextResponse   = 'sResponse::sendPlainTextResponse';
+  const sendServerErrorHeader   = 'sResponse::sendServerErrorHeader';
   const setEncodeCallback       = 'sResponse::setEncodeCallback';
 
   /**
@@ -199,6 +200,15 @@ class sResponse {
    */
   public static function sendNotFoundHeader() {
     header('HTTP/1.1 404 Not Found');
+  }
+
+  /**
+   * Sends a 500 server error header.
+   *
+   * @return void
+   */
+  public static function sendServerErrorHeader() {
+    header('HTTP/1.1 500 Internal Server Error');
   }
 
   /**
