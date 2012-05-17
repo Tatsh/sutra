@@ -292,13 +292,15 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * @param mixed $user_data User data to add as third argument to callback.
    * @return void
    */
-  private static function walkRecursiveCallback(sArray $instance, $array, $func, $user_data = NULL) {
+  private static function walkRecursiveCallback(sArray $instance, &$array, $func, $user_data = NULL) {
     if (!self::isArrayLike($array)) {
       return;
     }
+    
+    $func = fCore::callback($func);
 
     foreach ($array as $key => $value) {
-      fCore::call($func, array($key, $value, $user_data));
+      call_user_func_array($func, array(&$value, $key, $user_data));
       if (self::isArrayLike($value)) {
         self::walkRecursiveCallback($instance, $value, $func, $user_data);
       }
@@ -316,8 +318,9 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * @return sArray The object to allow method chaining.
    */
   public function walkRecursive($func, $user_data = NULL) {
+    $func = fCore::callback($func);
     foreach ($this->data as $key => $value) {
-      fCore::call($func, array($key, $value, $user_data));
+      call_user_func_array($func, array(&$value, $key, $user_data));
       self::walkRecursiveCallback($this, $value, $func, $user_data);
     }
     return $this;

@@ -160,7 +160,14 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
   }
 
   public static function walkCallback($a, $b, $user_data = NULL) {
-    print $a.'=>'.$b.',';
+    if (is_array($a)) {
+      print join(',', $a);
+    }
+    else {
+      print $a;
+    }
+    print '=>';
+    print $b.',';
   }
 
   public function testWalk() {
@@ -180,7 +187,7 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWalkRecursive() {
-    $this->expectOutputString('0=>1,1=>2,2=>3,3=>Array,0=>a,4=>a,1,0=>a,1=>Array,0=>1,5=>testSpecialContainer2,6=>testSpecialContainer3,');
+    $this->expectOutputString('1=>0,2=>1,3=>2,a=>3,a=>0,a,1=>4,a=>0,1=>1,1=>0,testSpecialContainer2=>5,testSpecialContainer3=>6,');
     $a = new sArray(1,2,3, array('a'), new sArray('a', array(1)), new testSpecialContainer2, new testSpecialContainer3);
     $this->assertEquals($a, $a->walkRecursive(self::walkCallback));
   }
