@@ -235,16 +235,19 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
   /**
    * Applies a user-defined function to each element of this object.
    *
-   * @param string $func Callback function. The callback takes two parameters:
-   *   the sArray parameter first (can be a reference) and the key second.
+   * @param string|array $func Callback function. The callback takes two
+   *   parameters: the value of the key, and the key second. If the value must
+   *   be changed, then it should be specified as a reference.
    * @param mixed $user_data If specified, this will be passed to the callback
    *   as the third parameter.
    * @return sArray The object to allow method chaining.
    * @SuppressWarnings(PHPMD.UnusedLocalVariable)
    */
   public function walk($func, $user_data = NULL) {
+    $func = fCore::callback($func);
     foreach ($this->data as $key => $value) {
-      fCore::call($func, array($this, $key, $user_data));
+      call_user_func_array($func, array(&$value, $key, $user_data));
+      $this->data[$key] = $value;
     }
     $this->data = array_values($this->data);
     return $this;

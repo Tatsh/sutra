@@ -38,6 +38,7 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
   const filterCallback1 = 'sArrayTest::filterCallback1';
   const filterCallback2 = 'sArrayTest::filterCallback2';
   const mapCallback = 'sArrayTest::mapCallback';
+  const walkCallbackRef = 'sArrayTest::walkCallbackRef';
 
   public function testGetData() {
     $a = new sArray(1, 2, 3);
@@ -163,9 +164,19 @@ class sArrayTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testWalk() {
-    $this->expectOutputString('1,2,3=>0,1,2,3=>1,1,2,3=>2,');
+    $this->expectOutputString('1=>0,2=>1,3=>2,');
     $a = new sArray(1,2,3);
     $this->assertEquals($a, $a->walk(self::walkCallback));
+  }
+
+  public static function walkCallbackRef(&$value, $key, $user_data = NULL) {
+    $value += 3;
+  }
+
+  public function testWalkModify() {
+    $a = new sArray(1,2,3);
+    $b = array(4,5,6);
+    $this->assertEquals($b, $a->walk(self::walkCallbackRef)->getData());
   }
 
   public function testWalkRecursive() {
