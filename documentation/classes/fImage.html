@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">161</span></a></li>
+                <span class="label label-info">160</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">2</span>
+                <span class="label label-info">3</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -104,13 +104,13 @@
 <li class="method public inherited"><a href="#valid" title="valid :: Returns if the file has any lines left (required by iterator interface)"><span class="description">Returns if the file has any lines left (required by iterator interface)</span><pre>valid()</pre></a></li>
 <li class="method public inherited"><a href="#write" title="write :: Writes the provided data to the file"><span class="description">Writes the provided data to the file</span><pre>write()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
+<li class="method protected "><a href="#determineProcessor" title="determineProcessor :: Determines what processor to use for image manipulation"><span class="description">Determines what processor to use for image manipulation</span><pre>determineProcessor()</pre></a></li>
 <li class="method protected "><a href="#getInfo" title="getInfo :: Gets the dimensions and type of an image stored on the filesystem"><span class="description">Gets the dimensions and type of an image stored on the filesystem</span><pre>getInfo()</pre></a></li>
 <li class="method protected inherited"><a href="#tossIfDeleted" title="tossIfDeleted :: Throws an fProgrammerException if the file has been deleted"><span class="description">Throws an fProgrammerException if the file has been deleted</span><pre>tossIfDeleted()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#checkImageMagickBinary" title="checkImageMagickBinary :: Checks to make sure we can get to and execute the ImageMagick convert binary"><span class="description">Checks to make sure we can get to and execute the ImageMagick convert binary</span><pre>checkImageMagickBinary()</pre></a></li>
 <li class="method private inherited"><a href="#determineMimeTypeByContents" title="determineMimeTypeByContents :: Looks for specific bytes in a file to determine the mime type of the file"><span class="description">Looks for specific bytes in a file to determine the mime type of the file</span><pre>determineMimeTypeByContents()</pre></a></li>
 <li class="method private inherited"><a href="#determineMimeTypeByExtension" title="determineMimeTypeByExtension :: Uses the extension of the all-text file to determine the mime type"><span class="description">Uses the extension of the all-text file to determine the mime type</span><pre>determineMimeTypeByExtension()</pre></a></li>
-<li class="method private "><a href="#determineProcessor" title="determineProcessor :: Determines what processor to use for image manipulation"><span class="description">Determines what processor to use for image manipulation</span><pre>determineProcessor()</pre></a></li>
 <li class="method private "><a href="#getCurrentDimensions" title="getCurrentDimensions :: Gets the dimensions of the image as of the last modification"><span class="description">Gets the dimensions of the image as of the last modification</span><pre>getCurrentDimensions()</pre></a></li>
 <li class="method private "><a href="#getImageType" title="getImageType :: Gets the image type from a file by looking at the file contents"><span class="description">Gets the image type from a file by looking at the file contents</span><pre>getImageType()</pre></a></li>
 <li class="method private "><a href="#isAnimatedGif" title="isAnimatedGif :: Checks if the current image is an animated gif"><span class="description">Checks if the current image is an animated gif</span><pre>isAnimatedGif()</pre></a></li>
@@ -1276,6 +1276,12 @@ previous data will be restored.</p></p>
 <code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
 </div></div>
 </div>
+<a name="determineProcessor" id="determineProcessor"></a><div class="element clickable method protected determineProcessor" data-toggle="collapse" data-target=".determineProcessor .collapse">
+<h2>Determines what processor to use for image manipulation</h2>
+<pre>determineProcessor() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+</div>
 <a name="getInfo" id="getInfo"></a><div class="element clickable method protected getInfo" data-toggle="collapse" data-target=".getInfo .collapse">
 <h2>Gets the dimensions and type of an image stored on the filesystem</h2>
 <pre>getInfo(string $image_path, string $element) : mixed</pre>
@@ -1372,12 +1378,6 @@ previous data will be restored.</p></p>
 <div class="subelement response">
 <code>string</code>The mime type of the file</div>
 </div></div>
-</div>
-<a name="determineProcessor" id="determineProcessor"></a><div class="element clickable method private determineProcessor" data-toggle="collapse" data-target=".determineProcessor .collapse">
-<h2>Determines what processor to use for image manipulation</h2>
-<pre>determineProcessor() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
 </div>
 <a name="getCurrentDimensions" id="getCurrentDimensions"></a><div class="element clickable method private getCurrentDimensions" data-toggle="collapse" data-target=".getCurrentDimensions .collapse">
 <h2>Gets the dimensions of the image as of the last modification</h2>
@@ -1607,7 +1607,7 @@ previous data will be restored.</p></p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-04-30T22:24:57-05:00.<br></footer></div>
+            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
 </div>
 </body>
 </html>
