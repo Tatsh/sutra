@@ -222,8 +222,16 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
     $this->assertEquals($expected, $obj->values());
   }
 
-  public static function walkCallback($key, $value, $user_data = NULL) {
-    print $key.'=>'.$value.',';
+  public static function walkCallback($value, $key, $user_data = NULL) {
+    if (is_array($value)) { // avoid 'Array to string conversion' in PHP 5.4
+      foreach ($value as $k => $v) {
+        print $k.'=>'.(is_array($v) ? join(',', $v) : $v).',';
+      }
+    }
+    else {
+      print $key;
+      print '=>'.$value.',';
+    }
 
     if ($user_data) {
       print ':';
@@ -234,7 +242,7 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
     $contained = new testSpecialContainer4;
     $contained['a'] = 1;
 
-    $this->expectOutputString('sObject=>a,sObject=>b,sObject=>d,sObject=>e,');
+    $this->expectOutputString('a=>sObject,b=>sObject,d=>sObject,e=>sObject,');
     $obj = new sObject(array('a' => 'b', 'b' => 'c', 'd' => array(1, array(2, 3)), 'e' => $contained));
     $obj->walk('sObjectTest::walkCallback');
   }
@@ -244,7 +252,7 @@ class sObjectTest extends PHPUnit_Framework_TestCase {
     $contained['a'] = 1;
     $non_array = new testSpecialContainer5;
 
-    $this->expectOutputString('a=>b,b=>c,d=>Array,0=>1,1=>Array,0=>2,1=>3,e=>sObject,b=>c,f=>testSpecialContainer4,a=>1,g=>testSpecialContainer5,');
+    $this->expectOutputString('a=>b,b=>c,0=>1,1=>2,3,0=>1,0=>2,1=>3,0=>2,1=>3,e=>sObject,b=>c,f=>testSpecialContainer4,a=>1,g=>testSpecialContainer5,');
     $obj1 = new sObject(array('b' => 'c'));
     $obj = new sObject(array('a' => 'b', 'b' => 'c', 'd' => array(1, array(2, 3)), 'e' => $obj1, 'f' => $contained, 'g' => $non_array));
     $obj->walkRecursive('sObjectTest::walkCallback');

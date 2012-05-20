@@ -260,14 +260,17 @@ class sObject implements ArrayAccess, IteratorAggregate, Countable {
    * @param mixed $array_like Mixed variable, checked if is array-like.
    * @param string $func Function to call on each item.
    * @param mixed $user_data User data to add as third argument to callback.
+   * @return void
    */
-  private static function walkRecursiveCallback(sObject $instance, $array_like, $func, $user_data = NULL) {
+  private static function walkRecursiveCallback(sObject $instance, &$array_like, $func, $user_data = NULL) {
     if (!self::isArrayLike($array_like)) {
       return;
     }
 
+    $func = fCore::callback($func);
+
     foreach ($array_like as $key => $value) {
-      fCore::call($func, array($key, $value, $user_data));
+      call_user_func_array($func, array(&$value, $key, $user_data));
       if (self::isArrayLike($value)) {
         self::walkRecursiveCallback($instance, $value, $func, $user_data);
       }
@@ -285,8 +288,9 @@ class sObject implements ArrayAccess, IteratorAggregate, Countable {
    * @return sObject The object to allow method chaining.
    */
   public function walkRecursive($func, $user_data = NULL) {
+    $func = fCore::callback($func);
     foreach ($this->data as $key => $value) {
-      fCore::call($func, array($key, $value, $user_data));
+      call_user_func_array($func, array(&$value, $key, $user_data));
       self::walkRecursiveCallback($this, $value, $func, $user_data);
     }
     return $this;
