@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,29 +59,13 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Create the XML object from a string, fFile or URL"><span class="description">Create the XML object from a string, fFile or URL</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: Allows access to the text content of a child tag"><span class="description">Allows access to the text content of a child tag</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#__isset" title="__isset :: The child element name (`$name`) may start with a namespace prefix and a
-`:` to indicate what namespace it is part of. A blank namespace prefix
-(i.e. an element name starting with `:`) is treated as the XML default
-namespace."><span class="description">The child element name (`$name`) may start with a namespace prefix and a
-`:` to indicate what namespace it is part of. A blank namespace prefix
-(i.e. an element name starting with `:`) is treated as the XML default
-namespace.</span><pre>__isset()</pre></a></li>
-<li class="method public "><a href="#__set" title="__set :: Prevents users from trying to set elements"><span class="description">Prevents users from trying to set elements</span><pre>__set()</pre></a></li>
-<li class="method public "><a href="#__sleep" title="__sleep :: The XML needs to be made into a string before being serialized"><span class="description">The XML needs to be made into a string before being serialized</span><pre>__sleep()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Gets the string inside the root XML element"><span class="description">Gets the string inside the root XML element</span><pre>__toString()</pre></a></li>
-<li class="method public "><a href="#__unset" title="__unset :: Prevents users from trying to unset elements"><span class="description">Prevents users from trying to unset elements</span><pre>__unset()</pre></a></li>
-<li class="method public "><a href="#__wakeup" title="__wakeup :: The XML needs to be made into a DOMElement when woken up"><span class="description">The XML needs to be made into a DOMElement when woken up</span><pre>__wakeup()</pre></a></li>
 <li class="method public "><a href="#addCustomPrefix" title="addCustomPrefix :: Adds a custom namespace prefix to full namespace mapping"><span class="description">Adds a custom namespace prefix to full namespace mapping</span><pre>addCustomPrefix()</pre></a></li>
 <li class="method public "><a href="#encode" title="encode :: Encodes content for display in a UTF-8 encoded XML document"><span class="description">Encodes content for display in a UTF-8 encoded XML document</span><pre>encode()</pre></a></li>
 <li class="method public "><a href="#getName" title="getName :: Returns the name of the current element"><span class="description">Returns the name of the current element</span><pre>getName()</pre></a></li>
 <li class="method public "><a href="#getNamespace" title="getNamespace :: Returns the namespace of the current element"><span class="description">Returns the namespace of the current element</span><pre>getNamespace()</pre></a></li>
 <li class="method public "><a href="#getPrefix" title="getPrefix :: Returns the namespace prefix of the current element"><span class="description">Returns the namespace prefix of the current element</span><pre>getPrefix()</pre></a></li>
 <li class="method public "><a href="#getText" title="getText :: Returns the string text of the current element"><span class="description">Returns the string text of the current element</span><pre>getText()</pre></a></li>
-<li class="method public "><a href="#offsetExists" title="offsetExists :: Provides functionality for isset() and empty() (required by arrayaccess interface)"><span class="description">Provides functionality for isset() and empty() (required by arrayaccess interface)</span><pre>offsetExists()</pre></a></li>
-<li class="method public "><a href="#offsetGet" title="offsetGet :: Provides functionality for get [index] syntax (required by ArrayAccess interface)"><span class="description">Provides functionality for get [index] syntax (required by ArrayAccess interface)</span><pre>offsetGet()</pre></a></li>
-<li class="method public "><a href="#offsetSet" title="offsetSet :: Required by ArrayAccess interface"><span class="description">Required by ArrayAccess interface</span><pre>offsetSet()</pre></a></li>
-<li class="method public "><a href="#offsetUnset" title="offsetUnset :: Required by ArrayAccess interface"><span class="description">Required by ArrayAccess interface</span><pre>offsetUnset()</pre></a></li>
 <li class="method public "><a href="#sendHeader" title="sendHeader :: Sets the proper `Content-Type` HTTP header for a UTF-8 XML file"><span class="description">Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</span><pre>sendHeader()</pre></a></li>
 <li class="method public "><a href="#toXML" title="toXML :: Returns a well-formed XML string from the current element"><span class="description">Returns a well-formed XML string from the current element</span><pre>toXML()</pre></a></li>
 <li class="method public "><a href="#xpath" title="xpath :: Executes an XPath query on the current element, returning an array of matching elements"><span class="description">Executes an XPath query on the current element, returning an array of matching elements</span><pre>xpath()</pre></a></li>
@@ -108,11 +92,20 @@ does work when returning the value.</span><pre>iconv()</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfXML" id="\fXML"></a><div href="../classes/fXML.html" class="element class">
+<a name="%5CfXML" id="\fXML"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fXML.html">fXML</a>
+</li>
+</ul>
+<div href="../classes/fXML.html" class="element class">
 <p class="short_description">Provides functionality for XML files</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<p class="long_description">This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -132,7 +125,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -181,10 +174,10 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Create the XML object from a string, fFile or URL</h2>
 <pre>__construct(<a href="../classes/fFile.html">\fFile</a> | string $source, \numeric $http_timeout, boolean $fix_entities_encoding) : <a href="../classes/fXML.html">\fXML</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$default_namespace</code> will be used for any sort of methods calls,
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$default_namespace` will be used for any sort of methods calls,
 member access or array access when the element or attribute name does
-not include a <code>:</code>.</p></p>
+not include a `:`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$source</h4>
@@ -205,131 +198,24 @@ not include a <code>:</code>.</p></p>
 <div class="subelement response"><code><a href="../classes/fXML.html">\fXML</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>Allows access to the text content of a child tag</h2>
-<pre>__get(string $name) : <a href="../classes/fXML.html">\fXML</a> | NULL</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The child element name (<code>$name</code>) may start with a namespace prefix and a
-<code>:</code> to indicate what namespace it is part of. A blank namespace prefix
-(i.e. an element name starting with <code>:</code>) is treated as the XML default
-namespace.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The child element to retrieve</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fXML.html">\fXML</a></code><code>NULL</code>The child element requested</div>
-</div></div>
-</div>
-<a name="__isset" id="__isset"></a><div class="element clickable method public __isset" data-toggle="collapse" data-target=".__isset .collapse">
-<h2>The child element name (`$name`) may start with a namespace prefix and a
-`:` to indicate what namespace it is part of. A blank namespace prefix
-(i.e. an element name starting with `:`) is treated as the XML default
-namespace.</h2>
-<pre>__isset(string $name) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The child element to check - see method description for details about namespaces</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the child element is set</div>
-</div></div>
-</div>
-<a name="__set" id="__set"></a><div class="element clickable method public __set" data-toggle="collapse" data-target=".__set .collapse">
-<h2>Prevents users from trying to set elements</h2>
-<pre>__set(string $name, mixed $value) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The element to set</p></div>
-<div class="subelement argument">
-<h4>$value</h4>
-<code>mixed</code><p>The value to set</p></div>
-</div></div>
-</div>
-<a name="__sleep" id="__sleep"></a><div class="element clickable method public __sleep" data-toggle="collapse" data-target=".__sleep .collapse">
-<h2>The XML needs to be made into a string before being serialized</h2>
-<pre>__sleep() : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The members to serialize</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Gets the string inside the root XML element</h2>
 <pre>__toString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The text inside the root element</div>
 </div></div>
 </div>
-<a name="__unset" id="__unset"></a><div class="element clickable method public __unset" data-toggle="collapse" data-target=".__unset .collapse">
-<h2>Prevents users from trying to unset elements</h2>
-<pre>__unset(string $name) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The element to unset</p></div>
-</div></div>
-</div>
-<a name="__wakeup" id="__wakeup"></a><div class="element clickable method public __wakeup" data-toggle="collapse" data-target=".__wakeup .collapse">
-<h2>The XML needs to be made into a DOMElement when woken up</h2>
-<pre>__wakeup() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="addCustomPrefix" id="addCustomPrefix"></a><div class="element clickable method public addCustomPrefix" data-toggle="collapse" data-target=".addCustomPrefix .collapse">
 <h2>Adds a custom namespace prefix to full namespace mapping</h2>
 <pre>addCustomPrefix(string $ns_prefix, string $namespace) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This namespace prefix will be valid for any operation on this object,
-including calls to ::xpath().</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This namespace prefix will be valid for any operation on this object,
+including calls to ::xpath().</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$ns_prefix</h4>
@@ -343,7 +229,7 @@ including calls to ::xpath().</p></p>
 <h2>Encodes content for display in a UTF-8 encoded XML document</h2>
 <pre>encode(string $content) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -358,7 +244,7 @@ including calls to ::xpath().</p></p>
 <h2>Returns the name of the current element</h2>
 <pre>getName() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -369,7 +255,7 @@ including calls to ::xpath().</p></p>
 <h2>Returns the namespace of the current element</h2>
 <pre>getNamespace() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -380,7 +266,7 @@ including calls to ::xpath().</p></p>
 <h2>Returns the namespace prefix of the current element</h2>
 <pre>getPrefix() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -391,104 +277,24 @@ including calls to ::xpath().</p></p>
 <h2>Returns the string text of the current element</h2>
 <pre>getText() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The string text of the current element</div>
 </div></div>
 </div>
-<a name="offsetExists" id="offsetExists"></a><div class="element clickable method public offsetExists" data-toggle="collapse" data-target=".offsetExists .collapse">
-<h2>Provides functionality for isset() and empty() (required by arrayaccess interface)</h2>
-<pre>offsetExists(string $offset) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Offsets refers to an attribute name. Attribute may start with a namespace
-prefix and a <code>:</code> to indicate what namespace the attribute is part of. A
-blank namespace prefix (i.e. an offset starting with <code>:</code>) is treated as
-the XML default namespace.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>string</code><p>The offset to check</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the offset exists</div>
-</div></div>
-</div>
-<a name="offsetGet" id="offsetGet"></a><div class="element clickable method public offsetGet" data-toggle="collapse" data-target=".offsetGet .collapse">
-<h2>Provides functionality for get [index] syntax (required by ArrayAccess interface)</h2>
-<pre>offsetGet(string $offset) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Offsets refers to an attribute name. Attribute may start with a namespace
-prefix and a <code>:</code> to indicate what namespace the attribute is part of. A
-blank namespace prefix (i.e. an offset starting with <code>:</code>) is treated as
-the XML default namespace.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>string</code><p>The attribute to retrieve the value for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The value of the offset</div>
-</div></div>
-</div>
-<a name="offsetSet" id="offsetSet"></a><div class="element clickable method public offsetSet" data-toggle="collapse" data-target=".offsetSet .collapse">
-<h2>Required by ArrayAccess interface</h2>
-<pre>offsetSet(integer | string $offset, $value) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>integerstring</code><p>The offset to set</p></div>
-<div class="subelement argument">
-<h4>$value</h4>
-<code></code>
-</div>
-</div></div>
-</div>
-<a name="offsetUnset" id="offsetUnset"></a><div class="element clickable method public offsetUnset" data-toggle="collapse" data-target=".offsetUnset .collapse">
-<h2>Required by ArrayAccess interface</h2>
-<pre>offsetUnset(integer | string $offset) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>integerstring</code><p>The offset to unset</p></div>
-</div></div>
-</div>
 <a name="sendHeader" id="sendHeader"></a><div class="element clickable method public sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
 <h2>Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</h2>
 <pre>sendHeader() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="toXML" id="toXML"></a><div class="element clickable method public toXML" data-toggle="collapse" data-target=".toXML .collapse">
 <h2>Returns a well-formed XML string from the current element</h2>
 <pre>toXML() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -499,7 +305,7 @@ the XML default namespace.</p></p>
 <h2>Executes an XPath query on the current element, returning an array of matching elements</h2>
 <pre>xpath(string $path, boolean $first_only) : array | string | <a href="../classes/fXML.html">\fXML</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -517,7 +323,7 @@ the XML default namespace.</p></p>
 <h2>Performs an XPath query on the current element, returning the raw results</h2>
 <pre>query(string $path) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -532,7 +338,7 @@ the XML default namespace.</p></p>
 <h2>Fixes HTML entities that aren't XML encoded and fixes ISO-8859-1/Windows-1252 encoded content that does not have an encoding attribute</h2>
 <pre>fixEntitiesEncoding(string $xml) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -549,7 +355,7 @@ does not seem to properly assign the return value to a variable, but
 does work when returning the value.</h2>
 <pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -572,25 +378,25 @@ does work when returning the value.</h2>
 <h2>Custom prefix =&gt; namespace URI mappings</h2>
 <pre>$__custom_prefixes : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24__dom" id="$__dom"> </a><div class="element clickable property protected $__dom" data-toggle="collapse" data-target=".$__dom .collapse">
 <h2>The dom element for this XML</h2>
 <pre>$__dom : <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24__xml" id="$__xml"> </a><div class="element clickable property protected $__xml" data-toggle="collapse" data-target=".$__xml .collapse">
 <h2>The XML string for serialization</h2>
 <pre>$__xml : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24__xpath" id="$__xpath"> </a><div class="element clickable property protected $__xpath" data-toggle="collapse" data-target=".$__xpath .collapse">
 <h2>An XPath object for performing xpath lookups</h2>
 <pre>$__xpath : <a href="http://php.net/manual/en/class.domxpath.php">\DOMXPath</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -598,13 +404,13 @@ does work when returning the value.</h2>
 <h2>encode</h2>
 <pre>encode </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="sendHeader" id="sendHeader"> </a><div class="element clickable constant  sendHeader" data-toggle="collapse" data-target=".sendHeader .collapse">
 <h2>sendHeader</h2>
 <pre>sendHeader </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -612,8 +418,8 @@ does work when returning the value.</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

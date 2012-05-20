@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -65,23 +65,11 @@
 <li class="method public "><a href="#createObject" title="createObject :: Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it"><span class="description">Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it</span><pre>createObject()</pre></a></li>
 <li class="method public "><a href="#formatFilesize" title="formatFilesize :: Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T"><span class="description">Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T</span><pre>formatFilesize()</pre></a></li>
 <li class="method public "><a href="#getPathInfo" title="getPathInfo :: Returns info about a path including dirname, basename, extension and filename"><span class="description">Returns info about a path including dirname, basename, extension and filename</span><pre>getPathInfo()</pre></a></li>
-<li class="method public "><a href="#hookDeletedMap" title="hookDeletedMap :: Hooks a file/directory into the deleted backtrace map entry for that filename"><span class="description">Hooks a file/directory into the deleted backtrace map entry for that filename</span><pre>hookDeletedMap()</pre></a></li>
-<li class="method public "><a href="#hookFilenameMap" title="hookFilenameMap :: Hooks a file/directory name to the filename map"><span class="description">Hooks a file/directory name to the filename map</span><pre>hookFilenameMap()</pre></a></li>
 <li class="method public "><a href="#isInsideTransaction" title="isInsideTransaction :: Indicates if a transaction is in progress"><span class="description">Indicates if a transaction is in progress</span><pre>isInsideTransaction()</pre></a></li>
 <li class="method public "><a href="#makeURLSafe" title="makeURLSafe :: Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and . to _"><span class="description">Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and . to _</span><pre>makeURLSafe()</pre></a></li>
 <li class="method public "><a href="#makeUniqueName" title="makeUniqueName :: Returns a unique name for a file"><span class="description">Returns a unique name for a file</span><pre>makeUniqueName()</pre></a></li>
-<li class="method public "><a href="#recordAppend" title="recordAppend :: Stores what data has been added to a file so it can be removed if there is a rollback"><span class="description">Stores what data has been added to a file so it can be removed if there is a rollback</span><pre>recordAppend()</pre></a></li>
-<li class="method public "><a href="#recordCreate" title="recordCreate :: Keeps a record of created files so they can be deleted up in case of a rollback"><span class="description">Keeps a record of created files so they can be deleted up in case of a rollback</span><pre>recordCreate()</pre></a></li>
-<li class="method public "><a href="#recordDelete" title="recordDelete :: Keeps track of file and directory names to delete when a transaction is committed"><span class="description">Keeps track of file and directory names to delete when a transaction is committed</span><pre>recordDelete()</pre></a></li>
-<li class="method public "><a href="#recordDuplicate" title="recordDuplicate :: Keeps a record of duplicated files so they can be cleaned up in case of a rollback"><span class="description">Keeps a record of duplicated files so they can be cleaned up in case of a rollback</span><pre>recordDuplicate()</pre></a></li>
-<li class="method public "><a href="#recordRename" title="recordRename :: Keeps a temp file in place of the old filename so the file can be restored during a rollback"><span class="description">Keeps a temp file in place of the old filename so the file can be restored during a rollback</span><pre>recordRename()</pre></a></li>
-<li class="method public "><a href="#recordWrite" title="recordWrite :: Keeps backup copies of files so they can be restored if there is a rollback"><span class="description">Keeps backup copies of files so they can be restored if there is a rollback</span><pre>recordWrite()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#rollback" title="rollback :: Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress"><span class="description">Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</span><pre>rollback()</pre></a></li>
 <li class="method public "><a href="#translateToWebPath" title="translateToWebPath :: Takes a filesystem path and translates it to a web path using the rules added"><span class="description">Takes a filesystem path and translates it to a web path using the rules added</span><pre>translateToWebPath()</pre></a></li>
-<li class="method public "><a href="#updateDeletedMap" title="updateDeletedMap :: Updates the deleted backtrace for a file or directory"><span class="description">Updates the deleted backtrace for a file or directory</span><pre>updateDeletedMap()</pre></a></li>
-<li class="method public "><a href="#updateFilenameMap" title="updateFilenameMap :: Updates the filename map, causing all objects representing a file/directory to be updated"><span class="description">Updates the filename map, causing all objects representing a file/directory to be updated</span><pre>updateFilenameMap()</pre></a></li>
-<li class="method public "><a href="#updateFilenameMapForDirectory" title="updateFilenameMapForDirectory :: Updates the filename map recursively, causing all objects representing a directory to be updated"><span class="description">Updates the filename map recursively, causing all objects representing a directory to be updated</span><pre>updateFilenameMapForDirectory()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -120,7 +108,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfFilesystem" id="\fFilesystem"></a><div href="../classes/fFilesystem.html" class="element class">
+<a name="%5CfFilesystem" id="\fFilesystem"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fFilesystem.html">fFilesystem</a>
+</li>
+</ul>
+<div href="../classes/fFilesystem.html" class="element class">
 <p class="short_description">Handles filesystem-level tasks including filesystem transactions and the reference map to keep all fFile and fDirectory objects in sync</p>
 <div class="details">
 <p class="long_description"></p>
@@ -147,7 +144,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -228,13 +225,13 @@
 <h2>Adds a directory to the web path translation list</h2>
 <pre>addWebPathTranslation(string $search_path, string $replace_path) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The web path conversion list is a list of directory paths that will be
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The web path conversion list is a list of directory paths that will be
 converted (from the beginning of filesystem paths) when preparing a path
-for output into HTML.</p>
+for output into HTML.
 
-<p>By default the <code>$_SERVER['DOCUMENT_ROOT']</code> will be converted to a blank
-string, in essence stripping it from filesystem paths.</p></p>
+By default the `$_SERVER['DOCUMENT_ROOT']` will be converted to a blank
+string, in essence stripping it from filesystem paths.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$search_path</h4>
@@ -248,26 +245,26 @@ string, in essence stripping it from filesystem paths.</p></p>
 <h2>Starts a filesystem pseudo-transaction, should only be called when no transaction is in progress.</h2>
 <pre>begin() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Flourish filesystem transactions are NOT full ACID-compliant
+<div class="row collapse"><div class="detail-description"><p class="long_description">Flourish filesystem transactions are NOT full ACID-compliant
 transactions, but rather more of an filesystem undo buffer which can
 return the filesystem to the state when ::begin() was called. If your PHP
 script dies in the middle of an operation this functionality will do
 nothing for you and all operations will be retained, except for deletes
-which only occur once the transaction is committed.</p></p></div></div>
+which only occur once the transaction is committed.</p></div></div>
 </div>
 <a name="commit" id="commit"></a><div class="element clickable method public commit" data-toggle="collapse" data-target=".commit .collapse">
 <h2>Commits a filesystem transaction, should only be called when a transaction is in progress</h2>
 <pre>commit() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="convertToBytes" id="convertToBytes"></a><div class="element clickable method public convertToBytes" data-toggle="collapse" data-target=".convertToBytes .collapse">
 <h2>Takes a file size including a unit of measure (i.e. kb, GB, M) and converts it to bytes</h2>
 <pre>convertToBytes(string $size) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Sizes are interpreted using base 2, not base 10. Sizes above 2GB may not
-be accurately represented on 32 bit operating systems.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Sizes are interpreted using base 2, not base 10. Sizes above 2GB may not
+be accurately represented on 32 bit operating systems.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$size</h4>
@@ -281,7 +278,7 @@ be accurately represented on 32 bit operating systems.</p></p>
 <h2>Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it</h2>
 <pre>createObject(string $path) : <a href="../classes/fDirectory.html">\fDirectory</a> | <a href="../classes/fFile.html">\fFile</a> | <a href="../classes/fImage.html">\fImage</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -302,7 +299,7 @@ be accurately represented on 32 bit operating systems.</p></p>
 <h2>Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T</h2>
 <pre>formatFilesize(integer $bytes, integer $decimal_places) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -319,7 +316,7 @@ be accurately represented on 32 bit operating systems.</p></p>
 <h2>Returns info about a path including dirname, basename, extension and filename</h2>
 <pre>getPathInfo(string $path, string $element) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -335,57 +332,17 @@ be accurately represented on 32 bit operating systems.</p></p>
 <code>array</code>The file's dirname, basename, extension and filename</div>
 </div></div>
 </div>
-<a name="hookDeletedMap" id="hookDeletedMap"></a><div class="element clickable method public hookDeletedMap" data-toggle="collapse" data-target=".hookDeletedMap .collapse">
-<h2>Hooks a file/directory into the deleted backtrace map entry for that filename</h2>
-<pre>hookDeletedMap(string $file) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Since the value is returned by reference, all objects that represent
-this file/directory always see the same backtrace.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code>string</code><p>The name of the file or directory</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>mixed</code>Will return `NULL` if no match, or the backtrace array if a match occurs</div>
-</div></div>
-</div>
-<a name="hookFilenameMap" id="hookFilenameMap"></a><div class="element clickable method public hookFilenameMap" data-toggle="collapse" data-target=".hookFilenameMap .collapse">
-<h2>Hooks a file/directory name to the filename map</h2>
-<pre>hookFilenameMap(string $file) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Since the value is returned by reference, all objects that represent
-this file/directory will always be update on a rename.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code>string</code><p>The name of the file or directory</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>mixed</code>Will return `NULL` if no match, or the exception object if a match occurs</div>
-</div></div>
-</div>
 <a name="isInsideTransaction" id="isInsideTransaction"></a><div class="element clickable method public isInsideTransaction" data-toggle="collapse" data-target=".isInsideTransaction .collapse">
 <h2>Indicates if a transaction is in progress</h2>
 <pre>isInsideTransaction() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeURLSafe" id="makeURLSafe"></a><div class="element clickable method public makeURLSafe" data-toggle="collapse" data-target=".makeURLSafe .collapse">
 <h2>Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and . to _</h2>
 <pre>makeURLSafe(string $filename) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -400,7 +357,7 @@ this file/directory will always be update on a rename.</p></p>
 <h2>Returns a unique name for a file</h2>
 <pre>makeUniqueName(string $file, string $new_extension) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -415,131 +372,17 @@ this file/directory will always be update on a rename.</p></p>
 <code>string</code>The unique file name</div>
 </div></div>
 </div>
-<a name="recordAppend" id="recordAppend"></a><div class="element clickable method public recordAppend" data-toggle="collapse" data-target=".recordAppend .collapse">
-<h2>Stores what data has been added to a file so it can be removed if there is a rollback</h2>
-<pre>recordAppend(<a href="../classes/fFile.html">\fFile</a> $file, string $data) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code><a href="../classes/fFile.html">\fFile</a></code><p>The file that is being written to</p></div>
-<div class="subelement argument">
-<h4>$data</h4>
-<code>string</code><p>The data being appended to the file</p></div>
-</div></div>
-</div>
-<a name="recordCreate" id="recordCreate"></a><div class="element clickable method public recordCreate" data-toggle="collapse" data-target=".recordCreate .collapse">
-<h2>Keeps a record of created files so they can be deleted up in case of a rollback</h2>
-<pre>recordCreate(object $object) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code>object</code><p>The new file or directory to get rid of on rollback</p></div>
-</div></div>
-</div>
-<a name="recordDelete" id="recordDelete"></a><div class="element clickable method public recordDelete" data-toggle="collapse" data-target=".recordDelete .collapse">
-<h2>Keeps track of file and directory names to delete when a transaction is committed</h2>
-<pre>recordDelete(<a href="../classes/fFile.html">\fFile</a> | <a href="../classes/fDirectory.html">\fDirectory</a> $object) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fFile.html">\fFile</a><a href="../classes/fDirectory.html">\fDirectory</a></code><p>The filesystem object to delete</p></div>
-</div></div>
-</div>
-<a name="recordDuplicate" id="recordDuplicate"></a><div class="element clickable method public recordDuplicate" data-toggle="collapse" data-target=".recordDuplicate .collapse">
-<h2>Keeps a record of duplicated files so they can be cleaned up in case of a rollback</h2>
-<pre>recordDuplicate(<a href="../classes/fFile.html">\fFile</a> $file) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code><a href="../classes/fFile.html">\fFile</a></code><p>The duplicate file to get rid of on rollback</p></div>
-</div></div>
-</div>
-<a name="recordRename" id="recordRename"></a><div class="element clickable method public recordRename" data-toggle="collapse" data-target=".recordRename .collapse">
-<h2>Keeps a temp file in place of the old filename so the file can be restored during a rollback</h2>
-<pre>recordRename(string $old_name, string $new_name) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$old_name</h4>
-<code>string</code><p>The old file or directory name</p></div>
-<div class="subelement argument">
-<h4>$new_name</h4>
-<code>string</code><p>The new file or directory name</p></div>
-</div></div>
-</div>
-<a name="recordWrite" id="recordWrite"></a><div class="element clickable method public recordWrite" data-toggle="collapse" data-target=".recordWrite .collapse">
-<h2>Keeps backup copies of files so they can be restored if there is a rollback</h2>
-<pre>recordWrite(<a href="../classes/fFile.html">\fFile</a> $file) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code><a href="../classes/fFile.html">\fFile</a></code><p>The file that is being written to</p></div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="rollback" id="rollback"></a><div class="element clickable method public rollback" data-toggle="collapse" data-target=".rollback .collapse">
 <h2>Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</h2>
 <pre>rollback() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="translateToWebPath" id="translateToWebPath"></a><div class="element clickable method public translateToWebPath" data-toggle="collapse" data-target=".translateToWebPath .collapse">
 <h2>Takes a filesystem path and translates it to a web path using the rules added</h2>
 <pre>translateToWebPath(string $path) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -550,70 +393,11 @@ this file/directory will always be update on a rename.</p></p>
 <code>string</code>The filesystem path translated to a web path</div>
 </div></div>
 </div>
-<a name="updateDeletedMap" id="updateDeletedMap"></a><div class="element clickable method public updateDeletedMap" data-toggle="collapse" data-target=".updateDeletedMap .collapse">
-<h2>Updates the deleted backtrace for a file or directory</h2>
-<pre>updateDeletedMap(string $file, array $backtrace) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$file</h4>
-<code>string</code><p>A file or directory name, directories should end in <code>/</code> or <code>\</code></p>
-</div>
-<div class="subelement argument">
-<h4>$backtrace</h4>
-<code>array</code><p>The backtrace for this file/directory</p>
-</div>
-</div></div>
-</div>
-<a name="updateFilenameMap" id="updateFilenameMap"></a><div class="element clickable method public updateFilenameMap" data-toggle="collapse" data-target=".updateFilenameMap .collapse">
-<h2>Updates the filename map, causing all objects representing a file/directory to be updated</h2>
-<pre>updateFilenameMap(string $existing_filename, string $new_filename) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$existing_filename</h4>
-<code>string</code><p>The existing filename</p></div>
-<div class="subelement argument">
-<h4>$new_filename</h4>
-<code>string</code><p>The new filename</p></div>
-</div></div>
-</div>
-<a name="updateFilenameMapForDirectory" id="updateFilenameMapForDirectory"></a><div class="element clickable method public updateFilenameMapForDirectory" data-toggle="collapse" data-target=".updateFilenameMapForDirectory .collapse">
-<h2>Updates the filename map recursively, causing all objects representing a directory to be updated</h2>
-<pre>updateFilenameMapForDirectory(string $existing_dirname, string $new_dirname) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Also updates all files and directories in the specified directory to the new paths.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$existing_dirname</h4>
-<code>string</code><p>The existing directory name</p></div>
-<div class="subelement argument">
-<h4>$new_dirname</h4>
-<code>string</code><p>The new dirname</p></div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fFilesystem.html">\fFilesystem</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fFilesystem.html">\fFilesystem</a></code></div>
@@ -625,31 +409,31 @@ this file/directory will always be update on a rename.</p></p>
 <h2>Stores the operations to perform when a commit occurs</h2>
 <pre>$commit_operations : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24deleted_map" id="$deleted_map"> </a><div class="element clickable property private $deleted_map" data-toggle="collapse" data-target=".$deleted_map .collapse">
 <h2>Maps deletion backtraces to all instances of a file or directory, providing consistency</h2>
 <pre>$deleted_map : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24filename_map" id="$filename_map"> </a><div class="element clickable property private $filename_map" data-toggle="collapse" data-target=".$filename_map .collapse">
 <h2>Stores file and directory names by reference, allowing all object instances to be updated at once</h2>
 <pre>$filename_map : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24rollback_operations" id="$rollback_operations"> </a><div class="element clickable property private $rollback_operations" data-toggle="collapse" data-target=".$rollback_operations .collapse">
 <h2>Stores the operations to perform if a rollback occurs</h2>
 <pre>$rollback_operations : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24web_path_translations" id="$web_path_translations"> </a><div class="element clickable property private $web_path_translations" data-toggle="collapse" data-target=".$web_path_translations .collapse">
 <h2>Stores a list of search =&gt; replace strings for web path translations</h2>
 <pre>$web_path_translations : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -657,139 +441,139 @@ this file/directory will always be update on a rename.</p></p>
 <h2>addWebPathTranslation</h2>
 <pre>addWebPathTranslation </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="begin" id="begin"> </a><div class="element clickable constant  begin" data-toggle="collapse" data-target=".begin .collapse">
 <h2>begin</h2>
 <pre>begin </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="commit" id="commit"> </a><div class="element clickable constant  commit" data-toggle="collapse" data-target=".commit .collapse">
 <h2>commit</h2>
 <pre>commit </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="convertToBytes" id="convertToBytes"> </a><div class="element clickable constant  convertToBytes" data-toggle="collapse" data-target=".convertToBytes .collapse">
 <h2>convertToBytes</h2>
 <pre>convertToBytes </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="createObject" id="createObject"> </a><div class="element clickable constant  createObject" data-toggle="collapse" data-target=".createObject .collapse">
 <h2>createObject</h2>
 <pre>createObject </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="formatFilesize" id="formatFilesize"> </a><div class="element clickable constant  formatFilesize" data-toggle="collapse" data-target=".formatFilesize .collapse">
 <h2>formatFilesize</h2>
 <pre>formatFilesize </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getPathInfo" id="getPathInfo"> </a><div class="element clickable constant  getPathInfo" data-toggle="collapse" data-target=".getPathInfo .collapse">
 <h2>getPathInfo</h2>
 <pre>getPathInfo </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="hookDeletedMap" id="hookDeletedMap"> </a><div class="element clickable constant  hookDeletedMap" data-toggle="collapse" data-target=".hookDeletedMap .collapse">
 <h2>hookDeletedMap</h2>
 <pre>hookDeletedMap </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="hookFilenameMap" id="hookFilenameMap"> </a><div class="element clickable constant  hookFilenameMap" data-toggle="collapse" data-target=".hookFilenameMap .collapse">
 <h2>hookFilenameMap</h2>
 <pre>hookFilenameMap </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isInsideTransaction" id="isInsideTransaction"> </a><div class="element clickable constant  isInsideTransaction" data-toggle="collapse" data-target=".isInsideTransaction .collapse">
 <h2>isInsideTransaction</h2>
 <pre>isInsideTransaction </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeUniqueName" id="makeUniqueName"> </a><div class="element clickable constant  makeUniqueName" data-toggle="collapse" data-target=".makeUniqueName .collapse">
 <h2>makeUniqueName</h2>
 <pre>makeUniqueName </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordAppend" id="recordAppend"> </a><div class="element clickable constant  recordAppend" data-toggle="collapse" data-target=".recordAppend .collapse">
 <h2>recordAppend</h2>
 <pre>recordAppend </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordCreate" id="recordCreate"> </a><div class="element clickable constant  recordCreate" data-toggle="collapse" data-target=".recordCreate .collapse">
 <h2>recordCreate</h2>
 <pre>recordCreate </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordDelete" id="recordDelete"> </a><div class="element clickable constant  recordDelete" data-toggle="collapse" data-target=".recordDelete .collapse">
 <h2>recordDelete</h2>
 <pre>recordDelete </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordDuplicate" id="recordDuplicate"> </a><div class="element clickable constant  recordDuplicate" data-toggle="collapse" data-target=".recordDuplicate .collapse">
 <h2>recordDuplicate</h2>
 <pre>recordDuplicate </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordRename" id="recordRename"> </a><div class="element clickable constant  recordRename" data-toggle="collapse" data-target=".recordRename .collapse">
 <h2>recordRename</h2>
 <pre>recordRename </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="recordWrite" id="recordWrite"> </a><div class="element clickable constant  recordWrite" data-toggle="collapse" data-target=".recordWrite .collapse">
 <h2>recordWrite</h2>
 <pre>recordWrite </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="rollback" id="rollback"> </a><div class="element clickable constant  rollback" data-toggle="collapse" data-target=".rollback .collapse">
 <h2>rollback</h2>
 <pre>rollback </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="translateToWebPath" id="translateToWebPath"> </a><div class="element clickable constant  translateToWebPath" data-toggle="collapse" data-target=".translateToWebPath .collapse">
 <h2>translateToWebPath</h2>
 <pre>translateToWebPath </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="updateDeletedMap" id="updateDeletedMap"> </a><div class="element clickable constant  updateDeletedMap" data-toggle="collapse" data-target=".updateDeletedMap .collapse">
 <h2>updateDeletedMap</h2>
 <pre>updateDeletedMap </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="updateFilenameMap" id="updateFilenameMap"> </a><div class="element clickable constant  updateFilenameMap" data-toggle="collapse" data-target=".updateFilenameMap .collapse">
 <h2>updateFilenameMap</h2>
 <pre>updateFilenameMap </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="updateFilenameMapForDirectory" id="updateFilenameMapForDirectory"> </a><div class="element clickable constant  updateFilenameMapForDirectory" data-toggle="collapse" data-target=".updateFilenameMapForDirectory .collapse">
 <h2>updateFilenameMapForDirectory</h2>
 <pre>updateFilenameMapForDirectory </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -797,8 +581,8 @@ this file/directory will always be update on a rename.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

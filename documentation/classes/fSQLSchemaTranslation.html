@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,8 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Sets up the class"><span class="description">Sets up the class</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#translate" title="translate :: Translates a Flourish SQL DDL statement into the dialect for the current database"><span class="description">Translates a Flourish SQL DDL statement into the dialect for the current database</span><pre>translate()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -129,7 +127,16 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfSQLSchemaTranslation" id="\fSQLSchemaTranslation"></a><div href="../classes/fSQLSchemaTranslation.html" class="element class">
+<a name="%5CfSQLSchemaTranslation" id="\fSQLSchemaTranslation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSQLSchemaTranslation.html">fSQLSchemaTranslation</a>
+</li>
+</ul>
+<div href="../classes/fSQLSchemaTranslation.html" class="element class">
 <p class="short_description">Adds cross-database `CREATE TABLE`, `ALTER TABLE` and `COMMENT ON COLUMN` statements to fSQLTranslation</p>
 <div class="details">
 <p class="long_description"></p>
@@ -148,7 +155,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -177,7 +184,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Sets up the class</h2>
 <pre>__construct(<a href="../classes/fDatabase.html">\fDatabase</a> $database) : <a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -187,53 +194,11 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <div class="subelement response"><code><a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
-<a name="translate" id="translate"></a><div class="element clickable method public translate" data-toggle="collapse" data-target=".translate .collapse">
-<h2>Translates a Flourish SQL DDL statement into the dialect for the current database</h2>
-<pre>translate(string $sql, array $rollback_statements) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$sql</h4>
-<code>string</code><p>The SQL statement to translate</p></div>
-<div class="subelement argument">
-<h4>$rollback_statements</h4>
-<code>array</code><p>&$rollback_statements SQL statements to rollback the returned SQL statements if something goes wrong - only applicable for MySQL <code>ALTER TABLE</code> statements</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>An array containing the translated `$sql` statement and an array of extra statements</div>
-</div></div>
-</div>
 <a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -248,7 +213,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Adds a SQLite index to the internal schema tracker</h2>
 <pre>addSQLiteIndex(string $name, string $table, string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -266,7 +231,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Stores the SQL used to create a table</h2>
 <pre>addSQLiteTable(string $table, string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -282,7 +247,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Adds a SQLite trigger to the internal schema tracker</h2>
 <pre>addSQLiteTrigger(string $name, string $table, string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -300,7 +265,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Creates a trigger for SQLite that handles an on delete clause</h2>
 <pre>createSQLiteForeignKeyTriggerOnDelete(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, string $delete_clause) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -331,7 +296,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Creates a trigger for SQLite that handles an on update clause</h2>
 <pre>createSQLiteForeignKeyTriggerOnUpdate(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, string $update_clause) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -362,7 +327,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Creates a trigger for SQLite that prevents inserting or updating to values the violate a `FOREIGN KEY` constraint</h2>
 <pre>createSQLiteForeignKeyTriggerValidInsertUpdate(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, boolean $referencing_not_null) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -393,7 +358,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Generates a 30 character constraint name for use with `ALTER TABLE` statements</h2>
 <pre>generateConstraintName(string $sql, string $type) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -410,7 +375,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the check constraint for a table and column</h2>
 <pre>getDB2CheckConstraint(string $schema, string $table, string $column) : array | NULL</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -431,7 +396,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the foreign key constraints that involve a specific table or table and column</h2>
 <pre>getDB2ForeignKeyConstraints(string $schema, string $table, string $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -452,7 +417,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the primary key for a table</h2>
 <pre>getDB2PrimaryKeyConstraint(string $schema, string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -470,7 +435,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the unique keys for a table and column</h2>
 <pre>getDB2UniqueConstraints(string $schema, string $table, string $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -491,7 +456,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the check constraint for a column, if it exists</h2>
 <pre>getMSSQLCheckConstraint(string $schema, string $table, string $column) : array | NULL</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -512,7 +477,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the default constraint for a column, if it exists</h2>
 <pre>getMSSQLDefaultConstraint(string $schema, string $table, string $column) : array | NULL</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -533,7 +498,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the foreign key constraints that a column is part of</h2>
 <pre>getMSSQLForeignKeyConstraints(string $schema, string $table, string | array $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -555,7 +520,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the primary key constraints for a table</h2>
 <pre>getMSSQLPrimaryKeyConstraint(string $schema, string $table) : array | NULL</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -573,7 +538,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the unique constraints that a column is part of</h2>
 <pre>getMSSQLUniqueConstraints(string $schema, string $table, string $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -594,7 +559,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns info about all foreign keys that involve the table and one of the columns specified</h2>
 <pre>getMySQLForeignKeys(string $table, string | array $columns) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>column</th>
@@ -613,7 +578,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns a list of all tables in the database</h2>
 <pre>getMySQLTables() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -624,7 +589,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns an an array of the column name for a table</h2>
 <pre>getSQLiteColumns(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -639,7 +604,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the SQL used to create a table</h2>
 <pre>getSQLiteCreateTable(string $table) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -655,7 +620,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns a list of all foreign keys that reference the table, and optionally, column specified</h2>
 <pre>getSQLiteForeignKeys(string $table, string $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -673,7 +638,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the indexes in the current SQLite database</h2>
 <pre>getSQLiteIndexes($table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -689,7 +654,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the tables in the current SQLite database</h2>
 <pre>getSQLiteTables() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code>array</code></div>
@@ -699,7 +664,7 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Returns the triggers in the current SQLite database</h2>
 <pre>getSQLiteTriggers($exclude_table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -715,8 +680,8 @@ statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a
 <h2>Accepts a CREATE TABLE statement and parses out the column definitions</h2>
 <pre>parseSQLiteColumnDefinitions(string $sql) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The return value is an associative array with the keys being column
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The return value is an associative array with the keys being column
 names and the values being arrays containing the following keys:
  - definition:       (string) the complete column definition
  - pieces:           (array) an associative array that can be joined back together to make the definition
@@ -731,7 +696,7 @@ names and the values being arrays containing the following keys:
    - check_constraint
    - foreign_key
    - deferrable
-   - comment/end</p></p>
+   - comment/end</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sql</h4>
@@ -746,7 +711,7 @@ names and the values being arrays containing the following keys:
 <h2>Removes a search string from a `CREATE TABLE` statement</h2>
 <pre>removeFromSQLiteCreateTable(string $create_table_sql, string $search) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -765,7 +730,7 @@ names and the values being arrays containing the following keys:
 <h2>Removes the SQLite indexes from the internal schema tracker</h2>
 <pre>removeSQLiteIndexes(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -777,7 +742,7 @@ names and the values being arrays containing the following keys:
 <h2>Removes a table from the list of SQLite table</h2>
 <pre>removeSQLiteTable(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -789,7 +754,7 @@ names and the values being arrays containing the following keys:
 <h2>Removes a SQLite trigger from the internal schema tracker</h2>
 <pre>removeSQLiteTrigger(string $name) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -801,7 +766,7 @@ names and the values being arrays containing the following keys:
 <h2>Removes the SQLite triggers for a table from the internal schema tracker</h2>
 <pre>removeSQLiteTriggers(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -813,7 +778,7 @@ names and the values being arrays containing the following keys:
 <h2>Throws an fSQLException with the information provided</h2>
 <pre>throwException(string $error, string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -828,7 +793,7 @@ names and the values being arrays containing the following keys:
 <h2>Translates the structure of `CREATE TABLE` statements to the database specific syntax</h2>
 <pre>translateAlterTableStatements(string $sql, array $extra_statements, array $rollback_statements) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -851,7 +816,7 @@ names and the values being arrays containing the following keys:
 <h2>Translates the structure of `CREATE TABLE` statements to the database specific syntax</h2>
 <pre>translateCreateTableStatements(string $sql, array $extra_statements) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -871,7 +836,7 @@ names and the values being arrays containing the following keys:
 statements for DB2</h2>
 <pre>translateDB2AlterTableStatements(string $sql, array $extra_statements, array $data) : \strin</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -894,7 +859,7 @@ statements for DB2</h2>
 <h2>Translates basic data types</h2>
 <pre>translateDataTypes(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -910,7 +875,7 @@ statements for DB2</h2>
 statements for MSSQL</h2>
 <pre>translateMSSQLAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -934,7 +899,7 @@ statements for MSSQL</h2>
 statements for MySQL</h2>
 <pre>translateMySQLAlterTableStatements(string $sql, array $extra_statements, array $rollback_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -962,7 +927,7 @@ statements for MySQL</h2>
 statements for Oracle</h2>
 <pre>translateOracleAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -986,7 +951,7 @@ statements for Oracle</h2>
 statements for PostgreSQL</h2>
 <pre>translatePostgreSQLAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1010,7 +975,7 @@ statements for PostgreSQL</h2>
 statements for SQLite</h2>
 <pre>translateSQLiteAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1033,7 +998,7 @@ statements for SQLite</h2>
 <h2>Translates `DROP TABLE` statements for SQLite</h2>
 <pre>translateSQLiteDropTableStatements(string $sql, array $extra_statements) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1053,7 +1018,7 @@ statements for SQLite</h2>
 statements for SQLite</h2>
 <pre>translateSQLiteRenameTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1076,7 +1041,7 @@ statements for SQLite</h2>
 <h2>Converts a SQL identifier to lower case and removes double quotes</h2>
 <pre>unescapeIdentifier(string $identifier) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1093,13 +1058,13 @@ statements for SQLite</h2>
 <h2>The fDatabase instance</h2>
 <pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24schema_info" id="$schema_info"> </a><div class="element clickable property private $schema_info" data-toggle="collapse" data-target=".$schema_info .collapse">
 <h2>Database-specific schema information needed for translation</h2>
 <pre>$schema_info : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1107,8 +1072,8 @@ statements for SQLite</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -58,24 +58,12 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#addHavingClause" title="addHavingClause :: Creates a `HAVING` clause from an array of conditions"><span class="description">Creates a `HAVING` clause from an array of conditions</span><pre>addHavingClause()</pre></a></li>
-<li class="method public "><a href="#addOrderByClause" title="addOrderByClause :: Adds an `ORDER BY` clause to an array of params for an fDatabase::query() call"><span class="description">Adds an `ORDER BY` clause to an array of params for an fDatabase::query() call</span><pre>addOrderByClause()</pre></a></li>
-<li class="method public "><a href="#addPrimaryKeyWhereParams" title="addPrimaryKeyWhereParams :: Add the appropriate SQL and params for a `WHERE` clause condition for primary keys of the table specified"><span class="description">Add the appropriate SQL and params for a `WHERE` clause condition for primary keys of the table specified</span><pre>addPrimaryKeyWhereParams()</pre></a></li>
-<li class="method public "><a href="#addWhereClause" title="addWhereClause :: Adds a `WHERE` clause, from an array of conditions, to the parameters for an fDatabase::query() call"><span class="description">Adds a `WHERE` clause, from an array of conditions, to the parameters for an fDatabase::query() call</span><pre>addWhereClause()</pre></a></li>
 <li class="method public "><a href="#attach" title="attach :: Allows attaching an fDatabase-compatible objects for by ORM code"><span class="description">Allows attaching an fDatabase-compatible objects for by ORM code</span><pre>attach()</pre></a></li>
-<li class="method public "><a href="#injectFromAndGroupByClauses" title="injectFromAndGroupByClauses :: Finds all of the table names in the SQL and creates the appropriate `FROM` and `GROUP BY` clauses with all necessary joins"><span class="description">Finds all of the table names in the SQL and creates the appropriate `FROM` and `GROUP BY` clauses with all necessary joins</span><pre>injectFromAndGroupByClauses()</pre></a></li>
-<li class="method public "><a href="#makeCondition" title="makeCondition :: Makes a condition for a SQL statement out of fDatabase::escape() placeholders"><span class="description">Makes a condition for a SQL statement out of fDatabase::escape() placeholders</span><pre>makeCondition()</pre></a></li>
-<li class="method public "><a href="#parseSearchTerms" title="parseSearchTerms :: Parses a search string into search terms, supports quoted phrases and removes extra punctuation"><span class="description">Parses a search string into search terms, supports quoted phrases and removes extra punctuation</span><pre>parseSearchTerms()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#retrieve" title="retrieve :: Return the instance of the fDatabase class"><span class="description">Return the instance of the fDatabase class</span><pre>retrieve()</pre></a></li>
-<li class="method public "><a href="#splitHavingConditions" title="splitHavingConditions :: Removed aggregate function calls from where conditions array and puts them in a having conditions array"><span class="description">Removed aggregate function calls from where conditions array and puts them in a having conditions array</span><pre>splitHavingConditions()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#addColumnCondition" title="addColumnCondition :: Translated the where condition for a single column into a SQL clause"><span class="description">Translated the where condition for a single column into a SQL clause</span><pre>addColumnCondition()</pre></a></li>
 <li class="method private "><a href="#cleanTableName" title="cleanTableName :: Takes a table name, cleans off quoting and removes the schema name if unambiguous"><span class="description">Takes a table name, cleans off quoting and removes the schema name if unambiguous</span><pre>cleanTableName()</pre></a></li>
-<li class="method private "><a href="#createFromClauseFromJoins" title="createFromClauseFromJoins :: Creates a `FROM` clause from a join array"><span class="description">Creates a `FROM` clause from a join array</span><pre>createFromClauseFromJoins()</pre></a></li>
-<li class="method private "><a href="#createJoin" title="createJoin :: Creates join information for the table shortcut provided"><span class="description">Creates join information for the table shortcut provided</span><pre>createJoin()</pre></a></li>
-<li class="method private "><a href="#createNewAlias" title="createNewAlias :: Creates a new table alias"><span class="description">Creates a new table alias</span><pre>createNewAlias()</pre></a></li>
 <li class="method private "><a href="#getTableAndColumn" title="getTableAndColumn :: Gets the table and column name from a shorthand column name"><span class="description">Gets the table and column name from a shorthand column name</span><pre>getTableAndColumn()</pre></a></li>
 <li class="nav-header">
 <i class="icon-custom icon-property"></i> Properties</li>
@@ -98,7 +86,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfORMDatabase" id="\fORMDatabase"></a><div href="../classes/fORMDatabase.html" class="element class">
+<a name="%5CfORMDatabase" id="\fORMDatabase"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMDatabase.html">fORMDatabase</a>
+</li>
+</ul>
+<div href="../classes/fORMDatabase.html" class="element class">
 <p class="short_description">Holds a single instance of the fDatabase class and provides database manipulation functionality for ORM code</p>
 <div class="details">
 <p class="long_description"></p>
@@ -121,7 +118,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -262,158 +259,22 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="addHavingClause" id="addHavingClause"></a><div class="element clickable method public addHavingClause" data-toggle="collapse" data-target=".addHavingClause .collapse">
-<h2>Creates a `HAVING` clause from an array of conditions</h2>
-<pre>addHavingClause(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $conditions) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$db</h4>
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query will be executed on</p></div>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database</p></div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>array</code><p>The params for the fDatabase::query() call</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table the query is being executed on</p></div>
-<div class="subelement argument">
-<h4>$conditions</h4>
-<code>array</code><p>The array of conditions - see fRecordSet::build() for format</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The params with the `HAVING` clause added</div>
-</div></div>
-</div>
-<a name="addOrderByClause" id="addOrderByClause"></a><div class="element clickable method public addOrderByClause" data-toggle="collapse" data-target=".addOrderByClause .collapse">
-<h2>Adds an `ORDER BY` clause to an array of params for an fDatabase::query() call</h2>
-<pre>addOrderByClause(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $order_bys) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$db</h4>
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query will be executed on</p></div>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the database the query will be executed on</p></div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>array</code><p>The parameters for the fDatabase::query() call</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table any ambigious column references will refer to</p></div>
-<div class="subelement argument">
-<h4>$order_bys</h4>
-<code>array</code><p>The array of order bys to use - see fRecordSet::build() for format</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The params with a SQL `ORDER BY` clause added</div>
-</div></div>
-</div>
-<a name="addPrimaryKeyWhereParams" id="addPrimaryKeyWhereParams"></a><div class="element clickable method public addPrimaryKeyWhereParams" data-toggle="collapse" data-target=".addPrimaryKeyWhereParams .collapse">
-<h2>Add the appropriate SQL and params for a `WHERE` clause condition for primary keys of the table specified</h2>
-<pre>addPrimaryKeyWhereParams(<a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, string $table_alias, array $values, array $old_values) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database the query will be run on</p></div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>array</code><p>The currently constructed params for fDatabase::query() - the first param should be a SQL statement</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table to build the where clause for</p></div>
-<div class="subelement argument">
-<h4>$table_alias</h4>
-<code>string</code><p>The alias for the table</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The values array for the fActiveRecord object</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values array for the fActiveRecord object</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The params to pass to fDatabase::query(), including the new primary key where condition</div>
-</div></div>
-</div>
-<a name="addWhereClause" id="addWhereClause"></a><div class="element clickable method public addWhereClause" data-toggle="collapse" data-target=".addWhereClause .collapse">
-<h2>Adds a `WHERE` clause, from an array of conditions, to the parameters for an fDatabase::query() call</h2>
-<pre>addWhereClause(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $conditions) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$db</h4>
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query will be executed on</p></div>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database</p></div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>array</code><p>The parameters for the fDatabase::query() call</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table any ambigious column references will refer to</p></div>
-<div class="subelement argument">
-<h4>$conditions</h4>
-<code>array</code><p>The array of conditions - see fRecordSet::build() for format</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The params with the SQL `WHERE` clause added</div>
-</div></div>
-</div>
 <a name="attach" id="attach"></a><div class="element clickable method public attach" data-toggle="collapse" data-target=".attach .collapse">
 <h2>Allows attaching an fDatabase-compatible objects for by ORM code</h2>
 <pre>attach(<a href="../classes/fDatabase.html">\fDatabase</a> $database, string $name, string $role) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If a <code>$name</code> other than <code>default</code> is used, any fActiveRecord classes
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If a `$name` other than `default` is used, any fActiveRecord classes
 that should use it will need to be configured by passing the class name
-and <code>$name</code> to ::mapClassToDatabase(). The <code>$name</code> parameter should be
-unique per database or database master/slave setup.</p>
+and `$name` to ::mapClassToDatabase(). The `$name` parameter should be
+unique per database or database master/slave setup.
 
-<p>The <code>$role</code> is used by code to allow for master/slave database setups.
+The `$role` is used by code to allow for master/slave database setups.
 There can only be one database object attached for either of the roles,
-<code>'read'</code> or <code>'write'</code>. If the role <code>'both'</code> is specified, it will
-be applied to both the <code>'read'</code> and <code>'write'</code> roles. Any sort of logic
+`'read'` or `'write'`. If the role `'both'` is specified, it will
+be applied to both the `'read'` and `'write'` roles. Any sort of logic
 for picking one out of multiple databases should be done before this
-method is called.</p></p>
+method is called.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$database</h4>
@@ -427,112 +288,11 @@ method is called.</p></p>
 </div>
 </div></div>
 </div>
-<a name="injectFromAndGroupByClauses" id="injectFromAndGroupByClauses"></a><div class="element clickable method public injectFromAndGroupByClauses" data-toggle="collapse" data-target=".injectFromAndGroupByClauses .collapse">
-<h2>Finds all of the table names in the SQL and creates the appropriate `FROM` and `GROUP BY` clauses with all necessary joins</h2>
-<pre>injectFromAndGroupByClauses(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The SQL string should contain two placeholders, <code>:from_clause</code> and
-<code>:group_by_clause</code>, although the later may be omitted if necessary. All
-columns should be qualified with their full table name.</p>
-
-<p>Here is an example SQL string to pass in presumming that the tables
-users and groups are in a relationship:</p>
-
-<p>{{{
-SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDER BY lower(users.first_name) ASC
-}}}</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$db</h4>
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query is to be executed on</p></div>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database</p></div>
-<div class="subelement argument">
-<h4>$params</h4>
-<code>array</code><p>The parameters for the fDatabase::query() call</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The main table to be queried</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The params with the SQL `FROM` and `GROUP BY` clauses injected</div>
-</div></div>
-</div>
-<a name="makeCondition" id="makeCondition"></a><div class="element clickable method public makeCondition" data-toggle="collapse" data-target=".makeCondition .collapse">
-<h2>Makes a condition for a SQL statement out of fDatabase::escape() placeholders</h2>
-<pre>makeCondition(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $column, string $comparison_operator, mixed $value) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the database the query will be executed on</p></div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table to create the condition for</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column to make the condition for</p></div>
-<div class="subelement argument">
-<h4>$comparison_operator</h4>
-<code>string</code><p>The comparison operator for the condition</p></div>
-<div class="subelement argument">
-<h4>$value</h4>
-<code>mixed</code><p>The value for the condition, which allows the $comparison_operator to be tweaked for NULL values</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>A SQL condition using fDatabase::escape() placeholders</div>
-</div></div>
-</div>
-<a name="parseSearchTerms" id="parseSearchTerms"></a><div class="element clickable method public parseSearchTerms" data-toggle="collapse" data-target=".parseSearchTerms .collapse">
-<h2>Parses a search string into search terms, supports quoted phrases and removes extra punctuation</h2>
-<pre>parseSearchTerms(string $terms, boolean $ignore_stop_words) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$terms</h4>
-<code>string</code><p>A text string from a form input to parse into search terms</p></div>
-<div class="subelement argument">
-<h4>$ignore_stop_words</h4>
-<code>boolean</code><p>If stop words should be ignored, this setting will be ignored if all words are stop words</p></div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="retrieve" id="retrieve"></a><div class="element clickable method public retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
 <h2>Return the instance of the fDatabase class</h2>
 <pre>retrieve(string $class, string $role) : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -548,31 +308,11 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <code><a href="../classes/fDatabase.html">\fDatabase</a></code>The database instance</div>
 </div></div>
 </div>
-<a name="splitHavingConditions" id="splitHavingConditions"></a><div class="element clickable method public splitHavingConditions" data-toggle="collapse" data-target=".splitHavingConditions .collapse">
-<h2>Removed aggregate function calls from where conditions array and puts them in a having conditions array</h2>
-<pre>splitHavingConditions(array $where_conditions) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$where_conditions</h4>
-<code>array</code><p>&$where_conditions The where conditions to look through for aggregate functions</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The conditions to be put in a `HAVING` clause</div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMDatabase.html">\fORMDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fORMDatabase.html">\fORMDatabase</a></code></div>
@@ -582,7 +322,7 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <h2>Translated the where condition for a single column into a SQL clause</h2>
 <pre>addColumnCondition(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, string $column, string $operator, mixed $values, string $escaped_column, string $placeholder) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -625,7 +365,7 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <h2>Takes a table name, cleans off quoting and removes the schema name if unambiguous</h2>
 <pre>cleanTableName(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -639,97 +379,11 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <code>string</code>The cleaned table name</div>
 </div></div>
 </div>
-<a name="createFromClauseFromJoins" id="createFromClauseFromJoins"></a><div class="element clickable method private createFromClauseFromJoins" data-toggle="collapse" data-target=".createFromClauseFromJoins .collapse">
-<h2>Creates a `FROM` clause from a join array</h2>
-<pre>createFromClauseFromJoins(<a href="../classes/fDatabase.html">\fDatabase</a> $db, array $joins) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$db</h4>
-<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query will be run on</p></div>
-<div class="subelement argument">
-<h4>$joins</h4>
-<code>array</code><p>The joins to create the <code>FROM</code> clause out of</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The from clause (does not include the word `FROM`)</div>
-</div></div>
-</div>
-<a name="createJoin" id="createJoin"></a><div class="element clickable method private createJoin" data-toggle="collapse" data-target=".createJoin .collapse">
-<h2>Creates join information for the table shortcut provided</h2>
-<pre>createJoin(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $table_alias, string $related_table, string $route, array $joins, array $used_aliases) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the tables/joins</p>
-</div>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The primary table</p></div>
-<div class="subelement argument">
-<h4>$table_alias</h4>
-<code>string</code><p>The primary table alias</p></div>
-<div class="subelement argument">
-<h4>$related_table</h4>
-<code>string</code><p>The related table</p></div>
-<div class="subelement argument">
-<h4>$route</h4>
-<code>string</code><p>The route to the related table</p></div>
-<div class="subelement argument">
-<h4>$joins</h4>
-<code>array</code><p>&$joins The names of the joins that have been created</p>
-</div>
-<div class="subelement argument">
-<h4>$used_aliases</h4>
-<code>array</code><p>&$used_aliases The aliases that have been used</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The name of the significant join created</div>
-</div></div>
-</div>
-<a name="createNewAlias" id="createNewAlias"></a><div class="element clickable method private createNewAlias" data-toggle="collapse" data-target=".createNewAlias .collapse">
-<h2>Creates a new table alias</h2>
-<pre>createNewAlias(string $table, array $used_aliases) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$table</h4>
-<code>string</code><p>The table to create an alias for</p></div>
-<div class="subelement argument">
-<h4>$used_aliases</h4>
-<code>array</code><p>&$used_aliases The aliases that have been used</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The alias to use for the table</div>
-</div></div>
-</div>
 <a name="getTableAndColumn" id="getTableAndColumn"></a><div class="element clickable method private getTableAndColumn" data-toggle="collapse" data-target=".getTableAndColumn .collapse">
 <h2>Gets the table and column name from a shorthand column name</h2>
 <pre>getTableAndColumn(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $column) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -753,13 +407,13 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <h2>An array of fDatabase objects</h2>
 <pre>$database_objects : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24pcre_supports_unicode_character_properties" id="$pcre_supports_unicode_character_properties"> </a><div class="element clickable property private $pcre_supports_unicode_character_properties" data-toggle="collapse" data-target=".$pcre_supports_unicode_character_properties .collapse">
 <h2>If the PCRE engine supports unicode character properties</h2>
 <pre>$pcre_supports_unicode_character_properties : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -767,67 +421,67 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 <h2>addHavingClause</h2>
 <pre>addHavingClause </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addOrderByClause" id="addOrderByClause"> </a><div class="element clickable constant  addOrderByClause" data-toggle="collapse" data-target=".addOrderByClause .collapse">
 <h2>addOrderByClause</h2>
 <pre>addOrderByClause </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addPrimaryKeyWhereParams" id="addPrimaryKeyWhereParams"> </a><div class="element clickable constant  addPrimaryKeyWhereParams" data-toggle="collapse" data-target=".addPrimaryKeyWhereParams .collapse">
 <h2>addPrimaryKeyWhereParams</h2>
 <pre>addPrimaryKeyWhereParams </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addWhereClause" id="addWhereClause"> </a><div class="element clickable constant  addWhereClause" data-toggle="collapse" data-target=".addWhereClause .collapse">
 <h2>addWhereClause</h2>
 <pre>addWhereClause </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="attach" id="attach"> </a><div class="element clickable constant  attach" data-toggle="collapse" data-target=".attach .collapse">
 <h2>attach</h2>
 <pre>attach </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="injectFromAndGroupByClauses" id="injectFromAndGroupByClauses"> </a><div class="element clickable constant  injectFromAndGroupByClauses" data-toggle="collapse" data-target=".injectFromAndGroupByClauses .collapse">
 <h2>injectFromAndGroupByClauses</h2>
 <pre>injectFromAndGroupByClauses </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeCondition" id="makeCondition"> </a><div class="element clickable constant  makeCondition" data-toggle="collapse" data-target=".makeCondition .collapse">
 <h2>makeCondition</h2>
 <pre>makeCondition </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="parseSearchTerms" id="parseSearchTerms"> </a><div class="element clickable constant  parseSearchTerms" data-toggle="collapse" data-target=".parseSearchTerms .collapse">
 <h2>parseSearchTerms</h2>
 <pre>parseSearchTerms </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="retrieve" id="retrieve"> </a><div class="element clickable constant  retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
 <h2>retrieve</h2>
 <pre>retrieve </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="splitHavingConditions" id="splitHavingConditions"> </a><div class="element clickable constant  splitHavingConditions" data-toggle="collapse" data-target=".splitHavingConditions .collapse">
 <h2>splitHavingConditions</h2>
 <pre>splitHavingConditions </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -835,8 +489,8 @@ SELECT users.* FROM :from_clause WHERE groups.group_id = 5 :group_by_clause ORDE
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

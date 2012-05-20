@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -83,7 +83,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsCache" id="\sCache"></a><div href="../classes/sCache.html" class="element class">
+<a name="%5CsCache" id="\sCache"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sCache.html">sCache</a>
+</li>
+</ul>
+<div href="../classes/sCache.html" class="element class">
 <p class="short_description">Extension to sCache. This is almost the same but invisibly provides
   site-unique keys so that one site's cache entry does not conflict with
   another.</p>
@@ -104,7 +113,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -121,48 +130,42 @@
 <h2>Set the type and master key for the cache</h2>
 <pre>__construct(string $type, mixed $data_store, array $config) : <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>file</code> cache uses a single file to store values in an associative
-array and is probably not suitable for a large number of keys.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `file` cache uses a single file to store values in an associative
+array and is probably not suitable for a large number of keys.
 
-<p>Using an <code>apc</code> or <code>xcache</code> cache will have far better performance
+Using an `apc` or `xcache` cache will have far better performance
 than a file or directory, however please remember that keys are shared
-server-wide.</p>
+server-wide.
 
-<p><code>$config</code> is an associative array of configuration options for the various
+`$config` is an associative array of configuration options for the various
 backends. Some backend require additional configuration, while others
-provide provide optional settings.</p>
+provide provide optional settings.
 
-<p>The following <code>$config</code> options must be set for the <code>database</code> backend:</p>
+The following `$config` options must be set for the `database` backend:
 
-<ul>
-<li><code>table</code>: The database table to use for caching</li>
-<li><code>key_column</code>: The column to store the cache key in - must support at least 250 character strings</li>
-<li><code>value_column</code>: The column to store the serialized value in - this should probably be a <code>TEXT</code> column to support large values, or <code>BLOB</code> if binary serialization is used</li>
-<li><code>value_data_type</code>: If a <code>BLOB</code> column is being used for the <code>value_column</code>, this should be set to 'blob', otherwise <code>string</code></li>
-<li><code>ttl_column</code>: The column to store the expiration timestamp of the cached entry - this should be an integer</li>
-</ul>
+ - `table`: The database table to use for caching
+ - `key_column`: The column to store the cache key in - must support at least 250 character strings
+ - `value_column`: The column to store the serialized value in - this should probably be a `TEXT` column to support large values, or `BLOB` if binary serialization is used
+ - `value_data_type`: If a `BLOB` column is being used for the `value_column`, this should be set to 'blob', otherwise `string`
+ - `ttl_column`: The column to store the expiration timestamp of the cached entry - this should be an integer
 
-<p>The following <code>$config</code> for the following items can be set for all backends:</p>
+The following `$config` for the following items can be set for all backends:
 
-<ul>
-<li><code>serializer</code>: A callback to serialize data with, defaults to the PHP function <code>serialize()</code></li>
-<li><code>unserializer</code>: A callback to unserialize data with, defaults to the PHP function <code>unserialize()</code></li>
-</ul>
+ - `serializer`: A callback to serialize data with, defaults to the PHP function `serialize()`
+ - `unserializer`: A callback to unserialize data with, defaults to the PHP function `unserialize()`
 
-<p>Common serialization callbacks include:</p>
+Common serialization callbacks include:
 
-<ul>
-<li><code>json_encode</code>/<code>json_decode</code></li>
-<li><code>igbinary_serialize</code>/<code>igbinary_unserialize</code></li>
-</ul>
+ - `json_encode`/`json_decode`
+ - `igbinary_serialize`/`igbinary_unserialize`
 
-<p>Please note that using JSON for serialization will exclude all non-public
-properties of objects from being serialized.</p>
+Please note that using JSON for serialization will exclude all non-public
+properties of objects from being serialized.
 
-<p>A custom <code>serialize</code> and <code>unserialze</code> option is <code>string</code>, which will cast
+A custom `serialize` and `unserialze` option is `string`, which will cast
 all values to a string when storing, instead of serializing them. If a
-<code>__toString()</code> method is provided for objects, it will be called.</p></p>
+`__toString()` method is provided for objects, it will be called.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCache::__construct()</td>
@@ -188,7 +191,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Tries to set a value to the cache, but stops if a value already exists.</h2>
 <pre>add(string $key, mixed $value, integer $ttl) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -209,7 +212,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Removes all cache entries that have expired</h2>
 <pre>clean() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -221,8 +224,8 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Clears the WHOLE cache of every key, use with caution!</h2>
 <pre>clear() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>xcache may require a login or password depending on your ini settings.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">xcache may require a login or password depending on your ini settings.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCache::clear()</td>
@@ -236,7 +239,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Deletes a value from the cache.</h2>
 <pre>delete(string $key) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -251,7 +254,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Returns a value from the cache.</h2>
 <pre>get(string $key, mixed $default) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -269,7 +272,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Only valid for `file` caches, saves the file to disk</h2>
 <pre>save() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -281,7 +284,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Sets a value to the cache, overriding any previous value.</h2>
 <pre>set(string $key, mixed $value, integer $ttl) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -302,7 +305,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Serializes a value before storing it in the cache</h2>
 <pre>serialize(mixed $value) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -321,7 +324,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Unserializes a value before returning it</h2>
 <pre>unserialize(string $value) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -340,7 +343,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Get a key unique to the site.</h2>
 <pre>getSiteUniqueKey(string $key) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -355,7 +358,7 @@ all values to a string when storing, instead of serializing them. If a
 <h2>Initialises the class.</h2>
 <pre>initialize() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -363,8 +366,8 @@ all values to a string when storing, instead of serializing them. If a
 <h2>The cache configuration, used for database, directory and file caches</h2>
 <pre>$config : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The array structure for database caches is:
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The array structure for database caches is:
 {{{
 array(
     'table'        => (string) {the database table to use},
@@ -372,22 +375,22 @@ array(
     'value_column' => (string) {the text/varchar column to store the value in},
     'ttl_column'   => (string) {the integer column to store the expiration time in}
 )
-}}}</p>
+}}}
 
-<p>The array structure for directory caches:
+The array structure for directory caches:
 {{{
 array(
     'path' => (string) {the directory path with trailing slash}
 )
-}}}</p>
+}}}
 
-<p>The array structure for file caches:
+The array structure for file caches:
 {{{
 array(
     'path'  => (string) {the file path},
     'state' => (string) {clean or dirty, used to appropriately save}
 )
-}}}</p></p>
+}}}</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCache::$$config</td>
@@ -398,14 +401,14 @@ array(
 <h2>The data store to use</h2>
 <pre>$data_store : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Either the:
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Either the:
  - array structure for file cache
  - Memcache or Memcached object for memcache
  - fDatabase object for database
- - Redis object for redis</p>
+ - Redis object for redis
 
-<p>Not used for apc, directory or xcache</p></p>
+Not used for apc, directory or xcache</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCache::$$data_store</td>
@@ -416,15 +419,15 @@ array(
 <h2>The type of cache</h2>
 <pre>$type : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The valid values are:
- - <code>'apc'</code>
- - <code>'database'</code>
- - <code>'directory'</code>
- - <code>'file'</code>
- - <code>'memcache'</code>
- - <code>'redis'</code>
- - <code>'xcache'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The valid values are:
+ - `'apc'`
+ - `'database'`
+ - `'directory'`
+ - `'file'`
+ - `'memcache'`
+ - `'redis'`
+ - `'xcache'`</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCache::$$type</td>
@@ -435,7 +438,7 @@ array(
 <h2>The current working directory.</h2>
 <pre>$cwd : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -443,8 +446,8 @@ array(
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

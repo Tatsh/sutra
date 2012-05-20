@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -79,12 +79,8 @@
   information or using SQL queries with methods such as
   translatedExcecute.</span><pre>getDatabase()</pre></a></li>
 <li class="method public inherited"><a href="#getDebug" title="getDebug :: If debugging is enabled"><span class="description">If debugging is enabled</span><pre>getDebug()</pre></a></li>
-<li class="method public inherited"><a href="#handleError" title="handleError :: Handles an error, creating the necessary context information and sending it to the specified destination"><span class="description">Handles an error, creating the necessary context information and sending it to the specified destination</span><pre>handleError()</pre></a></li>
-<li class="method public inherited"><a href="#handleException" title="handleException :: Handles an uncaught exception, creating the necessary context information, sending it to the specified destination and finally executing the closing callback"><span class="description">Handles an uncaught exception, creating the necessary context information, sending it to the specified destination and finally executing the closing callback</span><pre>handleException()</pre></a></li>
 <li class="method public "><a href="#main" title="main :: Example entry point. This would be called from index.php or similar file."><span class="description">Example entry point. This would be called from index.php or similar file.</span><pre>main()</pre></a></li>
 <li class="method public inherited"><a href="#registerDebugCallback" title="registerDebugCallback :: Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message"><span class="description">Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</span><pre>registerDebugCallback()</pre></a></li>
-<li class="method public inherited"><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
-<li class="method public inherited"><a href="#sendMessagesOnShutdown" title="sendMessagesOnShutdown :: Sends an email or writes a file with messages generated during the page execution"><span class="description">Sends an email or writes a file with messages generated during the page execution</span><pre>sendMessagesOnShutdown()</pre></a></li>
 <li class="method public inherited"><a href="#startErrorCapture" title="startErrorCapture :: Temporarily enables capturing error messages"><span class="description">Temporarily enables capturing error messages</span><pre>startErrorCapture()</pre></a></li>
 <li class="method public inherited"><a href="#stopErrorCapture" title="stopErrorCapture :: Stops capturing error messages, returning all that have been captured"><span class="description">Stops capturing error messages, returning all that have been captured</span><pre>stopErrorCapture()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -153,7 +149,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsCore" id="\sCore"></a><div href="../classes/sCore.html" class="element class">
+<a name="%5CsCore" id="\sCore"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sCore.html">sCore</a>
+</li>
+</ul>
+<div href="../classes/sCore.html" class="element class">
 <p class="short_description">This class is optional to use. It is generally for use as the core class of
   the site.</p>
 <div class="details">
@@ -173,7 +178,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -190,7 +195,7 @@
 <h2>Creates a nicely formatted backtrace to the the point where this method is called</h2>
 <pre>backtrace(integer $remove_lines, array $backtrace) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -213,33 +218,29 @@
 <h2>Performs a [http://php.net/call_user_func call_user_func()], while translating PHP 5.2 static callback syntax for PHP 5.1 and 5.0</h2>
 <pre>call(callback $callback, array $parameters) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Parameters can be passed either as a single array of parameters or as
-multiple parameters.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Parameters can be passed either as a single array of parameters or as
+multiple parameters.
 
-<p>{{{</p>
+{{{
+#!php
+// Passing multiple parameters in a normal fashion
+fCore::call('Class::method', TRUE, 0, 'test');
 
-<h1>!php</h1>
-
-<p>// Passing multiple parameters in a normal fashion
-fCore::call('Class::method', TRUE, 0, 'test');</p>
-
-<p>// Passing multiple parameters in a parameters array
+// Passing multiple parameters in a parameters array
 fCore::call('Class::method', array(TRUE, 0, 'test'));
-}}}</p>
+}}}
 
-<p>To pass parameters by reference they must be assigned to an
+To pass parameters by reference they must be assigned to an
 array by reference and the function/method being called must accept those
 parameters by reference. If either condition is not met, the parameter
-will be passed by value.</p>
+will be passed by value.
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>// Passing parameters by reference
-fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
-}}}</p></p>
+{{{
+#!php
+// Passing parameters by reference
+fCore::call('Class::method', array(&$var1, &$var2));
+}}}</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::call()</td>
@@ -261,7 +262,7 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Translates a Class::method style static method callback to array style for compatibility with PHP 5.0 and 5.1 and built-in PHP functions</h2>
 <pre>callback(callback $callback) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -280,17 +281,17 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Returns is the current OS is one of the OSes passed as a parameter</h2>
 <pre>checkOS(string $os) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Valid OS strings are:
- - <code>'linux'</code>
- - <code>'aix'</code>
- - <code>'bsd'</code>
- - <code>'freebsd'</code>
- - <code>'netbsd'</code>
- - <code>'openbsd'</code>
- - <code>'osx'</code>
- - <code>'solaris'</code>
- - <code>'windows'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Valid OS strings are:
+ - `'linux'`
+ - `'aix'`
+ - `'bsd'`
+ - `'freebsd'`
+ - `'netbsd'`
+ - `'openbsd'`
+ - `'osx'`
+ - `'solaris'`
+ - `'windows'`</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::checkOS()</td>
@@ -309,7 +310,7 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Checks to see if the running version of PHP is greater or equal to the version passed</h2>
 <pre>checkVersion($version) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -329,7 +330,7 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Sets an fSMTP object to be used for sending error and exception emails</h2>
 <pre>configureSMTP(<a href="../classes/fSMTP.html">\fSMTP</a> $smtp, string $from_email) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -349,7 +350,7 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Prints a debugging message if global or code-specific debugging is enabled</h2>
 <pre>debug(string $message, boolean $force) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -368,17 +369,15 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Disables including the context information with exception and error messages</h2>
 <pre>disableContext() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The context information includes the following superglobals:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The context information includes the following superglobals:
 
-<ul>
-<li><code>$_SERVER</code></li>
-<li><code>$_POST</code></li>
-<li><code>$_GET</code></li>
-<li><code>$_SESSION</code></li>
-<li><code>$_FILES</code></li>
-<li><code>$_COOKIE</code></li>
-</ul></p>
+ - `$_SERVER`
+ - `$_POST`
+ - `$_GET`
+ - `$_SESSION`
+ - `$_FILES`
+ - `$_COOKIE`</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::disableContext()</td>
@@ -389,17 +388,15 @@ fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
 <h2>Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</h2>
 <pre>dump(mixed $data) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The string output format of this method is very similar to the output of
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The string output format of this method is very similar to the output of
 [http://php.net/print_r print_r()] except that the following values
-are represented as special strings:</p>
+are represented as special strings:
 
-<ul>
-<li><code>TRUE</code>: <code>'{true}'</code></li>
-<li><code>FALSE</code>: <code>'{false}'</code></li>
-<li><code>NULL</code>: <code>'{null}'</code></li>
-<li><code>''</code>: <code>'{empty_string}'</code></li>
-</ul></p>
+ - `TRUE`: `'{true}'`
+ - `FALSE`: `'{false}'`
+ - `NULL`: `'{null}'`
+ - `''`: `'{empty_string}'`</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::dump()</td>
@@ -417,7 +414,7 @@ are represented as special strings:</p>
 <h2>Enables debug messages globally, i.e. they will be shown for any call to ::debug()</h2>
 <pre>enableDebugging(boolean $flag) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -433,11 +430,11 @@ are represented as special strings:</p>
 <h2>Turns on a feature where undefined constants are automatically created with the string value equivalent to the name</h2>
 <pre>enableDynamicConstants() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This functionality only works if ::enableErrorHandling() has been
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This functionality only works if ::enableErrorHandling() has been
 called first. This functionality may have a very slight performance
-impact since a <code>E_STRICT</code> error message must be captured and then a
-call to [http://php.net/define define()] is made.</p></p>
+impact since a `E_STRICT` error message must be captured and then a
+call to [http://php.net/define define()] is made.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::enableDynamicConstants()</td>
@@ -448,29 +445,27 @@ call to [http://php.net/define define()] is made.</p></p>
 <h2>Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps</h2>
 <pre>enableErrorHandling(string $destination) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>All errors that match the current
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">All errors that match the current
 [http://php.net/error_reporting error_reporting()] level will be
 redirected to the destination and will include a full backtrace. In
 addition, dumps of the following superglobals will be made to aid in
-debugging:</p>
+debugging:
 
-<ul>
-<li><code>$_SERVER</code></li>
-<li><code>$_POST</code></li>
-<li><code>$_GET</code></li>
-<li><code>$_SESSION</code></li>
-<li><code>$_FILES</code></li>
-<li><code>$_COOKIE</code></li>
-</ul>
+ - `$_SERVER`
+ - `$_POST`
+ - `$_GET`
+ - `$_SESSION`
+ - `$_FILES`
+ - `$_COOKIE`
 
-<p>The superglobal dumps are only done once per page, however a backtrace
-in included for each error.</p>
+The superglobal dumps are only done once per page, however a backtrace
+in included for each error.
 
-<p>If an email address is specified for the destination, only one email
+If an email address is specified for the destination, only one email
 will be sent per script execution. If both error and
 [enableExceptionHandling() exception handling] are set to the same
-email address, the email will contain both errors and exceptions.</p></p>
+email address, the email will contain both errors and exceptions.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::enableErrorHandling()</td>
@@ -486,32 +481,30 @@ email address, the email will contain both errors and exceptions.</p></p>
 <h2>Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps</h2>
 <pre>enableExceptionHandling(string $destination, callback $closing_code, array $parameters) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Any uncaught exception will be redirected to the destination specified,
-and the page will execute the <code>$closing_code</code> callback before exiting.
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Any uncaught exception will be redirected to the destination specified,
+and the page will execute the `$closing_code` callback before exiting.
 The destination will receive a message with the exception messaage, a
 full backtrace and dumps of the following superglobals to aid in
-debugging:</p>
+debugging:
 
-<ul>
-<li><code>$_SERVER</code></li>
-<li><code>$_POST</code></li>
-<li><code>$_GET</code></li>
-<li><code>$_SESSION</code></li>
-<li><code>$_FILES</code></li>
-<li><code>$_COOKIE</code></li>
-</ul>
+ - `$_SERVER`
+ - `$_POST`
+ - `$_GET`
+ - `$_SESSION`
+ - `$_FILES`
+ - `$_COOKIE`
 
-<p>The superglobal dumps are only done once per page, however a backtrace
-in included for each error.</p>
+The superglobal dumps are only done once per page, however a backtrace
+in included for each error.
 
-<p>If an email address is specified for the destination, only one email
-will be sent per script execution.</p>
+If an email address is specified for the destination, only one email
+will be sent per script execution.
 
-<p>If an email address is specified for the destination, only one email
+If an email address is specified for the destination, only one email
 will be sent per script execution. If both exception and
 [enableErrorHandling() error handling] are set to the same
-email address, the email will contain both exceptions and errors.</p></p>
+email address, the email will contain both exceptions and errors.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::enableExceptionHandling()</td>
@@ -535,13 +528,13 @@ email address, the email will contain both exceptions and errors.</p></p>
 <h2>Prints the ::dump() of a value</h2>
 <pre>expose(mixed $data) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The dump will be printed in a <code>&lt;pre&gt;</code> tag with the class <code>exposed</code> if
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The dump will be printed in a `<pre>` tag with the class `exposed` if
 PHP is running anywhere but via the command line (cli). If PHP is
 running via the cli, the data will be printed, followed by a single
-line break (<code>\n</code>).</p>
+line break (`\n`).
 
-<p>If multiple parameters are passed, they are exposed as an array.</p></p>
+If multiple parameters are passed, they are exposed as an array.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::expose()</td>
@@ -556,7 +549,7 @@ line break (<code>\n</code>).</p>
 <h2>Get the site cache. Can use sCache or fCache. They are both compatible.</h2>
 <pre>getCache() : <a href="../classes/sCache.html">\sCache</a> | <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -569,8 +562,8 @@ line break (<code>\n</code>).</p>
   translatedExcecute.</h2>
 <pre>getDatabase() : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method can also be used to configure fORM if that is desired.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method can also be used to configure fORM if that is desired.</p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
@@ -590,7 +583,7 @@ line break (<code>\n</code>).</p>
 <h2>If debugging is enabled</h2>
 <pre>getDebug(boolean $force) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -605,73 +598,17 @@ line break (<code>\n</code>).</p>
 <code>boolean</code>If debugging is enabled</div>
 </div></div>
 </div>
-<a name="handleError" id="handleError"></a><div class="element clickable method public handleError" data-toggle="collapse" data-target=".handleError .collapse">
-<h2>Handles an error, creating the necessary context information and sending it to the specified destination</h2>
-<pre>handleError(integer $error_number, string $error_string, string $error_file, integer $error_line, array $error_context) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fCore::handleError()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$error_number</h4>
-<code>integer</code><p>The error type</p></div>
-<div class="subelement argument">
-<h4>$error_string</h4>
-<code>string</code><p>The message for the error</p></div>
-<div class="subelement argument">
-<h4>$error_file</h4>
-<code>string</code><p>The file the error occurred in</p></div>
-<div class="subelement argument">
-<h4>$error_line</h4>
-<code>integer</code><p>The line the error occurred on</p></div>
-<div class="subelement argument">
-<h4>$error_context</h4>
-<code>array</code><p>A references to all variables in scope at the occurence of the error</p></div>
-</div></div>
-</div>
-<a name="handleException" id="handleException"></a><div class="element clickable method public handleException" data-toggle="collapse" data-target=".handleException .collapse">
-<h2>Handles an uncaught exception, creating the necessary context information, sending it to the specified destination and finally executing the closing callback</h2>
-<pre>handleException(object $exception) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fCore::handleException()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$exception</h4>
-<code>object</code><p>The uncaught exception to handle</p></div>
-</div></div>
-</div>
 <a name="main" id="main"></a><div class="element clickable method public main" data-toggle="collapse" data-target=".main .collapse">
 <h2>Example entry point. This would be called from index.php or similar file.</h2>
 <pre>main() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Calls to set up the database, configure session, configure authorisation,
-  and set up the exception handler.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Calls to set up the database, configure session, configure authorisation,
+  and set up the exception handler.
 
-<p>After these calls, it's expected that the template (sTemplate) will be
+After these calls, it's expected that the template (sTemplate) will be
   set up and that a router (such as Moor) will be used to continue the
-  request.</p></p>
+  request.</p>
 <table class="table table-bordered">
 <tr>
 <th>see</th>
@@ -692,7 +629,7 @@ line break (<code>\n</code>).</p>
 <h2>Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</h2>
 <pre>registerDebugCallback(callback $callback) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -704,48 +641,11 @@ line break (<code>\n</code>).</p>
 <code>callback</code><p>A callback that accepts a single parameter, the string debug message to handle</p></div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fCore::reset()</td>
-</tr>
-</table>
-</div></div>
-</div>
-<a name="sendMessagesOnShutdown" id="sendMessagesOnShutdown"></a><div class="element clickable method public sendMessagesOnShutdown" data-toggle="collapse" data-target=".sendMessagesOnShutdown .collapse">
-<h2>Sends an email or writes a file with messages generated during the page execution</h2>
-<pre>sendMessagesOnShutdown() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method prevents multiple emails from being sent or a log file from
-being written multiple times for one script execution.</p></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fCore::sendMessagesOnShutdown()</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a name="startErrorCapture" id="startErrorCapture"></a><div class="element clickable method public startErrorCapture" data-toggle="collapse" data-target=".startErrorCapture .collapse">
 <h2>Temporarily enables capturing error messages</h2>
 <pre>startErrorCapture(integer $types, string $regex) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -765,7 +665,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Stops capturing error messages, returning all that have been captured</h2>
 <pre>stopErrorCapture(string $regex) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -784,7 +684,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Configures authorisation.</h2>
 <pre>configureAuthorization() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -802,7 +702,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Configures session settings.</h2>
 <pre>configureSession() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -820,7 +720,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sCore.html">\sCore</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sCore.html">\sCore</a></code></div>
@@ -830,7 +730,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Checks an error/exception destination to make sure it is valid</h2>
 <pre>checkDestination(string $destination) : string | boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -850,7 +750,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -869,7 +769,7 @@ being written multiple times for one script execution.</p></p>
 <h2>Generates some information about the context of an error or exception</h2>
 <pre>generateContext() : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -884,10 +784,10 @@ being written multiple times for one script execution.</p></p>
 <h2>Handles sending a message to a destination</h2>
 <pre>sendMessageToDestination(string $type, string $message, string $significant_line) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the destination is an email address or file, the messages will be
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the destination is an email address or file, the messages will be
 spooled up until the end of the script execution to prevent multiple
-emails from being sent or a log file being written to multiple times.</p></p>
+emails from being sent or a log file being written to multiple times.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fCore::sendMessageToDestination()</td>
@@ -910,19 +810,19 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>The cache.</h2>
 <pre>$cache : <a href="../classes/sCache.html">\sCache</a> | <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24db" id="$db"> </a><div class="element clickable property protected $db" data-toggle="collapse" data-target=".$db .collapse">
 <h2>The fDatabase instance.</h2>
 <pre>$db : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24captured_error_level" id="$captured_error_level"> </a><div class="element clickable property private $captured_error_level" data-toggle="collapse" data-target=".$captured_error_level .collapse">
 <h2>The nesting level of error capturing</h2>
 <pre>$captured_error_level : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -934,7 +834,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>A stack of regex to match errors to capture, one string per level</h2>
 <pre>$captured_error_regex : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -946,7 +846,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>A stack of the types of errors to capture, one integer per level</h2>
 <pre>$captured_error_types : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -958,7 +858,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>A stack of arrays of errors that have been captured, one array per level</h2>
 <pre>$captured_errors : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -970,7 +870,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>A stack of the previous error handler, one callback per level</h2>
 <pre>$captured_errors_previous_handler : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -982,7 +882,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If the context info has been shown</h2>
 <pre>$context_shown : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -994,7 +894,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If global debugging is enabled</h2>
 <pre>$debug : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1006,7 +906,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>A callback to pass debug messages to</h2>
 <pre>$debug_callback : callback</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1018,7 +918,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If dynamic constants should be created</h2>
 <pre>$dynamic_constants : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1030,7 +930,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>Error destination</h2>
 <pre>$error_destination : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1042,7 +942,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>An array of errors to be send to the destination upon page completion</h2>
 <pre>$error_message_queue : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1054,7 +954,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>Exception destination</h2>
 <pre>$exception_destination : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1066,7 +966,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>Exception handler callback</h2>
 <pre>$exception_handler_callback : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1078,7 +978,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>Exception handler callback parameters</h2>
 <pre>$exception_handler_parameters : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1090,7 +990,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>The message generated by the uncaught exception</h2>
 <pre>$exception_message : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1102,7 +1002,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If this class is handling errors</h2>
 <pre>$handles_errors : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1114,7 +1014,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If this class is handling exceptions</h2>
 <pre>$handles_exceptions : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1126,7 +1026,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>If the context info should be shown with errors/exceptions</h2>
 <pre>$show_context : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1138,7 +1038,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>An array of the most significant lines from error and exception backtraces</h2>
 <pre>$significant_error_lines : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1150,7 +1050,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>An SMTP connection for sending error and exception emails</h2>
 <pre>$smtp_connection : <a href="../classes/fSMTP.html">\fSMTP</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1162,7 +1062,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>The email address to send error emails from</h2>
 <pre>$smtp_from_email : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1176,7 +1076,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>backtrace</h2>
 <pre>backtrace </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1188,7 +1088,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>call</h2>
 <pre>call </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1200,7 +1100,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>callback</h2>
 <pre>callback </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1212,7 +1112,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>checkOS</h2>
 <pre>checkOS </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1224,7 +1124,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>checkVersion</h2>
 <pre>checkVersion </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1236,7 +1136,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>configureSMTP</h2>
 <pre>configureSMTP </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1248,7 +1148,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>debug</h2>
 <pre>debug </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1260,7 +1160,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>disableContext</h2>
 <pre>disableContext </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1272,7 +1172,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>dump</h2>
 <pre>dump </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1284,7 +1184,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>enableDebugging</h2>
 <pre>enableDebugging </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1296,7 +1196,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>enableDynamicConstants</h2>
 <pre>enableDynamicConstants </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1308,7 +1208,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>enableErrorHandling</h2>
 <pre>enableErrorHandling </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1320,7 +1220,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>enableExceptionHandling</h2>
 <pre>enableExceptionHandling </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1332,7 +1232,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>expose</h2>
 <pre>expose </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1344,19 +1244,19 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>getCache</h2>
 <pre>getCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getDatabase" id="getDatabase"> </a><div class="element clickable constant  getDatabase" data-toggle="collapse" data-target=".getDatabase .collapse">
 <h2>getDatabase</h2>
 <pre>getDatabase </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getDebug" id="getDebug"> </a><div class="element clickable constant  getDebug" data-toggle="collapse" data-target=".getDebug .collapse">
 <h2>getDebug</h2>
 <pre>getDebug </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1368,7 +1268,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>handleError</h2>
 <pre>handleError </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1380,7 +1280,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>handleException</h2>
 <pre>handleException </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1392,13 +1292,13 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>main</h2>
 <pre>main </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="registerDebugCallback" id="registerDebugCallback"> </a><div class="element clickable constant  registerDebugCallback" data-toggle="collapse" data-target=".registerDebugCallback .collapse">
 <h2>registerDebugCallback</h2>
 <pre>registerDebugCallback </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1410,7 +1310,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1422,7 +1322,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>sendMessagesOnShutdown</h2>
 <pre>sendMessagesOnShutdown </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1434,7 +1334,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>startErrorCapture</h2>
 <pre>startErrorCapture </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1446,7 +1346,7 @@ emails from being sent or a log file being written to multiple times.</p></p>
 <h2>stopErrorCapture</h2>
 <pre>stopErrorCapture </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1460,8 +1360,8 @@ emails from being sent or a log file being written to multiple times.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

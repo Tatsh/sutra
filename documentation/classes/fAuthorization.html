@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -72,7 +72,6 @@
 <li class="method public "><a href="#requireACL" title="requireACL :: Redirect the user to the login page if they do not have the permissions required"><span class="description">Redirect the user to the login page if they do not have the permissions required</span><pre>requireACL()</pre></a></li>
 <li class="method public "><a href="#requireAuthLevel" title="requireAuthLevel :: Redirect the user to the login page if they do not have the auth level required"><span class="description">Redirect the user to the login page if they do not have the auth level required</span><pre>requireAuthLevel()</pre></a></li>
 <li class="method public "><a href="#requireLoggedIn" title="requireLoggedIn :: Redirect the user to the login page if they do not have an auth level or ACLs"><span class="description">Redirect the user to the login page if they do not have an auth level or ACLs</span><pre>requireLoggedIn()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setAuthLevels" title="setAuthLevels :: Sets the authorization levels to use for level checking"><span class="description">Sets the authorization levels to use for level checking</span><pre>setAuthLevels()</pre></a></li>
 <li class="method public "><a href="#setLoginPage" title="setLoginPage :: Sets the login page to redirect users to"><span class="description">Sets the login page to redirect users to</span><pre>setLoginPage()</pre></a></li>
 <li class="method public "><a href="#setRequestedURL" title="setRequestedURL :: Sets the restricted URL requested by the user"><span class="description">Sets the restricted URL requested by the user</span><pre>setRequestedURL()</pre></a></li>
@@ -116,7 +115,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfAuthorization" id="\fAuthorization"></a><div href="../classes/fAuthorization.html" class="element class">
+<a name="%5CfAuthorization" id="\fAuthorization"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fAuthorization.html">fAuthorization</a>
+</li>
+</ul>
+<div href="../classes/fAuthorization.html" class="element class">
 <p class="short_description">Allows defining and checking user authentication via ACLs, authorization levels or a simple logged in/not logged in scheme</p>
 <div class="details">
 <p class="long_description"></p>
@@ -135,7 +143,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -176,9 +184,9 @@
 <h2>Adds a named IP address or range, or array of addresses and/or ranges</h2>
 <pre>addNamedIPRange(string $name, mixed $ip_ranges) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method allows ::checkIP() to be called with a name instead of the
-actual IPs.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method allows ::checkIP() to be called with a name instead of the
+actual IPs.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
@@ -194,7 +202,7 @@ actual IPs.</p></p>
 <h2>Checks to see if the logged in user meets the requirements of the ACL specified</h2>
 <pre>checkACL(string $resource, string $permission) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -212,7 +220,7 @@ actual IPs.</p></p>
 <h2>Checks to see if the logged in user has the specified auth level</h2>
 <pre>checkAuthLevel(string $level) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -228,30 +236,19 @@ actual IPs.</p></p>
 <h2>Checks to see if the user is from the IPs or IP ranges specified</h2>
 <pre>checkIP(mixed $ip_ranges) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$ip_ranges</code> parameter can be either a single string, or an array of
-strings, each of which should be in one of the following formats:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$ip_ranges` parameter can be either a single string, or an array of
+strings, each of which should be in one of the following formats:
 
-<ul>
-<li>A single IP address:
-
-<ul>
-<li>192.168.1.1</li>
-<li>208.77.188.166</li>
-</ul></li>
-<li>A CIDR range
-
-<ul>
-<li>192.168.1.0/24</li>
-<li>208.77.188.160/28</li>
-</ul></li>
-<li>An IP/subnet mask combination
-
-<ul>
-<li>192.168.1.0/255.255.255.0</li>
-<li>208.77.188.160/255.255.255.240</li>
-</ul></li>
-</ul></p>
+ - A single IP address:
+  - 192.168.1.1
+  - 208.77.188.166
+ - A CIDR range
+  - 192.168.1.0/24
+  - 208.77.188.160/28
+ - An IP/subnet mask combination
+  - 192.168.1.0/255.255.255.0
+  - 208.77.188.160/255.255.255.240</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$ip_ranges</h4>
@@ -266,7 +263,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Checks to see if the user has an auth level or ACLs defined</h2>
 <pre>checkLoggedIn() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -277,13 +274,13 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Destroys the user's auth level and/or ACLs</h2>
 <pre>destroyUserInfo() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getLoginPage" id="getLoginPage"></a><div class="element clickable method public getLoginPage" data-toggle="collapse" data-target=".getLoginPage .collapse">
 <h2>Returns the login page set via ::setLoginPage()</h2>
 <pre>getLoginPage() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -294,7 +291,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Returns the URL requested before the user was redirected to the login page</h2>
 <pre>getRequestedURL(boolean $clear, string $default_url) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -312,7 +309,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the ACLs for the logged in user</h2>
 <pre>getUserACLs() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -323,7 +320,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the authorization level for the logged in user</h2>
 <pre>getUserAuthLevel() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -334,7 +331,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the value that was set as the user token, `NULL` if no token has been set</h2>
 <pre>getUserToken() : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -345,7 +342,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have the permissions required</h2>
 <pre>requireACL(string $resource, string $permission) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -360,7 +357,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have the auth level required</h2>
 <pre>requireAuthLevel(string $level) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -373,25 +370,13 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have an auth level or ACLs</h2>
 <pre>requireLoggedIn() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setAuthLevels" id="setAuthLevels"></a><div class="element clickable method public setAuthLevels" data-toggle="collapse" data-target=".setAuthLevels .collapse">
 <h2>Sets the authorization levels to use for level checking</h2>
 <pre>setAuthLevels(array $levels) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -404,7 +389,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the login page to redirect users to</h2>
 <pre>setLoginPage(string $url) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -416,7 +401,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the restricted URL requested by the user</h2>
 <pre>setRequestedURL(string $url) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -428,19 +413,19 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the ACLs for the logged in user.</h2>
 <pre>setUserACLs(array $acls) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Array should be formatted like:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Array should be formatted like:
 
-<p>{{{
+{{{
 array (
     (string) {resource name} => array(
         (mixed) {permission}, ...
     ), ...
 )
-}}}</p>
+}}}
 
-<p>The resource name or the permission may be the single character <code>'*'</code>
-which acts as a wildcard.</p></p>
+The resource name or the permission may be the single character `'*'`
+which acts as a wildcard.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$acls</h4>
@@ -452,7 +437,7 @@ which acts as a wildcard.</p></p>
 <h2>Sets the authorization level for the logged in user</h2>
 <pre>setUserAuthLevel(string $level) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -465,7 +450,7 @@ which acts as a wildcard.</p></p>
 <h2>Sets some piece of information to use to identify the current user</h2>
 <pre>setUserToken(mixed $token) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -478,7 +463,7 @@ which acts as a wildcard.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fAuthorization.html">\fAuthorization</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fAuthorization.html">\fAuthorization</a></code></div>
@@ -488,13 +473,13 @@ which acts as a wildcard.</p></p>
 <h2>Redirects the user to the login page</h2>
 <pre>redirect() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validateAuthLevel" id="validateAuthLevel"></a><div class="element clickable method private validateAuthLevel" data-toggle="collapse" data-target=".validateAuthLevel .collapse">
 <h2>Makes sure auth levels have been set, and that the specified auth level is valid</h2>
 <pre>validateAuthLevel(string $level) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -506,7 +491,7 @@ which acts as a wildcard.</p></p>
 <h2>Makes sure a login page has been defined</h2>
 <pre>validateLoginPage() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -514,19 +499,19 @@ which acts as a wildcard.</p></p>
 <h2>The valid auth levels</h2>
 <pre>$levels : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24login_page" id="$login_page"> </a><div class="element clickable property private $login_page" data-toggle="collapse" data-target=".$login_page .collapse">
 <h2>The login page</h2>
 <pre>$login_page : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24named_ip_ranges" id="$named_ip_ranges"> </a><div class="element clickable property private $named_ip_ranges" data-toggle="collapse" data-target=".$named_ip_ranges .collapse">
 <h2>Named IP ranges</h2>
 <pre>$named_ip_ranges : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -534,127 +519,127 @@ which acts as a wildcard.</p></p>
 <h2>addNamedIPRange</h2>
 <pre>addNamedIPRange </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="checkACL" id="checkACL"> </a><div class="element clickable constant  checkACL" data-toggle="collapse" data-target=".checkACL .collapse">
 <h2>checkACL</h2>
 <pre>checkACL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="checkAuthLevel" id="checkAuthLevel"> </a><div class="element clickable constant  checkAuthLevel" data-toggle="collapse" data-target=".checkAuthLevel .collapse">
 <h2>checkAuthLevel</h2>
 <pre>checkAuthLevel </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="checkIP" id="checkIP"> </a><div class="element clickable constant  checkIP" data-toggle="collapse" data-target=".checkIP .collapse">
 <h2>checkIP</h2>
 <pre>checkIP </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="checkLoggedIn" id="checkLoggedIn"> </a><div class="element clickable constant  checkLoggedIn" data-toggle="collapse" data-target=".checkLoggedIn .collapse">
 <h2>checkLoggedIn</h2>
 <pre>checkLoggedIn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="destroyUserInfo" id="destroyUserInfo"> </a><div class="element clickable constant  destroyUserInfo" data-toggle="collapse" data-target=".destroyUserInfo .collapse">
 <h2>destroyUserInfo</h2>
 <pre>destroyUserInfo </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getLoginPage" id="getLoginPage"> </a><div class="element clickable constant  getLoginPage" data-toggle="collapse" data-target=".getLoginPage .collapse">
 <h2>getLoginPage</h2>
 <pre>getLoginPage </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getRequestedURL" id="getRequestedURL"> </a><div class="element clickable constant  getRequestedURL" data-toggle="collapse" data-target=".getRequestedURL .collapse">
 <h2>getRequestedURL</h2>
 <pre>getRequestedURL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getUserACLs" id="getUserACLs"> </a><div class="element clickable constant  getUserACLs" data-toggle="collapse" data-target=".getUserACLs .collapse">
 <h2>getUserACLs</h2>
 <pre>getUserACLs </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getUserAuthLevel" id="getUserAuthLevel"> </a><div class="element clickable constant  getUserAuthLevel" data-toggle="collapse" data-target=".getUserAuthLevel .collapse">
 <h2>getUserAuthLevel</h2>
 <pre>getUserAuthLevel </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getUserToken" id="getUserToken"> </a><div class="element clickable constant  getUserToken" data-toggle="collapse" data-target=".getUserToken .collapse">
 <h2>getUserToken</h2>
 <pre>getUserToken </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="requireACL" id="requireACL"> </a><div class="element clickable constant  requireACL" data-toggle="collapse" data-target=".requireACL .collapse">
 <h2>requireACL</h2>
 <pre>requireACL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="requireAuthLevel" id="requireAuthLevel"> </a><div class="element clickable constant  requireAuthLevel" data-toggle="collapse" data-target=".requireAuthLevel .collapse">
 <h2>requireAuthLevel</h2>
 <pre>requireAuthLevel </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="requireLoggedIn" id="requireLoggedIn"> </a><div class="element clickable constant  requireLoggedIn" data-toggle="collapse" data-target=".requireLoggedIn .collapse">
 <h2>requireLoggedIn</h2>
 <pre>requireLoggedIn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setAuthLevels" id="setAuthLevels"> </a><div class="element clickable constant  setAuthLevels" data-toggle="collapse" data-target=".setAuthLevels .collapse">
 <h2>setAuthLevels</h2>
 <pre>setAuthLevels </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setLoginPage" id="setLoginPage"> </a><div class="element clickable constant  setLoginPage" data-toggle="collapse" data-target=".setLoginPage .collapse">
 <h2>setLoginPage</h2>
 <pre>setLoginPage </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setRequestedURL" id="setRequestedURL"> </a><div class="element clickable constant  setRequestedURL" data-toggle="collapse" data-target=".setRequestedURL .collapse">
 <h2>setRequestedURL</h2>
 <pre>setRequestedURL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setUserACLs" id="setUserACLs"> </a><div class="element clickable constant  setUserACLs" data-toggle="collapse" data-target=".setUserACLs .collapse">
 <h2>setUserACLs</h2>
 <pre>setUserACLs </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setUserAuthLevel" id="setUserAuthLevel"> </a><div class="element clickable constant  setUserAuthLevel" data-toggle="collapse" data-target=".setUserAuthLevel .collapse">
 <h2>setUserAuthLevel</h2>
 <pre>setUserAuthLevel </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setUserToken" id="setUserToken"> </a><div class="element clickable constant  setUserToken" data-toggle="collapse" data-target=".setUserToken .collapse">
 <h2>setUserToken</h2>
 <pre>setUserToken </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -662,8 +647,8 @@ which acts as a wildcard.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -60,7 +60,6 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#check" title="check :: Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request"><span class="description">Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request</span><pre>check()</pre></a></li>
 <li class="method public "><a href="#encode" title="encode :: Gets a value from ::get() and passes it through fHTML::encode()"><span class="description">Gets a value from ::get() and passes it through fHTML::encode()</span><pre>encode()</pre></a></li>
-<li class="method public "><a href="#filter" title="filter :: Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name"><span class="description">Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#generateCSRFToken" title="generateCSRFToken :: Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]"><span class="description">Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</span><pre>generateCSRFToken()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)"><span class="description">Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#getAcceptLanguages" title="getAcceptLanguages :: Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)"><span class="description">Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</span><pre>getAcceptLanguages()</pre></a></li>
@@ -76,9 +75,7 @@
 <li class="method public "><a href="#isPut" title="isPut :: Indicates if the URL was accessed via the `PUT` HTTP method"><span class="description">Indicates if the URL was accessed via the `PUT` HTTP method</span><pre>isPut()</pre></a></li>
 <li class="method public "><a href="#overrideAction" title="overrideAction :: Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value"><span class="description">Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</span><pre>overrideAction()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Gets a value from ::get() and passes it through fHTML::prepare()"><span class="description">Gets a value from ::get() and passes it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration and data of the class"><span class="description">Resets the configuration and data of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request"><span class="description">Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</span><pre>set()</pre></a></li>
-<li class="method public "><a href="#unfilter" title="unfilter :: Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called"><span class="description">Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called</span><pre>unfilter()</pre></a></li>
 <li class="method public "><a href="#validateCSRFToken" title="validateCSRFToken :: Validates a request token generated by ::generateCSRFToken()"><span class="description">Validates a request token generated by ::generateCSRFToken()</span><pre>validateCSRFToken()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
@@ -122,14 +119,23 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfRequest" id="\fRequest"></a><div href="../classes/fRequest.html" class="element class">
+<a name="%5CfRequest" id="\fRequest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fRequest.html">fRequest</a>
+</li>
+</ul>
+<div href="../classes/fRequest.html" class="element class">
 <p class="short_description">Provides request-related methods</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p>
+<p class="long_description">This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.
 
-<p>Please also note that using this class in a PUT or DELETE request will
-cause the php://input stream to be consumed, and thus no longer available.</p></p>
+Please also note that using this class in a PUT or DELETE request will
+cause the php://input stream to be consumed, and thus no longer available.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -149,7 +155,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -242,7 +248,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <h2>Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request</h2>
 <pre>check(string $key) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -258,7 +264,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <h2>Gets a value from ::get() and passes it through fHTML::encode()</h2>
 <pre>encode(string $key, string $cast_to, mixed $default_value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -277,41 +283,22 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <code>string</code>The encoded value</div>
 </div></div>
 </div>
-<a name="filter" id="filter"></a><div class="element clickable method public filter" data-toggle="collapse" data-target=".filter .collapse">
-<h2>Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name</h2>
-<pre>filter(string $prefix, mixed $key) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$prefix</h4>
-<code>string</code><p>The prefix to filter by</p></div>
-<div class="subelement argument">
-<h4>$key</h4>
-<code>mixed</code><p>If the field is an array, get the value corresponding to this key</p></div>
-</div></div>
-</div>
 <a name="generateCSRFToken" id="generateCSRFToken"></a><div class="element clickable method public generateCSRFToken" data-toggle="collapse" data-target=".generateCSRFToken .collapse">
 <h2>Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</h2>
 <pre>generateCSRFToken(string $url) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method will return a random 15 character string that should be
-placed in a hidden <code>input</code> element on every HTML form. When the form
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method will return a random 15 character string that should be
+placed in a hidden `input` element on every HTML form. When the form
 contents are being processed, the token should be retrieved and passed
-into ::validateCSRFToken().</p>
+into ::validateCSRFToken().
 
-<p>The value returned by this method is stored in the session and then
+The value returned by this method is stored in the session and then
 checked by the validate method, which helps prevent cross site request
-forgeries and (naive) automated form submissions.</p>
+forgeries and (naive) automated form submissions.
 
-<p>Tokens generated by this method are single use, so a user must request
-the page that generates the token at least once per submission.</p></p>
+Tokens generated by this method are single use, so a user must request
+the page that generates the token at least once per submission.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$url</h4>
@@ -325,46 +312,46 @@ the page that generates the token at least once per submission.</p></p>
 <h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</h2>
 <pre>get(string $key, string $cast_to, mixed $default_value, boolean $use_default_for_blank) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A value that exactly equals <code>''</code> and is not cast to a specific type will
-become <code>NULL</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A value that exactly equals `''` and is not cast to a specific type will
+become `NULL`.
 
-<p>Valid <code>$cast_to</code> types include:
- - <code>'string'</code>
- - <code>'binary'</code>
- - <code>'int'</code>
- - <code>'integer'</code>
- - <code>'bool'</code>
- - <code>'boolean'</code>
- - <code>'array'</code>
- - <code>'date'</code>
- - <code>'time'</code>
- - <code>'timestamp'</code></p>
+Valid `$cast_to` types include:
+ - `'string'`
+ - `'binary'`
+ - `'int'`
+ - `'integer'`
+ - `'bool'`
+ - `'boolean'`
+ - `'array'`
+ - `'date'`
+ - `'time'`
+ - `'timestamp'`
 
-<p>It is possible to append a <code>?</code> to a data type to return <code>NULL</code>
-whenever the <code>$key</code> was not specified in the request, or if the value
-was a blank string.</p>
+It is possible to append a `?` to a data type to return `NULL`
+whenever the `$key` was not specified in the request, or if the value
+was a blank string.
 
-<p>The <code>array</code> and unspecified <code>$cast_to</code> types allow for multi-dimensional
+The `array` and unspecified `$cast_to` types allow for multi-dimensional
 arrays of string data. It is possible to cast an input value as a
-single-dimensional array of a specific type by appending <code>[]</code> to the
-<code>$cast_to</code>.</p>
+single-dimensional array of a specific type by appending `[]` to the
+`$cast_to`.
 
-<p>All <code>string</code>, <code>array</code> or unspecified <code>$cast_to</code> will result in the value(s)
+All `string`, `array` or unspecified `$cast_to` will result in the value(s)
 being interpreted as UTF-8 string and appropriately cleaned of invalid
 byte sequences. Also, all low-byte, non-printable characters will be
 stripped from the value. This includes all bytes less than the value of
-32 (Space) other than Tab (<code>\t</code>), Newline (<code>\n</code>) and Cariage Return
-(<code>\r</code>).</p>
+32 (Space) other than Tab (`\t`), Newline (`\n`) and Cariage Return
+(`\r`).
 
-<p>To preserve low-byte, non-printable characters, or get the raw value
+To preserve low-byte, non-printable characters, or get the raw value
 without cleaning invalid UTF-8 byte sequences, plase use the value of
-<code>binary</code> for the <code>$cast_to</code> parameter.</p>
+`binary` for the `$cast_to` parameter.
 
-<p>Any integers that are beyond the range of 32bit storage will be returned
+Any integers that are beyond the range of 32bit storage will be returned
 as a string. The returned value can be forced to always be a real
-integer, which may cause truncation of the value, by passing <code>integer!</code>
-as the <code>$cast_to</code>.</p></p>
+integer, which may cause truncation of the value, by passing `integer!`
+as the `$cast_to`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$key</h4>
@@ -391,7 +378,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</h2>
 <pre>getAcceptLanguages() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -402,7 +389,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the HTTP `Accept` types sorted by their `q` values (from high to low)</h2>
 <pre>getAcceptTypes() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -413,13 +400,13 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the best HTTP `Accept-Language` (based on `q` value) - can be filtered to only allow certain languages</h2>
 <pre>getBestAcceptLanguage(array $filter) : string | NULL | FALSE</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Special conditions affecting the return value:
- - If no <code>$filter</code> is provided and the client does not send the <code>Accept-Language</code> header, <code>NULL</code> will be returned
- - If no <code>$filter</code> is provided and the client specifies <code>*</code> with the highest <code>q</code>, <code>NULL</code> will be returned
- - If <code>$filter</code> contains one or more values, but the <code>Accept-Language</code> header does not match any, <code>FALSE</code> will be returned
- - If <code>$filter</code> contains one or more values, but the client does not send the <code>Accept-Language</code> header, the first entry from <code>$filter</code> will be returned
- - If <code>$filter</code> contains two or more values, and two of the values have the same <code>q</code> value, the one listed first in <code>$filter</code> will be returned</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Special conditions affecting the return value:
+ - If no `$filter` is provided and the client does not send the `Accept-Language` header, `NULL` will be returned
+ - If no `$filter` is provided and the client specifies `*` with the highest `q`, `NULL` will be returned
+ - If `$filter` contains one or more values, but the `Accept-Language` header does not match any, `FALSE` will be returned
+ - If `$filter` contains one or more values, but the client does not send the `Accept-Language` header, the first entry from `$filter` will be returned
+ - If `$filter` contains two or more values, and two of the values have the same `q` value, the one listed first in `$filter` will be returned</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$filter</h4>
@@ -435,7 +422,7 @@ as the <code>$cast_to</code>.</p></p>
         </h2>
 <pre>getBestAcceptType($filter) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -448,7 +435,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order), restricting to a specific set of values</h2>
 <pre>getValid(string $key, array $valid_values) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -467,7 +454,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via an XMLHttpRequest</h2>
 <pre>isAjax() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -478,7 +465,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `DELETE` HTTP method</h2>
 <pre>isDelete() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -489,7 +476,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `GET` HTTP method</h2>
 <pre>isGet() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -500,7 +487,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `POST` HTTP method</h2>
 <pre>isPost() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -511,7 +498,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `PUT` HTTP method</h2>
 <pre>isPut() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -522,9 +509,9 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</h2>
 <pre>overrideAction(string $redirect) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is primarily intended to be used for hanlding multiple
-submit buttons.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method is primarily intended to be used for hanlding multiple
+submit buttons.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$redirect</h4>
@@ -536,7 +523,7 @@ submit buttons.</p></p>
 <h2>Gets a value from ::get() and passes it through fHTML::prepare()</h2>
 <pre>prepare(string $key, string $cast_to, mixed $default_value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -555,23 +542,11 @@ submit buttons.</p></p>
 <code>string</code>The prepared value</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration and data of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
 <h2>Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</h2>
 <pre>set(string $key, mixed $value) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -583,25 +558,13 @@ submit buttons.</p></p>
 <code>mixed</code><p>The value to set</p></div>
 </div></div>
 </div>
-<a name="unfilter" id="unfilter"></a><div class="element clickable method public unfilter" data-toggle="collapse" data-target=".unfilter .collapse">
-<h2>Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called</h2>
-<pre>unfilter() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="validateCSRFToken" id="validateCSRFToken"></a><div class="element clickable method public validateCSRFToken" data-toggle="collapse" data-target=".validateCSRFToken .collapse">
 <h2>Validates a request token generated by ::generateCSRFToken()</h2>
 <pre>validateCSRFToken(string $token, string $url) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method takes a request token and ensures it is valid, otherwise
-it will throw an fValidationException.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method takes a request token and ensures it is valid, otherwise
+it will throw an fValidationException.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$token</h4>
@@ -620,7 +583,7 @@ it will throw an fValidationException.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fRequest.html">\fRequest</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fRequest.html">\fRequest</a></code></div>
@@ -630,7 +593,7 @@ it will throw an fValidationException.</p></p>
 <h2>Recursively handles casting values</h2>
 <pre>cast(string | array $value, string $cast_to, integer $level) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -651,13 +614,13 @@ it will throw an fValidationException.</p></p>
 <h2>Parses post data for `PUT` and `DELETE` HTTP methods</h2>
 <pre>initPutDelete() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="pickBestAcceptItem" id="pickBestAcceptItem"></a><div class="element clickable method private pickBestAcceptItem" data-toggle="collapse" data-target=".pickBestAcceptItem .collapse">
 <h2>Returns the best HTTP `Accept-*` header item match (based on `q` value), optionally filtered by an array of options</h2>
 <pre>pickBestAcceptItem(string $header_name, array $options) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -676,7 +639,7 @@ it will throw an fValidationException.</p></p>
 <h2>Returns an array of values from one of the HTTP `Accept-*` headers</h2>
 <pre>processAcceptHeader(string $header_name) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -692,7 +655,7 @@ it will throw an fValidationException.</p></p>
 <h2>Removes low-order bytes from a value</h2>
 <pre>stripLowOrderBytes(string | array $value) : string | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -707,7 +670,7 @@ it will throw an fValidationException.</p></p>
 <h2>Removes slashes from a value</h2>
 <pre>stripSlashes(string | array $value) : string | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -724,31 +687,31 @@ it will throw an fValidationException.</p></p>
 <h2>A backup copy of `$_FILES` for ::unfilter()</h2>
 <pre>$backup_files : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24backup_get" id="$backup_get"> </a><div class="element clickable property private $backup_get" data-toggle="collapse" data-target=".$backup_get .collapse">
 <h2>A backup copy of `$_GET` for ::unfilter()</h2>
 <pre>$backup_get : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24backup_post" id="$backup_post"> </a><div class="element clickable property private $backup_post" data-toggle="collapse" data-target=".$backup_post .collapse">
 <h2>A backup copy of `$_POST` for unfilter()</h2>
 <pre>$backup_post : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24backup_put_delete" id="$backup_put_delete"> </a><div class="element clickable property private $backup_put_delete" data-toggle="collapse" data-target=".$backup_put_delete .collapse">
 <h2>A backup copy of the local `PUT`/`DELETE` post data for ::unfilter()</h2>
 <pre>$backup_put_delete : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24put_delete" id="$put_delete"> </a><div class="element clickable property private $put_delete" data-toggle="collapse" data-target=".$put_delete .collapse">
 <h2>The key/value pairs from the post data of a `PUT`/`DELETE` request</h2>
 <pre>$put_delete : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -756,127 +719,127 @@ it will throw an fValidationException.</p></p>
 <h2>check</h2>
 <pre>check </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
 <h2>encode</h2>
 <pre>encode </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="filter" id="filter"> </a><div class="element clickable constant  filter" data-toggle="collapse" data-target=".filter .collapse">
 <h2>filter</h2>
 <pre>filter </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="generateCSRFToken" id="generateCSRFToken"> </a><div class="element clickable constant  generateCSRFToken" data-toggle="collapse" data-target=".generateCSRFToken .collapse">
 <h2>generateCSRFToken</h2>
 <pre>generateCSRFToken </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
 <h2>get</h2>
 <pre>get </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getAcceptLanguages" id="getAcceptLanguages"> </a><div class="element clickable constant  getAcceptLanguages" data-toggle="collapse" data-target=".getAcceptLanguages .collapse">
 <h2>getAcceptLanguages</h2>
 <pre>getAcceptLanguages </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getAcceptTypes" id="getAcceptTypes"> </a><div class="element clickable constant  getAcceptTypes" data-toggle="collapse" data-target=".getAcceptTypes .collapse">
 <h2>getAcceptTypes</h2>
 <pre>getAcceptTypes </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getBestAcceptLanguage" id="getBestAcceptLanguage"> </a><div class="element clickable constant  getBestAcceptLanguage" data-toggle="collapse" data-target=".getBestAcceptLanguage .collapse">
 <h2>getBestAcceptLanguage</h2>
 <pre>getBestAcceptLanguage </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getBestAcceptType" id="getBestAcceptType"> </a><div class="element clickable constant  getBestAcceptType" data-toggle="collapse" data-target=".getBestAcceptType .collapse">
 <h2>getBestAcceptType</h2>
 <pre>getBestAcceptType </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getValid" id="getValid"> </a><div class="element clickable constant  getValid" data-toggle="collapse" data-target=".getValid .collapse">
 <h2>getValid</h2>
 <pre>getValid </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isAjax" id="isAjax"> </a><div class="element clickable constant  isAjax" data-toggle="collapse" data-target=".isAjax .collapse">
 <h2>isAjax</h2>
 <pre>isAjax </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isDelete" id="isDelete"> </a><div class="element clickable constant  isDelete" data-toggle="collapse" data-target=".isDelete .collapse">
 <h2>isDelete</h2>
 <pre>isDelete </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isGet" id="isGet"> </a><div class="element clickable constant  isGet" data-toggle="collapse" data-target=".isGet .collapse">
 <h2>isGet</h2>
 <pre>isGet </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isPost" id="isPost"> </a><div class="element clickable constant  isPost" data-toggle="collapse" data-target=".isPost .collapse">
 <h2>isPost</h2>
 <pre>isPost </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="isPut" id="isPut"> </a><div class="element clickable constant  isPut" data-toggle="collapse" data-target=".isPut .collapse">
 <h2>isPut</h2>
 <pre>isPut </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="overrideAction" id="overrideAction"> </a><div class="element clickable constant  overrideAction" data-toggle="collapse" data-target=".overrideAction .collapse">
 <h2>overrideAction</h2>
 <pre>overrideAction </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="prepare" id="prepare"> </a><div class="element clickable constant  prepare" data-toggle="collapse" data-target=".prepare .collapse">
 <h2>prepare</h2>
 <pre>prepare </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
 <h2>set</h2>
 <pre>set </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="unfilter" id="unfilter"> </a><div class="element clickable constant  unfilter" data-toggle="collapse" data-target=".unfilter .collapse">
 <h2>unfilter</h2>
 <pre>unfilter </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validateCSRFToken" id="validateCSRFToken"> </a><div class="element clickable constant  validateCSRFToken" data-toggle="collapse" data-target=".validateCSRFToken .collapse">
 <h2>validateCSRFToken</h2>
 <pre>validateCSRFToken </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -884,8 +847,8 @@ it will throw an fValidationException.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

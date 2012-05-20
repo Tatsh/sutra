@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates the monetary to represent, with an optional currency"><span class="description">Creates the monetary to represent, with an optional currency</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns the monetary value without a currency symbol or thousand separator (e.g. `2000.12`)"><span class="description">Returns the monetary value without a currency symbol or thousand separator (e.g. `2000.12`)</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#add" title="add :: Adds the passed monetary value to the current one"><span class="description">Adds the passed monetary value to the current one</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#allocate" title="allocate :: Splits the current value into multiple parts ensuring that the sum of the results is exactly equal to this amount"><span class="description">Splits the current value into multiple parts ensuring that the sum of the results is exactly equal to this amount</span><pre>allocate()</pre></a></li>
@@ -79,7 +78,6 @@
 <li class="method public "><a href="#mul" title="mul :: Mupltiplies this monetary value times the number passed"><span class="description">Mupltiplies this monetary value times the number passed</span><pre>mul()</pre></a></li>
 <li class="method public "><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format()</span><pre>registerFormatCallback()</pre></a></li>
 <li class="method public "><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to clean any formatted values so they can be passed to fNumber"><span class="description">Allows setting a callback to clean any formatted values so they can be passed to fNumber</span><pre>registerUnformatCallback()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setDefaultCurrency" title="setDefaultCurrency :: Sets the default currency to use when creating fMoney objects"><span class="description">Sets the default currency to use when creating fMoney objects</span><pre>setDefaultCurrency()</pre></a></li>
 <li class="method public "><a href="#sub" title="sub :: Subtracts the passed monetary value from the current one"><span class="description">Subtracts the passed monetary value from the current one</span><pre>sub()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -106,7 +104,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfMoney" id="\fMoney"></a><div href="../classes/fMoney.html" class="element class">
+<a name="%5CfMoney" id="\fMoney"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fMoney.html">fMoney</a>
+</li>
+</ul>
+<div href="../classes/fMoney.html" class="element class">
 <p class="short_description">Represents a monetary value - USD are supported by default and others can be added via ::defineCurrency()</p>
 <div class="details">
 <p class="long_description"></p>
@@ -125,7 +132,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -154,7 +161,7 @@
 <h2>Creates the monetary to represent, with an optional currency</h2>
 <pre>__construct(<a href="../classes/fNumber.html">\fNumber</a> | string $amount, string $currency) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -173,30 +180,11 @@
 <div class="subelement response"><code><a href="../classes/fMoney.html">\fMoney</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Returns the monetary value without a currency symbol or thousand separator (e.g. `2000.12`)</h2>
 <pre>__toString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -207,7 +195,7 @@
 <h2>Adds the passed monetary value to the current one</h2>
 <pre>add(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $addend) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -228,9 +216,9 @@
 <h2>Splits the current value into multiple parts ensuring that the sum of the results is exactly equal to this amount</h2>
 <pre>allocate(<a href="../classes/fNumber.html">\fNumber</a> | string $ratio1, <a href="../classes/fNumber.html">\fNumber</a> | string $ratio2) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method takes two or more parameters. The parameters should each be
-fractions that when added together equal 1.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method takes two or more parameters. The parameters should each be
+fractions that when added together equal 1.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$ratio1</h4>
@@ -252,7 +240,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Converts this money amount to another currency</h2>
 <pre>convert(string $new_currency) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -268,7 +256,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Allows adding a new currency, or modifying an existing one</h2>
 <pre>defineCurrency(string $iso_code, string $name, string $symbol, integer $precision, string $value) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -293,7 +281,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Checks to see if two monetary values are equal</h2>
 <pre>eq(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -314,7 +302,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Formats the amount by preceeding the amount with the currency symbol and adding thousands separators</h2>
 <pre>format(boolean $remove_zero_fraction) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -330,7 +318,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Returns the fNumber object representing the amount</h2>
 <pre>getAmount() : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -341,7 +329,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Lists all of the defined currencies</h2>
 <pre>getCurrencies() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -352,7 +340,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Returns the currency ISO code</h2>
 <pre>getCurrency() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -363,7 +351,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Allows retrieving information about a currency</h2>
 <pre>getCurrencyInfo(string $iso_code, string $element) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -383,7 +371,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Gets the default currency</h2>
 <pre>getDefaultCurrency() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -394,7 +382,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Checks to see if this value is greater than the one passed</h2>
 <pre>gt(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -415,7 +403,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Checks to see if this value is greater than or equal to the one passed</h2>
 <pre>gte(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -436,7 +424,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Checks to see if this value is less than the one passed</h2>
 <pre>lt(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -457,7 +445,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Checks to see if this value is less than or equal to the one passed</h2>
 <pre>lte(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -478,7 +466,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Mupltiplies this monetary value times the number passed</h2>
 <pre>mul(<a href="../classes/fNumber.html">\fNumber</a> | string | integer $multiplicand) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -499,7 +487,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Allows setting a callback to translate or modify any return values from ::format()</h2>
 <pre>registerFormatCallback(callback $callback) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -512,7 +500,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Allows setting a callback to clean any formatted values so they can be passed to fNumber</h2>
 <pre>registerUnformatCallback(callback $callback) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -520,23 +508,11 @@ fractions that when added together equal 1.</p></p>
 <code>callback</code><p>The callback to pass formatted strings to. Should accept a formatted string and a currency code and return a string suitable to passing to the fNumber constructor.</p></div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="setDefaultCurrency" id="setDefaultCurrency"></a><div class="element clickable method public setDefaultCurrency" data-toggle="collapse" data-target=".setDefaultCurrency .collapse">
 <h2>Sets the default currency to use when creating fMoney objects</h2>
 <pre>setDefaultCurrency(string $iso_code) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -549,7 +525,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Subtracts the passed monetary value from the current one</h2>
 <pre>sub(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $subtrahend) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -570,7 +546,7 @@ fractions that when added together equal 1.</p></p>
 <h2>Turns a string into an fMoney object if a default currency is defined</h2>
 <pre>makeMoney(<a href="../classes/fMoney.html">\fMoney</a> | string | integer $money) : <a href="../classes/fMoney.html">\fMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -592,37 +568,37 @@ fractions that when added together equal 1.</p></p>
 <h2>The raw monetary value</h2>
 <pre>$amount : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24currencies" id="$currencies"> </a><div class="element clickable property private $currencies" data-toggle="collapse" data-target=".$currencies .collapse">
 <h2>The number of decimal places to use for values</h2>
 <pre>$currencies : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24currency" id="$currency"> </a><div class="element clickable property private $currency" data-toggle="collapse" data-target=".$currency .collapse">
 <h2>The ISO code or the currency of this value</h2>
 <pre>$currency : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24default_currency" id="$default_currency"> </a><div class="element clickable property private $default_currency" data-toggle="collapse" data-target=".$default_currency .collapse">
 <h2>The ISO code (three letters, e.g. 'USD') for the default currency</h2>
 <pre>$default_currency : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24format_callback" id="$format_callback"> </a><div class="element clickable property private $format_callback" data-toggle="collapse" data-target=".$format_callback .collapse">
 <h2>A callback to process all money values through</h2>
 <pre>$format_callback : callback</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24unformat_callback" id="$unformat_callback"> </a><div class="element clickable property private $unformat_callback" data-toggle="collapse" data-target=".$unformat_callback .collapse">
 <h2>A callback to remove money formatting and return a decimal number</h2>
 <pre>$unformat_callback : callback</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -630,49 +606,49 @@ fractions that when added together equal 1.</p></p>
 <h2>defineCurrency</h2>
 <pre>defineCurrency </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getCurrencies" id="getCurrencies"> </a><div class="element clickable constant  getCurrencies" data-toggle="collapse" data-target=".getCurrencies .collapse">
 <h2>getCurrencies</h2>
 <pre>getCurrencies </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getCurrencyInfo" id="getCurrencyInfo"> </a><div class="element clickable constant  getCurrencyInfo" data-toggle="collapse" data-target=".getCurrencyInfo .collapse">
 <h2>getCurrencyInfo</h2>
 <pre>getCurrencyInfo </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getDefaultCurrency" id="getDefaultCurrency"> </a><div class="element clickable constant  getDefaultCurrency" data-toggle="collapse" data-target=".getDefaultCurrency .collapse">
 <h2>getDefaultCurrency</h2>
 <pre>getDefaultCurrency </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="registerFormatCallback" id="registerFormatCallback"> </a><div class="element clickable constant  registerFormatCallback" data-toggle="collapse" data-target=".registerFormatCallback .collapse">
 <h2>registerFormatCallback</h2>
 <pre>registerFormatCallback </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="registerUnformatCallback" id="registerUnformatCallback"> </a><div class="element clickable constant  registerUnformatCallback" data-toggle="collapse" data-target=".registerUnformatCallback .collapse">
 <h2>registerUnformatCallback</h2>
 <pre>registerUnformatCallback </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultCurrency" id="setDefaultCurrency"> </a><div class="element clickable constant  setDefaultCurrency" data-toggle="collapse" data-target=".setDefaultCurrency .collapse">
 <h2>setDefaultCurrency</h2>
 <pre>setDefaultCurrency </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -680,8 +656,8 @@ fractions that when added together equal 1.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:46-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -60,11 +60,9 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Configures the SMTP connection"><span class="description">Configures the SMTP connection</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#__destruct" title="__destruct :: Closes the connection to the SMTP server"><span class="description">Closes the connection to the SMTP server</span><pre>__destruct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#authenticate" title="authenticate :: Authenticates with the SMTP server"><span class="description">Authenticates with the SMTP server</span><pre>authenticate()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the connection to the SMTP server"><span class="description">Closes the connection to the SMTP server</span><pre>close()</pre></a></li>
 <li class="method public "><a href="#enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
-<li class="method public "><a href="#send" title="send :: Sends a message via the SMTP server"><span class="description">Sends a message via the SMTP server</span><pre>send()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#connect" title="connect :: Initiates the connection to the server"><span class="description">Initiates the connection to the server</span><pre>connect()</pre></a></li>
 <li class="method private "><a href="#find" title="find :: Searches the response array for the the regex and returns any matches"><span class="description">Searches the response array for the the regex and returns any matches</span><pre>find()</pre></a></li>
@@ -89,7 +87,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfSMTP" id="\fSMTP"></a><div href="../classes/fSMTP.html" class="element class">
+<a name="%5CfSMTP" id="\fSMTP"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSMTP.html">fSMTP</a>
+</li>
+</ul>
+<div href="../classes/fSMTP.html" class="element class">
 <p class="short_description">Creates a connection to an SMTP server to be used by fEmail</p>
 <div class="details">
 <p class="long_description"></p>
@@ -108,7 +115,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -169,13 +176,13 @@
 <h2>Configures the SMTP connection</h2>
 <pre>__construct(string $host, integer $port, boolean $secure, integer $timeout) : <a href="../classes/fSMTP.html">\fSMTP</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The SMTP connection is only made once authentication is attempted or
-an email is sent.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The SMTP connection is only made once authentication is attempted or
+an email is sent.
 
-<p>Please note that this class will upgrade the connection to TLS via the
-SMTP <code>STARTTLS</code> command if possible, even if a secure connection was not
-requested. This helps to keep authentication information secure.</p></p>
+Please note that this class will upgrade the connection to TLS via the
+SMTP `STARTTLS` command if possible, even if a secure connection was not
+requested. This helps to keep authentication information secure.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$host</h4>
@@ -199,36 +206,17 @@ requested. This helps to keep authentication information secure.</p></p>
 <h2>Closes the connection to the SMTP server</h2>
 <pre>__destruct() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="authenticate" id="authenticate"></a><div class="element clickable method public authenticate" data-toggle="collapse" data-target=".authenticate .collapse">
 <h2>Authenticates with the SMTP server</h2>
 <pre>authenticate(string $username, string $password) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method supports the digest-md5, cram-md5, login and plain
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method supports the digest-md5, cram-md5, login and plain
 SMTP authentication methods. This method will try to use the more secure
 digest-md5 and cram-md5 methods first since they do not send information
-in the clear.</p></p>
+in the clear.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$username</h4>
@@ -247,13 +235,13 @@ in the clear.</p></p>
 <h2>Closes the connection to the SMTP server</h2>
 <pre>close() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="enableDebugging" id="enableDebugging"></a><div class="element clickable method public enableDebugging" data-toggle="collapse" data-target=".enableDebugging .collapse">
 <h2>Sets if debug messages should be shown</h2>
 <pre>enableDebugging(boolean $flag) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -261,50 +249,17 @@ in the clear.</p></p>
 <code>boolean</code><p>If debugging messages should be shown</p></div>
 </div></div>
 </div>
-<a name="send" id="send"></a><div class="element clickable method public send" data-toggle="collapse" data-target=".send .collapse">
-<h2>Sends a message via the SMTP server</h2>
-<pre>send(string $from, array $to, string $headers, string $body) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$from</h4>
-<code>string</code><p>The email address being sent from - this will be used as the <code>Return-Path</code> header</p>
-</div>
-<div class="subelement argument">
-<h4>$to</h4>
-<code>array</code><p>All of the To, Cc and Bcc email addresses to send the message to - this does not affect the message headers in any way</p>
-</div>
-<div class="subelement argument">
-<h4>$headers</h4>
-<code>string</code><p>The message headers - the Bcc header will be removed if present</p>
-</div>
-<div class="subelement argument">
-<h4>$body</h4>
-<code>string</code><p>The mail body</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
-<td>When the message is too large for the server</td>
-</tr></table>
-</div></div>
-</div>
 <a name="connect" id="connect"></a><div class="element clickable method private connect" data-toggle="collapse" data-target=".connect .collapse">
 <h2>Initiates the connection to the server</h2>
 <pre>connect() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="find" id="find"></a><div class="element clickable method private find" data-toggle="collapse" data-target=".find .collapse">
 <h2>Searches the response array for the the regex and returns any matches</h2>
 <pre>find(array $response, string $regex) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -322,7 +277,7 @@ in the clear.</p></p>
 <h2>Searches the response array for SMTP error codes</h2>
 <pre>handleErrors(array $response) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -334,7 +289,7 @@ in the clear.</p></p>
 <h2>Reads lines from the SMTP server</h2>
 <pre>read(integer | string $expect) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -349,7 +304,7 @@ in the clear.</p></p>
 <h2>Performs a "fixed" stream_select() for the connection</h2>
 <pre>select(integer $timeout, integer $utimeout) : boolean | string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -367,7 +322,7 @@ in the clear.</p></p>
 <h2>Sends raw text/commands to the SMTP server</h2>
 <pre>write(string $data, integer | string $expect) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -387,67 +342,67 @@ in the clear.</p></p>
 <h2>The authorization methods that are valid for this server</h2>
 <pre>$auth_methods : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24connection" id="$connection"> </a><div class="element clickable property private $connection" data-toggle="collapse" data-target=".$connection .collapse">
 <h2>The socket connection to the SMTP server</h2>
 <pre>$connection : resource</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24debug" id="$debug"> </a><div class="element clickable property private $debug" data-toggle="collapse" data-target=".$debug .collapse">
 <h2>If debugging has been enabled</h2>
 <pre>$debug : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24host" id="$host"> </a><div class="element clickable property private $host" data-toggle="collapse" data-target=".$host .collapse">
 <h2>The hostname or IP of the SMTP server</h2>
 <pre>$host : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24max_size" id="$max_size"> </a><div class="element clickable property private $max_size" data-toggle="collapse" data-target=".$max_size .collapse">
 <h2>The maximum size message the SMTP server supports</h2>
 <pre>$max_size : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24password" id="$password"> </a><div class="element clickable property private $password" data-toggle="collapse" data-target=".$password .collapse">
 <h2>The password to authenticate with</h2>
 <pre>$password : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24pipelining" id="$pipelining"> </a><div class="element clickable property private $pipelining" data-toggle="collapse" data-target=".$pipelining .collapse">
 <h2>If the server supports pipelining</h2>
 <pre>$pipelining : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24port" id="$port"> </a><div class="element clickable property private $port" data-toggle="collapse" data-target=".$port .collapse">
 <h2>The port the SMTP server is on</h2>
 <pre>$port : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24secure" id="$secure"> </a><div class="element clickable property private $secure" data-toggle="collapse" data-target=".$secure .collapse">
 <h2>If the connection to the SMTP server is secure</h2>
 <pre>$secure : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24timeout" id="$timeout"> </a><div class="element clickable property private $timeout" data-toggle="collapse" data-target=".$timeout .collapse">
 <h2>The timeout for the connection</h2>
 <pre>$timeout : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24username" id="$username"> </a><div class="element clickable property private $username" data-toggle="collapse" data-target=".$username .collapse">
 <h2>The username to authenticate with</h2>
 <pre>$username : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -455,8 +410,8 @@ in the clear.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

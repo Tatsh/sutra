@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,17 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#configureMoneyColumn" title="configureMoneyColumn :: Sets a column to be formatted as an fMoney object"><span class="description">Sets a column to be formatted as an fMoney object</span><pre>configureMoneyColumn()</pre></a></li>
-<li class="method public "><a href="#encodeMoneyColumn" title="encodeMoneyColumn :: Encodes a money column by calling fMoney::__toString()"><span class="description">Encodes a money column by calling fMoney::__toString()</span><pre>encodeMoneyColumn()</pre></a></li>
-<li class="method public "><a href="#inspect" title="inspect :: Adds metadata about features added by this class"><span class="description">Adds metadata about features added by this class</span><pre>inspect()</pre></a></li>
-<li class="method public "><a href="#makeMoneyObjects" title="makeMoneyObjects :: Makes fMoney objects for all money columns in the object that also have a currency column"><span class="description">Makes fMoney objects for all money columns in the object that also have a currency column</span><pre>makeMoneyObjects()</pre></a></li>
-<li class="method public "><a href="#objectifyMoney" title="objectifyMoney :: Turns a monetary value into an fMoney object"><span class="description">Turns a monetary value into an fMoney object</span><pre>objectifyMoney()</pre></a></li>
-<li class="method public "><a href="#objectifyMoneyWithCurrency" title="objectifyMoneyWithCurrency :: Turns a monetary value into an fMoney object with a currency specified by another column"><span class="description">Turns a monetary value into an fMoney object with a currency specified by another column</span><pre>objectifyMoneyWithCurrency()</pre></a></li>
-<li class="method public "><a href="#prepareMoneyColumn" title="prepareMoneyColumn :: Prepares a money column by calling fMoney::format()"><span class="description">Prepares a money column by calling fMoney::format()</span><pre>prepareMoneyColumn()</pre></a></li>
-<li class="method public "><a href="#reflect" title="reflect :: Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class"><span class="description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</span><pre>reflect()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
-<li class="method public "><a href="#setCurrencyColumn" title="setCurrencyColumn :: Sets the currency column and then tries to objectify the related money column"><span class="description">Sets the currency column and then tries to objectify the related money column</span><pre>setCurrencyColumn()</pre></a></li>
-<li class="method public "><a href="#setMoneyColumn" title="setMoneyColumn :: Sets the money column and then tries to objectify it with an related currency column"><span class="description">Sets the money column and then tries to objectify it with an related currency column</span><pre>setMoneyColumn()</pre></a></li>
-<li class="method public "><a href="#validateMoneyColumns" title="validateMoneyColumns :: Validates all money columns"><span class="description">Validates all money columns</span><pre>validateMoneyColumns()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
@@ -95,7 +84,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfORMMoney" id="\fORMMoney"></a><div href="../classes/fORMMoney.html" class="element class">
+<a name="%5CfORMMoney" id="\fORMMoney"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMMoney.html">fORMMoney</a>
+</li>
+</ul>
+<div href="../classes/fORMMoney.html" class="element class">
 <p class="short_description">Provides money functionality for fActiveRecord classes</p>
 <div class="details">
 <p class="long_description"></p>
@@ -118,7 +116,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -179,7 +177,7 @@
 <h2>Sets a column to be formatted as an fMoney object</h2>
 <pre>configureMoneyColumn(mixed $class, string $column, string $currency_column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -193,353 +191,11 @@
 <code>string</code><p>If specified, this column will store the currency of the fMoney object</p></div>
 </div></div>
 </div>
-<a name="encodeMoneyColumn" id="encodeMoneyColumn"></a><div class="element clickable method public encodeMoneyColumn" data-toggle="collapse" data-target=".encodeMoneyColumn .collapse">
-<h2>Encodes a money column by calling fMoney::__toString()</h2>
-<pre>encodeMoneyColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The encoded monetary value</div>
-</div></div>
-</div>
-<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
-<h2>Adds metadata about features added by this class</h2>
-<pre>inspect(string $class, string $column, array $metadata) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class being inspected</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column being inspected</p></div>
-<div class="subelement argument">
-<h4>$metadata</h4>
-<code>array</code><p>&$metadata The array of metadata about a column</p>
-</div>
-</div></div>
-</div>
-<a name="makeMoneyObjects" id="makeMoneyObjects"></a><div class="element clickable method public makeMoneyObjects" data-toggle="collapse" data-target=".makeMoneyObjects .collapse">
-<h2>Makes fMoney objects for all money columns in the object that also have a currency column</h2>
-<pre>makeMoneyObjects(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="objectifyMoney" id="objectifyMoney"></a><div class="element clickable method public objectifyMoney" data-toggle="collapse" data-target=".objectifyMoney .collapse">
-<h2>Turns a monetary value into an fMoney object</h2>
-<pre>objectifyMoney(string $class, string $column, mixed $value) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class this value is for</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column the value is in</p></div>
-<div class="subelement argument">
-<h4>$value</h4>
-<code>mixed</code><p>The value</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>mixed</code>The fMoney object or raw value</div>
-</div></div>
-</div>
-<a name="objectifyMoneyWithCurrency" id="objectifyMoneyWithCurrency"></a><div class="element clickable method public objectifyMoneyWithCurrency" data-toggle="collapse" data-target=".objectifyMoneyWithCurrency .collapse">
-<h2>Turns a monetary value into an fMoney object with a currency specified by another column</h2>
-<pre>objectifyMoneyWithCurrency(array $values, array $old_values, string $value_column, string $currency_column) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$value_column</h4>
-<code>string</code><p>The column holding the value</p></div>
-<div class="subelement argument">
-<h4>$currency_column</h4>
-<code>string</code><p>The column holding the currency code</p></div>
-</div></div>
-</div>
-<a name="prepareMoneyColumn" id="prepareMoneyColumn"></a><div class="element clickable method public prepareMoneyColumn" data-toggle="collapse" data-target=".prepareMoneyColumn .collapse">
-<h2>Prepares a money column by calling fMoney::format()</h2>
-<pre>prepareMoneyColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The formatted monetary value</div>
-</div></div>
-</div>
-<a name="reflect" id="reflect"></a><div class="element clickable method public reflect" data-toggle="collapse" data-target=".reflect .collapse">
-<h2>Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</h2>
-<pre>reflect(string $class, array $signatures, boolean $include_doc_comments) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to reflect</p></div>
-<div class="subelement argument">
-<h4>$signatures</h4>
-<code>array</code><p>&$signatures The associative array of <code>{method name} => {signature}</code></p>
-</div>
-<div class="subelement argument">
-<h4>$include_doc_comments</h4>
-<code>boolean</code><p>If doc comments should be included with the signature</p></div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a name="setCurrencyColumn" id="setCurrencyColumn"></a><div class="element clickable method public setCurrencyColumn" data-toggle="collapse" data-target=".setCurrencyColumn .collapse">
-<h2>Sets the currency column and then tries to objectify the related money column</h2>
-<pre>setCurrencyColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
-</div></div>
-</div>
-<a name="setMoneyColumn" id="setMoneyColumn"></a><div class="element clickable method public setMoneyColumn" data-toggle="collapse" data-target=".setMoneyColumn .collapse">
-<h2>Sets the money column and then tries to objectify it with an related currency column</h2>
-<pre>setMoneyColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
-</div></div>
-</div>
-<a name="validateMoneyColumns" id="validateMoneyColumns"></a><div class="element clickable method public validateMoneyColumns" data-toggle="collapse" data-target=".validateMoneyColumns .collapse">
-<h2>Validates all money columns</h2>
-<pre>validateMoneyColumns(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, array $validation_messages) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$validation_messages</h4>
-<code>array</code><p>&$validation_messages An array of ordered validation messages</p>
-</div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMMoney.html">\fORMMoney</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fORMMoney.html">\fORMMoney</a></code></div>
@@ -549,7 +205,7 @@
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -566,13 +222,13 @@
 <h2>Columns that store currency information for a money column</h2>
 <pre>$currency_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24money_columns" id="$money_columns"> </a><div class="element clickable property private $money_columns" data-toggle="collapse" data-target=".$money_columns .collapse">
 <h2>Columns that should be formatted as money</h2>
 <pre>$money_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -580,73 +236,73 @@
 <h2>configureMoneyColumn</h2>
 <pre>configureMoneyColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="encodeMoneyColumn" id="encodeMoneyColumn"> </a><div class="element clickable constant  encodeMoneyColumn" data-toggle="collapse" data-target=".encodeMoneyColumn .collapse">
 <h2>encodeMoneyColumn</h2>
 <pre>encodeMoneyColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
 <h2>inspect</h2>
 <pre>inspect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeMoneyObjects" id="makeMoneyObjects"> </a><div class="element clickable constant  makeMoneyObjects" data-toggle="collapse" data-target=".makeMoneyObjects .collapse">
 <h2>makeMoneyObjects</h2>
 <pre>makeMoneyObjects </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="objectifyMoney" id="objectifyMoney"> </a><div class="element clickable constant  objectifyMoney" data-toggle="collapse" data-target=".objectifyMoney .collapse">
 <h2>objectifyMoney</h2>
 <pre>objectifyMoney </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="objectifyMoneyWithCurrency" id="objectifyMoneyWithCurrency"> </a><div class="element clickable constant  objectifyMoneyWithCurrency" data-toggle="collapse" data-target=".objectifyMoneyWithCurrency .collapse">
 <h2>objectifyMoneyWithCurrency</h2>
 <pre>objectifyMoneyWithCurrency </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="prepareMoneyColumn" id="prepareMoneyColumn"> </a><div class="element clickable constant  prepareMoneyColumn" data-toggle="collapse" data-target=".prepareMoneyColumn .collapse">
 <h2>prepareMoneyColumn</h2>
 <pre>prepareMoneyColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reflect" id="reflect"> </a><div class="element clickable constant  reflect" data-toggle="collapse" data-target=".reflect .collapse">
 <h2>reflect</h2>
 <pre>reflect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setCurrencyColumn" id="setCurrencyColumn"> </a><div class="element clickable constant  setCurrencyColumn" data-toggle="collapse" data-target=".setCurrencyColumn .collapse">
 <h2>setCurrencyColumn</h2>
 <pre>setCurrencyColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setMoneyColumn" id="setMoneyColumn"> </a><div class="element clickable constant  setMoneyColumn" data-toggle="collapse" data-target=".setMoneyColumn .collapse">
 <h2>setMoneyColumn</h2>
 <pre>setMoneyColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validateMoneyColumns" id="validateMoneyColumns"> </a><div class="element clickable constant  validateMoneyColumns" data-toggle="collapse" data-target=".validateMoneyColumns .collapse">
 <h2>validateMoneyColumns</h2>
 <pre>validateMoneyColumns </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -654,8 +310,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

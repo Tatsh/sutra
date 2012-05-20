@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -61,25 +61,17 @@
 <li class="method public "><a href="#add" title="add :: Adds a value to an already-existing array value, or to a new array value"><span class="description">Adds a value to an already-existing array value, or to a new array value</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#clear" title="clear :: Removes all session values with the provided prefix"><span class="description">Removes all session values with the provided prefix</span><pre>clear()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the session for writing, allowing other pages to open the session"><span class="description">Closes the session for writing, allowing other pages to open the session</span><pre>close()</pre></a></li>
-<li class="method public "><a href="#closeCache" title="closeCache :: Callback to close the session"><span class="description">Callback to close the session</span><pre>closeCache()</pre></a></li>
 <li class="method public "><a href="#delete" title="delete :: Deletes a value from the session"><span class="description">Deletes a value from the session</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#destroy" title="destroy :: Destroys the session, removing all values"><span class="description">Destroys the session, removing all values</span><pre>destroy()</pre></a></li>
-<li class="method public "><a href="#destroyCache" title="destroyCache :: Callback to destroy a session"><span class="description">Callback to destroy a session</span><pre>destroyCache()</pre></a></li>
 <li class="method public "><a href="#enablePersistence" title="enablePersistence :: Changed the session to use a time-based cookie instead of a session-based cookie"><span class="description">Changed the session to use a time-based cookie instead of a session-based cookie</span><pre>enablePersistence()</pre></a></li>
-<li class="method public "><a href="#gcCache" title="gcCache :: Callback to garbage-collect the session cache"><span class="description">Callback to garbage-collect the session cache</span><pre>gcCache()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets data from the `$_SESSION` superglobal"><span class="description">Gets data from the `$_SESSION` superglobal</span><pre>get()</pre></a></li>
 <li class="method public "><a href="#ignoreSubdomain" title="ignoreSubdomain :: Sets the session to run on the main domain, not just the specific subdomain currently being accessed"><span class="description">Sets the session to run on the main domain, not just the specific subdomain currently being accessed</span><pre>ignoreSubdomain()</pre></a></li>
 <li class="method public "><a href="#open" title="open :: Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()"><span class="description">Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()</span><pre>open()</pre></a></li>
-<li class="method public "><a href="#openCache" title="openCache :: Callback to open the session"><span class="description">Callback to open the session</span><pre>openCache()</pre></a></li>
-<li class="method public "><a href="#readCache" title="readCache :: Callback to read a session's values"><span class="description">Callback to read a session's values</span><pre>readCache()</pre></a></li>
-<li class="method public "><a href="#regenerateID" title="regenerateID :: Regenerates the session ID, but only once per script execution"><span class="description">Regenerates the session ID, but only once per script execution</span><pre>regenerateID()</pre></a></li>
 <li class="method public "><a href="#remove" title="remove :: Removes and returns the value from the end of an array value"><span class="description">Removes and returns the value from the end of an array value</span><pre>remove()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets data to the `$_SESSION` superglobal"><span class="description">Sets data to the `$_SESSION` superglobal</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#setBackend" title="setBackend :: Sets an fCache object to store sessions in"><span class="description">Sets an fCache object to store sessions in</span><pre>setBackend()</pre></a></li>
 <li class="method public "><a href="#setLength" title="setLength :: Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed"><span class="description">Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed</span><pre>setLength()</pre></a></li>
 <li class="method public "><a href="#setPath" title="setPath :: Sets the path to store session files in"><span class="description">Sets the path to store session files in</span><pre>setPath()</pre></a></li>
-<li class="method public "><a href="#writeCache" title="writeCache :: Callback to write a session's values"><span class="description">Callback to write a session's values</span><pre>writeCache()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -118,13 +110,22 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfSession" id="\fSession"></a><div href="../classes/fSession.html" class="element class">
+<a name="%5CfSession" id="\fSession"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSession.html">fSession</a>
+</li>
+</ul>
+<div href="../classes/fSession.html" class="element class">
 <p class="short_description">Wraps the session control functions and the `$_SESSION` superglobal for a more consistent and safer API</p>
 <div class="details">
-<p class="long_description"><p>A <code>Cannot send session cache limiter</code> warning will be triggered if ::open(),
+<p class="long_description">A `Cannot send session cache limiter` warning will be triggered if ::open(),
 ::add(), ::clear(), ::delete(), ::get() or ::set() is called after output has
 been sent to the browser. To prevent such a warning, explicitly call ::open()
-before generating any output.</p></p>
+before generating any output.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -144,7 +145,7 @@ before generating any output.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -241,7 +242,7 @@ before generating any output.</p></p>
 <h2>Adds a value to an already-existing array value, or to a new array value</h2>
 <pre>add(string $key, mixed $value, boolean $beginning) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -260,9 +261,9 @@ before generating any output.</p></p>
 <h2>Removes all session values with the provided prefix</h2>
 <pre>clear(string $prefix) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method will not remove session variables used by this class, which
-are prefixed with <code>fSession::</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method will not remove session variables used by this class, which
+are prefixed with `fSession::`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$prefix</h4>
@@ -273,28 +274,13 @@ are prefixed with <code>fSession::</code>.</p></p>
 <h2>Closes the session for writing, allowing other pages to open the session</h2>
 <pre>close() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
-<a name="closeCache" id="closeCache"></a><div class="element clickable method public closeCache" data-toggle="collapse" data-target=".closeCache .collapse">
-<h2>Callback to close the session</h2>
-<pre>closeCache() : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the operation succeeded</div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>Deletes a value from the session</h2>
 <pre>delete(string $key, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -314,61 +300,27 @@ are prefixed with <code>fSession::</code>.</p></p>
 <h2>Destroys the session, removing all values</h2>
 <pre>destroy() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
-</div>
-<a name="destroyCache" id="destroyCache"></a><div class="element clickable method public destroyCache" data-toggle="collapse" data-target=".destroyCache .collapse">
-<h2>Callback to destroy a session</h2>
-<pre>destroyCache(string $id) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>string</code><p>The session to destroy</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the operation succeeded</div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="enablePersistence" id="enablePersistence"></a><div class="element clickable method public enablePersistence" data-toggle="collapse" data-target=".enablePersistence .collapse">
 <h2>Changed the session to use a time-based cookie instead of a session-based cookie</h2>
 <pre>enablePersistence() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>The length of the time-based cookie is controlled by ::setLength(). When
+<div class="row collapse"><div class="detail-description"><p class="long_description">The length of the time-based cookie is controlled by ::setLength(). When
 this method is called, a time-based cookie is used to store the session
 ID. This means the session can persist browser restarts. Normally, a
 session-based cookie is used, which is wiped when a browser restart
-occurs.</p>
+occurs.
 
-<p>This method should be called during the login process and will normally
+This method should be called during the login process and will normally
 be controlled by a checkbox or similar where the user can indicate if
-they want to stay logged in for an extended period of time.</p></p></div></div>
-</div>
-<a name="gcCache" id="gcCache"></a><div class="element clickable method public gcCache" data-toggle="collapse" data-target=".gcCache .collapse">
-<h2>Callback to garbage-collect the session cache</h2>
-<pre>gcCache() : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the operation succeeded</div>
-</div></div>
+they want to stay logged in for an extended period of time.</p></div></div>
 </div>
 <a name="get" id="get"></a><div class="element clickable method public get" data-toggle="collapse" data-target=".get .collapse">
 <h2>Gets data from the `$_SESSION` superglobal</h2>
 <pre>get(string $key, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -387,18 +339,18 @@ they want to stay logged in for an extended period of time.</p></p></div></div>
 <h2>Sets the session to run on the main domain, not just the specific subdomain currently being accessed</h2>
 <pre>ignoreSubdomain() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>This method should be called after any calls to
-[http://php.net/session_set_cookie_params <code>session_set_cookie_params()</code>].</p></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description">This method should be called after any calls to
+[http://php.net/session_set_cookie_params `session_set_cookie_params()`].</p></div></div>
 </div>
 <a name="open" id="open"></a><div class="element clickable method public open" data-toggle="collapse" data-target=".open .collapse">
 <h2>Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()</h2>
 <pre>open(boolean $cookie_only_session_id) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>Cannot send session cache limiter</code> warning will be triggered if this,
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `Cannot send session cache limiter` warning will be triggered if this,
 ::add(), ::clear(), ::delete(), ::get() or ::set() is called after output
 has been sent to the browser. To prevent such a warning, explicitly call
-this method before generating any output.</p></p>
+this method before generating any output.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$cookie_only_session_id</h4>
@@ -406,57 +358,11 @@ this method before generating any output.</p></p>
 </div>
 </div></div>
 </div>
-<a name="openCache" id="openCache"></a><div class="element clickable method public openCache" data-toggle="collapse" data-target=".openCache .collapse">
-<h2>Callback to open the session</h2>
-<pre>openCache() : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the operation succeeded</div>
-</div></div>
-</div>
-<a name="readCache" id="readCache"></a><div class="element clickable method public readCache" data-toggle="collapse" data-target=".readCache .collapse">
-<h2>Callback to read a session's values</h2>
-<pre>readCache(string $id) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>string</code><p>The session to read</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The session's serialized data</div>
-</div></div>
-</div>
-<a name="regenerateID" id="regenerateID"></a><div class="element clickable method public regenerateID" data-toggle="collapse" data-target=".regenerateID .collapse">
-<h2>Regenerates the session ID, but only once per script execution</h2>
-<pre>regenerateID() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="remove" id="remove"></a><div class="element clickable method public remove" data-toggle="collapse" data-target=".remove .collapse">
 <h2>Removes and returns the value from the end of an array value</h2>
 <pre>remove(string $key, boolean $beginning) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -471,23 +377,11 @@ this method before generating any output.</p></p>
 <code>mixed</code>The value that was removed</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
 <h2>Sets data to the `$_SESSION` superglobal</h2>
 <pre>set(string $key, mixed $value) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -503,31 +397,29 @@ this method before generating any output.</p></p>
 <h2>Sets an fCache object to store sessions in</h2>
 <pre>setBackend(<a href="../classes/fCache.html">\fCache</a> $backend, string $key_prefix) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>While any type of fCache backend should technically work, it would be
-unwise to use the <code>file</code> and <code>directory</code> types. The <code>file</code> caching
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">While any type of fCache backend should technically work, it would be
+unwise to use the `file` and `directory` types. The `file` caching
 backend stores all values in a single file, which would quickly become a
 performance bottleneck and could cause data loss with many concurrent
-users. The <code>directory</code> caching backend would not make sense since it is
+users. The `directory` caching backend would not make sense since it is
 the same general functionality as the default session handler, but it
-would be slightly slower since it is written in PHP and not C.</p>
+would be slightly slower since it is written in PHP and not C.
 
-<p>It is recommended to set the <code>serializer</code> and <code>unserializer</code> <code>$config</code>
-settings on the fCache object to <code>string</code> for the best performance and
-minimal storage space.</p>
+It is recommended to set the `serializer` and `unserializer` `$config`
+settings on the fCache object to `string` for the best performance and
+minimal storage space.
 
-<p>For better performance, check out using the built-in session handlers
-that are bundled with the following extensions:</p>
+For better performance, check out using the built-in session handlers
+that are bundled with the following extensions:
 
-<ul>
-<li>[http://php.net/memcached.sessions memcached]</li>
-<li>[http://php.net/memcache.examples-overview#example-3596 memcache]</li>
-<li>[https://github.com/nicolasff/phpredis redis]</li>
-</ul>
+ - [http://php.net/memcached.sessions memcached]
+ - [http://php.net/memcache.examples-overview#example-3596 memcache]
+ - [https://github.com/nicolasff/phpredis redis]
 
-<p>The [http://pecl.php.net/package/igbinary igbinary] extension can
+The [http://pecl.php.net/package/igbinary igbinary] extension can
 provide even more of a performance boost by storing serialized data in
-binary format instead of as text.</p></p>
+binary format instead of as text.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$backend</h4>
@@ -541,14 +433,14 @@ binary format instead of as text.</p></p>
 <h2>Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed</h2>
 <pre>setLength(string | integer $normal_timespan, string | integer $persistent_timespan) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please be sure to set a custom session path via ::setPath() to ensure
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please be sure to set a custom session path via ::setPath() to ensure
 another site on the server does not garbage collect the session files
-from this site!</p>
+from this site!
 
-<p>Both of the timespan can accept either a integer timespan in seconds,
-or an english description of a timespan (e.g. <code>'30 minutes'</code>, <code>'1 hour'</code>,
-<code>'1 day 2 hours'</code>).</p></p>
+Both of the timespan can accept either a integer timespan in seconds,
+or an english description of a timespan (e.g. `'30 minutes'`, `'1 hour'`,
+`'1 day 2 hours'`).</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$normal_timespan</h4>
@@ -564,45 +456,23 @@ or an english description of a timespan (e.g. <code>'30 minutes'</code>, <code>'
 <h2>Sets the path to store session files in</h2>
 <pre>setPath(string | <a href="../classes/fDirectory.html">\fDirectory</a> $directory) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method should always be called with a non-standard directory
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method should always be called with a non-standard directory
 whenever ::setLength() is called to ensure that another site on the
-server does not garbage collect the session files for this site.</p>
+server does not garbage collect the session files for this site.
 
-<p>Standard session directories usually include <code>/tmp</code> and <code>/var/tmp</code>.</p></p>
+Standard session directories usually include `/tmp` and `/var/tmp`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$directory</h4>
 <code>string<a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to store session files in</p></div>
 </div></div>
 </div>
-<a name="writeCache" id="writeCache"></a><div class="element clickable method public writeCache" data-toggle="collapse" data-target=".writeCache .collapse">
-<h2>Callback to write a session's values</h2>
-<pre>writeCache(string $id, string $values) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$id</h4>
-<code>string</code><p>The session to write</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>string</code><p>The serialized values</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The session's serialized data</div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fSession.html">\fSession</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fSession.html">\fSession</a></code></div>
@@ -614,43 +484,43 @@ server does not garbage collect the session files for this site.</p>
 <h2>The fCache backend to use for the session</h2>
 <pre>$backend : <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24key_prefix" id="$key_prefix"> </a><div class="element clickable property private $key_prefix" data-toggle="collapse" data-target=".$key_prefix .collapse">
 <h2>The key prefix to use when saving the session to an fCache</h2>
 <pre>$key_prefix : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24normal_timespan" id="$normal_timespan"> </a><div class="element clickable property private $normal_timespan" data-toggle="collapse" data-target=".$normal_timespan .collapse">
 <h2>The length for a normal session</h2>
 <pre>$normal_timespan : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24old_session_module_name" id="$old_session_module_name"> </a><div class="element clickable property private $old_session_module_name" data-toggle="collapse" data-target=".$old_session_module_name .collapse">
 <h2>The name of the old session module to revent to when fSession is closed</h2>
 <pre>$old_session_module_name : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24open" id="$open"> </a><div class="element clickable property private $open" data-toggle="collapse" data-target=".$open .collapse">
 <h2>If the session is open</h2>
 <pre>$open : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24persistent_timespan" id="$persistent_timespan"> </a><div class="element clickable property private $persistent_timespan" data-toggle="collapse" data-target=".$persistent_timespan .collapse">
 <h2>The length for a persistent session cookie - one that survives browser restarts</h2>
 <pre>$persistent_timespan : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24regenerated" id="$regenerated"> </a><div class="element clickable property private $regenerated" data-toggle="collapse" data-target=".$regenerated .collapse">
 <h2>If the session ID was regenerated during this script</h2>
 <pre>$regenerated : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -658,127 +528,127 @@ server does not garbage collect the session files for this site.</p>
 <h2>add</h2>
 <pre>add </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="clear" id="clear"> </a><div class="element clickable constant  clear" data-toggle="collapse" data-target=".clear .collapse">
 <h2>clear</h2>
 <pre>clear </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="close" id="close"> </a><div class="element clickable constant  close" data-toggle="collapse" data-target=".close .collapse">
 <h2>close</h2>
 <pre>close </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="closeCache" id="closeCache"> </a><div class="element clickable constant  closeCache" data-toggle="collapse" data-target=".closeCache .collapse">
 <h2>closeCache</h2>
 <pre>closeCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="delete" id="delete"> </a><div class="element clickable constant  delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>delete</h2>
 <pre>delete </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="destroy" id="destroy"> </a><div class="element clickable constant  destroy" data-toggle="collapse" data-target=".destroy .collapse">
 <h2>destroy</h2>
 <pre>destroy </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="destroyCache" id="destroyCache"> </a><div class="element clickable constant  destroyCache" data-toggle="collapse" data-target=".destroyCache .collapse">
 <h2>destroyCache</h2>
 <pre>destroyCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="enablePersistence" id="enablePersistence"> </a><div class="element clickable constant  enablePersistence" data-toggle="collapse" data-target=".enablePersistence .collapse">
 <h2>enablePersistence</h2>
 <pre>enablePersistence </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="gcCache" id="gcCache"> </a><div class="element clickable constant  gcCache" data-toggle="collapse" data-target=".gcCache .collapse">
 <h2>gcCache</h2>
 <pre>gcCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
 <h2>get</h2>
 <pre>get </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ignoreSubdomain" id="ignoreSubdomain"> </a><div class="element clickable constant  ignoreSubdomain" data-toggle="collapse" data-target=".ignoreSubdomain .collapse">
 <h2>ignoreSubdomain</h2>
 <pre>ignoreSubdomain </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="open" id="open"> </a><div class="element clickable constant  open" data-toggle="collapse" data-target=".open .collapse">
 <h2>open</h2>
 <pre>open </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="openCache" id="openCache"> </a><div class="element clickable constant  openCache" data-toggle="collapse" data-target=".openCache .collapse">
 <h2>openCache</h2>
 <pre>openCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="readCache" id="readCache"> </a><div class="element clickable constant  readCache" data-toggle="collapse" data-target=".readCache .collapse">
 <h2>readCache</h2>
 <pre>readCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="regenerateID" id="regenerateID"> </a><div class="element clickable constant  regenerateID" data-toggle="collapse" data-target=".regenerateID .collapse">
 <h2>regenerateID</h2>
 <pre>regenerateID </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
 <h2>set</h2>
 <pre>set </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setBackend" id="setBackend"> </a><div class="element clickable constant  setBackend" data-toggle="collapse" data-target=".setBackend .collapse">
 <h2>setBackend</h2>
 <pre>setBackend </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setLength" id="setLength"> </a><div class="element clickable constant  setLength" data-toggle="collapse" data-target=".setLength .collapse">
 <h2>setLength</h2>
 <pre>setLength </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setPath" id="setPath"> </a><div class="element clickable constant  setPath" data-toggle="collapse" data-target=".setPath .collapse">
 <h2>setPath</h2>
 <pre>setPath </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="writeCache" id="writeCache"> </a><div class="element clickable constant  writeCache" data-toggle="collapse" data-target=".writeCache .collapse">
 <h2>writeCache</h2>
 <pre>writeCache </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -786,8 +656,8 @@ server does not garbage collect the session files for this site.</p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

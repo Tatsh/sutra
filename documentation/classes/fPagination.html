@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -62,13 +62,9 @@
 <li class="method public "><a href="#defineTemplate" title="defineTemplate :: Defines a new template to use with the paginator"><span class="description">Defines a new template to use with the paginator</span><pre>defineTemplate()</pre></a></li>
 <li class="method public "><a href="#extend" title="extend :: Adds the methods `printInfo()` and `showLinks()` to fRecordSet"><span class="description">Adds the methods `printInfo()` and `showLinks()` to fRecordSet</span><pre>extend()</pre></a></li>
 <li class="method public "><a href="#makeLinks" title="makeLinks :: Returns the links as a string"><span class="description">Returns the links as a string</span><pre>makeLinks()</pre></a></li>
-<li class="method public "><a href="#makeRecordSetLinks" title="makeRecordSetLinks :: Handles the `makeLinks()` method for fRecordSet"><span class="description">Handles the `makeLinks()` method for fRecordSet</span><pre>makeRecordSetLinks()</pre></a></li>
 <li class="method public "><a href="#printInfo" title="printInfo :: Prints which records are showing on the current page"><span class="description">Prints which records are showing on the current page</span><pre>printInfo()</pre></a></li>
-<li class="method public "><a href="#printRecordSetInfo" title="printRecordSetInfo :: Handles the `printInfo()` method for fRecordSet"><span class="description">Handles the `printInfo()` method for fRecordSet</span><pre>printRecordSetInfo()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets data to be available to the templates"><span class="description">Sets data to be available to the templates</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#showLinks" title="showLinks :: Shows links to other pages when more than one page of records exists"><span class="description">Shows links to other pages when more than one page of records exists</span><pre>showLinks()</pre></a></li>
-<li class="method public "><a href="#showRecordSetLinks" title="showRecordSetLinks :: Handles the `showLinks()` method for fRecordSet"><span class="description">Handles the `showLinks()` method for fRecordSet</span><pre>showRecordSetLinks()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#extendRecordSetInfo" title="extendRecordSetInfo :: Overlays user data over info from the record set"><span class="description">Overlays user data over info from the record set</span><pre>extendRecordSetInfo()</pre></a></li>
 <li class="method private "><a href="#makePiece" title="makePiece :: Makes a piece of a template."><span class="description">Makes a piece of a template.</span><pre>makePiece()</pre></a></li>
@@ -95,7 +91,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfPagination" id="\fPagination"></a><div href="../classes/fPagination.html" class="element class">
+<a name="%5CfPagination" id="\fPagination"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fPagination.html">fPagination</a>
+</li>
+</ul>
+<div href="../classes/fPagination.html" class="element class">
 <p class="short_description">Prints pagination links for fRecordSet or other paginated records</p>
 <div class="details">
 <p class="long_description"></p>
@@ -114,7 +119,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -135,7 +140,7 @@
 <h2>Accepts the record information necessary for printing pagination</h2>
 <pre>__construct(integer $records, integer $per_page, integer $page) : \fPaginator</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -166,71 +171,61 @@
 <h2>Defines a new template to use with the paginator</h2>
 <pre>defineTemplate(string $name, string $type, integer $size, array $pieces) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$pieces</code> array must contain the following array keys:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$pieces` array must contain the following array keys:
 
-<ul>
-<li><code>info</code>:          the template to use when calling the <code>printInfo()</code> method</li>
-<li><code>start</code>:         the template to start the page list with</li>
-<li><code>prev</code>:          the template for the previous link</li>
-<li><code>prev_disabled</code>: the template for the previous link, when disabled</li>
-<li><code>page</code>:          the template for a single page link</li>
-<li><code>separator</code>:     the template for the separator to use when the type is <code>with_first_last</code></li>
-<li><code>next</code>:          the template for the next link</li>
-<li><code>next_disabled</code>: the template for the next link, when disabled</li>
-<li><code>end</code>:           the template to end the page list with</li>
-</ul>
+ - `info`:          the template to use when calling the `printInfo()` method
+ - `start`:         the template to start the page list with
+ - `prev`:          the template for the previous link
+ - `prev_disabled`: the template for the previous link, when disabled
+ - `page`:          the template for a single page link
+ - `separator`:     the template for the separator to use when the type is `with_first_last`
+ - `next`:          the template for the next link
+ - `next_disabled`: the template for the next link, when disabled
+ - `end`:           the template to end the page list with
 
-<p>There are various pre-defined variables available for use in the template
-pieces. These variables are printed by using the syntax <code>{{ variable }}</code>.</p>
+There are various pre-defined variables available for use in the template
+pieces. These variables are printed by using the syntax `{{ variable }}`.
 
-<p>The <code>info</code>, <code>start</code> and <code>end</code> pieces may use the following variables:</p>
+The `info`, `start` and `end` pieces may use the following variables:
 
-<ul>
-<li><code>page</code>:          the page of records being shown</li>
-<li><code>total_pages</code>:   the total number of pages of records</li>
-<li><code>first_record</code>:  the record number of the first record being shown</li>
-<li><code>last_record</code>:   the record number of the last record being shown</li>
-<li><code>total_records</code>: the total number of records being paginated</li>
-</ul>
+ - `page`:          the page of records being shown
+ - `total_pages`:   the total number of pages of records
+ - `first_record`:  the record number of the first record being shown
+ - `last_record`:   the record number of the last record being shown
+ - `total_records`: the total number of records being paginated
 
-<p>The <code>prev</code> and <code>next</code> pieces may use the following variables:</p>
+The `prev` and `next` pieces may use the following variables:
 
-<ul>
-<li><code>page</code>: the page number of the page of results being linked to</li>
-<li><code>url</code>:  the URL of the page being linked to</li>
-</ul>
+ - `page`: the page number of the page of results being linked to
+ - `url`:  the URL of the page being linked to
 
-<p>The <code>page</code> piece may use the following variables:</p>
+The `page` piece may use the following variables:
 
-<ul>
-<li><code>page</code>:    the page number of the page being linked to</li>
-<li><code>url</code>:     the URL of the page being linked to</li>
-<li><code>first</code>:   the string "first" if the link is to the first page</li>
-<li><code>last</code>:    the string "last" if the link is to the last page</li>
-<li><code>current</code>: the string "current" if the link is to the current page</li>
-</ul>
+ - `page`:    the page number of the page being linked to
+ - `url`:     the URL of the page being linked to
+ - `first`:   the string "first" if the link is to the first page
+ - `last`:    the string "last" if the link is to the last page
+ - `current`: the string "current" if the link is to the current page
 
-<p>The <code>separator</code> piece does not have access to any pre-defined variables.</p>
+The `separator` piece does not have access to any pre-defined variables.
 
-<p>In addition to the pre-defined variables, it is possible to add any other
+In addition to the pre-defined variables, it is possible to add any other
 variables to be used in any of the pieces by calling the instance method
-::set().</p>
+::set().
 
-<p>It is possible to use variable filters on a variable to modify it. The
-most common variable to filter would be <code>name</code>. To filter a variable,
-add a <code>|</code> and the filter name after the variable name, in the form
-<code>{{ variable|filter }}</code>. The following filters are available:</p>
+It is possible to use variable filters on a variable to modify it. The
+most common variable to filter would be `name`. To filter a variable,
+add a `|` and the filter name after the variable name, in the form
+`{{ variable|filter }}`. The following filters are available:
 
-<ul>
-<li><code>inflect</code>:    if the total number of records is not 1, pluralize the variable - this only works for nouns</li>
-<li><code>lower</code>:      converts the contents of the variable to lower case</li>
-<li><code>url_encode</code>: encode the value for inclusion in a URL</li>
-<li><code>humanize</code>:   converts a <code>underscore_notation</code> or <code>CamelCase</code> string to a string with spaces between words and in <code>Title Caps</code></li>
-</ul>
+ - `inflect`:    if the total number of records is not 1, pluralize the variable - this only works for nouns
+ - `lower`:      converts the contents of the variable to lower case
+ - `url_encode`: encode the value for inclusion in a URL
+ - `humanize`:   converts a `underscore_notation` or `CamelCase` string to a string with spaces between words and in `Title Caps`
 
-<p>Filters can be combined, in which case they are list one after the other
-in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
+Filters can be combined, in which case they are list one after the other
+in the form `{{ variable|filter_1|filter_2 }}`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
@@ -252,13 +247,13 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Adds the methods `printInfo()` and `showLinks()` to fRecordSet</h2>
 <pre>extend() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeLinks" id="makeLinks"></a><div class="element clickable method public makeLinks" data-toggle="collapse" data-target=".makeLinks .collapse">
 <h2>Returns the links as a string</h2>
 <pre>makeLinks(string $template) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -269,44 +264,11 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <code>string</code>The links HTML</div>
 </div></div>
 </div>
-<a name="makeRecordSetLinks" id="makeRecordSetLinks"></a><div class="element clickable method public makeRecordSetLinks" data-toggle="collapse" data-target=".makeRecordSetLinks .collapse">
-<h2>Handles the `makeLinks()` method for fRecordSet</h2>
-<pre>makeRecordSetLinks(<a href="../classes/fRecordSet.html">\fRecordSet</a> $object, string | array $class, array $records, string $method_name, array $parameters) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The record set</p></div>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>stringarray</code><p>The class(es) contained in the record set</p>
-</div>
-<div class="subelement argument">
-<h4>$records</h4>
-<code>array</code><p>&$records The records</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the links were shown</div>
-</div></div>
-</div>
 <a name="printInfo" id="printInfo"></a><div class="element clickable method public printInfo" data-toggle="collapse" data-target=".printInfo .collapse">
 <h2>Prints which records are showing on the current page</h2>
 <pre>printInfo(string $template) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -314,53 +276,11 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <code>string</code><p>The template to use</p></div>
 </div></div>
 </div>
-<a name="printRecordSetInfo" id="printRecordSetInfo"></a><div class="element clickable method public printRecordSetInfo" data-toggle="collapse" data-target=".printRecordSetInfo .collapse">
-<h2>Handles the `printInfo()` method for fRecordSet</h2>
-<pre>printRecordSetInfo(<a href="../classes/fRecordSet.html">\fRecordSet</a> $object, string | array $class, array $records, string $method_name, array $parameters) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The record set</p></div>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>stringarray</code><p>The class(es) contained in the record set</p>
-</div>
-<div class="subelement argument">
-<h4>$records</h4>
-<code>array</code><p>&$records The records</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
 <h2>Sets data to be available to the templates</h2>
 <pre>set(string $key, mixed $value) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -375,7 +295,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Shows links to other pages when more than one page of records exists</h2>
 <pre>showLinks(string $template) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -386,44 +306,11 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <code>boolean</code>If link were printed</div>
 </div></div>
 </div>
-<a name="showRecordSetLinks" id="showRecordSetLinks"></a><div class="element clickable method public showRecordSetLinks" data-toggle="collapse" data-target=".showRecordSetLinks .collapse">
-<h2>Handles the `showLinks()` method for fRecordSet</h2>
-<pre>showRecordSetLinks(<a href="../classes/fRecordSet.html">\fRecordSet</a> $object, string | array $class, array $records, string $method_name, array $parameters) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code><p>The record set</p></div>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>stringarray</code><p>The class(es) contained in the record set</p>
-</div>
-<div class="subelement argument">
-<h4>$records</h4>
-<code>array</code><p>&$records The records</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the links were shown</div>
-</div></div>
-</div>
 <a name="extendRecordSetInfo" id="extendRecordSetInfo"></a><div class="element clickable method private extendRecordSetInfo" data-toggle="collapse" data-target=".extendRecordSetInfo .collapse">
 <h2>Overlays user data over info from the record set</h2>
 <pre>extendRecordSetInfo(array $data, string | array $class) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -441,7 +328,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Makes a piece of a template.</h2>
 <pre>makePiece(string $template, string $name, array $data) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -462,7 +349,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Makes the links HTML for a set of records</h2>
 <pre>makeTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -489,7 +376,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Prints out a piece of a template</h2>
 <pre>printPiece(string $template, string $name, array $data) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -507,7 +394,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Prints the info for the displayed records</h2>
 <pre>printTemplatedInfo(string $template, array $data, integer $page, integer $per_page, integer $total_records) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -531,7 +418,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Prints the links for a set of records</h2>
 <pre>showTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -560,37 +447,37 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>Extra data for the templates</h2>
 <pre>$data : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24filters" id="$filters"> </a><div class="element clickable property private $filters" data-toggle="collapse" data-target=".$filters .collapse">
 <h2>The available filters to use in templates</h2>
 <pre>$filters : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24page" id="$page"> </a><div class="element clickable property private $page" data-toggle="collapse" data-target=".$page .collapse">
 <h2>The page number</h2>
 <pre>$page : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24per_page" id="$per_page"> </a><div class="element clickable property private $per_page" data-toggle="collapse" data-target=".$per_page .collapse">
 <h2>The number of records per page</h2>
 <pre>$per_page : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24templates" id="$templates"> </a><div class="element clickable property private $templates" data-toggle="collapse" data-target=".$templates .collapse">
 <h2>The available templates to use for a paginator</h2>
 <pre>$templates : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24total_records" id="$total_records"> </a><div class="element clickable property private $total_records" data-toggle="collapse" data-target=".$total_records .collapse">
 <h2>The total number of records</h2>
 <pre>$total_records : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -598,31 +485,31 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 <h2>defineTemplate</h2>
 <pre>defineTemplate </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="extend" id="extend"> </a><div class="element clickable constant  extend" data-toggle="collapse" data-target=".extend .collapse">
 <h2>extend</h2>
 <pre>extend </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="printRecordSetInfo" id="printRecordSetInfo"> </a><div class="element clickable constant  printRecordSetInfo" data-toggle="collapse" data-target=".printRecordSetInfo .collapse">
 <h2>printRecordSetInfo</h2>
 <pre>printRecordSetInfo </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="showRecordSetLinks" id="showRecordSetLinks"> </a><div class="element clickable constant  showRecordSetLinks" data-toggle="collapse" data-target=".showRecordSetLinks .collapse">
 <h2>showRecordSetLinks</h2>
 <pre>showRecordSetLinks </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -630,8 +517,8 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

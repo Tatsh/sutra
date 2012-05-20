@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -126,7 +126,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsCRUDForm" id="\sCRUDForm"></a><div href="../classes/sCRUDForm.html" class="element class">
+<a name="%5CsCRUDForm" id="\sCRUDForm"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sCRUDForm.html">sCRUDForm</a>
+</li>
+</ul>
+<div href="../classes/sCRUDForm.html" class="element class">
 <p class="short_description">Creates an HTML form based on an fActiveRecord class.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -145,7 +154,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -162,7 +171,7 @@
 <h2>Creates a form based on the schema of a table.</h2>
 <pre>__construct(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> | string $class, string $action, string $method, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -187,7 +196,7 @@
 <h2>Adds a button.</h2>
 <pre>addAction(string $action_name, string $label) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -205,7 +214,7 @@
 <h2>Adds a custom field.</h2>
 <pre>addField(string $name, string $label, string $type, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -229,7 +238,7 @@
 <h2>Enables adding a CSRF field.</h2>
 <pre>enableCSRFField(boolean $bool, string $name, string $url) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -251,7 +260,7 @@
   are file (blob) fields.</h2>
 <pre>enableFileUpload(boolean $bool) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -268,7 +277,7 @@
   managed by fORMDate.</h2>
 <pre>hideFieldNames(array | string $field_name) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -280,7 +289,7 @@
 <h2>Hides fields. Allows for variable arguments.</h2>
 <pre>hideFields(string | array $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -295,7 +304,7 @@
 <h2>Generates the form HTML. Should be called last.</h2>
 <pre>make() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -307,7 +316,7 @@
   date field column will render a different field from the default.</h2>
 <pre>overrideFieldType(string $name, string $type, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -328,7 +337,7 @@
 <h2>Override the label name for a column.</h2>
 <pre>overrideLabel(string $column_name, string $label) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -346,7 +355,7 @@
 <h2>Override the related column for a related table.</h2>
 <pre>overrideRelatedColumn(string $column_name, string $related_table_column_name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -364,7 +373,7 @@
 <h2>Set a specific field's attributes.</h2>
 <pre>setFieldAttributes(string $field, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -382,7 +391,7 @@
 <h2>Sets the field order.</h2>
 <pre>setFieldOrder(array | string $fields) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -397,7 +406,7 @@
 <h2>Set the maximum file upload size. This affects all file upload fields.</h2>
 <pre>setMaxFileUploadSize(integer $size) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -412,7 +421,7 @@
 <h2>Adds special attributes to the attributes array depending on field type.</h2>
 <pre>addSpecialAttributes(array $attr, array $info, string $field_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -430,7 +439,7 @@
 <h2>Fetches the values to display for the related column.</h2>
 <pre>fetchRelatedValues(fDatabase $db, string $value_column, string $title_column, string $related_table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -454,14 +463,14 @@
 <h2>Gets the correct field type based on the column type and name.</h2>
 <pre>getFieldType(string $column_name, string $type, array $valid_values) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the column name has password within its name, the type password will
-  be returned.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the column name has password within its name, the type password will
+  be returned.
 
-<p>If the column name has email within its name, the type email will be
-  returned.</p>
+If the column name has email within its name, the type email will be
+  returned.
 
-<p>If $valid_values has any values, type select will be returned.</p></p>
+If $valid_values has any values, type select will be returned.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$column_name</h4>
@@ -478,7 +487,7 @@
 <h2>Checks if the field is required.</h2>
 <pre>isRequiredField(string $type, array | null $default_values) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -496,7 +505,7 @@
 <h2>Makes the attributes array for the field.</h2>
 <pre>makeAttributesArray(string $column_name, array $info, string $field_type) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -518,7 +527,7 @@
 <h2>Makes an HTML form element wrapped in a div.</h2>
 <pre>makeElement(string $type, string $name, string $label, array $attr) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -542,7 +551,7 @@
 <h2>Parses the many-to-one relationships of the table.</h2>
 <pre>parseRelationships() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -553,7 +562,7 @@
 <h2>Parses the fields of the schema.</h2>
 <pre>parseSchema() : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -564,7 +573,7 @@
 <h2>Sets POST values from the fActiveRecord instance.</h2>
 <pre>setPostValues() : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>SuppressWarnings</th>
@@ -579,7 +588,7 @@
 <h2>Validates if a field name exists in this class.</h2>
 <pre>validateFieldName(string $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -599,7 +608,7 @@
 <h2>Validate the field type.</h2>
 <pre>validateFieldType(string $type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -616,7 +625,7 @@
 <h2>Validates the request method.</h2>
 <pre>validateRequestMethod(string $method) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -635,43 +644,43 @@
 <h2>Default action.</h2>
 <pre>$action : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24action_url" id="$action_url"> </a><div class="element clickable property private $action_url" data-toggle="collapse" data-target=".$action_url .collapse">
 <h2>Action URL.</h2>
 <pre>$action_url : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24active_record" id="$active_record"> </a><div class="element clickable property private $active_record" data-toggle="collapse" data-target=".$active_record .collapse">
 <h2>The fActiveRecord instance, if one was passed to the constructor.</h2>
 <pre>$active_record : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24always_ignore" id="$always_ignore"> </a><div class="element clickable property private $always_ignore" data-toggle="collapse" data-target=".$always_ignore .collapse">
 <h2>Column names to never print fields for.</h2>
 <pre>$always_ignore : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24buttons" id="$buttons"> </a><div class="element clickable property private $buttons" data-toggle="collapse" data-target=".$buttons .collapse">
 <h2>Buttons that will display.</h2>
 <pre>$buttons : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24class_name" id="$class_name"> </a><div class="element clickable property private $class_name" data-toggle="collapse" data-target=".$class_name .collapse">
 <h2>Class name passed in.</h2>
 <pre>$class_name : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24column_to_form_mappings" id="$column_to_form_mappings"> </a><div class="element clickable property private $column_to_form_mappings" data-toggle="collapse" data-target=".$column_to_form_mappings .collapse">
 <h2>Mappings.</h2>
 <pre>$column_to_form_mappings : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -683,81 +692,81 @@
 <h2>The CSRF field name.</h2>
 <pre>$csrf_field_name : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24csrf_field_url" id="$csrf_field_url"> </a><div class="element clickable property private $csrf_field_url" data-toggle="collapse" data-target=".$csrf_field_url .collapse">
 <h2>The CSRF field URL.</h2>
 <pre>$csrf_field_url : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24fields" id="$fields"> </a><div class="element clickable property private $fields" data-toggle="collapse" data-target=".$fields .collapse">
 <h2>The fields to build HTML from.</h2>
 <pre>$fields : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24file_upload_max_size" id="$file_upload_max_size"> </a><div class="element clickable property private $file_upload_max_size" data-toggle="collapse" data-target=".$file_upload_max_size .collapse">
 <h2>The maximum size for a file upload. If not set, the hidden field will not
   be printed.</h2>
 <pre>$file_upload_max_size : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24file_uploads" id="$file_uploads"> </a><div class="element clickable property private $file_uploads" data-toggle="collapse" data-target=".$file_uploads .collapse">
 <h2>If this form enables file uploads.</h2>
 <pre>$file_uploads : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24form_attr" id="$form_attr"> </a><div class="element clickable property private $form_attr" data-toggle="collapse" data-target=".$form_attr .collapse">
 <h2>Form element attributes.</h2>
 <pre>$form_attr : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24print_csrf" id="$print_csrf"> </a><div class="element clickable property private $print_csrf" data-toggle="collapse" data-target=".$print_csrf .collapse">
 <h2>If a CSRF field should be printed.</h2>
 <pre>$print_csrf : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24request_method" id="$request_method"> </a><div class="element clickable property private $request_method" data-toggle="collapse" data-target=".$request_method .collapse">
 <h2>Request method.</h2>
 <pre>$request_method : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24schema" id="$schema"> </a><div class="element clickable property private $schema" data-toggle="collapse" data-target=".$schema .collapse">
 <h2>The schema instance.</h2>
 <pre>$schema : <a href="../classes/fSchema.html">\fSchema</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24table_columns" id="$table_columns"> </a><div class="element clickable property private $table_columns" data-toggle="collapse" data-target=".$table_columns .collapse">
 <h2>The columns array of the table.</h2>
 <pre>$table_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24table_name" id="$table_name"> </a><div class="element clickable property private $table_name" data-toggle="collapse" data-target=".$table_name .collapse">
 <h2>The table name.</h2>
 <pre>$table_name : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24table_relationships" id="$table_relationships"> </a><div class="element clickable property private $table_relationships" data-toggle="collapse" data-target=".$table_relationships .collapse">
 <h2>The relationships array of the table.</h2>
 <pre>$table_relationships : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24valid_field_types" id="$valid_field_types"> </a><div class="element clickable property private $valid_field_types" data-toggle="collapse" data-target=".$valid_field_types .collapse">
 <h2>Valid field types. Ones that have a value of TRUE are separate elements
   and are not part of the 'type' attribute of the input element.</h2>
 <pre>$valid_field_types : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -765,7 +774,7 @@
 <h2>hideFieldNames</h2>
 <pre>hideFieldNames </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -773,8 +782,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

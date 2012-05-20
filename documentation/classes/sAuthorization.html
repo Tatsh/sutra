@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -73,7 +73,6 @@
 <li class="method public inherited"><a href="#requireAuthLevel" title="requireAuthLevel :: Redirect the user to the login page if they do not have the auth level required"><span class="description">Redirect the user to the login page if they do not have the auth level required</span><pre>requireAuthLevel()</pre></a></li>
 <li class="method public inherited"><a href="#requireLoggedIn" title="requireLoggedIn :: Redirect the user to the login page if they do not have an auth level or ACLs"><span class="description">Redirect the user to the login page if they do not have an auth level or ACLs</span><pre>requireLoggedIn()</pre></a></li>
 <li class="method public "><a href="#requireNotLoggedIn" title="requireNotLoggedIn :: Require that a user not be logged in."><span class="description">Require that a user not be logged in.</span><pre>requireNotLoggedIn()</pre></a></li>
-<li class="method public inherited"><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public inherited"><a href="#setAuthLevels" title="setAuthLevels :: Sets the authorization levels to use for level checking"><span class="description">Sets the authorization levels to use for level checking</span><pre>setAuthLevels()</pre></a></li>
 <li class="method public inherited"><a href="#setLoginPage" title="setLoginPage :: Sets the login page to redirect users to"><span class="description">Sets the login page to redirect users to</span><pre>setLoginPage()</pre></a></li>
 <li class="method public inherited"><a href="#setRequestedURL" title="setRequestedURL :: Sets the restricted URL requested by the user"><span class="description">Sets the restricted URL requested by the user</span><pre>setRequestedURL()</pre></a></li>
@@ -118,7 +117,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsAuthorization" id="\sAuthorization"></a><div href="../classes/sAuthorization.html" class="element class">
+<a name="%5CsAuthorization" id="\sAuthorization"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sAuthorization.html">sAuthorization</a>
+</li>
+</ul>
+<div href="../classes/sAuthorization.html" class="element class">
 <p class="short_description">Allows defining and checking user authentication.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -137,7 +145,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -154,9 +162,9 @@
 <h2>Adds a named IP address or range, or array of addresses and/or ranges</h2>
 <pre>addNamedIPRange(string $name, mixed $ip_ranges) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method allows ::checkIP() to be called with a name instead of the
-actual IPs.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method allows ::checkIP() to be called with a name instead of the
+actual IPs.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fAuthorization::addNamedIPRange()</td>
@@ -176,7 +184,7 @@ actual IPs.</p></p>
 <h2>Checks to see if the logged in user meets the requirements of the ACL specified</h2>
 <pre>checkACL(string $resource, string $permission) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -198,7 +206,7 @@ actual IPs.</p></p>
 <h2>Checks to see if the logged in user has the specified auth level</h2>
 <pre>checkAuthLevel(string $level) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -218,30 +226,19 @@ actual IPs.</p></p>
 <h2>Checks to see if the user is from the IPs or IP ranges specified</h2>
 <pre>checkIP(mixed $ip_ranges) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$ip_ranges</code> parameter can be either a single string, or an array of
-strings, each of which should be in one of the following formats:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$ip_ranges` parameter can be either a single string, or an array of
+strings, each of which should be in one of the following formats:
 
-<ul>
-<li>A single IP address:
-
-<ul>
-<li>192.168.1.1</li>
-<li>208.77.188.166</li>
-</ul></li>
-<li>A CIDR range
-
-<ul>
-<li>192.168.1.0/24</li>
-<li>208.77.188.160/28</li>
-</ul></li>
-<li>An IP/subnet mask combination
-
-<ul>
-<li>192.168.1.0/255.255.255.0</li>
-<li>208.77.188.160/255.255.255.240</li>
-</ul></li>
-</ul></p>
+ - A single IP address:
+  - 192.168.1.1
+  - 208.77.188.166
+ - A CIDR range
+  - 192.168.1.0/24
+  - 208.77.188.160/28
+ - An IP/subnet mask combination
+  - 192.168.1.0/255.255.255.0
+  - 208.77.188.160/255.255.255.240</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fAuthorization::checkIP()</td>
@@ -260,7 +257,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Checks to see if the user has an auth level or ACLs defined</h2>
 <pre>checkLoggedIn() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -275,7 +272,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Destroys the user's auth level and/or ACLs</h2>
 <pre>destroyUserInfo() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -287,7 +284,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Returns the login page set via ::setLoginPage()</h2>
 <pre>getLoginPage() : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -302,7 +299,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Returns the URL requested before the user was redirected to the login page</h2>
 <pre>getRequestedURL(boolean $clear, string $default_url) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -324,7 +321,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the ACLs for the logged in user</h2>
 <pre>getUserACLs() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -339,7 +336,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the authorization level for the logged in user</h2>
 <pre>getUserAuthLevel() : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -354,7 +351,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Gets the value that was set as the user token, `NULL` if no token has been set</h2>
 <pre>getUserToken() : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -369,7 +366,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have the permissions required</h2>
 <pre>requireACL(string $resource, string $permission) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -388,7 +385,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have the auth level required</h2>
 <pre>requireAuthLevel(string $level) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -405,7 +402,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Redirect the user to the login page if they do not have an auth level or ACLs</h2>
 <pre>requireLoggedIn() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -417,7 +414,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Require that a user not be logged in.</h2>
 <pre>requireNotLoggedIn(string $redirect) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -425,29 +422,11 @@ strings, each of which should be in one of the following formats:</p>
 <code>string</code><p>Where to redirect if the user is logged in.</p></div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fAuthorization::reset()</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a name="setAuthLevels" id="setAuthLevels"></a><div class="element clickable method public setAuthLevels" data-toggle="collapse" data-target=".setAuthLevels .collapse">
 <h2>Sets the authorization levels to use for level checking</h2>
 <pre>setAuthLevels(array $levels) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -464,7 +443,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the login page to redirect users to</h2>
 <pre>setLoginPage(string $url) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -480,7 +459,7 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the restricted URL requested by the user</h2>
 <pre>setRequestedURL(string $url) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -496,19 +475,19 @@ strings, each of which should be in one of the following formats:</p>
 <h2>Sets the ACLs for the logged in user.</h2>
 <pre>setUserACLs(array $acls) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Array should be formatted like:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Array should be formatted like:
 
-<p>{{{
+{{{
 array (
     (string) {resource name} => array(
         (mixed) {permission}, ...
     ), ...
 )
-}}}</p>
+}}}
 
-<p>The resource name or the permission may be the single character <code>'*'</code>
-which acts as a wildcard.</p></p>
+The resource name or the permission may be the single character `'*'`
+which acts as a wildcard.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fAuthorization::setUserACLs()</td>
@@ -524,7 +503,7 @@ which acts as a wildcard.</p></p>
 <h2>Sets the authorization level for the logged in user</h2>
 <pre>setUserAuthLevel(string $level) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -541,7 +520,7 @@ which acts as a wildcard.</p></p>
 <h2>Sets some piece of information to use to identify the current user</h2>
 <pre>setUserToken(mixed $token) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -558,7 +537,7 @@ which acts as a wildcard.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/sAuthorization.html">\sAuthorization</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sAuthorization.html">\sAuthorization</a></code></div>
@@ -568,7 +547,7 @@ which acts as a wildcard.</p></p>
 <h2>Redirects the user to the login page</h2>
 <pre>redirect() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -580,7 +559,7 @@ which acts as a wildcard.</p></p>
 <h2>Makes sure auth levels have been set, and that the specified auth level is valid</h2>
 <pre>validateAuthLevel(string $level) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -596,7 +575,7 @@ which acts as a wildcard.</p></p>
 <h2>Makes sure a login page has been defined</h2>
 <pre>validateLoginPage() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -610,7 +589,7 @@ which acts as a wildcard.</p></p>
 <h2>The valid auth levels</h2>
 <pre>$levels : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -622,7 +601,7 @@ which acts as a wildcard.</p></p>
 <h2>The login page</h2>
 <pre>$login_page : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -634,7 +613,7 @@ which acts as a wildcard.</p></p>
 <h2>Named IP ranges</h2>
 <pre>$named_ip_ranges : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -648,7 +627,7 @@ which acts as a wildcard.</p></p>
 <h2>addNamedIPRange</h2>
 <pre>addNamedIPRange </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -660,7 +639,7 @@ which acts as a wildcard.</p></p>
 <h2>checkACL</h2>
 <pre>checkACL </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -672,7 +651,7 @@ which acts as a wildcard.</p></p>
 <h2>checkAuthLevel</h2>
 <pre>checkAuthLevel </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -684,7 +663,7 @@ which acts as a wildcard.</p></p>
 <h2>checkIP</h2>
 <pre>checkIP </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -696,7 +675,7 @@ which acts as a wildcard.</p></p>
 <h2>checkLoggedIn</h2>
 <pre>checkLoggedIn </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -708,7 +687,7 @@ which acts as a wildcard.</p></p>
 <h2>destroyUserInfo</h2>
 <pre>destroyUserInfo </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -720,7 +699,7 @@ which acts as a wildcard.</p></p>
 <h2>getLoginPage</h2>
 <pre>getLoginPage </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -732,7 +711,7 @@ which acts as a wildcard.</p></p>
 <h2>getRequestedURL</h2>
 <pre>getRequestedURL </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -744,7 +723,7 @@ which acts as a wildcard.</p></p>
 <h2>getUserACLs</h2>
 <pre>getUserACLs </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -756,7 +735,7 @@ which acts as a wildcard.</p></p>
 <h2>getUserAuthLevel</h2>
 <pre>getUserAuthLevel </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -768,7 +747,7 @@ which acts as a wildcard.</p></p>
 <h2>getUserToken</h2>
 <pre>getUserToken </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -780,7 +759,7 @@ which acts as a wildcard.</p></p>
 <h2>requireACL</h2>
 <pre>requireACL </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -792,7 +771,7 @@ which acts as a wildcard.</p></p>
 <h2>requireAuthLevel</h2>
 <pre>requireAuthLevel </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -804,7 +783,7 @@ which acts as a wildcard.</p></p>
 <h2>requireLoggedIn</h2>
 <pre>requireLoggedIn </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -816,13 +795,13 @@ which acts as a wildcard.</p></p>
 <h2>requireNotLoggedIn</h2>
 <pre>requireNotLoggedIn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -834,7 +813,7 @@ which acts as a wildcard.</p></p>
 <h2>setAuthLevels</h2>
 <pre>setAuthLevels </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -846,7 +825,7 @@ which acts as a wildcard.</p></p>
 <h2>setLoginPage</h2>
 <pre>setLoginPage </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -858,7 +837,7 @@ which acts as a wildcard.</p></p>
 <h2>setRequestedURL</h2>
 <pre>setRequestedURL </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -870,7 +849,7 @@ which acts as a wildcard.</p></p>
 <h2>setUserACLs</h2>
 <pre>setUserACLs </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -882,7 +861,7 @@ which acts as a wildcard.</p></p>
 <h2>setUserAuthLevel</h2>
 <pre>setUserAuthLevel </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -894,7 +873,7 @@ which acts as a wildcard.</p></p>
 <h2>setUserToken</h2>
 <pre>setUserToken </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -908,8 +887,8 @@ which acts as a wildcard.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

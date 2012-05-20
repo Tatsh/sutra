@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -102,7 +102,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsObject" id="\sObject"></a><div href="../classes/sObject.html" class="element class">
+<a name="%5CsObject" id="\sObject"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sObject.html">sObject</a>
+</li>
+</ul>
+<div href="../classes/sObject.html" class="element class">
 <p class="short_description">Provides an object-oriented interface to associative arrays. This class is
   not concerned with the order of the keys.</p>
 <div class="details">
@@ -122,7 +131,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -143,7 +152,7 @@
 <h2>Constructor.</h2>
 <pre>__construct(array $data) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>SuppressWarnings</th>
@@ -168,7 +177,7 @@
   key will be retrievable by using getLastMissingKey().</h2>
 <pre>checkRequiredKeys(string $key) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -188,7 +197,7 @@
 <h2>Returns a new sObject instance with keys changed to the case specified.</h2>
 <pre>convertKeyCase(integer $case) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -203,7 +212,7 @@
 <h2>Returns the amount of items in the object.</h2>
 <pre>count() : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -214,7 +223,7 @@
 <h2>Compares this object's data with associative arrays.</h2>
 <pre>diff(mixed $array1) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -231,7 +240,7 @@
   value.</h2>
 <pre>fill(array $keys, mixed $value) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -251,7 +260,7 @@
   method.</h2>
 <pre>filter(string $cb) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -270,7 +279,7 @@
 <h2>Gets the data as a regular array.</h2>
 <pre>getData() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -281,7 +290,7 @@
 <h2>Gets the last missing key. NULL is the default value.</h2>
 <pre>getLastMissingKey() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -292,7 +301,7 @@
 <h2>Gets the keys to this object.</h2>
 <pre>keys(boolean $sorted) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -307,7 +316,7 @@
 <h2>Merges the values of the arguments with the values of this object.</h2>
 <pre>merge(<a href="../classes/sObject.html">\sObject</a> | array $array_like) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -322,7 +331,7 @@
 <h2>Prints the data in JSON format. Does not send a JSON header.</h2>
 <pre>printJSON() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -334,7 +343,7 @@
 <h2>Picks one or more random keys.</h2>
 <pre>rand(integer $num_req) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -350,7 +359,7 @@
   successful. Can return boolean FALSE.</h2>
 <pre>search(mixed $needle, boolean $strict) : boolean | string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -368,7 +377,7 @@
 <h2>Returns the data in JSON format.</h2>
 <pre>toJSON() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -383,9 +392,9 @@
 <h2>Validates that the object has the required keys specified.</h2>
 <pre>validateRequiredKeys(string | array $key) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the first argument is an array, that will be considered the set of
-  keys.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the first argument is an array, that will be considered the set of
+  keys.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$key</h4>
@@ -404,7 +413,7 @@
 <h2>Gets the values of the object as normal, numerically-index array.</h2>
 <pre>values() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -415,7 +424,7 @@
 <h2>Applies a user-defined function to each element of this object.</h2>
 <pre>walk(string $func, mixed $user_data) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>SuppressWarnings</th>
@@ -439,7 +448,7 @@
   method will recurse into deeper arrays.</h2>
 <pre>walkRecursive(string $func, mixed $user_data) : <a href="../classes/sObject.html">\sObject</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -459,9 +468,9 @@
   interfaces).</h2>
 <pre>isArrayLike(mixed $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>To be array-like, a class must implement both ArrayAccess and
-  IteratorAggregate. Optionally, it can implement the Countable interface.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">To be array-like, a class must implement both ArrayAccess and
+  IteratorAggregate. Optionally, it can implement the Countable interface.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -473,9 +482,9 @@
 </div>
 <a name="walkRecursiveCallback" id="walkRecursiveCallback"></a><div class="element clickable method private walkRecursiveCallback" data-toggle="collapse" data-target=".walkRecursiveCallback .collapse">
 <h2>Callback used with walkRecursive.</h2>
-<pre>walkRecursiveCallback(sObject $instance, mixed $array_like, string $func, mixed $user_data) </pre>
+<pre>walkRecursiveCallback(sObject $instance, mixed $array_like, string $func, mixed $user_data) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -499,13 +508,13 @@
 <h2>The actual 'array' of data this object manages.</h2>
 <pre>$data : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24last_missing_key" id="$last_missing_key"> </a><div class="element clickable property private $last_missing_key" data-toggle="collapse" data-target=".$last_missing_key .collapse">
 <h2>The last missing key, checked by checkRequiredKeys().</h2>
 <pre>$last_missing_key : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -513,8 +522,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

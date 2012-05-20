@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -64,7 +64,6 @@
   callback but the URL must be the same as the current page.</span><pre>checkCSRFToken()</pre></a></li>
 <li class="method public "><a href="#deletePostValues" title="deletePostValues :: Deletes all POST values stored for a particular ID."><span class="description">Deletes all POST values stored for a particular ID.</span><pre>deletePostValues()</pre></a></li>
 <li class="method public inherited"><a href="#encode" title="encode :: Gets a value from ::get() and passes it through fHTML::encode()"><span class="description">Gets a value from ::get() and passes it through fHTML::encode()</span><pre>encode()</pre></a></li>
-<li class="method public inherited"><a href="#filter" title="filter :: Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name"><span class="description">Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name</span><pre>filter()</pre></a></li>
 <li class="method public inherited"><a href="#generateCSRFToken" title="generateCSRFToken :: Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]"><span class="description">Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</span><pre>generateCSRFToken()</pre></a></li>
 <li class="method public inherited"><a href="#get" title="get :: Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)"><span class="description">Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</span><pre>get()</pre></a></li>
 <li class="method public inherited"><a href="#getAcceptLanguages" title="getAcceptLanguages :: Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)"><span class="description">Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</span><pre>getAcceptLanguages()</pre></a></li>
@@ -85,12 +84,10 @@
 <li class="method public inherited"><a href="#isPut" title="isPut :: Indicates if the URL was accessed via the `PUT` HTTP method"><span class="description">Indicates if the URL was accessed via the `PUT` HTTP method</span><pre>isPut()</pre></a></li>
 <li class="method public inherited"><a href="#overrideAction" title="overrideAction :: Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value"><span class="description">Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</span><pre>overrideAction()</pre></a></li>
 <li class="method public inherited"><a href="#prepare" title="prepare :: Gets a value from ::get() and passes it through fHTML::prepare()"><span class="description">Gets a value from ::get() and passes it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
-<li class="method public inherited"><a href="#reset" title="reset :: Resets the configuration and data of the class"><span class="description">Resets the configuration and data of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#retrievePostValues" title="retrievePostValues :: Gets the saved POST values for a unique ID."><span class="description">Gets the saved POST values for a unique ID.</span><pre>retrievePostValues()</pre></a></li>
 <li class="method public "><a href="#savePostValues" title="savePostValues :: Saves the POST values to session."><span class="description">Saves the POST values to session.</span><pre>savePostValues()</pre></a></li>
 <li class="method public inherited"><a href="#set" title="set :: Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request"><span class="description">Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#setPostValues" title="setPostValues :: Restores the last POST values for a specified ID to $_GET or $_POST."><span class="description">Restores the last POST values for a specified ID to $_GET or $_POST.</span><pre>setPostValues()</pre></a></li>
-<li class="method public inherited"><a href="#unfilter" title="unfilter :: Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called"><span class="description">Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called</span><pre>unfilter()</pre></a></li>
 <li class="method public inherited"><a href="#validateCSRFToken" title="validateCSRFToken :: Validates a request token generated by ::generateCSRFToken()"><span class="description">Validates a request token generated by ::generateCSRFToken()</span><pre>validateCSRFToken()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
@@ -142,14 +139,23 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsRequest" id="\sRequest"></a><div href="../classes/sRequest.html" class="element class">
+<a name="%5CsRequest" id="\sRequest"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sRequest.html">sRequest</a>
+</li>
+</ul>
+<div href="../classes/sRequest.html" class="element class">
 <p class="short_description">Manages POST requests.</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p>
+<p class="long_description">This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.
 
-<p>Please also note that using this class in a PUT or DELETE request will
-cause the php://input stream to be consumed, and thus no longer available.</p></p>
+Please also note that using this class in a PUT or DELETE request will
+cause the php://input stream to be consumed, and thus no longer available.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -165,7 +171,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -182,7 +188,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <h2>Indicated if the parameter specified is set in the `$_GET` or `$_POST` superglobals or in the post data of a `PUT` or `DELETE` request</h2>
 <pre>check(string $key) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -203,7 +209,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
   callback but the URL must be the same as the current page.</h2>
 <pre>checkCSRFToken(string $csrf, string $url) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>SuppressWarnings</th>
@@ -225,7 +231,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <h2>Deletes all POST values stored for a particular ID.</h2>
 <pre>deletePostValues(string $id) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -237,7 +243,7 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <h2>Gets a value from ::get() and passes it through fHTML::encode()</h2>
 <pre>encode(string $key, string $cast_to, mixed $default_value) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -260,47 +266,22 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 <code>string</code>The encoded value</div>
 </div></div>
 </div>
-<a name="filter" id="filter"></a><div class="element clickable method public filter" data-toggle="collapse" data-target=".filter .collapse">
-<h2>Parses through `$_FILES`, `$_GET`, `$_POST` and the `PUT`/`DELETE` post data and filters out everything that doesn't match the prefix and key, also removes the prefix from the field name</h2>
-<pre>filter(string $prefix, mixed $key) : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fRequest::filter()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$prefix</h4>
-<code>string</code><p>The prefix to filter by</p></div>
-<div class="subelement argument">
-<h4>$key</h4>
-<code>mixed</code><p>If the field is an array, get the value corresponding to this key</p></div>
-</div></div>
-</div>
 <a name="generateCSRFToken" id="generateCSRFToken"></a><div class="element clickable method public generateCSRFToken" data-toggle="collapse" data-target=".generateCSRFToken .collapse">
 <h2>Returns a request token that should be placed in each HTML form to prevent [http://en.wikipedia.org/wiki/Cross-site_request_forgery cross-site request forgery]</h2>
 <pre>generateCSRFToken(string $url) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method will return a random 15 character string that should be
-placed in a hidden <code>input</code> element on every HTML form. When the form
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method will return a random 15 character string that should be
+placed in a hidden `input` element on every HTML form. When the form
 contents are being processed, the token should be retrieved and passed
-into ::validateCSRFToken().</p>
+into ::validateCSRFToken().
 
-<p>The value returned by this method is stored in the session and then
+The value returned by this method is stored in the session and then
 checked by the validate method, which helps prevent cross site request
-forgeries and (naive) automated form submissions.</p>
+forgeries and (naive) automated form submissions.
 
-<p>Tokens generated by this method are single use, so a user must request
-the page that generates the token at least once per submission.</p></p>
+Tokens generated by this method are single use, so a user must request
+the page that generates the token at least once per submission.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fRequest::generateCSRFToken()</td>
@@ -318,46 +299,46 @@ the page that generates the token at least once per submission.</p></p>
 <h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order)</h2>
 <pre>get(string $key, string $cast_to, mixed $default_value, boolean $use_default_for_blank) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A value that exactly equals <code>''</code> and is not cast to a specific type will
-become <code>NULL</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A value that exactly equals `''` and is not cast to a specific type will
+become `NULL`.
 
-<p>Valid <code>$cast_to</code> types include:
- - <code>'string'</code>
- - <code>'binary'</code>
- - <code>'int'</code>
- - <code>'integer'</code>
- - <code>'bool'</code>
- - <code>'boolean'</code>
- - <code>'array'</code>
- - <code>'date'</code>
- - <code>'time'</code>
- - <code>'timestamp'</code></p>
+Valid `$cast_to` types include:
+ - `'string'`
+ - `'binary'`
+ - `'int'`
+ - `'integer'`
+ - `'bool'`
+ - `'boolean'`
+ - `'array'`
+ - `'date'`
+ - `'time'`
+ - `'timestamp'`
 
-<p>It is possible to append a <code>?</code> to a data type to return <code>NULL</code>
-whenever the <code>$key</code> was not specified in the request, or if the value
-was a blank string.</p>
+It is possible to append a `?` to a data type to return `NULL`
+whenever the `$key` was not specified in the request, or if the value
+was a blank string.
 
-<p>The <code>array</code> and unspecified <code>$cast_to</code> types allow for multi-dimensional
+The `array` and unspecified `$cast_to` types allow for multi-dimensional
 arrays of string data. It is possible to cast an input value as a
-single-dimensional array of a specific type by appending <code>[]</code> to the
-<code>$cast_to</code>.</p>
+single-dimensional array of a specific type by appending `[]` to the
+`$cast_to`.
 
-<p>All <code>string</code>, <code>array</code> or unspecified <code>$cast_to</code> will result in the value(s)
+All `string`, `array` or unspecified `$cast_to` will result in the value(s)
 being interpreted as UTF-8 string and appropriately cleaned of invalid
 byte sequences. Also, all low-byte, non-printable characters will be
 stripped from the value. This includes all bytes less than the value of
-32 (Space) other than Tab (<code>\t</code>), Newline (<code>\n</code>) and Cariage Return
-(<code>\r</code>).</p>
+32 (Space) other than Tab (`\t`), Newline (`\n`) and Cariage Return
+(`\r`).
 
-<p>To preserve low-byte, non-printable characters, or get the raw value
+To preserve low-byte, non-printable characters, or get the raw value
 without cleaning invalid UTF-8 byte sequences, plase use the value of
-<code>binary</code> for the <code>$cast_to</code> parameter.</p>
+`binary` for the `$cast_to` parameter.
 
-<p>Any integers that are beyond the range of 32bit storage will be returned
+Any integers that are beyond the range of 32bit storage will be returned
 as a string. The returned value can be forced to always be a real
-integer, which may cause truncation of the value, by passing <code>integer!</code>
-as the <code>$cast_to</code>.</p></p>
+integer, which may cause truncation of the value, by passing `integer!`
+as the `$cast_to`.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fRequest::get()</td>
@@ -388,7 +369,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the HTTP `Accept-Language`s sorted by their `q` values (from high to low)</h2>
 <pre>getAcceptLanguages() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -403,7 +384,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the HTTP `Accept` types sorted by their `q` values (from high to low)</h2>
 <pre>getAcceptTypes() : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -418,13 +399,13 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Returns the best HTTP `Accept-Language` (based on `q` value) - can be filtered to only allow certain languages</h2>
 <pre>getBestAcceptLanguage(array $filter) : string | NULL | FALSE</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Special conditions affecting the return value:
- - If no <code>$filter</code> is provided and the client does not send the <code>Accept-Language</code> header, <code>NULL</code> will be returned
- - If no <code>$filter</code> is provided and the client specifies <code>*</code> with the highest <code>q</code>, <code>NULL</code> will be returned
- - If <code>$filter</code> contains one or more values, but the <code>Accept-Language</code> header does not match any, <code>FALSE</code> will be returned
- - If <code>$filter</code> contains one or more values, but the client does not send the <code>Accept-Language</code> header, the first entry from <code>$filter</code> will be returned
- - If <code>$filter</code> contains two or more values, and two of the values have the same <code>q</code> value, the one listed first in <code>$filter</code> will be returned</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Special conditions affecting the return value:
+ - If no `$filter` is provided and the client does not send the `Accept-Language` header, `NULL` will be returned
+ - If no `$filter` is provided and the client specifies `*` with the highest `q`, `NULL` will be returned
+ - If `$filter` contains one or more values, but the `Accept-Language` header does not match any, `FALSE` will be returned
+ - If `$filter` contains one or more values, but the client does not send the `Accept-Language` header, the first entry from `$filter` will be returned
+ - If `$filter` contains two or more values, and two of the values have the same `q` value, the one listed first in `$filter` will be returned</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fRequest::getBestAcceptLanguage()</td>
@@ -444,7 +425,7 @@ as the <code>$cast_to</code>.</p></p>
         </h2>
 <pre>getBestAcceptType($filter) </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -461,7 +442,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Get the content type of the data sent.</h2>
 <pre>getContentType() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -472,7 +453,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Get the request method.</h2>
 <pre>getMethod() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -483,7 +464,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Gets a value from the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals (in that order), restricting to a specific set of values</h2>
 <pre>getValid(string $key, array $valid_values) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -506,7 +487,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via an XMLHttpRequest</h2>
 <pre>isAjax() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -521,7 +502,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `DELETE` HTTP method</h2>
 <pre>isDelete() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -536,7 +517,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `GET` HTTP method</h2>
 <pre>isGet() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -552,7 +533,7 @@ as the <code>$cast_to</code>.</p></p>
   user-agent and is to be used as a last resort.</h2>
 <pre>isInternetExplorer(string | array $version) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -567,7 +548,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `POST` HTTP method</h2>
 <pre>isPost() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -582,7 +563,7 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Indicates if the URL was accessed via the `PUT` HTTP method</h2>
 <pre>isPut() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -597,9 +578,9 @@ as the <code>$cast_to</code>.</p></p>
 <h2>Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</h2>
 <pre>overrideAction(string $redirect) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is primarily intended to be used for hanlding multiple
-submit buttons.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method is primarily intended to be used for hanlding multiple
+submit buttons.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fRequest::overrideAction()</td>
@@ -615,7 +596,7 @@ submit buttons.</p></p>
 <h2>Gets a value from ::get() and passes it through fHTML::prepare()</h2>
 <pre>prepare(string $key, string $cast_to, mixed $default_value) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -638,29 +619,11 @@ submit buttons.</p></p>
 <code>string</code>The prepared value</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration and data of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fRequest::reset()</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a name="retrievePostValues" id="retrievePostValues"></a><div class="element clickable method public retrievePostValues" data-toggle="collapse" data-target=".retrievePostValues .collapse">
 <h2>Gets the saved POST values for a unique ID.</h2>
 <pre>retrievePostValues(string $id) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -675,7 +638,7 @@ submit buttons.</p></p>
 <h2>Saves the POST values to session.</h2>
 <pre>savePostValues(string $id) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>SuppressWarnings</th>
@@ -691,7 +654,7 @@ submit buttons.</p></p>
 <h2>Sets a value into the appropriate `$_GET` or `$_POST` superglobal, or the local `PUT`/`DELETE` post data based on what HTTP method was used for the request</h2>
 <pre>set(string $key, mixed $value) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -711,7 +674,7 @@ submit buttons.</p></p>
 <h2>Restores the last POST values for a specified ID to $_GET or $_POST.</h2>
 <pre>setPostValues(string $id) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -719,31 +682,13 @@ submit buttons.</p></p>
 <code>string</code><p>Unique ID of the values.</p></div>
 </div></div>
 </div>
-<a name="unfilter" id="unfilter"></a><div class="element clickable method public unfilter" data-toggle="collapse" data-target=".unfilter .collapse">
-<h2>Returns `$_GET`, `$_POST` and `$_FILES` and the `PUT`/`DELTE` post data to the state they were at before ::filter() was called</h2>
-<pre>unfilter() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fRequest::unfilter()</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a name="validateCSRFToken" id="validateCSRFToken"></a><div class="element clickable method public validateCSRFToken" data-toggle="collapse" data-target=".validateCSRFToken .collapse">
 <h2>Validates a request token generated by ::generateCSRFToken()</h2>
 <pre>validateCSRFToken(string $token, string $url) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method takes a request token and ensures it is valid, otherwise
-it will throw an fValidationException.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method takes a request token and ensures it is valid, otherwise
+it will throw an fValidationException.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fRequest::validateCSRFToken()</td>
@@ -766,7 +711,7 @@ it will throw an fValidationException.</p></p>
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sRequest.html">\sRequest</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sRequest.html">\sRequest</a></code></div>
@@ -776,7 +721,7 @@ it will throw an fValidationException.</p></p>
 <h2>Recursively handles casting values</h2>
 <pre>cast(string | array $value, string $cast_to, integer $level) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -801,7 +746,7 @@ it will throw an fValidationException.</p></p>
 <h2>Parses post data for `PUT` and `DELETE` HTTP methods</h2>
 <pre>initPutDelete() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -813,7 +758,7 @@ it will throw an fValidationException.</p></p>
 <h2>Returns the best HTTP `Accept-*` header item match (based on `q` value), optionally filtered by an array of options</h2>
 <pre>pickBestAcceptItem(string $header_name, array $options) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -836,7 +781,7 @@ it will throw an fValidationException.</p></p>
 <h2>Returns an array of values from one of the HTTP `Accept-*` headers</h2>
 <pre>processAcceptHeader(string $header_name) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -856,7 +801,7 @@ it will throw an fValidationException.</p></p>
 <h2>Removes low-order bytes from a value</h2>
 <pre>stripLowOrderBytes(string | array $value) : string | array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -875,7 +820,7 @@ it will throw an fValidationException.</p></p>
 <h2>Removes slashes from a value</h2>
 <pre>stripSlashes(string | array $value) : string | array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -896,7 +841,7 @@ it will throw an fValidationException.</p></p>
 <h2>A backup copy of `$_FILES` for ::unfilter()</h2>
 <pre>$backup_files : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -908,7 +853,7 @@ it will throw an fValidationException.</p></p>
 <h2>A backup copy of `$_GET` for ::unfilter()</h2>
 <pre>$backup_get : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -920,7 +865,7 @@ it will throw an fValidationException.</p></p>
 <h2>A backup copy of `$_POST` for unfilter()</h2>
 <pre>$backup_post : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -932,7 +877,7 @@ it will throw an fValidationException.</p></p>
 <h2>A backup copy of the local `PUT`/`DELETE` post data for ::unfilter()</h2>
 <pre>$backup_put_delete : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -944,7 +889,7 @@ it will throw an fValidationException.</p></p>
 <h2>The key/value pairs from the post data of a `PUT`/`DELETE` request</h2>
 <pre>$put_delete : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -959,13 +904,13 @@ it will throw an fValidationException.</p></p>
   are only stored when a validation error occurs.</h2>
 <pre>LAST_POST_SESSION_KEY_PREFIX : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="check" id="check"> </a><div class="element clickable constant  check" data-toggle="collapse" data-target=".check .collapse">
 <h2>check</h2>
 <pre>check </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -977,19 +922,19 @@ it will throw an fValidationException.</p></p>
 <h2>checkCSRFToken</h2>
 <pre>checkCSRFToken </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="deletePostValues" id="deletePostValues"> </a><div class="element clickable constant  deletePostValues" data-toggle="collapse" data-target=".deletePostValues .collapse">
 <h2>deletePostValues</h2>
 <pre>deletePostValues </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="encode" id="encode"> </a><div class="element clickable constant  encode" data-toggle="collapse" data-target=".encode .collapse">
 <h2>encode</h2>
 <pre>encode </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1001,7 +946,7 @@ it will throw an fValidationException.</p></p>
 <h2>filter</h2>
 <pre>filter </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1013,7 +958,7 @@ it will throw an fValidationException.</p></p>
 <h2>generateCSRFToken</h2>
 <pre>generateCSRFToken </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1025,7 +970,7 @@ it will throw an fValidationException.</p></p>
 <h2>get</h2>
 <pre>get </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1037,7 +982,7 @@ it will throw an fValidationException.</p></p>
 <h2>getAcceptLanguages</h2>
 <pre>getAcceptLanguages </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1049,7 +994,7 @@ it will throw an fValidationException.</p></p>
 <h2>getAcceptTypes</h2>
 <pre>getAcceptTypes </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1061,7 +1006,7 @@ it will throw an fValidationException.</p></p>
 <h2>getBestAcceptLanguage</h2>
 <pre>getBestAcceptLanguage </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1073,7 +1018,7 @@ it will throw an fValidationException.</p></p>
 <h2>getBestAcceptType</h2>
 <pre>getBestAcceptType </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1085,7 +1030,7 @@ it will throw an fValidationException.</p></p>
 <h2>getValid</h2>
 <pre>getValid </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1097,7 +1042,7 @@ it will throw an fValidationException.</p></p>
 <h2>isAjax</h2>
 <pre>isAjax </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1109,7 +1054,7 @@ it will throw an fValidationException.</p></p>
 <h2>isDelete</h2>
 <pre>isDelete </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1121,7 +1066,7 @@ it will throw an fValidationException.</p></p>
 <h2>isGet</h2>
 <pre>isGet </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1133,7 +1078,7 @@ it will throw an fValidationException.</p></p>
 <h2>isPost</h2>
 <pre>isPost </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1145,7 +1090,7 @@ it will throw an fValidationException.</p></p>
 <h2>isPut</h2>
 <pre>isPut </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1157,7 +1102,7 @@ it will throw an fValidationException.</p></p>
 <h2>overrideAction</h2>
 <pre>overrideAction </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1169,7 +1114,7 @@ it will throw an fValidationException.</p></p>
 <h2>prepare</h2>
 <pre>prepare </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1181,7 +1126,7 @@ it will throw an fValidationException.</p></p>
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1193,19 +1138,19 @@ it will throw an fValidationException.</p></p>
 <h2>retrievePostValues</h2>
 <pre>retrievePostValues </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="savePostValues" id="savePostValues"> </a><div class="element clickable constant  savePostValues" data-toggle="collapse" data-target=".savePostValues .collapse">
 <h2>savePostValues</h2>
 <pre>savePostValues </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
 <h2>set</h2>
 <pre>set </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1217,13 +1162,13 @@ it will throw an fValidationException.</p></p>
 <h2>setPostValues</h2>
 <pre>setPostValues </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="unfilter" id="unfilter"> </a><div class="element clickable constant  unfilter" data-toggle="collapse" data-target=".unfilter .collapse">
 <h2>unfilter</h2>
 <pre>unfilter </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1235,7 +1180,7 @@ it will throw an fValidationException.</p></p>
 <h2>validateCSRFToken</h2>
 <pre>validateCSRFToken </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1249,8 +1194,8 @@ it will throw an fValidationException.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -112,7 +112,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsGrammar" id="\sGrammar"></a><div href="../classes/sGrammar.html" class="element class">
+<a name="%5CsGrammar" id="\sGrammar"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sGrammar.html">sGrammar</a>
+</li>
+</ul>
+<div href="../classes/sGrammar.html" class="element class">
 <p class="short_description">Extends fGrammar.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -131,7 +140,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -148,7 +157,7 @@
 <h2>Adds a custom `camelCase` to `underscore_notation` and `underscore_notation` to `camelCase` rule</h2>
 <pre>addCamelUnderscoreRule(string $camel_case, string $underscore_notation) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -169,7 +178,7 @@
 <h2>Add an exception string for sGrammar::dashize().</h2>
 <pre>addDashizeRule(string $original, string $returnString) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -189,7 +198,7 @@
 <h2>Adds a custom mapping of a non-humanized string to a humanized string for ::humanize()</h2>
 <pre>addHumanizeRule(string $non_humanized_string, string $humanized_string) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -209,7 +218,7 @@
 <h2>Adds a custom singular to plural and plural to singular rule for ::pluralize() and ::singularize()</h2>
 <pre>addSingularPluralRule(string $singular, string $plural) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -228,7 +237,7 @@
 <h2>Converts an `underscore_notation`, human-friendly or `camelCase` string to `camelCase`</h2>
 <pre>camelize(string $string, boolean $upper) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -251,7 +260,7 @@
 <h2>Converts an underscore_notation or camelCase notation to dash-notation.</h2>
 <pre>dashize(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -270,7 +279,7 @@
 <h2>Makes an `underscore_notation`, `camelCase`, or human-friendly string into a human-friendly string</h2>
 <pre>humanize(string $string) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -289,7 +298,7 @@
 <h2>Returns the singular or plural form of the word or based on the quantity specified</h2>
 <pre>inflectOnQuantity(mixed $quantity, string $singular_form, string $plural_form, boolean $use_words_for_single_digits) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -319,7 +328,7 @@
 <h2>Returns the passed terms joined together using rule 2 from Strunk &amp; White's 'The Elements of Style'</h2>
 <pre>joinArray(array $strings, string $type) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -342,7 +351,7 @@
 <h2>Returns the plural version of a singular noun</h2>
 <pre>pluralize(string $singular_noun, boolean $return_error) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -365,9 +374,9 @@
 <h2>Allows replacing the ::joinArray() function with a user defined function</h2>
 <pre>registerJoinArrayCallback(callback $callback) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This would be most useful for changing ::joinArray() to work with
-languages other than English.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This would be most useful for changing ::joinArray() to work with
+languages other than English.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fGrammar::registerJoinArrayCallback()</td>
@@ -383,7 +392,7 @@ languages other than English.</p></p>
 <h2>Removes a rule used by sGrammar::dashize().</h2>
 <pre>removeDashizeRule(string $original) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -399,7 +408,7 @@ languages other than English.</p></p>
 <h2>Returns the singular version of a plural noun</h2>
 <pre>singularize(string $plural_noun, boolean $return_error) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -422,9 +431,9 @@ languages other than English.</p></p>
 <h2>Uses the Porter Stemming algorithm to create the stem of a word, which is useful for searching</h2>
 <pre>stem(string $word) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>See http://tartarus.org/~martin/PorterStemmer/ for details about the
-algorithm.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">See http://tartarus.org/~martin/PorterStemmer/ for details about the
+algorithm.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fGrammar::stem()</td>
@@ -442,7 +451,7 @@ algorithm.</p></p>
 <h2>Converts a `camelCase`, human-friendly or `underscore_notation` string to `underscore_notation`</h2>
 <pre>underscorize(string $string) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -461,7 +470,7 @@ algorithm.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -480,7 +489,7 @@ algorithm.</p></p>
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sGrammar.html">\sGrammar</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sGrammar.html">\sGrammar</a></code></div>
@@ -490,7 +499,7 @@ algorithm.</p></p>
 <h2>A callback used by ::camelize() to handle converting underscore to camelCase</h2>
 <pre>camelizeCallback(array $match) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -509,7 +518,7 @@ algorithm.</p></p>
 <h2>Splits the last word off of a `camelCase` or `underscore_notation` string</h2>
 <pre>splitLastWord(string $string) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -530,7 +539,7 @@ algorithm.</p></p>
 <h2>Cache for plural &lt;-&gt; singular and underscore &lt;-&gt; camelcase</h2>
 <pre>$cache : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -542,7 +551,7 @@ algorithm.</p></p>
 <h2>Custom rules for camelizing a string</h2>
 <pre>$camelize_rules : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -554,19 +563,19 @@ algorithm.</p></p>
 <h2>Cache of strings that have been run through sGrammar::dashize().</h2>
 <pre>$dashize_cache : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24dashize_rules" id="$dashize_rules"> </a><div class="element clickable property private $dashize_rules" data-toggle="collapse" data-target=".$dashize_rules .collapse">
 <h2>Exceptions for sGrammar::dashize().</h2>
 <pre>$dashize_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24humanize_rules" id="$humanize_rules"> </a><div class="element clickable property private $humanize_rules" data-toggle="collapse" data-target=".$humanize_rules .collapse">
 <h2>Custom rules for humanizing a string</h2>
 <pre>$humanize_rules : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -578,7 +587,7 @@ algorithm.</p></p>
 <h2>The callback to replace ::joinArray()</h2>
 <pre>$join_array_callback : callback</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -590,7 +599,7 @@ algorithm.</p></p>
 <h2>Rules for plural to singular inflection of nouns</h2>
 <pre>$plural_to_singular_rules : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -602,7 +611,7 @@ algorithm.</p></p>
 <h2>Rules for singular to plural inflection of nouns</h2>
 <pre>$singular_to_plural_rules : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -614,7 +623,7 @@ algorithm.</p></p>
 <h2>Custom rules for underscorizing a string</h2>
 <pre>$underscorize_rules : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -628,7 +637,7 @@ algorithm.</p></p>
 <h2>addCamelUnderscoreRule</h2>
 <pre>addCamelUnderscoreRule </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -640,13 +649,13 @@ algorithm.</p></p>
 <h2>addDashizeRule</h2>
 <pre>addDashizeRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addHumanizeRule" id="addHumanizeRule"> </a><div class="element clickable constant  addHumanizeRule" data-toggle="collapse" data-target=".addHumanizeRule .collapse">
 <h2>addHumanizeRule</h2>
 <pre>addHumanizeRule </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -658,7 +667,7 @@ algorithm.</p></p>
 <h2>addSingularPluralRule</h2>
 <pre>addSingularPluralRule </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -670,7 +679,7 @@ algorithm.</p></p>
 <h2>camelize</h2>
 <pre>camelize </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -682,13 +691,13 @@ algorithm.</p></p>
 <h2>dashize</h2>
 <pre>dashize </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="humanize" id="humanize"> </a><div class="element clickable constant  humanize" data-toggle="collapse" data-target=".humanize .collapse">
 <h2>humanize</h2>
 <pre>humanize </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -700,7 +709,7 @@ algorithm.</p></p>
 <h2>inflectOnQuantity</h2>
 <pre>inflectOnQuantity </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -712,7 +721,7 @@ algorithm.</p></p>
 <h2>joinArray</h2>
 <pre>joinArray </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -724,7 +733,7 @@ algorithm.</p></p>
 <h2>pluralize</h2>
 <pre>pluralize </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -736,7 +745,7 @@ algorithm.</p></p>
 <h2>registerJoinArrayCallback</h2>
 <pre>registerJoinArrayCallback </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -748,13 +757,13 @@ algorithm.</p></p>
 <h2>removeDashizeRule</h2>
 <pre>removeDashizeRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -766,7 +775,7 @@ algorithm.</p></p>
 <h2>singularize</h2>
 <pre>singularize </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -778,7 +787,7 @@ algorithm.</p></p>
 <h2>stem</h2>
 <pre>stem </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -790,7 +799,7 @@ algorithm.</p></p>
 <h2>underscorize</h2>
 <pre>underscorize </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -804,8 +813,8 @@ algorithm.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

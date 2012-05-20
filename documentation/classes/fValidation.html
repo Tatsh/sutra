@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -58,7 +58,6 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#addBooleanFields" title="addBooleanFields :: Adds fields to be checked for 1/0, t/f, true/false, yes/no"><span class="description">Adds fields to be checked for 1/0, t/f, true/false, yes/no</span><pre>addBooleanFields()</pre></a></li>
 <li class="method public "><a href="#addCallbackRule" title="addCallbackRule :: Adds a callback validation of a field, with a custom error message"><span class="description">Adds a callback validation of a field, with a custom error message</span><pre>addCallbackRule()</pre></a></li>
 <li class="method public "><a href="#addConditionalRule" title="addConditionalRule :: Adds fields to be conditionally required if another field has any value, or specific values"><span class="description">Adds fields to be conditionally required if another field has any value, or specific values</span><pre>addConditionalRule()</pre></a></li>
@@ -121,7 +120,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfValidation" id="\fValidation"></a><div href="../classes/fValidation.html" class="element class">
+<a name="%5CfValidation" id="\fValidation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fValidation.html">fValidation</a>
+</li>
+</ul>
+<div href="../classes/fValidation.html" class="element class">
 <p class="short_description">Provides validation routines for standalone forms, such as contact forms</p>
 <div class="details">
 <p class="long_description"></p>
@@ -144,7 +152,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -209,30 +217,11 @@
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="addBooleanFields" id="addBooleanFields"></a><div class="element clickable method public addBooleanFields" data-toggle="collapse" data-target=".addBooleanFields .collapse">
 <h2>Adds fields to be checked for 1/0, t/f, true/false, yes/no</h2>
 <pre>addBooleanFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -247,7 +236,7 @@
 <h2>Adds a callback validation of a field, with a custom error message</h2>
 <pre>addCallbackRule(string $field, callback $callback, string $message) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -269,7 +258,7 @@
 <h2>Adds fields to be conditionally required if another field has any value, or specific values</h2>
 <pre>addConditionalRule(string | array $main_fields, mixed $conditional_values, string | array $conditional_fields) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -293,8 +282,8 @@
 <h2>Adds form fields to the list of fields to be blank or a valid date</h2>
 <pre>addDateFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Use ::addRequiredFields() disallow blank values.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -308,8 +297,8 @@
 <h2>Adds form fields to the list of fields to be blank or a valid email address</h2>
 <pre>addEmailFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Use ::addRequiredFields() disallow blank values.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -323,9 +312,9 @@
 <h2>Adds form fields to be checked for email injection</h2>
 <pre>addEmailHeaderFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Every field that is included in email headers should be passed to this
-method.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Every field that is included in email headers should be passed to this
+method.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -339,7 +328,7 @@ method.</p></p>
 <h2>Add a file upload field to be validated using an fUpload object</h2>
 <pre>addFileUploadRule(string $field, mixed $index, <a href="../classes/fUpload.html">\fUpload</a> $uploader) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -360,7 +349,7 @@ method.</p></p>
 <h2>Adds fields to be checked for float values</h2>
 <pre>addFloatFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -375,7 +364,7 @@ method.</p></p>
 <h2>Adds fields to be checked for integer values</h2>
 <pre>addIntegerFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -390,7 +379,7 @@ method.</p></p>
 <h2>Adds a rule to make sure at least one field of multiple has a value</h2>
 <pre>addOneOrMoreRule(string $field, string $field_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -408,7 +397,7 @@ method.</p></p>
 <h2>Adds a rule to make sure at exactly one field of multiple has a value</h2>
 <pre>addOnlyOneRule(string $field, string $field_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -426,11 +415,11 @@ method.</p></p>
 <h2>Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</h2>
 <pre>addRegexReplacement(string $search, string $replace) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Replacement is done right before the messages are reordered and returned.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Replacement is done right before the messages are reordered and returned.
 
-<p>If a message is an empty string after replacement, it will be
-removed from the list of messages.</p></p>
+If a message is an empty string after replacement, it will be
+removed from the list of messages.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$search</h4>
@@ -449,7 +438,7 @@ removed from the list of messages.</p></p>
 <h2>Adds regular expression validation of a field, with a custom error message</h2>
 <pre>addRegexRule(string $field, string $regex, string $message) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -471,7 +460,7 @@ removed from the list of messages.</p></p>
 <h2>Adds form fields to be required</h2>
 <pre>addRequiredFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -486,11 +475,11 @@ removed from the list of messages.</p></p>
 <h2>Adds a call to [http://php.net/str_replace `str_replace()`] for each message</h2>
 <pre>addStringReplacement(string $search, string $replace) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Replacement is done right before the messages are reordered and returned.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Replacement is done right before the messages are reordered and returned.
 
-<p>If a message is an empty string after replacement, it will be
-removed from the list of messages.</p></p>
+If a message is an empty string after replacement, it will be
+removed from the list of messages.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$search</h4>
@@ -507,8 +496,8 @@ removed from the list of messages.</p></p>
 <h2>Adds form fields to the list of fields to be blank or a valid URL</h2>
 <pre>addURLFields(string $field) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Use ::addRequiredFields() disallow blank values.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Use ::addRequiredFields() disallow blank values.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -522,9 +511,9 @@ removed from the list of messages.</p></p>
 <h2>Adds a rule to make sure a field has one of the specified valid values</h2>
 <pre>addValidValuesRule(string $field, array $valid_values) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A strict comparison will be made from the string request value to the
-array of valid values.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A strict comparison will be made from the string request value to the
+array of valid values.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -541,10 +530,10 @@ array of valid values.</p></p>
 <h2>Allows overriding the default name used for a field in the error message</h2>
 <pre>overrideFieldName(string $field, string $name) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>By default, all fields are referred to by the field name run through
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">By default, all fields are referred to by the field name run through
 fGrammar::humanize(). This may not be correct for acronyms or complex
-field names.</p></p>
+field names.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$field</h4>
@@ -561,7 +550,7 @@ field names.</p></p>
 <h2>Set the CSRF token field to validate.</h2>
 <pre>setCSRFTokenField(string $field, string $url) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -579,9 +568,9 @@ field names.</p></p>
 <h2>Allows setting the order that the individual errors in a message will be displayed</h2>
 <pre>setMessageOrder(string $match, string $match_2) : <a href="../classes/fValidation.html">\fValidation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>All string comparisons during the reordering process are done in a
-case-insensitive manner.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">All string comparisons during the reordering process are done in a
+case-insensitive manner.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$match</h4>
@@ -598,7 +587,7 @@ case-insensitive manner.</p></p>
 <h2>Checks for required fields, email field formatting and email header injection using values previously set</h2>
 <pre>validate(boolean $return_messages, boolean $remove_field_names) : void | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -621,7 +610,7 @@ case-insensitive manner.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -636,7 +625,7 @@ case-insensitive manner.</p></p>
 <h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
 <pre>stringlike(mixed $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -651,7 +640,7 @@ case-insensitive manner.</p></p>
 <h2>Converts an array of values to string, recursively</h2>
 <pre>castToStrings(array $values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -666,7 +655,7 @@ case-insensitive manner.</p></p>
 <h2>Validates the CSRF field</h2>
 <pre>checkCSRFField(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -679,7 +668,7 @@ case-insensitive manner.</p></p>
 <h2>Runs all callback validation rules</h2>
 <pre>checkCallbackRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -692,7 +681,7 @@ case-insensitive manner.</p></p>
 <h2>Checks the conditional validation rules</h2>
 <pre>checkConditionalRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -705,7 +694,7 @@ case-insensitive manner.</p></p>
 <h2>Validates the date fields, requiring that any date fields that have a value that can be interpreted as a date</h2>
 <pre>checkDateFields(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -718,7 +707,7 @@ case-insensitive manner.</p></p>
 <h2>Checks the file upload validation rules</h2>
 <pre>checkFileUploadRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -731,7 +720,7 @@ case-insensitive manner.</p></p>
 <h2>Ensures all of the one-or-more rules is met</h2>
 <pre>checkOneOrMoreRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -744,7 +733,7 @@ case-insensitive manner.</p></p>
 <h2>Ensures all of the only-one rules is met</h2>
 <pre>checkOnlyOneRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -757,7 +746,7 @@ case-insensitive manner.</p></p>
 <h2>Runs all regex validation rules</h2>
 <pre>checkRegexRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -770,7 +759,7 @@ case-insensitive manner.</p></p>
 <h2>Validates the required fields, adding any missing fields to the messages array</h2>
 <pre>checkRequiredFields(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -783,7 +772,7 @@ case-insensitive manner.</p></p>
 <h2>Runs all valid-values rules</h2>
 <pre>checkValidValuesRules(array $messages) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -796,7 +785,7 @@ case-insensitive manner.</p></p>
 <h2>Check if a field has a value</h2>
 <pre>hasValue(string $key) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -811,7 +800,7 @@ case-insensitive manner.</p></p>
 <h2>Joins a multi-dimensional array recursively</h2>
 <pre>joinRecursive(string $glue, array $values) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -829,7 +818,7 @@ case-insensitive manner.</p></p>
 <h2>Creates the name for a field taking into account custom field names</h2>
 <pre>makeFieldName(string $field) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -844,7 +833,7 @@ case-insensitive manner.</p></p>
 <h2>Reorders an array of messages based on the requested order</h2>
 <pre>reorderMessages(array $messages) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -859,7 +848,7 @@ case-insensitive manner.</p></p>
 <h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
 <pre>sortMessageMatches(string $a, string $b) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -879,91 +868,91 @@ case-insensitive manner.</p></p>
 <h2>Rules that run through a callback</h2>
 <pre>$callback_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24conditional_rules" id="$conditional_rules"> </a><div class="element clickable property private $conditional_rules" data-toggle="collapse" data-target=".$conditional_rules .collapse">
 <h2>Rules for conditionally requiring fields</h2>
 <pre>$conditional_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24csrf_field" id="$csrf_field"> </a><div class="element clickable property private $csrf_field" data-toggle="collapse" data-target=".$csrf_field .collapse">
 <h2>CSRF token field name</h2>
 <pre>$csrf_field : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24csrf_url" id="$csrf_url"> </a><div class="element clickable property private $csrf_url" data-toggle="collapse" data-target=".$csrf_url .collapse">
 <h2>CSRF token URL</h2>
 <pre>$csrf_url : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24date_fields" id="$date_fields"> </a><div class="element clickable property private $date_fields" data-toggle="collapse" data-target=".$date_fields .collapse">
 <h2>Fields that should be valid dates</h2>
 <pre>$date_fields : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24field_names" id="$field_names"> </a><div class="element clickable property private $field_names" data-toggle="collapse" data-target=".$field_names .collapse">
 <h2>An array for custom field names</h2>
 <pre>$field_names : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24file_upload_rules" id="$file_upload_rules"> </a><div class="element clickable property private $file_upload_rules" data-toggle="collapse" data-target=".$file_upload_rules .collapse">
 <h2>File upload rules</h2>
 <pre>$file_upload_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24message_order" id="$message_order"> </a><div class="element clickable property private $message_order" data-toggle="collapse" data-target=".$message_order .collapse">
 <h2>An array for ordering the fields in the resulting message</h2>
 <pre>$message_order : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24one_or_more_rules" id="$one_or_more_rules"> </a><div class="element clickable property private $one_or_more_rules" data-toggle="collapse" data-target=".$one_or_more_rules .collapse">
 <h2>Rules for at least one field of multiple having a value</h2>
 <pre>$one_or_more_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24only_one_rules" id="$only_one_rules"> </a><div class="element clickable property private $only_one_rules" data-toggle="collapse" data-target=".$only_one_rules .collapse">
 <h2>Rules for exactly one field of multiple having a value</h2>
 <pre>$only_one_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24regex_replacements" id="$regex_replacements"> </a><div class="element clickable property private $regex_replacements" data-toggle="collapse" data-target=".$regex_replacements .collapse">
 <h2>Regular expression replacements for the validation messages</h2>
 <pre>$regex_replacements : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24regex_rules" id="$regex_rules"> </a><div class="element clickable property private $regex_rules" data-toggle="collapse" data-target=".$regex_rules .collapse">
 <h2>Rules to validate fields via regular expressions</h2>
 <pre>$regex_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24required_fields" id="$required_fields"> </a><div class="element clickable property private $required_fields" data-toggle="collapse" data-target=".$required_fields .collapse">
 <h2>The fields to be required</h2>
 <pre>$required_fields : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24string_replacements" id="$string_replacements"> </a><div class="element clickable property private $string_replacements" data-toggle="collapse" data-target=".$string_replacements .collapse">
 <h2>String replacements for the validation messages</h2>
 <pre>$string_replacements : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24valid_values_rules" id="$valid_values_rules"> </a><div class="element clickable property private $valid_values_rules" data-toggle="collapse" data-target=".$valid_values_rules .collapse">
 <h2>Rules for validating a field against a set of valid values</h2>
 <pre>$valid_values_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -971,8 +960,8 @@ case-insensitive manner.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

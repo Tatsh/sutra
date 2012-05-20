@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -108,7 +108,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsProcess" id="\sProcess"></a><div href="../classes/sProcess.html" class="element class">
+<a name="%5CsProcess" id="\sProcess"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sProcess.html">sProcess</a>
+</li>
+</ul>
+<div href="../classes/sProcess.html" class="element class">
 <p class="short_description">Manages processes external to PHP, including interactive processes.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -127,7 +136,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -144,7 +153,7 @@
 <h2>End the interactive session.</h2>
 <pre>EOF(int $rv) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -164,11 +173,11 @@
 <h2>Constructor.</h2>
 <pre>__construct(array | string $name) : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>On Windows, can include the .exe but this will be removed.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">On Windows, can include the .exe but this will be removed.
 
-<p>You may also pass arguments to this instead of an array.
-  Example: new sProcess('app', '--help').</p></p>
+You may also pass arguments to this instead of an array.
+  Example: new sProcess('app', '--help').</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
@@ -188,7 +197,7 @@
 <h2>Add argument (or arguments) to the current set of arguments.</h2>
 <pre>addArgument(\string,... $arg) : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -208,7 +217,7 @@
 <h2>Begin an interactive session with the process.</h2>
 <pre>beginInteractive() : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -223,7 +232,7 @@
 <h2>Check the current operating system. Alias for fCore::checkOS().</h2>
 <pre>checkOS(string $os) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -242,7 +251,7 @@
 <h2>Execute the program. This is for non-interactive processes.</h2>
 <pre>execute(int $rv) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -263,7 +272,7 @@
   UNIX-like) or Path (Windows).</h2>
 <pre>getPath(boolean $array) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -277,7 +286,7 @@
 <h2>Redirect standard error.</h2>
 <pre>redirectStandardError(boolean $bool, string $where) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -293,7 +302,7 @@
 <h2>Redirect standard error. Convenience alias for redirectStandardError().</h2>
 <pre>redirectStdErr(boolean $bool, string $where) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -313,9 +322,9 @@
 <h2>Set the PATH or in the case of Windows 'Path' variable for all objects.</h2>
 <pre>setPath(string $path) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>By default, this class will use the environment variable PATH
-  (Windows: 'Path').</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">By default, this class will use the environment variable PATH
+  (Windows: 'Path').</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$path</h4>
@@ -328,7 +337,7 @@
   this method.</h2>
 <pre>setWorkingDirectory(string $dir) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -350,13 +359,13 @@
   return value.</h2>
 <pre>tossIfUnexpected() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="write" id="write"></a><div class="element clickable method public write" data-toggle="collapse" data-target=".write .collapse">
 <h2>Write to the interactive process.</h2>
 <pre>write(\$format,... $format) : <a href="../classes/sProcess.html">\sProcess</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -381,7 +390,7 @@
 <h2>Get the complete command line, escaped, including any piping.</h2>
 <pre>commandLine(boolean $popen) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -398,7 +407,7 @@
   tested for executability.</h2>
 <pre>exists(string $bin_name) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -413,7 +422,7 @@
 <h2>Get the temporary file name to write to.</h2>
 <pre>getTemporaryFileName() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -424,7 +433,7 @@
 <h2>Parses the name and arguments from the arguments given to __construct().</h2>
 <pre>parseNameAndArguments(array $arguments) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -436,7 +445,7 @@
 <h2>Strips double and singular surrounding quotes out of all arguments.</h2>
 <pre>stripQuotesInArguments() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -444,61 +453,61 @@
 <h2>Array of arguments for the process.</h2>
 <pre>$arguments : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24path" id="$path"> </a><div class="element clickable property private $path" data-toggle="collapse" data-target=".$path .collapse">
 <h2>Paths for the system delimited by : (Linux and similar) or ; (Windows).</h2>
 <pre>$path : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24pipe_file" id="$pipe_file"> </a><div class="element clickable property private $pipe_file" data-toggle="collapse" data-target=".$pipe_file .collapse">
 <h2>File to pipe output to when using mode 'w' with popen().</h2>
 <pre>$pipe_file : <a href="../classes/fFile.html">\fFile</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24popen_handle" id="$popen_handle"> </a><div class="element clickable property private $popen_handle" data-toggle="collapse" data-target=".$popen_handle .collapse">
 <h2>Handle to popen().</h2>
 <pre>$popen_handle : resource</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24prior_dir" id="$prior_dir"> </a><div class="element clickable property private $prior_dir" data-toggle="collapse" data-target=".$prior_dir .collapse">
 <h2>Current directory before going into working directory.</h2>
 <pre>$prior_dir : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24program" id="$program"> </a><div class="element clickable property private $program" data-toggle="collapse" data-target=".$program .collapse">
 <h2>The process that will be run.</h2>
 <pre>$program : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24redirect_standard_error" id="$redirect_standard_error"> </a><div class="element clickable property private $redirect_standard_error" data-toggle="collapse" data-target=".$redirect_standard_error .collapse">
 <h2>Redirect standard error.</h2>
 <pre>$redirect_standard_error : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24stderr_target" id="$stderr_target"> </a><div class="element clickable property private $stderr_target" data-toggle="collapse" data-target=".$stderr_target .collapse">
 <h2>Where standard error gets sent to.</h2>
 <pre>$stderr_target : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24toss" id="$toss"> </a><div class="element clickable property private $toss" data-toggle="collapse" data-target=".$toss .collapse">
 <h2>Toss if the program returns an unexpected exit code.</h2>
 <pre>$toss : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24work_dir" id="$work_dir"> </a><div class="element clickable property private $work_dir" data-toggle="collapse" data-target=".$work_dir .collapse">
 <h2>Working directory. Defaults to current directory.</h2>
 <pre>$work_dir : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -506,19 +515,19 @@
 <h2>checkOS</h2>
 <pre>checkOS </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getPath" id="getPath"> </a><div class="element clickable constant  getPath" data-toggle="collapse" data-target=".getPath .collapse">
 <h2>getPath</h2>
 <pre>getPath </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setPath" id="setPath"> </a><div class="element clickable constant  setPath" data-toggle="collapse" data-target=".setPath .collapse">
 <h2>setPath</h2>
 <pre>setPath </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -526,8 +535,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

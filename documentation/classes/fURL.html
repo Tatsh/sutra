@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -81,12 +81,21 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfURL" id="\fURL"></a><div href="../classes/fURL.html" class="element class">
+<a name="%5CfURL" id="\fURL"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fURL.html">fURL</a>
+</li>
+</ul>
+<div href="../classes/fURL.html" class="element class">
 <p class="short_description">Provides functionality to retrieve and manipulate URL information</p>
 <div class="details">
-<p class="long_description"><p>This class uses <code>$_SERVER['REQUEST_URI']</code> for all operations, meaning that
+<p class="long_description">This class uses `$_SERVER['REQUEST_URI']` for all operations, meaning that
 the original URL entered by the user will be used, or that any rewrites
-will <strong>not</strong> be reflected by this class.</p></p>
+will **not** be reflected by this class.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -102,7 +111,7 @@ will <strong>not</strong> be reflected by this class.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -159,9 +168,9 @@ will <strong>not</strong> be reflected by this class.</p></p>
 <h2>Returns the requested URL, does no include the domain name or query string</h2>
 <pre>get() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This will return the original URL requested by the user - ignores all
-rewrites.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This will return the original URL requested by the user - ignores all
+rewrites.</p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The requested URL without the query string</div>
@@ -171,7 +180,7 @@ rewrites.</p></p>
 <h2>Returns the current domain name, with protcol prefix. Port will be included if not 80 for HTTP or 443 for HTTPS.</h2>
 <pre>getDomain() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -182,7 +191,7 @@ rewrites.</p></p>
 <h2>Returns the current query string, does not include parameters added by rewrites</h2>
 <pre>getQueryString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -193,7 +202,7 @@ rewrites.</p></p>
 <h2>Returns the current URL including query string, but without domain name - does not include query string parameters from rewrites</h2>
 <pre>getWithQueryString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -204,7 +213,7 @@ rewrites.</p></p>
 <h2>Changes a string into a URL-friendly string</h2>
 <pre>makeFriendly(string $string, integer $max_length, string $delimiter) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -226,16 +235,11 @@ rewrites.</p></p>
 <h2>Redirects to the URL specified, without requiring a full-qualified URL</h2>
 <pre>redirect(string $url) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><ul>
-<li>If the URL starts with <code>/</code>, it is treated as an absolute path on the current site
-
-<ul>
-<li>If the URL starts with <code>http://</code> or <code>https://</code>, it is treated as a fully-qualified URL</li>
-<li>If the URL starts with anything else, including a <code>?</code>, it is appended to the current URL</li>
-<li>If the URL is ommitted, it is treated as the current URL</li>
-</ul></li>
-</ul></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">- If the URL starts with `/`, it is treated as an absolute path on the current site
+ - If the URL starts with `http://` or `https://`, it is treated as a fully-qualified URL
+ - If the URL starts with anything else, including a `?`, it is appended to the current URL
+ - If the URL is ommitted, it is treated as the current URL</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$url</h4>
@@ -246,9 +250,9 @@ rewrites.</p></p>
 <h2>Removes one or more parameters from the query string</h2>
 <pre>removeFromQueryString(string $parameter) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method uses the query string from the original URL and will not
-contain any parameters that are from rewrites.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method uses the query string from the original URL and will not
+contain any parameters that are from rewrites.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$parameter</h4>
@@ -262,9 +266,9 @@ contain any parameters that are from rewrites.</p></p>
 <h2>Replaces a value in the query string</h2>
 <pre>replaceInQueryString(string | array $parameter, string | array $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method uses the query string from the original URL and will not
-contain any parameters that are from rewrites.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method uses the query string from the original URL and will not
+contain any parameters that are from rewrites.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$parameter</h4>
@@ -281,7 +285,7 @@ contain any parameters that are from rewrites.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fURL.html">\fURL</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fURL.html">\fURL</a></code></div>
@@ -293,49 +297,49 @@ contain any parameters that are from rewrites.</p></p>
 <h2>get</h2>
 <pre>get </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getDomain" id="getDomain"> </a><div class="element clickable constant  getDomain" data-toggle="collapse" data-target=".getDomain .collapse">
 <h2>getDomain</h2>
 <pre>getDomain </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getQueryString" id="getQueryString"> </a><div class="element clickable constant  getQueryString" data-toggle="collapse" data-target=".getQueryString .collapse">
 <h2>getQueryString</h2>
 <pre>getQueryString </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getWithQueryString" id="getWithQueryString"> </a><div class="element clickable constant  getWithQueryString" data-toggle="collapse" data-target=".getWithQueryString .collapse">
 <h2>getWithQueryString</h2>
 <pre>getWithQueryString </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeFriendly" id="makeFriendly"> </a><div class="element clickable constant  makeFriendly" data-toggle="collapse" data-target=".makeFriendly .collapse">
 <h2>makeFriendly</h2>
 <pre>makeFriendly </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="redirect" id="redirect"> </a><div class="element clickable constant  redirect" data-toggle="collapse" data-target=".redirect .collapse">
 <h2>redirect</h2>
 <pre>redirect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="removeFromQueryString" id="removeFromQueryString"> </a><div class="element clickable constant  removeFromQueryString" data-toggle="collapse" data-target=".removeFromQueryString .collapse">
 <h2>removeFromQueryString</h2>
 <pre>removeFromQueryString </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="replaceInQueryString" id="replaceInQueryString"> </a><div class="element clickable constant  replaceInQueryString" data-toggle="collapse" data-target=".replaceInQueryString .collapse">
 <h2>replaceInQueryString</h2>
 <pre>replaceInQueryString </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -343,8 +347,8 @@ contain any parameters that are from rewrites.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

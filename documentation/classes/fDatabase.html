@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,8 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Configures the connection to a database - connection is not made until the first query is executed"><span class="description">Configures the connection to a database - connection is not made until the first query is executed</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__destruct" title="__destruct :: Closes the open database connection"><span class="description">Closes the open database connection</span><pre>__destruct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
 <li class="method public "><a href="#close" title="close :: Closes the database connection"><span class="description">Closes the database connection</span><pre>close()</pre></a></li>
 <li class="method public "><a href="#connect" title="connect :: Connects to the database specified, if no connection exists"><span class="description">Connects to the database specified, if no connection exists</span><pre>connect()</pre></a></li>
@@ -70,17 +68,14 @@
 <li class="method public "><a href="#execute" title="execute :: Executes one or more SQL queries without returning any results"><span class="description">Executes one or more SQL queries without returning any results</span><pre>execute()</pre></a></li>
 <li class="method public "><a href="#getConnection" title="getConnection :: Returns the database connection resource or object"><span class="description">Returns the database connection resource or object</span><pre>getConnection()</pre></a></li>
 <li class="method public "><a href="#getDatabase" title="getDatabase :: Gets the name of the database currently connected to"><span class="description">Gets the name of the database currently connected to</span><pre>getDatabase()</pre></a></li>
-<li class="method public "><a href="#getExtension" title="getExtension :: Gets the php extension being used"><span class="description">Gets the php extension being used</span><pre>getExtension()</pre></a></li>
 <li class="method public "><a href="#getHost" title="getHost :: Gets the host for this database"><span class="description">Gets the host for this database</span><pre>getHost()</pre></a></li>
 <li class="method public "><a href="#getPort" title="getPort :: Gets the port for this database"><span class="description">Gets the port for this database</span><pre>getPort()</pre></a></li>
 <li class="method public "><a href="#getSQLTranslation" title="getSQLTranslation :: Gets the fSQLTranslation object used for translated queries"><span class="description">Gets the fSQLTranslation object used for translated queries</span><pre>getSQLTranslation()</pre></a></li>
 <li class="method public "><a href="#getType" title="getType :: Gets the database type"><span class="description">Gets the database type</span><pre>getType()</pre></a></li>
 <li class="method public "><a href="#getUsername" title="getUsername :: Gets the username for this database"><span class="description">Gets the username for this database</span><pre>getUsername()</pre></a></li>
 <li class="method public "><a href="#getVersion" title="getVersion :: Gets the version of the database system"><span class="description">Gets the version of the database system</span><pre>getVersion()</pre></a></li>
-<li class="method public "><a href="#inject" title="inject :: Injects an fSQLTranslation object to handle translation"><span class="description">Injects an fSQLTranslation object to handle translation</span><pre>inject()</pre></a></li>
 <li class="method public "><a href="#isInsideTransaction" title="isInsideTransaction :: Will indicate if a transaction is currently in progress"><span class="description">Will indicate if a transaction is currently in progress</span><pre>isInsideTransaction()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Prepares a single fStatement object to execute prepared statements"><span class="description">Prepares a single fStatement object to execute prepared statements</span><pre>prepare()</pre></a></li>
-<li class="method public "><a href="#preprocess" title="preprocess :: Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating"><span class="description">Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating</span><pre>preprocess()</pre></a></li>
 <li class="method public "><a href="#query" title="query :: Executes one or more SQL queries and returns the result(s)"><span class="description">Executes one or more SQL queries and returns the result(s)</span><pre>query()</pre></a></li>
 <li class="method public "><a href="#registerHookCallback" title="registerHookCallback :: Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook"><span class="description">Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</span><pre>registerHookCallback()</pre></a></li>
 <li class="method public "><a href="#translatedExecute" title="translatedExecute :: Translates one or more SQL statements using fSQLTranslation and executes them without returning any results"><span class="description">Translates one or more SQL statements using fSQLTranslation and executes them without returning any results</span><pre>translatedExecute()</pre></a></li>
@@ -169,69 +164,56 @@ is executed, the old result will be deleted.</span><pre>unbufferedTranslatedQuer
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfDatabase" id="\fDatabase"></a><div href="../classes/fDatabase.html" class="element class">
+<a name="%5CfDatabase" id="\fDatabase"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fDatabase.html">fDatabase</a>
+</li>
+</ul>
+<div href="../classes/fDatabase.html" class="element class">
 <p class="short_description">Provides a common API for different databases - will automatically use any installed extension</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p>
+<p class="long_description">This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.
 
-<p>The following databases are supported:</p>
+The following databases are supported:
 
-<ul>
-<li>[http://ibm.com/db2 DB2]</li>
-<li>[http://microsoft.com/sql/ MSSQL]</li>
-<li>[http://mysql.com MySQL]</li>
-<li>[http://oracle.com Oracle]</li>
-<li>[http://postgresql.org PostgreSQL]</li>
-<li>[http://sqlite.org SQLite]</li>
-</ul>
+ - [http://ibm.com/db2 DB2]
+ - [http://microsoft.com/sql/ MSSQL]
+ - [http://mysql.com MySQL]
+ - [http://oracle.com Oracle]
+ - [http://postgresql.org PostgreSQL]
+ - [http://sqlite.org SQLite]
 
-<p>The class will automatically use the first of the following extensions it finds:</p>
+The class will automatically use the first of the following extensions it finds:
 
-<ul>
-<li>DB2
+ - DB2
+  - [http://php.net/ibm_db2 ibm_db2]
+  - [http://php.net/pdo_ibm pdo_ibm]
+ - MSSQL
+  - [http://msdn.microsoft.com/en-us/library/cc296221.aspx sqlsrv]
+  - [http://php.net/pdo_dblib pdo_dblib]
+  - [http://php.net/mssql mssql] (or [http://php.net/sybase sybase])
+ - MySQL
+  - [http://php.net/mysql mysql]
+  - [http://php.net/mysqli mysqli]
+  - [http://php.net/pdo_mysql pdo_mysql]
+ - Oracle
+  - [http://php.net/oci8 oci8]
+  - [http://php.net/pdo_oci pdo_oci]
+ - PostgreSQL
+  - [http://php.net/pgsql pgsql]
+  - [http://php.net/pdo_pgsql pdo_pgsql]
+ - SQLite
+  - [http://php.net/pdo_sqlite pdo_sqlite] (for v3.x)
+  - [http://php.net/sqlite sqlite] (for v2.x)
 
-<ul>
-<li>[http://php.net/ibm_db2 ibm_db2]</li>
-<li>[http://php.net/pdo_ibm pdo_ibm]</li>
-</ul></li>
-<li>MSSQL
-
-<ul>
-<li>[http://msdn.microsoft.com/en-us/library/cc296221.aspx sqlsrv]</li>
-<li>[http://php.net/pdo_dblib pdo_dblib]</li>
-<li>[http://php.net/mssql mssql] (or [http://php.net/sybase sybase])</li>
-</ul></li>
-<li>MySQL
-
-<ul>
-<li>[http://php.net/mysql mysql]</li>
-<li>[http://php.net/mysqli mysqli]</li>
-<li>[http://php.net/pdo_mysql pdo_mysql]</li>
-</ul></li>
-<li>Oracle
-
-<ul>
-<li>[http://php.net/oci8 oci8]</li>
-<li>[http://php.net/pdo_oci pdo_oci]</li>
-</ul></li>
-<li>PostgreSQL
-
-<ul>
-<li>[http://php.net/pgsql pgsql]</li>
-<li>[http://php.net/pdo_pgsql pdo_pgsql]</li>
-</ul></li>
-<li>SQLite
-
-<ul>
-<li>[http://php.net/pdo_sqlite pdo_sqlite] (for v3.x)</li>
-<li>[http://php.net/sqlite sqlite] (for v2.x)</li>
-</ul></li>
-</ul>
-
-<p>The <code>odbc</code> and <code>pdo_odbc</code> extensions are not supported due to character
+The `odbc` and `pdo_odbc` extensions are not supported due to character
 encoding and stability issues on Windows, and functionality on non-Windows
-operating systems.</p></p>
+operating systems.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -247,7 +229,7 @@ operating systems.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -424,9 +406,9 @@ operating systems.</p></p>
 <h2>Configures the connection to a database - connection is not made until the first query is executed</h2>
 <pre>__construct(string $type, string $database, string $username, string $password, string $host, integer $port, integer $timeout) : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Passing <code>NULL</code> to any parameter other than <code>$type</code> and <code>$database</code> will
-cause the default value to be used.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Passing `NULL` to any parameter other than `$type` and `$database` will
+cause the default value to be used.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$type</h4>
@@ -459,56 +441,25 @@ cause the default value to be used.</p></p>
 <div class="subelement response"><code><a href="../classes/fDatabase.html">\fDatabase</a></code></div>
 </div></div>
 </div>
-<a name="__destruct" id="__destruct"></a><div class="element clickable method public __destruct" data-toggle="collapse" data-target=".__destruct .collapse">
-<h2>Closes the open database connection</h2>
-<pre>__destruct() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="clearCache" id="clearCache"></a><div class="element clickable method public clearCache" data-toggle="collapse" data-target=".clearCache .collapse">
 <h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
 <pre>clearCache() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="close" id="close"></a><div class="element clickable method public close" data-toggle="collapse" data-target=".close .collapse">
 <h2>Closes the database connection</h2>
 <pre>close() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="connect" id="connect"></a><div class="element clickable method public connect" data-toggle="collapse" data-target=".connect .collapse">
 <h2>Connects to the database specified, if no connection exists</h2>
 <pre>connect() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is only intended to force a connection, all operations that
-require a database connection will automatically call this method.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method is only intended to force a connection, all operations that
+require a database connection will automatically call this method.</p>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
 <th><code><a href="../classes/fAuthorizationException.html">\fAuthorizationException</a></code></th>
@@ -520,7 +471,7 @@ require a database connection will automatically call this method.</p></p>
 <h2>Sets the schema info to be cached to the fCache object specified</h2>
 <pre>enableCaching(<a href="../classes/fCache.html">\fCache</a> $cache, string $key_token) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -536,7 +487,7 @@ require a database connection will automatically call this method.</p></p>
 <h2>Sets if debug messages should be shown</h2>
 <pre>enableDebugging(boolean $flag) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -548,68 +499,58 @@ require a database connection will automatically call this method.</p></p>
 <h2>Escapes a value for insertion into SQL</h2>
 <pre>escape(string $sql_or_type, mixed $value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The valid data types are:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The valid data types are:
 
-<ul>
-<li><code>'blob'</code></li>
-<li><code>'boolean'</code></li>
-<li><code>'date'</code></li>
-<li><code>'float'</code></li>
-<li><code>'identifier'</code></li>
-<li><code>'integer'</code></li>
-<li><code>'string'</code> (also varchar, char or text)</li>
-<li><code>'varchar'</code></li>
-<li><code>'char'</code></li>
-<li><code>'text'</code></li>
-<li><code>'time'</code></li>
-<li><code>'timestamp'</code></li>
-</ul>
+ - `'blob'`
+ - `'boolean'`
+ - `'date'`
+ - `'float'`
+ - `'identifier'`
+ - `'integer'`
+ - `'string'` (also varchar, char or text)
+ - `'varchar'`
+ - `'char'`
+ - `'text'`
+ - `'time'`
+ - `'timestamp'`
 
-<p>In addition to being able to specify the data type, you can also pass
-in an SQL statement with data type placeholders in the following form:</p>
+In addition to being able to specify the data type, you can also pass
+in an SQL statement with data type placeholders in the following form:
 
-<ul>
-<li><code>%l</code> for a blob</li>
-<li><code>%b</code> for a boolean</li>
-<li><code>%d</code> for a date</li>
-<li><code>%f</code> for a float</li>
-<li><code>%r</code> for an indentifier (table or column name)</li>
-<li><code>%i</code> for an integer</li>
-<li><code>%s</code> for a string</li>
-<li><code>%t</code> for a time</li>
-<li><code>%p</code> for a timestamp</li>
-</ul>
+ - `%l` for a blob
+ - `%b` for a boolean
+ - `%d` for a date
+ - `%f` for a float
+ - `%r` for an indentifier (table or column name)
+ - `%i` for an integer
+ - `%s` for a string
+ - `%t` for a time
+ - `%p` for a timestamp
 
-<p>Depending on what <code>$sql_or_type</code> and <code>$value</code> are, the output will be
-slightly different. If <code>$sql_or_type</code> is a data type or a single
-placeholder and <code>$value</code> is:</p>
+Depending on what `$sql_or_type` and `$value` are, the output will be
+slightly different. If `$sql_or_type` is a data type or a single
+placeholder and `$value` is:
 
-<ul>
-<li>a scalar value - an escaped SQL string is returned</li>
-<li>an array - an array of escaped SQL strings is returned</li>
-</ul>
+ - a scalar value - an escaped SQL string is returned
+ - an array - an array of escaped SQL strings is returned
 
-<p>If <code>$sql_or_type</code> is a SQL string and <code>$value</code> is:</p>
+If `$sql_or_type` is a SQL string and `$value` is:
 
-<ul>
-<li>a scalar value - the escaped value is inserted into the SQL string</li>
-<li>an array - the escaped values are inserted into the SQL string separated by commas</li>
-</ul>
+ - a scalar value - the escaped value is inserted into the SQL string
+ - an array - the escaped values are inserted into the SQL string separated by commas
 
-<p>If <code>$sql_or_type</code> is a SQL string, it is also possible to pass an array
+If `$sql_or_type` is a SQL string, it is also possible to pass an array
 of all values as a single parameter instead of one value per parameter.
-An example would look like the following:</p>
+An example would look like the following:
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>$db->escape(
+{{{
+#!php
+$db->escape(
     "SELECT * FROM users WHERE status = %s AND authorization_level = %s",
     array('Active', 'Admin')
 );
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sql_or_type</h4>
@@ -628,7 +569,7 @@ An example would look like the following:</p>
 <h2>Executes one or more SQL queries without returning any results</h2>
 <pre>execute(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -640,7 +581,7 @@ An example would look like the following:</p>
 <h2>Returns the database connection resource or object</h2>
 <pre>getConnection() : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -651,33 +592,18 @@ An example would look like the following:</p>
 <h2>Gets the name of the database currently connected to</h2>
 <pre>getDatabase() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The name of the database currently connected to</div>
 </div></div>
 </div>
-<a name="getExtension" id="getExtension"></a><div class="element clickable method public getExtension" data-toggle="collapse" data-target=".getExtension .collapse">
-<h2>Gets the php extension being used</h2>
-<pre>getExtension() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The php extension used for database interaction</div>
-</div></div>
-</div>
 <a name="getHost" id="getHost"></a><div class="element clickable method public getHost" data-toggle="collapse" data-target=".getHost .collapse">
 <h2>Gets the host for this database</h2>
 <pre>getHost() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -688,7 +614,7 @@ An example would look like the following:</p>
 <h2>Gets the port for this database</h2>
 <pre>getPort() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -699,7 +625,7 @@ An example would look like the following:</p>
 <h2>Gets the fSQLTranslation object used for translated queries</h2>
 <pre>getSQLTranslation() : <a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -710,7 +636,7 @@ An example would look like the following:</p>
 <h2>Gets the database type</h2>
 <pre>getType() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -721,7 +647,7 @@ An example would look like the following:</p>
 <h2>Gets the username for this database</h2>
 <pre>getUsername() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -732,34 +658,18 @@ An example would look like the following:</p>
 <h2>Gets the version of the database system</h2>
 <pre>getVersion() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>The database system version</div>
 </div></div>
 </div>
-<a name="inject" id="inject"></a><div class="element clickable method public inject" data-toggle="collapse" data-target=".inject .collapse">
-<h2>Injects an fSQLTranslation object to handle translation</h2>
-<pre>inject(<a href="../classes/fSQLTranslation.html">\fSQLTranslation</a> $sql_translation) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$sql_translation</h4>
-<code><a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></code><p>The SQL translation object</p></div>
-</div></div>
-</div>
 <a name="isInsideTransaction" id="isInsideTransaction"></a><div class="element clickable method public isInsideTransaction" data-toggle="collapse" data-target=".isInsideTransaction .collapse">
 <h2>Will indicate if a transaction is currently in progress</h2>
 <pre>isInsideTransaction() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -770,10 +680,10 @@ An example would look like the following:</p>
 <h2>Prepares a single fStatement object to execute prepared statements</h2>
 <pre>prepare(string $sql) : <a href="../classes/fStatement.html">\fStatement</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Identifier placeholders (%r) are not supported with prepared statements.
 In addition, multiple values can not be escaped by a placeholder - only
-a single value can be provided.</p></p>
+a single value can be provided.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sql</h4>
@@ -783,40 +693,11 @@ a single value can be provided.</p></p>
 <code><a href="../classes/fStatement.html">\fStatement</a></code>A prepared statement object that can be passed to ::query(), ::unbufferedQuery() or ::execute()</div>
 </div></div>
 </div>
-<a name="preprocess" id="preprocess"></a><div class="element clickable method public preprocess" data-toggle="collapse" data-target=".preprocess .collapse">
-<h2>Preprocesses SQL by escaping values, spliting queries, cleaning escaped semicolons, fixing backslashed single quotes and translating</h2>
-<pre>preprocess(string $sql, array $values, boolean $translate, array $rollback_queries) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$sql</h4>
-<code>string</code><p>The SQL to process</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>Literal values to escape into the SQL</p></div>
-<div class="subelement argument">
-<h4>$translate</h4>
-<code>boolean</code><p>If the SQL should be translated</p></div>
-<div class="subelement argument">
-<h4>$rollback_queries</h4>
-<code>array</code><p>&$rollback_queries MySQL doesn't allow transactions around <code>ALTER TABLE</code> statements, and some of those require multiple statements, so this is an array of "undo" SQL statements</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The split out SQL queries, queries that have been translated will have a string key of a number, `:` and the original SQL, non-translated SQL will have a numeric key</div>
-</div></div>
-</div>
 <a name="query" id="query"></a><div class="element clickable method public query" data-toggle="collapse" data-target=".query .collapse">
 <h2>Executes one or more SQL queries and returns the result(s)</h2>
 <pre>query(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : <a href="../classes/fResult.html">\fResult</a> | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -831,41 +712,35 @@ a single value can be provided.</p></p>
 <h2>Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</h2>
 <pre>registerHookCallback(string $hook, callback $callback) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The following hooks are available:
- - <code>'unmodified'</code>: The original SQL passed to fDatabase, for prepared statements this is called just once before the fStatement object is created
- - <code>'extracted'</code>: The SQL after all non-empty strings have been extracted and replaced with ordered sprintf-style placeholders
- - <code>'run'</code>: After the SQL has been run</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The following hooks are available:
+ - `'unmodified'`: The original SQL passed to fDatabase, for prepared statements this is called just once before the fStatement object is created
+ - `'extracted'`: The SQL after all non-empty strings have been extracted and replaced with ordered sprintf-style placeholders
+ - `'run'`: After the SQL has been run
 
-<p>Methods for the <code>'unmodified'</code> hook should have the following signature:</p>
+Methods for the `'unmodified'` hook should have the following signature:
 
-<ul>
-<li><strong><code>$database</code></strong>:  The fDatabase instance</li>
-<li><strong><code>&amp;$sql</code></strong>:      The original, unedited SQL</li>
-<li><strong><code>&amp;$values</code></strong>:   The values to be escaped into the placeholders in the SQL</li>
-</ul>
+ - **`$database`**:  The fDatabase instance
+ - **`&$sql`**:      The original, unedited SQL
+ - **`&$values`**:   The values to be escaped into the placeholders in the SQL
 
-<p>Methods for the <code>'extracted'</code> hook should have the following signature:</p>
+Methods for the `'extracted'` hook should have the following signature:
 
-<ul>
-<li><strong><code>$database</code></strong>:  The fDatabase instance</li>
-<li><strong><code>&amp;$sql</code></strong>:      The SQL with all strings removed and replaced with <code>%1$s</code>-style placeholders</li>
-<li><strong><code>&amp;$values</code></strong>:   The values to be escaped into the placeholders in the SQL</li>
-</ul>
+ - **`$database`**:  The fDatabase instance
+ - **`&$sql`**:      The SQL with all strings removed and replaced with `%1$s`-style placeholders
+ - **`&$values`**:   The values to be escaped into the placeholders in the SQL
 
-<p>The <code>extracted</code> hook is the best place to modify the SQL since there is
+The `extracted` hook is the best place to modify the SQL since there is
 no risk of breaking string literals. Please note that there may be empty
-strings (<code>''</code>) present in the SQL since some databases treat those as
-<code>NULL</code>.</p>
+strings (`''`) present in the SQL since some databases treat those as
+`NULL`.
 
-<p>Methods for the <code>'run'</code> hook should have the following signature:</p>
+Methods for the `'run'` hook should have the following signature:
 
-<ul>
-<li><strong><code>$database</code></strong>:    The fDatabase instance</li>
-<li><strong><code>$query</code></strong>:       The (string) SQL or <code>array(0 =&gt; {fStatement object}, 1 =&gt; {values array})</code></li>
-<li><strong><code>$query_time</code></strong>:  The (float) number of seconds the query took</li>
-<li><strong><code>$result</code></strong>       The fResult or fUnbufferedResult object, or <code>FALSE</code> if no result</li>
-</ul></p>
+ - **`$database`**:    The fDatabase instance
+ - **`$query`**:       The (string) SQL or `array(0 => {fStatement object}, 1 => {values array})`
+ - **`$query_time`**:  The (float) number of seconds the query took
+ - **`$result`**       The fResult or fUnbufferedResult object, or `FALSE` if no result</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$hook</h4>
@@ -880,7 +755,7 @@ strings (<code>''</code>) present in the SQL since some databases treat those as
 <h2>Translates one or more SQL statements using fSQLTranslation and executes them without returning any results</h2>
 <pre>translatedExecute(string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -892,10 +767,10 @@ strings (<code>''</code>) present in the SQL since some databases treat those as
 <h2>Translates a SQL statement and creates an fStatement object from it</h2>
 <pre>translatedPrepare(string $sql) : <a href="../classes/fStatement.html">\fStatement</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Identifier placeholders (%r) are not supported with prepared statements.
 In addition, multiple values can not be escaped by a placeholder - only
-a single value can be provided.</p></p>
+a single value can be provided.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sql</h4>
@@ -909,7 +784,7 @@ a single value can be provided.</p></p>
 <h2>Translates one or more SQL statements using fSQLTranslation and executes them</h2>
 <pre>translatedQuery(string $sql) : <a href="../classes/fResult.html">\fResult</a> | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -928,7 +803,7 @@ one time. If another unbuffered query is executed, the old result will
 be deleted.</h2>
 <pre>unbufferedQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -947,7 +822,7 @@ one unbuffered result can exist at one time. If another unbuffered query
 is executed, the old result will be deleted.</h2>
 <pre>unbufferedTranslatedQuery(string $sql) : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -962,19 +837,17 @@ is executed, the old result will be deleted.</h2>
 <h2>Unescapes a value coming out of a database based on its data type</h2>
 <pre>unescape(string $data_type, mixed $value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The valid data types are:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The valid data types are:
 
-<ul>
-<li><code>'blob'</code> (or <code>'%l'</code>)</li>
-<li><code>'boolean'</code> (or <code>'%b'</code>)</li>
-<li><code>'date'</code> (or <code>'%d'</code>)</li>
-<li><code>'float'</code> (or <code>'%f'</code>)</li>
-<li><code>'integer'</code> (or <code>'%i'</code>)</li>
-<li><code>'string'</code> (also <code>'%s'</code>, <code>'varchar'</code>, <code>'char'</code> or <code>'text'</code>)</li>
-<li><code>'time'</code> (or <code>'%t'</code>)</li>
-<li><code>'timestamp'</code> (or <code>'%p'</code>)</li>
-</ul></p>
+ - `'blob'` (or `'%l'`)
+ - `'boolean'` (or `'%b'`)
+ - `'date'` (or `'%d'`)
+ - `'float'` (or `'%f'`)
+ - `'integer'` (or `'%i'`)
+ - `'string'` (also `'%s'`, `'varchar'`, `'char'` or `'text'`)
+ - `'time'` (or `'%t'`)
+ - `'timestamp'` (or `'%p'`)</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$data_type</h4>
@@ -992,7 +865,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1007,19 +880,19 @@ is executed, the old result will be deleted.</h2>
 <h2>Determines the character set of a SQL Server database</h2>
 <pre>determineCharacterSet() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="determineExtension" id="determineExtension"></a><div class="element clickable method protected determineExtension" data-toggle="collapse" data-target=".determineExtension .collapse">
 <h2>Figures out which extension to use for the database type selected</h2>
 <pre>determineExtension() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="checkForError" id="checkForError"></a><div class="element clickable method private checkForError" data-toggle="collapse" data-target=".checkForError .collapse">
 <h2>Checks to see if an SQL error occured</h2>
 <pre>checkForError(<a href="../classes/fResult.html">\fResult</a> | <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a> | boolean $result, mixed $extra_info, string $sql) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1037,8 +910,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a blob for use in SQL, includes surround quotes when appropriate</h2>
 <pre>escapeBlob(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1052,8 +925,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a boolean for use in SQL, includes surround quotes when appropriate</h2>
 <pre>escapeBoolean(boolean $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1067,8 +940,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a date for use in SQL, includes surrounding quotes</h2>
 <pre>escapeDate(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` or invalid value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1082,8 +955,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a float for use in SQL</h2>
 <pre>escapeFloat(float $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1097,7 +970,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes an identifier for use in SQL, necessary for reserved words</h2>
 <pre>escapeIdentifier(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1112,8 +985,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes an integer for use in SQL</h2>
 <pre>escapeInteger(integer $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` or invalid value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1127,7 +1000,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Takes a SQL string and an array of values and replaces the placeholders with the value</h2>
 <pre>escapeSQL(string $sql, array $values, boolean $unescape_percent) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1149,8 +1022,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a string for use in SQL, includes surrounding quotes</h2>
 <pre>escapeString(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` value will be returned as `'NULL'`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1164,8 +1037,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a time for use in SQL, includes surrounding quotes</h2>
 <pre>escapeTime(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` or invalid value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1179,8 +1052,8 @@ is executed, the old result will be deleted.</h2>
 <h2>Escapes a timestamp for use in SQL, includes surrounding quotes</h2>
 <pre>escapeTimestamp(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">A `NULL` or invalid value will be returned as `'NULL'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$value</h4>
@@ -1194,7 +1067,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Pulls quoted strings out into the values array for simpler processing</h2>
 <pre>extractStrings(array $parts, array $values) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1214,7 +1087,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Will grab the auto incremented value from the last query (if one exists)</h2>
 <pre>handleAutoIncrementedValue(<a href="../classes/fResult.html">\fResult</a> $result, mixed $resource) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1230,7 +1103,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Handles connection errors</h2>
 <pre>handleConnectionErrors(array | string $errors) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1242,7 +1115,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Handles a PHP error to extract error information for the mssql extension</h2>
 <pre>handleErrors(array $errors) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1255,7 +1128,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Makes sure each database and extension handles BEGIN, COMMIT and ROLLBACK</h2>
 <pre>handleTransactionQueries(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, string $result_class) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1274,7 +1147,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Creates a unique cache prefix to help prevent cache conflicts</h2>
 <pre>makeCachePrefix() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -1285,7 +1158,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Executes a SQL statement</h2>
 <pre>perform(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, array $params) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1300,7 +1173,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Executes an SQL query</h2>
 <pre>performQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, <a href="../classes/fResult.html">\fResult</a> $result, array $params) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1318,7 +1191,7 @@ is executed, the old result will be deleted.</h2>
 <h2>Executes an unbuffered SQL query</h2>
 <pre>performUnbufferedQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a> $result, array $params) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1336,10 +1209,10 @@ is executed, the old result will be deleted.</h2>
 <h2>Prepares a single fStatement object to execute prepared statements</h2>
 <pre>prepareStatement(string $sql, boolean $translate) : <a href="../classes/fStatement.html">\fStatement</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Identifier placeholders (%r) are not supported with prepared statements.
 In addition, multiple values can not be escaped by a placeholder - only
-a single value can be provided.</p></p>
+a single value can be provided.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$sql</h4>
@@ -1356,7 +1229,7 @@ a single value can be provided.</p></p>
 <h2>Runs a single statement and times it, removes any old unbuffered queries before starting</h2>
 <pre>run(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, string $result_type, $params) : <a href="../classes/fResult.html">\fResult</a> | <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1378,10 +1251,10 @@ a single value can be provided.</p></p>
 <h2>Takes an array of rollback statements to undo part of a set of queries which involve one that failed</h2>
 <pre>runRollbackStatements(array $rollback_statements, integer $start_number) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This is only used for MySQL since it is the only database that does not
-support transactions about <code>ALTER TABLE</code> statements, but that also
-requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This is only used for MySQL since it is the only database that does not
+support transactions about `ALTER TABLE` statements, but that also
+requires more than one query to accomplish many `ALTER TABLE` tasks.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$rollback_statements</h4>
@@ -1397,7 +1270,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Turns an array possibly containing objects into an array of all strings</h2>
 <pre>scalarize(array $values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1412,7 +1285,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Sets the number of rows affected by the query</h2>
 <pre>setAffectedRows(<a href="../classes/fResult.html">\fResult</a> $result, mixed $resource) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1428,7 +1301,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Sets the number of rows returned by the query</h2>
 <pre>setReturnedRows(<a href="../classes/fResult.html">\fResult</a> $result) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1440,7 +1313,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Splits SQL into pieces of SQL and quoted strings</h2>
 <pre>splitSQL(string $sql, integer $placeholders) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1459,7 +1332,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Unescapes a blob coming out of the database</h2>
 <pre>unescapeBlob(string $value) : \binary</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1474,7 +1347,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Unescapes a boolean coming out of the database</h2>
 <pre>unescapeBoolean(string $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1489,7 +1362,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Unescapes a date coming out of the database</h2>
 <pre>unescapeDate(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1504,7 +1377,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Unescapes a time coming out of the database</h2>
 <pre>unescapeTime(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1519,7 +1392,7 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>Unescapes a timestamp coming out of the database</h2>
 <pre>unescapeTimestamp(string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1536,141 +1409,139 @@ requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.<
 <h2>The extension to use for the database specified</h2>
 <pre>$extension : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Options include:</p>
+<div class="row collapse"><div class="detail-description"><p class="long_description">Options include:
 
-<ul>
-<li><code>'ibm_db2'</code></li>
-<li><code>'mssql'</code></li>
-<li><code>'mysql'</code></li>
-<li><code>'mysqli'</code></li>
-<li><code>'oci8'</code></li>
-<li><code>'pgsql'</code></li>
-<li><code>'sqlite'</code></li>
-<li><code>'sqlsrv'</code></li>
-<li><code>'pdo'</code></li>
-</ul></p></div></div>
+ - `'ibm_db2'`
+ - `'mssql'`
+ - `'mysql'`
+ - `'mysqli'`
+ - `'oci8'`
+ - `'pgsql'`
+ - `'sqlite'`
+ - `'sqlsrv'`
+ - `'pdo'`</p></div></div>
 </div>
 <a name="%24schema_info" id="$schema_info"> </a><div class="element clickable property protected $schema_info" data-toggle="collapse" data-target=".$schema_info .collapse">
 <h2>A cache of database-specific code</h2>
 <pre>$schema_info : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24cache" id="$cache"> </a><div class="element clickable property private $cache" data-toggle="collapse" data-target=".$cache .collapse">
 <h2>An fCache object to cache the schema info to</h2>
 <pre>$cache : <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24cache_prefix" id="$cache_prefix"> </a><div class="element clickable property private $cache_prefix" data-toggle="collapse" data-target=".$cache_prefix .collapse">
 <h2>The cache prefix to use for cache entries</h2>
 <pre>$cache_prefix : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24connection" id="$connection"> </a><div class="element clickable property private $connection" data-toggle="collapse" data-target=".$connection .collapse">
 <h2>Database connection resource or PDO object</h2>
 <pre>$connection : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24database" id="$database"> </a><div class="element clickable property private $database" data-toggle="collapse" data-target=".$database .collapse">
 <h2>The database name</h2>
 <pre>$database : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24debug" id="$debug"> </a><div class="element clickable property private $debug" data-toggle="collapse" data-target=".$debug .collapse">
 <h2>If debugging is enabled</h2>
 <pre>$debug : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24error" id="$error"> </a><div class="element clickable property private $error" data-toggle="collapse" data-target=".$error .collapse">
 <h2>A temporary error holder for the mssql extension</h2>
 <pre>$error : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24hook_callbacks" id="$hook_callbacks"> </a><div class="element clickable property private $hook_callbacks" data-toggle="collapse" data-target=".$hook_callbacks .collapse">
 <h2>Hooks callbacks to be used for accessing and modifying queries</h2>
 <pre>$hook_callbacks : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>This array will have the structure:</p>
+<div class="row collapse"><div class="detail-description"><p class="long_description">This array will have the structure:
 
-<p>{{{
+{{{
 array(
     'unmodified' => array({callbacks}),
     'extracted'  => array({callbacks}),
     'run'        => array({callbacks})
 )
-}}}</p></p></div></div>
+}}}</p></div></div>
 </div>
 <a name="%24host" id="$host"> </a><div class="element clickable property private $host" data-toggle="collapse" data-target=".$host .collapse">
 <h2>The host the database server is located on</h2>
 <pre>$host : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24inside_transaction" id="$inside_transaction"> </a><div class="element clickable property private $inside_transaction" data-toggle="collapse" data-target=".$inside_transaction .collapse">
 <h2>If a transaction is in progress</h2>
 <pre>$inside_transaction : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24password" id="$password"> </a><div class="element clickable property private $password" data-toggle="collapse" data-target=".$password .collapse">
 <h2>The password for the user specified</h2>
 <pre>$password : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24port" id="$port"> </a><div class="element clickable property private $port" data-toggle="collapse" data-target=".$port .collapse">
 <h2>The port number for the host</h2>
 <pre>$port : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24query_time" id="$query_time"> </a><div class="element clickable property private $query_time" data-toggle="collapse" data-target=".$query_time .collapse">
 <h2>The total number of seconds spent executing queries</h2>
 <pre>$query_time : float</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24statement" id="$statement"> </a><div class="element clickable property private $statement" data-toggle="collapse" data-target=".$statement .collapse">
 <h2>The last executed fStatement object</h2>
 <pre>$statement : <a href="../classes/fStatement.html">\fStatement</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24timeout" id="$timeout"> </a><div class="element clickable property private $timeout" data-toggle="collapse" data-target=".$timeout .collapse">
 <h2>The timeout for the database connection</h2>
 <pre>$timeout : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24translation" id="$translation"> </a><div class="element clickable property private $translation" data-toggle="collapse" data-target=".$translation .collapse">
 <h2>The fSQLTranslation object for this database</h2>
 <pre>$translation : object</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24type" id="$type"> </a><div class="element clickable property private $type" data-toggle="collapse" data-target=".$type .collapse">
 <h2>The database type: `'db2'`, `'mssql'`, `'mysql'`, `'oracle'`, `'postgresql'`, or `'sqlite'`</h2>
 <pre>$type : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24unbuffered_result" id="$unbuffered_result"> </a><div class="element clickable property private $unbuffered_result" data-toggle="collapse" data-target=".$unbuffered_result .collapse">
 <h2>The unbuffered query instance</h2>
 <pre>$unbuffered_result : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24username" id="$username"> </a><div class="element clickable property private $username" data-toggle="collapse" data-target=".$username .collapse">
 <h2>The user to connect to the database as</h2>
 <pre>$username : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1678,8 +1549,8 @@ array(
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:46-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

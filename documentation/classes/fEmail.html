@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Initializes fEmail for creating message ids"><span class="description">Initializes fEmail for creating message ids</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#addAttachment" title="addAttachment :: Adds an attachment to the email"><span class="description">Adds an attachment to the email</span><pre>addAttachment()</pre></a></li>
 <li class="method public "><a href="#addBCCRecipient" title="addBCCRecipient :: Adds a blind carbon copy (BCC) email recipient"><span class="description">Adds a blind carbon copy (BCC) email recipient</span><pre>addBCCRecipient()</pre></a></li>
 <li class="method public "><a href="#addCCRecipient" title="addCCRecipient :: Adds a carbon copy (CC) email recipient"><span class="description">Adds a carbon copy (CC) email recipient</span><pre>addCCRecipient()</pre></a></li>
@@ -67,13 +66,10 @@
 <li class="method public "><a href="#addRecipient" title="addRecipient :: Adds an email recipient"><span class="description">Adds an email recipient</span><pre>addRecipient()</pre></a></li>
 <li class="method public "><a href="#addRelatedFile" title="addRelatedFile :: Adds a “related” file to the email, returning the `Content-ID` for use in HTML"><span class="description">Adds a “related” file to the email, returning the `Content-ID` for use in HTML</span><pre>addRelatedFile()</pre></a></li>
 <li class="method public "><a href="#clearRecipients" title="clearRecipients :: Removes all To, CC and BCC recipients from the email"><span class="description">Removes all To, CC and BCC recipients from the email</span><pre>clearRecipients()</pre></a></li>
-<li class="method public "><a href="#combineNameEmail" title='combineNameEmail :: Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided'><span class="description">Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided</span><pre>combineNameEmail()</pre></a></li>
 <li class="method public "><a href="#encrypt" title="encrypt :: Sets the email to be encrypted with S/MIME"><span class="description">Sets the email to be encrypted with S/MIME</span><pre>encrypt()</pre></a></li>
 <li class="method public "><a href="#fixQmail" title="fixQmail :: Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`"><span class="description">Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`</span><pre>fixQmail()</pre></a></li>
-<li class="method public "><a href="#getFQDN" title="getFQDN :: Returns the fully-qualified domain name of the server"><span class="description">Returns the fully-qualified domain name of the server</span><pre>getFQDN()</pre></a></li>
 <li class="method public "><a href="#loadBody" title="loadBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadBody()</pre></a></li>
 <li class="method public "><a href="#loadHTMLBody" title="loadHTMLBody :: Loads the plaintext version of the email body from a file and applies replacements"><span class="description">Loads the plaintext version of the email body from a file and applies replacements</span><pre>loadHTMLBody()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#send" title="send :: Sends the email"><span class="description">Sends the email</span><pre>send()</pre></a></li>
 <li class="method public "><a href="#setBody" title="setBody :: Sets the plaintext version of the email body"><span class="description">Sets the plaintext version of the email body</span><pre>setBody()</pre></a></li>
 <li class="method public "><a href="#setBounceToEmail" title="setBounceToEmail :: Adds the email address the email will be bounced to"><span class="description">Adds the email address the email will be bounced to</span><pre>setBounceToEmail()</pre></a></li>
@@ -140,15 +136,24 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfEmail" id="\fEmail"></a><div href="../classes/fEmail.html" class="element class">
+<a name="%5CfEmail" id="\fEmail"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fEmail.html">fEmail</a>
+</li>
+</ul>
+<div href="../classes/fEmail.html" class="element class">
 <p class="short_description">Allows creating and sending a single email containing plaintext, HTML, attachments and S/MIME encryption</p>
 <div class="details">
-<p class="long_description"><p>Please note that this class uses the [http://php.net/function.mail mail()]
+<p class="long_description">Please note that this class uses the [http://php.net/function.mail mail()]
 function by default. Developers that are sending multiple emails, or need
-SMTP support, should use fSMTP with this class.</p>
+SMTP support, should use fSMTP with this class.
 
-<p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -172,7 +177,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -309,37 +314,18 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Initializes fEmail for creating message ids</h2>
 <pre>__construct() : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fEmail.html">\fEmail</a></code></div>
-</div></div>
-</div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
 </div></div>
 </div>
 <a name="addAttachment" id="addAttachment"></a><div class="element clickable method public addAttachment" data-toggle="collapse" data-target=".addAttachment .collapse">
 <h2>Adds an attachment to the email</h2>
 <pre>addAttachment(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If a duplicate filename is detected, it will be changed to be unique.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If a duplicate filename is detected, it will be changed to be unique.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$contents</h4>
@@ -361,7 +347,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds a blind carbon copy (BCC) email recipient</h2>
 <pre>addBCCRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -380,7 +366,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds a carbon copy (CC) email recipient</h2>
 <pre>addCCRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -399,13 +385,13 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Allows adding a custom header to the email</h2>
 <pre>addCustomHeader(string $name, string $value) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the method is called multiple times with the same name, the last
-value will be used.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the method is called multiple times with the same name, the last
+value will be used.
 
-<p>Please note that this class will properly format the header, including
-adding the <code>:</code> between the name and value and wrapping values that are
-too long for a single line.</p></p>
+Please note that this class will properly format the header, including
+adding the `:` between the name and value and wrapping values that are
+too long for a single line.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
@@ -422,7 +408,7 @@ too long for a single line.</p></p>
 <h2>Adds an email recipient</h2>
 <pre>addRecipient(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -441,12 +427,12 @@ too long for a single line.</p></p>
 <h2>Adds a “related” file to the email, returning the `Content-ID` for use in HTML</h2>
 <pre>addRelatedFile(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The purpose of a related file is to be able to reference it in part of
-the HTML body. Image <code>src</code> URLs can reference a related file by starting
-the URL with <code>cid:</code> and then inserting the <code>Content-ID</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The purpose of a related file is to be able to reference it in part of
+the HTML body. Image `src` URLs can reference a related file by starting
+the URL with `cid:` and then inserting the `Content-ID`.
 
-<p>If a duplicate filename is detected, it will be changed to be unique.</p></p>
+If a duplicate filename is detected, it will be changed to be unique.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$contents</h4>
@@ -468,42 +454,18 @@ the URL with <code>cid:</code> and then inserting the <code>Content-ID</code>.</
 <h2>Removes all To, CC and BCC recipients from the email</h2>
 <pre>clearRecipients() : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
 </div></div>
 </div>
-<a name="combineNameEmail" id="combineNameEmail"></a><div class="element clickable method public combineNameEmail" data-toggle="collapse" data-target=".combineNameEmail .collapse">
-<h2>Turns a name and email into a `"name" &lt;email&gt;` string, or just `email` if no name is provided</h2>
-<pre>combineNameEmail(string $name, string $email) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method will remove newline characters from the name and email, and
-will remove any backslash (<code>\</code>) and double quote (<code>"</code>) characters from
-the name.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The name associated with the email address</p></div>
-<div class="subelement argument">
-<h4>$email</h4>
-<code>string</code><p>The email address</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The '"name" <email>' or 'email' string</div>
-</div></div>
-</div>
 <a name="encrypt" id="encrypt"></a><div class="element clickable method public encrypt" data-toggle="collapse" data-target=".encrypt .collapse">
 <h2>Sets the email to be encrypted with S/MIME</h2>
 <pre>encrypt(string $recipients_smime_cert_file) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -519,31 +481,16 @@ the name.</p></p>
 <h2>Sets the class to try and fix broken qmail implementations that add `\r` to `\r\n`</h2>
 <pre>fixQmail() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Before trying to fix qmail with this method, please try using fSMTP
-to connect to <code>localhost</code> and pass the fSMTP object to ::send().</p></p></div></div>
-</div>
-<a name="getFQDN" id="getFQDN"></a><div class="element clickable method public getFQDN" data-toggle="collapse" data-target=".getFQDN .collapse">
-<h2>Returns the fully-qualified domain name of the server</h2>
-<pre>getFQDN() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The fully-qualified domain name of the server</div>
-</div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description">Before trying to fix qmail with this method, please try using fSMTP
+to connect to `localhost` and pass the fSMTP object to ::send().</p></div></div>
 </div>
 <a name="loadBody" id="loadBody"></a><div class="element clickable method public loadBody" data-toggle="collapse" data-target=".loadBody .collapse">
 <h2>Loads the plaintext version of the email body from a file and applies replacements</h2>
 <pre>loadBody(string | <a href="../classes/fFile.html">\fFile</a> $file, array $replacements) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The should contain either ASCII or UTF-8 encoded text. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The should contain either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$file</h4>
@@ -565,9 +512,9 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Loads the plaintext version of the email body from a file and applies replacements</h2>
 <pre>loadHTMLBody(string | <a href="../classes/fFile.html">\fFile</a> $file, array $replacements) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The should contain either ASCII or UTF-8 encoded text. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The should contain either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$file</h4>
@@ -585,27 +532,15 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <code><a href="../classes/fEmail.html">\fEmail</a></code>The email object, to allow for method chaining</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="send" id="send"></a><div class="element clickable method public send" data-toggle="collapse" data-target=".send .collapse">
 <h2>Sends the email</h2>
 <pre>send(<a href="../classes/fSMTP.html">\fSMTP</a> $connection) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The return value is the message id, which should be included as the
-<code>Message-ID</code> header of the email. While almost all SMTP servers will not
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The return value is the message id, which should be included as the
+`Message-ID` header of the email. While almost all SMTP servers will not
 modify this value, testing has indicated at least one (smtp.live.com
-for Windows Live Mail) does.</p></p>
+for Windows Live Mail) does.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$connection</h4>
@@ -624,9 +559,9 @@ for Windows Live Mail) does.</p></p>
 <h2>Sets the plaintext version of the email body</h2>
 <pre>setBody(string $plaintext, boolean $unindent_expand_constants) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$plaintext</h4>
@@ -644,8 +579,8 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds the email address the email will be bounced to</h2>
 <pre>setBounceToEmail(string $email) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This email address will be set to the <code>Return-Path</code> header.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This email address will be set to the `Return-Path` header.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$email</h4>
@@ -659,7 +594,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds the `From:` email address to the email</h2>
 <pre>setFromEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -678,9 +613,9 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Sets the HTML version of the email body</h2>
 <pre>setHTMLBody(string $html) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$html</h4>
@@ -694,7 +629,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds the `Reply-To:` email address to the email</h2>
 <pre>setReplyToEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -713,9 +648,9 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Adds the `Sender:` email address to the email</h2>
 <pre>setSenderEmail(string $email, string $name) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>Sender:</code> header is used to indicate someone other than the <code>From:</code>
-address is actually submitting the message to the network.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `Sender:` header is used to indicate someone other than the `From:`
+address is actually submitting the message to the network.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$email</h4>
@@ -733,9 +668,9 @@ address is actually submitting the message to the network.</p></p>
 <h2>Sets the subject of the email</h2>
 <pre>setSubject(string $subject) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method accepts either ASCII or UTF-8 encoded text. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method accepts either ASCII or UTF-8 encoded text. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$subject</h4>
@@ -749,7 +684,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Sets the email to be signed with S/MIME</h2>
 <pre>sign(string $senders_smime_cert_file, string $senders_smime_pk_file, string $senders_smime_pk_password) : <a href="../classes/fEmail.html">\fEmail</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -773,7 +708,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Takes a block of text, unindents it and replaces {CONSTANT} tokens with the constant's value</h2>
 <pre>unindentExpand(string $text) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -788,7 +723,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -803,7 +738,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
 <pre>stringlike(mixed $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -818,7 +753,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Takes a multi-address email header and builds it out using an array of emails</h2>
 <pre>buildMultiAddressHeader(string $header, array $emails) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -837,7 +772,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Builds the body of the email</h2>
 <pre>createBody(string $boundary) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -852,7 +787,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Creates a 32-character boundary for a multipart message</h2>
 <pre>createBoundary() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -863,7 +798,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Builds the headers for the email</h2>
 <pre>createHeaders(string $boundary, string $message_id) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -881,7 +816,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Takes the body of the message and processes it with S/MIME</h2>
 <pre>createSMIMEBody(string $to, string $subject, string $headers, string $body) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -906,7 +841,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 &lt;email@address.com&gt; or "Name" &lt;email@address.com&gt; combination.</h2>
 <pre>extractEmails(array $list) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -922,7 +857,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Extracts the filename and mime-type from an fFile object</h2>
 <pre>extrapolateFileInfo(string | <a href="../classes/fFile.html">\fFile</a> $contents, string $filename, string $mime_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -943,7 +878,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Generates a new filename in an attempt to create a unique name</h2>
 <pre>generateNewFilename(string $filename) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -958,7 +893,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Encodes a string to base64</h2>
 <pre>makeBase64(string $content) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -973,7 +908,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Encodes a string to UTF-8 encoded-word</h2>
 <pre>makeEncodedWord(string $content, integer $first_line_prefix_length) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -992,7 +927,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Encodes a string to quoted-printable, properly handles UTF-8</h2>
 <pre>makeQuotedPrintable(string $content) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1007,7 +942,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Validates that all of the parts of the email are valid</h2>
 <pre>validate() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Exceptions</h3>
 <table class="table table-bordered"><tr>
@@ -1022,139 +957,139 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>The file contents to attach</h2>
 <pre>$attachments : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24bcc_emails" id="$bcc_emails"> </a><div class="element clickable property private $bcc_emails" data-toggle="collapse" data-target=".$bcc_emails .collapse">
 <h2>The email address(es) to BCC to</h2>
 <pre>$bcc_emails : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24bounce_to_email" id="$bounce_to_email"> </a><div class="element clickable property private $bounce_to_email" data-toggle="collapse" data-target=".$bounce_to_email .collapse">
 <h2>The email address to bounce to</h2>
 <pre>$bounce_to_email : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24cc_emails" id="$cc_emails"> </a><div class="element clickable property private $cc_emails" data-toggle="collapse" data-target=".$cc_emails .collapse">
 <h2>The email address(es) to CC to</h2>
 <pre>$cc_emails : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24convert_crlf" id="$convert_crlf"> </a><div class="element clickable property private $convert_crlf" data-toggle="collapse" data-target=".$convert_crlf .collapse">
 <h2>Flags if the class should convert `\r\n` to `\n` for qmail. This makes invalid email headers that may work.</h2>
 <pre>$convert_crlf : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24custom_headers" id="$custom_headers"> </a><div class="element clickable property private $custom_headers" data-toggle="collapse" data-target=".$custom_headers .collapse">
 <h2>Custom headers</h2>
 <pre>$custom_headers : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24fqdn" id="$fqdn"> </a><div class="element clickable property private $fqdn" data-toggle="collapse" data-target=".$fqdn .collapse">
 <h2>The local fully-qualified domain name</h2>
 <pre>$fqdn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24from_email" id="$from_email"> </a><div class="element clickable property private $from_email" data-toggle="collapse" data-target=".$from_email .collapse">
 <h2>The email address being sent from</h2>
 <pre>$from_email : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24html_body" id="$html_body"> </a><div class="element clickable property private $html_body" data-toggle="collapse" data-target=".$html_body .collapse">
 <h2>The HTML body of the email</h2>
 <pre>$html_body : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24message_id" id="$message_id"> </a><div class="element clickable property private $message_id" data-toggle="collapse" data-target=".$message_id .collapse">
 <h2>The Message-ID header for the email</h2>
 <pre>$message_id : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24plaintext_body" id="$plaintext_body"> </a><div class="element clickable property private $plaintext_body" data-toggle="collapse" data-target=".$plaintext_body .collapse">
 <h2>The plaintext body of the email</h2>
 <pre>$plaintext_body : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24popen_sendmail" id="$popen_sendmail"> </a><div class="element clickable property private $popen_sendmail" data-toggle="collapse" data-target=".$popen_sendmail .collapse">
 <h2>Flags if the class should use [http://php.net/popen popen()] to send mail via sendmail</h2>
 <pre>$popen_sendmail : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24recipients_smime_cert_file" id="$recipients_smime_cert_file"> </a><div class="element clickable property private $recipients_smime_cert_file" data-toggle="collapse" data-target=".$recipients_smime_cert_file .collapse">
 <h2>The recipient's S/MIME PEM certificate filename, used for encryption of the message</h2>
 <pre>$recipients_smime_cert_file : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24related_files" id="$related_files"> </a><div class="element clickable property private $related_files" data-toggle="collapse" data-target=".$related_files .collapse">
 <h2>The files to include as multipart/related</h2>
 <pre>$related_files : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24reply_to_email" id="$reply_to_email"> </a><div class="element clickable property private $reply_to_email" data-toggle="collapse" data-target=".$reply_to_email .collapse">
 <h2>The email address to reply to</h2>
 <pre>$reply_to_email : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24sender_email" id="$sender_email"> </a><div class="element clickable property private $sender_email" data-toggle="collapse" data-target=".$sender_email .collapse">
 <h2>The email address actually sending the email</h2>
 <pre>$sender_email : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24senders_smime_cert_file" id="$senders_smime_cert_file"> </a><div class="element clickable property private $senders_smime_cert_file" data-toggle="collapse" data-target=".$senders_smime_cert_file .collapse">
 <h2>The senders's S/MIME PEM certificate filename, used for singing the message</h2>
 <pre>$senders_smime_cert_file : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24senders_smime_pk_file" id="$senders_smime_pk_file"> </a><div class="element clickable property private $senders_smime_pk_file" data-toggle="collapse" data-target=".$senders_smime_pk_file .collapse">
 <h2>The senders's S/MIME private key filename, used for singing the message</h2>
 <pre>$senders_smime_pk_file : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24senders_smime_pk_password" id="$senders_smime_pk_password"> </a><div class="element clickable property private $senders_smime_pk_password" data-toggle="collapse" data-target=".$senders_smime_pk_password .collapse">
 <h2>The senders's S/MIME private key password, used for singing the message</h2>
 <pre>$senders_smime_pk_password : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24smime_encrypt" id="$smime_encrypt"> </a><div class="element clickable property private $smime_encrypt" data-toggle="collapse" data-target=".$smime_encrypt .collapse">
 <h2>If the message should be encrypted using the recipient's S/MIME certificate</h2>
 <pre>$smime_encrypt : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24smime_sign" id="$smime_sign"> </a><div class="element clickable property private $smime_sign" data-toggle="collapse" data-target=".$smime_sign .collapse">
 <h2>If the message should be signed using the senders's S/MIME private key</h2>
 <pre>$smime_sign : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24subject" id="$subject"> </a><div class="element clickable property private $subject" data-toggle="collapse" data-target=".$subject .collapse">
 <h2>The subject of the email</h2>
 <pre>$subject : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24to_emails" id="$to_emails"> </a><div class="element clickable property private $to_emails" data-toggle="collapse" data-target=".$to_emails .collapse">
 <h2>The email address(es) to send to</h2>
 <pre>$to_emails : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -1162,57 +1097,53 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>A regular expression to match an email address, exluding those with comments and folding whitespace</h2>
 <pre>EMAIL_REGEX : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>The matches will be:</p>
+<div class="row collapse"><div class="detail-description"><p class="long_description">The matches will be:
 
-<ul>
-<li><code>[0]</code>: The whole email address</li>
-<li><code>[1]</code>: The name before the <code>@</code></li>
-<li><code>[2]</code>: The domain/ip after the <code>@</code></li>
-</ul></p></div></div>
+ - `[0]`: The whole email address
+ - `[1]`: The name before the `@`
+ - `[2]`: The domain/ip after the `@`</p></div></div>
 </div>
 <a name="NAME_EMAIL_REGEX" id="NAME_EMAIL_REGEX"> </a><div class="element clickable constant  NAME_EMAIL_REGEX" data-toggle="collapse" data-target=".NAME_EMAIL_REGEX .collapse">
 <h2>A regular expression to match a `name &lt;email&gt;` string, exluding those with comments and folding whitespace</h2>
 <pre>NAME_EMAIL_REGEX : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>The matches will be:</p>
+<div class="row collapse"><div class="detail-description"><p class="long_description">The matches will be:
 
-<ul>
-<li><code>[0]</code>: The whole name and email address</li>
-<li><code>[1]</code>: The name</li>
-<li><code>[2]</code>: The whole email address</li>
-<li><code>[3]</code>: The email username before the <code>@</code></li>
-<li><code>[4]</code>: The email domain/ip after the <code>@</code></li>
-</ul></p></div></div>
+ - `[0]`: The whole name and email address
+ - `[1]`: The name
+ - `[2]`: The whole email address
+ - `[3]`: The email username before the `@`
+ - `[4]`: The email domain/ip after the `@`</p></div></div>
 </div>
 <a name="combineNameEmail" id="combineNameEmail"> </a><div class="element clickable constant  combineNameEmail" data-toggle="collapse" data-target=".combineNameEmail .collapse">
 <h2>combineNameEmail</h2>
 <pre>combineNameEmail </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="fixQmail" id="fixQmail"> </a><div class="element clickable constant  fixQmail" data-toggle="collapse" data-target=".fixQmail .collapse">
 <h2>fixQmail</h2>
 <pre>fixQmail </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="getFQDN" id="getFQDN"> </a><div class="element clickable constant  getFQDN" data-toggle="collapse" data-target=".getFQDN .collapse">
 <h2>getFQDN</h2>
 <pre>getFQDN </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="unindentExpand" id="unindentExpand"> </a><div class="element clickable constant  unindentExpand" data-toggle="collapse" data-target=".unindentExpand .collapse">
 <h2>unindentExpand</h2>
 <pre>unindentExpand </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1220,8 +1151,8 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

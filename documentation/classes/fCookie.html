@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -60,7 +60,6 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#delete" title="delete :: Deletes a cookie - uses default parameters set by the other set methods of this class"><span class="description">Deletes a cookie - uses default parameters set by the other set methods of this class</span><pre>delete()</pre></a></li>
 <li class="method public "><a href="#get" title="get :: Gets a cookie value from `$_COOKIE`, while allowing a default value to be provided"><span class="description">Gets a cookie value from `$_COOKIE`, while allowing a default value to be provided</span><pre>get()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets a cookie to be sent back to the browser - uses default parameters set by the other set methods of this class"><span class="description">Sets a cookie to be sent back to the browser - uses default parameters set by the other set methods of this class</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#setDefaultDomain" title="setDefaultDomain :: Sets the default domain to use for cookies"><span class="description">Sets the default domain to use for cookies</span><pre>setDefaultDomain()</pre></a></li>
 <li class="method public "><a href="#setDefaultExpires" title="setDefaultExpires :: Sets the default expiration date to use for cookies"><span class="description">Sets the default expiration date to use for cookies</span><pre>setDefaultExpires()</pre></a></li>
@@ -91,7 +90,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfCookie" id="\fCookie"></a><div href="../classes/fCookie.html" class="element class">
+<a name="%5CfCookie" id="\fCookie"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fCookie.html">fCookie</a>
+</li>
+</ul>
+<div href="../classes/fCookie.html" class="element class">
 <p class="short_description">Provides a consistent cookie API, HTTPOnly compatibility with older PHP versions and default parameters</p>
 <div class="details">
 <p class="long_description"></p>
@@ -114,7 +122,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -143,7 +151,7 @@
 <h2>Deletes a cookie - uses default parameters set by the other set methods of this class</h2>
 <pre>delete(string $name, string $path, string $domain, boolean $secure) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -165,7 +173,7 @@
 <h2>Gets a cookie value from `$_COOKIE`, while allowing a default value to be provided</h2>
 <pre>get(string $name, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -179,32 +187,18 @@
 <code>mixed</code>The value</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="set" id="set"></a><div class="element clickable method public set" data-toggle="collapse" data-target=".set .collapse">
 <h2>Sets a cookie to be sent back to the browser - uses default parameters set by the other set methods of this class</h2>
 <pre>set(string $name, mixed $value, string | integer $expires, string $path, string $domain, boolean $secure, boolean $httponly) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The following methods allow for setting default parameters for this method:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The following methods allow for setting default parameters for this method:
 
-<ul>
-<li>::setDefaultExpires():  Sets the default for the <code>$expires</code> parameter</li>
-<li>::setDefaultPath():     Sets the default for the <code>$path</code> parameter</li>
-<li>::setDefaultDomain():   Sets the default for the <code>$domain</code> parameter</li>
-<li>::setDefaultSecure():   Sets the default for the <code>$secure</code> parameter</li>
-<li>::setDefaultHTTPOnly(): Sets the default for the <code>$httponly</code> parameter</li>
-</ul></p>
+ - ::setDefaultExpires():  Sets the default for the `$expires` parameter
+ - ::setDefaultPath():     Sets the default for the `$path` parameter
+ - ::setDefaultDomain():   Sets the default for the `$domain` parameter
+ - ::setDefaultSecure():   Sets the default for the `$secure` parameter
+ - ::setDefaultHTTPOnly(): Sets the default for the `$httponly` parameter</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$name</h4>
@@ -234,9 +228,9 @@
 <h2>Sets the default domain to use for cookies</h2>
 <pre>setDefaultDomain(string $domain) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This value will be used when the <code>$domain</code> parameter of the ::set()
-method is not specified or is set to <code>NULL</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This value will be used when the `$domain` parameter of the ::set()
+method is not specified or is set to `NULL`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$domain</h4>
@@ -247,9 +241,9 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>Sets the default expiration date to use for cookies</h2>
 <pre>setDefaultExpires(string | integer $expires) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This value will be used when the <code>$expires</code> parameter of the ::set()
-method is not specified or is set to <code>NULL</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This value will be used when the `$expires` parameter of the ::set()
+method is not specified or is set to `NULL`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$expires</h4>
@@ -260,9 +254,9 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>Sets the default httponly flag to use for cookies</h2>
 <pre>setDefaultHTTPOnly(boolean $httponly) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This value will be used when the <code>$httponly</code> parameter of the ::set()
-method is not specified or is set to <code>NULL</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This value will be used when the `$httponly` parameter of the ::set()
+method is not specified or is set to `NULL`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$httponly</h4>
@@ -273,9 +267,9 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>Sets the default path to use for cookies</h2>
 <pre>setDefaultPath(string $path) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This value will be used when the <code>$path</code> parameter of the ::set()
-method is not specified or is set to <code>NULL</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This value will be used when the `$path` parameter of the ::set()
+method is not specified or is set to `NULL`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$path</h4>
@@ -286,9 +280,9 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>Sets the default secure flag to use for cookies</h2>
 <pre>setDefaultSecure(boolean $secure) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This value will be used when the <code>$secure</code> parameter of the ::set()
-method is not specified or is set to <code>NULL</code>.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This value will be used when the `$secure` parameter of the ::set()
+method is not specified or is set to `NULL`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$secure</h4>
@@ -299,7 +293,7 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fCookie.html">\fCookie</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fCookie.html">\fCookie</a></code></div>
@@ -311,31 +305,31 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>The default domain to set for cookies</h2>
 <pre>$default_domain : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24default_expires" id="$default_expires"> </a><div class="element clickable property private $default_expires" data-toggle="collapse" data-target=".$default_expires .collapse">
 <h2>The default expiration date to set for cookies</h2>
 <pre>$default_expires : string | integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24default_httponly" id="$default_httponly"> </a><div class="element clickable property private $default_httponly" data-toggle="collapse" data-target=".$default_httponly .collapse">
 <h2>If cookies should default to being http-only</h2>
 <pre>$default_httponly : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24default_path" id="$default_path"> </a><div class="element clickable property private $default_path" data-toggle="collapse" data-target=".$default_path .collapse">
 <h2>The default path to set for cookies</h2>
 <pre>$default_path : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24default_secure" id="$default_secure"> </a><div class="element clickable property private $default_secure" data-toggle="collapse" data-target=".$default_secure .collapse">
 <h2>If cookies should default to being secure-only</h2>
 <pre>$default_secure : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -343,55 +337,55 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 <h2>delete</h2>
 <pre>delete </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="get" id="get"> </a><div class="element clickable constant  get" data-toggle="collapse" data-target=".get .collapse">
 <h2>get</h2>
 <pre>get </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="set" id="set"> </a><div class="element clickable constant  set" data-toggle="collapse" data-target=".set .collapse">
 <h2>set</h2>
 <pre>set </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultDomain" id="setDefaultDomain"> </a><div class="element clickable constant  setDefaultDomain" data-toggle="collapse" data-target=".setDefaultDomain .collapse">
 <h2>setDefaultDomain</h2>
 <pre>setDefaultDomain </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultExpires" id="setDefaultExpires"> </a><div class="element clickable constant  setDefaultExpires" data-toggle="collapse" data-target=".setDefaultExpires .collapse">
 <h2>setDefaultExpires</h2>
 <pre>setDefaultExpires </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultHTTPOnly" id="setDefaultHTTPOnly"> </a><div class="element clickable constant  setDefaultHTTPOnly" data-toggle="collapse" data-target=".setDefaultHTTPOnly .collapse">
 <h2>setDefaultHTTPOnly</h2>
 <pre>setDefaultHTTPOnly </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultPath" id="setDefaultPath"> </a><div class="element clickable constant  setDefaultPath" data-toggle="collapse" data-target=".setDefaultPath .collapse">
 <h2>setDefaultPath</h2>
 <pre>setDefaultPath </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDefaultSecure" id="setDefaultSecure"> </a><div class="element clickable constant  setDefaultSecure" data-toggle="collapse" data-target=".setDefaultSecure .collapse">
 <h2>setDefaultSecure</h2>
 <pre>setDefaultSecure </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -399,8 +393,8 @@ method is not specified or is set to <code>NULL</code>.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

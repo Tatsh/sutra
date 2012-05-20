@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -83,7 +83,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsLoader" id="\sLoader"></a><div href="../classes/sLoader.html" class="element class">
+<a name="%5CsLoader" id="\sLoader"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sLoader.html">sLoader</a>
+</li>
+</ul>
+<div href="../classes/sLoader.html" class="element class">
 <p class="short_description">Manages loading of classes.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -102,7 +111,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -119,7 +128,7 @@
 <h2>Override best() method.</h2>
 <pre>best() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -131,13 +140,13 @@
 <h2>Override eager() method to load Sutra classes after Flourish's.</h2>
 <pre>eagar() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="eager" id="eager"></a><div class="element clickable method public eager" data-toggle="collapse" data-target=".eager .collapse">
 <h2>Loads all Flourish classes when called</h2>
 <pre>eager() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -149,18 +158,16 @@
 <h2>Check if a PHP opcode cache is installed</h2>
 <pre>hasOpcodeCache() : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The following opcode caches are currently detected:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The following opcode caches are currently detected:
 
-<ul>
-<li>[http://pecl.php.net/package/APC APC]</li>
-<li>[http://eaccelerator.net eAccelerator]</li>
-<li>[http://www.nusphere.com/products/phpexpress.htm Nusphere PhpExpress]</li>
-<li>[http://turck-mmcache.sourceforge.net/index_old.html Turck MMCache]</li>
-<li>[http://xcache.lighttpd.net XCache]</li>
-<li>[http://www.zend.com/en/products/server/ Zend Server (Optimizer+)]</li>
-<li>[http://www.zend.com/en/products/platform/ Zend Platform (Code Acceleration)]</li>
-</ul></p>
+ - [http://pecl.php.net/package/APC APC]
+ - [http://eaccelerator.net eAccelerator]
+ - [http://www.nusphere.com/products/phpexpress.htm Nusphere PhpExpress]
+ - [http://turck-mmcache.sourceforge.net/index_old.html Turck MMCache]
+ - [http://xcache.lighttpd.net XCache]
+ - [http://www.zend.com/en/products/server/ Zend Server (Optimizer+)]
+ - [http://www.zend.com/en/products/platform/ Zend Platform (Code Acceleration)]</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fLoader::hasOpcodeCache()</td>
@@ -174,13 +181,13 @@
 <h2>Registers a class auto-loader to load Sutra classes.</h2>
 <pre>lazy() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class.</h2>
 <pre>__construct() : <a href="../classes/sLoader.html">\sLoader</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sLoader.html">\sLoader</a></code></div>
@@ -190,13 +197,13 @@
 <h2>Creates constructor functions. This makes it possible to write:</h2>
 <pre>createConstructorFunctions() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><pre><code>new sProcess('node myscript')->execute();</code></pre></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"><pre><code>new sProcess('node myscript')->execute();</code></pre></p></div></div>
 </div>
 <a name="setPath" id="setPath"></a><div class="element clickable method private setPath" data-toggle="collapse" data-target=".setPath .collapse">
 <h2>Determines where Sutra is installed.</h2>
 <pre>setPath() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -204,13 +211,13 @@
 <h2>All the Sutra classes.</h2>
 <pre>$classes : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24path" id="$path"> </a><div class="element clickable property private $path" data-toggle="collapse" data-target=".$path .collapse">
 <h2>Path where libraries are installed.</h2>
 <pre>$path : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -218,7 +225,7 @@
 <h2>autoload</h2>
 <pre>autoload </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -230,19 +237,19 @@
 <h2>best</h2>
 <pre>best </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="eagar" id="eagar"> </a><div class="element clickable constant  eagar" data-toggle="collapse" data-target=".eagar .collapse">
 <h2>eagar</h2>
 <pre>eagar </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="eager" id="eager"> </a><div class="element clickable constant  eager" data-toggle="collapse" data-target=".eager .collapse">
 <h2>eager</h2>
 <pre>eager </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -254,7 +261,7 @@
 <h2>hasOpcodeCache</h2>
 <pre>hasOpcodeCache </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -266,7 +273,7 @@
 <h2>lazy</h2>
 <pre>lazy </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -274,8 +281,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

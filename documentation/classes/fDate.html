@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates the date to represent, no timezone is allowed since dates don't have timezones"><span class="description">Creates the date to represent, no timezone is allowed since dates don't have timezones</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns this date in `Y-m-d` format"><span class="description">Returns this date in `Y-m-d` format</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#adjust" title="adjust :: Changes the date by the adjustment specified, only adjustments of a day or more will be made"><span class="description">Changes the date by the adjustment specified, only adjustments of a day or more will be made</span><pre>adjust()</pre></a></li>
 <li class="method public "><a href="#eq" title="eq :: If this date is equal to the date passed"><span class="description">If this date is equal to the date passed</span><pre>eq()</pre></a></li>
@@ -79,7 +78,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfDate" id="\fDate"></a><div href="../classes/fDate.html" class="element class">
+<a name="%5CfDate" id="\fDate"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fDate.html">fDate</a>
+</li>
+</ul>
+<div href="../classes/fDate.html" class="element class">
 <p class="short_description">Represents a date as a value object</p>
 <div class="details">
 <p class="long_description"></p>
@@ -98,7 +106,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -159,7 +167,7 @@
 <h2>Creates the date to represent, no timezone is allowed since dates don't have timezones</h2>
 <pre>__construct(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $date) : <a href="../classes/fDate.html">\fDate</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -175,30 +183,11 @@
 <div class="subelement response"><code><a href="../classes/fDate.html">\fDate</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Returns this date in `Y-m-d` format</h2>
 <pre>__toString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -209,7 +198,7 @@
 <h2>Changes the date by the adjustment specified, only adjustments of a day or more will be made</h2>
 <pre>adjust(string $adjustment) : <a href="../classes/fDate.html">\fDate</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -229,7 +218,7 @@
 <h2>If this date is equal to the date passed</h2>
 <pre>eq(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -245,7 +234,7 @@
 <h2>Formats the date</h2>
 <pre>format(string $format) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -266,43 +255,33 @@
 <h2>Returns the approximate difference in time, discarding any unit of measure but the least specific.</h2>
 <pre>getFuzzyDifference(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date, boolean $simple) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The output will read like:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The output will read like:
 
-<ul>
-<li>"This date is <code>{return value}</code> the provided one" when a date it passed</li>
-<li>"This date is <code>{return value}</code>" when no date is passed and comparing with today</li>
-</ul>
+ - "This date is `{return value}` the provided one" when a date it passed
+ - "This date is `{return value}`" when no date is passed and comparing with today
 
-<p>Examples of output for a date passed might be:</p>
+Examples of output for a date passed might be:
 
-<ul>
-<li><code>'2 days after'</code></li>
-<li><code>'1 year before'</code></li>
-<li><code>'same day'</code></li>
-</ul>
+ - `'2 days after'`
+ - `'1 year before'`
+ - `'same day'`
 
-<p>Examples of output for no date passed might be:</p>
+Examples of output for no date passed might be:
 
-<ul>
-<li><code>'2 days from now'</code></li>
-<li><code>'1 year ago'</code></li>
-<li><code>'today'</code></li>
-</ul>
+ - `'2 days from now'`
+ - `'1 year ago'`
+ - `'today'`
 
-<p>You would never get the following output since it includes more than one unit of time measurement:</p>
+You would never get the following output since it includes more than one unit of time measurement:
 
-<ul>
-<li><code>'3 weeks and 1 day'</code></li>
-<li><code>'1 year and 2 months'</code></li>
-</ul>
+ - `'3 weeks and 1 day'`
+ - `'1 year and 2 months'`
 
-<p>Values that are close to the next largest unit of measure will be rounded up:</p>
+Values that are close to the next largest unit of measure will be rounded up:
 
-<ul>
-<li><code>6 days</code> would be represented as <code>1 week</code>, however <code>5 days</code> would not</li>
-<li><code>29 days</code> would be represented as <code>1 month</code>, but <code>21 days</code> would be shown as <code>3 weeks</code></li>
-</ul></p>
+ - `6 days` would be represented as `1 week`, however `5 days` would not
+ - `29 days` would be represented as `1 month`, but `21 days` would be shown as `3 weeks`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$other_date</h4>
@@ -321,7 +300,7 @@
 <h2>If this date is greater than the date passed</h2>
 <pre>gt(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -337,7 +316,7 @@
 <h2>If this date is greater than or equal to the date passed</h2>
 <pre>gte(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -353,7 +332,7 @@
 <h2>If this date is less than the date passed</h2>
 <pre>lt(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -369,7 +348,7 @@
 <h2>If this date is less than or equal to the date passed</h2>
 <pre>lte(<a href="../classes/fDate.html">\fDate</a> | object | string | integer $other_date) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -385,16 +364,14 @@
 <h2>Modifies the current date, creating a new fDate object</h2>
 <pre>modify(string $format) : <a href="../classes/fDate.html">\fDate</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The purpose of this method is to allow for easy creation of a date
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The purpose of this method is to allow for easy creation of a date
 based on this date. Below are some examples of formats to
-modify the current date:</p>
+modify the current date:
 
-<ul>
-<li><code>'Y-m-01'</code> to change the date to the first of the month</li>
-<li><code>'Y-m-t'</code> to change the date to the last of the month</li>
-<li><code>'Y-\W5-N'</code> to change the date to the 5th week of the year</li>
-</ul></p>
+ - `'Y-m-01'` to change the date to the first of the month
+ - `'Y-m-t'` to change the date to the last of the month
+ - `'Y-\W5-N'` to change the date to the 5th week of the year</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$format</h4>
@@ -408,7 +385,7 @@ modify the current date:</p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -425,7 +402,7 @@ modify the current date:</p>
 <h2>A timestamp of the date</h2>
 <pre>$date : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -433,8 +410,8 @@ modify the current date:</p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

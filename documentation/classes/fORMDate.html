@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -61,15 +61,6 @@
 <li class="method public "><a href="#configureDateCreatedColumn" title="configureDateCreatedColumn :: Sets a column to be a date created column"><span class="description">Sets a column to be a date created column</span><pre>configureDateCreatedColumn()</pre></a></li>
 <li class="method public "><a href="#configureDateUpdatedColumn" title="configureDateUpdatedColumn :: Sets a column to be a date updated column"><span class="description">Sets a column to be a date updated column</span><pre>configureDateUpdatedColumn()</pre></a></li>
 <li class="method public "><a href="#configureTimezoneColumn" title="configureTimezoneColumn :: Sets a timestamp column to store the timezone in another column"><span class="description">Sets a timestamp column to store the timezone in another column</span><pre>configureTimezoneColumn()</pre></a></li>
-<li class="method public "><a href="#inspect" title="inspect :: Adds metadata about features added by this class"><span class="description">Adds metadata about features added by this class</span><pre>inspect()</pre></a></li>
-<li class="method public "><a href="#makeTimestampObjects" title="makeTimestampObjects :: Creates fTimestamp objects for every timestamp/timezone combination in the object"><span class="description">Creates fTimestamp objects for every timestamp/timezone combination in the object</span><pre>makeTimestampObjects()</pre></a></li>
-<li class="method public "><a href="#objectifyTimestampWithTimezone" title="objectifyTimestampWithTimezone :: Turns a timestamp value into an fTimestamp object with a timezone specified by another column"><span class="description">Turns a timestamp value into an fTimestamp object with a timezone specified by another column</span><pre>objectifyTimestampWithTimezone()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
-<li class="method public "><a href="#setDateCreated" title="setDateCreated :: Sets the appropriate column values to the date the object was created (for new records)"><span class="description">Sets the appropriate column values to the date the object was created (for new records)</span><pre>setDateCreated()</pre></a></li>
-<li class="method public "><a href="#setDateUpdated" title="setDateUpdated :: Sets the appropriate column values to the date the object was updated"><span class="description">Sets the appropriate column values to the date the object was updated</span><pre>setDateUpdated()</pre></a></li>
-<li class="method public "><a href="#setTimestampColumn" title="setTimestampColumn :: Sets the timestamp column and then tries to objectify it with an related timezone column"><span class="description">Sets the timestamp column and then tries to objectify it with an related timezone column</span><pre>setTimestampColumn()</pre></a></li>
-<li class="method public "><a href="#setTimezoneColumn" title="setTimezoneColumn :: Sets the timezone column and then tries to objectify the related timestamp column"><span class="description">Sets the timezone column and then tries to objectify the related timestamp column</span><pre>setTimezoneColumn()</pre></a></li>
-<li class="method public "><a href="#validateTimezoneColumns" title="validateTimezoneColumns :: Validates all timestamp/timezone columns"><span class="description">Validates all timestamp/timezone columns</span><pre>validateTimezoneColumns()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
@@ -97,7 +88,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfORMDate" id="\fORMDate"></a><div href="../classes/fORMDate.html" class="element class">
+<a name="%5CfORMDate" id="\fORMDate"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMDate.html">fORMDate</a>
+</li>
+</ul>
+<div href="../classes/fORMDate.html" class="element class">
 <p class="short_description">Provides additional date/time functionality for fActiveRecord classes</p>
 <div class="details">
 <p class="long_description"></p>
@@ -116,7 +116,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -169,9 +169,9 @@
 <h2>Sets a column to be a date created column</h2>
 <pre>configureDateCreatedColumn(mixed $class, string $column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>When a new record is stored in the database, date created columns will
-be filled with the timestamp of the store operation.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">When a new record is stored in the database, date created columns will
+be filled with the timestamp of the store operation.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -185,9 +185,9 @@ be filled with the timestamp of the store operation.</p></p>
 <h2>Sets a column to be a date updated column</h2>
 <pre>configureDateUpdatedColumn(mixed $class, string $column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Whenever a record is stored in the database, a date updated column will
-be set to the timestamp of the operation.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Whenever a record is stored in the database, a date updated column will
+be set to the timestamp of the operation.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -201,11 +201,11 @@ be set to the timestamp of the operation.</p></p>
 <h2>Sets a timestamp column to store the timezone in another column</h2>
 <pre>configureTimezoneColumn(mixed $class, string $timestamp_column, string $timezone_column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Since not all databases support timezone information in timestamp
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Since not all databases support timezone information in timestamp
 columns, this method allows storing the timezone in another columns.
 When the timestamp and timezone are retrieved from the database, they
-will be automatically combined together into an fTimestamp object.</p></p>
+will be automatically combined together into an fTimestamp object.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -218,287 +218,11 @@ will be automatically combined together into an fTimestamp object.</p></p>
 <code>string</code><p>The column to store the timezone in</p></div>
 </div></div>
 </div>
-<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
-<h2>Adds metadata about features added by this class</h2>
-<pre>inspect(string $class, string $column, array $metadata) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class being inspected</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column being inspected</p></div>
-<div class="subelement argument">
-<h4>$metadata</h4>
-<code>array</code><p>&$metadata The array of metadata about a column</p>
-</div>
-</div></div>
-</div>
-<a name="makeTimestampObjects" id="makeTimestampObjects"></a><div class="element clickable method public makeTimestampObjects" data-toggle="collapse" data-target=".makeTimestampObjects .collapse">
-<h2>Creates fTimestamp objects for every timestamp/timezone combination in the object</h2>
-<pre>makeTimestampObjects(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="objectifyTimestampWithTimezone" id="objectifyTimestampWithTimezone"></a><div class="element clickable method public objectifyTimestampWithTimezone" data-toggle="collapse" data-target=".objectifyTimestampWithTimezone .collapse">
-<h2>Turns a timestamp value into an fTimestamp object with a timezone specified by another column</h2>
-<pre>objectifyTimestampWithTimezone(array $values, array $old_values, string $timestamp_column, string $timezone_column) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$timestamp_column</h4>
-<code>string</code><p>The column holding the timestamp</p></div>
-<div class="subelement argument">
-<h4>$timezone_column</h4>
-<code>string</code><p>The column holding the timezone</p></div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a name="setDateCreated" id="setDateCreated"></a><div class="element clickable method public setDateCreated" data-toggle="collapse" data-target=".setDateCreated .collapse">
-<h2>Sets the appropriate column values to the date the object was created (for new records)</h2>
-<pre>setDateCreated(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="setDateUpdated" id="setDateUpdated"></a><div class="element clickable method public setDateUpdated" data-toggle="collapse" data-target=".setDateUpdated .collapse">
-<h2>Sets the appropriate column values to the date the object was updated</h2>
-<pre>setDateUpdated(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="setTimestampColumn" id="setTimestampColumn"></a><div class="element clickable method public setTimestampColumn" data-toggle="collapse" data-target=".setTimestampColumn .collapse">
-<h2>Sets the timestamp column and then tries to objectify it with an related timezone column</h2>
-<pre>setTimestampColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
-</div></div>
-</div>
-<a name="setTimezoneColumn" id="setTimezoneColumn"></a><div class="element clickable method public setTimezoneColumn" data-toggle="collapse" data-target=".setTimezoneColumn .collapse">
-<h2>Sets the timezone column and then tries to objectify the related timestamp column</h2>
-<pre>setTimezoneColumn(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The record object, to allow for method chaining</div>
-</div></div>
-</div>
-<a name="validateTimezoneColumns" id="validateTimezoneColumns"></a><div class="element clickable method public validateTimezoneColumns" data-toggle="collapse" data-target=".validateTimezoneColumns .collapse">
-<h2>Validates all timestamp/timezone columns</h2>
-<pre>validateTimezoneColumns(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, array $validation_messages) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$validation_messages</h4>
-<code>array</code><p>&$validation_messages An array of ordered validation messages</p>
-</div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMDate.html">\fORMDate</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fORMDate.html">\fORMDate</a></code></div>
@@ -508,7 +232,7 @@ will be automatically combined together into an fTimestamp object.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -525,25 +249,25 @@ will be automatically combined together into an fTimestamp object.</p></p>
 <h2>Columns that should be filled with the date created for new objects</h2>
 <pre>$date_created_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24date_updated_columns" id="$date_updated_columns"> </a><div class="element clickable property private $date_updated_columns" data-toggle="collapse" data-target=".$date_updated_columns .collapse">
 <h2>Columns that should be filled with the date updated</h2>
 <pre>$date_updated_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24timestamp_columns" id="$timestamp_columns"> </a><div class="element clickable property private $timestamp_columns" data-toggle="collapse" data-target=".$timestamp_columns .collapse">
 <h2>Timestamp columns that have a corresponding timezone column</h2>
 <pre>$timestamp_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24timezone_columns" id="$timezone_columns"> </a><div class="element clickable property private $timezone_columns" data-toggle="collapse" data-target=".$timezone_columns .collapse">
 <h2>Columns that store timezone information for timestamp columns</h2>
 <pre>$timezone_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -551,73 +275,73 @@ will be automatically combined together into an fTimestamp object.</p></p>
 <h2>configureDateCreatedColumn</h2>
 <pre>configureDateCreatedColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="configureDateUpdatedColumn" id="configureDateUpdatedColumn"> </a><div class="element clickable constant  configureDateUpdatedColumn" data-toggle="collapse" data-target=".configureDateUpdatedColumn .collapse">
 <h2>configureDateUpdatedColumn</h2>
 <pre>configureDateUpdatedColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="configureTimezoneColumn" id="configureTimezoneColumn"> </a><div class="element clickable constant  configureTimezoneColumn" data-toggle="collapse" data-target=".configureTimezoneColumn .collapse">
 <h2>configureTimezoneColumn</h2>
 <pre>configureTimezoneColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
 <h2>inspect</h2>
 <pre>inspect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeTimestampObjects" id="makeTimestampObjects"> </a><div class="element clickable constant  makeTimestampObjects" data-toggle="collapse" data-target=".makeTimestampObjects .collapse">
 <h2>makeTimestampObjects</h2>
 <pre>makeTimestampObjects </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="objectifyTimestampWithoutTimezone" id="objectifyTimestampWithoutTimezone"> </a><div class="element clickable constant  objectifyTimestampWithoutTimezone" data-toggle="collapse" data-target=".objectifyTimestampWithoutTimezone .collapse">
 <h2>objectifyTimestampWithoutTimezone</h2>
 <pre>objectifyTimestampWithoutTimezone </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDateCreated" id="setDateCreated"> </a><div class="element clickable constant  setDateCreated" data-toggle="collapse" data-target=".setDateCreated .collapse">
 <h2>setDateCreated</h2>
 <pre>setDateCreated </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setDateUpdated" id="setDateUpdated"> </a><div class="element clickable constant  setDateUpdated" data-toggle="collapse" data-target=".setDateUpdated .collapse">
 <h2>setDateUpdated</h2>
 <pre>setDateUpdated </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setTimestampColumn" id="setTimestampColumn"> </a><div class="element clickable constant  setTimestampColumn" data-toggle="collapse" data-target=".setTimestampColumn .collapse">
 <h2>setTimestampColumn</h2>
 <pre>setTimestampColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setTimezoneColumn" id="setTimezoneColumn"> </a><div class="element clickable constant  setTimezoneColumn" data-toggle="collapse" data-target=".setTimezoneColumn .collapse">
 <h2>setTimezoneColumn</h2>
 <pre>setTimezoneColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validateTimezoneColumns" id="validateTimezoneColumns"> </a><div class="element clickable constant  validateTimezoneColumns" data-toggle="collapse" data-target=".validateTimezoneColumns .collapse">
 <h2>validateTimezoneColumns</h2>
 <pre>validateTimezoneColumns </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -625,8 +349,8 @@ will be automatically combined together into an fTimestamp object.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

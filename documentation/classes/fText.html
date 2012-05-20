@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -60,7 +60,6 @@
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#compose" title="compose :: Performs an [http://php.net/sprintf sprintf()] on a string and provides a hook for modifications such as internationalization"><span class="description">Performs an [http://php.net/sprintf sprintf()] on a string and provides a hook for modifications such as internationalization</span><pre>compose()</pre></a></li>
 <li class="method public "><a href="#registerComposeCallback" title="registerComposeCallback :: Adds a callback for when a message is created using ::compose()"><span class="description">Adds a callback for when a message is created using ::compose()</span><pre>registerComposeCallback()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="nav-header">
@@ -75,7 +74,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfText" id="\fText"></a><div href="../classes/fText.html" class="element class">
+<a name="%5CfText" id="\fText"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fText.html">fText</a>
+</li>
+</ul>
+<div href="../classes/fText.html" class="element class">
 <p class="short_description">Provides internationlization support for strings</p>
 <div class="details">
 <p class="long_description"></p>
@@ -94,7 +102,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -119,7 +127,7 @@
 <h2>Performs an [http://php.net/sprintf sprintf()] on a string and provides a hook for modifications such as internationalization</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -134,18 +142,18 @@
 <h2>Adds a callback for when a message is created using ::compose()</h2>
 <pre>registerComposeCallback(string $timing, callback $callback) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The primary purpose of these callbacks is for internationalization of
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The primary purpose of these callbacks is for internationalization of
 error messaging in Flourish. The callback should accept a single
 parameter, the message being composed and should return the message
-with any modifications.</p>
+with any modifications.
 
-<p>The timing parameter controls if the callback happens before or after
+The timing parameter controls if the callback happens before or after
 the actual composition takes place, which is simply a call to
-[http://php.net/sprintf sprintf()]. Thus the message passed <code>'pre'</code>
-will always be exactly the same, while the message <code>'post'</code> will include
-the interpolated variables. Because of this, most of the time the <code>'pre'</code>
-timing should be chosen.</p></p>
+[http://php.net/sprintf sprintf()]. Thus the message passed `'pre'`
+will always be exactly the same, while the message `'post'` will include
+the interpolated variables. Because of this, most of the time the `'pre'`
+timing should be chosen.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$timing</h4>
@@ -156,23 +164,11 @@ timing should be chosen.</p></p>
 <code>callback</code><p>The callback</p></div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fText.html">\fText</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fText.html">\fText</a></code></div>
@@ -184,7 +180,7 @@ timing should be chosen.</p></p>
 <h2>Callbacks for when messages are composed</h2>
 <pre>$compose_callbacks : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -192,19 +188,19 @@ timing should be chosen.</p></p>
 <h2>compose</h2>
 <pre>compose </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="registerComposeCallback" id="registerComposeCallback"> </a><div class="element clickable constant  registerComposeCallback" data-toggle="collapse" data-target=".registerComposeCallback .collapse">
 <h2>registerComposeCallback</h2>
 <pre>registerComposeCallback </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -212,8 +208,8 @@ timing should be chosen.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

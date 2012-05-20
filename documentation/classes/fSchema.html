@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,8 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Sets the database"><span class="description">Sets the database</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
-<li class="method public "><a href="#clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
 <li class="method public "><a href="#enableCaching" title="enableCaching :: Sets the schema to be cached to the fCache object specified"><span class="description">Sets the schema to be cached to the fCache object specified</span><pre>enableCaching()</pre></a></li>
 <li class="method public "><a href="#getColumnInfo" title="getColumnInfo :: Returns column information for the table specified"><span class="description">Returns column information for the table specified</span><pre>getColumnInfo()</pre></a></li>
 <li class="method public "><a href="#getDatabases" title="getDatabases :: Returns the databases on the current server"><span class="description">Returns the databases on the current server</span><pre>getDatabases()</pre></a></li>
@@ -112,7 +110,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfSchema" id="\fSchema"></a><div href="../classes/fSchema.html" class="element class">
+<a name="%5CfSchema" id="\fSchema"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSchema.html">fSchema</a>
+</li>
+</ul>
+<div href="../classes/fSchema.html" class="element class">
 <p class="short_description">Gets schema information for the selected database</p>
 <div class="details">
 <p class="long_description"></p>
@@ -131,7 +138,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -352,7 +359,7 @@
 <h2>Sets the database</h2>
 <pre>__construct(<a href="../classes/fDatabase.html">\fDatabase</a> $database) : <a href="../classes/fSchema.html">\fSchema</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -362,42 +369,11 @@
 <div class="subelement response"><code><a href="../classes/fSchema.html">\fSchema</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
-<a name="clearCache" id="clearCache"></a><div class="element clickable method public clearCache" data-toggle="collapse" data-target=".clearCache .collapse">
-<h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
-<pre>clearCache() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="enableCaching" id="enableCaching"></a><div class="element clickable method public enableCaching" data-toggle="collapse" data-target=".enableCaching .collapse">
 <h2>Sets the schema to be cached to the fCache object specified</h2>
 <pre>enableCaching(<a href="../classes/fCache.html">\fCache</a> $cache, string $key_token) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -413,10 +389,10 @@
 <h2>Returns column information for the table specified</h2>
 <pre>getColumnInfo(string $table, string $column, string $element) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If only a table is specified, column info is in the following format:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If only a table is specified, column info is in the following format:
 
-<p>{{{
+{{{
 array(
     (string) {column name} => array(
         'type'           => (string)  {data type},
@@ -432,11 +408,11 @@ array(
         'comment'        => (string)  {the SQL comment/description for the column}
     ), ...
 )
-}}}</p>
+}}}
 
-<p>If a table and column are specified, column info is in the following format:</p>
+If a table and column are specified, column info is in the following format:
 
-<p>{{{
+{{{
 array(
     'type'           => (string)  {data type},
     'placeholder'    => (string)  {fDatabase::escape() placeholder for this data type},
@@ -450,34 +426,30 @@ array(
     'auto_increment' => (boolean) {if the integer primary key column is a serial/autoincrement/auto_increment/indentity column},
     'comment'        => (string)  {the SQL comment/description for the column}
 )
-}}}</p>
+}}}
 
-<p>If a table, column and element are specified, returned value is the single element specified.</p>
+If a table, column and element are specified, returned value is the single element specified.
 
-<p>The <code>'type'</code> element is homogenized to a value from the following list:</p>
+The `'type'` element is homogenized to a value from the following list:
 
-<ul>
-<li><code>'varchar'</code></li>
-<li><code>'char'</code></li>
-<li><code>'text'</code></li>
-<li><code>'integer'</code></li>
-<li><code>'float'</code></li>
-<li><code>'timestamp'</code></li>
-<li><code>'date'</code></li>
-<li><code>'time'</code></li>
-<li><code>'boolean'</code></li>
-<li><code>'blob'</code></li>
-</ul>
+ - `'varchar'`
+ - `'char'`
+ - `'text'`
+ - `'integer'`
+ - `'float'`
+ - `'timestamp'`
+ - `'date'`
+ - `'time'`
+ - `'boolean'`
+ - `'blob'`
 
-<p>Please note that MySQL reports boolean data types as <code>tinyint(1)</code>, so
-all <code>tinyint(1)</code> columns will be listed as <code>boolean</code>. This can be fixed
-by calling:</p>
+Please note that MySQL reports boolean data types as `tinyint(1)`, so
+all `tinyint(1)` columns will be listed as `boolean`. This can be fixed
+by calling:
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>$schema->setColumnInfoOverride(
+{{{
+#!php
+$schema->setColumnInfoOverride(
     array(
         'type'        => 'integer',
         'placeholder' => '%i',
@@ -488,30 +460,28 @@ by calling:</p>
     '{table name}',
     '{column name}'
 );
-}}}</p>
+}}}
 
-<p>The <code>'comment'</code> element pulls from the database's column comment facility
-with the exception of MSSQL and SQLite.</p>
+The `'comment'` element pulls from the database's column comment facility
+with the exception of MSSQL and SQLite.
 
-<p>For MSSQL, the comment is pulled from the <code>MS_Description</code> extended
-property, which can be added via the <code>Description</code> field in SQL Server
-Management Studio, or via the <code>sp_addextendedproperty</code> stored procedure.</p>
+For MSSQL, the comment is pulled from the `MS_Description` extended
+property, which can be added via the `Description` field in SQL Server
+Management Studio, or via the `sp_addextendedproperty` stored procedure.
 
-<p>For SQLite, the comment is extracted from any SQL comment that is placed
-at the end of the line on which the column is defined:</p>
+For SQLite, the comment is extracted from any SQL comment that is placed
+at the end of the line on which the column is defined:
 
-<p>{{{</p>
-
-<h1>!sql</h1>
-
-<p>CREATE TABLE users (
+{{{
+#!sql
+CREATE TABLE users (
     user_id INTEGER PRIMARY KEY AUTOINCREMENT,
     name VARCHAR(200) NOT NULL -- This is the full name
 );
-}}}</p>
+}}}
 
-<p>For the SQLite <code>users</code> table defined above, the <code>name</code> column will have
-the comment <code>This is the full name</code>.</p></p>
+For the SQLite `users` table defined above, the `name` column will have
+the comment `This is the full name`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$table</h4>
@@ -532,7 +502,7 @@ the comment <code>This is the full name</code>.</p></p>
 <h2>Returns the databases on the current server</h2>
 <pre>getDatabases() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -543,10 +513,10 @@ the comment <code>This is the full name</code>.</p></p>
 <h2>Returns a list of primary key, foreign key and unique key constraints for the table specified</h2>
 <pre>getKeys(string $table, string $key_type) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The structure of the returned array is:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The structure of the returned array is:
 
-<p>{{{
+{{{
 array(
      'primary' => array(
          {column name}, ...
@@ -566,7 +536,7 @@ array(
          ), ...
      )
 )
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$table</h4>
@@ -584,10 +554,10 @@ array(
 <h2>Returns a list of one-to-one, many-to-one, one-to-many and many-to-many relationships for the table specified</h2>
 <pre>getRelationships(string $table, string $relationship_type) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The structure of the returned array is:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The structure of the returned array is:
 
-<p>{{{
+{{{
 array(
     'one-to-one' => array(
         array(
@@ -631,7 +601,7 @@ array(
         ), ...
     )
 )
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$table</h4>
@@ -649,7 +619,7 @@ array(
 <h2>Returns the tables in the current database</h2>
 <pre>getTables(boolean | string $creation_order) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -665,50 +635,50 @@ array(
 <h2>Allows overriding of column info</h2>
 <pre>setColumnInfoOverride(array $column_info, string $table, string $column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Performs an array merge with the column info detected from the database.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Performs an array merge with the column info detected from the database.
 
-<p>To erase a whole table, set the <code>$column_info</code> to <code>NULL</code>. To erase a
-column, set the <code>$column_info</code> for that column to <code>NULL</code>.</p>
+To erase a whole table, set the `$column_info` to `NULL`. To erase a
+column, set the `$column_info` for that column to `NULL`.
 
-<p>If the <code>$column_info</code> parameter is not <code>NULL</code>, it should be an
+If the `$column_info` parameter is not `NULL`, it should be an
 associative array containing one or more of the following keys. Please
 see ::getColumnInfo() for a description of each.
- - <code>'type'</code>
- - <code>'placeholder'</code>
- - <code>'not_null'</code>
- - <code>'default'</code>
- - <code>'valid_values'</code>
- - <code>'max_length'</code>
- - <code>'min_value'</code>
- - <code>'max_value'</code>
- - <code>'decimal_places'</code>
- - <code>'auto_increment'</code>
- - <code>'comment'</code></p>
+ - `'type'`
+ - `'placeholder'`
+ - `'not_null'`
+ - `'default'`
+ - `'valid_values'`
+ - `'max_length'`
+ - `'min_value'`
+ - `'max_value'`
+ - `'decimal_places'`
+ - `'auto_increment'`
+ - `'comment'`
 
-<p>The following keys may be set to <code>NULL</code>:
- - <code>'not_null'</code>
- - <code>'default'</code>
- - <code>'valid_values'</code>
- - <code>'max_length'</code>
- - <code>'min_value'</code>
- - <code>'max_value'</code>
- - <code>'decimal_places'</code>
- - <code>'comment'</code></p>
+The following keys may be set to `NULL`:
+ - `'not_null'`
+ - `'default'`
+ - `'valid_values'`
+ - `'max_length'`
+ - `'min_value'`
+ - `'max_value'`
+ - `'decimal_places'`
+ - `'comment'`
 
-<p>The key <code>'auto_increment'</code> should be a boolean.</p>
+The key `'auto_increment'` should be a boolean.
 
-<p>The <code>'type'</code> key should be one of:
- - <code>'blob'</code>
- - <code>'boolean'</code>
- - <code>'char'</code>
- - <code>'date'</code>
- - <code>'float'</code>
- - <code>'integer'</code>
- - <code>'text'</code>
- - <code>'time'</code>
- - <code>'timestamp'</code>
- - <code>'varchar'</code></p></p>
+The `'type'` key should be one of:
+ - `'blob'`
+ - `'boolean'`
+ - `'char'`
+ - `'date'`
+ - `'float'`
+ - `'integer'`
+ - `'text'`
+ - `'time'`
+ - `'timestamp'`
+ - `'varchar'`</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$column_info</h4>
@@ -726,7 +696,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Allows overriding of key info. Replaces existing info, so be sure to provide full key info for type selected or all types.</h2>
 <pre>setKeysOverride(array $keys, string $table, string $key_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -746,7 +716,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Checks to see if a column is part of a single-column `UNIQUE` key</h2>
 <pre>checkForSingleColumnUniqueKey(string $table, string $column) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -764,7 +734,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Returns an ordered array of table names, in a valid table creation order</h2>
 <pre>determineTableCreationOrder(string $filter_table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -779,7 +749,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from the database for later access</h2>
 <pre>fetchColumnInfo(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -791,7 +761,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from a DB2 database</h2>
 <pre>fetchDB2ColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -806,7 +776,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the key info for a DB2 database</h2>
 <pre>fetchDB2Keys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -817,13 +787,13 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the `PRIMARY KEY`, `FOREIGN KEY` and `UNIQUE` key constraints from the database</h2>
 <pre>fetchKeys() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="fetchMSSQLColumnInfo" id="fetchMSSQLColumnInfo"></a><div class="element clickable method private fetchMSSQLColumnInfo" data-toggle="collapse" data-target=".fetchMSSQLColumnInfo .collapse">
 <h2>Gets the column info from a MSSQL database</h2>
 <pre>fetchMSSQLColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -838,7 +808,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the key info for an MSSQL database</h2>
 <pre>fetchMSSQLKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -849,7 +819,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from a MySQL database</h2>
 <pre>fetchMySQLColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -864,7 +834,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the keys for a MySQL database</h2>
 <pre>fetchMySQLKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -875,7 +845,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from an Oracle database</h2>
 <pre>fetchOracleColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -890,7 +860,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the key info for an Oracle database</h2>
 <pre>fetchOracleKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -901,7 +871,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from a PostgreSQL database</h2>
 <pre>fetchPostgreSQLColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -916,7 +886,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the key info for a PostgreSQL database</h2>
 <pre>fetchPostgreSQLKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -927,7 +897,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Gets the column info from a SQLite database</h2>
 <pre>fetchSQLiteColumnInfo(string $table) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -942,7 +912,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Fetches the key info for an SQLite database</h2>
 <pre>fetchSQLiteKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -953,7 +923,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Finds many-to-many relationship for the table specified</h2>
 <pre>findManyToManyRelationships(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -965,7 +935,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Finds one-to-many relationship for the table specified</h2>
 <pre>findOneToManyRelationships(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -977,13 +947,13 @@ see ::getColumnInfo() for a description of each.
 <h2>Finds the one-to-one, many-to-one, one-to-many and many-to-many relationships in the database</h2>
 <pre>findRelationships() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="findStarToOneRelationships" id="findStarToOneRelationships"></a><div class="element clickable method private findStarToOneRelationships" data-toggle="collapse" data-target=".findStarToOneRelationships .collapse">
 <h2>Finds one-to-one and many-to-one relationship for the table specified</h2>
 <pre>findStarToOneRelationships(string $table) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -995,7 +965,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Determines if a table is a joining table</h2>
 <pre>isJoiningTable(string $table) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1010,7 +980,7 @@ see ::getColumnInfo() for a description of each.
 <h2>Creates a unique cache prefix to help prevent cache conflicts</h2>
 <pre>makeCachePrefix() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -1021,13 +991,13 @@ see ::getColumnInfo() for a description of each.
 <h2>Merges the column info with the column info override</h2>
 <pre>mergeColumnInfo() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="mergeKeys" id="mergeKeys"></a><div class="element clickable method private mergeKeys" data-toggle="collapse" data-target=".mergeKeys .collapse">
 <h2>Merges the keys with the keys override</h2>
 <pre>mergeKeys() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -1035,73 +1005,73 @@ see ::getColumnInfo() for a description of each.
 <h2>The place to cache to</h2>
 <pre>$cache : <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24cache_prefix" id="$cache_prefix"> </a><div class="element clickable property private $cache_prefix" data-toggle="collapse" data-target=".$cache_prefix .collapse">
 <h2>The cache prefix to use for cache entries</h2>
 <pre>$cache_prefix : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24column_info" id="$column_info"> </a><div class="element clickable property private $column_info" data-toggle="collapse" data-target=".$column_info .collapse">
 <h2>The cached column info</h2>
 <pre>$column_info : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24column_info_override" id="$column_info_override"> </a><div class="element clickable property private $column_info_override" data-toggle="collapse" data-target=".$column_info_override .collapse">
 <h2>The column info to override</h2>
 <pre>$column_info_override : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24database" id="$database"> </a><div class="element clickable property private $database" data-toggle="collapse" data-target=".$database .collapse">
 <h2>A reference to an instance of the fDatabase class</h2>
 <pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24databases" id="$databases"> </a><div class="element clickable property private $databases" data-toggle="collapse" data-target=".$databases .collapse">
 <h2>The databases on the current database server</h2>
 <pre>$databases : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24keys" id="$keys"> </a><div class="element clickable property private $keys" data-toggle="collapse" data-target=".$keys .collapse">
 <h2>The cached key info</h2>
 <pre>$keys : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24keys_override" id="$keys_override"> </a><div class="element clickable property private $keys_override" data-toggle="collapse" data-target=".$keys_override .collapse">
 <h2>The key info to override</h2>
 <pre>$keys_override : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24merged_column_info" id="$merged_column_info"> </a><div class="element clickable property private $merged_column_info" data-toggle="collapse" data-target=".$merged_column_info .collapse">
 <h2>The merged column info</h2>
 <pre>$merged_column_info : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24merged_keys" id="$merged_keys"> </a><div class="element clickable property private $merged_keys" data-toggle="collapse" data-target=".$merged_keys .collapse">
 <h2>The merged key info</h2>
 <pre>$merged_keys : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24relationships" id="$relationships"> </a><div class="element clickable property private $relationships" data-toggle="collapse" data-target=".$relationships .collapse">
 <h2>The relationships in the database</h2>
 <pre>$relationships : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24tables" id="$tables"> </a><div class="element clickable property private $tables" data-toggle="collapse" data-target=".$tables .collapse">
 <h2>The tables in the database</h2>
 <pre>$tables : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1109,8 +1079,8 @@ see ::getColumnInfo() for a description of each.
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

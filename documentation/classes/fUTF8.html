@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -58,7 +58,6 @@
 <ul class="side-nav nav nav-list">
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
-<li class="method public "><a href="#ascii" title="ascii :: Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII"><span class="description">Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII</span><pre>ascii()</pre></a></li>
 <li class="method public "><a href="#chr" title="chr :: Converts a unicode value into a UTF-8 character"><span class="description">Converts a unicode value into a UTF-8 character</span><pre>chr()</pre></a></li>
 <li class="method public "><a href="#clean" title="clean :: Removes any invalid UTF-8 characters from a string or array of strings"><span class="description">Removes any invalid UTF-8 characters from a string or array of strings</span><pre>clean()</pre></a></li>
 <li class="method public "><a href="#cmp" title="cmp :: Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>cmp()</pre></a></li>
@@ -77,7 +76,6 @@
 <li class="method public "><a href="#pad" title="pad :: Pads a string to the number of characters specified"><span class="description">Pads a string to the number of characters specified</span><pre>pad()</pre></a></li>
 <li class="method public "><a href="#pos" title="pos :: Finds the first position (in characters) of the search value in the string"><span class="description">Finds the first position (in characters) of the search value in the string</span><pre>pos()</pre></a></li>
 <li class="method public "><a href="#replace" title="replace :: Replaces matching parts of the string"><span class="description">Replaces matching parts of the string</span><pre>replace()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#rev" title="rev :: Reverses a string"><span class="description">Reverses a string</span><pre>rev()</pre></a></li>
 <li class="method public "><a href="#rpos" title="rpos :: Finds the last position (in characters) of the search value in the string"><span class="description">Finds the last position (in characters) of the search value in the string</span><pre>rpos()</pre></a></li>
 <li class="method public "><a href="#rtrim" title="rtrim :: Trims whitespace, or any specified characters, from the end of a string"><span class="description">Trims whitespace, or any specified characters, from the end of a string</span><pre>rtrim()</pre></a></li>
@@ -144,12 +142,21 @@ does work when returning the value.</span><pre>iconv()</pre></a></li>
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfUTF8" id="\fUTF8"></a><div href="../classes/fUTF8.html" class="element class">
+<a name="%5CfUTF8" id="\fUTF8"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fUTF8.html">fUTF8</a>
+</li>
+</ul>
+<div href="../classes/fUTF8.html" class="element class">
 <p class="short_description">Provides string functions for UTF-8 strings</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to provide a UTF-8 version of almost every built-in
+<p class="long_description">This class is implemented to provide a UTF-8 version of almost every built-in
 PHP string function. For more information about UTF-8, please visit
-http://flourishlib.com/docs/UTF-8.</p></p>
+http://flourishlib.com/docs/UTF-8.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -165,7 +172,7 @@ http://flourishlib.com/docs/UTF-8.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -238,46 +245,11 @@ http://flourishlib.com/docs/UTF-8.</p></p>
 </table>
 <h3>
 <i class="icon-custom icon-method"></i> Methods</h3>
-<a name="ascii" id="ascii"></a><div class="element clickable method public ascii" data-toggle="collapse" data-target=".ascii .collapse">
-<h2>Maps UTF-8 ASCII-based latin characters, puntuation, symbols and number forms to ASCII</h2>
-<pre>ascii(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Any characters or symbols that can not be translated will be removed.</p>
-
-<p>This function is most useful for situation that only allows ASCII, such
-as in URLs.</p>
-
-<p>Translates elements form the following unicode blocks:</p>
-
-<ul>
-<li>Latin-1 Supplement</li>
-<li>Latin Extended-A</li>
-<li>Latin Extended-B</li>
-<li>IPA Extensions</li>
-<li>Latin Extended Additional</li>
-<li>General Punctuation</li>
-<li>Letterlike symbols</li>
-<li>Number Forms</li>
-</ul></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code><p>The string to convert</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The input string in pure ASCII</div>
-</div></div>
-</div>
 <a name="chr" id="chr"></a><div class="element clickable method public chr" data-toggle="collapse" data-target=".chr .collapse">
 <h2>Converts a unicode value into a UTF-8 character</h2>
 <pre>chr(mixed $unicode_code_point) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -293,7 +265,7 @@ as in URLs.</p>
 <h2>Removes any invalid UTF-8 characters from a string or array of strings</h2>
 <pre>clean(array | string $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -308,11 +280,11 @@ as in URLs.</p>
 <h2>Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
 <pre>cmp(string $str1, string $str2) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that this function sorts based on English language sorting
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that this function sorts based on English language sorting
 rules only. Locale-sepcific sorting is done by
 [http://php.net/strcoll strcoll()], however there are technical
-limitations.</p></p>
+limitations.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str1</h4>
@@ -329,9 +301,9 @@ limitations.</p></p>
 <h2>Explodes a string on a delimiter</h2>
 <pre>explode(string $string, string $delimiter) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If no delimiter is provided, the string will be exploded with each
-characters being an element in the array.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If no delimiter is provided, the string will be exploded with each
+characters being an element in the array.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$string</h4>
@@ -349,11 +321,11 @@ characters being an element in the array.</p></p>
 <h2>Compares strings in a case-insensitive manner, with the resulting order having characters that are based on ASCII letters placed after the relative ASCII characters</h2>
 <pre>icmp(string $str1, string $str2) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that this function sorts based on English language sorting
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that this function sorts based on English language sorting
 rules only. Locale-sepcific sorting is done by
 [http://php.net/strcoll strcoll()], however there are technical
-limitations.</p></p>
+limitations.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str1</h4>
@@ -370,11 +342,11 @@ limitations.</p></p>
 <h2>Compares strings using a natural order algorithm in a case-insensitive manner, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
 <pre>inatcmp(string $str1, string $str2) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that this function sorts based on English language sorting
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that this function sorts based on English language sorting
 rules only. Locale-sepcific sorting is done by
 [http://php.net/strcoll strcoll()], however there are technical
-limitations.</p></p>
+limitations.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str1</h4>
@@ -391,7 +363,7 @@ limitations.</p></p>
 <h2>Finds the first position (in characters) of the search value in the string - case is ignored when doing performing a match</h2>
 <pre>ipos(string $haystack, string $needle, integer $offset) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -413,11 +385,11 @@ limitations.</p></p>
 <h2>Replaces matching parts of the string, with matches being done in a a case-insensitive manner</h2>
 <pre>ireplace(string $string, mixed $search, mixed $replace) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If <code>$search</code> and <code>$replace</code> are both arrays and <code>$replace</code> is shorter,
-the extra <code>$search</code> string will be replaced with an empty string. If
-<code>$search</code> is an array and <code>$replace</code> is a string, all <code>$search</code> values
-will be replaced with the string specified.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If `$search` and `$replace` are both arrays and `$replace` is shorter,
+the extra `$search` string will be replaced with an empty string. If
+`$search` is an array and `$replace` is a string, all `$search` values
+will be replaced with the string specified.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$string</h4>
@@ -439,7 +411,7 @@ will be replaced with the string specified.</p></p>
 <h2>Finds the last position (in characters) of the search value in the string - case is ignored when doing performing a match</h2>
 <pre>irpos(string $haystack, string $needle, integer $offset) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -461,9 +433,9 @@ will be replaced with the string specified.</p></p>
 <h2>Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</h2>
 <pre>istr(string $haystack, string $needle, boolean $before_needle) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Can optionally return the part of the haystack before the needle. Matching
-is done in a case-insensitive manner.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Can optionally return the part of the haystack before the needle. Matching
+is done in a case-insensitive manner.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$haystack</h4>
@@ -484,7 +456,7 @@ is done in a case-insensitive manner.</p></p>
 <h2>Determines the length (in characters) of a string</h2>
 <pre>len(string $string) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -499,7 +471,7 @@ is done in a case-insensitive manner.</p></p>
 <h2>Converts all uppercase characters to lowercase</h2>
 <pre>lower(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -514,7 +486,7 @@ is done in a case-insensitive manner.</p></p>
 <h2>Trims whitespace, or any specified characters, from the beginning of a string</h2>
 <pre>ltrim(string $string, string $charlist) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -532,11 +504,11 @@ is done in a case-insensitive manner.</p></p>
 <h2>Compares strings using a natural order algorithm, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
 <pre>natcmp(string $str1, string $str2) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that this function sorts based on English language sorting
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that this function sorts based on English language sorting
 rules only. Locale-sepcific sorting is done by
 [http://php.net/strcoll strcoll()], however there are technical
-limitations.</p></p>
+limitations.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$str1</h4>
@@ -553,7 +525,7 @@ limitations.</p></p>
 <h2>Converts a UTF-8 character to a unicode code point</h2>
 <pre>ord(string $character) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -568,7 +540,7 @@ limitations.</p></p>
 <h2>Pads a string to the number of characters specified</h2>
 <pre>pad(string $string, integer $pad_length, string $pad_string, string $pad_type) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -593,7 +565,7 @@ limitations.</p></p>
 <h2>Finds the first position (in characters) of the search value in the string</h2>
 <pre>pos(string $haystack, string $needle, integer $offset) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -614,11 +586,11 @@ limitations.</p></p>
 <h2>Replaces matching parts of the string</h2>
 <pre>replace(string $string, mixed $search, mixed $replace) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If <code>$search</code> and <code>$replace</code> are both arrays and <code>$replace</code> is shorter,
-the extra <code>$search</code> string will be replaced with an empty string. If
-<code>$search</code> is an array and <code>$replace</code> is a string, all <code>$search</code> values
-will be replaced with the string specified.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If `$search` and `$replace` are both arrays and `$replace` is shorter,
+the extra `$search` string will be replaced with an empty string. If
+`$search` is an array and `$replace` is a string, all `$search` values
+will be replaced with the string specified.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$string</h4>
@@ -636,23 +608,11 @@ will be replaced with the string specified.</p></p>
 <code>string</code>The input string with the specified replacements</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="rev" id="rev"></a><div class="element clickable method public rev" data-toggle="collapse" data-target=".rev .collapse">
 <h2>Reverses a string</h2>
 <pre>rev(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -667,7 +627,7 @@ will be replaced with the string specified.</p></p>
 <h2>Finds the last position (in characters) of the search value in the string</h2>
 <pre>rpos(string $haystack, string $needle, integer $offset) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -688,7 +648,7 @@ will be replaced with the string specified.</p></p>
 <h2>Trims whitespace, or any specified characters, from the end of a string</h2>
 <pre>rtrim(string $string, string $charlist) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -706,8 +666,8 @@ will be replaced with the string specified.</p></p>
 <h2>Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</h2>
 <pre>str(string $haystack, string $needle, boolean $before_needle) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Can optionally return the part of the haystack before the needle.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Can optionally return the part of the haystack before the needle.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$haystack</h4>
@@ -727,7 +687,7 @@ will be replaced with the string specified.</p></p>
 <h2>Extracts part of a string</h2>
 <pre>sub(string $string, integer $start, integer $length) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -749,7 +709,7 @@ will be replaced with the string specified.</p></p>
 <h2>Trims whitespace, or any specified characters, from the beginning and end of a string</h2>
 <pre>trim(string $string, string $charlist) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -767,7 +727,7 @@ will be replaced with the string specified.</p></p>
 <h2>Converts the first character of the string to uppercase.</h2>
 <pre>ucfirst(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -782,9 +742,9 @@ will be replaced with the string specified.</p></p>
 <h2>Converts the first character of every word to uppercase</h2>
 <pre>ucwords(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Words are considered to start at the beginning of the string, or after any
-whitespace character.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Words are considered to start at the beginning of the string, or after any
+whitespace character.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$string</h4>
@@ -798,7 +758,7 @@ whitespace character.</p></p>
 <h2>Converts all lowercase characters to uppercase</h2>
 <pre>upper(string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -813,7 +773,7 @@ whitespace character.</p></p>
 <h2>Wraps a string to a specific character width</h2>
 <pre>wordwrap(string $string, integer $width, string $break, boolean $cut) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -837,7 +797,7 @@ whitespace character.</p></p>
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fUTF8.html">\fUTF8</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fUTF8.html">\fUTF8</a></code></div>
@@ -847,13 +807,13 @@ whitespace character.</p></p>
 <h2>Checks to see if the [http://php.net/mbstring mbstring] extension is available</h2>
 <pre>checkMbString() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="convertOffsetToBytes" id="convertOffsetToBytes"></a><div class="element clickable method private convertOffsetToBytes" data-toggle="collapse" data-target=".convertOffsetToBytes .collapse">
 <h2>Converts an offset in characters to an offset in bytes to that we can use the built-in functions for some operations</h2>
 <pre>convertOffsetToBytes(string $string, integer $offset) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -871,7 +831,7 @@ whitespace character.</p></p>
 <h2>Detects if a UTF-8 string contains any non-ASCII characters</h2>
 <pre>detect(string $string) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -888,7 +848,7 @@ does not seem to properly assign the return value to a variable, but
 does work when returning the value.</h2>
 <pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -909,7 +869,7 @@ does work when returning the value.</h2>
 <h2>Handles converting a character to uppercase for ::ucwords()</h2>
 <pre>ucwordsCallback(array $match) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -927,54 +887,52 @@ does work when returning the value.</h2>
 <h2>Depending how things are compiled, NetBSD and Solaris don't support //IGNORE in iconv()</h2>
 <pre>$can_ignore_invalid : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>If //IGNORE support is not provided strings with invalid characters will be truncated</p></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description">If //IGNORE support is not provided strings with invalid characters will be truncated</p></div></div>
 </div>
 <a name="%24lower_to_upper" id="$lower_to_upper"> </a><div class="element clickable property private $lower_to_upper" data-toggle="collapse" data-target=".$lower_to_upper .collapse">
 <h2>All lowercase UTF-8 characters mapped to uppercase characters</h2>
 <pre>$lower_to_upper : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24mb_lower_to_upper_fix" id="$mb_lower_to_upper_fix"> </a><div class="element clickable property private $mb_lower_to_upper_fix" data-toggle="collapse" data-target=".$mb_lower_to_upper_fix .collapse">
 <h2>All lowercase UTF-8 characters not properly handled by [http://php.net/mb_strtoupper mb_strtoupper()] mapped to uppercase characters</h2>
 <pre>$mb_lower_to_upper_fix : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24mb_upper_to_lower_fix" id="$mb_upper_to_lower_fix"> </a><div class="element clickable property private $mb_upper_to_lower_fix" data-toggle="collapse" data-target=".$mb_upper_to_lower_fix .collapse">
 <h2>All uppercase UTF-8 characters not properly handled by [http://php.net/mb_strtolower mb_strtolower()] mapped to lowercase characters</h2>
 <pre>$mb_upper_to_lower_fix : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24mbstring_available" id="$mbstring_available"> </a><div class="element clickable property private $mbstring_available" data-toggle="collapse" data-target=".$mbstring_available .collapse">
 <h2>If the [http://php.net/mbstring mbstring] extension is available</h2>
 <pre>$mbstring_available : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24upper_to_lower" id="$upper_to_lower"> </a><div class="element clickable property private $upper_to_lower" data-toggle="collapse" data-target=".$upper_to_lower .collapse">
 <h2>All uppercase UTF-8 characters mapped to lowercase characters</h2>
 <pre>$upper_to_lower : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24utf8_to_ascii" id="$utf8_to_ascii"> </a><div class="element clickable property private $utf8_to_ascii" data-toggle="collapse" data-target=".$utf8_to_ascii .collapse">
 <h2>A mapping of all ASCII-based latin characters, puntuation, symbols and number forms to ASCII.</h2>
 <pre>$utf8_to_ascii : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Includes elements form the following unicode blocks:</p>
+<div class="row collapse"><div class="detail-description"><p class="long_description">Includes elements form the following unicode blocks:
 
-<ul>
-<li>Latin-1 Supplement</li>
-<li>Latin Extended-A</li>
-<li>Latin Extended-B</li>
-<li>IPA Extensions</li>
-<li>Latin Extended Additional</li>
-<li>General Punctuation</li>
-<li>Letterlike symbols</li>
-<li>Number Forms</li>
-</ul></p></div></div>
+ - Latin-1 Supplement
+ - Latin Extended-A
+ - Latin Extended-B
+ - IPA Extensions
+ - Latin Extended Additional
+ - General Punctuation
+ - Letterlike symbols
+ - Number Forms</p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -982,181 +940,181 @@ does work when returning the value.</h2>
 <h2>ascii</h2>
 <pre>ascii </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="chr" id="chr"> </a><div class="element clickable constant  chr" data-toggle="collapse" data-target=".chr .collapse">
 <h2>chr</h2>
 <pre>chr </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="clean" id="clean"> </a><div class="element clickable constant  clean" data-toggle="collapse" data-target=".clean .collapse">
 <h2>clean</h2>
 <pre>clean </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="cmp" id="cmp"> </a><div class="element clickable constant  cmp" data-toggle="collapse" data-target=".cmp .collapse">
 <h2>cmp</h2>
 <pre>cmp </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="explode" id="explode"> </a><div class="element clickable constant  explode" data-toggle="collapse" data-target=".explode .collapse">
 <h2>explode</h2>
 <pre>explode </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="icmp" id="icmp"> </a><div class="element clickable constant  icmp" data-toggle="collapse" data-target=".icmp .collapse">
 <h2>icmp</h2>
 <pre>icmp </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="inatcmp" id="inatcmp"> </a><div class="element clickable constant  inatcmp" data-toggle="collapse" data-target=".inatcmp .collapse">
 <h2>inatcmp</h2>
 <pre>inatcmp </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ipos" id="ipos"> </a><div class="element clickable constant  ipos" data-toggle="collapse" data-target=".ipos .collapse">
 <h2>ipos</h2>
 <pre>ipos </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ireplace" id="ireplace"> </a><div class="element clickable constant  ireplace" data-toggle="collapse" data-target=".ireplace .collapse">
 <h2>ireplace</h2>
 <pre>ireplace </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="irpos" id="irpos"> </a><div class="element clickable constant  irpos" data-toggle="collapse" data-target=".irpos .collapse">
 <h2>irpos</h2>
 <pre>irpos </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="istr" id="istr"> </a><div class="element clickable constant  istr" data-toggle="collapse" data-target=".istr .collapse">
 <h2>istr</h2>
 <pre>istr </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="len" id="len"> </a><div class="element clickable constant  len" data-toggle="collapse" data-target=".len .collapse">
 <h2>len</h2>
 <pre>len </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="lower" id="lower"> </a><div class="element clickable constant  lower" data-toggle="collapse" data-target=".lower .collapse">
 <h2>lower</h2>
 <pre>lower </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ltrim" id="ltrim"> </a><div class="element clickable constant  ltrim" data-toggle="collapse" data-target=".ltrim .collapse">
 <h2>ltrim</h2>
 <pre>ltrim </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="natcmp" id="natcmp"> </a><div class="element clickable constant  natcmp" data-toggle="collapse" data-target=".natcmp .collapse">
 <h2>natcmp</h2>
 <pre>natcmp </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ord" id="ord"> </a><div class="element clickable constant  ord" data-toggle="collapse" data-target=".ord .collapse">
 <h2>ord</h2>
 <pre>ord </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="pad" id="pad"> </a><div class="element clickable constant  pad" data-toggle="collapse" data-target=".pad .collapse">
 <h2>pad</h2>
 <pre>pad </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="pos" id="pos"> </a><div class="element clickable constant  pos" data-toggle="collapse" data-target=".pos .collapse">
 <h2>pos</h2>
 <pre>pos </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="replace" id="replace"> </a><div class="element clickable constant  replace" data-toggle="collapse" data-target=".replace .collapse">
 <h2>replace</h2>
 <pre>replace </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="rev" id="rev"> </a><div class="element clickable constant  rev" data-toggle="collapse" data-target=".rev .collapse">
 <h2>rev</h2>
 <pre>rev </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="rpos" id="rpos"> </a><div class="element clickable constant  rpos" data-toggle="collapse" data-target=".rpos .collapse">
 <h2>rpos</h2>
 <pre>rpos </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="rtrim" id="rtrim"> </a><div class="element clickable constant  rtrim" data-toggle="collapse" data-target=".rtrim .collapse">
 <h2>rtrim</h2>
 <pre>rtrim </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="str" id="str"> </a><div class="element clickable constant  str" data-toggle="collapse" data-target=".str .collapse">
 <h2>str</h2>
 <pre>str </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="sub" id="sub"> </a><div class="element clickable constant  sub" data-toggle="collapse" data-target=".sub .collapse">
 <h2>sub</h2>
 <pre>sub </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="trim" id="trim"> </a><div class="element clickable constant  trim" data-toggle="collapse" data-target=".trim .collapse">
 <h2>trim</h2>
 <pre>trim </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ucfirst" id="ucfirst"> </a><div class="element clickable constant  ucfirst" data-toggle="collapse" data-target=".ucfirst .collapse">
 <h2>ucfirst</h2>
 <pre>ucfirst </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ucwords" id="ucwords"> </a><div class="element clickable constant  ucwords" data-toggle="collapse" data-target=".ucwords .collapse">
 <h2>ucwords</h2>
 <pre>ucwords </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="upper" id="upper"> </a><div class="element clickable constant  upper" data-toggle="collapse" data-target=".upper .collapse">
 <h2>upper</h2>
 <pre>upper </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="wordwrap" id="wordwrap"> </a><div class="element clickable constant  wordwrap" data-toggle="collapse" data-target=".wordwrap .collapse">
 <h2>wordwrap</h2>
 <pre>wordwrap </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1164,8 +1122,8 @@ does work when returning the value.</h2>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

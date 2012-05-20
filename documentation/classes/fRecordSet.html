@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,9 +59,7 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__call" title="__call :: Allows for preloading various data related to the record set in single database queries, as opposed to one query per record"><span class="description">Allows for preloading various data related to the record set in single database queries, as opposed to one query per record</span><pre>__call()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#build" title="build :: Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules"><span class="description">Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules</span><pre>build()</pre></a></li>
-<li class="method public "><a href="#buildFromArray" title="buildFromArray :: Creates an fRecordSet from an array of records"><span class="description">Creates an fRecordSet from an array of records</span><pre>buildFromArray()</pre></a></li>
 <li class="method public "><a href="#buildFromCall" title="buildFromCall :: Calls a specific method on each object, returning an fRecordSet of the results"><span class="description">Calls a specific method on each object, returning an fRecordSet of the results</span><pre>buildFromCall()</pre></a></li>
 <li class="method public "><a href="#buildFromMap" title="buildFromMap :: Maps each record in the set to a callback function, returning an fRecordSet of the results"><span class="description">Maps each record in the set to a callback function, returning an fRecordSet of the results</span><pre>buildFromMap()</pre></a></li>
 <li class="method public "><a href="#buildFromSQL" title="buildFromSQL :: Creates an fRecordSet from an SQL statement"><span class="description">Creates an fRecordSet from an SQL statement</span><pre>buildFromSQL()</pre></a></li>
@@ -72,7 +70,6 @@
 <li class="method public "><a href="#diff" title="diff :: Removes all passed records from the current record set"><span class="description">Removes all passed records from the current record set</span><pre>diff()</pre></a></li>
 <li class="method public "><a href="#filter" title="filter :: Filters the records in the record set via a callback"><span class="description">Filters the records in the record set via a callback</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#getClass" title="getClass :: Returns the class name of the record being stored"><span class="description">Returns the class name of the record being stored</span><pre>getClass()</pre></a></li>
-<li class="method public "><a href="#getIterator" title="getIterator :: Returns an iterator for the record set"><span class="description">Returns an iterator for the record set</span><pre>getIterator()</pre></a></li>
 <li class="method public "><a href="#getLimit" title="getLimit :: Returns the number of records the set was limited to"><span class="description">Returns the number of records the set was limited to</span><pre>getLimit()</pre></a></li>
 <li class="method public "><a href="#getPage" title="getPage :: Returns the page of records this set represents"><span class="description">Returns the page of records this set represents</span><pre>getPage()</pre></a></li>
 <li class="method public "><a href="#getPages" title="getPages :: Returns the number of pages of records exist for the limit used when creating this set"><span class="description">Returns the number of pages of records exist for the limit used when creating this set</span><pre>getPages()</pre></a></li>
@@ -82,10 +79,6 @@
 <li class="method public "><a href="#intersect" title="intersect :: Returns all records in the current record set that are also present in the passed records"><span class="description">Returns all records in the current record set that are also present in the passed records</span><pre>intersect()</pre></a></li>
 <li class="method public "><a href="#map" title="map :: Performs an [http://php.net/array_map array_map()] on the record in the set"><span class="description">Performs an [http://php.net/array_map array_map()] on the record in the set</span><pre>map()</pre></a></li>
 <li class="method public "><a href="#merge" title="merge :: Merges the record set with more records"><span class="description">Merges the record set with more records</span><pre>merge()</pre></a></li>
-<li class="method public "><a href="#offsetExists" title="offsetExists :: Checks to see if an offset exists"><span class="description">Checks to see if an offset exists</span><pre>offsetExists()</pre></a></li>
-<li class="method public "><a href="#offsetGet" title="offsetGet :: Returns a record based on the offset"><span class="description">Returns a record based on the offset</span><pre>offsetGet()</pre></a></li>
-<li class="method public "><a href="#offsetSet" title="offsetSet :: Prevents setting values to the record set"><span class="description">Prevents setting values to the record set</span><pre>offsetSet()</pre></a></li>
-<li class="method public "><a href="#offsetUnset" title="offsetUnset :: Prevents unsetting values from the record set"><span class="description">Prevents unsetting values from the record set</span><pre>offsetUnset()</pre></a></li>
 <li class="method public "><a href="#reduce" title="reduce :: Reduces the record set to a single value via a callback"><span class="description">Reduces the record set to a single value via a callback</span><pre>reduce()</pre></a></li>
 <li class="method public "><a href="#slice" title="slice :: Slices a section of records from the set and returns a new set containing those"><span class="description">Slices a section of records from the set and returns a new set containing those</span><pre>slice()</pre></a></li>
 <li class="method public "><a href="#sort" title="sort :: Sorts the set by the return value of a method from the class created and rewind the interator"><span class="description">Sorts the set by the return value of a method from the class created and rewind the interator</span><pre>sort()</pre></a></li>
@@ -121,7 +114,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfRecordSet" id="\fRecordSet"></a><div href="../classes/fRecordSet.html" class="element class">
+<a name="%5CfRecordSet" id="\fRecordSet"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fRecordSet.html">fRecordSet</a>
+</li>
+</ul>
+<div href="../classes/fRecordSet.html" class="element class">
 <p class="short_description">A lightweight, iterable set of fActiveRecord-based objects</p>
 <div class="details">
 <p class="long_description"></p>
@@ -140,7 +142,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -337,18 +339,18 @@
 <h2>Allows for preloading various data related to the record set in single database queries, as opposed to one query per record</h2>
 <pre>__call(string $method_name, string $parameters) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method will handle methods in the format <code>verbRelatedRecords()</code> for
-the verbs <code>build</code>, <code>prebuild</code>, <code>precount</code> and <code>precreate</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method will handle methods in the format `verbRelatedRecords()` for
+the verbs `build`, `prebuild`, `precount` and `precreate`.
 
-<p><code>build</code> calls <code>create{RelatedClass}()</code> on each record in the set and
+`build` calls `create{RelatedClass}()` on each record in the set and
 returns the result as a new record set. The relationship route can be
-passed as an optional parameter.</p>
+passed as an optional parameter.
 
-<p><code>prebuild</code> builds *-to-many record sets for all records in the record
-set. <code>precount</code> will count records in *-to-many record sets for every
-record in the record set. <code>precreate</code> will create a *-to-one record
-for every record in the record set.</p></p>
+`prebuild` builds *-to-many record sets for all records in the record
+set. `precount` will count records in *-to-many record sets for every
+record in the record set. `precreate` will create a *-to-one record
+for every record in the record set.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$method_name</h4>
@@ -358,90 +360,71 @@ for every record in the record set.</p></p>
 <code>string</code><p>The parameters passed</p></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="build" id="build"></a><div class="element clickable method public build" data-toggle="collapse" data-target=".build .collapse">
 <h2>Creates an fRecordSet by specifying the class to create plus the where conditions and order by rules</h2>
 <pre>build(string $class, array $where_conditions, array $order_bys, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The where conditions array can contain <code>key =&gt; value</code> entries in any of
-the following formats:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The where conditions array can contain `key => value` entries in any of
+the following formats:
 
-<p>{{{
+{{{
 'column='                    => VALUE,                       // column = VALUE
-'column!'                    => VALUE                        // column &lt;> VALUE
-'column!='                   => VALUE                        // column &lt;> VALUE
-'column&lt;>'                   => VALUE                        // column &lt;> VALUE
+'column!'                    => VALUE                        // column <> VALUE
+'column!='                   => VALUE                        // column <> VALUE
+'column<>'                   => VALUE                        // column <> VALUE
 'column~'                    => VALUE                        // column LIKE '%VALUE%'
 'column^~'                   => VALUE                        // column LIKE 'VALUE%'
 'column$~'                   => VALUE                        // column LIKE '%VALUE'
 'column!~'                   => VALUE                        // column NOT LIKE '%VALUE%'
-'column&lt;'                    => VALUE                        // column &lt; VALUE
-'column&lt;='                   => VALUE                        // column &lt;= VALUE
+'column<'                    => VALUE                        // column < VALUE
+'column<='                   => VALUE                        // column <= VALUE
 'column>'                    => VALUE                        // column > VALUE
 'column>='                   => VALUE                        // column >= VALUE
 'column=:'                   => 'other_column'               // column = other_column
-'column!:'                   => 'other_column'               // column &lt;> other_column
-'column!=:'                  => 'other_column'               // column &lt;> other_column
-'column&lt;>:'                  => 'other_column'               // column &lt;> other_column
-'column&lt;:'                   => 'other_column'               // column &lt; other_column
-'column&lt;=:'                  => 'other_column'               // column &lt;= other_column
+'column!:'                   => 'other_column'               // column <> other_column
+'column!=:'                  => 'other_column'               // column <> other_column
+'column<>:'                  => 'other_column'               // column <> other_column
+'column<:'                   => 'other_column'               // column < other_column
+'column<=:'                  => 'other_column'               // column <= other_column
 'column>:'                   => 'other_column'               // column > other_column
 'column>=:'                  => 'other_column'               // column >= other_column
 'column='                    => array(VALUE, VALUE2, ... )   // column IN (VALUE, VALUE2, ... )
 'column!'                    => array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )
 'column!='                   => array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )
-'column&lt;>'                   => array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )
+'column<>'                   => array(VALUE, VALUE2, ... )   // column NOT IN (VALUE, VALUE2, ... )
 'column~'                    => array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE%' OR column LIKE '%VALUE2%' OR column ... )
 'column^~'                   => array(VALUE, VALUE2, ... )   // (column LIKE 'VALUE%' OR column LIKE 'VALUE2%' OR column ... )
 'column$~'                   => array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE' OR column LIKE '%VALUE2' OR column ... )
-'column&amp;~'                   => array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE%' AND column LIKE '%VALUE2%' AND column ... )
+'column&~'                   => array(VALUE, VALUE2, ... )   // (column LIKE '%VALUE%' AND column LIKE '%VALUE2%' AND column ... )
 'column!~'                   => array(VALUE, VALUE2, ... )   // (column NOT LIKE '%VALUE%' AND column NOT LIKE '%VALUE2%' AND column ... )
-'column!|column2&lt;|column3='  => array(VALUE, VALUE2, VALUE3) // (column &lt;> '%VALUE%' OR column2 &lt; '%VALUE2%' OR column3 = '%VALUE3%')
-'column|column2>&lt;'           => array(VALUE, VALUE2)         // WHEN VALUE === NULL: ((column2 IS NULL AND column = VALUE) OR (column2 IS NOT NULL AND column &lt;= VALUE AND column2 >= VALUE))
-                                                             // WHEN VALUE !== NULL: ((column &lt;= VALUE AND column2 >= VALUE) OR (column >= VALUE AND column &lt;= VALUE2))
+'column!|column2<|column3='  => array(VALUE, VALUE2, VALUE3) // (column <> '%VALUE%' OR column2 < '%VALUE2%' OR column3 = '%VALUE3%')
+'column|column2><'           => array(VALUE, VALUE2)         // WHEN VALUE === NULL: ((column2 IS NULL AND column = VALUE) OR (column2 IS NOT NULL AND column <= VALUE AND column2 >= VALUE))
+                                                             // WHEN VALUE !== NULL: ((column <= VALUE AND column2 >= VALUE) OR (column >= VALUE AND column <= VALUE2))
 'column|column2|column3~'    => VALUE                        // (column LIKE '%VALUE%' OR column2 LIKE '%VALUE%' OR column3 LIKE '%VALUE%')
 'column|column2|column3~'    => array(VALUE, VALUE2, ... )   // ((column LIKE '%VALUE%' OR column2 LIKE '%VALUE%' OR column3 LIKE '%VALUE%') AND (column LIKE '%VALUE2%' OR column2 LIKE '%VALUE2%' OR column3 LIKE '%VALUE2%') AND ... )
-}}}</p>
+}}}
 
-<p>When creating a condition in the form <code>column|column2|column3~</code>, if the
+When creating a condition in the form `column|column2|column3~`, if the
 value for the condition is a single string that contains spaces, the
 string will be parsed for search terms. The search term parsing will
 handle quoted phrases and normal words and will strip punctuation and
-stop words (such as "the" and "a").</p>
+stop words (such as "the" and "a").
 
-<p>The order bys array can contain <code>key =&gt; value</code> entries in any of the
-following formats:</p>
+The order bys array can contain `key => value` entries in any of the
+following formats:
 
-<p>{{{
+{{{
 'column'     => 'asc'      // 'first_name' => 'asc'
 'column'     => 'desc'     // 'last_name'  => 'desc'
 'expression' => 'asc'      // "CASE first_name WHEN 'smith' THEN 1 ELSE 2 END" => 'asc'
 'expression' => 'desc'     // "CASE first_name WHEN 'smith' THEN 1 ELSE 2 END" => 'desc'
-}}}</p>
+}}}
 
-<p>The column in both the where conditions and order bys can be in any of
-the formats:</p>
+The column in both the where conditions and order bys can be in any of
+the formats:
 
-<p>{{{
+{{{
 'column'                                                         // e.g. 'first_name'
 'current_table.column'                                           // e.g. 'users.first_name'
 'related_table.column'                                           // e.g. 'user_groups.name'
@@ -451,52 +434,50 @@ the formats:</p>
 'related_table=>once_removed_related_table{route}.column'        // e.g. 'user_groups=>permissions{read}.level'
 'related_table{route}=>once_removed_related_table{route}.column' // e.g. 'user_groups{user_group_id}=>permissions{read}.level'
 'column||other_column'                                           // e.g. 'first_name||last_name' - this concatenates the column values
-}}}</p>
+}}}
 
-<p>In addition to using plain column names for where conditions, it is also
+In addition to using plain column names for where conditions, it is also
 possible to pass an aggregate function wrapped around a column in place
 of a column name, but only for certain comparison types. //Note that for
-column comparisons, the function may be placed on either column or both.//</p>
+column comparisons, the function may be placed on either column or both.//
 
-<p>{{{
+{{{
 'function(column)='   => VALUE,                       // function(column) = VALUE
-'function(column)!'   => VALUE                        // function(column) &lt;> VALUE
-'function(column)!=   => VALUE                        // function(column) &lt;> VALUE
-'function(column)&lt;>'  => VALUE                        // function(column) &lt;> VALUE
+'function(column)!'   => VALUE                        // function(column) <> VALUE
+'function(column)!=   => VALUE                        // function(column) <> VALUE
+'function(column)<>'  => VALUE                        // function(column) <> VALUE
 'function(column)~'   => VALUE                        // function(column) LIKE '%VALUE%'
 'function(column)^~'  => VALUE                        // function(column) LIKE 'VALUE%'
 'function(column)$~'  => VALUE                        // function(column) LIKE '%VALUE'
 'function(column)!~'  => VALUE                        // function(column) NOT LIKE '%VALUE%'
-'function(column)&lt;'   => VALUE                        // function(column) &lt; VALUE
-'function(column)&lt;='  => VALUE                        // function(column) &lt;= VALUE
+'function(column)<'   => VALUE                        // function(column) < VALUE
+'function(column)<='  => VALUE                        // function(column) <= VALUE
 'function(column)>'   => VALUE                        // function(column) > VALUE
 'function(column)>='  => VALUE                        // function(column) >= VALUE
 'function(column)=:'  => 'other_column'               // function(column) = other_column
-'function(column)!:'  => 'other_column'               // function(column) &lt;> other_column
-'function(column)!=:' => 'other_column'               // function(column) &lt;> other_column
-'function(column)&lt;>:' => 'other_column'               // function(column) &lt;> other_column
-'function(column)&lt;:'  => 'other_column'               // function(column) &lt; other_column
-'function(column)&lt;=:' => 'other_column'               // function(column) &lt;= other_column
+'function(column)!:'  => 'other_column'               // function(column) <> other_column
+'function(column)!=:' => 'other_column'               // function(column) <> other_column
+'function(column)<>:' => 'other_column'               // function(column) <> other_column
+'function(column)<:'  => 'other_column'               // function(column) < other_column
+'function(column)<=:' => 'other_column'               // function(column) <= other_column
 'function(column)>:'  => 'other_column'               // function(column) > other_column
 'function(column)>=:' => 'other_column'               // function(column) >= other_column
 'function(column)='   => array(VALUE, VALUE2, ... )   // function(column) IN (VALUE, VALUE2, ... )
 'function(column)!'   => array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )
 'function(column)!='  => array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )
-'function(column)&lt;>'  => array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )
-}}}</p>
+'function(column)<>'  => array(VALUE, VALUE2, ... )   // function(column) NOT IN (VALUE, VALUE2, ... )
+}}}
 
-<p>The aggregate functions <code>AVG()</code>, <code>COUNT()</code>, <code>MAX()</code>, <code>MIN()</code> and
-<code>SUM()</code> are supported across all database types.</p>
+The aggregate functions `AVG()`, `COUNT()`, `MAX()`, `MIN()` and
+`SUM()` are supported across all database types.
 
-<p>Below is an example of using where conditions and order bys. Please note
-that values should <strong>not</strong> be escaped for the database, but should just
-be normal PHP values.</p>
+Below is an example of using where conditions and order bys. Please note
+that values should **not** be escaped for the database, but should just
+be normal PHP values.
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>return fRecordSet::build(
+{{{
+#!php
+return fRecordSet::build(
     'User',
     array(
         'first_name='      => 'John',
@@ -508,7 +489,7 @@ be normal PHP values.</p>
         'date_joined' => 'desc'
     )
 );
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -532,45 +513,11 @@ be normal PHP values.</p>
 <code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>A set of fActiveRecord objects</div>
 </div></div>
 </div>
-<a name="buildFromArray" id="buildFromArray"></a><div class="element clickable method public buildFromArray" data-toggle="collapse" data-target=".buildFromArray .collapse">
-<h2>Creates an fRecordSet from an array of records</h2>
-<pre>buildFromArray(string | array $class, array $records, integer $total_records, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>stringarray</code><p>The class or classes of the records</p></div>
-<div class="subelement argument">
-<h4>$records</h4>
-<code>array</code><p>The records to create the set from, the order of the record set will be the same as the order of the array.</p></div>
-<div class="subelement argument">
-<h4>$total_records</h4>
-<code>integer</code><p>The total number of records - this should only be provided if the array is a segment of a larger array - this is informational only and does not affect the array</p>
-</div>
-<div class="subelement argument">
-<h4>$limit</h4>
-<code>integer</code><p>The maximum number of records the array was limited to - this is informational only and does not affect the array</p>
-</div>
-<div class="subelement argument">
-<h4>$page</h4>
-<code>integer</code><p>The page of records the array is from - this is informational only and does not affect the array</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>A set of fActiveRecord objects</div>
-</div></div>
-</div>
 <a name="buildFromCall" id="buildFromCall"></a><div class="element clickable method public buildFromCall" data-toggle="collapse" data-target=".buildFromCall .collapse">
 <h2>Calls a specific method on each object, returning an fRecordSet of the results</h2>
 <pre>buildFromCall(string $method) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -585,7 +532,7 @@ be normal PHP values.</p>
 <h2>Maps each record in the set to a callback function, returning an fRecordSet of the results</h2>
 <pre>buildFromMap(callback $callback) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -600,63 +547,55 @@ be normal PHP values.</p>
 <h2>Creates an fRecordSet from an SQL statement</h2>
 <pre>buildFromSQL(string $class, string | array $sql, string | array $non_limited_count_sql, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The SQL statement should select all columns from a single table with a *
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The SQL statement should select all columns from a single table with a *
 pattern since that is what an fActiveRecord models. If any columns are
 left out or added, strange error may happen when loading or saving
-records.</p>
+records.
 
-<p>Here is an example of an appropriate SQL statement:</p>
+Here is an example of an appropriate SQL statement:
 
-<p>{{{</p>
+{{{
+#!sql
+SELECT users.* FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.name = 'Public'
+}}}
 
-<h1>!sql</h1>
+Here is an example of a SQL statement that will cause errors:
 
-<p>SELECT users.* FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.name = 'Public'
-}}}</p>
+{{{
+#!sql
+SELECT users.*, groups.name FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.group_id = 2
+}}}
 
-<p>Here is an example of a SQL statement that will cause errors:</p>
+The `$non_limited_count_sql` should only be passed when the `$sql`
+contains a `LIMIT` clause and should contain a count of the records when
+a `LIMIT` is not imposed.
 
-<p>{{{</p>
+Here is an example of a `$sql` statement with a `LIMIT` clause and a
+corresponding `$non_limited_count_sql`:
 
-<h1>!sql</h1>
+{{{
+#!php
+fRecordSet::buildFromSQL('User', 'SELECT * FROM users LIMIT 5', 'SELECT count(*) FROM users');
+}}}
 
-<p>SELECT users.*, groups.name FROM users INNER JOIN groups ON users.group_id = groups.group_id WHERE groups.group_id = 2
-}}}</p>
+The `$non_limited_count_sql` is used when ::count() is called with `TRUE`
+passed as the parameter.
 
-<p>The <code>$non_limited_count_sql</code> should only be passed when the <code>$sql</code>
-contains a <code>LIMIT</code> clause and should contain a count of the records when
-a <code>LIMIT</code> is not imposed.</p>
-
-<p>Here is an example of a <code>$sql</code> statement with a <code>LIMIT</code> clause and a
-corresponding <code>$non_limited_count_sql</code>:</p>
-
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>fRecordSet::buildFromSQL('User', 'SELECT * FROM users LIMIT 5', 'SELECT count(*) FROM users');
-}}}</p>
-
-<p>The <code>$non_limited_count_sql</code> is used when ::count() is called with <code>TRUE</code>
-passed as the parameter.</p>
-
-<p>Both the <code>$sql</code> and <code>$non_limited_count_sql</code> can be passed as a string
+Both the `$sql` and `$non_limited_count_sql` can be passed as a string
 SQL statement, or an array containing a SQL statement and the values to
-escape into it:</p>
+escape into it:
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>fRecordSet::buildFromSQL(
+{{{
+#!php
+fRecordSet::buildFromSQL(
     'User',
     array("SELECT * FROM users WHERE date_created > %d LIMIT %i OFFSET %i", $start_date, 10, 10*($page-1)),
     array("SELECT * FROM users WHERE date_created > %d", $start_date),
     10,
     $page
 )
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -685,7 +624,7 @@ escape into it:</p>
 <h2>Calls a specific method on each object, returning an array of the results</h2>
 <pre>call(string $method) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -700,9 +639,9 @@ escape into it:</p>
 <h2>Chunks the record set into an array of fRecordSet objects</h2>
 <pre>chunk(integer $number) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Each fRecordSet would contain <code>$number</code> records, except for the last,
-which will contain between 1 and <code>$number</code> records.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Each fRecordSet would contain `$number` records, except for the last,
+which will contain between 1 and `$number` records.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$number</h4>
@@ -716,7 +655,7 @@ which will contain between 1 and <code>$number</code> records.</p></p>
 <h2>Checks if the record set contains the record specified</h2>
 <pre>contains(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $record) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -731,7 +670,7 @@ which will contain between 1 and <code>$number</code> records.</p></p>
 <h2>Returns the number of records in the set</h2>
 <pre>count(boolean $ignore_limit) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -747,7 +686,7 @@ which will contain between 1 and <code>$number</code> records.</p></p>
 <h2>Removes all passed records from the current record set</h2>
 <pre>diff(<a href="../classes/fRecordSet.html">\fRecordSet</a> | array | <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $records, boolean $remember_original_count) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -766,54 +705,52 @@ which will contain between 1 and <code>$number</code> records.</p></p>
 <h2>Filters the records in the record set via a callback</h2>
 <pre>filter(callback | string | array $procedure, boolean $remember_original_count) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$callback</code> parameter can be one of three different forms to filter
-the records in the set:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$callback` parameter can be one of three different forms to filter
+the records in the set:
 
-<ul>
-<li>A callback that accepts a single record and returns <code>FALSE</code> if it should be removed</li>
-<li>A psuedo-callback in the form <code>'{record}::methodName'</code> to filter out any records where the output of <code>$record-&gt;methodName()</code> is equivalent to <code>FALSE</code></li>
-<li>A conditions array that will remove any records that don't meet all of the conditions</li>
-</ul>
+ - A callback that accepts a single record and returns `FALSE` if it should be removed
+ - A psuedo-callback in the form `'{record}::methodName'` to filter out any records where the output of `$record->methodName()` is equivalent to `FALSE`
+ - A conditions array that will remove any records that don't meet all of the conditions
 
-<p>The conditions array can use one or more of the following <code>key =&gt; value</code>
+The conditions array can use one or more of the following `key => value`
 syntaxes to perform various comparisons. The array keys are method
-names followed by a comparison operator.</p>
+names followed by a comparison operator.
 
-<p>{{{
+{{{
 // The following forms work for any $value that is not an array
 'methodName='                           => $value  // If the output is equal to $value
 'methodName!'                           => $value  // If the output is not equal to $value
 'methodName!='                          => $value  // If the output is not equal to $value
-'methodName&lt;>'                          => $value  // If the output is not equal to $value
-'methodName&lt;'                           => $value  // If the output is less than $value
-'methodName&lt;='                          => $value  // If the output is less than or equal to $value
+'methodName<>'                          => $value  // If the output is not equal to $value
+'methodName<'                           => $value  // If the output is less than $value
+'methodName<='                          => $value  // If the output is less than or equal to $value
 'methodName>'                           => $value  // If the output is greater than $value
 'methodName>='                          => $value  // If the output is greater than or equal to $value
 'methodName~'                           => $value  // If the output contains the $value (case insensitive)
 'methodName^~'                          => $value  // If the output starts with the $value (case insensitive)
 'methodName$~'                          => $value  // If the output ends with the $value (case insensitive)
 'methodName!~'                          => $value  // If the output does not contain the $value (case insensitive)
-'methodName|methodName2|methodName3~'   => $value  // Parses $value as a search string and make sure each term is present in at least one output (case insensitive)</p>
+'methodName|methodName2|methodName3~'   => $value  // Parses $value as a search string and make sure each term is present in at least one output (case insensitive)
 
-<p>// The following forms work for any $array that is an array
+// The following forms work for any $array that is an array
 'methodName='                           => $array  // If the output is equal to at least one value in $array
 'methodName!'                           => $array  // If the output is not equal to any value in $array
 'methodName!='                          => $array  // If the output is not equal to any value in $array
-'methodName&lt;>'                          => $array  // If the output is not equal to any value in $array
+'methodName<>'                          => $array  // If the output is not equal to any value in $array
 'methodName~'                           => $array  // If the output contains one of the strings in $array (case insensitive)
 'methodName^~'                          => $array  // If the output starts with one of the strings in $array (case insensitive)
 'methodName$~'                          => $array  // If the output ends with one of the strings in $array (case insensitive)
 'methodName!~'                          => $array  // If the output contains none of the strings in $array (case insensitive)
-'methodName&amp;~'                          => $array  // If the output contains all of the strings in $array (case insensitive)
-'methodName|methodName2|methodName3~'   => $array  // If each value in the array is present in the output of at least one method (case insensitive)</p>
+'methodName&~'                          => $array  // If the output contains all of the strings in $array (case insensitive)
+'methodName|methodName2|methodName3~'   => $array  // If each value in the array is present in the output of at least one method (case insensitive)
 
-<p>// The following works for an equal number of methods and values in the array
-'methodName!|methodName2&lt;|methodName3=' => array($value, $value2, $value3) // An OR statement - one of the method to value comparisons must be TRUE</p>
+// The following works for an equal number of methods and values in the array
+'methodName!|methodName2<|methodName3=' => array($value, $value2, $value3) // An OR statement - one of the method to value comparisons must be TRUE
 
-<p>// The following accepts exactly two methods and two values, although the second value may be NULL
-'methodName|methodName2>&lt;'              => array($value, $value2) // If the range of values from the methods intersects the range of $value and $value2 - should be dates, times, timestamps or numbers
-}}}</p></p>
+// The following accepts exactly two methods and two values, although the second value may be NULL
+'methodName|methodName2><'              => array($value, $value2) // If the range of values from the methods intersects the range of $value and $value2 - should be dates, times, timestamps or numbers
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$procedure</h4>
@@ -832,33 +769,18 @@ names followed by a comparison operator.</p>
 <h2>Returns the class name of the record being stored</h2>
 <pre>getClass() : string | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code><code>array</code>The class name(s) of the records in the set</div>
 </div></div>
 </div>
-<a name="getIterator" id="getIterator"></a><div class="element clickable method public getIterator" data-toggle="collapse" data-target=".getIterator .collapse">
-<h2>Returns an iterator for the record set</h2>
-<pre>getIterator() : <a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is required by the IteratorAggregate interface.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="http://php.net/manual/en/class.arrayiterator.php">\ArrayIterator</a></code>An iterator for the record set</div>
-</div></div>
-</div>
 <a name="getLimit" id="getLimit"></a><div class="element clickable method public getLimit" data-toggle="collapse" data-target=".getLimit .collapse">
 <h2>Returns the number of records the set was limited to</h2>
 <pre>getLimit() : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -869,7 +791,7 @@ names followed by a comparison operator.</p>
 <h2>Returns the page of records this set represents</h2>
 <pre>getPage() : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -880,7 +802,7 @@ names followed by a comparison operator.</p>
 <h2>Returns the number of pages of records exist for the limit used when creating this set</h2>
 <pre>getPages() : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -891,7 +813,7 @@ names followed by a comparison operator.</p>
 <h2>Returns the primary keys for all of the records in the set</h2>
 <pre>getPrimaryKeys() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -902,7 +824,7 @@ names followed by a comparison operator.</p>
 <h2>Returns the record at the zero-based index specified</h2>
 <pre>getRecord(integer $index) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -922,7 +844,7 @@ names followed by a comparison operator.</p>
 <h2>Returns all of the records in the set</h2>
 <pre>getRecords() : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -933,7 +855,7 @@ names followed by a comparison operator.</p>
 <h2>Returns all records in the current record set that are also present in the passed records</h2>
 <pre>intersect(<a href="../classes/fRecordSet.html">\fRecordSet</a> | array | <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $records, boolean $remember_original_count) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -952,29 +874,27 @@ names followed by a comparison operator.</p>
 <h2>Performs an [http://php.net/array_map array_map()] on the record in the set</h2>
 <pre>map(callback $callback) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The record will be passed to the callback as the first parameter unless
-it's position is specified by the placeholder string <code>'{record}'</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The record will be passed to the callback as the first parameter unless
+it's position is specified by the placeholder string `'{record}'`.
 
-<p>Additional parameters can be passed to the callback in one of two
-different ways:</p>
+Additional parameters can be passed to the callback in one of two
+different ways:
 
-<ul>
-<li>Passing a non-array value will cause it to be passed to the callback</li>
-<li>Passing an array value will cause the array values to be passed to the callback with their corresponding record</li>
-</ul>
+ - Passing a non-array value will cause it to be passed to the callback
+ - Passing an array value will cause the array values to be passed to the callback with their corresponding record
 
-<p>If an array parameter is too long (more items than records in the set)
+If an array parameter is too long (more items than records in the set)
 it will be truncated. If an array parameter is too short (less items
-than records in the set) it will be padded with <code>NULL</code> values.</p>
+than records in the set) it will be padded with `NULL` values.
 
-<p>To allow passing the record as a specific parameter to the callback, a
-placeholder string <code>'{record}'</code> will be replaced with a the record. It
-is also possible to specify <code>'{record}::methodName'</code> to cause the output
-of a method from the record to be passed instead of the whole record.</p>
+To allow passing the record as a specific parameter to the callback, a
+placeholder string `'{record}'` will be replaced with a the record. It
+is also possible to specify `'{record}::methodName'` to cause the output
+of a method from the record to be passed instead of the whole record.
 
-<p>It is also possible to pass the zero-based record index to the callback
-by passing a parameter that contains <code>'{index}'</code>.</p></p>
+It is also possible to pass the zero-based record index to the callback
+by passing a parameter that contains `'{index}'`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$callback</h4>
@@ -988,7 +908,7 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h2>Merges the record set with more records</h2>
 <pre>merge(<a href="../classes/fRecordSet.html">\fRecordSet</a> | array | <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $records) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1000,95 +920,15 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <code><a href="../classes/fRecordSet.html">\fRecordSet</a></code>The merged record sets</div>
 </div></div>
 </div>
-<a name="offsetExists" id="offsetExists"></a><div class="element clickable method public offsetExists" data-toggle="collapse" data-target=".offsetExists .collapse">
-<h2>Checks to see if an offset exists</h2>
-<pre>offsetExists(mixed $offset) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>mixed</code><p>The offset to check</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the offset exists</div>
-</div></div>
-</div>
-<a name="offsetGet" id="offsetGet"></a><div class="element clickable method public offsetGet" data-toggle="collapse" data-target=".offsetGet .collapse">
-<h2>Returns a record based on the offset</h2>
-<pre>offsetGet(mixed $offset) : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>mixed</code><p>The offset of the record to get</p></div>
-<h3>Exceptions</h3>
-<table class="table table-bordered"><tr>
-<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
-<td>When the offset specified is beyond the last record</td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code>The requested record</div>
-</div></div>
-</div>
-<a name="offsetSet" id="offsetSet"></a><div class="element clickable method public offsetSet" data-toggle="collapse" data-target=".offsetSet .collapse">
-<h2>Prevents setting values to the record set</h2>
-<pre>offsetSet(mixed $offset, mixed $value) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>mixed</code><p>The offset to set</p></div>
-<div class="subelement argument">
-<h4>$value</h4>
-<code>mixed</code><p>The value to set to the offset</p></div>
-</div></div>
-</div>
-<a name="offsetUnset" id="offsetUnset"></a><div class="element clickable method public offsetUnset" data-toggle="collapse" data-target=".offsetUnset .collapse">
-<h2>Prevents unsetting values from the record set</h2>
-<pre>offsetUnset(mixed $offset) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is required by the ArrayAccess interface.</p></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$offset</h4>
-<code>mixed</code><p>The offset to unset</p></div>
-</div></div>
-</div>
 <a name="reduce" id="reduce"></a><div class="element clickable method public reduce" data-toggle="collapse" data-target=".reduce .collapse">
 <h2>Reduces the record set to a single value via a callback</h2>
 <pre>reduce(callback $callback, mixed $initial_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The callback should take two parameters and return a single value:</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The callback should take two parameters and return a single value:
 
-<ul>
-<li>The initial value and the first record for the first call</li>
-<li>The result of the last call plus the next record for the second and subsequent calls</li>
-</ul></p>
+ - The initial value and the first record for the first call
+ - The result of the last call plus the next record for the second and subsequent calls</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$callback</h4>
@@ -1106,7 +946,7 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h2>Slices a section of records from the set and returns a new set containing those</h2>
 <pre>slice(integer $offset, integer $length, boolean $remember_original_count) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1129,8 +969,8 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h2>Sorts the set by the return value of a method from the class created and rewind the interator</h2>
 <pre>sort(string $method, string $direction) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This methods uses fUTF8::inatcmp() to perform comparisons.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This methods uses fUTF8::inatcmp() to perform comparisons.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$method</h4>
@@ -1148,7 +988,7 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h2>Sorts the set by passing the callback to [http://php.net/usort `usort()`] and rewinds the interator</h2>
 <pre>sortByCallback(mixed $callback) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1164,9 +1004,9 @@ by passing a parameter that contains <code>'{index}'</code>.</p></p>
 <h2>Splits the record set into an array of fRecordSet objects</h2>
 <pre>split(integer $number) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Each fRecordSet would contain ceil(number of records/<code>$number</code>) records,
-except for the last, which will contain between 1 and ceil(…) records.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Each fRecordSet would contain ceil(number of records/`$number`) records,
+except for the last, which will contain between 1 and ceil(…) records.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$number</h4>
@@ -1180,7 +1020,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Counts the number of records that match the conditions specified</h2>
 <pre>tally(string $class, mixed $where_conditions) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1199,7 +1039,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Throws an fEmptySetException if the record set is empty</h2>
 <pre>tossIfEmpty(string $message) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1219,7 +1059,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Returns a new fRecordSet containing only unique records in the record set</h2>
 <pre>unique(boolean $remember_original_count) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1235,7 +1075,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Sets the contents of the set</h2>
 <pre>__construct(string | array $class, \Iterator | array $records, string | integer $non_limited_count, integer $limit, integer $page) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1263,7 +1103,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1278,7 +1118,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Adds an `ORDER BY` clause to the SQL for the primary keys of this record set</h2>
 <pre>addOrderByParams(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $related_class, string $route) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1306,7 +1146,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Adds `WHERE` params to the SQL for the primary keys of this record set</h2>
 <pre>addWhereParams(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $route) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1331,7 +1171,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Builds the related records for all records in this set in one DB query</h2>
 <pre>prebuild(string $related_class, string $route) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1349,7 +1189,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Counts the related records for all records in this set in one DB query</h2>
 <pre>precount(string $related_class, string $route) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1367,7 +1207,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Creates the objects for related records that are in a one-to-one or many-to-one relationship with the current class in a single DB query</h2>
 <pre>precreate(string $related_class, string $route) : <a href="../classes/fRecordSet.html">\fRecordSet</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1385,7 +1225,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>A usort callback to sort by methods on records</h2>
 <pre>sortCallback(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $a, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $b) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1403,7 +1243,7 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>Ensures the record set only contains a single kind of record to prevent issues with certain operations</h2>
 <pre>validateSingleClass(string $operation) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1418,31 +1258,31 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>The class of the contained records</h2>
 <pre>$class : string | array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24limit" id="$limit"> </a><div class="element clickable property private $limit" data-toggle="collapse" data-target=".$limit .collapse">
 <h2>The limit that was used when creating the set</h2>
 <pre>$limit : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24non_limited_count" id="$non_limited_count"> </a><div class="element clickable property private $non_limited_count" data-toggle="collapse" data-target=".$non_limited_count .collapse">
 <h2>The number of rows that would have been returned if a `LIMIT` clause had not been used, or the SQL to get that number</h2>
 <pre>$non_limited_count : integer | string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24page" id="$page"> </a><div class="element clickable property private $page" data-toggle="collapse" data-target=".$page .collapse">
 <h2>The page of results the record set represents</h2>
 <pre>$page : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24records" id="$records"> </a><div class="element clickable property private $records" data-toggle="collapse" data-target=".$records .collapse">
 <h2>An array of the records in the set, initially empty</h2>
 <pre>$records : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -1450,19 +1290,19 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 <h2>build</h2>
 <pre>build </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="buildFromArray" id="buildFromArray"> </a><div class="element clickable constant  buildFromArray" data-toggle="collapse" data-target=".buildFromArray .collapse">
 <h2>buildFromArray</h2>
 <pre>buildFromArray </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="buildFromSQL" id="buildFromSQL"> </a><div class="element clickable constant  buildFromSQL" data-toggle="collapse" data-target=".buildFromSQL .collapse">
 <h2>buildFromSQL</h2>
 <pre>buildFromSQL </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1470,8 +1310,8 @@ except for the last, which will contain between 1 and ceil(…) records.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:46-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

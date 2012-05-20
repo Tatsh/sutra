@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,8 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Initializes this templating engine"><span class="description">Initializes this templating engine</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__destruct" title="__destruct :: Finishing placing elements if buffering was used"><span class="description">Finishing placing elements if buffering was used</span><pre>__destruct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#add" title="add :: Adds a value to an array element"><span class="description">Adds a value to an array element</span><pre>add()</pre></a></li>
 <li class="method public "><a href="#attach" title="attach :: Attaches a named template that can be accessed from any scope via ::retrieve()"><span class="description">Attaches a named template that can be accessed from any scope via ::retrieve()</span><pre>attach()</pre></a></li>
 <li class="method public "><a href="#buffer" title="buffer :: Enables buffered output, allowing ::set() and ::add() to happen after a ::place() but act as if they were done before"><span class="description">Enables buffered output, allowing ::set() and ::add() to happen after a ::place() but act as if they were done before</span><pre>buffer()</pre></a></li>
@@ -75,7 +73,6 @@
 <li class="method public "><a href="#place" title="place :: Includes the element specified - element must be set through ::set() first"><span class="description">Includes the element specified - element must be set through ::set() first</span><pre>place()</pre></a></li>
 <li class="method public "><a href="#prepare" title="prepare :: Gets the value of an element and runs it through fHTML::prepare()"><span class="description">Gets the value of an element and runs it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
 <li class="method public "><a href="#remove" title="remove :: Removes and returns the value from the end of an array element"><span class="description">Removes and returns the value from the end of an array element</span><pre>remove()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#retrieve" title="retrieve :: Retrieves a named template"><span class="description">Retrieves a named template</span><pre>retrieve()</pre></a></li>
 <li class="method public "><a href="#set" title="set :: Sets the value for an element"><span class="description">Sets the value for an element</span><pre>set()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
@@ -114,7 +111,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfTemplating" id="\fTemplating"></a><div href="../classes/fTemplating.html" class="element class">
+<a name="%5CfTemplating" id="\fTemplating"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fTemplating.html">fTemplating</a>
+</li>
+</ul>
+<div href="../classes/fTemplating.html" class="element class">
 <p class="short_description">Allows for quick and flexible HTML templating</p>
 <div class="details">
 <p class="long_description"></p>
@@ -137,7 +143,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -246,7 +252,7 @@
 <h2>Initializes this templating engine</h2>
 <pre>__construct(string $root, string $main_element) : <a href="../classes/fTemplating.html">\fTemplating</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -261,42 +267,11 @@
 <div class="subelement response"><code><a href="../classes/fTemplating.html">\fTemplating</a></code></div>
 </div></div>
 </div>
-<a name="__destruct" id="__destruct"></a><div class="element clickable method public __destruct" data-toggle="collapse" data-target=".__destruct .collapse">
-<h2>Finishing placing elements if buffering was used</h2>
-<pre>__destruct() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="add" id="add"></a><div class="element clickable method public add" data-toggle="collapse" data-target=".add .collapse">
 <h2>Adds a value to an array element</h2>
 <pre>add(string $element, mixed $value, boolean $beginning) : <a href="../classes/fTemplating.html">\fTemplating</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -318,7 +293,7 @@
 <h2>Attaches a named template that can be accessed from any scope via ::retrieve()</h2>
 <pre>attach(<a href="../classes/fTemplating.html">\fTemplating</a> $templating, string $name) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -333,18 +308,18 @@
 <h2>Enables buffered output, allowing ::set() and ::add() to happen after a ::place() but act as if they were done before</h2>
 <pre>buffer() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Please note that using buffered output will affect the order in which
+<div class="row collapse"><div class="detail-description"><p class="long_description">Please note that using buffered output will affect the order in which
 code is executed since the elements are not actually ::place()'ed until
-the destructor is called.</p>
+the destructor is called.
 
-<p>If the non-template code depends on template code being executed
-sequentially before it, you may not want to use output buffering.</p></p></div></div>
+If the non-template code depends on template code being executed
+sequentially before it, you may not want to use output buffering.</p></div></div>
 </div>
 <a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>Deletes an element from the template</h2>
 <pre>delete(string $element, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -364,24 +339,24 @@ sequentially before it, you may not want to use output buffering.</p></p></div><
 <h2>Erases all output since the invocation of the template - only works if buffering is on</h2>
 <pre>destroy() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="enableMinification" id="enableMinification"></a><div class="element clickable method public enableMinification" data-toggle="collapse" data-target=".enableMinification .collapse">
 <h2>Enables minified output for CSS and JS elements</h2>
 <pre>enableMinification(string $mode, <a href="../classes/fDirectory.html">\fDirectory</a> | string $cache_directory, <a href="../classes/fDirectory.html">\fDirectory</a> | string $path_prefix) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>For CSS and JS, compilation means that the file will be minified and
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">For CSS and JS, compilation means that the file will be minified and
 cached. The filename will change whenever the content change, allowing
-for far-futures expire headers.</p>
+for far-futures expire headers.
 
-<p>Please note that this option requires that all CSS and JS paths be
-relative to the $_SERVER['DOCUMENT_ROOT'] and start with a <code>/</code>. Also
+Please note that this option requires that all CSS and JS paths be
+relative to the $_SERVER['DOCUMENT_ROOT'] and start with a `/`. Also
 this class will not clean up old cached files out of the cache
-directory.</p>
+directory.
 
-<p>This functionality will be inherited by all child fTemplating objects
-that do not have their own explicit minification settings.</p></p>
+This functionality will be inherited by all child fTemplating objects
+that do not have their own explicit minification settings.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$mode</h4>
@@ -401,14 +376,14 @@ that do not have their own explicit minification settings.</p></p>
 <h2>Converts PHP short tags to long tags when short tags are turned off</h2>
 <pre>enablePHPShortTags(string $mode, <a href="../classes/fDirectory.html">\fDirectory</a> | string $cache_directory) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that this only affects PHP files that are <strong>directly</strong>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that this only affects PHP files that are **directly**
 evaluated with ::place() or ::inject(). It will not affect PHP files that
-have been evaluated via <code>include</code> or <code>require</code> statements inside of the
-directly evaluated PHP files.</p>
+have been evaluated via `include` or `require` statements inside of the
+directly evaluated PHP files.
 
-<p>This functionality will be inherited by all child fTemplating objects
-that do not have their own explicit short tag settings.</p></p>
+This functionality will be inherited by all child fTemplating objects
+that do not have their own explicit short tag settings.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$mode</h4>
@@ -424,7 +399,7 @@ that do not have their own explicit short tag settings.</p></p>
 <h2>Gets the value of an element and runs it through fHTML::encode()</h2>
 <pre>encode(string $element, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -443,7 +418,7 @@ that do not have their own explicit short tag settings.</p></p>
 <h2>Removes a value from an array element</h2>
 <pre>filter(string $element, mixed $value) : <a href="../classes/fTemplating.html">\fTemplating</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -463,7 +438,7 @@ that do not have their own explicit short tag settings.</p></p>
 <h2>Gets the value of an element</h2>
 <pre>get(string $element, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -482,8 +457,8 @@ that do not have their own explicit short tag settings.</p></p>
 <h2>Includes the file specified - this is identical to ::place() except a filename is specified instead of an element</h2>
 <pre>inject(string $file_path, string $file_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please see the ::place() method for more details about functionality.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please see the ::place() method for more details about functionality.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$file_path</h4>
@@ -498,21 +473,21 @@ that do not have their own explicit short tag settings.</p></p>
 <h2>Includes the element specified - element must be set through ::set() first</h2>
 <pre>place(string $element, string $file_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the element is a file path ending in <code>.css</code>, <code>.js</code>, <code>.rss</code> or <code>.xml</code>
-an appropriate HTML tag will be printed (files ending in <code>.xml</code> will be
-treated as an RSS feed). If the element is a file path ending in <code>.inc</code>,
-<code>.php</code> or <code>.php5</code> it will be included.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the element is a file path ending in `.css`, `.js`, `.rss` or `.xml`
+an appropriate HTML tag will be printed (files ending in `.xml` will be
+treated as an RSS feed). If the element is a file path ending in `.inc`,
+`.php` or `.php5` it will be included.
 
-<p>Paths that start with <code>./</code> will be loaded relative to the current script.
+Paths that start with `./` will be loaded relative to the current script.
 Paths that start with a file or directory name will be loaded relative
-to the <code>$root</code> passed in the constructor. Paths that start with <code>/</code> will
-be loaded from the root of the filesystem.</p>
+to the `$root` passed in the constructor. Paths that start with `/` will
+be loaded from the root of the filesystem.
 
-<p>You can pass the <code>media</code> attribute of a CSS file or the <code>title</code> attribute
-of an RSS feed by adding an associative array with the following formats:</p>
+You can pass the `media` attribute of a CSS file or the `title` attribute
+of an RSS feed by adding an associative array with the following formats:
 
-<p>{{{
+{{{
 array(
     'path'  => (string) {css file path},
     'media' => (string) {media type}
@@ -521,7 +496,7 @@ array(
     'path'  => (string) {rss file path},
     'title' => (string) {feed title}
 );
-}}}</p></p>
+}}}</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$element</h4>
@@ -536,7 +511,7 @@ array(
 <h2>Gets the value of an element and runs it through fHTML::prepare()</h2>
 <pre>prepare(string $element, mixed $default_value) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -555,7 +530,7 @@ array(
 <h2>Removes and returns the value from the end of an array element</h2>
 <pre>remove(string $element, boolean $beginning) : mixed</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -570,23 +545,11 @@ array(
 <code>mixed</code>The value that was removed</div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="retrieve" id="retrieve"></a><div class="element clickable method public retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
 <h2>Retrieves a named template</h2>
 <pre>retrieve(string $name) : <a href="../classes/fTemplating.html">\fTemplating</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -601,7 +564,7 @@ array(
 <h2>Sets the value for an element</h2>
 <pre>set(string $element, mixed $value) : <a href="../classes/fTemplating.html">\fTemplating</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -620,7 +583,7 @@ array(
 <h2>Combines an array of CSS or JS files and places them as a single file</h2>
 <pre>handleMinified(string $type, string $element, array $values) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -639,12 +602,12 @@ array(
 <h2>Minifies JS or CSS</h2>
 <pre>minify(string $code, string $type) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>For JS, this function is based on the JSMin algorithm (not the code) from
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">For JS, this function is based on the JSMin algorithm (not the code) from
 http://www.crockford.com/javascript/jsmin.html with the addition of
 preserving /*! comment blocks for things like licenses. Some other
 versions of JSMin change the contents of special comment blocks, but
-this version does not.</p></p>
+this version does not.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$code</h4>
@@ -662,7 +625,7 @@ this version does not.</p></p>
 <h2>Takes a block of CSS or JS and reduces the number of characters</h2>
 <pre>minifyCode(string $part, string $buffer, array $stack, mixed $type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -686,7 +649,7 @@ this version does not.</p></p>
 <h2>Takes a literal and either discards or keeps it</h2>
 <pre>minifyLiteral(mixed $part, mixed $buffer, string $type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -707,7 +670,7 @@ this version does not.</p></p>
 <h2>Prints a CSS `link` HTML tag to the output</h2>
 <pre>placeCSS(mixed $info) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -720,7 +683,7 @@ this version does not.</p></p>
 <h2>Performs the action of actually placing an element</h2>
 <pre>placeElement(string $element, string $file_type) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -735,7 +698,7 @@ this version does not.</p></p>
 <h2>Prints a java`script` HTML tag to the output</h2>
 <pre>placeJS(mixed $info) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -748,7 +711,7 @@ this version does not.</p></p>
 <h2>Includes a PHP file</h2>
 <pre>placePHP(string $element, string $path) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -763,7 +726,7 @@ this version does not.</p></p>
 <h2>Prints an RSS `link` HTML tag to the output</h2>
 <pre>placeRSS(mixed $info) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -776,7 +739,7 @@ this version does not.</p></p>
 <h2>Ensures the value is valid</h2>
 <pre>verifyValue(string $element, mixed $value, string $file_type) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -798,7 +761,7 @@ this version does not.</p></p>
 <h2>Takes an array of PHP files and caches a version with all short tags converted to regular tags</h2>
 <pre>fixShortTags(array $values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -813,13 +776,13 @@ this version does not.</p></p>
 <h2>Performs buffered replacements using a breadth-first technique</h2>
 <pre>placeBuffered() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="placeBufferedCallback" id="placeBufferedCallback"></a><div class="element clickable method private placeBufferedCallback" data-toggle="collapse" data-target=".placeBufferedCallback .collapse">
 <h2>Performs a captured place of an element to use with buffer placing</h2>
 <pre>placeBufferedCallback(array $match) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -837,55 +800,55 @@ this version does not.</p></p>
 <h2>Named fTemplating instances</h2>
 <pre>$instances : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24root" id="$root"> </a><div class="element clickable property protected $root" data-toggle="collapse" data-target=".$root .collapse">
 <h2>The directory to look for files</h2>
 <pre>$root : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24buffered_id" id="$buffered_id"> </a><div class="element clickable property private $buffered_id" data-toggle="collapse" data-target=".$buffered_id .collapse">
 <h2>The buffered object id, used for differentiating different instances when doing replacements</h2>
 <pre>$buffered_id : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24elements" id="$elements"> </a><div class="element clickable property private $elements" data-toggle="collapse" data-target=".$elements .collapse">
 <h2>A data store for templating</h2>
 <pre>$elements : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24minification_directory" id="$minification_directory"> </a><div class="element clickable property private $minification_directory" data-toggle="collapse" data-target=".$minification_directory .collapse">
 <h2>The directory to store minified code in</h2>
 <pre>$minification_directory : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24minification_mode" id="$minification_mode"> </a><div class="element clickable property private $minification_mode" data-toggle="collapse" data-target=".$minification_mode .collapse">
 <h2>The minification mode: development or production</h2>
 <pre>$minification_mode : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24minification_prefix" id="$minification_prefix"> </a><div class="element clickable property private $minification_prefix" data-toggle="collapse" data-target=".$minification_prefix .collapse">
 <h2>The path prefix to prepend to CSS and JS paths to find them on the filesystem</h2>
 <pre>$minification_prefix : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24short_tag_directory" id="$short_tag_directory"> </a><div class="element clickable property private $short_tag_directory" data-toggle="collapse" data-target=".$short_tag_directory .collapse">
 <h2>The directory to store PHP files with short tags fixed</h2>
 <pre>$short_tag_directory : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24short_tag_mode" id="$short_tag_mode"> </a><div class="element clickable property private $short_tag_mode" data-toggle="collapse" data-target=".$short_tag_mode .collapse">
 <h2>The short tag mode: development or production</h2>
 <pre>$short_tag_mode : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -893,19 +856,19 @@ this version does not.</p></p>
 <h2>attach</h2>
 <pre>attach </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="retrieve" id="retrieve"> </a><div class="element clickable constant  retrieve" data-toggle="collapse" data-target=".retrieve .collapse">
 <h2>retrieve</h2>
 <pre>retrieve </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -913,8 +876,8 @@ this version does not.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,19 +59,9 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Sets up the class and creates functions for SQLite databases"><span class="description">Sets up the class and creates functions for SQLite databases</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
 <li class="method public "><a href="#enableCaching" title="enableCaching :: Sets the schema info to be cached to the fCache object specified"><span class="description">Sets the schema info to be cached to the fCache object specified</span><pre>enableCaching()</pre></a></li>
 <li class="method public "><a href="#enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
-<li class="method public "><a href="#sqliteCotangent" title="sqliteCotangent :: Callback for custom SQLite function; calculates the cotangent of a number"><span class="description">Callback for custom SQLite function; calculates the cotangent of a number</span><pre>sqliteCotangent()</pre></a></li>
-<li class="method public "><a href="#sqliteDate" title="sqliteDate :: Callback for custom SQLite function; returns the current date"><span class="description">Callback for custom SQLite function; returns the current date</span><pre>sqliteDate()</pre></a></li>
-<li class="method public "><a href="#sqliteLength" title="sqliteLength :: Callback for custom SQLite length function; returns the number of UTF-8 characters in a string"><span class="description">Callback for custom SQLite length function; returns the number of UTF-8 characters in a string</span><pre>sqliteLength()</pre></a></li>
-<li class="method public "><a href="#sqliteLogBaseFirst" title="sqliteLogBaseFirst :: Callback for custom SQLite function; calculates the log to a specific base of a number"><span class="description">Callback for custom SQLite function; calculates the log to a specific base of a number</span><pre>sqliteLogBaseFirst()</pre></a></li>
-<li class="method public "><a href="#sqliteSign" title="sqliteSign :: Callback for custom SQLite function; returns the sign of the number"><span class="description">Callback for custom SQLite function; returns the sign of the number</span><pre>sqliteSign()</pre></a></li>
-<li class="method public "><a href="#sqliteSubstr" title="sqliteSubstr :: Callback for custom SQLite function; creates a substring"><span class="description">Callback for custom SQLite function; creates a substring</span><pre>sqliteSubstr()</pre></a></li>
-<li class="method public "><a href="#sqliteTime" title="sqliteTime :: Callback for custom SQLite function; returns the current time"><span class="description">Callback for custom SQLite function; returns the current time</span><pre>sqliteTime()</pre></a></li>
-<li class="method public "><a href="#sqliteTimestamp" title="sqliteTimestamp :: Callback for custom SQLite function; returns the current timestamp"><span class="description">Callback for custom SQLite function; returns the current timestamp</span><pre>sqliteTimestamp()</pre></a></li>
-<li class="method public "><a href="#translate" title="translate :: Translates Flourish SQL into the dialect for the current database"><span class="description">Translates Flourish SQL into the dialect for the current database</span><pre>translate()</pre></a></li>
 <li class="nav-header protected">» Protected</li>
 <li class="method protected "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
 <li class="nav-header private">» Private</li>
@@ -101,7 +91,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfSQLTranslation" id="\fSQLTranslation"></a><div href="../classes/fSQLTranslation.html" class="element class">
+<a name="%5CfSQLTranslation" id="\fSQLTranslation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSQLTranslation.html">fSQLTranslation</a>
+</li>
+</ul>
+<div href="../classes/fSQLTranslation.html" class="element class">
 <p class="short_description">Takes a subset of SQL from IBM DB2, MySQL, PostgreSQL, Oracle, SQLite and MSSQL and translates into the various dialects allowing for cross-database code</p>
 <div class="details">
 <p class="long_description"></p>
@@ -120,7 +119,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -217,7 +216,7 @@
 <h2>Sets up the class and creates functions for SQLite databases</h2>
 <pre>__construct(<a href="../classes/fDatabase.html">\fDatabase</a> $database) : <a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -227,36 +226,17 @@
 <div class="subelement response"><code><a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="clearCache" id="clearCache"></a><div class="element clickable method public clearCache" data-toggle="collapse" data-target=".clearCache .collapse">
 <h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
 <pre>clearCache() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="enableCaching" id="enableCaching"></a><div class="element clickable method public enableCaching" data-toggle="collapse" data-target=".enableCaching .collapse">
 <h2>Sets the schema info to be cached to the fCache object specified</h2>
 <pre>enableCaching(<a href="../classes/fCache.html">\fCache</a> $cache, $key_token) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -272,7 +252,7 @@
 <h2>Sets if debug messages should be shown</h2>
 <pre>enableDebugging(boolean $flag) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -280,184 +260,11 @@
 <code>boolean</code><p>If debugging messages should be shown</p></div>
 </div></div>
 </div>
-<a name="sqliteCotangent" id="sqliteCotangent"></a><div class="element clickable method public sqliteCotangent" data-toggle="collapse" data-target=".sqliteCotangent .collapse">
-<h2>Callback for custom SQLite function; calculates the cotangent of a number</h2>
-<pre>sqliteCotangent(\numeric $x) : \numeric</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$x</h4>
-<code>\numeric</code><p>The number to calculate the cotangent of</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>\numeric</code>The contangent of `$x`</div>
-</div></div>
-</div>
-<a name="sqliteDate" id="sqliteDate"></a><div class="element clickable method public sqliteDate" data-toggle="collapse" data-target=".sqliteDate .collapse">
-<h2>Callback for custom SQLite function; returns the current date</h2>
-<pre>sqliteDate() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The current date</div>
-</div></div>
-</div>
-<a name="sqliteLength" id="sqliteLength"></a><div class="element clickable method public sqliteLength" data-toggle="collapse" data-target=".sqliteLength .collapse">
-<h2>Callback for custom SQLite length function; returns the number of UTF-8 characters in a string</h2>
-<pre>sqliteLength(string $string) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code><p>The string to measure</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The current date</div>
-</div></div>
-</div>
-<a name="sqliteLogBaseFirst" id="sqliteLogBaseFirst"></a><div class="element clickable method public sqliteLogBaseFirst" data-toggle="collapse" data-target=".sqliteLogBaseFirst .collapse">
-<h2>Callback for custom SQLite function; calculates the log to a specific base of a number</h2>
-<pre>sqliteLogBaseFirst(integer $base, \numeric $num) : \numeric</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$base</h4>
-<code>integer</code><p>The base for the log calculation</p></div>
-<div class="subelement argument">
-<h4>$num</h4>
-<code>\numeric</code><p>The number to calculate the logarithm of</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>\numeric</code>The logarithm of `$num` to `$base`</div>
-</div></div>
-</div>
-<a name="sqliteSign" id="sqliteSign"></a><div class="element clickable method public sqliteSign" data-toggle="collapse" data-target=".sqliteSign .collapse">
-<h2>Callback for custom SQLite function; returns the sign of the number</h2>
-<pre>sqliteSign(\numeric $x) : \numeric</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$x</h4>
-<code>\numeric</code><p>The number to change the sign of</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>\numeric</code>`-1` if a negative sign, `0` if zero, `1` if positive sign</div>
-</div></div>
-</div>
-<a name="sqliteSubstr" id="sqliteSubstr"></a><div class="element clickable method public sqliteSubstr" data-toggle="collapse" data-target=".sqliteSubstr .collapse">
-<h2>Callback for custom SQLite function; creates a substring</h2>
-<pre>sqliteSubstr(string $string, integer $start, integer $length) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$string</h4>
-<code>string</code><p>The string to take a substring of</p></div>
-<div class="subelement argument">
-<h4>$start</h4>
-<code>integer</code><p>The one-based position to start the substring at</p>
-</div>
-<div class="subelement argument">
-<h4>$length</h4>
-<code>integer</code><p>The length of the substring to take</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The substring</div>
-</div></div>
-</div>
-<a name="sqliteTime" id="sqliteTime"></a><div class="element clickable method public sqliteTime" data-toggle="collapse" data-target=".sqliteTime .collapse">
-<h2>Callback for custom SQLite function; returns the current time</h2>
-<pre>sqliteTime() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The current time</div>
-</div></div>
-</div>
-<a name="sqliteTimestamp" id="sqliteTimestamp"></a><div class="element clickable method public sqliteTimestamp" data-toggle="collapse" data-target=".sqliteTimestamp .collapse">
-<h2>Callback for custom SQLite function; returns the current timestamp</h2>
-<pre>sqliteTimestamp() : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The current date</div>
-</div></div>
-</div>
-<a name="translate" id="translate"></a><div class="element clickable method public translate" data-toggle="collapse" data-target=".translate .collapse">
-<h2>Translates Flourish SQL into the dialect for the current database</h2>
-<pre>translate(array $statements, array $rollback_statements) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$statements</h4>
-<code>array</code><p>The SQL statements to translate</p></div>
-<div class="subelement argument">
-<h4>$rollback_statements</h4>
-<code>array</code><p>&$rollback_statements SQL statements to rollback the returned SQL statements if something goes wrong - only applicable for MySQL <code>ALTER TABLE</code> statements</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The translated SQL statements all ready for execution. Statements that have been translated will have string key of the number, `:` and the original SQL, all other will have a numeric key.</div>
-</div></div>
-</div>
 <a name="compose" id="compose"></a><div class="element clickable method protected compose" data-toggle="collapse" data-target=".compose .collapse">
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -472,13 +279,13 @@
 <h2>Adds a number of math functions to SQLite that MSSQL, MySQL and PostgreSQL have by default</h2>
 <pre>createSQLiteFunctions() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="fixMSSQLNationalColumns" id="fixMSSQLNationalColumns"></a><div class="element clickable method private fixMSSQLNationalColumns" data-toggle="collapse" data-target=".fixMSSQLNationalColumns .collapse">
 <h2>Fixes pulling unicode data out of national data type MSSQL columns</h2>
 <pre>fixMSSQLNationalColumns(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -493,7 +300,7 @@
 <h2>Fixes empty string comparisons in Oracle</h2>
 <pre>fixOracleEmptyStrings(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -508,7 +315,7 @@
 <h2>Creates a unique cache prefix to help prevent cache conflicts</h2>
 <pre>makeCachePrefix() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -519,7 +326,7 @@
 <h2>Takes the `FROM` clause from ::parseSelectSQL() and returns all of the tables and each one's alias</h2>
 <pre>parseTableAliases($sql) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -535,7 +342,7 @@
 <h2>Translates basic syntax differences of the current database</h2>
 <pre>translateBasicSyntax(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -550,7 +357,7 @@
 <h2>Translates simple CAST() clauses</h2>
 <pre>translateCastClauses(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -565,7 +372,7 @@
 <h2>Translates `LIMIT x OFFSET x` to `ROW_NUMBER() OVER (ORDER BY)` syntax</h2>
 <pre>translateLimitOffsetToRowNumber(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -580,7 +387,7 @@
 <h2>Oracle and DB2 require that all double-quoted identifiers be upper-case</h2>
 <pre>uppercaseIdentifiers(string $sql) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -597,37 +404,37 @@
 <h2>The fCache object to cache schema info and, optionally, translated queries to</h2>
 <pre>$cache : <a href="../classes/fCache.html">\fCache</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24cache_prefix" id="$cache_prefix"> </a><div class="element clickable property private $cache_prefix" data-toggle="collapse" data-target=".$cache_prefix .collapse">
 <h2>The cache prefix to use for cache entries</h2>
 <pre>$cache_prefix : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24database" id="$database"> </a><div class="element clickable property private $database" data-toggle="collapse" data-target=".$database .collapse">
 <h2>The fDatabase instance</h2>
 <pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24debug" id="$debug"> </a><div class="element clickable property private $debug" data-toggle="collapse" data-target=".$debug .collapse">
 <h2>If debugging is enabled</h2>
 <pre>$debug : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24schema_info" id="$schema_info"> </a><div class="element clickable property private $schema_info" data-toggle="collapse" data-target=".$schema_info .collapse">
 <h2>Database-specific schema information needed for translation</h2>
 <pre>$schema_info : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24schema_translation" id="$schema_translation"> </a><div class="element clickable property private $schema_translation" data-toggle="collapse" data-target=".$schema_translation .collapse">
 <h2>An instance of fSQLSchemaTranslation for when DDL statements are run</h2>
 <pre>$schema_translation : <a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>This object is only loaded when needed since it is so large.</p></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description">This object is only loaded when needed since it is so large.</p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -635,19 +442,19 @@
 <h2>sqliteCotangent</h2>
 <pre>sqliteCotangent </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="sqliteLogBaseFirst" id="sqliteLogBaseFirst"> </a><div class="element clickable constant  sqliteLogBaseFirst" data-toggle="collapse" data-target=".sqliteLogBaseFirst .collapse">
 <h2>sqliteLogBaseFirst</h2>
 <pre>sqliteLogBaseFirst </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="sqliteSign" id="sqliteSign"> </a><div class="element clickable constant  sqliteSign" data-toggle="collapse" data-target=".sqliteSign .collapse">
 <h2>sqliteSign</h2>
 <pre>sqliteSign </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -655,8 +462,8 @@
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

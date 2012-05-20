@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public inherited"><a href="#__construct" title="__construct :: Sets the message for the exception, allowing for string interpolation and internationalization"><span class="description">Sets the message for the exception, allowing for string interpolation and internationalization</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public inherited"><a href="#__toString" title="__toString :: "><span class="description">__toString()
         </span><pre>__toString()</pre></a></li>
 <li class="method public inherited"><a href="#formatTrace" title="formatTrace :: Gets the backtrace to currently called exception"><span class="description">Gets the backtrace to currently called exception</span><pre>formatTrace()</pre></a></li>
@@ -97,7 +96,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfUnexpectedException" id="\fUnexpectedException"></a><div href="../classes/fUnexpectedException.html" class="element class">
+<a name="%5CfUnexpectedException" id="\fUnexpectedException"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fUnexpectedException.html">fUnexpectedException</a>
+</li>
+</ul>
+<div href="../classes/fUnexpectedException.html" class="element class">
 <p class="short_description">An exception that should probably not be handled by the display code, fCore::enableExceptionHandler() is recommended</p>
 <div class="details">
 <p class="long_description"></p>
@@ -116,7 +124,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -141,17 +149,17 @@
 <h2>Sets the message for the exception, allowing for string interpolation and internationalization</h2>
 <pre>__construct(string $message) : <a href="../classes/fException.html">\fException</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The <code>$message</code> can contain any number of formatting placeholders for
-string and number interpolation via [http://php.net/sprintf <code>sprintf()</code>].
-Any <code>%</code> signs that do not appear to be part of a valid formatting
-placeholder will be automatically escaped with a second <code>%</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The `$message` can contain any number of formatting placeholders for
+string and number interpolation via [http://php.net/sprintf `sprintf()`].
+Any `%` signs that do not appear to be part of a valid formatting
+placeholder will be automatically escaped with a second `%`.
 
-<p>The following aspects of valid <code>sprintf()</code> formatting codes are not
+The following aspects of valid `sprintf()` formatting codes are not
 accepted since they are redundant and restrict the non-formatting use of
-the <code>%</code> sign in exception messages:
- - <code>% 2d</code>: Using a literal space as a padding character - a space will be used if no padding character is specified
- - <code>%'.d</code>: Providing a padding character but no width - no padding will be applied without a width</p></p>
+the `%` sign in exception messages:
+ - `% 2d`: Using a literal space as a padding character - a space will be used if no padding character is specified
+ - `%'.d`: Providing a padding character but no width - no padding will be applied without a width</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fException::__construct()</td>
@@ -165,37 +173,12 @@ the <code>%</code> sign in exception messages:
 <div class="subelement response"><code><a href="../classes/fException.html">\fException</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fException::__get()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>__toString()
         </h2>
 <pre>__toString() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -213,7 +196,7 @@ the <code>%</code> sign in exception messages:
 <h2>Gets the backtrace to currently called exception</h2>
 <pre>formatTrace() : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -229,7 +212,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getCode() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -248,7 +231,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getFile() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -267,7 +250,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getLine() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -286,7 +269,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getMessage() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -305,7 +288,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getPrevious() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -324,7 +307,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getTrace() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -343,7 +326,7 @@ the <code>%</code> sign in exception messages:
         </h2>
 <pre>getTraceAsString() </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered">
 <tr>
@@ -361,13 +344,13 @@ the <code>%</code> sign in exception messages:
 <h2>Prints out a generic error message inside of a `div` with the class being `'exception {exception_class_name}'`</h2>
 <pre>printMessage() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="printTrace" id="printTrace"></a><div class="element clickable method public printTrace" data-toggle="collapse" data-target=".printTrace .collapse">
 <h2>Prints the backtrace to currently called exception inside of a pre tag with the class being 'exception %THIS_EXCEPTION_CLASS_NAME% trace'</h2>
 <pre>printTrace() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -379,10 +362,10 @@ the <code>%</code> sign in exception messages:
 <h2>Adds a callback for when certain types of exceptions are created</h2>
 <pre>registerCallback(callback $callback, string $exception_type) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The callback will be called when any exception of this class, or any
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The callback will be called when any exception of this class, or any
 child class, specified is tossed. A single parameter will be passed
-to the callback, which will be the exception object.</p></p>
+to the callback, which will be the exception object.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fException::registerCallback()</td>
@@ -400,7 +383,7 @@ to the callback, which will be the exception object.</p></p>
 <h2>Reorders list items in the message based on simple string matching</h2>
 <pre>reorderMessage(string $match) : <a href="../classes/fException.html">\fException</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -420,7 +403,7 @@ to the callback, which will be the exception object.</p></p>
 <h2>Allows the message to be overwriten</h2>
 <pre>setMessage(string $new_message) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -436,20 +419,17 @@ to the callback, which will be the exception object.</p></p>
 <h2>Splits an exception with an HTML list into multiple strings each containing part of the original message</h2>
 <pre>splitMessage(array $list_item_matches) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method should be called with two or more parameters of arrays of
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method should be called with two or more parameters of arrays of
 string to match. If any of the provided strings are matching in a list
 item in the exception message, a new copy of the message will be created
-containing just the matching list items.</p>
+containing just the matching list items.
 
-<p>Here is an exception message to be split:</p>
+Here is an exception message to be split:
 
-<p>{{{</p>
-
-<h1>!html</h1>
-
+{{{
+#!html
 <p>The following problems were found:</p>
-
 <ul>
     <li>First Name: Please enter a value</li>
     <li>Last Name: Please enter a value</li>
@@ -459,68 +439,55 @@ containing just the matching list items.</p>
     <li>State: Please enter a value</li>
     <li>Zip Code: Please enter a value</li>
 </ul>
+}}}
 
-<p>}}}</p>
+The following PHP would split the exception into two messages:
 
-<p>The following PHP would split the exception into two messages:</p>
-
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>list ($name_exception, $address_exception) = $exception->splitMessage(
+{{{
+#!php
+list ($name_exception, $address_exception) = $exception->splitMessage(
     array('First Name', 'Last Name', 'Email'),
     array('Address', 'City', 'State', 'Zip Code')
 );
-}}}</p>
+}}}
 
-<p>The resulting messages would be:</p>
+The resulting messages would be:
 
-<p>{{{</p>
-
-<h1>!html</h1>
-
+{{{
+#!html
 <p>The following problems were found:</p>
-
 <ul>
     <li>First Name: Please enter a value</li>
     <li>Last Name: Please enter a value</li>
     <li>Email: Please enter a value</li>
 </ul>
+}}}
 
-<p>}}}</p>
+and
 
-<p>and</p>
-
-<p>{{{</p>
-
-<h1>!html</h1>
-
+{{{
+#!html
 <p>The following problems were found:</p>
-
 <ul>
     <li>Address: Please enter a value</li>
     <li>City: Please enter a value</li>
     <li>State: Please enter a value</li>
     <li>Zip Code: Please enter a value</li>
 </ul>
+}}}
 
-<p>}}}</p>
+If no list items match the strings in a parameter, the result will be
+an empty string, allowing for simple display:
 
-<p>If no list items match the strings in a parameter, the result will be
-an empty string, allowing for simple display:</p>
+{{{
+#!php
+fHTML::show($name_exception, 'error');
+}}}
 
-<p>{{{</p>
-
-<h1>!php</h1>
-
-<p>fHTML::show($name_exception, 'error');
-}}}</p>
-
-<p>An empty string is returned when none of the list items matched the
+An empty string is returned when none of the list items matched the
 strings in the parameter. If no list items are found, the first value in
 the returned array will be the existing message and all other array
-values will be an empty string.</p></p>
+values will be an empty string.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fException::splitMessage()</td>
@@ -538,7 +505,7 @@ values will be an empty string.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -557,17 +524,15 @@ values will be an empty string.</p></p>
 <h2>Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</h2>
 <pre>dump(mixed $data) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The string output format of this method is very similar to the output of
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The string output format of this method is very similar to the output of
 [http://php.net/print_r print_r()] except that the following values
-are represented as special strings:</p>
+are represented as special strings:
 
-<ul>
-<li><code>TRUE</code>: <code>'{true}'</code></li>
-<li><code>FALSE</code>: <code>'{false}'</code></li>
-<li><code>NULL</code>: <code>'{null}'</code></li>
-<li><code>''</code>: <code>'{empty_string}'</code></li>
-</ul></p>
+ - `TRUE`: `'{true}'`
+ - `FALSE`: `'{false}'`
+ - `NULL`: `'{null}'`
+ - `''`: `'{empty_string}'`</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fException::dump()</td>
@@ -585,7 +550,7 @@ are represented as special strings:</p>
 <h2>Returns the CSS class name for printing information about the exception</h2>
 <pre>getCSSClass() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -597,7 +562,7 @@ are represented as special strings:</p>
 <h2>Prepares content for output into HTML</h2>
 <pre>prepare($content) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -617,7 +582,7 @@ are represented as special strings:</p>
 <h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
 <pre>sortMatchingArray(string $a, string $b) : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -641,7 +606,7 @@ are represented as special strings:</p>
 <h2>Callbacks for when exceptions are created</h2>
 <pre>$callbacks : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -655,8 +620,8 @@ are represented as special strings:</p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

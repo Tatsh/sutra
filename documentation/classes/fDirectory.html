@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#__construct" title="__construct :: Creates an object to represent a directory on the filesystem"><span class="description">Creates an object to represent a directory on the filesystem</span><pre>__construct()</pre></a></li>
-<li class="method public "><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public "><a href="#__toString" title="__toString :: Returns the full filesystem path for the directory"><span class="description">Returns the full filesystem path for the directory</span><pre>__toString()</pre></a></li>
 <li class="method public "><a href="#clear" title="clear :: Removes all files and directories inside of the directory"><span class="description">Removes all files and directories inside of the directory</span><pre>clear()</pre></a></li>
 <li class="method public "><a href="#create" title="create :: Creates a directory on the filesystem and returns an object representing it"><span class="description">Creates a directory on the filesystem and returns an object representing it</span><pre>create()</pre></a></li>
@@ -88,7 +87,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfDirectory" id="\fDirectory"></a><div href="../classes/fDirectory.html" class="element class">
+<a name="%5CfDirectory" id="\fDirectory"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fDirectory.html">fDirectory</a>
+</li>
+</ul>
+<div href="../classes/fDirectory.html" class="element class">
 <p class="short_description">Represents a directory on the filesystem, also provides static directory-related methods</p>
 <div class="details">
 <p class="long_description"></p>
@@ -111,7 +119,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -184,10 +192,10 @@
 <h2>Creates an object to represent a directory on the filesystem</h2>
 <pre>__construct(string $directory, boolean $skip_checks) : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If multiple fDirectory objects are created for a single directory,
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If multiple fDirectory objects are created for a single directory,
 they will reflect changes in each other including rename and delete
-actions.</p></p>
+actions.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$directory</h4>
@@ -205,30 +213,11 @@ actions.</p></p>
 <div class="subelement response"><code><a href="../classes/fDirectory.html">\fDirectory</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Returns the full filesystem path for the directory</h2>
 <pre>__toString() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -239,17 +228,17 @@ actions.</p></p>
 <h2>Removes all files and directories inside of the directory</h2>
 <pre>clear() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="create" id="create"></a><div class="element clickable method public create" data-toggle="collapse" data-target=".create .collapse">
 <h2>Creates a directory on the filesystem and returns an object representing it</h2>
 <pre>create(string $directory, \numeric $mode) : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The directory creation is done recursively, so if any of the parent
-directories do not exist, they will be created.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The directory creation is done recursively, so if any of the parent
+directories do not exist, they will be created.
 
-<p>This operation will be reverted by a filesystem transaction being rolled back.</p></p>
+This operation will be reverted by a filesystem transaction being rolled back.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$directory</h4>
@@ -271,16 +260,16 @@ directories do not exist, they will be created.</p>
 <h2>Will delete a directory and all files and directories inside of it</h2>
 <pre>delete() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>This operation will not be performed until the filesystem transaction
+<div class="row collapse"><div class="detail-description"><p class="long_description">This operation will not be performed until the filesystem transaction
 has been committed, if a transaction is in progress. Any non-Flourish
 code (PHP or system) will still see this directory and all contents as
-existing until that point.</p></p></div></div>
+existing until that point.</p></div></div>
 </div>
 <a name="getName" id="getName"></a><div class="element clickable method public getName" data-toggle="collapse" data-target=".getName .collapse">
 <h2>Gets the name of the directory</h2>
 <pre>getName() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -291,7 +280,7 @@ existing until that point.</p></p></div></div>
 <h2>Gets the parent directory</h2>
 <pre>getParent() : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -302,9 +291,9 @@ existing until that point.</p></p></div></div>
 <h2>Gets the directory's current path</h2>
 <pre>getPath(boolean $translate_to_web_path) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the web path is requested, uses translations set with
-fFilesystem::addWebPathTranslation()</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the web path is requested, uses translations set with
+fFilesystem::addWebPathTranslation()</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$translate_to_web_path</h4>
@@ -318,9 +307,9 @@ fFilesystem::addWebPathTranslation()</p></p>
 <h2>Gets the disk usage of the directory and all files and folders contained within</h2>
 <pre>getSize(boolean $format, integer $decimal_places) : integer | string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method may return incorrect results if files over 2GB exist and the
-server uses a 32 bit operating system</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method may return incorrect results if files over 2GB exist and the
+server uses a 32 bit operating system</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$format</h4>
@@ -338,7 +327,7 @@ server uses a 32 bit operating system</p></p>
 <h2>Check to see if the current directory is writable</h2>
 <pre>isWritable() : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -349,7 +338,7 @@ server uses a 32 bit operating system</p></p>
 <h2>Makes sure a directory has a `/` or `\` at the end</h2>
 <pre>makeCanonical(string $directory) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -364,16 +353,16 @@ server uses a 32 bit operating system</p></p>
 <h2>Moves the current directory into a different directory</h2>
 <pre>move(<a href="../classes/fDirectory.html">\fDirectory</a> | string $new_parent_directory, boolean $overwrite) : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that ::rename() will rename a directory in its current
-parent directory or rename it into a different parent directory.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that ::rename() will rename a directory in its current
+parent directory or rename it into a different parent directory.
 
-<p>If the current directory's name already exists in the new parent
+If the current directory's name already exists in the new parent
 directory and the overwrite flag is set to false, the name will be
-changed to a unique name.</p>
+changed to a unique name.
 
-<p>This operation will be reverted if a filesystem transaction is in
-progress and is later rolled back.</p></p>
+This operation will be reverted if a filesystem transaction is in
+progress and is later rolled back.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$new_parent_directory</h4>
@@ -396,11 +385,11 @@ progress and is later rolled back.</p></p>
 <h2>Renames the current directory</h2>
 <pre>rename(string $new_dirname, boolean $overwrite) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This operation will NOT be performed until the filesystem transaction
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This operation will NOT be performed until the filesystem transaction
 has been committed, if a transaction is in progress. Any non-Flourish
 code (PHP or system) will still see this directory (and all contained
-files/dirs) as existing with the old paths until that point.</p></p>
+files/dirs) as existing with the old paths until that point.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$new_dirname</h4>
@@ -414,18 +403,18 @@ files/dirs) as existing with the old paths until that point.</p></p>
 <h2>Performs a [http://php.net/scandir scandir()] on a directory, removing the `.` and `..` entries</h2>
 <pre>scan(string $filter) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the <code>$filter</code> looks like a valid PCRE pattern - matching delimeters
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If the `$filter` looks like a valid PCRE pattern - matching delimeters
 (a delimeter can be any non-alphanumeric, non-backslash, non-whitespace
-character) followed by zero or more of the flags <code>i</code>, <code>m</code>, <code>s</code>, <code>x</code>,
-<code>e</code>, <code>A</code>, <code>D</code>,  <code>S</code>, <code>U</code>, <code>X</code>, <code>J</code>, <code>u</code> - then
-[http://php.net/preg_match <code>preg_match()</code>] will be used.</p>
+character) followed by zero or more of the flags `i`, `m`, `s`, `x`,
+`e`, `A`, `D`,  `S`, `U`, `X`, `J`, `u` - then
+[http://php.net/preg_match `preg_match()`] will be used.
 
-<p>Otherwise the <code>$filter</code> will do a case-sensitive match with <code>*</code> matching
-zero or more characters and <code>?</code> matching a single character.</p>
+Otherwise the `$filter` will do a case-sensitive match with `*` matching
+zero or more characters and `?` matching a single character.
 
-<p>On all OSes (even Windows), directories will be separated by <code>/</code>s when
-comparing with the <code>$filter</code>.</p></p>
+On all OSes (even Windows), directories will be separated by `/`s when
+comparing with the `$filter`.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$filter</h4>
@@ -440,7 +429,7 @@ comparing with the <code>$filter</code>.</p></p>
 <h2>Performs a **recursive** [http://php.net/scandir scandir()] on a directory, removing the `.` and `..` entries</h2>
 <pre>scanRecursive(string $filter) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -456,7 +445,7 @@ comparing with the <code>$filter</code>.</p></p>
 <h2>Throws an exception if the directory has been deleted</h2>
 <pre>tossIfDeleted() : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-property"></i> Properties</h3>
@@ -464,13 +453,13 @@ comparing with the <code>$filter</code>.</p></p>
 <h2>A backtrace from when the file was deleted</h2>
 <pre>$deleted : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24directory" id="$directory"> </a><div class="element clickable property protected $directory" data-toggle="collapse" data-target=".$directory .collapse">
 <h2>The full path to the directory</h2>
 <pre>$directory : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -478,13 +467,13 @@ comparing with the <code>$filter</code>.</p></p>
 <h2>create</h2>
 <pre>create </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeCanonical" id="makeCanonical"> </a><div class="element clickable constant  makeCanonical" data-toggle="collapse" data-target=".makeCanonical .collapse">
 <h2>makeCanonical</h2>
 <pre>makeCanonical </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -492,8 +481,8 @@ comparing with the <code>$filter</code>.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:46-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

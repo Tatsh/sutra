@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -68,17 +68,8 @@
 <li class="method public "><a href="#addRequiredRule" title="addRequiredRule :: Requires that a column have a non-`NULL` value"><span class="description">Requires that a column have a non-`NULL` value</span><pre>addRequiredRule()</pre></a></li>
 <li class="method public "><a href="#addStringReplacement" title="addStringReplacement :: Adds a call to [http://php.net/str_replace `str_replace()`] for each message"><span class="description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</span><pre>addStringReplacement()</pre></a></li>
 <li class="method public "><a href="#addValidValuesRule" title="addValidValuesRule :: Restricts a column to having only a value from the list of valid values"><span class="description">Restricts a column to having only a value from the list of valid values</span><pre>addValidValuesRule()</pre></a></li>
-<li class="method public "><a href="#hasValue" title="hasValue :: Checks to see if a columns has a value, but based on the schema and if the column allows NULL"><span class="description">Checks to see if a columns has a value, but based on the schema and if the column allows NULL</span><pre>hasValue()</pre></a></li>
-<li class="method public "><a href="#inspect" title="inspect :: Adds metadata about features added by this class"><span class="description">Adds metadata about features added by this class</span><pre>inspect()</pre></a></li>
-<li class="method public "><a href="#removeRegexReplacement" title="removeRegexReplacement :: Removes a regex replacement"><span class="description">Removes a regex replacement</span><pre>removeRegexReplacement()</pre></a></li>
-<li class="method public "><a href="#removeStringReplacement" title="removeStringReplacement :: Removes a string replacement"><span class="description">Removes a string replacement</span><pre>removeStringReplacement()</pre></a></li>
-<li class="method public "><a href="#reorderMessages" title="reorderMessages :: Reorders list items in an html string based on their contents"><span class="description">Reorders list items in an html string based on their contents</span><pre>reorderMessages()</pre></a></li>
-<li class="method public "><a href="#replaceMessages" title="replaceMessages :: Takes a list of messages and performs string and regex replacements on them"><span class="description">Takes a list of messages and performs string and regex replacements on them</span><pre>replaceMessages()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public "><a href="#setColumnCaseInsensitive" title="setColumnCaseInsensitive :: Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints"><span class="description">Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</span><pre>setColumnCaseInsensitive()</pre></a></li>
 <li class="method public "><a href="#setMessageOrder" title="setMessageOrder :: Allows setting the order that the list items in a message will be displayed"><span class="description">Allows setting the order that the list items in a message will be displayed</span><pre>setMessageOrder()</pre></a></li>
-<li class="method public "><a href="#validate" title="validate :: Validates values for an fActiveRecord object against the database schema and any additional rules that have been added"><span class="description">Validates values for an fActiveRecord object against the database schema and any additional rules that have been added</span><pre>validate()</pre></a></li>
-<li class="method public "><a href="#validateRelated" title="validateRelated :: Validates related records for an fActiveRecord object"><span class="description">Validates related records for an fActiveRecord object</span><pre>validateRelated()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#checkAgainstSchema" title="checkAgainstSchema :: Validates a value against the database schema"><span class="description">Validates a value against the database schema</span><pre>checkAgainstSchema()</pre></a></li>
 <li class="method private "><a href="#checkConditionalRule" title="checkConditionalRule :: Validates against a conditional rule"><span class="description">Validates against a conditional rule</span><pre>checkConditionalRule()</pre></a></li>
@@ -92,8 +83,6 @@
 <li class="method private "><a href="#checkUniqueConstraints" title="checkUniqueConstraints :: Validates values against unique constraints"><span class="description">Validates values against unique constraints</span><pre>checkUniqueConstraints()</pre></a></li>
 <li class="method private "><a href="#checkValidValuesRule" title="checkValidValuesRule :: Validates against a valid values rule"><span class="description">Validates against a valid values rule</span><pre>checkValidValuesRule()</pre></a></li>
 <li class="method private "><a href="#compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
-<li class="method private "><a href="#initializeRuleArrays" title="initializeRuleArrays :: Makes sure each rule array is set to at least an empty array"><span class="description">Makes sure each rule array is set to at least an empty array</span><pre>initializeRuleArrays()</pre></a></li>
-<li class="method private "><a href="#isCaseInsensitive" title="isCaseInsensitive :: Checks to see if a column has been set as case insensitive"><span class="description">Checks to see if a column has been set as case insensitive</span><pre>isCaseInsensitive()</pre></a></li>
 <li class="method private "><a href="#isNonBlankString" title="isNonBlankString :: Returns FALSE if the string is empty - used for array filtering"><span class="description">Returns FALSE if the string is empty - used for array filtering</span><pre>isNonBlankString()</pre></a></li>
 <li class="method private "><a href="#sortMessageMatches" title="sortMessageMatches :: Compares the message matching strings by longest first so that the longest matches are made first"><span class="description">Compares the message matching strings by longest first so that the longest matches are made first</span><pre>sortMessageMatches()</pre></a></li>
 <li class="method private "><a href="#stringlike" title="stringlike :: Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)"><span class="description">Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</span><pre>stringlike()</pre></a></li>
@@ -137,7 +126,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfORMValidation" id="\fORMValidation"></a><div href="../classes/fORMValidation.html" class="element class">
+<a name="%5CfORMValidation" id="\fORMValidation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMValidation.html">fORMValidation</a>
+</li>
+</ul>
+<div href="../classes/fORMValidation.html" class="element class">
 <p class="short_description">Handles validation for fActiveRecord classes</p>
 <div class="details">
 <p class="long_description"></p>
@@ -160,7 +158,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -301,10 +299,10 @@
 <h2>Adds a conditional rule</h2>
 <pre>addConditionalRule(mixed $class, string | array $main_columns, mixed $conditional_values, string | array $conditional_columns) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If a non-empty value is found in one of the <code>$main_columns</code>, or if
-specified, a value from the <code>$conditional_values</code> array, all of the
-<code>$conditional_columns</code> will also be required to have a value.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If a non-empty value is found in one of the `$main_columns`, or if
+specified, a value from the `$conditional_values` array, all of the
+`$conditional_columns` will also be required to have a value.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -327,7 +325,7 @@ specified, a value from the <code>$conditional_values</code> array, all of the
 <h2>Add a many-to-many rule that requires at least one related record is associated with the current record</h2>
 <pre>addManyToManyRule(mixed $class, string $related_class, string $route) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -345,7 +343,7 @@ specified, a value from the <code>$conditional_values</code> array, all of the
 <h2>Adds a one-or-more rule that requires at least one of the columns specified has a value</h2>
 <pre>addOneOrMoreRule(mixed $class, array $columns) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -360,7 +358,7 @@ specified, a value from the <code>$conditional_values</code> array, all of the
 <h2>Add a one-to-many rule that requires at least one related record is associated with the current record</h2>
 <pre>addOneToManyRule(mixed $class, string $related_class, string $route) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -378,7 +376,7 @@ specified, a value from the <code>$conditional_values</code> array, all of the
 <h2>Add an only-one rule that requires exactly one of the columns must have a value</h2>
 <pre>addOnlyOneRule(mixed $class, array $columns) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -393,12 +391,12 @@ specified, a value from the <code>$conditional_values</code> array, all of the
 <h2>Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</h2>
 <pre>addRegexReplacement(mixed $class, string $search, string $replace) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Regex replacement is done after the <code>post::validate()</code> hook, and right
-before the messages are reordered.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Regex replacement is done after the `post::validate()` hook, and right
+before the messages are reordered.
 
-<p>If a message is an empty string after replacement, it will be
-removed from the list of messages.</p></p>
+If a message is an empty string after replacement, it will be
+removed from the list of messages.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -417,7 +415,7 @@ removed from the list of messages.</p></p>
 <h2>Adds a rule to validate a column against a PCRE regular expression - the rule is not run if the value is `NULL`</h2>
 <pre>addRegexRule(mixed $class, string $column, string $regex, string $message) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -439,11 +437,11 @@ removed from the list of messages.</p></p>
 <h2>Requires that a column have a non-`NULL` value</h2>
 <pre>addRequiredRule(mixed $class, array $columns) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Before using this method, try setting the database column to <code>NOT NULL</code>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Before using this method, try setting the database column to `NOT NULL`
 and remove any default value. Such a configuration will trigger the same
 functionality as this method, and will enforce the rule on the database
-level for any other code that queries it.</p></p>
+level for any other code that queries it.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -459,12 +457,12 @@ level for any other code that queries it.</p></p>
 <h2>Adds a call to [http://php.net/str_replace `str_replace()`] for each message</h2>
 <pre>addStringReplacement(mixed $class, string $search, string $replace) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>String replacement is done after the <code>post::validate()</code> hook, and right
-before the messages are reordered.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">String replacement is done after the `post::validate()` hook, and right
+before the messages are reordered.
 
-<p>If a message is an empty string after replacement, it will be
-removed from the list of messages.</p></p>
+If a message is an empty string after replacement, it will be
+removed from the list of messages.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -481,12 +479,12 @@ removed from the list of messages.</p></p>
 <h2>Restricts a column to having only a value from the list of valid values</h2>
 <pre>addValidValuesRule(mixed $class, string $column, array $valid_values) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that <code>NULL</code> values are always allowed, even if not listed in
-the <code>$valid_values</code> array, if the column is not set as <code>NOT NULL</code>.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that `NULL` values are always allowed, even if not listed in
+the `$valid_values` array, if the column is not set as `NOT NULL`.
 
-<p>This functionality can also be accomplished by added a <code>CHECK</code> constraint
-on the column in the database, or using a MySQL <code>ENUM</code> data type.</p></p>
+This functionality can also be accomplished by added a `CHECK` constraint
+on the column in the database, or using a MySQL `ENUM` data type.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -500,179 +498,11 @@ on the column in the database, or using a MySQL <code>ENUM</code> data type.</p>
 </div>
 </div></div>
 </div>
-<a name="hasValue" id="hasValue"></a><div class="element clickable method public hasValue" data-toggle="collapse" data-target=".hasValue .collapse">
-<h2>Checks to see if a columns has a value, but based on the schema and if the column allows NULL</h2>
-<pre>hasValue(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, $column) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If the columns allows NULL values, than anything other than NULL
-will be returned as TRUE. If the column does not allow NULL and
-the value is anything other than the "empty" value for that data type,
-then TRUE will be returned.</p>
-
-<p>The values that are considered "empty" for each data type are as follows.
-Please note that there is no "empty" value for dates, times or
-timestamps.</p>
-
-<ul>
-<li>Blob: ''</li>
-<li>Boolean: FALSE</li>
-<li>Float: 0.0</li>
-<li>Integer: 0</li>
-<li>String: ''</li>
-</ul></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$schema</h4>
-<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the table</p></div>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class the column is part of</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values An associative array of all values for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code></code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>An error message for the rule</div>
-</div></div>
-</div>
-<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
-<h2>Adds metadata about features added by this class</h2>
-<pre>inspect(string $class, string $column, array $metadata) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class being inspected</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column being inspected</p></div>
-<div class="subelement argument">
-<h4>$metadata</h4>
-<code>array</code><p>&$metadata The array of metadata about a column</p>
-</div>
-</div></div>
-</div>
-<a name="removeRegexReplacement" id="removeRegexReplacement"></a><div class="element clickable method public removeRegexReplacement" data-toggle="collapse" data-target=".removeRegexReplacement .collapse">
-<h2>Removes a regex replacement</h2>
-<pre>removeRegexReplacement(mixed $class, string $search, string $replace) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
-<div class="subelement argument">
-<h4>$search</h4>
-<code>string</code><p>The string to search for</p></div>
-<div class="subelement argument">
-<h4>$replace</h4>
-<code>string</code><p>The string to replace with</p></div>
-</div></div>
-</div>
-<a name="removeStringReplacement" id="removeStringReplacement"></a><div class="element clickable method public removeStringReplacement" data-toggle="collapse" data-target=".removeStringReplacement .collapse">
-<h2>Removes a string replacement</h2>
-<pre>removeStringReplacement(mixed $class, string $search, string $replace) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
-<div class="subelement argument">
-<h4>$search</h4>
-<code>string</code><p>The string to search for</p></div>
-<div class="subelement argument">
-<h4>$replace</h4>
-<code>string</code><p>The string to replace with</p></div>
-</div></div>
-</div>
-<a name="reorderMessages" id="reorderMessages"></a><div class="element clickable method public reorderMessages" data-toggle="collapse" data-target=".reorderMessages .collapse">
-<h2>Reorders list items in an html string based on their contents</h2>
-<pre>reorderMessages(string $class, array $messages) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to reorder messages for</p></div>
-<div class="subelement argument">
-<h4>$messages</h4>
-<code>array</code><p>An array of the messages</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The reordered messages</div>
-</div></div>
-</div>
-<a name="replaceMessages" id="replaceMessages"></a><div class="element clickable method public replaceMessages" data-toggle="collapse" data-target=".replaceMessages .collapse">
-<h2>Takes a list of messages and performs string and regex replacements on them</h2>
-<pre>replaceMessages(string $class, array $messages) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to reorder messages for</p></div>
-<div class="subelement argument">
-<h4>$messages</h4>
-<code>array</code><p>The array of messages</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>The new array of messages</div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
 <a name="setColumnCaseInsensitive" id="setColumnCaseInsensitive"></a><div class="element clickable method public setColumnCaseInsensitive" data-toggle="collapse" data-target=".setColumnCaseInsensitive .collapse">
 <h2>Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</h2>
 <pre>setColumnCaseInsensitive(mixed $class, string $column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -688,9 +518,9 @@ timestamps.</p>
 <h2>Allows setting the order that the list items in a message will be displayed</h2>
 <pre>setMessageOrder(mixed $class, array $matches) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>All string comparisons during the reordering process are done in a
-case-insensitive manner.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">All string comparisons during the reordering process are done in a
+case-insensitive manner.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -700,63 +530,11 @@ case-insensitive manner.</p></p>
 <code>array</code><p>This should be an ordered array of strings. If a line contains the string it will be displayed in the relative order it occurs in this array.</p></div>
 </div></div>
 </div>
-<a name="validate" id="validate"></a><div class="element clickable method public validate" data-toggle="collapse" data-target=".validate .collapse">
-<h2>Validates values for an fActiveRecord object against the database schema and any additional rules that have been added</h2>
-<pre>validate(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class to validate</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>The values to validate</p></div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>The old values for the record</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>An array of messages</div>
-</div></div>
-</div>
-<a name="validateRelated" id="validateRelated"></a><div class="element clickable method public validateRelated" data-toggle="collapse" data-target=".validateRelated .collapse">
-<h2>Validates related records for an fActiveRecord object</h2>
-<pre>validateRelated(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $related_records) : array</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The object to validate</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The values for the object</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records The related records for the object</p>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>array</code>An array of messages</div>
-</div></div>
-</div>
 <a name="checkAgainstSchema" id="checkAgainstSchema"></a><div class="element clickable method private checkAgainstSchema" data-toggle="collapse" data-target=".checkAgainstSchema .collapse">
 <h2>Validates a value against the database schema</h2>
 <pre>checkAgainstSchema(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, string $column, array $values, array $old_values) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -785,7 +563,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against a conditional rule</h2>
 <pre>checkConditionalRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $main_columns, array $conditional_values, array $conditional_columns) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -817,7 +595,7 @@ case-insensitive manner.</p></p>
 <h2>Validates a value against the database data type</h2>
 <pre>checkDataType(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, string $column, mixed $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -841,7 +619,7 @@ case-insensitive manner.</p></p>
 <h2>Validates values against foreign key constraints</h2>
 <pre>checkForeignKeyConstraints(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, string $column, array $values) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -866,7 +644,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against a one-or-more rule</h2>
 <pre>checkOneOrMoreRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $columns) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -891,7 +669,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against an only-one rule</h2>
 <pre>checkOnlyOneRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $columns) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -916,7 +694,7 @@ case-insensitive manner.</p></p>
 <h2>Makes sure a record with the same primary keys is not already in the database</h2>
 <pre>checkPrimaryKeys(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -942,7 +720,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against a regex rule</h2>
 <pre>checkRegexRule(string $class, array $values, string $column, string $regex, string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -970,7 +748,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against a *-to-many one or more rule</h2>
 <pre>checkRelatedOneOrMoreRule(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $related_records, string $related_class, string $route) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -999,7 +777,7 @@ case-insensitive manner.</p></p>
 <h2>Validates values against unique constraints</h2>
 <pre>checkUniqueConstraints(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1025,7 +803,7 @@ case-insensitive manner.</p></p>
 <h2>Validates against a valid values rule</h2>
 <pre>checkValidValuesRule(string $class, array $values, string $column, array $valid_values) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1050,7 +828,7 @@ case-insensitive manner.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1061,49 +839,11 @@ case-insensitive manner.</p></p>
 <code>string</code>The composed and possible translated message</div>
 </div></div>
 </div>
-<a name="initializeRuleArrays" id="initializeRuleArrays"></a><div class="element clickable method private initializeRuleArrays" data-toggle="collapse" data-target=".initializeRuleArrays .collapse">
-<h2>Makes sure each rule array is set to at least an empty array</h2>
-<pre>initializeRuleArrays(string $class) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to initilize the arrays for</p></div>
-</div></div>
-</div>
-<a name="isCaseInsensitive" id="isCaseInsensitive"></a><div class="element clickable method private isCaseInsensitive" data-toggle="collapse" data-target=".isCaseInsensitive .collapse">
-<h2>Checks to see if a column has been set as case insensitive</h2>
-<pre>isCaseInsensitive(string $class, string $column) : boolean</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to check</p></div>
-<div class="subelement argument">
-<h4>$column</h4>
-<code>string</code><p>The column to check</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the column is set to be case insensitive</div>
-</div></div>
-</div>
 <a name="isNonBlankString" id="isNonBlankString"></a><div class="element clickable method private isNonBlankString" data-toggle="collapse" data-target=".isNonBlankString .collapse">
 <h2>Returns FALSE if the string is empty - used for array filtering</h2>
 <pre>isNonBlankString(string $string) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1118,7 +858,7 @@ case-insensitive manner.</p></p>
 <h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
 <pre>sortMessageMatches(string $a, string $b) : integer</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1136,7 +876,7 @@ case-insensitive manner.</p></p>
 <h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
 <pre>stringlike(mixed $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1153,67 +893,67 @@ case-insensitive manner.</p></p>
 <h2>Columns that should be treated as case insensitive when checking uniqueness</h2>
 <pre>$case_insensitive_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24conditional_rules" id="$conditional_rules"> </a><div class="element clickable property private $conditional_rules" data-toggle="collapse" data-target=".$conditional_rules .collapse">
 <h2>Conditional rules</h2>
 <pre>$conditional_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24message_orders" id="$message_orders"> </a><div class="element clickable property private $message_orders" data-toggle="collapse" data-target=".$message_orders .collapse">
 <h2>Ordering rules for messages</h2>
 <pre>$message_orders : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24one_or_more_rules" id="$one_or_more_rules"> </a><div class="element clickable property private $one_or_more_rules" data-toggle="collapse" data-target=".$one_or_more_rules .collapse">
 <h2>One or more rules</h2>
 <pre>$one_or_more_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24only_one_rules" id="$only_one_rules"> </a><div class="element clickable property private $only_one_rules" data-toggle="collapse" data-target=".$only_one_rules .collapse">
 <h2>Only one rules</h2>
 <pre>$only_one_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24regex_replacements" id="$regex_replacements"> </a><div class="element clickable property private $regex_replacements" data-toggle="collapse" data-target=".$regex_replacements .collapse">
 <h2>Regular expression replacements performed on each message</h2>
 <pre>$regex_replacements : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24regex_rules" id="$regex_rules"> </a><div class="element clickable property private $regex_rules" data-toggle="collapse" data-target=".$regex_rules .collapse">
 <h2>Rules that require a value to match a regular expression</h2>
 <pre>$regex_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24related_one_or_more_rules" id="$related_one_or_more_rules"> </a><div class="element clickable property private $related_one_or_more_rules" data-toggle="collapse" data-target=".$related_one_or_more_rules .collapse">
 <h2>Rules that require at least one or more *-to-many related records to be associated</h2>
 <pre>$related_one_or_more_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24required_rules" id="$required_rules"> </a><div class="element clickable property private $required_rules" data-toggle="collapse" data-target=".$required_rules .collapse">
 <h2>Rules that require a value be present in a column even if the database schema doesn't require it</h2>
 <pre>$required_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24string_replacements" id="$string_replacements"> </a><div class="element clickable property private $string_replacements" data-toggle="collapse" data-target=".$string_replacements .collapse">
 <h2>String replacements performed on each message</h2>
 <pre>$string_replacements : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24valid_values_rules" id="$valid_values_rules"> </a><div class="element clickable property private $valid_values_rules" data-toggle="collapse" data-target=".$valid_values_rules .collapse">
 <h2>Valid values rules</h2>
 <pre>$valid_values_rules : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -1221,127 +961,127 @@ case-insensitive manner.</p></p>
 <h2>addConditionalRule</h2>
 <pre>addConditionalRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addManyToManyRule" id="addManyToManyRule"> </a><div class="element clickable constant  addManyToManyRule" data-toggle="collapse" data-target=".addManyToManyRule .collapse">
 <h2>addManyToManyRule</h2>
 <pre>addManyToManyRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addOneOrMoreRule" id="addOneOrMoreRule"> </a><div class="element clickable constant  addOneOrMoreRule" data-toggle="collapse" data-target=".addOneOrMoreRule .collapse">
 <h2>addOneOrMoreRule</h2>
 <pre>addOneOrMoreRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addOneToManyRule" id="addOneToManyRule"> </a><div class="element clickable constant  addOneToManyRule" data-toggle="collapse" data-target=".addOneToManyRule .collapse">
 <h2>addOneToManyRule</h2>
 <pre>addOneToManyRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addOnlyOneRule" id="addOnlyOneRule"> </a><div class="element clickable constant  addOnlyOneRule" data-toggle="collapse" data-target=".addOnlyOneRule .collapse">
 <h2>addOnlyOneRule</h2>
 <pre>addOnlyOneRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addRegexReplacement" id="addRegexReplacement"> </a><div class="element clickable constant  addRegexReplacement" data-toggle="collapse" data-target=".addRegexReplacement .collapse">
 <h2>addRegexReplacement</h2>
 <pre>addRegexReplacement </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addRegexRule" id="addRegexRule"> </a><div class="element clickable constant  addRegexRule" data-toggle="collapse" data-target=".addRegexRule .collapse">
 <h2>addRegexRule</h2>
 <pre>addRegexRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addRequiredRule" id="addRequiredRule"> </a><div class="element clickable constant  addRequiredRule" data-toggle="collapse" data-target=".addRequiredRule .collapse">
 <h2>addRequiredRule</h2>
 <pre>addRequiredRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addStringReplacement" id="addStringReplacement"> </a><div class="element clickable constant  addStringReplacement" data-toggle="collapse" data-target=".addStringReplacement .collapse">
 <h2>addStringReplacement</h2>
 <pre>addStringReplacement </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="addValidValuesRule" id="addValidValuesRule"> </a><div class="element clickable constant  addValidValuesRule" data-toggle="collapse" data-target=".addValidValuesRule .collapse">
 <h2>addValidValuesRule</h2>
 <pre>addValidValuesRule </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="hasValue" id="hasValue"> </a><div class="element clickable constant  hasValue" data-toggle="collapse" data-target=".hasValue .collapse">
 <h2>hasValue</h2>
 <pre>hasValue </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
 <h2>inspect</h2>
 <pre>inspect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="removeRegexReplacement" id="removeRegexReplacement"> </a><div class="element clickable constant  removeRegexReplacement" data-toggle="collapse" data-target=".removeRegexReplacement .collapse">
 <h2>removeRegexReplacement</h2>
 <pre>removeRegexReplacement </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="removeStringReplacement" id="removeStringReplacement"> </a><div class="element clickable constant  removeStringReplacement" data-toggle="collapse" data-target=".removeStringReplacement .collapse">
 <h2>removeStringReplacement</h2>
 <pre>removeStringReplacement </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reorderMessages" id="reorderMessages"> </a><div class="element clickable constant  reorderMessages" data-toggle="collapse" data-target=".reorderMessages .collapse">
 <h2>reorderMessages</h2>
 <pre>reorderMessages </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="replaceMessages" id="replaceMessages"> </a><div class="element clickable constant  replaceMessages" data-toggle="collapse" data-target=".replaceMessages .collapse">
 <h2>replaceMessages</h2>
 <pre>replaceMessages </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setColumnCaseInsensitive" id="setColumnCaseInsensitive"> </a><div class="element clickable constant  setColumnCaseInsensitive" data-toggle="collapse" data-target=".setColumnCaseInsensitive .collapse">
 <h2>setColumnCaseInsensitive</h2>
 <pre>setColumnCaseInsensitive </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setMessageOrder" id="setMessageOrder"> </a><div class="element clickable constant  setMessageOrder" data-toggle="collapse" data-target=".setMessageOrder .collapse">
 <h2>setMessageOrder</h2>
 <pre>setMessageOrder </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validate" id="validate"> </a><div class="element clickable constant  validate" data-toggle="collapse" data-target=".validate .collapse">
 <h2>validate</h2>
 <pre>validate </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validateRelated" id="validateRelated"> </a><div class="element clickable constant  validateRelated" data-toggle="collapse" data-target=".validateRelated .collapse">
 <h2>validateRelated</h2>
 <pre>validateRelated </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1349,8 +1089,8 @@ case-insensitive manner.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:54-05:00.<br></footer></div>
 </div>
 </body>
 </html>

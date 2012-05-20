@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,12 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public "><a href="#configureOrderingColumn" title="configureOrderingColumn :: Sets a column to be an ordering column"><span class="description">Sets a column to be an ordering column</span><pre>configureOrderingColumn()</pre></a></li>
-<li class="method public "><a href="#delete" title="delete :: Re-orders other records in the set when the record specified is deleted"><span class="description">Re-orders other records in the set when the record specified is deleted</span><pre>delete()</pre></a></li>
-<li class="method public "><a href="#inspect" title="inspect :: Returns the metadata about a column including features added by this class"><span class="description">Returns the metadata about a column including features added by this class</span><pre>inspect()</pre></a></li>
-<li class="method public "><a href="#reflect" title="reflect :: Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class"><span class="description">Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</span><pre>reflect()</pre></a></li>
-<li class="method public "><a href="#reorder" title="reorder :: Re-orders the object based on it's current state and new position"><span class="description">Re-orders the object based on it's current state and new position</span><pre>reorder()</pre></a></li>
-<li class="method public "><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
-<li class="method public "><a href="#validate" title="validate :: Makes sure the ordering value is sane, removes error messages about missing values"><span class="description">Makes sure the ordering value is sane, removes error messages about missing values</span><pre>validate()</pre></a></li>
 <li class="nav-header private">» Private</li>
 <li class="method private "><a href="#__construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
 <li class="method private "><a href="#addOldOtherFieldsWhereParams" title="addOldOtherFieldsWhereParams :: Add params for a `WHERE` clause for the //old// multi-column set a record was part of"><span class="description">Add params for a `WHERE` clause for the //old// multi-column set a record was part of</span><pre>addOldOtherFieldsWhereParams()</pre></a></li>
@@ -87,7 +81,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CfORMOrdering" id="\fORMOrdering"></a><div href="../classes/fORMOrdering.html" class="element class">
+<a name="%5CfORMOrdering" id="\fORMOrdering"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMOrdering.html">fORMOrdering</a>
+</li>
+</ul>
+<div href="../classes/fORMOrdering.html" class="element class">
 <p class="short_description">Allows a column in an fActiveRecord class to be a relative sort order column</p>
 <div class="details">
 <p class="long_description"></p>
@@ -110,7 +113,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Flourish.html">Flourish</a></td>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -203,9 +206,9 @@
 <h2>Sets a column to be an ordering column</h2>
 <pre>configureOrderingColumn(mixed $class, string $column) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>There can only be one ordering column per class/table and it must be
-part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">There can only be one ordering column per class/table and it must be
+part of a single or multi-column `UNIQUE` constraint.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$class</h4>
@@ -215,187 +218,11 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <code>string</code><p>The column to set as an ordering column</p></div>
 </div></div>
 </div>
-<a name="delete" id="delete"></a><div class="element clickable method public delete" data-toggle="collapse" data-target=".delete .collapse">
-<h2>Re-orders other records in the set when the record specified is deleted</h2>
-<pre>delete(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="inspect" id="inspect"></a><div class="element clickable method public inspect" data-toggle="collapse" data-target=".inspect .collapse">
-<h2>Returns the metadata about a column including features added by this class</h2>
-<pre>inspect(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, string $method_name, array $parameters) : mixed</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$method_name</h4>
-<code>string</code><p>The method that was called</p></div>
-<div class="subelement argument">
-<h4>$parameters</h4>
-<code>array</code><p>The parameters passed to the method</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>mixed</code>The metadata array or element specified</div>
-</div></div>
-</div>
-<a name="reflect" id="reflect"></a><div class="element clickable method public reflect" data-toggle="collapse" data-target=".reflect .collapse">
-<h2>Adjusts the fActiveRecord::reflect() signatures of columns that have been configured in this class</h2>
-<pre>reflect(string $class, array $signatures, boolean $include_doc_comments) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$class</h4>
-<code>string</code><p>The class to reflect</p></div>
-<div class="subelement argument">
-<h4>$signatures</h4>
-<code>array</code><p>&$signatures The associative array of <code>{method name} => {signature}</code></p>
-</div>
-<div class="subelement argument">
-<h4>$include_doc_comments</h4>
-<code>boolean</code><p>If doc comments should be included with the signature</p></div>
-</div></div>
-</div>
-<a name="reorder" id="reorder"></a><div class="element clickable method public reorder" data-toggle="collapse" data-target=".reorder .collapse">
-<h2>Re-orders the object based on it's current state and new position</h2>
-<pre>reorder(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-</div></div>
-</div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-</div></div>
-</div>
-<a name="validate" id="validate"></a><div class="element clickable method public validate" data-toggle="collapse" data-target=".validate .collapse">
-<h2>Makes sure the ordering value is sane, removes error messages about missing values</h2>
-<pre>validate(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values, array $related_records, array $cache, array $validation_messages) : void</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$object</h4>
-<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The fActiveRecord instance</p></div>
-<div class="subelement argument">
-<h4>$values</h4>
-<code>array</code><p>&$values The current values</p>
-</div>
-<div class="subelement argument">
-<h4>$old_values</h4>
-<code>array</code><p>&$old_values The old values</p>
-</div>
-<div class="subelement argument">
-<h4>$related_records</h4>
-<code>array</code><p>&$related_records Any records related to this record</p>
-</div>
-<div class="subelement argument">
-<h4>$cache</h4>
-<code>array</code><p>&$cache The cache array for the record</p>
-</div>
-<div class="subelement argument">
-<h4>$validation_messages</h4>
-<code>array</code><p>&$validation_messages An array of ordered validation messages</p>
-</div>
-</div></div>
-</div>
 <a name="__construct" id="__construct"></a><div class="element clickable method private __construct" data-toggle="collapse" data-target=".__construct .collapse">
 <h2>Forces use as a static class</h2>
 <pre>__construct() : <a href="../classes/fORMOrdering.html">\fORMOrdering</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/fORMOrdering.html">\fORMOrdering</a></code></div>
@@ -405,7 +232,7 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>Add params for a `WHERE` clause for the //old// multi-column set a record was part of</h2>
 <pre>addOldOtherFieldsWhereParams(<a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $other_columns, array $values, array $old_values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -440,7 +267,7 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>Adds params for a `WHERE` clause to ensure a database call is only selecting from rows that are part of the same set when an ordering field is in multi-column `UNIQUE` constraint.</h2>
 <pre>addOtherFieldsWhereParams(<a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $other_columns, array $values) : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -471,7 +298,7 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>Composes text using fText if loaded</h2>
 <pre>compose(string $message) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -486,7 +313,7 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>Checks to see if the values specified are part of a record that is new to its order set</h2>
 <pre>isInNewSet(string $ordering_column, array $other_columns, array $values, array $old_values) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -515,7 +342,7 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>The columns configured as ordering columns</h2>
 <pre>$ordering_columns : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -523,43 +350,43 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 <h2>configureOrderingColumn</h2>
 <pre>configureOrderingColumn </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="delete" id="delete"> </a><div class="element clickable constant  delete" data-toggle="collapse" data-target=".delete .collapse">
 <h2>delete</h2>
 <pre>delete </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="inspect" id="inspect"> </a><div class="element clickable constant  inspect" data-toggle="collapse" data-target=".inspect .collapse">
 <h2>inspect</h2>
 <pre>inspect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reflect" id="reflect"> </a><div class="element clickable constant  reflect" data-toggle="collapse" data-target=".reflect .collapse">
 <h2>reflect</h2>
 <pre>reflect </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reorder" id="reorder"> </a><div class="element clickable constant  reorder" data-toggle="collapse" data-target=".reorder .collapse">
 <h2>reorder</h2>
 <pre>reorder </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="validate" id="validate"> </a><div class="element clickable constant  validate" data-toggle="collapse" data-target=".validate .collapse">
 <h2>validate</h2>
 <pre>validate </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -567,8 +394,8 @@ part of a single or multi-column <code>UNIQUE</code> constraint.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:45-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:55-05:00.<br></footer></div>
 </div>
 </body>
 </html>

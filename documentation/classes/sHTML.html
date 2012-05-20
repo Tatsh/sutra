@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -126,12 +126,21 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsHTML" id="\sHTML"></a><div href="../classes/sHTML.html" class="element class">
+<a name="%5CsHTML" id="\sHTML"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sHTML.html">sHTML</a>
+</li>
+</ul>
+<div href="../classes/sHTML.html" class="element class">
 <p class="short_description">Library to help with rendering HTML tags cleanly and validly. Note that
   only some element attributes are checked for validity and fixed.</p>
 <div class="details">
-<p class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
-http://flourishlib.com/docs/UTF-8 for more information.</p></p>
+<p class="long_description">This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
@@ -147,7 +156,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -165,7 +174,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
   string for use in HTML.</h2>
 <pre>attributesString(array $attr) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -180,7 +189,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Create a tag HTML string wrapped by a MSIE conditional comment.</h2>
 <pre>conditionalTag(string $rule, string $tag, array $attr, string $content) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -205,7 +214,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Checks a string of HTML for block level elements</h2>
 <pre>containsBlockLevelHTML(string $content) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -224,7 +233,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Converts newlines into `br` tags as long as there aren't any block-level HTML tags present</h2>
 <pre>convertNewlines(string $content) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -240,7 +249,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Converts all HTML entities to normal characters, using UTF-8</h2>
 <pre>decode(string $content) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -259,7 +268,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Converts all special characters to entites, using UTF-8.</h2>
 <pre>encode(string | array $content) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -278,7 +287,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Check if a URL is a full URI or not.</h2>
 <pre>linkIsURI(string $url, array $other_protocols) : bool</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -296,11 +305,11 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Create a form element.</h2>
 <pre>makeFormElement(string $type, string $name, array $attr) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>If specifying a select element, it may be desirable to have a default
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">If specifying a select element, it may be desirable to have a default
   selected option. To do so, specify a 'value' key with a string value
   in the $attr argument. For optgroups, use a 2-dimensional array in
-  the 'options' key in the $attr argument.</p></p>
+  the 'options' key in the $attr argument.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$type</h4>
@@ -327,7 +336,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Takes a block of text and converts all URLs into HTML links</h2>
 <pre>makeLinks(string $content, integer $link_text_length) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -351,7 +360,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
   will be automatically added to each li element.</h2>
 <pre>makeList(array $items, string $type, array $attr) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -372,7 +381,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Create paragraphs from 2 or more new lines.</h2>
 <pre>paragraphify(string $html) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -386,7 +395,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Prepares content for display in UTF-8 encoded HTML - allows HTML tags</h2>
 <pre>prepare(string | array $content) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -405,7 +414,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Prints an `option` tag with the provided value, using the selected value to determine if the option should be marked as selected</h2>
 <pre>printOption(string $text, string $value, string $selected_value) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -427,7 +436,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Sets the proper Content-Type header for a UTF-8 HTML (or pseudo-XHTML) page</h2>
 <pre>sendHeader() : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -439,7 +448,7 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Prints a `p` (or `div` if the content has block-level HTML) tag with the contents and the class specified - will not print if no content</h2>
 <pre>show(string $content, string $css_class) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -461,11 +470,11 @@ http://flourishlib.com/docs/UTF-8 for more information.</p></p>
 <h2>Prints a `checked="checked"` HTML input attribute if `$value` equals `$checked_value`, or if `$value` is in `$checked_value`</h2>
 <pre>showChecked(string $value, string | array $checked_value) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>Please note that if either <code>$value</code> or <code>$checked_value</code> is <code>NULL</code>, a
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">Please note that if either `$value` or `$checked_value` is `NULL`, a
 strict comparison will be performed, whereas normally a non-strict
-comparison is made. Thus <code>0</code> and <code>FALSE</code> will cause the checked
-attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p></p>
+comparison is made. Thus `0` and `FALSE` will cause the checked
+attribute to be printed, but `0` and `NULL` will not.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fHTML::showChecked()</td>
@@ -487,7 +496,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Create a tag HTML string.</h2>
 <pre>tag(string $tag, array $attr, string $content) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -512,7 +521,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
   several &lt;p&gt; tags with no endings, so it returns TRUE.</h2>
 <pre>tagRequiresEnd(string $tag) : bool</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -527,7 +536,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Private to force use as static class.</h2>
 <pre>__construct() : <a href="../classes/sHTML.html">\sHTML</a></pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response"><code><a href="../classes/sHTML.html">\sHTML</a></code></div>
@@ -537,7 +546,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Create a form element ID.</h2>
 <pre>formElementIDWithName(string $name) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -552,7 +561,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Handles creating select fields with options.</h2>
 <pre>makeSelectElement(string $name, string $label, array $attributes) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -570,7 +579,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Handles creating textarea tags.</h2>
 <pre>makeTextarea(string $name, string $label, array $attributes) </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -589,7 +598,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
   or boolean attribute.</h2>
 <pre>validAttributeValue(string $attribute_name, boolean $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -609,19 +618,19 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>Boolean attributes that must be omitted if the state is to be off.</h2>
 <pre>$boolean_attributes : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24form_element_ids" id="$form_element_ids"> </a><div class="element clickable property private $form_element_ids" data-toggle="collapse" data-target=".$form_element_ids .collapse">
 <h2>Stores all form element IDs so that all generated via this class are unique.</h2>
 <pre>$form_element_ids : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24input_type_values" id="$input_type_values"> </a><div class="element clickable property private $input_type_values" data-toggle="collapse" data-target=".$input_type_values .collapse">
 <h2>Valid values for the element input type attribute.</h2>
 <pre>$input_type_values : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>link</th>
@@ -634,7 +643,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
   and off (enumerated attributes that only have on/off states).</h2>
 <pre>$special_enumerated_attributes : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <h3>
 <i class="icon-custom icon-constant"></i> Constants</h3>
@@ -642,19 +651,19 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>attributesString</h2>
 <pre>attributesString </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="conditionalTag" id="conditionalTag"> </a><div class="element clickable constant  conditionalTag" data-toggle="collapse" data-target=".conditionalTag .collapse">
 <h2>conditionalTag</h2>
 <pre>conditionalTag </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="containsBlockLevelHTML" id="containsBlockLevelHTML"> </a><div class="element clickable constant  containsBlockLevelHTML" data-toggle="collapse" data-target=".containsBlockLevelHTML .collapse">
 <h2>containsBlockLevelHTML</h2>
 <pre>containsBlockLevelHTML </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -666,7 +675,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>convertNewlines</h2>
 <pre>convertNewlines </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -678,7 +687,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>decode</h2>
 <pre>decode </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -690,7 +699,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>encode</h2>
 <pre>encode </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -702,19 +711,19 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>linkIsURI</h2>
 <pre>linkIsURI </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeFormElement" id="makeFormElement"> </a><div class="element clickable constant  makeFormElement" data-toggle="collapse" data-target=".makeFormElement .collapse">
 <h2>makeFormElement</h2>
 <pre>makeFormElement </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="makeLinks" id="makeLinks"> </a><div class="element clickable constant  makeLinks" data-toggle="collapse" data-target=".makeLinks .collapse">
 <h2>makeLinks</h2>
 <pre>makeLinks </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -726,19 +735,19 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>makeList</h2>
 <pre>makeList </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="paragraphify" id="paragraphify"> </a><div class="element clickable constant  paragraphify" data-toggle="collapse" data-target=".paragraphify .collapse">
 <h2>paragraphify</h2>
 <pre>paragraphify </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="prepare" id="prepare"> </a><div class="element clickable constant  prepare" data-toggle="collapse" data-target=".prepare .collapse">
 <h2>prepare</h2>
 <pre>prepare </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -750,7 +759,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>printOption</h2>
 <pre>printOption </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -762,7 +771,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>sendHeader</h2>
 <pre>sendHeader </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -774,7 +783,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>show</h2>
 <pre>show </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -786,7 +795,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>showChecked</h2>
 <pre>showChecked </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -798,7 +807,7 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 <h2>tag</h2>
 <pre>tag </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -806,8 +815,8 @@ attribute to be printed, but <code>0</code> and <code>NULL</code> will not.</p><
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>

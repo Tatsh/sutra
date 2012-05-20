@@ -32,10 +32,10 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">160</span></a></li>
+                <span class="label label-info">257</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
-                <span class="label label-info">3</span>
+                <span class="label label-info">2</span>
 </li></ul></a></li>
 <li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
                 <span class="label label-info">0</span></a></li>
@@ -59,7 +59,6 @@
 <li class="nav-header">
 <i class="icon-custom icon-method"></i> Methods</li>
 <li class="method public inherited"><a href="#__construct" title="__construct :: Creates a large/precise number"><span class="description">Creates a large/precise number</span><pre>__construct()</pre></a></li>
-<li class="method public inherited"><a href="#__get" title="__get :: All requests that hit this method should be requests for callbacks"><span class="description">All requests that hit this method should be requests for callbacks</span><pre>__get()</pre></a></li>
 <li class="method public inherited"><a href="#__toString" title="__toString :: Converts the object to an string"><span class="description">Converts the object to an string</span><pre>__toString()</pre></a></li>
 <li class="method public inherited"><a href="#abs" title="abs :: Returns the absolute value of this number"><span class="description">Returns the absolute value of this number</span><pre>abs()</pre></a></li>
 <li class="method public inherited"><a href="#add" title="add :: Adds two numbers together"><span class="description">Adds two numbers together</span><pre>add()</pre></a></li>
@@ -83,9 +82,6 @@
 <li class="method public inherited"><a href="#mul" title="mul :: Multiplies two numbers"><span class="description">Multiplies two numbers</span><pre>mul()</pre></a></li>
 <li class="method public inherited"><a href="#neg" title="neg :: Negates this number"><span class="description">Negates this number</span><pre>neg()</pre></a></li>
 <li class="method public "><a href="#ordinal" title="ordinal :: Format a number to be ordinal."><span class="description">Format a number to be ordinal.</span><pre>ordinal()</pre></a></li>
-<li class="method public "><a href="#ordinalNumberPrefixedCallback" title="ordinalNumberPrefixedCallback :: Callback for English ordinal numbers (where numbers come before the
-  ordinal keyword)."><span class="description">Callback for English ordinal numbers (where numbers come before the
-  ordinal keyword).</span><pre>ordinalNumberPrefixedCallback()</pre></a></li>
 <li class="method public "><a href="#ordinalSuffix" title="ordinalSuffix :: Get the correct oridinal suffix for a number."><span class="description">Get the correct oridinal suffix for a number.</span><pre>ordinalSuffix()</pre></a></li>
 <li class="method public inherited"><a href="#pi" title="pi :: Returns the value for pi with a scale of up to 500"><span class="description">Returns the value for pi with a scale of up to 500</span><pre>pi()</pre></a></li>
 <li class="method public inherited"><a href="#pow" title="pow :: Raise this number to the power specified"><span class="description">Raise this number to the power specified</span><pre>pow()</pre></a></li>
@@ -93,7 +89,6 @@
 <li class="method public inherited"><a href="#registerFormatCallback" title="registerFormatCallback :: Allows setting a callback to translate or modify any return values from ::format()"><span class="description">Allows setting a callback to translate or modify any return values from ::format()</span><pre>registerFormatCallback()</pre></a></li>
 <li class="method public inherited"><a href="#registerUnformatCallback" title="registerUnformatCallback :: Allows setting a callback to clean any formatted values so they can be properly parsed - useful for languages where `,` is used as the decimal point"><span class="description">Allows setting a callback to clean any formatted values so they can be properly parsed - useful for languages where `,` is used as the decimal point</span><pre>registerUnformatCallback()</pre></a></li>
 <li class="method public "><a href="#removeLocale" title="removeLocale :: Remove a locale's set of callbacks."><span class="description">Remove a locale's set of callbacks.</span><pre>removeLocale()</pre></a></li>
-<li class="method public inherited"><a href="#reset" title="reset :: Resets the configuration of the class"><span class="description">Resets the configuration of the class</span><pre>reset()</pre></a></li>
 <li class="method public inherited"><a href="#round" title="round :: Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal"><span class="description">Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal</span><pre>round()</pre></a></li>
 <li class="method public "><a href="#setFallbackLocale" title="setFallbackLocale :: Set the fallback locale if the current locale set does not have a
   callback for the method requested. If no callbacks yet exist,
@@ -156,7 +151,16 @@
 </ul>
 </div>
 <div class="span8">
-<a name="%5CsNumber" id="\sNumber"></a><div href="../classes/sNumber.html" class="element class">
+<a name="%5CsNumber" id="\sNumber"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/default.html">default</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sNumber.html">sNumber</a>
+</li>
+</ul>
+<div href="../classes/sNumber.html" class="element class">
 <p class="short_description">Provides getting ordinal numbers as an extension to fNumber.</p>
 <div class="details">
 <p class="long_description"></p>
@@ -175,7 +179,7 @@
 </tr>
 <tr>
 <th>package</th>
-<td><a href="..//packages/Sutra.html">Sutra</a></td>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
 </tr>
 <tr>
 <th>link</th>
@@ -192,7 +196,7 @@
 <h2>Creates a large/precise number</h2>
 <pre>__construct(string $value, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -216,36 +220,11 @@
 <div class="subelement response"><code><a href="../classes/fNumber.html">\fNumber</a></code></div>
 </div></div>
 </div>
-<a name="__get" id="__get"></a><div class="element clickable method public __get" data-toggle="collapse" data-target=".__get .collapse">
-<h2>All requests that hit this method should be requests for callbacks</h2>
-<pre>__get(string $method) : callback</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fNumber::__get()</td>
-</tr>
-</table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$method</h4>
-<code>string</code><p>The method to create a callback for</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>callback</code>The callback for the method requested</div>
-</div></div>
-</div>
 <a name="__toString" id="__toString"></a><div class="element clickable method public __toString" data-toggle="collapse" data-target=".__toString .collapse">
 <h2>Converts the object to an string</h2>
 <pre>__toString() : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -259,7 +238,7 @@
 <h2>Returns the absolute value of this number</h2>
 <pre>abs(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -279,7 +258,7 @@
 <h2>Adds two numbers together</h2>
 <pre>add(<a href="../classes/fNumber.html">\fNumber</a> | string $addend, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -307,10 +286,10 @@
 <h2>Add a callback that will be used in place of the ones here.</h2>
 <pre>addCallback(string $locale, string $method_name, string | array $callback) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>For use with different languages and locales.</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">For use with different languages and locales.
 
-<p>All callbacks must receive one value, an integer, and return a string.</p></p>
+All callbacks must receive one value, an integer, and return a string.</p>
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$locale</h4>
@@ -333,7 +312,7 @@
 <h2>Converts any positive integer between any two bases ranging from `2` to `16`</h2>
 <pre>baseConvert(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $from_base, integer $to_base) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -360,7 +339,7 @@
 <h2>Rounds the number to the next highest integer</h2>
 <pre>ceil() : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -375,7 +354,7 @@
 <h2>Divides this number by the one passed</h2>
 <pre>div(<a href="../classes/fNumber.html">\fNumber</a> | string $divisor, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -403,7 +382,7 @@
 <h2>Indicates if this value is equal to the one passed</h2>
 <pre>eq(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $scale) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -431,7 +410,7 @@
 <h2>Rounds the number to the next lowest integer</h2>
 <pre>floor() : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -446,7 +425,7 @@
 <h2>Returns the float remainder of dividing this number by the divisor provided</h2>
 <pre>fmod(<a href="../classes/fNumber.html">\fNumber</a> | string $divisor, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -474,7 +453,7 @@
 <h2>Formats the number to include thousands separators</h2>
 <pre>format(boolean $remove_zero_fraction) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -494,7 +473,7 @@
 <h2>Get the number formatted with the oridinal suffix.</h2>
 <pre>formatWithOrdinalSuffix(boolean $remove_zero_fraction) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -509,7 +488,7 @@
 <h2>Get the correct suffix for the current number.</h2>
 <pre>getOrdinalSuffix() : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Returns</h3>
 <div class="subelement response">
@@ -520,7 +499,7 @@
 <h2>Returns the scale of this number</h2>
 <pre>getScale() : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -535,7 +514,7 @@
 <h2>Indicates if this value is greater than the one passed</h2>
 <pre>gt(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $scale) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -563,7 +542,7 @@
 <h2>Indicates if this value is greater than or equal to the one passed</h2>
 <pre>gte(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $scale) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -591,7 +570,7 @@
 <h2>Checks if a number is equal to its integer-casted counterpart.</h2>
 <pre>isEqualToIntCast(mixed $value) : boolean</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -606,7 +585,7 @@
 <h2>Indicates if this value is less than the one passed</h2>
 <pre>lt(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $scale) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -634,7 +613,7 @@
 <h2>Indicates if this value is less than or equal to the one passed</h2>
 <pre>lte(<a href="../classes/fNumber.html">\fNumber</a> | string $number, integer $scale) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -662,7 +641,7 @@
 <h2>Returns the remainder of dividing this number by the divisor provided. All floats are converted to integers.</h2>
 <pre>mod(<a href="../classes/fNumber.html">\fNumber</a> | string $divisor) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -687,7 +666,7 @@
 <h2>Multiplies two numbers</h2>
 <pre>mul(<a href="../classes/fNumber.html">\fNumber</a> | string $multiplier, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -715,7 +694,7 @@
 <h2>Negates this number</h2>
 <pre>neg(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -735,7 +714,7 @@
 <h2>Format a number to be ordinal.</h2>
 <pre>ordinal(int $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -746,32 +725,11 @@
 <code>string</code>Number with proper English suffix.</div>
 </div></div>
 </div>
-<a name="ordinalNumberPrefixedCallback" id="ordinalNumberPrefixedCallback"></a><div class="element clickable method public ordinalNumberPrefixedCallback" data-toggle="collapse" data-target=".ordinalNumberPrefixedCallback .collapse">
-<h2>Callback for English ordinal numbers (where numbers come before the
-  ordinal keyword).</h2>
-<pre>ordinalNumberPrefixedCallback(integer $value) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered"><tr>
-<th>internal</th>
-<td></td>
-</tr></table>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$value</h4>
-<code>integer</code>
-</div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The value, formatted.</div>
-</div></div>
-</div>
 <a name="ordinalSuffix" id="ordinalSuffix"></a><div class="element clickable method public ordinalSuffix" data-toggle="collapse" data-target=".ordinalSuffix .collapse">
 <h2>Get the correct oridinal suffix for a number.</h2>
 <pre>ordinalSuffix(integer $value) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -786,7 +744,7 @@
 <h2>Returns the value for pi with a scale of up to 500</h2>
 <pre>pi(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -805,7 +763,7 @@
 <h2>Raise this number to the power specified</h2>
 <pre>pow(integer $exponent, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -834,9 +792,9 @@
 <h2>Gets the remainder of this integer number raised to the integer `$exponent`, divided by the integer `$modulus`</h2>
 <pre>powmod(<a href="../classes/fNumber.html">\fNumber</a> | string $exponent, <a href="../classes/fNumber.html">\fNumber</a> | string $modulus) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>This method is faster than doing <code>$num-&gt;pow($exponent)-&gt;mod($modulus)</code>
-and is primarily useful for cryptographic functionality.</p></p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">This method is faster than doing `$num->pow($exponent)->mod($modulus)`
+and is primarily useful for cryptographic functionality.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fNumber::powmod()</td>
@@ -864,12 +822,12 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Allows setting a callback to translate or modify any return values from ::format()</h2>
 <pre>registerFormatCallback(callback $callback) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"><p>The callback should accept two parameters:
- - <code>$value</code>: the string value of the number
- - <code>$remove_zero_fraction</code>: a boolean indicating if a zero fraction should be removed</p>
+<div class="row collapse"><div class="detail-description">
+<p class="long_description">The callback should accept two parameters:
+ - `$value`: the string value of the number
+ - `$remove_zero_fraction`: a boolean indicating if a zero fraction should be removed
 
-<p>The callback should return a string, the formatted <code>$value</code>.</p></p>
+The callback should return a string, the formatted `$value`.</p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
 <td>\fNumber::registerFormatCallback()</td>
@@ -885,7 +843,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Allows setting a callback to clean any formatted values so they can be properly parsed - useful for languages where `,` is used as the decimal point</h2>
 <pre>registerUnformatCallback(callback $callback) : void</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -902,7 +860,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Remove a locale's set of callbacks.</h2>
 <pre>removeLocale(string $locale_name) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -910,29 +868,11 @@ and is primarily useful for cryptographic functionality.</p></p>
 <code>string</code><p>Locale name.</p></div>
 </div></div>
 </div>
-<a name="reset" id="reset"></a><div class="element clickable method public reset" data-toggle="collapse" data-target=".reset .collapse">
-<h2>Resets the configuration of the class</h2>
-<pre>reset() : void</pre>
-<div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
-<p class="long_description"></p>
-<table class="table table-bordered">
-<tr>
-<th>internal</th>
-<td></td>
-</tr>
-<tr>
-<th>inherited_from</th>
-<td>\fNumber::reset()</td>
-</tr>
-</table>
-</div></div>
-</div>
 <a name="round" id="round"></a><div class="element clickable method public round" data-toggle="collapse" data-target=".round .collapse">
 <h2>Rounds this number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal</h2>
 <pre>round(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -954,7 +894,7 @@ and is primarily useful for cryptographic functionality.</p></p>
   the defaults in this class will be assigned.</h2>
 <pre>setFallbackLocale(string $locale) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -967,7 +907,7 @@ and is primarily useful for cryptographic functionality.</p></p>
   the defaults in this class will be assigned.</h2>
 <pre>setLocale(string $locale) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -985,7 +925,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Returns the sign of the number</h2>
 <pre>sign() : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1000,7 +940,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Returns the square root of this number</h2>
 <pre>sqrt(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1020,7 +960,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Subtracts two numbers</h2>
 <pre>sub(<a href="../classes/fNumber.html">\fNumber</a> | string $subtrahend, integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1048,7 +988,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Scales (truncates or expands) the number to the specified number of digits after the decimal - negative scales round the number by places to the left of the decimal</h2>
 <pre>trunc(integer $scale) : <a href="../classes/fNumber.html">\fNumber</a></pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1069,7 +1009,7 @@ and is primarily useful for cryptographic functionality.</p></p>
   specified locale.</h2>
 <pre>addDefaultCallbacks(string $locale) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1087,7 +1027,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Compared the two numbers</h2>
 <pre>cmp(string $number1, string $number2) : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1109,7 +1049,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Makes sure the scale is an int greater than `-1` - will return the current scale if the one passed is `NULL`</h2>
 <pre>fixScale(integer $scale) : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1128,7 +1068,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Makes sure a number has a sign</h2>
 <pre>fixSign(string $number) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1148,7 +1088,7 @@ and is primarily useful for cryptographic functionality.</p></p>
   the class.</h2>
 <pre>getValidCallback(string $fn) : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1163,7 +1103,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Checks to see if a number is equal to zero</h2>
 <pre>isZero(string $number) : boolean</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1182,7 +1122,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Normalizes two numbers to the same number of decimal places</h2>
 <pre>normalize(<a href="../classes/fNumber.html">\fNumber</a> | string $number1, <a href="../classes/fNumber.html">\fNumber</a> | string $number2, integer $scale) : array</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1212,7 +1152,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Parses a number to ensure it is valid</h2>
 <pre>parse(object | string $number, string $element) : mixed</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1240,7 +1180,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Adds two numbers together</h2>
 <pre>performAdd(string $number1, string $number2, integer $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1270,7 +1210,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Divides a number by another</h2>
 <pre>performDiv(string $dividend, string $divisor, integer $remainder, integer $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1304,7 +1244,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Multiplies two numbers</h2>
 <pre>performMul(string $multiplicand, string $multiplier, integer $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1329,7 +1269,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Calculates the integer power of a number</h2>
 <pre>performPow(string $number, string $power, $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1361,7 +1301,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Subtracts the second number from the first</h2>
 <pre>performSub(string $minuend, string $subtrahend, $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1392,7 +1332,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Sets the scale for a number</h2>
 <pre>setScale(string $number, integer $scale) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1414,7 +1354,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Strips the leading zeroes off of a number</h2>
 <pre>stripLeadingZeroes(string $number) : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1433,7 +1373,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Checks if a locale is valid.</h2>
 <pre>tossIfInvalidLocale(string $locale) : void</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <h3>Parameters</h3>
 <div class="subelement argument">
@@ -1452,19 +1392,19 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Callbacks for other languages.</h2>
 <pre>$callbacks : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24fallback_locale" id="$fallback_locale"> </a><div class="element clickable property private $fallback_locale" data-toggle="collapse" data-target=".$fallback_locale .collapse">
 <h2>The fallback to use if the locale has no callback for the locale in use.</h2>
 <pre>$fallback_locale : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"><p>Defaults to US English.</p></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description">Defaults to US English.</p></div></div>
 </div>
 <a name="%24format_callback" id="$format_callback"> </a><div class="element clickable property private $format_callback" data-toggle="collapse" data-target=".$format_callback .collapse">
 <h2>A callback to process all values through</h2>
 <pre>$format_callback : callback</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1476,13 +1416,13 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>The locale for the class. Defaults to US English.</h2>
 <pre>$locale : string</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="%24scale" id="$scale"> </a><div class="element clickable property private $scale" data-toggle="collapse" data-target=".$scale .collapse">
 <h2>The scale (number of digits after the decimal) of the number</h2>
 <pre>$scale : integer</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1494,7 +1434,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>A callback to process all values through</h2>
 <pre>$unformat_callback : callback</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1506,7 +1446,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>Common list of locales.</h2>
 <pre>$valid_locales : array</pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>see</th>
@@ -1518,7 +1458,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>The value of the number</h2>
 <pre>$value : string</pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1532,13 +1472,13 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>addCallback</h2>
 <pre>addCallback </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="baseConvert" id="baseConvert"> </a><div class="element clickable constant  baseConvert" data-toggle="collapse" data-target=".baseConvert .collapse">
 <h2>baseConvert</h2>
 <pre>baseConvert </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1550,25 +1490,25 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>isEqualToIntCast</h2>
 <pre>isEqualToIntCast </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ordinal" id="ordinal"> </a><div class="element clickable constant  ordinal" data-toggle="collapse" data-target=".ordinal .collapse">
 <h2>ordinal</h2>
 <pre>ordinal </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="ordinalSuffix" id="ordinalSuffix"> </a><div class="element clickable constant  ordinalSuffix" data-toggle="collapse" data-target=".ordinalSuffix .collapse">
 <h2>ordinalSuffix</h2>
 <pre>ordinalSuffix </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="pi" id="pi"> </a><div class="element clickable constant  pi" data-toggle="collapse" data-target=".pi .collapse">
 <h2>pi</h2>
 <pre>pi </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1580,7 +1520,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>registerFormatCallback</h2>
 <pre>registerFormatCallback </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1592,7 +1532,7 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>registerUnformatCallback</h2>
 <pre>registerUnformatCallback </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1604,13 +1544,13 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>removeLocale</h2>
 <pre>removeLocale </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="reset" id="reset"> </a><div class="element clickable constant  reset" data-toggle="collapse" data-target=".reset .collapse">
 <h2>reset</h2>
 <pre>reset </pre>
 <div class="labels"><span class="label">Inherited</span></div>
-<div class="row collapse"><div class="span8">
+<div class="row collapse"><div class="detail-description">
 <p class="long_description"></p>
 <table class="table table-bordered"><tr>
 <th>inherited_from</th>
@@ -1622,13 +1562,13 @@ and is primarily useful for cryptographic functionality.</p></p>
 <h2>setFallbackLocale</h2>
 <pre>setFallbackLocale </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 <a name="setLocale" id="setLocale"> </a><div class="element clickable constant  setLocale" data-toggle="collapse" data-target=".setLocale .collapse">
 <h2>setLocale</h2>
 <pre>setLocale </pre>
 <div class="labels"></div>
-<div class="row collapse"><div class="span8"><p class="long_description"></p></div></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
 </div>
 </div>
 </div>
@@ -1636,8 +1576,8 @@ and is primarily useful for cryptographic functionality.</p></p>
 </div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
-            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a2</a> and<br>
-            generated on 2012-05-17T02:01:44-05:00.<br></footer></div>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a3</a> and<br>
+            generated on 2012-05-20T12:15:53-05:00.<br></footer></div>
 </div>
 </body>
 </html>
