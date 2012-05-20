@@ -7,6 +7,10 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testRequireNotLoggedInLoggedIn() {
+    if (!function_exists('set_exit_overload')) {
+      $this->markTestSkipped('Blocking exit functionality is not available.');
+    }
+    
     $this->expectOutputString('http://'.$_SERVER['SERVER_NAME'].'/');
 
     sAuthorization::setUserAuthLevel('admin');
@@ -14,10 +18,18 @@ class sAuthorizationTest extends PHPUnit_Framework_TestCase {
   }
 
   public function testRequireNotLoggedIn() {
+    if (!function_exists('set_exit_overload')) {
+      $this->markTestSkipped('Blocking exit functionality is not available.');
+    }
+    
     $this->assertNull(sAuthorization::requireNotLoggedIn());
   }
 
   public function testRequireNotLoggedInURLArgument() {
+    if (!function_exists('set_exit_overload')) {
+      $this->markTestSkipped('Blocking exit functionality is not available.');
+    }
+    
     $this->expectOutputString('http://'.$_SERVER['SERVER_NAME'].'/404');
 
     sAuthorization::setUserAuthLevel('admin');
