@@ -307,8 +307,8 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
    */
   public function toBoolean() {
     $bool = $this->toLowerCase();
-    if($bool === 'true' || $bool === '1'){
-        return TRUE;
+    if ($bool == 'true' || $bool == '1'){
+      return TRUE;
     }
     return FALSE;
   }
