@@ -3,7 +3,7 @@
  * Provides object-oriented interface to strings.
  *
  * @copyright Copyright (c) 2012 Charles S, others
- * @author Charles S [cs] <xxstonerariesxx@gmail.com>
+ * @author Charles S [cs] <hopelesscode@gmail.com>
  * @author Andrew Udvare [au] <andrew@bne1.com>
  * @license http://www.opensource.org/licenses/mit-license.php
  *
@@ -585,7 +585,7 @@ class sString implements ArrayAccess, Countable, IteratorAggregate {
 }
 
 /**
- * Copyright (c) 2012 Charles S <xxstonerariesxx@gmail.com>, others
+ * Copyright (c) 2012 Charles S <hopelesscode@gmail.com>, others
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to
