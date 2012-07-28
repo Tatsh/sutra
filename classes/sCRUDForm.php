@@ -424,10 +424,15 @@ class sCRUDForm {
    */
   private function parseSchema() {
     $keys = $this->schema->getKeys($this->table_name, 'primary');
-    $keys_count_is_one = count($keys) == 1;
-    $pk_should_be_printed = $keys_count_is_one && $this->table_columns[$keys[0]]['type']['auto_increment'] != TRUE;
+    $keys_count_is_one = count($keys) === 1;
+    $typeof_type_is_string = is_string($this->table_columns[$keys[0]]['type']);
+    $pk_should_be_printed = FALSE;
     $pk_field_name = $keys_count_is_one ? $keys[0] : NULL;
     $related_columns = $this->parseRelationships();
+
+    if ($keys_count_is_one && !$typeof_type_is_string && $this->table_columns[$keys[0]]['type']['auto_increment'] != TRUE) {
+      $pk_should_be_printed = TRUE;
+    }
 
     foreach ($this->table_columns as $column_name => $info) {
       if ($pk_field_name == $column_name) {
@@ -584,7 +589,7 @@ class sCRUDForm {
   public function make() {
     $fields = '';
     $db = fORMDatabase::retrieve($this->class_name);
-    $no_value_types = array('checkbox', 'radio', 'select');
+    $no_value_types = array('select');
 
     foreach ($this->fields as $column_name => $info) {
       if ($info['type'] == 'file') {
@@ -602,6 +607,7 @@ class sCRUDForm {
         ));
 
         $html = '<div class="form-'.$info['type'].'-container">';
+
         $fields .= $html.sHTML::makeFormElement($info['type'], $column_name, $info['attributes']).'</div>';
 
         continue;
@@ -610,6 +616,9 @@ class sCRUDForm {
       $value = fRequest::get($column_name);
       if ($value && !in_array($info['type'], $no_value_types)) {
         $info['attributes']['value'] = $value;
+      }
+      else if (!$value && $info['type'] === 'checkbox') {
+        $info['attributes']['value'] = 1;
       }
 
       $fields .= self::makeElement($info['type'], $column_name, $info['label'], $info['attributes']);
@@ -704,6 +713,8 @@ class sCRUDForm {
       'related_column' => NULL,
       'related_table' => NULL,
     );
+
+    return $this;
   }
 
   /**
