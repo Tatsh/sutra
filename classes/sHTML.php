@@ -274,7 +274,7 @@ class sHTML extends fHTML {
 
     $label = '';
     if (isset($attr['label'])) {
-      $label = '<label for="'.$id.'">'.self::encode($attr['label']);
+      $label = '<label class="form-label" for="'.$id.'">'.self::encode($attr['label']);
       if (isset($attributes['required']) && $attributes['required'] == TRUE) {
         $label .= ' <span class="form-required-marker">*</span>';
       }
