@@ -894,6 +894,9 @@ class sTemplate {
 
     if ($path != '/') {
       $classes .= ' page-'.str_replace('/', '-', substr($path, 1));
+      if ($classes[strlen($classes) - 1] === '-') {
+        $classes = substr($classes, 0, -1);
+      }
     }
     $classes .= $logged_in ? ' logged-in' : ' not-logged-in';
 
