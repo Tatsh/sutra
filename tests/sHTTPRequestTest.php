@@ -28,7 +28,9 @@ class sHTTPRequestTest extends PHPUnit_Framework_TestCase {
     $a = new sHTTPRequest('http://localhost');
     $a->setHeaders($headers);
     $str = $a->getHeaders(TRUE);
-    $this->assertEquals("User-Agent: my user agent\r\ncustom-header: custom header\r\n", $str);
+    $result = "User-Agent: my user agent\r\ncustom-header: custom header\r\n";
+    $result .= "Content-Length: 0\r\n";
+    $this->assertEquals($result, $str);
   }
 
   public function testSetHeaders() {
