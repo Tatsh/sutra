@@ -41,5 +41,6 @@ rmdir non-writable-directory &> /dev/null
 rm -rf flourish__* template mincss test*.css
 rm -f resources/*_copy*
 rm -f test.cache
+git checkout resources/db.sqlite3
 
 echo
