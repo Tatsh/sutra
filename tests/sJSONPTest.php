@@ -32,4 +32,9 @@ class sJSONPTest extends PHPUnit_Framework_TestCase {
     $code = sJSONP::encode($b);
     $this->assertStringStartsWith('fn(', $code);
   }
+
+  public function testEncodeSpecialCallbackNoValidation() {
+    $code = sJSONP::encode(array('data' => 'a'), 'a[\'my callback\']', FALSE);
+    $this->assertEquals('a[\'my callback\']({"data":"a"});', $code);
+  }
 }

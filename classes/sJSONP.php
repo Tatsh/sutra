@@ -79,19 +79,22 @@ class sJSONP extends fJSON {
   /**
    * Overrides encode method to wrap around the callback received.
    *
-   * @throws fValidationException If the callback is invalid.
+   * @throws fValidationException If the callback is invalid (an example would
+   *   include any reserved keyword, including future use ones).
    *
    * @param mixed $data Data to encode.
    * @param string $callback Optional. If not passed, will be retrieved from GET
    *   paramater 'callback'. If no such parameter is found, 'fn' will be used.
+   * @param boolean $check_callback If FALSE is passed, then the callback will
+   *   not be validated.
    * @return string Encoded JSONP data.
    */
-  public static function encode($data, $callback = NULL) {
+  public static function encode($data, $callback = NULL, $check_callback = TRUE) {
     if (is_null($callback)) {
       $callback = fRequest::get('callback', 'string', 'fn');
     }
 
-    if (!self::isValidCallback($callback)) {
+    if ($check_callback && !self::isValidCallback($callback)) {
       throw new fValidationException('Invalid callback "%s" passed.', $callback);
     }
 
