@@ -590,6 +590,7 @@ class sCRUDForm {
     $fields = '';
     $db = fORMDatabase::retrieve($this->class_name);
     $no_value_types = array('select');
+    $special_value_types = array('date');
 
     foreach ($this->fields as $column_name => $info) {
       if ($info['type'] == 'file') {
@@ -614,7 +615,21 @@ class sCRUDForm {
       }
 
       $value = fRequest::get($column_name);
-      if ($value && !in_array($info['type'], $no_value_types)) {
+      
+      if ($value && in_array($info['type'], $special_value_types)) {
+        switch ($info['type']) {
+          case 'date': // HTML5 'date' field in Chrome only accepts Y-m-d format
+            $date = strtotime($value);
+            $date = date('Y-m-d', $date);
+            $info['attributes']['value'] = $date;
+            break;
+
+          default:
+            $info['attributes']['value'] = $date;
+            break;
+        }
+      }
+      else if ($value && !in_array($info['type'], $no_value_types)) {
         $info['attributes']['value'] = $value;
       }
       else if (!$value && $info['type'] === 'checkbox') {
