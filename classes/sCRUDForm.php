@@ -243,7 +243,7 @@ class sCRUDForm {
     }
 
     $attr['label'] = $label;
-    $class = 'form-'.$type.'-container';
+    $class = 'form-field-container form-'.$type.'-container';
     $container = '<div class="'.$class.'">';
     $container .= sHTML::makeFormElement($type, $name, $attr);
     $container .= '</div>';
