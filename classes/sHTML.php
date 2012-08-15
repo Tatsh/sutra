@@ -254,10 +254,10 @@ class sHTML extends fHTML {
       foreach ($classes as $key => $class) {
         $classes[$key] = trim($class);
       }
-      $attributes['class'] = array_merge($classes, array('form-'.$type));
+      $attributes['class'] = array_merge($classes, array('form-field', 'form-'.$type));
     }
     else if (!$has_class) {
-      $attributes['class'] = array('form-'.$type);
+      $attributes['class'] = array('form-field', 'form-'.$type);
     }
 
     // Handle the boolean attributes
