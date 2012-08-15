@@ -161,7 +161,7 @@ class sProcess {
     $this->parseNameAndArguments(func_get_args());
 
     if (self::checkOS('windows') && substr($this->program, -4) === '.exe') {
-      $this->program = substr($this->program, 0, -4);
+      $this->program = substr($this->program, 1, -4);
     }
 
     if (!self::exists($this->program)) {
