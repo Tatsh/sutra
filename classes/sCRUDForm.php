@@ -361,7 +361,7 @@ class sCRUDForm {
     switch ($field_type) {
       case 'textarea':
       case 'textfield':
-        if (isset($info['max_length'])) {
+        if (isset($info['max_length']) && $info['type'] !== 'text') {
           $attr['maxlength'] = $info['max_length'];
         }
         $attr['spellcheck'] = TRUE;
