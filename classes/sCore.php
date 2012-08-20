@@ -77,7 +77,7 @@ abstract class sCore extends fCore {
    */
   protected static function configureAuthorization() {
     sAuthorization::setAuthLevels(array('admin' => 100, 'user' => 50, 'guest' => 25));
-    sAuthorization::setLoginPage('/login');
+    sAuthorization::setLoginPage('/login/');
   }
 
   /**
