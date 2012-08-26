@@ -605,6 +605,7 @@ class sCRUDForm {
         $info['attributes'] = array_merge($info['attributes'], array(
           'options' => $options,
           'label' => $info['label'],
+          'value' => fRequest::get($info['name'], 'string', NULL, TRUE),
         ));
 
         $html = '<div class="form-'.$info['type'].'-container">';
