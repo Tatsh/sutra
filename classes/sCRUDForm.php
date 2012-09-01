@@ -194,6 +194,13 @@ class sCRUDForm {
   private $schema = NULL;
 
   /**
+   * Custom HTML fields.
+   *
+   * @var array
+   */
+  private $custom_html = array();
+
+  /**
    * Validate the field type.
    *
    * @throws fProgrammerException If the field type is invalid.
@@ -582,6 +589,22 @@ class sCRUDForm {
   }
 
   /**
+   * Sets custom HTML for a specific column. Note that this replaces
+   *   <em>all</em> HTML (including the container and label), not just the
+   *   relevant field tag (such as &lt;input&gt;).
+   *
+   * If hiding a field is desired, use <code>sCRUDForm->hideFields()</code>.
+   *
+   * @param string $column_name Column name.
+   * @param string $html HTML to use.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function replaceHTML($column_name, $html) {
+    $this->custom_html[$column_name] = $html;
+    return $this;
+  }
+
+  /**
    * Generates the form HTML. Should be called last.
    *
    * @return string The form HTML.
@@ -595,6 +618,11 @@ class sCRUDForm {
     foreach ($this->fields as $column_name => $info) {
       if ($info['type'] == 'file') {
         $this->file_uploads = TRUE;
+      }
+
+      if (isset($this->custom_html[$column_name])) {
+        $fields .= $this->custom_html[$column_name];
+        continue;
       }
 
       if ($info['related']) {
