@@ -354,10 +354,11 @@ class sCRUDForm {
    *
    * @param string $type Field type.
    * @param array|null $default_values Array of default values or NULL.
+   * @param boolean $can_be_null If the field can be set to NULL.
    * @return boolean If the field is required.
    */
-  private static function isRequiredField($type, $default_values = NULL) {
-    if (!isset($default_values) && $type != 'boolean') {
+  private static function isRequiredField($type, $default_values = NULL, $can_be_null = FALSE) {
+    if (!isset($default_values) && $type != 'boolean' && !$can_be_null) {
       return TRUE;
     }
     return FALSE;
@@ -419,7 +420,7 @@ class sCRUDForm {
   private static function makeAttributesArray($column_name, array $info, $field_type) {
     $attr = array(
       'name' => $column_name,
-      'required' => self::isRequiredField($info['type'], $info['default']),
+      'required' => self::isRequiredField($info['type'], $info['default'], !$info['not_null']),
     );
 
     if (isset($info['default'])) {
