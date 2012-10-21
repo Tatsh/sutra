@@ -513,18 +513,22 @@ class sHTML extends fHTML {
     $count = count($items);
     foreach ($items as $title) {
       $classes = array();
+
       if ($i == 1) {
         $classes[] = 'first';
       }
+
       if ($i % 2 == 0) {
         $classes[] = 'even';
       }
       else {
         $classes[] = 'odd';
       }
+
       if ($i == $count) {
-        $classes[]= 'last';
+        $classes[] = 'last';
       }
+
       $classes[] = 'item-'.$i;
 
       $html .= self::tag('li', array('class' => $classes), $title);
