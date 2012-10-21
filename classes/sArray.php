@@ -23,7 +23,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * Constructor. Accepts multiple arguments or only a single array argument.
    *
    * @param mixed $arg First item of the array.
-   * @param mixed ...
+   * @param mixed $arg,... Second item of the array.
    * @return sArray
    */
   public function __construct($arg = NULL) {
@@ -214,7 +214,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * Merges this array with another array or sArray object.
    *
    * @param array|sArray $array1 Array to shift with.
-   * @param array|sArray ...
+   * @param array|sArray $array1,... Additional arrays.
    * @return sArray The object to allow method chaining.
    */
   public function merge($array1) {
@@ -287,7 +287,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * Callback used with walkRecursive.
    *
    * @param sArray $instance Object instance.
-   * @param mixed $array_like Mixed variable, checked if is array-like.
+   * @param mixed $array Mixed variable, checked if is array-like.
    * @param string $func Function to call on each item.
    * @param mixed $user_data User data to add as third argument to callback.
    * @return void
@@ -296,7 +296,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
     if (!self::isArrayLike($array)) {
       return;
     }
-    
+
     $func = fCore::callback($func);
 
     foreach ($array as $key => $value) {
@@ -436,7 +436,7 @@ class sArray implements Countable, ArrayAccess, IteratorAggregate {
    * Compares this object's data with associative arrays.
    *
    * @param array|sArray $array1 Array or array-like object.
-   * @param array|sArray ...
+   * @param array|sArray $array1,...
    * @return sArray Array containing all the entries from $array1 that are
    *   not present in any of the other arrays.
    */
