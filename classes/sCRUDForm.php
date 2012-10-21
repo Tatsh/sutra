@@ -67,6 +67,13 @@ class sCRUDForm {
   );
 
   /**
+   * Class names to add to the &lt;form&gt; tag.
+   *
+   * @var array
+   */
+  private $class_names = array();
+
+  /**
    * Column names to never print fields for.
    *
    * @var array
@@ -515,6 +522,7 @@ class sCRUDForm {
     $this->table_columns = $this->schema->getColumnInfo($this->table_name);
     $this->table_relationships = $this->schema->getRelationships($this->table_name);
     $this->action_url = isset($action) ? (string)$action : fURL::get();
+    $this->class_names = array(sGrammar::dashize($this->class_name.'-form'));
 
     $this->parseSchema();
     $this->setPostValues();
@@ -605,6 +613,43 @@ class sCRUDForm {
   }
 
   /**
+   * Adds a class name to the &lt;form&gt; tag.
+   *
+   * @param string $class_name The class name to add.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function addClassName($class_name) {
+    $this->class_names = (string)$class_name;
+    return $this;
+  }
+
+  /**
+   * Sets all class names.
+   *
+   * @param array $class_names Array of strings.
+   * @return sCRUDForm The object to allow method chaining.
+   */
+  public function setClassNames(array $class_names) {
+    foreach ($class_names as $key => $value) {
+      $class_names[$key] = (string)$value;
+    }
+
+    $class_names = array_unique($class_names);
+    $this->class_names = array_values($class_names);
+
+    return $this;
+  }
+
+  /**
+   * Gets the class names that will be used on the &lt;form&gt; tag.
+   *
+   * @return array Array of class names.
+   */
+  public function getClassNames() {
+    return $this->class_names;
+  }
+
+  /**
    * Generates the form HTML. Should be called last.
    *
    * @return string The form HTML.
@@ -644,7 +689,7 @@ class sCRUDForm {
       }
 
       $value = fRequest::get($column_name);
-      
+
       if ($value && in_array($info['type'], $special_value_types)) {
         switch ($info['type']) {
           case 'date': // HTML5 'date' field in Chrome only accepts Y-m-d format
@@ -660,6 +705,10 @@ class sCRUDForm {
       }
       else if ($value && !in_array($info['type'], $no_value_types)) {
         $info['attributes']['value'] = $value;
+
+        if ($info['type'] === 'checkbox') {
+          $info['attributes']['checked'] = 'checked';
+        }
       }
       else if (!$value && $info['type'] === 'checkbox') {
         $info['attributes']['value'] = 1;
@@ -696,6 +745,10 @@ class sCRUDForm {
 
     $this->form_attr['action'] = $this->action_url;
     $this->form_attr['method'] = $this->request_method;
+
+    if (!empty($this->class_names)) {
+      $this->form_attr['class'] = array_values($this->class_names);
+    }
 
     return sHTML::tag('form', $this->form_attr, $fields);
   }
@@ -871,5 +924,14 @@ class sCRUDForm {
     $this->validateFieldName($field);
     $this->fields[$field]['attributes'] = array_merge($this->fields[$field]['attributes'], $attr);
     return $this;
+  }
+
+  /**
+   * Returns the HTML for this form.
+   *
+   * @return string The HTML for this form.
+   */
+  public function __toString() {
+    return $this->make();
   }
 }
