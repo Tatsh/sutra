@@ -1,9 +1,9 @@
 #!/bin/sh
-DOCDIR="/home/tatsh/dev/sutra-doc/documentation"
+DOCDIR="/home/tatsh/dev/sutra-doc"
 FLOURISH="/home/tatsh/dev/php/flourish"
 SUTRA="/home/tatsh/dev/sutra/classes"
 
-phpdoc -ti "Sutra documentation (generated $(date))" \
+phpdoc -title="Sutra documentation (generated $(date))" \
 	-t "$DOCDIR" \
 	-d "$SUTRA,$FLOURISH" \
 	-p \
