@@ -1,0 +1,891 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sCRUDForm</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Creates a form based on the schema of a table."><span class="description">Creates a form based on the schema of a table.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Returns the HTML for this form."><span class="description">Returns the HTML for this form.</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addAction" title="addAction :: Adds a button."><span class="description">Adds a button.</span><pre>addAction()</pre></a></li>
+<li class="method public "><a href="#method_addClassName" title="addClassName :: Adds a class name to the &amp;lt;form&amp;gt; tag."><span class="description">Adds a class name to the &amp;lt;form&amp;gt; tag.</span><pre>addClassName()</pre></a></li>
+<li class="method public "><a href="#method_addField" title="addField :: Adds a custom field."><span class="description">Adds a custom field.</span><pre>addField()</pre></a></li>
+<li class="method public "><a href="#method_enableCSRFField" title="enableCSRFField :: Enables adding a CSRF field."><span class="description">Enables adding a CSRF field.</span><pre>enableCSRFField()</pre></a></li>
+<li class="method public "><a href="#method_enableFileUpload" title="enableFileUpload :: Changes the form content type to allow file uploads, regardless if there
+  are file (blob) fields."><span class="description">Changes the form content type to allow file uploads, regardless if there
+  are file (blob) fields.</span><pre>enableFileUpload()</pre></a></li>
+<li class="method public "><a href="#method_getClassNames" title="getClassNames :: Gets the class names that will be used on the &amp;lt;form&amp;gt; tag."><span class="description">Gets the class names that will be used on the &amp;lt;form&amp;gt; tag.</span><pre>getClassNames()</pre></a></li>
+<li class="method public "><a href="#method_hideFieldNames" title="hideFieldNames :: Configures the class to always ignore certain column names."><span class="description">Configures the class to always ignore certain column names.</span><pre>hideFieldNames()</pre></a></li>
+<li class="method public "><a href="#method_hideFields" title="hideFields :: Hides fields."><span class="description">Hides fields.</span><pre>hideFields()</pre></a></li>
+<li class="method public "><a href="#method_make" title="make :: Generates the form HTML."><span class="description">Generates the form HTML.</span><pre>make()</pre></a></li>
+<li class="method public "><a href="#method_overrideFieldType" title="overrideFieldType :: Override a field types attributes."><span class="description">Override a field types attributes.</span><pre>overrideFieldType()</pre></a></li>
+<li class="method public "><a href="#method_overrideLabel" title="overrideLabel :: Override the label name for a column."><span class="description">Override the label name for a column.</span><pre>overrideLabel()</pre></a></li>
+<li class="method public "><a href="#method_overrideRelatedColumn" title="overrideRelatedColumn :: Override the related column for a related table."><span class="description">Override the related column for a related table.</span><pre>overrideRelatedColumn()</pre></a></li>
+<li class="method public "><a href="#method_replaceHTML" title="replaceHTML :: Sets custom HTML for a specific column."><span class="description">Sets custom HTML for a specific column.</span><pre>replaceHTML()</pre></a></li>
+<li class="method public "><a href="#method_setClassNames" title="setClassNames :: Sets all class names."><span class="description">Sets all class names.</span><pre>setClassNames()</pre></a></li>
+<li class="method public "><a href="#method_setFieldAttributes" title="setFieldAttributes :: Set a specific field's attributes."><span class="description">Set a specific field's attributes.</span><pre>setFieldAttributes()</pre></a></li>
+<li class="method public "><a href="#method_setFieldOrder" title="setFieldOrder :: Sets the field order."><span class="description">Sets the field order.</span><pre>setFieldOrder()</pre></a></li>
+<li class="method public "><a href="#method_setMaxFileUploadSize" title="setMaxFileUploadSize :: Set the maximum file upload size."><span class="description">Set the maximum file upload size.</span><pre>setMaxFileUploadSize()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_addSpecialAttributes" title="addSpecialAttributes :: Adds special attributes to the attributes array depending on field type."><span class="description">Adds special attributes to the attributes array depending on field type.</span><pre>addSpecialAttributes()</pre></a></li>
+<li class="method private "><a href="#method_fetchRelatedValues" title="fetchRelatedValues :: Fetches the values to display for the related column."><span class="description">Fetches the values to display for the related column.</span><pre>fetchRelatedValues()</pre></a></li>
+<li class="method private "><a href="#method_getFieldType" title="getFieldType :: Gets the correct field type based on the column type and name."><span class="description">Gets the correct field type based on the column type and name.</span><pre>getFieldType()</pre></a></li>
+<li class="method private "><a href="#method_isRequiredField" title="isRequiredField :: Checks if the field is required."><span class="description">Checks if the field is required.</span><pre>isRequiredField()</pre></a></li>
+<li class="method private "><a href="#method_makeAttributesArray" title="makeAttributesArray :: Makes the attributes array for the field."><span class="description">Makes the attributes array for the field.</span><pre>makeAttributesArray()</pre></a></li>
+<li class="method private "><a href="#method_makeElement" title="makeElement :: Makes an HTML form element wrapped in a div."><span class="description">Makes an HTML form element wrapped in a div.</span><pre>makeElement()</pre></a></li>
+<li class="method private "><a href="#method_parseRelationships" title="parseRelationships :: Parses the many-to-one relationships of the table."><span class="description">Parses the many-to-one relationships of the table.</span><pre>parseRelationships()</pre></a></li>
+<li class="method private "><a href="#method_parseSchema" title="parseSchema :: Parses the fields of the schema."><span class="description">Parses the fields of the schema.</span><pre>parseSchema()</pre></a></li>
+<li class="method private "><a href="#method_setPostValues" title="setPostValues :: Sets POST values from the fActiveRecord instance."><span class="description">Sets POST values from the fActiveRecord instance.</span><pre>setPostValues()</pre></a></li>
+<li class="method private "><a href="#method_validateFieldName" title="validateFieldName :: Validates if a field name exists in this class."><span class="description">Validates if a field name exists in this class.</span><pre>validateFieldName()</pre></a></li>
+<li class="method private "><a href="#method_validateFieldType" title="validateFieldType :: Validate the field type."><span class="description">Validate the field type.</span><pre>validateFieldType()</pre></a></li>
+<li class="method private "><a href="#method_validateRequestMethod" title="validateRequestMethod :: Validates the request method."><span class="description">Validates the request method.</span><pre>validateRequestMethod()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_action" title="$action :: Default action."><span class="description">Default action.</span><pre>$action</pre></a></li>
+<li class="property private "><a href="#property_action_url" title="$action_url :: Action URL."><span class="description">Action URL.</span><pre>$action_url</pre></a></li>
+<li class="property private "><a href="#property_active_record" title="$active_record :: The fActiveRecord instance, if one was passed to the constructor."><span class="description">The fActiveRecord instance, if one was passed to the constructor.</span><pre>$active_record</pre></a></li>
+<li class="property private "><a href="#property_always_ignore" title="$always_ignore :: Column names to never print fields for."><span class="description">Column names to never print fields for.</span><pre>$always_ignore</pre></a></li>
+<li class="property private "><a href="#property_buttons" title="$buttons :: Buttons that will display."><span class="description">Buttons that will display.</span><pre>$buttons</pre></a></li>
+<li class="property private "><a href="#property_class_name" title="$class_name :: Class name passed in."><span class="description">Class name passed in.</span><pre>$class_name</pre></a></li>
+<li class="property private "><a href="#property_class_names" title="$class_names :: Class names to add to the &amp;lt;form&amp;gt; tag."><span class="description">Class names to add to the &amp;lt;form&amp;gt; tag.</span><pre>$class_names</pre></a></li>
+<li class="property private "><a href="#property_column_to_form_mappings" title="$column_to_form_mappings :: Mappings."><span class="description">Mappings.</span><pre>$column_to_form_mappings</pre></a></li>
+<li class="property private "><a href="#property_csrf_field_name" title="$csrf_field_name :: The CSRF field name."><span class="description">The CSRF field name.</span><pre>$csrf_field_name</pre></a></li>
+<li class="property private "><a href="#property_csrf_field_url" title="$csrf_field_url :: The CSRF field URL."><span class="description">The CSRF field URL.</span><pre>$csrf_field_url</pre></a></li>
+<li class="property private "><a href="#property_custom_html" title="$custom_html :: Custom HTML fields."><span class="description">Custom HTML fields.</span><pre>$custom_html</pre></a></li>
+<li class="property private "><a href="#property_fields" title="$fields :: The fields to build HTML from."><span class="description">The fields to build HTML from.</span><pre>$fields</pre></a></li>
+<li class="property private "><a href="#property_file_upload_max_size" title="$file_upload_max_size :: The maximum size for a file upload."><span class="description">The maximum size for a file upload.</span><pre>$file_upload_max_size</pre></a></li>
+<li class="property private "><a href="#property_file_uploads" title="$file_uploads :: If this form enables file uploads."><span class="description">If this form enables file uploads.</span><pre>$file_uploads</pre></a></li>
+<li class="property private "><a href="#property_form_attr" title="$form_attr :: Form element attributes."><span class="description">Form element attributes.</span><pre>$form_attr</pre></a></li>
+<li class="property private "><a href="#property_print_csrf" title="$print_csrf :: If a CSRF field should be printed."><span class="description">If a CSRF field should be printed.</span><pre>$print_csrf</pre></a></li>
+<li class="property private "><a href="#property_request_method" title="$request_method :: Request method."><span class="description">Request method.</span><pre>$request_method</pre></a></li>
+<li class="property private "><a href="#property_schema" title="$schema :: The schema instance."><span class="description">The schema instance.</span><pre>$schema</pre></a></li>
+<li class="property private "><a href="#property_table_columns" title="$table_columns :: The columns array of the table."><span class="description">The columns array of the table.</span><pre>$table_columns</pre></a></li>
+<li class="property private "><a href="#property_table_name" title="$table_name :: The table name."><span class="description">The table name.</span><pre>$table_name</pre></a></li>
+<li class="property private "><a href="#property_table_relationships" title="$table_relationships :: The relationships array of the table."><span class="description">The relationships array of the table.</span><pre>$table_relationships</pre></a></li>
+<li class="property private "><a href="#property_valid_field_types" title="$valid_field_types :: Valid field types."><span class="description">Valid field types.</span><pre>$valid_field_types</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul><li class="constant  "><a href="#constant_hideFieldNames" title="hideFieldNames :: "><span class="description">hideFieldNames</span><pre>hideFieldNames</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sCRUDForm"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sCRUDForm.html">sCRUDForm</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Creates an HTML form based on an fActiveRecord class.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://github.com/tatsh/sutra">https://github.com/tatsh/sutra</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.3</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Creates a form based on the schema of a table.</h2>
+<pre>__construct(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> | string $class, string $action, string $method, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><code>string</code><p>fActiveRecord instance, or class name.</p></div>
+<div class="subelement argument">
+<h4>$action</h4>
+<code>string</code><p>URL for the action attribute of the form element. If not specified, will default to the current URL.</p></div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>Method type for the form element. One of: 'post', 'get'.</p>
+</div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Array of HTML attributes for the form elemement.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The form object.</div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Returns the HTML for this form.</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The HTML for this form.</div>
+</div></div>
+</div>
+<a id="method_addAction"></a><div class="element clickable method public method_addAction" data-toggle="collapse" data-target=".method_addAction .collapse">
+<h2>Adds a button.</h2>
+<pre>addAction(string $action_name, string $label) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$action_name</h4>
+<code>string</code><p>Action name. This is for use with fRequest during the request.</p></div>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>string</code><p>Label of the button.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_addClassName"></a><div class="element clickable method public method_addClassName" data-toggle="collapse" data-target=".method_addClassName .collapse">
+<h2>Adds a class name to the &amp;lt;form&amp;gt; tag.</h2>
+<pre>addClassName(string $class_name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class_name</h4>
+<code>string</code><p>The class name to add.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_addField"></a><div class="element clickable method public method_addField" data-toggle="collapse" data-target=".method_addField .collapse">
+<h2>Adds a custom field.</h2>
+<pre>addField(string $name, string $label, string $type, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name attribute of the field.</p></div>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>string</code><p>Label text.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of the field.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Attributes array.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_enableCSRFField"></a><div class="element clickable method public method_enableCSRFField" data-toggle="collapse" data-target=".method_enableCSRFField .collapse">
+<h2>Enables adding a CSRF field.</h2>
+<pre>enableCSRFField(boolean $bool, string $name, string $url) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bool</h4>
+<code>boolean</code><p>If the CSRF field should be added.</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the field.</p></div>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>URL for the CSRF.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_enableFileUpload"></a><div class="element clickable method public method_enableFileUpload" data-toggle="collapse" data-target=".method_enableFileUpload .collapse">
+<h2>Changes the form content type to allow file uploads, regardless if there
+  are file (blob) fields.</h2>
+<pre>enableFileUpload(boolean $bool) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bool</h4>
+<code>boolean</code><p>TRUE or FALSE.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_getClassNames"></a><div class="element clickable method public method_getClassNames" data-toggle="collapse" data-target=".method_getClassNames .collapse">
+<h2>Gets the class names that will be used on the &amp;lt;form&amp;gt; tag.</h2>
+<pre>getClassNames() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of class names.</div>
+</div></div>
+</div>
+<a id="method_hideFieldNames"></a><div class="element clickable method public method_hideFieldNames" data-toggle="collapse" data-target=".method_hideFieldNames .collapse">
+<h2>Configures the class to always ignore certain column names.</h2>
+<pre>hideFieldNames(array | string $field_name) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This may be
+  useful for fields that are managed by Flourish such as timestamp fields
+  managed by fORMDate.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field_name</h4>
+<code>array</code><code>string</code><p>Field name or array or names to ignore.</p></div>
+</div></div>
+</div>
+<a id="method_hideFields"></a><div class="element clickable method public method_hideFields" data-toggle="collapse" data-target=".method_hideFields .collapse">
+<h2>Hides fields.</h2>
+<pre>hideFields(string | array $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Allows for variable arguments.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><code>array</code><p>Name of the field.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_make"></a><div class="element clickable method public method_make" data-toggle="collapse" data-target=".method_make .collapse">
+<h2>Generates the form HTML.</h2>
+<pre>make() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Should be called last.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The form HTML.</div>
+</div></div>
+</div>
+<a id="method_overrideFieldType"></a><div class="element clickable method public method_overrideFieldType" data-toggle="collapse" data-target=".method_overrideFieldType .collapse">
+<h2>Override a field types attributes.</h2>
+<pre>overrideFieldType(string $name, string $type, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is mainly so that an e-mail or
+  date field column will render a different field from the default.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the field.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of the field.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Array of other attributes.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_overrideLabel"></a><div class="element clickable method public method_overrideLabel" data-toggle="collapse" data-target=".method_overrideLabel .collapse">
+<h2>Override the label name for a column.</h2>
+<pre>overrideLabel(string $column_name, string $label) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>Column name.</p></div>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>string</code><p>Label to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_overrideRelatedColumn"></a><div class="element clickable method public method_overrideRelatedColumn" data-toggle="collapse" data-target=".method_overrideRelatedColumn .collapse">
+<h2>Override the related column for a related table.</h2>
+<pre>overrideRelatedColumn(string $column_name, string $related_table_column_name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>Column name of this table.</p></div>
+<div class="subelement argument">
+<h4>$related_table_column_name</h4>
+<code>string</code><p>Column name that should be read from the related table.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_replaceHTML"></a><div class="element clickable method public method_replaceHTML" data-toggle="collapse" data-target=".method_replaceHTML .collapse">
+<h2>Sets custom HTML for a specific column.</h2>
+<pre>replaceHTML(string $column_name, string $html) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Note that this replaces
+  <em>all</em> HTML (including the container and label), not just the
+  relevant field tag (such as &lt;input&gt;).</p>
+
+<p>If hiding a field is desired, use</p>
+
+<pre><code>sCRUDForm->hideFields()</code></pre>
+
+<p>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>Column name.</p></div>
+<div class="subelement argument">
+<h4>$html</h4>
+<code>string</code><p>HTML to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_setClassNames"></a><div class="element clickable method public method_setClassNames" data-toggle="collapse" data-target=".method_setClassNames .collapse">
+<h2>Sets all class names.</h2>
+<pre>setClassNames(array $class_names) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class_names</h4>
+<code>array</code><p>Array of strings.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_setFieldAttributes"></a><div class="element clickable method public method_setFieldAttributes" data-toggle="collapse" data-target=".method_setFieldAttributes .collapse">
+<h2>Set a specific field's attributes.</h2>
+<pre>setFieldAttributes(string $field, array $attr) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>Field name.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Array of attribute values.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_setFieldOrder"></a><div class="element clickable method public method_setFieldOrder" data-toggle="collapse" data-target=".method_setFieldOrder .collapse">
+<h2>Sets the field order.</h2>
+<pre>setFieldOrder(array | string $fields) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$fields</h4>
+<code>array</code><code>string</code><p>Array of field names.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_setMaxFileUploadSize"></a><div class="element clickable method public method_setMaxFileUploadSize" data-toggle="collapse" data-target=".method_setMaxFileUploadSize .collapse">
+<h2>Set the maximum file upload size.</h2>
+<pre>setMaxFileUploadSize(integer $size) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This affects all file upload fields.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>integer</code><p>Size to allow.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_addSpecialAttributes"></a><div class="element clickable method private method_addSpecialAttributes" data-toggle="collapse" data-target=".method_addSpecialAttributes .collapse">
+<h2>Adds special attributes to the attributes array depending on field type.</h2>
+<pre>addSpecialAttributes(array $attr, array $info, string $field_type) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Attributes array to modify.</p></div>
+<div class="subelement argument">
+<h4>$info</h4>
+<code>array</code><p>Information array as from schema.</p></div>
+<div class="subelement argument">
+<h4>$field_type</h4>
+<code>string</code><p>Field type.</p></div>
+</div></div>
+</div>
+<a id="method_fetchRelatedValues"></a><div class="element clickable method private method_fetchRelatedValues" data-toggle="collapse" data-target=".method_fetchRelatedValues .collapse">
+<h2>Fetches the values to display for the related column.</h2>
+<pre>fetchRelatedValues(\fDatabase $db, string $value_column, string $title_column, string $related_table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>fDatabase instance.</p></div>
+<div class="subelement argument">
+<h4>$value_column</h4>
+<code>string</code><p>Column with the values to use.</p></div>
+<div class="subelement argument">
+<h4>$title_column</h4>
+<code>string</code><p>Column with values to display to the user.</p></div>
+<div class="subelement argument">
+<h4>$related_table</h4>
+<code>string</code><p>Table name to fetch values from.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of options with keys as the values.</div>
+</div></div>
+</div>
+<a id="method_getFieldType"></a><div class="element clickable method private method_getFieldType" data-toggle="collapse" data-target=".method_getFieldType .collapse">
+<h2>Gets the correct field type based on the column type and name.</h2>
+<pre>getFieldType(string $column_name, string $type, array $valid_values) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the column name has password within its name, the type password will
+  be returned.</p>
+
+<p>If the column name has email within its name, the type email will be
+  returned.</p>
+
+<p>If $valid_values has any values, type select will be returned.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>Column name.</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Column type.</p></div>
+<div class="subelement argument">
+<h4>$valid_values</h4>
+<code>array</code><p>Valid values array.</p></div>
+</div></div>
+</div>
+<a id="method_isRequiredField"></a><div class="element clickable method private method_isRequiredField" data-toggle="collapse" data-target=".method_isRequiredField .collapse">
+<h2>Checks if the field is required.</h2>
+<pre>isRequiredField(string $type, array | null $default_values, boolean $can_be_null) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Field type.</p></div>
+<div class="subelement argument">
+<h4>$default_values</h4>
+<code>array</code><code>null</code><p>Array of default values or NULL.</p></div>
+<div class="subelement argument">
+<h4>$can_be_null</h4>
+<code>boolean</code><p>If the field can be set to NULL.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the field is required.</div>
+</div></div>
+</div>
+<a id="method_makeAttributesArray"></a><div class="element clickable method private method_makeAttributesArray" data-toggle="collapse" data-target=".method_makeAttributesArray .collapse">
+<h2>Makes the attributes array for the field.</h2>
+<pre>makeAttributesArray(string $column_name, array $info, string $field_type) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>Column name (will be used for 'name' attribute).</p>
+</div>
+<div class="subelement argument">
+<h4>$info</h4>
+<code>array</code><p>Information array as retrieved from schema.</p></div>
+<div class="subelement argument">
+<h4>$field_type</h4>
+<code>string</code><p>Field type.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Attributes array.</div>
+</div></div>
+</div>
+<a id="method_makeElement"></a><div class="element clickable method private method_makeElement" data-toggle="collapse" data-target=".method_makeElement .collapse">
+<h2>Makes an HTML form element wrapped in a div.</h2>
+<pre>makeElement(string $type, string $name, string $label, array $attr) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Type of the field.</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the field.</p></div>
+<div class="subelement argument">
+<h4>$label</h4>
+<code>string</code><p>Label text of the field.</p></div>
+<div class="subelement argument">
+<h4>$attr</h4>
+<code>array</code><p>Array of fields.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>HTML of the field.</div>
+</div></div>
+</div>
+<a id="method_parseRelationships"></a><div class="element clickable method private method_parseRelationships" data-toggle="collapse" data-target=".method_parseRelationships .collapse">
+<h2>Parses the many-to-one relationships of the table.</h2>
+<pre>parseRelationships() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of data about the related columns.</div>
+</div></div>
+</div>
+<a id="method_parseSchema"></a><div class="element clickable method private method_parseSchema" data-toggle="collapse" data-target=".method_parseSchema .collapse">
+<h2>Parses the fields of the schema.</h2>
+<pre>parseSchema() : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_setPostValues"></a><div class="element clickable method private method_setPostValues" data-toggle="collapse" data-target=".method_setPostValues .collapse">
+<h2>Sets POST values from the fActiveRecord instance.</h2>
+<pre>setPostValues() : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>SuppressWarnings</th>
+<td>(UnusedLocalVariable)</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_validateFieldName"></a><div class="element clickable method private method_validateFieldName" data-toggle="collapse" data-target=".method_validateFieldName .collapse">
+<h2>Validates if a field name exists in this class.</h2>
+<pre>validateFieldName(string $name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name of the field.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the field name is invalid.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_validateFieldType"></a><div class="element clickable method private method_validateFieldType" data-toggle="collapse" data-target=".method_validateFieldType .collapse">
+<h2>Validate the field type.</h2>
+<pre>validateFieldType(string $type) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>Field type.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the field type is invalid.</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_validateRequestMethod"></a><div class="element clickable method private method_validateRequestMethod" data-toggle="collapse" data-target=".method_validateRequestMethod .collapse">
+<h2>Validates the request method.</h2>
+<pre>validateRequestMethod(string $method) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>Request method.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the request method is invalid.</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_action"> </a><div class="element clickable property private property_action" data-toggle="collapse" data-target=".property_action .collapse">
+<h2>Default action.</h2>
+<pre>$action : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_action_url"> </a><div class="element clickable property private property_action_url" data-toggle="collapse" data-target=".property_action_url .collapse">
+<h2>Action URL.</h2>
+<pre>$action_url : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_active_record"> </a><div class="element clickable property private property_active_record" data-toggle="collapse" data-target=".property_active_record .collapse">
+<h2>The fActiveRecord instance, if one was passed to the constructor.</h2>
+<pre>$active_record : <a href="../classes/fActiveRecord.html">\fActiveRecord</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_always_ignore"> </a><div class="element clickable property private property_always_ignore" data-toggle="collapse" data-target=".property_always_ignore .collapse">
+<h2>Column names to never print fields for.</h2>
+<pre>$always_ignore : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_buttons"> </a><div class="element clickable property private property_buttons" data-toggle="collapse" data-target=".property_buttons .collapse">
+<h2>Buttons that will display.</h2>
+<pre>$buttons : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_class_name"> </a><div class="element clickable property private property_class_name" data-toggle="collapse" data-target=".property_class_name .collapse">
+<h2>Class name passed in.</h2>
+<pre>$class_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_class_names"> </a><div class="element clickable property private property_class_names" data-toggle="collapse" data-target=".property_class_names .collapse">
+<h2>Class names to add to the &amp;lt;form&amp;gt; tag.</h2>
+<pre>$class_names : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_column_to_form_mappings"> </a><div class="element clickable property private property_column_to_form_mappings" data-toggle="collapse" data-target=".property_column_to_form_mappings .collapse">
+<h2>Mappings.</h2>
+<pre>$column_to_form_mappings : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\http://flourishlib.com/docs/FlourishSql#DataTypes</a></td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_csrf_field_name"> </a><div class="element clickable property private property_csrf_field_name" data-toggle="collapse" data-target=".property_csrf_field_name .collapse">
+<h2>The CSRF field name.</h2>
+<pre>$csrf_field_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_csrf_field_url"> </a><div class="element clickable property private property_csrf_field_url" data-toggle="collapse" data-target=".property_csrf_field_url .collapse">
+<h2>The CSRF field URL.</h2>
+<pre>$csrf_field_url : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_custom_html"> </a><div class="element clickable property private property_custom_html" data-toggle="collapse" data-target=".property_custom_html .collapse">
+<h2>Custom HTML fields.</h2>
+<pre>$custom_html : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_fields"> </a><div class="element clickable property private property_fields" data-toggle="collapse" data-target=".property_fields .collapse">
+<h2>The fields to build HTML from.</h2>
+<pre>$fields : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_file_upload_max_size"> </a><div class="element clickable property private property_file_upload_max_size" data-toggle="collapse" data-target=".property_file_upload_max_size .collapse">
+<h2>The maximum size for a file upload.</h2>
+<pre>$file_upload_max_size : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>If not set, the hidden field will not
+  be printed.</p></div></div></div>
+</div>
+<a id="property_file_uploads"> </a><div class="element clickable property private property_file_uploads" data-toggle="collapse" data-target=".property_file_uploads .collapse">
+<h2>If this form enables file uploads.</h2>
+<pre>$file_uploads : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_form_attr"> </a><div class="element clickable property private property_form_attr" data-toggle="collapse" data-target=".property_form_attr .collapse">
+<h2>Form element attributes.</h2>
+<pre>$form_attr : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_print_csrf"> </a><div class="element clickable property private property_print_csrf" data-toggle="collapse" data-target=".property_print_csrf .collapse">
+<h2>If a CSRF field should be printed.</h2>
+<pre>$print_csrf : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_request_method"> </a><div class="element clickable property private property_request_method" data-toggle="collapse" data-target=".property_request_method .collapse">
+<h2>Request method.</h2>
+<pre>$request_method : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_schema"> </a><div class="element clickable property private property_schema" data-toggle="collapse" data-target=".property_schema .collapse">
+<h2>The schema instance.</h2>
+<pre>$schema : <a href="../classes/fSchema.html">\fSchema</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_table_columns"> </a><div class="element clickable property private property_table_columns" data-toggle="collapse" data-target=".property_table_columns .collapse">
+<h2>The columns array of the table.</h2>
+<pre>$table_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_table_name"> </a><div class="element clickable property private property_table_name" data-toggle="collapse" data-target=".property_table_name .collapse">
+<h2>The table name.</h2>
+<pre>$table_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_table_relationships"> </a><div class="element clickable property private property_table_relationships" data-toggle="collapse" data-target=".property_table_relationships .collapse">
+<h2>The relationships array of the table.</h2>
+<pre>$table_relationships : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_valid_field_types"> </a><div class="element clickable property private property_valid_field_types" data-toggle="collapse" data-target=".property_valid_field_types .collapse">
+<h2>Valid field types.</h2>
+<pre>$valid_field_types : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Ones that have a value of TRUE are separate elements
+  and are not part of the 'type' attribute of the input element.</p></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_hideFieldNames"> </a><div class="element clickable constant  constant_hideFieldNames" data-toggle="collapse" data-target=".constant_hideFieldNames .collapse">
+<h2>hideFieldNames</h2>
+<pre>hideFieldNames </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

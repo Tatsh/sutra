@@ -1,0 +1,581 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fCryptography</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_checkPasswordHash" title="checkPasswordHash :: Checks a password against a hash created with ::hashPassword()"><span class="description">Checks a password against a hash created with ::hashPassword()</span><pre>checkPasswordHash()</pre></a></li>
+<li class="method public "><a href="#method_hashPassword" title="hashPassword :: Hashes a password using a loop of sha1 hashes and a salt, making rainbow table attacks infeasible"><span class="description">Hashes a password using a loop of sha1 hashes and a salt, making rainbow table attacks infeasible</span><pre>hashPassword()</pre></a></li>
+<li class="method public "><a href="#method_publicKeyDecrypt" title="publicKeyDecrypt :: Decrypts ciphertext encrypted using public-key encryption via ::publicKeyEncrypt()"><span class="description">Decrypts ciphertext encrypted using public-key encryption via ::publicKeyEncrypt()</span><pre>publicKeyDecrypt()</pre></a></li>
+<li class="method public "><a href="#method_publicKeyEncrypt" title="publicKeyEncrypt :: Encrypts the passed data using public key encryption via OpenSSL"><span class="description">Encrypts the passed data using public key encryption via OpenSSL</span><pre>publicKeyEncrypt()</pre></a></li>
+<li class="method public "><a href="#method_publicKeySign" title="publicKeySign :: Creates a signature for plaintext to allow verification of the creator"><span class="description">Creates a signature for plaintext to allow verification of the creator</span><pre>publicKeySign()</pre></a></li>
+<li class="method public "><a href="#method_publicKeyVerify" title="publicKeyVerify :: Checks a signature for plaintext to verify the creator - works with ::publicKeySign()"><span class="description">Checks a signature for plaintext to verify the creator - works with ::publicKeySign()</span><pre>publicKeyVerify()</pre></a></li>
+<li class="method public "><a href="#method_random" title="random :: Generates a random number using [http://php.net/mt_rand mt_rand()] after ensuring a good PRNG seed"><span class="description">Generates a random number using [http://php.net/mt_rand mt_rand()] after ensuring a good PRNG seed</span><pre>random()</pre></a></li>
+<li class="method public "><a href="#method_randomString" title="randomString :: Returns a random string of the type and length specified"><span class="description">Returns a random string of the type and length specified</span><pre>randomString()</pre></a></li>
+<li class="method public "><a href="#method_symmetricKeyDecrypt" title="symmetricKeyDecrypt :: Decrypts ciphertext encrypted using symmetric-key encryption via ::symmetricKeyEncrypt()"><span class="description">Decrypts ciphertext encrypted using symmetric-key encryption via ::symmetricKeyEncrypt()</span><pre>symmetricKeyDecrypt()</pre></a></li>
+<li class="method public "><a href="#method_symmetricKeyEncrypt" title="symmetricKeyEncrypt :: Encrypts the passed data using symmetric-key encryption"><span class="description">Encrypts the passed data using symmetric-key encryption</span><pre>symmetricKeyEncrypt()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_createPrivateKeyResource" title="createPrivateKeyResource :: Create a private key resource based on a filename and password"><span class="description">Create a private key resource based on a filename and password</span><pre>createPrivateKeyResource()</pre></a></li>
+<li class="method private "><a href="#method_createPublicKeyResource" title="createPublicKeyResource :: Create a public key resource based on a filename"><span class="description">Create a public key resource based on a filename</span><pre>createPublicKeyResource()</pre></a></li>
+<li class="method private "><a href="#method_hashWithSalt" title="hashWithSalt :: Performs a large iteration of hashing a string with a salt"><span class="description">Performs a large iteration of hashing a string with a salt</span><pre>hashWithSalt()</pre></a></li>
+<li class="method private "><a href="#method_seedRandom" title="seedRandom :: Makes sure that the PRNG has been seeded with a fairly secure value"><span class="description">Makes sure that the PRNG has been seeded with a fairly secure value</span><pre>seedRandom()</pre></a></li>
+<li class="method private "><a href="#method_verifyPublicKeyEnvironment" title="verifyPublicKeyEnvironment :: Makes sure the required PHP extensions and library versions are all correct"><span class="description">Makes sure the required PHP extensions and library versions are all correct</span><pre>verifyPublicKeyEnvironment()</pre></a></li>
+<li class="method private "><a href="#method_verifySymmetricKeyEnvironment" title="verifySymmetricKeyEnvironment :: Makes sure the required PHP extensions and library versions are all correct"><span class="description">Makes sure the required PHP extensions and library versions are all correct</span><pre>verifySymmetricKeyEnvironment()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_checkPasswordHash" title="checkPasswordHash :: "><span class="description">checkPasswordHash</span><pre>checkPasswordHash</pre></a></li>
+<li class="constant  "><a href="#constant_hashHMAC" title="hashHMAC :: "><span class="description">hashHMAC</span><pre>hashHMAC</pre></a></li>
+<li class="constant  "><a href="#constant_hashPassword" title="hashPassword :: "><span class="description">hashPassword</span><pre>hashPassword</pre></a></li>
+<li class="constant  "><a href="#constant_publicKeyDecrypt" title="publicKeyDecrypt :: "><span class="description">publicKeyDecrypt</span><pre>publicKeyDecrypt</pre></a></li>
+<li class="constant  "><a href="#constant_publicKeyEncrypt" title="publicKeyEncrypt :: "><span class="description">publicKeyEncrypt</span><pre>publicKeyEncrypt</pre></a></li>
+<li class="constant  "><a href="#constant_publicKeySign" title="publicKeySign :: "><span class="description">publicKeySign</span><pre>publicKeySign</pre></a></li>
+<li class="constant  "><a href="#constant_publicKeyVerify" title="publicKeyVerify :: "><span class="description">publicKeyVerify</span><pre>publicKeyVerify</pre></a></li>
+<li class="constant  "><a href="#constant_random" title="random :: "><span class="description">random</span><pre>random</pre></a></li>
+<li class="constant  "><a href="#constant_randomString" title="randomString :: "><span class="description">randomString</span><pre>randomString</pre></a></li>
+<li class="constant  "><a href="#constant_symmetricKeyDecrypt" title="symmetricKeyDecrypt :: "><span class="description">symmetricKeyDecrypt</span><pre>symmetricKeyDecrypt</pre></a></li>
+<li class="constant  "><a href="#constant_symmetricKeyEncrypt" title="symmetricKeyEncrypt :: "><span class="description">symmetricKeyEncrypt</span><pre>symmetricKeyEncrypt</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fCryptography"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fCryptography.html">fCryptography</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides cryptography functionality, including hashing, symmetric-key encryption and public-key encryption</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fCryptography">http://flourishlib.com/fCryptography</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b14</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added the `base36`, `base56` and custom types to ::randomString() [wb, 2011-08-25]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Updated documentation about symmetric-key encryption to explicitly state block and key sizes, added base64 type to ::randomString() [wb, 2010-11-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed an inline comment that incorrectly references AES-256 [wb, 2010-11-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Updated class to use fCore::startErrorCapture() instead of `error_reporting()` [wb, 2010-08-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Added a missing parameter to an fProgrammerException in ::randomString() [wb, 2010-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added ::hashHMAC() [wb, 2010-04-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed ::seedRandom() to pass a directory instead of a file to [http://php.net/disk_free_space `disk_free_space()`] [wb, 2010-03-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   SECURITY FIX: fixed issue with ::random() and ::randomString() not producing random output on OSX, made ::seedRandom() more robust [wb, 2009-10-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Changed ::symmetricKeyEncrypt() to throw an fValidationException when the $secret_key is less than 8 characters [wb, 2009-09-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed a bug where some windows machines would throw an exception when generating random strings or numbers [wb, 2009-06-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Changed @ error suppression operator to `error_reporting()` calls [wb, 2009-01-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Backwards compatibility break - changed ::symmetricKeyEncrypt() to not encrypt the IV since we are using HMAC on it [wb, 2009-01-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-11-27]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_checkPasswordHash"></a><div class="element clickable method public method_checkPasswordHash" data-toggle="collapse" data-target=".method_checkPasswordHash .collapse">
+<h2>Checks a password against a hash created with ::hashPassword()</h2>
+<pre>checkPasswordHash(string $password, string $hash) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password to check</p></div>
+<div class="subelement argument">
+<h4>$hash</h4>
+<code>string</code><p>The hash to check against</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the password matches the hash</div>
+</div></div>
+</div>
+<a id="method_hashPassword"></a><div class="element clickable method public method_hashPassword" data-toggle="collapse" data-target=".method_hashPassword .collapse">
+<h2>Hashes a password using a loop of sha1 hashes and a salt, making rainbow table attacks infeasible</h2>
+<pre>hashPassword(string $password) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password to hash</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An 80 character string of the Flourish fingerprint, salt and hashed password</div>
+</div></div>
+</div>
+<a id="method_publicKeyDecrypt"></a><div class="element clickable method public method_publicKeyDecrypt" data-toggle="collapse" data-target=".method_publicKeyDecrypt .collapse">
+<h2>Decrypts ciphertext encrypted using public-key encryption via ::publicKeyEncrypt()</h2>
+<pre>publicKeyDecrypt(string $ciphertext, string $private_key_file, string $password) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A public key (X.509 certificate) is required for encryption and a
+private key (PEM) is required for decryption.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ciphertext</h4>
+<code>string</code><p>The content to be decrypted</p></div>
+<div class="subelement argument">
+<h4>$private_key_file</h4>
+<code>string</code><p>The path to a PEM-encoded private key</p>
+</div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password for the private key</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the ciphertext appears to be corrupted</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The decrypted plaintext</div>
+</div></div>
+</div>
+<a id="method_publicKeyEncrypt"></a><div class="element clickable method public method_publicKeyEncrypt" data-toggle="collapse" data-target=".method_publicKeyEncrypt .collapse">
+<h2>Encrypts the passed data using public key encryption via OpenSSL</h2>
+<pre>publicKeyEncrypt(string $plaintext, string $public_key_file) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A public key (X.509 certificate) is required for encryption and a
+private key (PEM) is required for decryption.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plaintext</h4>
+<code>string</code><p>The content to be encrypted</p></div>
+<div class="subelement argument">
+<h4>$public_key_file</h4>
+<code>string</code><p>The path to an X.509 public key certificate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A base-64 encoded result containing a Flourish fingerprint and suitable for decryption using ::publicKeyDecrypt()</div>
+</div></div>
+</div>
+<a id="method_publicKeySign"></a><div class="element clickable method public method_publicKeySign" data-toggle="collapse" data-target=".method_publicKeySign .collapse">
+<h2>Creates a signature for plaintext to allow verification of the creator</h2>
+<pre>publicKeySign(string $plaintext, string $private_key_file, string $password) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A private key (PEM) is required for signing and a public key
+(X.509 certificate) is required for verification.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plaintext</h4>
+<code>string</code><p>The content to be signed</p></div>
+<div class="subelement argument">
+<h4>$private_key_file</h4>
+<code>string</code><p>The path to a PEM-encoded private key</p>
+</div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password for the private key</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the private key is invalid</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The base64-encoded signature suitable for verification using ::publicKeyVerify()</div>
+</div></div>
+</div>
+<a id="method_publicKeyVerify"></a><div class="element clickable method public method_publicKeyVerify" data-toggle="collapse" data-target=".method_publicKeyVerify .collapse">
+<h2>Checks a signature for plaintext to verify the creator - works with ::publicKeySign()</h2>
+<pre>publicKeyVerify(string $plaintext, string $signature, string $public_key_file) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A private key (PEM) is required for signing and a public key
+(X.509 certificate) is required for verification.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plaintext</h4>
+<code>string</code><p>The content to check</p></div>
+<div class="subelement argument">
+<h4>$signature</h4>
+<code>string</code><p>The base64-encoded signature for the plaintext</p>
+</div>
+<div class="subelement argument">
+<h4>$public_key_file</h4>
+<code>string</code><p>The path to an X.509 public key certificate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the public key file is the public key of the user who signed the plaintext</div>
+</div></div>
+</div>
+<a id="method_random"></a><div class="element clickable method public method_random" data-toggle="collapse" data-target=".method_random .collapse">
+<h2>Generates a random number using [http://php.net/mt_rand mt_rand()] after ensuring a good PRNG seed</h2>
+<pre>random(integer $min, integer $max) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$min</h4>
+<code>integer</code><p>The minimum number to return</p></div>
+<div class="subelement argument">
+<h4>$max</h4>
+<code>integer</code><p>The maximum number to return</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The psuedo-random number</div>
+</div></div>
+</div>
+<a id="method_randomString"></a><div class="element clickable method public method_randomString" data-toggle="collapse" data-target=".method_randomString .collapse">
+<h2>Returns a random string of the type and length specified</h2>
+<pre>randomString(integer $length, string $type) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>The length of string to return</p></div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of string to return: <code>'base64'</code>, <code>'base56'</code>, <code>'base36'</code>, <code>'alphanumeric'</code>, <code>'alpha'</code>, <code>'numeric'</code>, or <code>'hexadecimal'</code>, if a different string is provided, it will be used for the alphabet</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A random string of the type and length specified</div>
+</div></div>
+</div>
+<a id="method_symmetricKeyDecrypt"></a><div class="element clickable method public method_symmetricKeyDecrypt" data-toggle="collapse" data-target=".method_symmetricKeyDecrypt .collapse">
+<h2>Decrypts ciphertext encrypted using symmetric-key encryption via ::symmetricKeyEncrypt()</h2>
+<pre>symmetricKeyDecrypt(string $ciphertext, string $secret_key) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Since this is symmetric-key cryptography, the same key is used for
+encryption and decryption.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ciphertext</h4>
+<code>string</code><p>The content to be decrypted</p></div>
+<div class="subelement argument">
+<h4>$secret_key</h4>
+<code>string</code><p>The secret key to use for decryption</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the ciphertext appears to be corrupted</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The decrypted plaintext</div>
+</div></div>
+</div>
+<a id="method_symmetricKeyEncrypt"></a><div class="element clickable method public method_symmetricKeyEncrypt" data-toggle="collapse" data-target=".method_symmetricKeyEncrypt .collapse">
+<h2>Encrypts the passed data using symmetric-key encryption</h2>
+<pre>symmetricKeyEncrypt(string $plaintext, string $secret_key) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Since this is symmetric-key cryptography, the same key is used for
+encryption and decryption.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$plaintext</h4>
+<code>string</code><p>The content to be encrypted</p></div>
+<div class="subelement argument">
+<h4>$secret_key</h4>
+<code>string</code><p>The secret key to use for encryption - must be at least 8 characters</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the $secret_key is less than 8 characters long</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An encrypted and base-64 encoded result containing a Flourish fingerprint and suitable for decryption using ::symmetricKeyDecrypt()</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : \fSecurity</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>\fSecurity</code></div>
+</div></div>
+</div>
+<a id="method_createPrivateKeyResource"></a><div class="element clickable method private method_createPrivateKeyResource" data-toggle="collapse" data-target=".method_createPrivateKeyResource .collapse">
+<h2>Create a private key resource based on a filename and password</h2>
+<pre>createPrivateKeyResource(string $private_key_file, string $password) : resource</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$private_key_file</h4>
+<code>string</code><p>The path to a PEM-encoded private key</p>
+</div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password for the private key</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the private key is invalid</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The private key resource</div>
+</div></div>
+</div>
+<a id="method_createPublicKeyResource"></a><div class="element clickable method private method_createPublicKeyResource" data-toggle="collapse" data-target=".method_createPublicKeyResource .collapse">
+<h2>Create a public key resource based on a filename</h2>
+<pre>createPublicKeyResource(string $public_key_file) : resource</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$public_key_file</h4>
+<code>string</code><p>The path to an X.509 public key certificate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>resource</code>The public key resource</div>
+</div></div>
+</div>
+<a id="method_hashWithSalt"></a><div class="element clickable method private method_hashWithSalt" data-toggle="collapse" data-target=".method_hashWithSalt .collapse">
+<h2>Performs a large iteration of hashing a string with a salt</h2>
+<pre>hashWithSalt(string $source, string $salt) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code>string</code><p>The string to hash</p></div>
+<div class="subelement argument">
+<h4>$salt</h4>
+<code>string</code><p>The salt for the hash</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An 80 character string of the Flourish fingerprint, salt and hashed password</div>
+</div></div>
+</div>
+<a id="method_seedRandom"></a><div class="element clickable method private method_seedRandom" data-toggle="collapse" data-target=".method_seedRandom .collapse">
+<h2>Makes sure that the PRNG has been seeded with a fairly secure value</h2>
+<pre>seedRandom() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_verifyPublicKeyEnvironment"></a><div class="element clickable method private method_verifyPublicKeyEnvironment" data-toggle="collapse" data-target=".method_verifyPublicKeyEnvironment .collapse">
+<h2>Makes sure the required PHP extensions and library versions are all correct</h2>
+<pre>verifyPublicKeyEnvironment() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_verifySymmetricKeyEnvironment"></a><div class="element clickable method private method_verifySymmetricKeyEnvironment" data-toggle="collapse" data-target=".method_verifySymmetricKeyEnvironment .collapse">
+<h2>Makes sure the required PHP extensions and library versions are all correct</h2>
+<pre>verifySymmetricKeyEnvironment() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_checkPasswordHash"> </a><div class="element clickable constant  constant_checkPasswordHash" data-toggle="collapse" data-target=".constant_checkPasswordHash .collapse">
+<h2>checkPasswordHash</h2>
+<pre>checkPasswordHash </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hashHMAC"> </a><div class="element clickable constant  constant_hashHMAC" data-toggle="collapse" data-target=".constant_hashHMAC .collapse">
+<h2>hashHMAC</h2>
+<pre>hashHMAC </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hashPassword"> </a><div class="element clickable constant  constant_hashPassword" data-toggle="collapse" data-target=".constant_hashPassword .collapse">
+<h2>hashPassword</h2>
+<pre>hashPassword </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_publicKeyDecrypt"> </a><div class="element clickable constant  constant_publicKeyDecrypt" data-toggle="collapse" data-target=".constant_publicKeyDecrypt .collapse">
+<h2>publicKeyDecrypt</h2>
+<pre>publicKeyDecrypt </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_publicKeyEncrypt"> </a><div class="element clickable constant  constant_publicKeyEncrypt" data-toggle="collapse" data-target=".constant_publicKeyEncrypt .collapse">
+<h2>publicKeyEncrypt</h2>
+<pre>publicKeyEncrypt </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_publicKeySign"> </a><div class="element clickable constant  constant_publicKeySign" data-toggle="collapse" data-target=".constant_publicKeySign .collapse">
+<h2>publicKeySign</h2>
+<pre>publicKeySign </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_publicKeyVerify"> </a><div class="element clickable constant  constant_publicKeyVerify" data-toggle="collapse" data-target=".constant_publicKeyVerify .collapse">
+<h2>publicKeyVerify</h2>
+<pre>publicKeyVerify </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_random"> </a><div class="element clickable constant  constant_random" data-toggle="collapse" data-target=".constant_random .collapse">
+<h2>random</h2>
+<pre>random </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_randomString"> </a><div class="element clickable constant  constant_randomString" data-toggle="collapse" data-target=".constant_randomString .collapse">
+<h2>randomString</h2>
+<pre>randomString </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_symmetricKeyDecrypt"> </a><div class="element clickable constant  constant_symmetricKeyDecrypt" data-toggle="collapse" data-target=".constant_symmetricKeyDecrypt .collapse">
+<h2>symmetricKeyDecrypt</h2>
+<pre>symmetricKeyDecrypt </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_symmetricKeyEncrypt"> </a><div class="element clickable constant  constant_symmetricKeyEncrypt" data-toggle="collapse" data-target=".constant_symmetricKeyEncrypt .collapse">
+<h2>symmetricKeyEncrypt</h2>
+<pre>symmetricKeyEncrypt </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

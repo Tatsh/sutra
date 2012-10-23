@@ -1,0 +1,1000 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fCore</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_backtrace" title="backtrace :: Creates a nicely formatted backtrace to the the point where this method is called"><span class="description">Creates a nicely formatted backtrace to the the point where this method is called</span><pre>backtrace()</pre></a></li>
+<li class="method public "><a href="#method_call" title="call :: Performs a [http://php.net/call_user_func call_user_func()], while translating PHP 5.2 static callback syntax for PHP 5.1 and 5.0"><span class="description">Performs a [http://php.net/call_user_func call_user_func()], while translating PHP 5.2 static callback syntax for PHP 5.1 and 5.0</span><pre>call()</pre></a></li>
+<li class="method public "><a href="#method_callback" title="callback :: Translates a Class::method style static method callback to array style for compatibility with PHP 5.0 and 5.1 and built-in PHP functions"><span class="description">Translates a Class::method style static method callback to array style for compatibility with PHP 5.0 and 5.1 and built-in PHP functions</span><pre>callback()</pre></a></li>
+<li class="method public "><a href="#method_checkOS" title="checkOS :: Returns is the current OS is one of the OSes passed as a parameter"><span class="description">Returns is the current OS is one of the OSes passed as a parameter</span><pre>checkOS()</pre></a></li>
+<li class="method public "><a href="#method_checkVersion" title="checkVersion :: Checks to see if the running version of PHP is greater or equal to the version passed"><span class="description">Checks to see if the running version of PHP is greater or equal to the version passed</span><pre>checkVersion()</pre></a></li>
+<li class="method public "><a href="#method_configureSMTP" title="configureSMTP :: Sets an fSMTP object to be used for sending error and exception emails"><span class="description">Sets an fSMTP object to be used for sending error and exception emails</span><pre>configureSMTP()</pre></a></li>
+<li class="method public "><a href="#method_debug" title="debug :: Prints a debugging message if global or code-specific debugging is enabled"><span class="description">Prints a debugging message if global or code-specific debugging is enabled</span><pre>debug()</pre></a></li>
+<li class="method public "><a href="#method_disableContext" title="disableContext :: Disables including the context information with exception and error messages"><span class="description">Disables including the context information with exception and error messages</span><pre>disableContext()</pre></a></li>
+<li class="method public "><a href="#method_dump" title="dump :: Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings"><span class="description">Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</span><pre>dump()</pre></a></li>
+<li class="method public "><a href="#method_enableDebugging" title="enableDebugging :: Enables debug messages globally, i.e."><span class="description">Enables debug messages globally, i.e.</span><pre>enableDebugging()</pre></a></li>
+<li class="method public "><a href="#method_enableDynamicConstants" title="enableDynamicConstants :: Turns on a feature where undefined constants are automatically created with the string value equivalent to the name"><span class="description">Turns on a feature where undefined constants are automatically created with the string value equivalent to the name</span><pre>enableDynamicConstants()</pre></a></li>
+<li class="method public "><a href="#method_enableErrorHandling" title="enableErrorHandling :: Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps"><span class="description">Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps</span><pre>enableErrorHandling()</pre></a></li>
+<li class="method public "><a href="#method_enableExceptionHandling" title="enableExceptionHandling :: Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps"><span class="description">Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps</span><pre>enableExceptionHandling()</pre></a></li>
+<li class="method public "><a href="#method_expose" title="expose :: Prints the ::dump() of a value"><span class="description">Prints the ::dump() of a value</span><pre>expose()</pre></a></li>
+<li class="method public "><a href="#method_getDebug" title="getDebug :: If debugging is enabled"><span class="description">If debugging is enabled</span><pre>getDebug()</pre></a></li>
+<li class="method public "><a href="#method_registerDebugCallback" title="registerDebugCallback :: Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message"><span class="description">Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</span><pre>registerDebugCallback()</pre></a></li>
+<li class="method public "><a href="#method_startErrorCapture" title="startErrorCapture :: Temporarily enables capturing error messages"><span class="description">Temporarily enables capturing error messages</span><pre>startErrorCapture()</pre></a></li>
+<li class="method public "><a href="#method_stopErrorCapture" title="stopErrorCapture :: Stops capturing error messages, returning all that have been captured"><span class="description">Stops capturing error messages, returning all that have been captured</span><pre>stopErrorCapture()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_checkDestination" title="checkDestination :: Checks an error/exception destination to make sure it is valid"><span class="description">Checks an error/exception destination to make sure it is valid</span><pre>checkDestination()</pre></a></li>
+<li class="method private "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method private "><a href="#method_generateContext" title="generateContext :: Generates some information about the context of an error or exception"><span class="description">Generates some information about the context of an error or exception</span><pre>generateContext()</pre></a></li>
+<li class="method private "><a href="#method_sendMessageToDestination" title="sendMessageToDestination :: Handles sending a message to a destination"><span class="description">Handles sending a message to a destination</span><pre>sendMessageToDestination()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_captured_error_level" title="$captured_error_level :: The nesting level of error capturing"><span class="description">The nesting level of error capturing</span><pre>$captured_error_level</pre></a></li>
+<li class="property private "><a href="#property_captured_error_regex" title="$captured_error_regex :: A stack of regex to match errors to capture, one string per level"><span class="description">A stack of regex to match errors to capture, one string per level</span><pre>$captured_error_regex</pre></a></li>
+<li class="property private "><a href="#property_captured_error_types" title="$captured_error_types :: A stack of the types of errors to capture, one integer per level"><span class="description">A stack of the types of errors to capture, one integer per level</span><pre>$captured_error_types</pre></a></li>
+<li class="property private "><a href="#property_captured_errors" title="$captured_errors :: A stack of arrays of errors that have been captured, one array per level"><span class="description">A stack of arrays of errors that have been captured, one array per level</span><pre>$captured_errors</pre></a></li>
+<li class="property private "><a href="#property_captured_errors_previous_handler" title="$captured_errors_previous_handler :: A stack of the previous error handler, one callback per level"><span class="description">A stack of the previous error handler, one callback per level</span><pre>$captured_errors_previous_handler</pre></a></li>
+<li class="property private "><a href="#property_context_shown" title="$context_shown :: If the context info has been shown"><span class="description">If the context info has been shown</span><pre>$context_shown</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug :: If global debugging is enabled"><span class="description">If global debugging is enabled</span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_debug_callback" title="$debug_callback :: A callback to pass debug messages to"><span class="description">A callback to pass debug messages to</span><pre>$debug_callback</pre></a></li>
+<li class="property private "><a href="#property_dynamic_constants" title="$dynamic_constants :: If dynamic constants should be created"><span class="description">If dynamic constants should be created</span><pre>$dynamic_constants</pre></a></li>
+<li class="property private "><a href="#property_error_destination" title="$error_destination :: Error destination"><span class="description">Error destination</span><pre>$error_destination</pre></a></li>
+<li class="property private "><a href="#property_error_message_queue" title="$error_message_queue :: An array of errors to be send to the destination upon page completion"><span class="description">An array of errors to be send to the destination upon page completion</span><pre>$error_message_queue</pre></a></li>
+<li class="property private "><a href="#property_exception_destination" title="$exception_destination :: Exception destination"><span class="description">Exception destination</span><pre>$exception_destination</pre></a></li>
+<li class="property private "><a href="#property_exception_handler_callback" title="$exception_handler_callback :: Exception handler callback"><span class="description">Exception handler callback</span><pre>$exception_handler_callback</pre></a></li>
+<li class="property private "><a href="#property_exception_handler_parameters" title="$exception_handler_parameters :: Exception handler callback parameters"><span class="description">Exception handler callback parameters</span><pre>$exception_handler_parameters</pre></a></li>
+<li class="property private "><a href="#property_exception_message" title="$exception_message :: The message generated by the uncaught exception"><span class="description">The message generated by the uncaught exception</span><pre>$exception_message</pre></a></li>
+<li class="property private "><a href="#property_handles_errors" title="$handles_errors :: If this class is handling errors"><span class="description">If this class is handling errors</span><pre>$handles_errors</pre></a></li>
+<li class="property private "><a href="#property_handles_exceptions" title="$handles_exceptions :: If this class is handling exceptions"><span class="description">If this class is handling exceptions</span><pre>$handles_exceptions</pre></a></li>
+<li class="property private "><a href="#property_show_context" title="$show_context :: If the context info should be shown with errors/exceptions"><span class="description">If the context info should be shown with errors/exceptions</span><pre>$show_context</pre></a></li>
+<li class="property private "><a href="#property_significant_error_lines" title="$significant_error_lines :: An array of the most significant lines from error and exception backtraces"><span class="description">An array of the most significant lines from error and exception backtraces</span><pre>$significant_error_lines</pre></a></li>
+<li class="property private "><a href="#property_smtp_connection" title="$smtp_connection :: An SMTP connection for sending error and exception emails"><span class="description">An SMTP connection for sending error and exception emails</span><pre>$smtp_connection</pre></a></li>
+<li class="property private "><a href="#property_smtp_from_email" title="$smtp_from_email :: The email address to send error emails from"><span class="description">The email address to send error emails from</span><pre>$smtp_from_email</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_backtrace" title="backtrace :: "><span class="description">backtrace</span><pre>backtrace</pre></a></li>
+<li class="constant  "><a href="#constant_call" title="call :: "><span class="description">call</span><pre>call</pre></a></li>
+<li class="constant  "><a href="#constant_callback" title="callback :: "><span class="description">callback</span><pre>callback</pre></a></li>
+<li class="constant  "><a href="#constant_checkOS" title="checkOS :: "><span class="description">checkOS</span><pre>checkOS</pre></a></li>
+<li class="constant  "><a href="#constant_checkVersion" title="checkVersion :: "><span class="description">checkVersion</span><pre>checkVersion</pre></a></li>
+<li class="constant  "><a href="#constant_configureSMTP" title="configureSMTP :: "><span class="description">configureSMTP</span><pre>configureSMTP</pre></a></li>
+<li class="constant  "><a href="#constant_debug" title="debug :: "><span class="description">debug</span><pre>debug</pre></a></li>
+<li class="constant  "><a href="#constant_disableContext" title="disableContext :: "><span class="description">disableContext</span><pre>disableContext</pre></a></li>
+<li class="constant  "><a href="#constant_dump" title="dump :: "><span class="description">dump</span><pre>dump</pre></a></li>
+<li class="constant  "><a href="#constant_enableDebugging" title="enableDebugging :: "><span class="description">enableDebugging</span><pre>enableDebugging</pre></a></li>
+<li class="constant  "><a href="#constant_enableDynamicConstants" title="enableDynamicConstants :: "><span class="description">enableDynamicConstants</span><pre>enableDynamicConstants</pre></a></li>
+<li class="constant  "><a href="#constant_enableErrorHandling" title="enableErrorHandling :: "><span class="description">enableErrorHandling</span><pre>enableErrorHandling</pre></a></li>
+<li class="constant  "><a href="#constant_enableExceptionHandling" title="enableExceptionHandling :: "><span class="description">enableExceptionHandling</span><pre>enableExceptionHandling</pre></a></li>
+<li class="constant  "><a href="#constant_expose" title="expose :: "><span class="description">expose</span><pre>expose</pre></a></li>
+<li class="constant  "><a href="#constant_getDebug" title="getDebug :: "><span class="description">getDebug</span><pre>getDebug</pre></a></li>
+<li class="constant  "><a href="#constant_handleError" title="handleError :: "><span class="description">handleError</span><pre>handleError</pre></a></li>
+<li class="constant  "><a href="#constant_handleException" title="handleException :: "><span class="description">handleException</span><pre>handleException</pre></a></li>
+<li class="constant  "><a href="#constant_registerDebugCallback" title="registerDebugCallback :: "><span class="description">registerDebugCallback</span><pre>registerDebugCallback</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_sendMessagesOnShutdown" title="sendMessagesOnShutdown :: "><span class="description">sendMessagesOnShutdown</span><pre>sendMessagesOnShutdown</pre></a></li>
+<li class="constant  "><a href="#constant_startErrorCapture" title="startErrorCapture :: "><span class="description">startErrorCapture</span><pre>startErrorCapture</pre></a></li>
+<li class="constant  "><a href="#constant_stopErrorCapture" title="stopErrorCapture :: "><span class="description">stopErrorCapture</span><pre>stopErrorCapture</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fCore"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fCore.html">fCore</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides low-level debugging, error and exception functionality</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">Nick Trew [nt]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fCore">http://flourishlib.com/fCore</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b24</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Backwards Compatibility Break - moved ::detectOpcodeCache() to fLoader::hasOpcodeCache() [wb, 2011-08-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Backwards Compatibility Break - changed the email subject of error/exception emails to include relevant file info, instead of the timestamp, for better email message threading [wb, 2011-06-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Fixed a bug with dumping arrays containing integers [wb, 2011-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Changed ::startErrorCapture() to allow "stacking" it via multiple calls, fixed a couple of bugs with ::dump() mangling strings in the form `int(1)`, fixed mispelling of `occurred` [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Backwards Compatibility Break - Updated ::expose() to not wrap the data in HTML when running via CLI, and instead just append a newline [wb, 2011-02-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Added detection of AIX to ::checkOS() [wb, 2011-01-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Updated ::expose() to be able to accept multiple parameters [wb, 2011-01-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Fixed a bug with ::backtrace() triggering notices when an argument is not UTF-8 [wb, 2010-08-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Added the `$types` and `$regex` parameters to ::startErrorCapture() and the `$regex` parameter to ::stopErrorCapture() [wb, 2010-08-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Added ::startErrorCapture() and ::stopErrorCapture() [wb, 2010-07-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Changed ::enableExceptionHandling() to only call fException::printMessage() when the destination is not `html` and no callback has been defined, added ::configureSMTP() to allow using fSMTP for error and exception emails [wb, 2010-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Added the `$backtrace` parameter to ::backtrace() [wb, 2010-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Added ::getDebug() to check for the global debugging flag, added more specific BSD checks to ::checkOS() [wb, 2010-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Added ::detectOpcodeCache() [nt+wb, 2009-10-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed ::expose() to properly display when output includes non-UTF-8 binary data [wb, 2009-06-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added ::disableContext() to remove context info for exception/error handling, tweaked output for exceptions/errors [wb, 2009-06-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   ::enableErrorHandling() and ::enableExceptionHandling() now accept multiple email addresses, and a much wider range of emails [wb-imarc, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   ::backtrace() now properly replaces document root with {doc_root} on Windows [wb, 2009-05-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed a bug with getting the server name for error messages when running on the command line [wb, 2009-03-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed a bug with checking the error/exception destination when a log file is specified [wb, 2009-03-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Backwards compatibility break - ::getOS() and ::getPHPVersion() removed, replaced with ::checkOS() and ::checkVersion() [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   ::handleError() now displays what kind of error occurred as the heading [wb, 2009-02-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Added ::registerDebugCallback() [wb, 2009-02-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-09-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_backtrace"></a><div class="element clickable method public method_backtrace" data-toggle="collapse" data-target=".method_backtrace .collapse">
+<h2>Creates a nicely formatted backtrace to the the point where this method is called</h2>
+<pre>backtrace(integer $remove_lines, array $backtrace) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$remove_lines</h4>
+<code>integer</code><p>The number of trailing lines to remove from the backtrace</p></div>
+<div class="subelement argument">
+<h4>$backtrace</h4>
+<code>array</code><p>A backtrace from [http://php.net/backtrace <code>debug_backtrace()</code>] to format - this is not usually required or desired</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted backtrace</div>
+</div></div>
+</div>
+<a id="method_call"></a><div class="element clickable method public method_call" data-toggle="collapse" data-target=".method_call .collapse">
+<h2>Performs a [http://php.net/call_user_func call_user_func()], while translating PHP 5.2 static callback syntax for PHP 5.1 and 5.0</h2>
+<pre>call(callback $callback, array $parameters) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Parameters can be passed either as a single array of parameters or as
+multiple parameters.</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>// Passing multiple parameters in a normal fashion
+fCore::call('Class::method', TRUE, 0, 'test');</p>
+
+<p>// Passing multiple parameters in a parameters array
+fCore::call('Class::method', array(TRUE, 0, 'test'));
+}}}</p>
+
+<p>To pass parameters by reference they must be assigned to an
+array by reference and the function/method being called must accept those
+parameters by reference. If either condition is not met, the parameter
+will be passed by value.</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>// Passing parameters by reference
+fCore::call('Class::method', array(&amp;$var1, &amp;$var2));
+}}}</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The function or method to call</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters to pass to the function/method</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The return value of the called function/method</div>
+</div></div>
+</div>
+<a id="method_callback"></a><div class="element clickable method public method_callback" data-toggle="collapse" data-target=".method_callback .collapse">
+<h2>Translates a Class::method style static method callback to array style for compatibility with PHP 5.0 and 5.1 and built-in PHP functions</h2>
+<pre>callback(callback $callback) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The translated callback</div>
+</div></div>
+</div>
+<a id="method_checkOS"></a><div class="element clickable method public method_checkOS" data-toggle="collapse" data-target=".method_checkOS .collapse">
+<h2>Returns is the current OS is one of the OSes passed as a parameter</h2>
+<pre>checkOS(string $os) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Valid OS strings are:
+ - <code>'linux'</code>
+ - <code>'aix'</code>
+ - <code>'bsd'</code>
+ - <code>'freebsd'</code>
+ - <code>'netbsd'</code>
+ - <code>'openbsd'</code>
+ - <code>'osx'</code>
+ - <code>'solaris'</code>
+ - <code>'windows'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$os</h4>
+<code>string</code><p>The operating system to check - see method description for valid OSes</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the current OS is included in the list of OSes passed as parameters</div>
+</div></div>
+</div>
+<a id="method_checkVersion"></a><div class="element clickable method public method_checkVersion" data-toggle="collapse" data-target=".method_checkVersion .collapse">
+<h2>Checks to see if the running version of PHP is greater or equal to the version passed</h2>
+<pre>checkVersion($version) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$version</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the running version of PHP is greater or equal to the version passed</div>
+</div></div>
+</div>
+<a id="method_configureSMTP"></a><div class="element clickable method public method_configureSMTP" data-toggle="collapse" data-target=".method_configureSMTP .collapse">
+<h2>Sets an fSMTP object to be used for sending error and exception emails</h2>
+<pre>configureSMTP(<a href="../classes/fSMTP.html">\fSMTP</a> $smtp, string $from_email) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$smtp</h4>
+<code><a href="../classes/fSMTP.html">\fSMTP</a></code><p>The SMTP connection to send emails over</p></div>
+<div class="subelement argument">
+<h4>$from_email</h4>
+<code>string</code><p>The email address to use in the <code>From:</code> header</p>
+</div>
+</div></div>
+</div>
+<a id="method_debug"></a><div class="element clickable method public method_debug" data-toggle="collapse" data-target=".method_debug .collapse">
+<h2>Prints a debugging message if global or code-specific debugging is enabled</h2>
+<pre>debug(string $message, boolean $force) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The debug message</p></div>
+<div class="subelement argument">
+<h4>$force</h4>
+<code>boolean</code><p>If debugging should be forced even when global debugging is off</p></div>
+</div></div>
+</div>
+<a id="method_disableContext"></a><div class="element clickable method public method_disableContext" data-toggle="collapse" data-target=".method_disableContext .collapse">
+<h2>Disables including the context information with exception and error messages</h2>
+<pre>disableContext() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The context information includes the following superglobals:</p>
+
+<ul>
+<li><code>$_SERVER</code></li>
+<li><code>$_POST</code></li>
+<li><code>$_GET</code></li>
+<li><code>$_SESSION</code></li>
+<li><code>$_FILES</code></li>
+<li><code>$_COOKIE</code></li>
+</ul></div></div></div>
+</div>
+<a id="method_dump"></a><div class="element clickable method public method_dump" data-toggle="collapse" data-target=".method_dump .collapse">
+<h2>Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</h2>
+<pre>dump(mixed $data) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The string output format of this method is very similar to the output of
+[http://php.net/print_r print_r()] except that the following values
+are represented as special strings:</p>
+
+<ul>
+<li><code>TRUE</code>: <code>'{true}'</code></li>
+<li><code>FALSE</code>: <code>'{false}'</code></li>
+<li><code>NULL</code>: <code>'{null}'</code></li>
+<li><code>''</code>: <code>'{empty_string}'</code></li>
+</ul></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The value to dump</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string representation of the value</div>
+</div></div>
+</div>
+<a id="method_enableDebugging"></a><div class="element clickable method public method_enableDebugging" data-toggle="collapse" data-target=".method_enableDebugging .collapse">
+<h2>Enables debug messages globally, i.e.</h2>
+<pre>enableDebugging(boolean $flag) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>they will be shown for any call to ::debug()</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flag</h4>
+<code>boolean</code><p>If debugging messages should be shown</p></div>
+</div></div>
+</div>
+<a id="method_enableDynamicConstants"></a><div class="element clickable method public method_enableDynamicConstants" data-toggle="collapse" data-target=".method_enableDynamicConstants .collapse">
+<h2>Turns on a feature where undefined constants are automatically created with the string value equivalent to the name</h2>
+<pre>enableDynamicConstants() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This functionality only works if ::enableErrorHandling() has been
+called first. This functionality may have a very slight performance
+impact since a <code>E_STRICT</code> error message must be captured and then a
+call to [http://php.net/define define()] is made.</p></div></div></div>
+</div>
+<a id="method_enableErrorHandling"></a><div class="element clickable method public method_enableErrorHandling" data-toggle="collapse" data-target=".method_enableErrorHandling .collapse">
+<h2>Turns on developer-friendly error handling that includes context information including a backtrace and superglobal dumps</h2>
+<pre>enableErrorHandling(string $destination) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>All errors that match the current
+[http://php.net/error_reporting error_reporting()] level will be
+redirected to the destination and will include a full backtrace. In
+addition, dumps of the following superglobals will be made to aid in
+debugging:</p>
+
+<ul>
+<li><code>$_SERVER</code></li>
+<li><code>$_POST</code></li>
+<li><code>$_GET</code></li>
+<li><code>$_SESSION</code></li>
+<li><code>$_FILES</code></li>
+<li><code>$_COOKIE</code></li>
+</ul>
+
+<p>The superglobal dumps are only done once per page, however a backtrace
+in included for each error.</p>
+
+<p>If an email address is specified for the destination, only one email
+will be sent per script execution. If both error and
+[enableExceptionHandling() exception handling] are set to the same
+email address, the email will contain both errors and exceptions.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>The destination for the errors and context information - an email address, a file path or the string <code>'html'</code></p>
+</div>
+</div></div>
+</div>
+<a id="method_enableExceptionHandling"></a><div class="element clickable method public method_enableExceptionHandling" data-toggle="collapse" data-target=".method_enableExceptionHandling .collapse">
+<h2>Turns on developer-friendly uncaught exception handling that includes context information including a backtrace and superglobal dumps</h2>
+<pre>enableExceptionHandling(string $destination, callback $closing_code, array $parameters) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Any uncaught exception will be redirected to the destination specified,
+and the page will execute the <code>$closing_code</code> callback before exiting.
+The destination will receive a message with the exception messaage, a
+full backtrace and dumps of the following superglobals to aid in
+debugging:</p>
+
+<ul>
+<li><code>$_SERVER</code></li>
+<li><code>$_POST</code></li>
+<li><code>$_GET</code></li>
+<li><code>$_SESSION</code></li>
+<li><code>$_FILES</code></li>
+<li><code>$_COOKIE</code></li>
+</ul>
+
+<p>The superglobal dumps are only done once per page, however a backtrace
+in included for each error.</p>
+
+<p>If an email address is specified for the destination, only one email
+will be sent per script execution.</p>
+
+<p>If an email address is specified for the destination, only one email
+will be sent per script execution. If both exception and
+[enableErrorHandling() error handling] are set to the same
+email address, the email will contain both exceptions and errors.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>The destination for the exception and context information - an email address, a file path or the string <code>'html'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$closing_code</h4>
+<code>callback</code><p>This callback will happen after the exception is handled and before page execution stops. Good for printing a footer. If no callback is provided and the exception extends fException, fException::printMessage() will be called.</p>
+</div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters to send to <code>$closing_code</code></p>
+</div>
+</div></div>
+</div>
+<a id="method_expose"></a><div class="element clickable method public method_expose" data-toggle="collapse" data-target=".method_expose .collapse">
+<h2>Prints the ::dump() of a value</h2>
+<pre>expose(mixed $data) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The dump will be printed in a <code>&lt;pre&gt;</code> tag with the class <code>exposed</code> if
+PHP is running anywhere but via the command line (cli). If PHP is
+running via the cli, the data will be printed, followed by a single
+line break (<code>\n</code>).</p>
+
+<p>If multiple parameters are passed, they are exposed as an array.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The value to show</p></div>
+</div></div>
+</div>
+<a id="method_getDebug"></a><div class="element clickable method public method_getDebug" data-toggle="collapse" data-target=".method_getDebug .collapse">
+<h2>If debugging is enabled</h2>
+<pre>getDebug(boolean $force) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$force</h4>
+<code>boolean</code><p>If debugging is forced</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If debugging is enabled</div>
+</div></div>
+</div>
+<a id="method_registerDebugCallback"></a><div class="element clickable method public method_registerDebugCallback" data-toggle="collapse" data-target=".method_registerDebugCallback .collapse">
+<h2>Registers a callback to handle debug messages instead of the default action of calling ::expose() on the message</h2>
+<pre>registerDebugCallback(callback $callback) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>A callback that accepts a single parameter, the string debug message to handle</p></div>
+</div></div>
+</div>
+<a id="method_startErrorCapture"></a><div class="element clickable method public method_startErrorCapture" data-toggle="collapse" data-target=".method_startErrorCapture .collapse">
+<h2>Temporarily enables capturing error messages</h2>
+<pre>startErrorCapture(integer $types, string $regex) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$types</h4>
+<code>integer</code><p>The error types to capture - this should be as specific as possible - defaults to all (E_ALL | E_STRICT)</p>
+</div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>A PCRE regex to match against the error message</p></div>
+</div></div>
+</div>
+<a id="method_stopErrorCapture"></a><div class="element clickable method public method_stopErrorCapture" data-toggle="collapse" data-target=".method_stopErrorCapture .collapse">
+<h2>Stops capturing error messages, returning all that have been captured</h2>
+<pre>stopErrorCapture(string $regex) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>A PCRE regex to filter messages by</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The captured error messages</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fCore.html">\fCore</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fCore.html">\fCore</a></code></div>
+</div></div>
+</div>
+<a id="method_checkDestination"></a><div class="element clickable method private method_checkDestination" data-toggle="collapse" data-target=".method_checkDestination .collapse">
+<h2>Checks an error/exception destination to make sure it is valid</h2>
+<pre>checkDestination(string $destination) : string | boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$destination</h4>
+<code>string</code><p>The destination for the exception. An email, file or the string <code>'html'</code>.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>boolean</code>`'email'`, `'file'`, `'html'` or `FALSE`</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method private method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_generateContext"></a><div class="element clickable method private method_generateContext" data-toggle="collapse" data-target=".method_generateContext .collapse">
+<h2>Generates some information about the context of an error or exception</h2>
+<pre>generateContext() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A string containing `$_SERVER`, `$_GET`, `$_POST`, `$_FILES`, `$_SESSION` and `$_COOKIE`</div>
+</div></div>
+</div>
+<a id="method_sendMessageToDestination"></a><div class="element clickable method private method_sendMessageToDestination" data-toggle="collapse" data-target=".method_sendMessageToDestination .collapse">
+<h2>Handles sending a message to a destination</h2>
+<pre>sendMessageToDestination(string $type, string $message, string $significant_line) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the destination is an email address or file, the messages will be
+spooled up until the end of the script execution to prevent multiple
+emails from being sent or a log file being written to multiple times.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>If the message is an error or an exception</p></div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to send to the destination</p></div>
+<div class="subelement argument">
+<h4>$significant_line</h4>
+<code>string</code><p>The most significant line from an error or exception backtrace</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_captured_error_level"> </a><div class="element clickable property private property_captured_error_level" data-toggle="collapse" data-target=".property_captured_error_level .collapse">
+<h2>The nesting level of error capturing</h2>
+<pre>$captured_error_level : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_captured_error_regex"> </a><div class="element clickable property private property_captured_error_regex" data-toggle="collapse" data-target=".property_captured_error_regex .collapse">
+<h2>A stack of regex to match errors to capture, one string per level</h2>
+<pre>$captured_error_regex : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_captured_error_types"> </a><div class="element clickable property private property_captured_error_types" data-toggle="collapse" data-target=".property_captured_error_types .collapse">
+<h2>A stack of the types of errors to capture, one integer per level</h2>
+<pre>$captured_error_types : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_captured_errors"> </a><div class="element clickable property private property_captured_errors" data-toggle="collapse" data-target=".property_captured_errors .collapse">
+<h2>A stack of arrays of errors that have been captured, one array per level</h2>
+<pre>$captured_errors : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_captured_errors_previous_handler"> </a><div class="element clickable property private property_captured_errors_previous_handler" data-toggle="collapse" data-target=".property_captured_errors_previous_handler .collapse">
+<h2>A stack of the previous error handler, one callback per level</h2>
+<pre>$captured_errors_previous_handler : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_context_shown"> </a><div class="element clickable property private property_context_shown" data-toggle="collapse" data-target=".property_context_shown .collapse">
+<h2>If the context info has been shown</h2>
+<pre>$context_shown : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse">
+<h2>If global debugging is enabled</h2>
+<pre>$debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug_callback"> </a><div class="element clickable property private property_debug_callback" data-toggle="collapse" data-target=".property_debug_callback .collapse">
+<h2>A callback to pass debug messages to</h2>
+<pre>$debug_callback : callback</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_dynamic_constants"> </a><div class="element clickable property private property_dynamic_constants" data-toggle="collapse" data-target=".property_dynamic_constants .collapse">
+<h2>If dynamic constants should be created</h2>
+<pre>$dynamic_constants : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_error_destination"> </a><div class="element clickable property private property_error_destination" data-toggle="collapse" data-target=".property_error_destination .collapse">
+<h2>Error destination</h2>
+<pre>$error_destination : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_error_message_queue"> </a><div class="element clickable property private property_error_message_queue" data-toggle="collapse" data-target=".property_error_message_queue .collapse">
+<h2>An array of errors to be send to the destination upon page completion</h2>
+<pre>$error_message_queue : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_exception_destination"> </a><div class="element clickable property private property_exception_destination" data-toggle="collapse" data-target=".property_exception_destination .collapse">
+<h2>Exception destination</h2>
+<pre>$exception_destination : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_exception_handler_callback"> </a><div class="element clickable property private property_exception_handler_callback" data-toggle="collapse" data-target=".property_exception_handler_callback .collapse">
+<h2>Exception handler callback</h2>
+<pre>$exception_handler_callback : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_exception_handler_parameters"> </a><div class="element clickable property private property_exception_handler_parameters" data-toggle="collapse" data-target=".property_exception_handler_parameters .collapse">
+<h2>Exception handler callback parameters</h2>
+<pre>$exception_handler_parameters : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_exception_message"> </a><div class="element clickable property private property_exception_message" data-toggle="collapse" data-target=".property_exception_message .collapse">
+<h2>The message generated by the uncaught exception</h2>
+<pre>$exception_message : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_handles_errors"> </a><div class="element clickable property private property_handles_errors" data-toggle="collapse" data-target=".property_handles_errors .collapse">
+<h2>If this class is handling errors</h2>
+<pre>$handles_errors : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_handles_exceptions"> </a><div class="element clickable property private property_handles_exceptions" data-toggle="collapse" data-target=".property_handles_exceptions .collapse">
+<h2>If this class is handling exceptions</h2>
+<pre>$handles_exceptions : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_show_context"> </a><div class="element clickable property private property_show_context" data-toggle="collapse" data-target=".property_show_context .collapse">
+<h2>If the context info should be shown with errors/exceptions</h2>
+<pre>$show_context : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_significant_error_lines"> </a><div class="element clickable property private property_significant_error_lines" data-toggle="collapse" data-target=".property_significant_error_lines .collapse">
+<h2>An array of the most significant lines from error and exception backtraces</h2>
+<pre>$significant_error_lines : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_smtp_connection"> </a><div class="element clickable property private property_smtp_connection" data-toggle="collapse" data-target=".property_smtp_connection .collapse">
+<h2>An SMTP connection for sending error and exception emails</h2>
+<pre>$smtp_connection : <a href="../classes/fSMTP.html">\fSMTP</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_smtp_from_email"> </a><div class="element clickable property private property_smtp_from_email" data-toggle="collapse" data-target=".property_smtp_from_email .collapse">
+<h2>The email address to send error emails from</h2>
+<pre>$smtp_from_email : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_backtrace"> </a><div class="element clickable constant  constant_backtrace" data-toggle="collapse" data-target=".constant_backtrace .collapse">
+<h2>backtrace</h2>
+<pre>backtrace </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_call"> </a><div class="element clickable constant  constant_call" data-toggle="collapse" data-target=".constant_call .collapse">
+<h2>call</h2>
+<pre>call </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_callback"> </a><div class="element clickable constant  constant_callback" data-toggle="collapse" data-target=".constant_callback .collapse">
+<h2>callback</h2>
+<pre>callback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_checkOS"> </a><div class="element clickable constant  constant_checkOS" data-toggle="collapse" data-target=".constant_checkOS .collapse">
+<h2>checkOS</h2>
+<pre>checkOS </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_checkVersion"> </a><div class="element clickable constant  constant_checkVersion" data-toggle="collapse" data-target=".constant_checkVersion .collapse">
+<h2>checkVersion</h2>
+<pre>checkVersion </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_configureSMTP"> </a><div class="element clickable constant  constant_configureSMTP" data-toggle="collapse" data-target=".constant_configureSMTP .collapse">
+<h2>configureSMTP</h2>
+<pre>configureSMTP </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_debug"> </a><div class="element clickable constant  constant_debug" data-toggle="collapse" data-target=".constant_debug .collapse">
+<h2>debug</h2>
+<pre>debug </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_disableContext"> </a><div class="element clickable constant  constant_disableContext" data-toggle="collapse" data-target=".constant_disableContext .collapse">
+<h2>disableContext</h2>
+<pre>disableContext </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_dump"> </a><div class="element clickable constant  constant_dump" data-toggle="collapse" data-target=".constant_dump .collapse">
+<h2>dump</h2>
+<pre>dump </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enableDebugging"> </a><div class="element clickable constant  constant_enableDebugging" data-toggle="collapse" data-target=".constant_enableDebugging .collapse">
+<h2>enableDebugging</h2>
+<pre>enableDebugging </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enableDynamicConstants"> </a><div class="element clickable constant  constant_enableDynamicConstants" data-toggle="collapse" data-target=".constant_enableDynamicConstants .collapse">
+<h2>enableDynamicConstants</h2>
+<pre>enableDynamicConstants </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enableErrorHandling"> </a><div class="element clickable constant  constant_enableErrorHandling" data-toggle="collapse" data-target=".constant_enableErrorHandling .collapse">
+<h2>enableErrorHandling</h2>
+<pre>enableErrorHandling </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enableExceptionHandling"> </a><div class="element clickable constant  constant_enableExceptionHandling" data-toggle="collapse" data-target=".constant_enableExceptionHandling .collapse">
+<h2>enableExceptionHandling</h2>
+<pre>enableExceptionHandling </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_expose"> </a><div class="element clickable constant  constant_expose" data-toggle="collapse" data-target=".constant_expose .collapse">
+<h2>expose</h2>
+<pre>expose </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getDebug"> </a><div class="element clickable constant  constant_getDebug" data-toggle="collapse" data-target=".constant_getDebug .collapse">
+<h2>getDebug</h2>
+<pre>getDebug </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_handleError"> </a><div class="element clickable constant  constant_handleError" data-toggle="collapse" data-target=".constant_handleError .collapse">
+<h2>handleError</h2>
+<pre>handleError </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_handleException"> </a><div class="element clickable constant  constant_handleException" data-toggle="collapse" data-target=".constant_handleException .collapse">
+<h2>handleException</h2>
+<pre>handleException </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_registerDebugCallback"> </a><div class="element clickable constant  constant_registerDebugCallback" data-toggle="collapse" data-target=".constant_registerDebugCallback .collapse">
+<h2>registerDebugCallback</h2>
+<pre>registerDebugCallback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendMessagesOnShutdown"> </a><div class="element clickable constant  constant_sendMessagesOnShutdown" data-toggle="collapse" data-target=".constant_sendMessagesOnShutdown .collapse">
+<h2>sendMessagesOnShutdown</h2>
+<pre>sendMessagesOnShutdown </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_startErrorCapture"> </a><div class="element clickable constant  constant_startErrorCapture" data-toggle="collapse" data-target=".constant_startErrorCapture .collapse">
+<h2>startErrorCapture</h2>
+<pre>startErrorCapture </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_stopErrorCapture"> </a><div class="element clickable constant  constant_stopErrorCapture" data-toggle="collapse" data-target=".constant_stopErrorCapture .collapse">
+<h2>stopErrorCapture</h2>
+<pre>stopErrorCapture </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

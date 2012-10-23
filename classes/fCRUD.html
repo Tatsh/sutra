@@ -1,0 +1,496 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fCRUD</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_getColumnClass" title="getColumnClass :: Return the string `'sorted'` if `$column` is the column that is currently being sorted by, otherwise returns `''`"><span class="description">Return the string `'sorted'` if `$column` is the column that is currently being sorted by, otherwise returns `''`</span><pre>getColumnClass()</pre></a></li>
+<li class="method public "><a href="#method_getRowClass" title="getRowClass :: Returns a CSS class name for a row"><span class="description">Returns a CSS class name for a row</span><pre>getRowClass()</pre></a></li>
+<li class="method public "><a href="#method_getSearchValue" title="getSearchValue :: Gets the current value of a search field"><span class="description">Gets the current value of a search field</span><pre>getSearchValue()</pre></a></li>
+<li class="method public "><a href="#method_getSortColumn" title="getSortColumn :: Gets the current column to sort by, defaults to first one specified"><span class="description">Gets the current column to sort by, defaults to first one specified</span><pre>getSortColumn()</pre></a></li>
+<li class="method public "><a href="#method_getSortDirection" title="getSortDirection :: Gets the current sort direction"><span class="description">Gets the current sort direction</span><pre>getSortDirection()</pre></a></li>
+<li class="method public "><a href="#method_printSortableColumn" title="printSortableColumn :: Prints a sortable column header `a` tag"><span class="description">Prints a sortable column header `a` tag</span><pre>printSortableColumn()</pre></a></li>
+<li class="method public "><a href="#method_redirectWithLoadedValues" title="redirectWithLoadedValues :: Checks to see if any values (search or sort) were loaded from the session, and if so redirects the user to the current URL with those values added"><span class="description">Checks to see if any values (search or sort) were loaded from the session, and if so redirects the user to the current URL with those values added</span><pre>redirectWithLoadedValues()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Prevent instantiation"><span class="description">Prevent instantiation</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_getPreviousSearchValue" title="getPreviousSearchValue :: Returns the previous values for the specified search field"><span class="description">Returns the previous values for the specified search field</span><pre>getPreviousSearchValue()</pre></a></li>
+<li class="method private "><a href="#method_getPreviousSortColumn" title="getPreviousSortColumn :: Return the previous sort column, if one exists"><span class="description">Return the previous sort column, if one exists</span><pre>getPreviousSortColumn()</pre></a></li>
+<li class="method private "><a href="#method_getPreviousSortDirection" title="getPreviousSortDirection :: Return the previous sort direction, if one exists"><span class="description">Return the previous sort direction, if one exists</span><pre>getPreviousSortDirection()</pre></a></li>
+<li class="method private "><a href="#method_setPreviousSearchValue" title="setPreviousSearchValue :: Sets a value for a search field"><span class="description">Sets a value for a search field</span><pre>setPreviousSearchValue()</pre></a></li>
+<li class="method private "><a href="#method_setPreviousSortColumn" title="setPreviousSortColumn :: Set the sort column to be used on returning pages"><span class="description">Set the sort column to be used on returning pages</span><pre>setPreviousSortColumn()</pre></a></li>
+<li class="method private "><a href="#method_setPreviousSortDirection" title="setPreviousSortDirection :: Set the sort direction to be used on returning pages"><span class="description">Set the sort direction to be used on returning pages</span><pre>setPreviousSortDirection()</pre></a></li>
+<li class="method private "><a href="#method_wasResetRequested" title="wasResetRequested :: Indicates if a reset was requested for search values"><span class="description">Indicates if a reset was requested for search values</span><pre>wasResetRequested()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_loaded_values" title="$loaded_values :: Any values that were loaded from the session, used for redirection"><span class="description">Any values that were loaded from the session, used for redirection</span><pre>$loaded_values</pre></a></li>
+<li class="property private "><a href="#property_row_number" title="$row_number :: The current row number for alternating rows"><span class="description">The current row number for alternating rows</span><pre>$row_number</pre></a></li>
+<li class="property private "><a href="#property_search_values" title="$search_values :: The values for a search form"><span class="description">The values for a search form</span><pre>$search_values</pre></a></li>
+<li class="property private "><a href="#property_sort_column" title="$sort_column :: The column to sort by"><span class="description">The column to sort by</span><pre>$sort_column</pre></a></li>
+<li class="property private "><a href="#property_sort_direction" title="$sort_direction :: The direction to sort"><span class="description">The direction to sort</span><pre>$sort_direction</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_getColumnClass" title="getColumnClass :: "><span class="description">getColumnClass</span><pre>getColumnClass</pre></a></li>
+<li class="constant  "><a href="#constant_getRowClass" title="getRowClass :: "><span class="description">getRowClass</span><pre>getRowClass</pre></a></li>
+<li class="constant  "><a href="#constant_getSearchValue" title="getSearchValue :: "><span class="description">getSearchValue</span><pre>getSearchValue</pre></a></li>
+<li class="constant  "><a href="#constant_getSortColumn" title="getSortColumn :: "><span class="description">getSortColumn</span><pre>getSortColumn</pre></a></li>
+<li class="constant  "><a href="#constant_getSortDirection" title="getSortDirection :: "><span class="description">getSortDirection</span><pre>getSortDirection</pre></a></li>
+<li class="constant  "><a href="#constant_printSortableColumn" title="printSortableColumn :: "><span class="description">printSortableColumn</span><pre>printSortableColumn</pre></a></li>
+<li class="constant  "><a href="#constant_redirectWithLoadedValues" title="redirectWithLoadedValues :: "><span class="description">redirectWithLoadedValues</span><pre>redirectWithLoadedValues</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fCRUD"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fCRUD.html">fCRUD</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides miscellaneous functionality for [http://en.wikipedia.org/wiki/Create,_read,_update_and_delete CRUD-like] pages</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2009 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fCRUD">http://flourishlib.com/fCRUD</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b5</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5  Updated class to use new fSession API [wb, 2009-10-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Updated class to use new fSession API [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Backwards Compatiblity Break - moved ::printOption() to fHTML::printOption(), ::showChecked() to fHTML::showChecked(), ::removeListItems() and ::reorderListItems() to fException::splitMessage(), ::generateRequestToken() to fRequest::generateCSRFToken(), and ::validateRequestToken() to fRequest::validateCSRFToken() [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Fixed a bug preventing loaded search values from being included in redirects [wb, 2009-03-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_getColumnClass"></a><div class="element clickable method public method_getColumnClass" data-toggle="collapse" data-target=".method_getColumnClass .collapse">
+<h2>Return the string `'sorted'` if `$column` is the column that is currently being sorted by, otherwise returns `''`</h2>
+<pre>getColumnClass(string $column) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method will only be useful if used with the other sort methods
+::printSortableColumn(), ::getSortColumn() and ::getSortDirection().</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The CSS class for the column, either `''` or `'sorted'`</div>
+</div></div>
+</div>
+<a id="method_getRowClass"></a><div class="element clickable method public method_getRowClass" data-toggle="collapse" data-target=".method_getRowClass .collapse">
+<h2>Returns a CSS class name for a row</h2>
+<pre>getRowClass(mixed $row_value, mixed $affected_value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Will return <code>'even'</code>, <code>'odd'</code>, or <code>'highlighted'</code> if the two parameters
+are equal and not <code>NULL</code>. The first call to this method will return
+the appropriate class concatenated with <code>' first'</code>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$row_value</h4>
+<code>mixed</code><p>The value from the row</p></div>
+<div class="subelement argument">
+<h4>$affected_value</h4>
+<code>mixed</code><p>The value that was just added or updated</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The css class</div>
+</div></div>
+</div>
+<a id="method_getSearchValue"></a><div class="element clickable method public method_getSearchValue" data-toggle="collapse" data-target=".method_getSearchValue .collapse">
+<h2>Gets the current value of a search field</h2>
+<pre>getSearchValue(string $column, string $cast_to, string $default) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a value is an empty string and no cast to is specified, the value will
+become <code>NULL</code>.</p>
+
+<p>If a query string of <code>?reset</code> is passed, all previous search values will
+be erased.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column that is being pulled back</p></div>
+<div class="subelement argument">
+<h4>$cast_to</h4>
+<code>string</code><p>The data type to cast to</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>string</code><p>The default value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The current value</div>
+</div></div>
+</div>
+<a id="method_getSortColumn"></a><div class="element clickable method public method_getSortColumn" data-toggle="collapse" data-target=".method_getSortColumn .collapse">
+<h2>Gets the current column to sort by, defaults to first one specified</h2>
+<pre>getSortColumn(string $possible_column) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$possible_column</h4>
+<code>string</code><p>The columns that can be sorted by, defaults to first</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The column to sort by</div>
+</div></div>
+</div>
+<a id="method_getSortDirection"></a><div class="element clickable method public method_getSortDirection" data-toggle="collapse" data-target=".method_getSortDirection .collapse">
+<h2>Gets the current sort direction</h2>
+<pre>getSortDirection(string $default_direction) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$default_direction</h4>
+<code>string</code><p>The default direction, <code>'asc'</code> or <code>'desc'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The direction, `'asc'` or `'desc'`</div>
+</div></div>
+</div>
+<a id="method_printSortableColumn"></a><div class="element clickable method public method_printSortableColumn" data-toggle="collapse" data-target=".method_printSortableColumn .collapse">
+<h2>Prints a sortable column header `a` tag</h2>
+<pre>printSortableColumn(string $column, string $column_name) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The a tag will include the CSS class <code>'sortable_column'</code> and the
+direction being sorted, <code>'asc'</code> or <code>'desc'</code>.</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>fCRUD::printSortableColumn('name', 'Name');
+}}}</p>
+
+<p>would create the following HTML based on the page context</p>
+
+<p>{{{</p>
+
+<h1>!html</h1>
+
+<p><!-- If name is the current sort column in the asc direction, the output would be -->
+<a href="?sort=name&dir=desc" class="sorted_column asc">Name</a></p>
+
+<p><!-- If name is not the current sort column, the output would be -->
+<a href="?sort-name&dir=asc" class="sorted_column">Name</a>
+}}}</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to create the sortable header for</p></div>
+<div class="subelement argument">
+<h4>$column_name</h4>
+<code>string</code><p>This will override the humanized version of the column</p></div>
+</div></div>
+</div>
+<a id="method_redirectWithLoadedValues"></a><div class="element clickable method public method_redirectWithLoadedValues" data-toggle="collapse" data-target=".method_redirectWithLoadedValues .collapse">
+<h2>Checks to see if any values (search or sort) were loaded from the session, and if so redirects the user to the current URL with those values added</h2>
+<pre>redirectWithLoadedValues() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Prevent instantiation</h2>
+<pre>__construct() : <a href="../classes/fCRUD.html">\fCRUD</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fCRUD.html">\fCRUD</a></code></div>
+</div></div>
+</div>
+<a id="method_getPreviousSearchValue"></a><div class="element clickable method private method_getPreviousSearchValue" data-toggle="collapse" data-target=".method_getPreviousSearchValue .collapse">
+<h2>Returns the previous values for the specified search field</h2>
+<pre>getPreviousSearchValue(string $column) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to get the value for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The previous value</div>
+</div></div>
+</div>
+<a id="method_getPreviousSortColumn"></a><div class="element clickable method private method_getPreviousSortColumn" data-toggle="collapse" data-target=".method_getPreviousSortColumn .collapse">
+<h2>Return the previous sort column, if one exists</h2>
+<pre>getPreviousSortColumn() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The previous sort column</div>
+</div></div>
+</div>
+<a id="method_getPreviousSortDirection"></a><div class="element clickable method private method_getPreviousSortDirection" data-toggle="collapse" data-target=".method_getPreviousSortDirection .collapse">
+<h2>Return the previous sort direction, if one exists</h2>
+<pre>getPreviousSortDirection() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The previous sort direction</div>
+</div></div>
+</div>
+<a id="method_setPreviousSearchValue"></a><div class="element clickable method private method_setPreviousSearchValue" data-toggle="collapse" data-target=".method_setPreviousSearchValue .collapse">
+<h2>Sets a value for a search field</h2>
+<pre>setPreviousSearchValue(string $column, mixed $value) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to save the value for</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to save</p></div>
+</div></div>
+</div>
+<a id="method_setPreviousSortColumn"></a><div class="element clickable method private method_setPreviousSortColumn" data-toggle="collapse" data-target=".method_setPreviousSortColumn .collapse">
+<h2>Set the sort column to be used on returning pages</h2>
+<pre>setPreviousSortColumn(string $sort_column) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sort_column</h4>
+<code>string</code><p>The sort column to save</p></div>
+</div></div>
+</div>
+<a id="method_setPreviousSortDirection"></a><div class="element clickable method private method_setPreviousSortDirection" data-toggle="collapse" data-target=".method_setPreviousSortDirection .collapse">
+<h2>Set the sort direction to be used on returning pages</h2>
+<pre>setPreviousSortDirection(string $sort_direction) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sort_direction</h4>
+<code>string</code><p>The sort direction to save</p></div>
+</div></div>
+</div>
+<a id="method_wasResetRequested"></a><div class="element clickable method private method_wasResetRequested" data-toggle="collapse" data-target=".method_wasResetRequested .collapse">
+<h2>Indicates if a reset was requested for search values</h2>
+<pre>wasResetRequested() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If a reset was requested</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_loaded_values"> </a><div class="element clickable property private property_loaded_values" data-toggle="collapse" data-target=".property_loaded_values .collapse">
+<h2>Any values that were loaded from the session, used for redirection</h2>
+<pre>$loaded_values : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_row_number"> </a><div class="element clickable property private property_row_number" data-toggle="collapse" data-target=".property_row_number .collapse">
+<h2>The current row number for alternating rows</h2>
+<pre>$row_number : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_search_values"> </a><div class="element clickable property private property_search_values" data-toggle="collapse" data-target=".property_search_values .collapse">
+<h2>The values for a search form</h2>
+<pre>$search_values : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_sort_column"> </a><div class="element clickable property private property_sort_column" data-toggle="collapse" data-target=".property_sort_column .collapse">
+<h2>The column to sort by</h2>
+<pre>$sort_column : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_sort_direction"> </a><div class="element clickable property private property_sort_direction" data-toggle="collapse" data-target=".property_sort_direction .collapse">
+<h2>The direction to sort</h2>
+<pre>$sort_direction : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_getColumnClass"> </a><div class="element clickable constant  constant_getColumnClass" data-toggle="collapse" data-target=".constant_getColumnClass .collapse">
+<h2>getColumnClass</h2>
+<pre>getColumnClass </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getRowClass"> </a><div class="element clickable constant  constant_getRowClass" data-toggle="collapse" data-target=".constant_getRowClass .collapse">
+<h2>getRowClass</h2>
+<pre>getRowClass </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getSearchValue"> </a><div class="element clickable constant  constant_getSearchValue" data-toggle="collapse" data-target=".constant_getSearchValue .collapse">
+<h2>getSearchValue</h2>
+<pre>getSearchValue </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getSortColumn"> </a><div class="element clickable constant  constant_getSortColumn" data-toggle="collapse" data-target=".constant_getSortColumn .collapse">
+<h2>getSortColumn</h2>
+<pre>getSortColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getSortDirection"> </a><div class="element clickable constant  constant_getSortDirection" data-toggle="collapse" data-target=".constant_getSortDirection .collapse">
+<h2>getSortDirection</h2>
+<pre>getSortDirection </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_printSortableColumn"> </a><div class="element clickable constant  constant_printSortableColumn" data-toggle="collapse" data-target=".constant_printSortableColumn .collapse">
+<h2>printSortableColumn</h2>
+<pre>printSortableColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_redirectWithLoadedValues"> </a><div class="element clickable constant  constant_redirectWithLoadedValues" data-toggle="collapse" data-target=".constant_redirectWithLoadedValues .collapse">
+<h2>redirectWithLoadedValues</h2>
+<pre>redirectWithLoadedValues </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

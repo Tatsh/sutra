@@ -1,0 +1,510 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fORMDatabase</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_attach" title="attach :: Allows attaching an fDatabase-compatible objects for by ORM code"><span class="description">Allows attaching an fDatabase-compatible objects for by ORM code</span><pre>attach()</pre></a></li>
+<li class="method public "><a href="#method_retrieve" title="retrieve :: Return the instance of the fDatabase class"><span class="description">Return the instance of the fDatabase class</span><pre>retrieve()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_addColumnCondition" title="addColumnCondition :: Translated the where condition for a single column into a SQL clause"><span class="description">Translated the where condition for a single column into a SQL clause</span><pre>addColumnCondition()</pre></a></li>
+<li class="method private "><a href="#method_cleanTableName" title="cleanTableName :: Takes a table name, cleans off quoting and removes the schema name if unambiguous"><span class="description">Takes a table name, cleans off quoting and removes the schema name if unambiguous</span><pre>cleanTableName()</pre></a></li>
+<li class="method private "><a href="#method_getTableAndColumn" title="getTableAndColumn :: Gets the table and column name from a shorthand column name"><span class="description">Gets the table and column name from a shorthand column name</span><pre>getTableAndColumn()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_database_objects" title="$database_objects :: An array of fDatabase objects"><span class="description">An array of fDatabase objects</span><pre>$database_objects</pre></a></li>
+<li class="property private "><a href="#property_pcre_supports_unicode_character_properties" title="$pcre_supports_unicode_character_properties :: If the PCRE engine supports unicode character properties"><span class="description">If the PCRE engine supports unicode character properties</span><pre>$pcre_supports_unicode_character_properties</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_addHavingClause" title="addHavingClause :: "><span class="description">addHavingClause</span><pre>addHavingClause</pre></a></li>
+<li class="constant  "><a href="#constant_addOrderByClause" title="addOrderByClause :: "><span class="description">addOrderByClause</span><pre>addOrderByClause</pre></a></li>
+<li class="constant  "><a href="#constant_addPrimaryKeyWhereParams" title="addPrimaryKeyWhereParams :: "><span class="description">addPrimaryKeyWhereParams</span><pre>addPrimaryKeyWhereParams</pre></a></li>
+<li class="constant  "><a href="#constant_addWhereClause" title="addWhereClause :: "><span class="description">addWhereClause</span><pre>addWhereClause</pre></a></li>
+<li class="constant  "><a href="#constant_attach" title="attach :: "><span class="description">attach</span><pre>attach</pre></a></li>
+<li class="constant  "><a href="#constant_injectFromAndGroupByClauses" title="injectFromAndGroupByClauses :: "><span class="description">injectFromAndGroupByClauses</span><pre>injectFromAndGroupByClauses</pre></a></li>
+<li class="constant  "><a href="#constant_makeCondition" title="makeCondition :: "><span class="description">makeCondition</span><pre>makeCondition</pre></a></li>
+<li class="constant  "><a href="#constant_parseSearchTerms" title="parseSearchTerms :: "><span class="description">parseSearchTerms</span><pre>parseSearchTerms</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_retrieve" title="retrieve :: "><span class="description">retrieve</span><pre>retrieve</pre></a></li>
+<li class="constant  "><a href="#constant_splitHavingConditions" title="splitHavingConditions :: "><span class="description">splitHavingConditions</span><pre>splitHavingConditions</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fORMDatabase"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMDatabase.html">fORMDatabase</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Holds a single instance of the fDatabase class and provides database manipulation functionality for ORM code</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:craigruk@imarc.net">Craig Ruksznis, iMarc LLC [cr-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMDatabase">http://flourishlib.com/fORMDatabase</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b32</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b32  Added support to ::addWhereClause() for the `^~` and `$~` operators [wb, 2011-06-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b31  Fixed a bug with ::addWhereClause() generating invalid SQL [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Fixed ::insertFromAndGroupByClauses() to insert `MAX()` around columns in related tables in the `ORDER BY` clause when a `GROUP BY` is used [wb, 2011-02-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Added code to handle old PCRE engines that don't support unicode character properties [wb, 2010-12-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Fixed a bug in the fProgrammerException that is thrown when an improperly formatted OR condition is provided [wb, 2010-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Fixed ::addWhereClause() to ignore fuzzy search clauses with no values to match [wb, 2010-10-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Fixed ::insertFromAndGroupByClauses() to handle SQL where a table is references in more than one capitalization [wb, 2010-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Fixed ::insertFromAndGroupByClauses() to properly handle recursive relationships [wb, 2010-07-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Fixed ::parseSearchTerms() to work with non-ascii terms [wb, 2010-06-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Fixed error messages in ::retrieve() [wb, 2010-04-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Added support for IBM DB2, fixed an issue with building record sets or records that have recursive relationships [wb, 2010-04-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Changed ::injectFromAndGroupByClauses() to be able to handle table aliases that contain other aliases inside of them [wb, 2010-03-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed a bug where joining to a table two separate ways could cause table alias issues and incorrect SQL to be generated [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Added the ability to compare columns with the `=:`, `!:`, `<:`, `<=:`, `>:` and `>=:` operators [wb, 2009-12-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Fixed a bug affecting where conditions with columns that are not null but have a default value [wb, 2009-11-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added support for multiple databases [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Internal Backwards Compatibility Break - Renamed methods and significantly changed parameters and functionality for SQL statements to use value placeholders, identifier escaping and to handle schemas [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Streamlined intersection operator SQL and added support for the second value being NULL [wb, 2009-09-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added support for the intersection operator `><` to ::createWhereClause() [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Added support for the `AND LIKE` operator `&~` to ::createWhereClause() [wb, 2009-07-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Added support for the `NOT LIKE` operator `!~` to ::createWhereClause() [wb, 2009-07-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Added support for concatenated columns to ::escapeBySchema() [cr-imarc, 2009-06-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Updated ::createWhereClause() to properly handle NULLs for arrays of values when doing = and != comparisons [wb, 2009-06-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed a bug with ::creatingWhereClause() where a null value would not be escaped property [wb, 2009-05-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed a bug where an OR condition in ::createWhereClause() could not have one of the values be an array [wb, 2009-04-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   ::insertFromAndGroupByClauses() will no longer wrap ungrouped columns if in a CAST or CASE statement for ORDER BY clauses of queries with a GROUP BY clause [wb, 2009-03-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed ::parseSearchTerms() to include stop words when they are the only thing in the search string [wb, 2008-12-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Fixed a bug where loading a related record in the same table through a one-to-many relationship caused recursion [wb, 2008-12-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed a bug from 1.0.0b2 [wb, 2008-12-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Added support for != and <> to ::createWhereClause() and ::createHavingClause() [wb, 2008-12-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-08-04]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_attach"></a><div class="element clickable method public method_attach" data-toggle="collapse" data-target=".method_attach .collapse">
+<h2>Allows attaching an fDatabase-compatible objects for by ORM code</h2>
+<pre>attach(<a href="../classes/fDatabase.html">\fDatabase</a> $database, string $name, string $role) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a <code>$name</code> other than <code>default</code> is used, any fActiveRecord classes
+that should use it will need to be configured by passing the class name
+and <code>$name</code> to ::mapClassToDatabase(). The <code>$name</code> parameter should be
+unique per database or database master/slave setup.</p>
+
+<p>The <code>$role</code> is used by code to allow for master/slave database setups.
+There can only be one database object attached for either of the roles,
+<code>'read'</code> or <code>'write'</code>. If the role <code>'both'</code> is specified, it will
+be applied to both the <code>'read'</code> and <code>'write'</code> roles. Any sort of logic
+for picking one out of multiple databases should be done before this
+method is called.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$database</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>An object that is compatible with fDatabase</p></div>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name for the database instance</p></div>
+<div class="subelement argument">
+<h4>$role</h4>
+<code>string</code><p>If the database should be used for <code>'read'</code>, <code>'write'</code> or <code>'both'</code> operations</p>
+</div>
+</div></div>
+</div>
+<a id="method_retrieve"></a><div class="element clickable method public method_retrieve" data-toggle="collapse" data-target=".method_retrieve .collapse">
+<h2>Return the instance of the fDatabase class</h2>
+<pre>retrieve(string $class, string $role) : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to retrieve the database for - if not specified, the default database will be returned</p>
+</div>
+<div class="subelement argument">
+<h4>$role</h4>
+<code>string</code><p>If the database will be used for <code>'write'</code>, <code>'read'</code> or <code>'either'</code> operations</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code>The database instance</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fORMDatabase.html">\fORMDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fORMDatabase.html">\fORMDatabase</a></code></div>
+</div></div>
+</div>
+<a id="method_addColumnCondition"></a><div class="element clickable method private method_addColumnCondition" data-toggle="collapse" data-target=".method_addColumnCondition .collapse">
+<h2>Translated the where condition for a single column into a SQL clause</h2>
+<pre>addColumnCondition(<a href="../classes/fDatabase.html">\fDatabase</a> $db, <a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, string $column, string $operator, mixed $values, string $escaped_column, string $placeholder) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database the query will be run on</p></div>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The parameters for the fDatabase::query() call</p>
+</div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to create the condition for</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to store the value in, may also be shorthand column name like <code>table.column</code> or <code>table=>related_table.column</code></p>
+</div>
+<div class="subelement argument">
+<h4>$operator</h4>
+<code>string</code><p>Should be <code>'='</code>, <code>'!='</code>, <code>'!'</code>, <code>'<>'</code>, <code>'<'</code>, <code>'<='</code>, <code>'>'</code>, <code>'>='</code>, <code>'IN'</code>, <code>'NOT IN'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>mixed</code><p>The value(s) to escape</p>
+</div>
+<div class="subelement argument">
+<h4>$escaped_column</h4>
+<code>string</code><p>The escaped column to use in the SQL</p></div>
+<div class="subelement argument">
+<h4>$placeholder</h4>
+<code>string</code><p>This allows overriding the placeholder</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The modified parameters</div>
+</div></div>
+</div>
+<a id="method_cleanTableName"></a><div class="element clickable method private method_cleanTableName" data-toggle="collapse" data-target=".method_cleanTableName .collapse">
+<h2>Takes a table name, cleans off quoting and removes the schema name if unambiguous</h2>
+<pre>cleanTableName(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the database being inspected</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table name to be made cleaned</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cleaned table name</div>
+</div></div>
+</div>
+<a id="method_getTableAndColumn"></a><div class="element clickable method private method_getTableAndColumn" data-toggle="collapse" data-target=".method_getTableAndColumn .collapse">
+<h2>Gets the table and column name from a shorthand column name</h2>
+<pre>getTableAndColumn(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $table, string $column) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema for the database</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to use when no table is specified in the shorthand</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The shorthand column definition - see fRecordSet::build() for possible syntaxes</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The $table and $column, suitable for use with fSchema</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_database_objects"> </a><div class="element clickable property private property_database_objects" data-toggle="collapse" data-target=".property_database_objects .collapse">
+<h2>An array of fDatabase objects</h2>
+<pre>$database_objects : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_pcre_supports_unicode_character_properties"> </a><div class="element clickable property private property_pcre_supports_unicode_character_properties" data-toggle="collapse" data-target=".property_pcre_supports_unicode_character_properties .collapse">
+<h2>If the PCRE engine supports unicode character properties</h2>
+<pre>$pcre_supports_unicode_character_properties : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addHavingClause"> </a><div class="element clickable constant  constant_addHavingClause" data-toggle="collapse" data-target=".constant_addHavingClause .collapse">
+<h2>addHavingClause</h2>
+<pre>addHavingClause </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addOrderByClause"> </a><div class="element clickable constant  constant_addOrderByClause" data-toggle="collapse" data-target=".constant_addOrderByClause .collapse">
+<h2>addOrderByClause</h2>
+<pre>addOrderByClause </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addPrimaryKeyWhereParams"> </a><div class="element clickable constant  constant_addPrimaryKeyWhereParams" data-toggle="collapse" data-target=".constant_addPrimaryKeyWhereParams .collapse">
+<h2>addPrimaryKeyWhereParams</h2>
+<pre>addPrimaryKeyWhereParams </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addWhereClause"> </a><div class="element clickable constant  constant_addWhereClause" data-toggle="collapse" data-target=".constant_addWhereClause .collapse">
+<h2>addWhereClause</h2>
+<pre>addWhereClause </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_attach"> </a><div class="element clickable constant  constant_attach" data-toggle="collapse" data-target=".constant_attach .collapse">
+<h2>attach</h2>
+<pre>attach </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_injectFromAndGroupByClauses"> </a><div class="element clickable constant  constant_injectFromAndGroupByClauses" data-toggle="collapse" data-target=".constant_injectFromAndGroupByClauses .collapse">
+<h2>injectFromAndGroupByClauses</h2>
+<pre>injectFromAndGroupByClauses </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_makeCondition"> </a><div class="element clickable constant  constant_makeCondition" data-toggle="collapse" data-target=".constant_makeCondition .collapse">
+<h2>makeCondition</h2>
+<pre>makeCondition </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_parseSearchTerms"> </a><div class="element clickable constant  constant_parseSearchTerms" data-toggle="collapse" data-target=".constant_parseSearchTerms .collapse">
+<h2>parseSearchTerms</h2>
+<pre>parseSearchTerms </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_retrieve"> </a><div class="element clickable constant  constant_retrieve" data-toggle="collapse" data-target=".constant_retrieve .collapse">
+<h2>retrieve</h2>
+<pre>retrieve </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_splitHavingConditions"> </a><div class="element clickable constant  constant_splitHavingConditions" data-toggle="collapse" data-target=".constant_splitHavingConditions .collapse">
+<h2>splitHavingConditions</h2>
+<pre>splitHavingConditions </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

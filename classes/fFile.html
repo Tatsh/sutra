@@ -1,0 +1,827 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fFile</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Creates an object to represent a file on the filesystem"><span class="description">Creates an object to represent a file on the filesystem</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Returns the filename of the file"><span class="description">Returns the filename of the file</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_append" title="append :: Appends the provided data to the file"><span class="description">Appends the provided data to the file</span><pre>append()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count :: Returns the number of lines in the file"><span class="description">Returns the number of lines in the file</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_create" title="create :: Creates a file on the filesystem and returns an object representing it."><span class="description">Creates a file on the filesystem and returns an object representing it.</span><pre>create()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Deletes the current file"><span class="description">Deletes the current file</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_duplicate" title="duplicate :: Creates a new file object with a copy of this file"><span class="description">Creates a new file object with a copy of this file</span><pre>duplicate()</pre></a></li>
+<li class="method public "><a href="#method_getExtension" title="getExtension :: Gets the file extension"><span class="description">Gets the file extension</span><pre>getExtension()</pre></a></li>
+<li class="method public "><a href="#method_getMTime" title="getMTime :: Returns the last modification time of the file"><span class="description">Returns the last modification time of the file</span><pre>getMTime()</pre></a></li>
+<li class="method public "><a href="#method_getMimeType" title="getMimeType :: Gets the file's mime type"><span class="description">Gets the file's mime type</span><pre>getMimeType()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName :: Gets the filename (i.e."><span class="description">Gets the filename (i.e.</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_getParent" title="getParent :: Gets the directory the file is located in"><span class="description">Gets the directory the file is located in</span><pre>getParent()</pre></a></li>
+<li class="method public "><a href="#method_getPath" title="getPath :: Gets the file's current path (directory and filename)"><span class="description">Gets the file's current path (directory and filename)</span><pre>getPath()</pre></a></li>
+<li class="method public "><a href="#method_getSize" title="getSize :: Gets the size of the file"><span class="description">Gets the size of the file</span><pre>getSize()</pre></a></li>
+<li class="method public "><a href="#method_isWritable" title="isWritable :: Check to see if the current file is writable"><span class="description">Check to see if the current file is writable</span><pre>isWritable()</pre></a></li>
+<li class="method public "><a href="#method_move" title="move :: Moves the current file to a different directory"><span class="description">Moves the current file to a different directory</span><pre>move()</pre></a></li>
+<li class="method public "><a href="#method_output" title="output :: Prints the contents of the file"><span class="description">Prints the contents of the file</span><pre>output()</pre></a></li>
+<li class="method public "><a href="#method_read" title="read :: Reads the data from the file"><span class="description">Reads the data from the file</span><pre>read()</pre></a></li>
+<li class="method public "><a href="#method_rename" title="rename :: Renames the current file"><span class="description">Renames the current file</span><pre>rename()</pre></a></li>
+<li class="method public "><a href="#method_write" title="write :: Writes the provided data to the file"><span class="description">Writes the provided data to the file</span><pre>write()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_tossIfDeleted" title="tossIfDeleted :: Throws an fProgrammerException if the file has been deleted"><span class="description">Throws an fProgrammerException if the file has been deleted</span><pre>tossIfDeleted()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_determineMimeTypeByContents" title="determineMimeTypeByContents :: Looks for specific bytes in a file to determine the mime type of the file"><span class="description">Looks for specific bytes in a file to determine the mime type of the file</span><pre>determineMimeTypeByContents()</pre></a></li>
+<li class="method private "><a href="#method_determineMimeTypeByExtension" title="determineMimeTypeByExtension :: Uses the extension of the all-text file to determine the mime type"><span class="description">Uses the extension of the all-text file to determine the mime type</span><pre>determineMimeTypeByExtension()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_deleted" title="$deleted :: A backtrace from when the file was deleted"><span class="description">A backtrace from when the file was deleted</span><pre>$deleted</pre></a></li>
+<li class="property protected "><a href="#property_file" title="$file :: The full path to the file"><span class="description">The full path to the file</span><pre>$file</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_current_line" title="$current_line :: The current line of the file"><span class="description">The current line of the file</span><pre>$current_line</pre></a></li>
+<li class="property private "><a href="#property_current_line_number" title="$current_line_number :: The current line number of the file"><span class="description">The current line number of the file</span><pre>$current_line_number</pre></a></li>
+<li class="property private "><a href="#property_file_handle" title="$file_handle :: The file handle for iteration"><span class="description">The file handle for iteration</span><pre>$file_handle</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul><li class="constant  "><a href="#constant_create" title="create :: "><span class="description">create</span><pre>create</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fFile"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fFile.html">fFile</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Represents a file on the filesystem, also provides static file-related methods</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fFile">http://flourishlib.com/fFile</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b39</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b39  Backwards Compatibility Break - ::output() now automatically ends any open output buffering and discards the contents [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b38  Added the Countable interface to the class [wb, 2011-06-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b37  Fixed mime type detection of BMP images [wb, 2011-03-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b36  Added the `$remove_extension` parameter to ::getName() [wb, 2011-01-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b35  Added calls to clearstatcache() in ::append() and ::write() to prevent incorrect data from being returned by ::getMTime() and ::getSize() [wb, 2010-11-27]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b34  Added ::getExtension() [wb, 2010-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b33  Fixed another situation where ::rename() with the same name would cause the file to be deleted [wb, 2010-04-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b32  Fixed ::rename() to not fail when the new and old filename are the same [wb, 2010-03-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b31  Added ::append() [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Changed the way files deleted in a filesystem transaction are handled, including improvements to the exception that is thrown [wb+wb-imarc, 2010-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Fixed a couple of undefined variable errors in ::determineMimeTypeByContents() [wb, 2010-03-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Added support for some JPEG files created by Photoshop [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Backwards Compatibility Break - renamed ::getFilename() to ::getName(), ::getFilesize() to ::getSize(), ::getDirectory() to ::getParent(), added ::move() [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  ::getDirectory(), ::getFilename() and ::getPath() now all work even if the file has been deleted [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Fixed ::__construct() to throw an fValidationException when the file does not exist [wb, 2009-08-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Fixed a bug where deleting a file would prevent any future operations in the same script execution on a file or directory with the same path [wb, 2009-08-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Added the ability to skip checks in ::__construct() for better performance in conjunction with fFilesystem::createObject() [wb, 2009-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Fixed ::__toString() to never throw an exception [wb, 2009-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Fixed a bug in ::determineMimeType() [wb, 2009-07-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed the exception message thrown by ::output() when output buffering is turned on [wb, 2009-06-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  ::rename() will now rename the file in its current directory if the new filename has no directory separator [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Changed ::__sleep() to not reset the iterator since it can cause side-effects [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added ::__sleep() and ::__wakeup() for proper serialization with the filesystem map [wb, 2009-05-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  ::output() now accepts `TRUE` in the second parameter to use the current filename as the attachment filename [wb, 2009-03-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Added support for mime type detection of MP3s based on the MPEG-2 (as opposed to MPEG-1) standard [wb, 2009-03-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Fixed a bug with detecting the mime type of some MP3s [wb, 2009-03-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed a bug with overwriting files via ::rename() on Windows [wb, 2009-03-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Backwards compatibility break - Changed the second parameter of ::output() from `$ignore_output_buffer` to `$filename` [wb, 2009-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Changed ::__clone() and ::duplicate() to copy file permissions to the new file [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed ::duplicate() so an exception is not thrown when no parameters are passed [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Removed the dependency on fBuffer [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added the Iterator interface, ::output() and ::getMTime() [wb, 2008-12-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Removed some unnecessary error suppresion operators [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Added the ::__clone() method that duplicates the file on the filesystem when cloned [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed detection of mime type for JPEG files with Exif information [wb, 2008-12-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Changed the constructor to ensure the path is to a file and not directory [wb, 2008-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed mime type detection of Microsoft Office files [wb, 2008-11-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Made ::rename() and ::write() return the object for method chaining [wb, 2008-11-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Creates an object to represent a file on the filesystem</h2>
+<pre>__construct(string $file, boolean $skip_checks) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If multiple fFile objects are created for a single file, they will
+reflect changes in each other including rename and delete actions.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The path to the file</p></div>
+<div class="subelement argument">
+<h4>$skip_checks</h4>
+<code>boolean</code><p>If file checks should be skipped, which improves performance, but may cause undefined behavior - only skip these if they are duplicated elsewhere</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no file was specified, the file does not exist or the path specified is not a file</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fFile.html">\fFile</a></code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Returns the filename of the file</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The filename</div>
+</div></div>
+</div>
+<a id="method_append"></a><div class="element clickable method public method_append" data-toggle="collapse" data-target=".method_append .collapse">
+<h2>Appends the provided data to the file</h2>
+<pre>append(mixed $data) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a filesystem transaction is in progress and is rolled back, this
+data will be removed.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The data to append to the file</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Returns the number of lines in the file</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of lines in the file</div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Creates a file on the filesystem and returns an object representing it.</h2>
+<pre>create(string $file_path, string $contents) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This operation will be reverted by a filesystem transaction being rolled back.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file_path</h4>
+<code>string</code><p>The path to the new file</p></div>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string</code><p>The contents to write to the file, must be a non-NULL value to be written</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no file was specified or the file already exists</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fFile.html">\fFile</a></code></div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Deletes the current file</h2>
+<pre>delete() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This operation will NOT be performed until the filesystem transaction
+has been committed, if a transaction is in progress. Any non-Flourish
+code (PHP or system) will still see this file as existing until that
+point.</p></div></div></div>
+</div>
+<a id="method_duplicate"></a><div class="element clickable method public method_duplicate" data-toggle="collapse" data-target=".method_duplicate .collapse">
+<h2>Creates a new file object with a copy of this file</h2>
+<pre>duplicate(string | <a href="../classes/fDirectory.html">\fDirectory</a> $new_directory, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no directory is specified, the file is created with a new name in
+the current directory. If a new directory is specified, you must also
+indicate if you wish to overwrite an existing file with the same name
+in the new directory or create a unique name.</p>
+
+<p>This operation will be reverted by a filesystem transaction being rolled
+back.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_directory</h4>
+<code>string</code><code><a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to duplicate the file into if different than the current directory</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If a new directory is specified, this indicates if a file with the same name should be overwritten.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The new fFile object</div>
+</div></div>
+</div>
+<a id="method_getExtension"></a><div class="element clickable method public method_getExtension" data-toggle="collapse" data-target=".method_getExtension .collapse">
+<h2>Gets the file extension</h2>
+<pre>getExtension() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The extension of the file</div>
+</div></div>
+</div>
+<a id="method_getMTime"></a><div class="element clickable method public method_getMTime" data-toggle="collapse" data-target=".method_getMTime .collapse">
+<h2>Returns the last modification time of the file</h2>
+<pre>getMTime() : <a href="../classes/fTimestamp.html">\fTimestamp</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a></code>The timestamp of when the file was last modified</div>
+</div></div>
+</div>
+<a id="method_getMimeType"></a><div class="element clickable method public method_getMimeType" data-toggle="collapse" data-target=".method_getMimeType .collapse">
+<h2>Gets the file's mime type</h2>
+<pre>getMimeType() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method will attempt to look at the file contents and the file
+extension to determine the mime type. If the file contains binary
+information, the contents will be used for mime type verification,
+however if the contents appear to be plain text, the file extension
+will be used.</p>
+
+<p>The following mime types are supported. All other binary file types
+will be returned as <code>application/octet-stream</code> and all other text files
+will be returned as <code>text/plain</code>.</p>
+
+<p><strong>Archive:</strong></p>
+
+<ul>
+<li><code>application/x-bzip2</code> BZip2 file</li>
+<li><code>application/x-compress</code> Compress (*nix) file</li>
+<li><code>application/x-gzip</code> GZip file</li>
+<li><code>application/x-rar-compressed</code> Rar file</li>
+<li><code>application/x-stuffit</code> StuffIt file</li>
+<li><code>application/x-tar</code> Tar file</li>
+<li><code>application/zip</code> Zip file</li>
+</ul>
+
+<p><strong>Audio:</strong></p>
+
+<ul>
+<li><code>audio/x-flac</code> FLAC audio</li>
+<li><code>audio/mpeg</code> MP3 audio</li>
+<li><code>audio/mp4</code> MP4 (AAC) audio</li>
+<li><code>audio/vorbis</code> Ogg Vorbis audio</li>
+<li><code>audio/x-wav</code> WAV audio</li>
+<li><code>audio/x-ms-wma</code> Windows media audio</li>
+</ul>
+
+<p><strong>Document:</strong></p>
+
+<ul>
+<li><code>application/vnd.ms-excel</code> Excel (2000, 2003 and 2007) file</li>
+<li><code>application/pdf</code> PDF file</li>
+<li><code>application/vnd.ms-powerpoint</code> Powerpoint (2000, 2003, 2007) file</li>
+<li><code>text/rtf</code> RTF file</li>
+<li><code>application/msword</code> Word (2000, 2003 and 2007) file</li>
+</ul>
+
+<p><strong>Image:</strong></p>
+
+<ul>
+<li><code>image/x-ms-bmp</code> BMP file</li>
+<li><code>application/postscript</code> EPS file</li>
+<li><code>image/gif</code> GIF file</li>
+<li><code>application/vnd.microsoft.icon</code> ICO file</li>
+<li><code>image/jpeg</code> JPEG file</li>
+<li><code>image/png</code> PNG file</li>
+<li><code>image/tiff</code> TIFF file</li>
+<li><code>image/svg+xml</code> SVG file</li>
+</ul>
+
+<p><strong>Text:</strong></p>
+
+<ul>
+<li><code>text/css</code> CSS file</li>
+<li><code>text/csv</code> CSV file</li>
+<li><code>text/html</code> (X)HTML file</li>
+<li><code>text/calendar</code> iCalendar file</li>
+<li><code>application/javascript</code> Javascript file</li>
+<li><code>application/x-perl</code> Perl file</li>
+<li><code>application/x-httpd-php</code> PHP file</li>
+<li><code>application/x-python</code> Python file</li>
+<li><code>application/rss+xml</code> RSS feed</li>
+<li><code>application/x-ruby</code> Ruby file</li>
+<li><code>text/tab-separated-values</code> TAB file</li>
+<li><code>text/x-vcard</code> VCard file</li>
+<li><code>application/xhtml+xml</code> XHTML (Real) file</li>
+<li><code>application/xml</code> XML file</li>
+</ul>
+
+<p><strong>Video/Animation:</strong></p>
+
+<ul>
+<li><code>video/x-msvideo</code> AVI video</li>
+<li><code>application/x-shockwave-flash</code> Flash movie</li>
+<li><code>video/x-flv</code> Flash video</li>
+<li><code>video/x-ms-asf</code> Microsoft ASF video</li>
+<li><code>video/mp4</code> MP4 video</li>
+<li><code>video/ogg</code> OGM and Ogg Theora video</li>
+<li><code>video/quicktime</code> Quicktime video</li>
+<li><code>video/x-ms-wmv</code> Windows media video</li>
+</ul></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Gets the filename (i.e.</h2>
+<pre>getName(boolean $remove_extension) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>does not include the directory)</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$remove_extension</h4>
+<code>boolean</code><p>If the extension should be removed from the filename</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The filename of the file</div>
+</div></div>
+</div>
+<a id="method_getParent"></a><div class="element clickable method public method_getParent" data-toggle="collapse" data-target=".method_getParent .collapse">
+<h2>Gets the directory the file is located in</h2>
+<pre>getParent() : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code>The directory containing the file</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>Gets the file's current path (directory and filename)</h2>
+<pre>getPath(boolean $translate_to_web_path) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the web path is requested, uses translations set with
+fFilesystem::addWebPathTranslation()</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate_to_web_path</h4>
+<code>boolean</code><p>If the path should be the web path</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The path (directory and filename) for the file</div>
+</div></div>
+</div>
+<a id="method_getSize"></a><div class="element clickable method public method_getSize" data-toggle="collapse" data-target=".method_getSize .collapse">
+<h2>Gets the size of the file</h2>
+<pre>getSize(boolean $format, integer $decimal_places) : integer | string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The return value may be incorrect for files over 2GB on 32-bit OSes.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>boolean</code><p>If the filesize should be formatted for human readability</p></div>
+<div class="subelement argument">
+<h4>$decimal_places</h4>
+<code>integer</code><p>The number of decimal places to format to (if enabled)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code><code>string</code>If formatted a string with filesize in b/kb/mb/gb/tb, otherwise an integer</div>
+</div></div>
+</div>
+<a id="method_isWritable"></a><div class="element clickable method public method_isWritable" data-toggle="collapse" data-target=".method_isWritable .collapse">
+<h2>Check to see if the current file is writable</h2>
+<pre>isWritable() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the file is writable</div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Moves the current file to a different directory</h2>
+<pre>move(<a href="../classes/fDirectory.html">\fDirectory</a> | string $new_directory, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that ::rename() will rename a file in its directory or rename
+it into a different directory.</p>
+
+<p>If the current file's filename already exists in the new directory and
+the overwrite flag is set to false, the filename will be changed to a
+unique name.</p>
+
+<p>This operation will be reverted if a filesystem transaction is in
+progress and is later rolled back.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_directory</h4>
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code><code>string</code><p>The directory to move this file into</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the current filename already exists in the new directory, <code>TRUE</code> will cause the file to be overwritten, <code>FALSE</code> will cause the new filename to change</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the directory passed is not a directory or is not readable</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_output"></a><div class="element clickable method public method_output" data-toggle="collapse" data-target=".method_output .collapse">
+<h2>Prints the contents of the file</h2>
+<pre>output(boolean $headers, mixed $filename) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is primarily intended for when PHP is used to control access
+to files.</p>
+
+<p>Be sure to close the session, if open, to prevent performance issues.
+Any open output buffers are automatically closed and discarded.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>boolean</code><p>If HTTP headers for the file should be included</p></div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>mixed</code><p>Present the file as an attachment instead of just outputting type headers - if a string is passed, that will be used for the filename, if <code>TRUE</code> is passed, the current filename will be used</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Reads the data from the file</h2>
+<pre>read() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Reads all file data into memory, use with caution on large files!</p>
+
+<p>This operation will read the data that has been written during the
+current transaction if one is in progress.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The contents of the file</div>
+</div></div>
+</div>
+<a id="method_rename"></a><div class="element clickable method public method_rename" data-toggle="collapse" data-target=".method_rename .collapse">
+<h2>Renames the current file</h2>
+<pre>rename(string $new_filename, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the filename already exists and the overwrite flag is set to false,
+a new filename will be created.</p>
+
+<p>This operation will be reverted if a filesystem transaction is in
+progress and is later rolled back.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_filename</h4>
+<code>string</code><p>The new full path to the file or a new filename in the current directory</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the new filename already exists, <code>TRUE</code> will cause the file to be overwritten, <code>FALSE</code> will cause the new filename to change</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method public method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>Writes the provided data to the file</h2>
+<pre>write(mixed $data) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Requires all previous data to be stored in memory if inside a
+transaction, use with caution on large files!</p>
+
+<p>If a filesystem transaction is in progress and is rolled back, the
+previous data will be restored.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The data to write to the file</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_tossIfDeleted"></a><div class="element clickable method protected method_tossIfDeleted" data-toggle="collapse" data-target=".method_tossIfDeleted .collapse">
+<h2>Throws an fProgrammerException if the file has been deleted</h2>
+<pre>tossIfDeleted() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_determineMimeTypeByContents"></a><div class="element clickable method private method_determineMimeTypeByContents" data-toggle="collapse" data-target=".method_determineMimeTypeByContents .collapse">
+<h2>Looks for specific bytes in a file to determine the mime type of the file</h2>
+<pre>determineMimeTypeByContents(string $content, string $extension) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The first 4 bytes of the file content to use for byte checking</p></div>
+<div class="subelement argument">
+<h4>$extension</h4>
+<code>string</code><p>The extension of the filetype, only used for difficult files such as Microsoft office documents</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<a id="method_determineMimeTypeByExtension"></a><div class="element clickable method private method_determineMimeTypeByExtension" data-toggle="collapse" data-target=".method_determineMimeTypeByExtension .collapse">
+<h2>Uses the extension of the all-text file to determine the mime type</h2>
+<pre>determineMimeTypeByExtension(string $extension) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extension</h4>
+<code>string</code><p>The file extension</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_deleted"> </a><div class="element clickable property protected property_deleted" data-toggle="collapse" data-target=".property_deleted .collapse">
+<h2>A backtrace from when the file was deleted</h2>
+<pre>$deleted : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_file"> </a><div class="element clickable property protected property_file" data-toggle="collapse" data-target=".property_file .collapse">
+<h2>The full path to the file</h2>
+<pre>$file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_current_line"> </a><div class="element clickable property private property_current_line" data-toggle="collapse" data-target=".property_current_line .collapse">
+<h2>The current line of the file</h2>
+<pre>$current_line : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_current_line_number"> </a><div class="element clickable property private property_current_line_number" data-toggle="collapse" data-target=".property_current_line_number .collapse">
+<h2>The current line number of the file</h2>
+<pre>$current_line_number : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_file_handle"> </a><div class="element clickable property private property_file_handle" data-toggle="collapse" data-target=".property_file_handle .collapse">
+<h2>The file handle for iteration</h2>
+<pre>$file_handle : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_create"> </a><div class="element clickable constant  constant_create" data-toggle="collapse" data-target=".constant_create .collapse">
+<h2>create</h2>
+<pre>create </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

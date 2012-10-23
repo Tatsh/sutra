@@ -1,0 +1,1083 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fSQLSchemaTranslation</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul><li class="method public "><a href="#method___construct" title="__construct :: Sets up the class"><span class="description">Sets up the class</span><pre>__construct()</pre></a></li></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_addSQLiteIndex" title="addSQLiteIndex :: Adds a SQLite index to the internal schema tracker"><span class="description">Adds a SQLite index to the internal schema tracker</span><pre>addSQLiteIndex()</pre></a></li>
+<li class="method private "><a href="#method_addSQLiteTable" title="addSQLiteTable :: Stores the SQL used to create a table"><span class="description">Stores the SQL used to create a table</span><pre>addSQLiteTable()</pre></a></li>
+<li class="method private "><a href="#method_addSQLiteTrigger" title="addSQLiteTrigger :: Adds a SQLite trigger to the internal schema tracker"><span class="description">Adds a SQLite trigger to the internal schema tracker</span><pre>addSQLiteTrigger()</pre></a></li>
+<li class="method private "><a href="#method_createSQLiteForeignKeyTriggerOnDelete" title="createSQLiteForeignKeyTriggerOnDelete :: Creates a trigger for SQLite that handles an on delete clause"><span class="description">Creates a trigger for SQLite that handles an on delete clause</span><pre>createSQLiteForeignKeyTriggerOnDelete()</pre></a></li>
+<li class="method private "><a href="#method_createSQLiteForeignKeyTriggerOnUpdate" title="createSQLiteForeignKeyTriggerOnUpdate :: Creates a trigger for SQLite that handles an on update clause"><span class="description">Creates a trigger for SQLite that handles an on update clause</span><pre>createSQLiteForeignKeyTriggerOnUpdate()</pre></a></li>
+<li class="method private "><a href="#method_createSQLiteForeignKeyTriggerValidInsertUpdate" title="createSQLiteForeignKeyTriggerValidInsertUpdate :: Creates a trigger for SQLite that prevents inserting or updating to values the violate a `FOREIGN KEY` constraint"><span class="description">Creates a trigger for SQLite that prevents inserting or updating to values the violate a `FOREIGN KEY` constraint</span><pre>createSQLiteForeignKeyTriggerValidInsertUpdate()</pre></a></li>
+<li class="method private "><a href="#method_generateConstraintName" title="generateConstraintName :: Generates a 30 character constraint name for use with `ALTER TABLE` statements"><span class="description">Generates a 30 character constraint name for use with `ALTER TABLE` statements</span><pre>generateConstraintName()</pre></a></li>
+<li class="method private "><a href="#method_getDB2CheckConstraint" title="getDB2CheckConstraint :: Returns the check constraint for a table and column"><span class="description">Returns the check constraint for a table and column</span><pre>getDB2CheckConstraint()</pre></a></li>
+<li class="method private "><a href="#method_getDB2ForeignKeyConstraints" title="getDB2ForeignKeyConstraints :: Returns the foreign key constraints that involve a specific table or table and column"><span class="description">Returns the foreign key constraints that involve a specific table or table and column</span><pre>getDB2ForeignKeyConstraints()</pre></a></li>
+<li class="method private "><a href="#method_getDB2PrimaryKeyConstraint" title="getDB2PrimaryKeyConstraint :: Returns the primary key for a table"><span class="description">Returns the primary key for a table</span><pre>getDB2PrimaryKeyConstraint()</pre></a></li>
+<li class="method private "><a href="#method_getDB2UniqueConstraints" title="getDB2UniqueConstraints :: Returns the unique keys for a table and column"><span class="description">Returns the unique keys for a table and column</span><pre>getDB2UniqueConstraints()</pre></a></li>
+<li class="method private "><a href="#method_getMSSQLCheckConstraint" title="getMSSQLCheckConstraint :: Returns the check constraint for a column, if it exists"><span class="description">Returns the check constraint for a column, if it exists</span><pre>getMSSQLCheckConstraint()</pre></a></li>
+<li class="method private "><a href="#method_getMSSQLDefaultConstraint" title="getMSSQLDefaultConstraint :: Returns the default constraint for a column, if it exists"><span class="description">Returns the default constraint for a column, if it exists</span><pre>getMSSQLDefaultConstraint()</pre></a></li>
+<li class="method private "><a href="#method_getMSSQLForeignKeyConstraints" title="getMSSQLForeignKeyConstraints :: Returns the foreign key constraints that a column is part of"><span class="description">Returns the foreign key constraints that a column is part of</span><pre>getMSSQLForeignKeyConstraints()</pre></a></li>
+<li class="method private "><a href="#method_getMSSQLPrimaryKeyConstraint" title="getMSSQLPrimaryKeyConstraint :: Returns the primary key constraints for a table"><span class="description">Returns the primary key constraints for a table</span><pre>getMSSQLPrimaryKeyConstraint()</pre></a></li>
+<li class="method private "><a href="#method_getMSSQLUniqueConstraints" title="getMSSQLUniqueConstraints :: Returns the unique constraints that a column is part of"><span class="description">Returns the unique constraints that a column is part of</span><pre>getMSSQLUniqueConstraints()</pre></a></li>
+<li class="method private "><a href="#method_getMySQLForeignKeys" title="getMySQLForeignKeys :: Returns info about all foreign keys that involve the table and one of the columns specified"><span class="description">Returns info about all foreign keys that involve the table and one of the columns specified</span><pre>getMySQLForeignKeys()</pre></a></li>
+<li class="method private "><a href="#method_getMySQLTables" title="getMySQLTables :: Returns a list of all tables in the database"><span class="description">Returns a list of all tables in the database</span><pre>getMySQLTables()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteColumns" title="getSQLiteColumns :: Returns an an array of the column name for a table"><span class="description">Returns an an array of the column name for a table</span><pre>getSQLiteColumns()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteCreateTable" title="getSQLiteCreateTable :: Returns the SQL used to create a table"><span class="description">Returns the SQL used to create a table</span><pre>getSQLiteCreateTable()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteForeignKeys" title="getSQLiteForeignKeys :: Returns a list of all foreign keys that reference the table, and optionally, column specified"><span class="description">Returns a list of all foreign keys that reference the table, and optionally, column specified</span><pre>getSQLiteForeignKeys()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteIndexes" title="getSQLiteIndexes :: Returns the indexes in the current SQLite database"><span class="description">Returns the indexes in the current SQLite database</span><pre>getSQLiteIndexes()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteTables" title="getSQLiteTables :: Returns the tables in the current SQLite database"><span class="description">Returns the tables in the current SQLite database</span><pre>getSQLiteTables()</pre></a></li>
+<li class="method private "><a href="#method_getSQLiteTriggers" title="getSQLiteTriggers :: Returns the triggers in the current SQLite database"><span class="description">Returns the triggers in the current SQLite database</span><pre>getSQLiteTriggers()</pre></a></li>
+<li class="method private "><a href="#method_parseSQLiteColumnDefinitions" title="parseSQLiteColumnDefinitions :: Accepts a CREATE TABLE statement and parses out the column definitions"><span class="description">Accepts a CREATE TABLE statement and parses out the column definitions</span><pre>parseSQLiteColumnDefinitions()</pre></a></li>
+<li class="method private "><a href="#method_removeFromSQLiteCreateTable" title="removeFromSQLiteCreateTable :: Removes a search string from a `CREATE TABLE` statement"><span class="description">Removes a search string from a `CREATE TABLE` statement</span><pre>removeFromSQLiteCreateTable()</pre></a></li>
+<li class="method private "><a href="#method_removeSQLiteIndexes" title="removeSQLiteIndexes :: Removes the SQLite indexes from the internal schema tracker"><span class="description">Removes the SQLite indexes from the internal schema tracker</span><pre>removeSQLiteIndexes()</pre></a></li>
+<li class="method private "><a href="#method_removeSQLiteTable" title="removeSQLiteTable :: Removes a table from the list of SQLite table"><span class="description">Removes a table from the list of SQLite table</span><pre>removeSQLiteTable()</pre></a></li>
+<li class="method private "><a href="#method_removeSQLiteTrigger" title="removeSQLiteTrigger :: Removes a SQLite trigger from the internal schema tracker"><span class="description">Removes a SQLite trigger from the internal schema tracker</span><pre>removeSQLiteTrigger()</pre></a></li>
+<li class="method private "><a href="#method_removeSQLiteTriggers" title="removeSQLiteTriggers :: Removes the SQLite triggers for a table from the internal schema tracker"><span class="description">Removes the SQLite triggers for a table from the internal schema tracker</span><pre>removeSQLiteTriggers()</pre></a></li>
+<li class="method private "><a href="#method_throwException" title="throwException :: Throws an fSQLException with the information provided"><span class="description">Throws an fSQLException with the information provided</span><pre>throwException()</pre></a></li>
+<li class="method private "><a href="#method_translateAlterTableStatements" title="translateAlterTableStatements :: Translates the structure of `CREATE TABLE` statements to the database specific syntax"><span class="description">Translates the structure of `CREATE TABLE` statements to the database specific syntax</span><pre>translateAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateCreateTableStatements" title="translateCreateTableStatements :: Translates the structure of `CREATE TABLE` statements to the database specific syntax"><span class="description">Translates the structure of `CREATE TABLE` statements to the database specific syntax</span><pre>translateCreateTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateDB2AlterTableStatements" title="translateDB2AlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for DB2"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for DB2</span><pre>translateDB2AlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateDataTypes" title="translateDataTypes :: Translates basic data types"><span class="description">Translates basic data types</span><pre>translateDataTypes()</pre></a></li>
+<li class="method private "><a href="#method_translateMSSQLAlterTableStatements" title="translateMSSQLAlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MSSQL"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MSSQL</span><pre>translateMSSQLAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateMySQLAlterTableStatements" title="translateMySQLAlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MySQL"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MySQL</span><pre>translateMySQLAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateOracleAlterTableStatements" title="translateOracleAlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for Oracle"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for Oracle</span><pre>translateOracleAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translatePostgreSQLAlterTableStatements" title="translatePostgreSQLAlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for PostgreSQL"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for PostgreSQL</span><pre>translatePostgreSQLAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateSQLiteAlterTableStatements" title="translateSQLiteAlterTableStatements :: Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for SQLite"><span class="description">Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for SQLite</span><pre>translateSQLiteAlterTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateSQLiteDropTableStatements" title="translateSQLiteDropTableStatements :: Translates `DROP TABLE` statements for SQLite"><span class="description">Translates `DROP TABLE` statements for SQLite</span><pre>translateSQLiteDropTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_translateSQLiteRenameTableStatements" title="translateSQLiteRenameTableStatements :: Translates Flourish SQL `ALTER TABLE * RENAME TO` statements to the appropriate
+statements for SQLite"><span class="description">Translates Flourish SQL `ALTER TABLE * RENAME TO` statements to the appropriate
+statements for SQLite</span><pre>translateSQLiteRenameTableStatements()</pre></a></li>
+<li class="method private "><a href="#method_unescapeIdentifier" title="unescapeIdentifier :: Converts a SQL identifier to lower case and removes double quotes"><span class="description">Converts a SQL identifier to lower case and removes double quotes</span><pre>unescapeIdentifier()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_database" title="$database :: The fDatabase instance"><span class="description">The fDatabase instance</span><pre>$database</pre></a></li>
+<li class="property private "><a href="#property_schema_info" title="$schema_info :: Database-specific schema information needed for translation"><span class="description">Database-specific schema information needed for translation</span><pre>$schema_info</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fSQLSchemaTranslation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSQLSchemaTranslation.html">fSQLSchemaTranslation</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Adds cross-database `CREATE TABLE`, `ALTER TABLE` and `COMMENT ON COLUMN` statements to fSQLTranslation</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2011-2012 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fSQLSchemaTranslation">http://flourishlib.com/fSQLSchemaTranslation</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b3</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed associating a sequence with a column in PostgreSQL when setting auto-increment, fixed detection of some Oracle CHECK(IN) constraints, fixed default values for SQLite `ON DELETE` and `ON UPDATE` clauses [wb, 2012-01-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed detection of explicitly named SQLite foreign key constraints [wb, 2011-08-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2011-05-09]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Sets up the class</h2>
+<pre>__construct(<a href="../classes/fDatabase.html">\fDatabase</a> $database) : <a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$database</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database being translated for</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></code></div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_addSQLiteIndex"></a><div class="element clickable method private method_addSQLiteIndex" data-toggle="collapse" data-target=".method_addSQLiteIndex .collapse">
+<h2>Adds a SQLite index to the internal schema tracker</h2>
+<pre>addSQLiteIndex(string $name, string $table, string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The index name</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the index applies to</p></div>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL definition of the index</p></div>
+</div></div>
+</div>
+<a id="method_addSQLiteTable"></a><div class="element clickable method private method_addSQLiteTable" data-toggle="collapse" data-target=".method_addSQLiteTable .collapse">
+<h2>Stores the SQL used to create a table</h2>
+<pre>addSQLiteTable(string $table, string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to set the <code>CREATE TABLE</code> statement for</p>
+</div>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL used to create the table</p></div>
+</div></div>
+</div>
+<a id="method_addSQLiteTrigger"></a><div class="element clickable method private method_addSQLiteTrigger" data-toggle="collapse" data-target=".method_addSQLiteTrigger .collapse">
+<h2>Adds a SQLite trigger to the internal schema tracker</h2>
+<pre>addSQLiteTrigger(string $name, string $table, string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The trigger name</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the trigger applies to</p></div>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL definition of the trigger</p></div>
+</div></div>
+</div>
+<a id="method_createSQLiteForeignKeyTriggerOnDelete"></a><div class="element clickable method private method_createSQLiteForeignKeyTriggerOnDelete" data-toggle="collapse" data-target=".method_createSQLiteForeignKeyTriggerOnDelete .collapse">
+<h2>Creates a trigger for SQLite that handles an on delete clause</h2>
+<pre>createSQLiteForeignKeyTriggerOnDelete(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, string $delete_clause) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements An array of extra SQL statements to be added to the SQL</p>
+</div>
+<div class="subelement argument">
+<h4>$referencing_table</h4>
+<code>string</code><p>The table that contains the foreign key</p></div>
+<div class="subelement argument">
+<h4>$referencing_column</h4>
+<code>string</code><p>The column the foreign key constraint is on</p></div>
+<div class="subelement argument">
+<h4>$referenced_table</h4>
+<code>string</code><p>The table the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$referenced_column</h4>
+<code>string</code><p>The column the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$delete_clause</h4>
+<code>string</code><p>What is to be done on a delete</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trigger</div>
+</div></div>
+</div>
+<a id="method_createSQLiteForeignKeyTriggerOnUpdate"></a><div class="element clickable method private method_createSQLiteForeignKeyTriggerOnUpdate" data-toggle="collapse" data-target=".method_createSQLiteForeignKeyTriggerOnUpdate .collapse">
+<h2>Creates a trigger for SQLite that handles an on update clause</h2>
+<pre>createSQLiteForeignKeyTriggerOnUpdate(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, string $update_clause) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements An array of extra SQL statements to be added to the SQL</p>
+</div>
+<div class="subelement argument">
+<h4>$referencing_table</h4>
+<code>string</code><p>The table that contains the foreign key</p></div>
+<div class="subelement argument">
+<h4>$referencing_column</h4>
+<code>string</code><p>The column the foreign key constraint is on</p></div>
+<div class="subelement argument">
+<h4>$referenced_table</h4>
+<code>string</code><p>The table the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$referenced_column</h4>
+<code>string</code><p>The column the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$update_clause</h4>
+<code>string</code><p>What is to be done on an update</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trigger</div>
+</div></div>
+</div>
+<a id="method_createSQLiteForeignKeyTriggerValidInsertUpdate"></a><div class="element clickable method private method_createSQLiteForeignKeyTriggerValidInsertUpdate" data-toggle="collapse" data-target=".method_createSQLiteForeignKeyTriggerValidInsertUpdate .collapse">
+<h2>Creates a trigger for SQLite that prevents inserting or updating to values the violate a `FOREIGN KEY` constraint</h2>
+<pre>createSQLiteForeignKeyTriggerValidInsertUpdate(array $extra_statements, string $referencing_table, string $referencing_column, string $referenced_table, string $referenced_column, boolean $referencing_not_null) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements An array of extra SQL statements to be added to the SQL</p>
+</div>
+<div class="subelement argument">
+<h4>$referencing_table</h4>
+<code>string</code><p>The table that contains the foreign key</p></div>
+<div class="subelement argument">
+<h4>$referencing_column</h4>
+<code>string</code><p>The column the foriegn key constraint is on</p></div>
+<div class="subelement argument">
+<h4>$referenced_table</h4>
+<code>string</code><p>The table the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$referenced_column</h4>
+<code>string</code><p>The column the foreign key references</p></div>
+<div class="subelement argument">
+<h4>$referencing_not_null</h4>
+<code>boolean</code><p>If the referencing columns is set to not null</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trigger</div>
+</div></div>
+</div>
+<a id="method_generateConstraintName"></a><div class="element clickable method private method_generateConstraintName" data-toggle="collapse" data-target=".method_generateConstraintName .collapse">
+<h2>Generates a 30 character constraint name for use with `ALTER TABLE` statements</h2>
+<pre>generateConstraintName(string $sql, string $type) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The <code>ALTER TABLE</code> statement</p>
+</div>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>A 2-character string representing the type of constraint</p>
+</div>
+</div></div>
+</div>
+<a id="method_getDB2CheckConstraint"></a><div class="element clickable method private method_getDB2CheckConstraint" data-toggle="collapse" data-target=".method_getDB2CheckConstraint .collapse">
+<h2>Returns the check constraint for a table and column</h2>
+<pre>getDB2CheckConstraint(string $schema, string $table, string $column) : array | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the table is in</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is in</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to get the check constraint for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>NULL</code>An associative array with the keys: `name` and `definition` or `NULL`</div>
+</div></div>
+</div>
+<a id="method_getDB2ForeignKeyConstraints"></a><div class="element clickable method private method_getDB2ForeignKeyConstraints" data-toggle="collapse" data-target=".method_getDB2ForeignKeyConstraints .collapse">
+<h2>Returns the foreign key constraints that involve a specific table or table and column</h2>
+<pre>getDB2ForeignKeyConstraints(string $schema, string $table, string $column) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the table is in</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is in</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to get the foreign keys for and the foreign keys that point to</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of the key being the constraint name and the value being an associative array containing the keys: `schema`, `table`, `column`, `foreign_schema`, `foreign_table`, `foreign_column`, `on_delete` and `on_cascade`</div>
+</div></div>
+</div>
+<a id="method_getDB2PrimaryKeyConstraint"></a><div class="element clickable method private method_getDB2PrimaryKeyConstraint" data-toggle="collapse" data-target=".method_getDB2PrimaryKeyConstraint .collapse">
+<h2>Returns the primary key for a table</h2>
+<pre>getDB2PrimaryKeyConstraint(string $schema, string $table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the table is in</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to get the primary key for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The columns in the primary key</div>
+</div></div>
+</div>
+<a id="method_getDB2UniqueConstraints"></a><div class="element clickable method private method_getDB2UniqueConstraints" data-toggle="collapse" data-target=".method_getDB2UniqueConstraints .collapse">
+<h2>Returns the unique keys for a table and column</h2>
+<pre>getDB2UniqueConstraints(string $schema, string $table, string $column) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the table is in</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to get the unique keys for</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to filter the unique keys by</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of the key being the constraint name and the value being the columns in the unique key</div>
+</div></div>
+</div>
+<a id="method_getMSSQLCheckConstraint"></a><div class="element clickable method private method_getMSSQLCheckConstraint" data-toggle="collapse" data-target=".method_getMSSQLCheckConstraint .collapse">
+<h2>Returns the check constraint for a column, if it exists</h2>
+<pre>getMSSQLCheckConstraint(string $schema, string $table, string $column) : array | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the column is inside of</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>NULL</code>An associative array with the keys `name` and `definition`, or `NULL`</div>
+</div></div>
+</div>
+<a id="method_getMSSQLDefaultConstraint"></a><div class="element clickable method private method_getMSSQLDefaultConstraint" data-toggle="collapse" data-target=".method_getMSSQLDefaultConstraint .collapse">
+<h2>Returns the default constraint for a column, if it exists</h2>
+<pre>getMSSQLDefaultConstraint(string $schema, string $table, string $column) : array | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the column is inside of</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>NULL</code>An associative array with the keys `name` and `definition`, or `NULL`</div>
+</div></div>
+</div>
+<a id="method_getMSSQLForeignKeyConstraints"></a><div class="element clickable method private method_getMSSQLForeignKeyConstraints" data-toggle="collapse" data-target=".method_getMSSQLForeignKeyConstraints .collapse">
+<h2>Returns the foreign key constraints that a column is part of</h2>
+<pre>getMSSQLForeignKeyConstraints(string $schema, string $table, string | array $column) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the column is inside of</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><code>array</code><p>The column name(s)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of constraint names that reference the column(s)</div>
+</div></div>
+</div>
+<a id="method_getMSSQLPrimaryKeyConstraint"></a><div class="element clickable method private method_getMSSQLPrimaryKeyConstraint" data-toggle="collapse" data-target=".method_getMSSQLPrimaryKeyConstraint .collapse">
+<h2>Returns the primary key constraints for a table</h2>
+<pre>getMSSQLPrimaryKeyConstraint(string $schema, string $table) : array | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the table is inside of</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to get the constraint for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>NULL</code>An associative array with the keys `name`, `columns` and `autoincrement` or `NULL`</div>
+</div></div>
+</div>
+<a id="method_getMSSQLUniqueConstraints"></a><div class="element clickable method private method_getMSSQLUniqueConstraints" data-toggle="collapse" data-target=".method_getMSSQLUniqueConstraints .collapse">
+<h2>Returns the unique constraints that a column is part of</h2>
+<pre>getMSSQLUniqueConstraints(string $schema, string $table, string $column) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code>string</code><p>The schema the column is inside of</p></div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column name</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of constraint_name => columns</div>
+</div></div>
+</div>
+<a id="method_getMySQLForeignKeys"></a><div class="element clickable method private method_getMySQLForeignKeys" data-toggle="collapse" data-target=".method_getMySQLForeignKeys .collapse">
+<h2>Returns info about all foreign keys that involve the table and one of the columns specified</h2>
+<pre>getMySQLForeignKeys(string $table, string | array $columns) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>column</th>
+<td>array  An array of associative arrays containing the keys `constraint_name`, `table`, `column`, `foreign_table` and `foreign_column`</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table</p></div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>string</code><code>array</code><p>The column, or an array of valid column names</p></div>
+</div></div>
+</div>
+<a id="method_getMySQLTables"></a><div class="element clickable method private method_getMySQLTables" data-toggle="collapse" data-target=".method_getMySQLTables .collapse">
+<h2>Returns a list of all tables in the database</h2>
+<pre>getMySQLTables() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of table names</div>
+</div></div>
+</div>
+<a id="method_getSQLiteColumns"></a><div class="element clickable method private method_getSQLiteColumns" data-toggle="collapse" data-target=".method_getSQLiteColumns .collapse">
+<h2>Returns an an array of the column name for a table</h2>
+<pre>getSQLiteColumns(string $table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to retrieve the column names for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The column names for the table</div>
+</div></div>
+</div>
+<a id="method_getSQLiteCreateTable"></a><div class="element clickable method private method_getSQLiteCreateTable" data-toggle="collapse" data-target=".method_getSQLiteCreateTable .collapse">
+<h2>Returns the SQL used to create a table</h2>
+<pre>getSQLiteCreateTable(string $table) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to retrieve the <code>CREATE TABLE</code> statement for</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The `CREATE TABLE` SQL statement</div>
+</div></div>
+</div>
+<a id="method_getSQLiteForeignKeys"></a><div class="element clickable method private method_getSQLiteForeignKeys" data-toggle="collapse" data-target=".method_getSQLiteForeignKeys .collapse">
+<h2>Returns a list of all foreign keys that reference the table, and optionally, column specified</h2>
+<pre>getSQLiteForeignKeys(string $table, string $column) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>All foreign keys returned will point to this table</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>Only foreign keys pointing to this column will be returned</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of arrays containing they keys: `table`, `column`, `foreign_table`, `foreign_column`, `on_delete` and `on_update`</div>
+</div></div>
+</div>
+<a id="method_getSQLiteIndexes"></a><div class="element clickable method private method_getSQLiteIndexes" data-toggle="collapse" data-target=".method_getSQLiteIndexes .collapse">
+<h2>Returns the indexes in the current SQLite database</h2>
+<pre>getSQLiteIndexes($table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$table</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array with the key being the index name and the value an associative arrays, each containing the keys: `table`, `sql`</div>
+</div></div>
+</div>
+<a id="method_getSQLiteTables"></a><div class="element clickable method private method_getSQLiteTables" data-toggle="collapse" data-target=".method_getSQLiteTables .collapse">
+<h2>Returns the tables in the current SQLite database</h2>
+<pre>getSQLiteTables() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getSQLiteTriggers"></a><div class="element clickable method private method_getSQLiteTriggers" data-toggle="collapse" data-target=".method_getSQLiteTriggers .collapse">
+<h2>Returns the triggers in the current SQLite database</h2>
+<pre>getSQLiteTriggers($exclude_table) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$exclude_table</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array with the key being the trigger name and the value an associative arrays, each containing the keys: `table`, `sql`</div>
+</div></div>
+</div>
+<a id="method_parseSQLiteColumnDefinitions"></a><div class="element clickable method private method_parseSQLiteColumnDefinitions" data-toggle="collapse" data-target=".method_parseSQLiteColumnDefinitions .collapse">
+<h2>Accepts a CREATE TABLE statement and parses out the column definitions</h2>
+<pre>parseSQLiteColumnDefinitions(string $sql) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The return value is an associative array with the keys being column
+names and the values being arrays containing the following keys:
+ - definition:       (string) the complete column definition
+ - pieces:           (array) an associative array that can be joined back together to make the definition
+   - beginning
+   - column_name
+   - data_type
+   - not_null
+   - null
+   - default
+   - unique
+   - primary_key
+   - check_constraint
+   - foreign_key
+   - deferrable
+   - comment/end</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL <code>CREATE TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array of information for each column - see method description for details</div>
+</div></div>
+</div>
+<a id="method_removeFromSQLiteCreateTable"></a><div class="element clickable method private method_removeFromSQLiteCreateTable" data-toggle="collapse" data-target=".method_removeFromSQLiteCreateTable .collapse">
+<h2>Removes a search string from a `CREATE TABLE` statement</h2>
+<pre>removeFromSQLiteCreateTable(string $create_table_sql, string $search) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$create_table_sql</h4>
+<code>string</code><p>The SQL <code>CREATE TABLE</code> statement</p>
+</div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The string to remove</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified `CREATE TABLE` statement</div>
+</div></div>
+</div>
+<a id="method_removeSQLiteIndexes"></a><div class="element clickable method private method_removeSQLiteIndexes" data-toggle="collapse" data-target=".method_removeSQLiteIndexes .collapse">
+<h2>Removes the SQLite indexes from the internal schema tracker</h2>
+<pre>removeSQLiteIndexes(string $table) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to remove the indexes for</p></div>
+</div></div>
+</div>
+<a id="method_removeSQLiteTable"></a><div class="element clickable method private method_removeSQLiteTable" data-toggle="collapse" data-target=".method_removeSQLiteTable .collapse">
+<h2>Removes a table from the list of SQLite table</h2>
+<pre>removeSQLiteTable(string $table) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to remove</p></div>
+</div></div>
+</div>
+<a id="method_removeSQLiteTrigger"></a><div class="element clickable method private method_removeSQLiteTrigger" data-toggle="collapse" data-target=".method_removeSQLiteTrigger .collapse">
+<h2>Removes a SQLite trigger from the internal schema tracker</h2>
+<pre>removeSQLiteTrigger(string $name) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The trigger name</p></div>
+</div></div>
+</div>
+<a id="method_removeSQLiteTriggers"></a><div class="element clickable method private method_removeSQLiteTriggers" data-toggle="collapse" data-target=".method_removeSQLiteTriggers .collapse">
+<h2>Removes the SQLite triggers for a table from the internal schema tracker</h2>
+<pre>removeSQLiteTriggers(string $table) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table to remove the triggers for</p></div>
+</div></div>
+</div>
+<a id="method_throwException"></a><div class="element clickable method private method_throwException" data-toggle="collapse" data-target=".method_throwException .collapse">
+<h2>Throws an fSQLException with the information provided</h2>
+<pre>throwException(string $error, string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$error</h4>
+<code>string</code><p>The error that occured</p></div>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statement that caused the error</p></div>
+</div></div>
+</div>
+<a id="method_translateAlterTableStatements"></a><div class="element clickable method private method_translateAlterTableStatements" data-toggle="collapse" data-target=".method_translateAlterTableStatements .collapse">
+<h2>Translates the structure of `CREATE TABLE` statements to the database specific syntax</h2>
+<pre>translateAlterTableStatements(string $sql, array $extra_statements, array $rollback_statements) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements that need to be added</p>
+</div>
+<div class="subelement argument">
+<h4>$rollback_statements</h4>
+<code>array</code><p>&$rollback_statements SQL statements to rollback <code>$sql</code> and <code>$extra_statements</code> if something goes wrong</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateCreateTableStatements"></a><div class="element clickable method private method_translateCreateTableStatements" data-toggle="collapse" data-target=".method_translateCreateTableStatements .collapse">
+<h2>Translates the structure of `CREATE TABLE` statements to the database specific syntax</h2>
+<pre>translateCreateTableStatements(string $sql, array $extra_statements) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements that need to be added</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateDB2AlterTableStatements"></a><div class="element clickable method private method_translateDB2AlterTableStatements" data-toggle="collapse" data-target=".method_translateDB2AlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for DB2</h2>
+<pre>translateDB2AlterTableStatements(string $sql, array $extra_statements, array $data) : \strin</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for DB2</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\strin</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translateDataTypes"></a><div class="element clickable method private method_translateDataTypes" data-toggle="collapse" data-target=".method_translateDataTypes .collapse">
+<h2>Translates basic data types</h2>
+<pre>translateDataTypes(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateMSSQLAlterTableStatements"></a><div class="element clickable method private method_translateMSSQLAlterTableStatements" data-toggle="collapse" data-target=".method_translateMSSQLAlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MSSQL</h2>
+<pre>translateMSSQLAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for MSSQL</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translateMySQLAlterTableStatements"></a><div class="element clickable method private method_translateMySQLAlterTableStatements" data-toggle="collapse" data-target=".method_translateMySQLAlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for MySQL</h2>
+<pre>translateMySQLAlterTableStatements(string $sql, array $extra_statements, array $rollback_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for MySQL</p>
+</div>
+<div class="subelement argument">
+<h4>$rollback_statements</h4>
+<code>array</code><p>&$rollback_statements SQL statements to rollback <code>$sql</code> and <code>$extra_statements</code> if something goes wrong</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translateOracleAlterTableStatements"></a><div class="element clickable method private method_translateOracleAlterTableStatements" data-toggle="collapse" data-target=".method_translateOracleAlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for Oracle</h2>
+<pre>translateOracleAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for Oracle</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translatePostgreSQLAlterTableStatements"></a><div class="element clickable method private method_translatePostgreSQLAlterTableStatements" data-toggle="collapse" data-target=".method_translatePostgreSQLAlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for PostgreSQL</h2>
+<pre>translatePostgreSQLAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for PostgreSQL</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translateSQLiteAlterTableStatements"></a><div class="element clickable method private method_translateSQLiteAlterTableStatements" data-toggle="collapse" data-target=".method_translateSQLiteAlterTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE` statements to the appropriate
+statements for SQLite</h2>
+<pre>translateSQLiteAlterTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for SQLite</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_translateSQLiteDropTableStatements"></a><div class="element clickable method private method_translateSQLiteDropTableStatements" data-toggle="collapse" data-target=".method_translateSQLiteDropTableStatements .collapse">
+<h2>Translates `DROP TABLE` statements for SQLite</h2>
+<pre>translateSQLiteDropTableStatements(string $sql, array $extra_statements) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements that need to be added</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateSQLiteRenameTableStatements"></a><div class="element clickable method private method_translateSQLiteRenameTableStatements" data-toggle="collapse" data-target=".method_translateSQLiteRenameTableStatements .collapse">
+<h2>Translates Flourish SQL `ALTER TABLE * RENAME TO` statements to the appropriate
+statements for SQLite</h2>
+<pre>translateSQLiteRenameTableStatements(string $sql, array $extra_statements, array $data) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL statements that will be executed against the database</p></div>
+<div class="subelement argument">
+<h4>$extra_statements</h4>
+<code>array</code><p>&$extra_statements Any extra SQL statements required for SQLite</p>
+</div>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data parsed from the <code>ALTER TABLE</code> statement</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The modified SQL statement</div>
+</div></div>
+</div>
+<a id="method_unescapeIdentifier"></a><div class="element clickable method private method_unescapeIdentifier" data-toggle="collapse" data-target=".method_unescapeIdentifier .collapse">
+<h2>Converts a SQL identifier to lower case and removes double quotes</h2>
+<pre>unescapeIdentifier(string $identifier) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$identifier</h4>
+<code>string</code><p>The SQL identifier</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The unescaped identifier</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_database"> </a><div class="element clickable property private property_database" data-toggle="collapse" data-target=".property_database .collapse">
+<h2>The fDatabase instance</h2>
+<pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_schema_info"> </a><div class="element clickable property private property_schema_info" data-toggle="collapse" data-target=".property_schema_info .collapse">
+<h2>Database-specific schema information needed for translation</h2>
+<pre>$schema_info : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

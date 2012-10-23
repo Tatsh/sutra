@@ -1,0 +1,602 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fFilesystem</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addWebPathTranslation" title="addWebPathTranslation :: Adds a directory to the web path translation list"><span class="description">Adds a directory to the web path translation list</span><pre>addWebPathTranslation()</pre></a></li>
+<li class="method public "><a href="#method_begin" title="begin :: Starts a filesystem pseudo-transaction, should only be called when no transaction is in progress."><span class="description">Starts a filesystem pseudo-transaction, should only be called when no transaction is in progress.</span><pre>begin()</pre></a></li>
+<li class="method public "><a href="#method_commit" title="commit :: Commits a filesystem transaction, should only be called when a transaction is in progress"><span class="description">Commits a filesystem transaction, should only be called when a transaction is in progress</span><pre>commit()</pre></a></li>
+<li class="method public "><a href="#method_convertToBytes" title="convertToBytes :: Takes a file size including a unit of measure (i.e."><span class="description">Takes a file size including a unit of measure (i.e.</span><pre>convertToBytes()</pre></a></li>
+<li class="method public "><a href="#method_createObject" title="createObject :: Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it"><span class="description">Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it</span><pre>createObject()</pre></a></li>
+<li class="method public "><a href="#method_formatFilesize" title="formatFilesize :: Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T"><span class="description">Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T</span><pre>formatFilesize()</pre></a></li>
+<li class="method public "><a href="#method_getPathInfo" title="getPathInfo :: Returns info about a path including dirname, basename, extension and filename"><span class="description">Returns info about a path including dirname, basename, extension and filename</span><pre>getPathInfo()</pre></a></li>
+<li class="method public "><a href="#method_isInsideTransaction" title="isInsideTransaction :: Indicates if a transaction is in progress"><span class="description">Indicates if a transaction is in progress</span><pre>isInsideTransaction()</pre></a></li>
+<li class="method public "><a href="#method_makeURLSafe" title="makeURLSafe :: Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and ."><span class="description">Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and .</span><pre>makeURLSafe()</pre></a></li>
+<li class="method public "><a href="#method_makeUniqueName" title="makeUniqueName :: Returns a unique name for a file"><span class="description">Returns a unique name for a file</span><pre>makeUniqueName()</pre></a></li>
+<li class="method public "><a href="#method_rollback" title="rollback :: Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress"><span class="description">Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</span><pre>rollback()</pre></a></li>
+<li class="method public "><a href="#method_translateToWebPath" title="translateToWebPath :: Takes a filesystem path and translates it to a web path using the rules added"><span class="description">Takes a filesystem path and translates it to a web path using the rules added</span><pre>translateToWebPath()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_commit_operations" title="$commit_operations :: Stores the operations to perform when a commit occurs"><span class="description">Stores the operations to perform when a commit occurs</span><pre>$commit_operations</pre></a></li>
+<li class="property private "><a href="#property_deleted_map" title="$deleted_map :: Maps deletion backtraces to all instances of a file or directory, providing consistency"><span class="description">Maps deletion backtraces to all instances of a file or directory, providing consistency</span><pre>$deleted_map</pre></a></li>
+<li class="property private "><a href="#property_filename_map" title="$filename_map :: Stores file and directory names by reference, allowing all object instances to be updated at once"><span class="description">Stores file and directory names by reference, allowing all object instances to be updated at once</span><pre>$filename_map</pre></a></li>
+<li class="property private "><a href="#property_rollback_operations" title="$rollback_operations :: Stores the operations to perform if a rollback occurs"><span class="description">Stores the operations to perform if a rollback occurs</span><pre>$rollback_operations</pre></a></li>
+<li class="property private "><a href="#property_web_path_translations" title="$web_path_translations :: Stores a list of search =&gt; replace strings for web path translations"><span class="description">Stores a list of search =&gt; replace strings for web path translations</span><pre>$web_path_translations</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_addWebPathTranslation" title="addWebPathTranslation :: "><span class="description">addWebPathTranslation</span><pre>addWebPathTranslation</pre></a></li>
+<li class="constant  "><a href="#constant_begin" title="begin :: "><span class="description">begin</span><pre>begin</pre></a></li>
+<li class="constant  "><a href="#constant_commit" title="commit :: "><span class="description">commit</span><pre>commit</pre></a></li>
+<li class="constant  "><a href="#constant_convertToBytes" title="convertToBytes :: "><span class="description">convertToBytes</span><pre>convertToBytes</pre></a></li>
+<li class="constant  "><a href="#constant_createObject" title="createObject :: "><span class="description">createObject</span><pre>createObject</pre></a></li>
+<li class="constant  "><a href="#constant_formatFilesize" title="formatFilesize :: "><span class="description">formatFilesize</span><pre>formatFilesize</pre></a></li>
+<li class="constant  "><a href="#constant_getPathInfo" title="getPathInfo :: "><span class="description">getPathInfo</span><pre>getPathInfo</pre></a></li>
+<li class="constant  "><a href="#constant_hookDeletedMap" title="hookDeletedMap :: "><span class="description">hookDeletedMap</span><pre>hookDeletedMap</pre></a></li>
+<li class="constant  "><a href="#constant_hookFilenameMap" title="hookFilenameMap :: "><span class="description">hookFilenameMap</span><pre>hookFilenameMap</pre></a></li>
+<li class="constant  "><a href="#constant_isInsideTransaction" title="isInsideTransaction :: "><span class="description">isInsideTransaction</span><pre>isInsideTransaction</pre></a></li>
+<li class="constant  "><a href="#constant_makeUniqueName" title="makeUniqueName :: "><span class="description">makeUniqueName</span><pre>makeUniqueName</pre></a></li>
+<li class="constant  "><a href="#constant_recordAppend" title="recordAppend :: "><span class="description">recordAppend</span><pre>recordAppend</pre></a></li>
+<li class="constant  "><a href="#constant_recordCreate" title="recordCreate :: "><span class="description">recordCreate</span><pre>recordCreate</pre></a></li>
+<li class="constant  "><a href="#constant_recordDelete" title="recordDelete :: "><span class="description">recordDelete</span><pre>recordDelete</pre></a></li>
+<li class="constant  "><a href="#constant_recordDuplicate" title="recordDuplicate :: "><span class="description">recordDuplicate</span><pre>recordDuplicate</pre></a></li>
+<li class="constant  "><a href="#constant_recordRename" title="recordRename :: "><span class="description">recordRename</span><pre>recordRename</pre></a></li>
+<li class="constant  "><a href="#constant_recordWrite" title="recordWrite :: "><span class="description">recordWrite</span><pre>recordWrite</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_rollback" title="rollback :: "><span class="description">rollback</span><pre>rollback</pre></a></li>
+<li class="constant  "><a href="#constant_translateToWebPath" title="translateToWebPath :: "><span class="description">translateToWebPath</span><pre>translateToWebPath</pre></a></li>
+<li class="constant  "><a href="#constant_updateDeletedMap" title="updateDeletedMap :: "><span class="description">updateDeletedMap</span><pre>updateDeletedMap</pre></a></li>
+<li class="constant  "><a href="#constant_updateFilenameMap" title="updateFilenameMap :: "><span class="description">updateFilenameMap</span><pre>updateFilenameMap</pre></a></li>
+<li class="constant  "><a href="#constant_updateFilenameMapForDirectory" title="updateFilenameMapForDirectory :: "><span class="description">updateFilenameMapForDirectory</span><pre>updateFilenameMapForDirectory</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fFilesystem"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fFilesystem.html">fFilesystem</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Handles filesystem-level tasks including filesystem transactions and the reference map to keep all fFile and fDirectory objects in sync</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2010 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:alex@kingleeds.com">Alex Leeds [al]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fFilesystem">http://flourishlib.com/fFilesystem</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b16</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Added a call to clearstatcache() to ::rollback() to prevent incorrect data from being returned by fFile::getMTime() and fFile::getSize() [wb, 2010-11-27]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed ::translateToWebPath() to handle Windows \s [wb, 2010-04-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added ::recordAppend() [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Changed the way files/directories deleted in a filesystem transaction are handled, including improvements to the exception that is thrown [wb+wb-imarc, 2010-03-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Updated ::convertToBytes() to properly handle integers without a suffix and sizes with fractions [al+wb, 2009-11-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Corrected the API documentation for ::getPathInfo() [wb, 2009-09-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Updated ::updateExceptionMap() to not contain the Exception class parameter hint, allowing NULL to be passed [wb, 2009-08-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added some performance tweaks to ::createObject() [wb, 2009-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Changed ::formatFilesize() to not use decimal places for bytes, add a space before and drop the `B` in suffixes [wb, 2009-07-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed ::formatFilesize() to work when `$bytes` equals zero [wb, 2009-07-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Changed ::formatFilesize() to use proper uppercase letters instead of lowercase [wb, 2009-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Added the ::createObject() method [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Removed some unnecessary error suppresion operators [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug where the filepath and exception maps weren't being updated after a rollback [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-03-24]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addWebPathTranslation"></a><div class="element clickable method public method_addWebPathTranslation" data-toggle="collapse" data-target=".method_addWebPathTranslation .collapse">
+<h2>Adds a directory to the web path translation list</h2>
+<pre>addWebPathTranslation(string $search_path, string $replace_path) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The web path conversion list is a list of directory paths that will be
+converted (from the beginning of filesystem paths) when preparing a path
+for output into HTML.</p>
+
+<p>By default the <code>$_SERVER['DOCUMENT_ROOT']</code> will be converted to a blank
+string, in essence stripping it from filesystem paths.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$search_path</h4>
+<code>string</code><p>The path to look for</p></div>
+<div class="subelement argument">
+<h4>$replace_path</h4>
+<code>string</code><p>The path to replace with</p></div>
+</div></div>
+</div>
+<a id="method_begin"></a><div class="element clickable method public method_begin" data-toggle="collapse" data-target=".method_begin .collapse">
+<h2>Starts a filesystem pseudo-transaction, should only be called when no transaction is in progress.</h2>
+<pre>begin() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Flourish filesystem transactions are NOT full ACID-compliant
+transactions, but rather more of an filesystem undo buffer which can
+return the filesystem to the state when ::begin() was called. If your PHP
+script dies in the middle of an operation this functionality will do
+nothing for you and all operations will be retained, except for deletes
+which only occur once the transaction is committed.</p></div></div></div>
+</div>
+<a id="method_commit"></a><div class="element clickable method public method_commit" data-toggle="collapse" data-target=".method_commit .collapse">
+<h2>Commits a filesystem transaction, should only be called when a transaction is in progress</h2>
+<pre>commit() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_convertToBytes"></a><div class="element clickable method public method_convertToBytes" data-toggle="collapse" data-target=".method_convertToBytes .collapse">
+<h2>Takes a file size including a unit of measure (i.e.</h2>
+<pre>convertToBytes(string $size) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>kb, GB, M) and converts it to bytes</p>
+
+<p>Sizes are interpreted using base 2, not base 10. Sizes above 2GB may not
+be accurately represented on 32 bit operating systems.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>string</code><p>The size to convert to bytes</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of bytes represented by the size</div>
+</div></div>
+</div>
+<a id="method_createObject"></a><div class="element clickable method public method_createObject" data-toggle="collapse" data-target=".method_createObject .collapse">
+<h2>Takes a filesystem path and creates either an fDirectory, fFile or fImage object from it</h2>
+<pre>createObject(string $path) : <a href="../classes/fDirectory.html">\fDirectory</a> | <a href="../classes/fFile.html">\fFile</a> | <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to the filesystem object</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no path was specified or the path specified does not exist</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code><code><a href="../classes/fFile.html">\fFile</a></code><code><a href="../classes/fImage.html">\fImage</a></code>
+</div>
+</div></div>
+</div>
+<a id="method_formatFilesize"></a><div class="element clickable method public method_formatFilesize" data-toggle="collapse" data-target=".method_formatFilesize .collapse">
+<h2>Takes the size of a file in bytes and returns a friendly size in B/K/M/G/T</h2>
+<pre>formatFilesize(integer $bytes, integer $decimal_places) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bytes</h4>
+<code>integer</code><p>The size of the file in bytes</p></div>
+<div class="subelement argument">
+<h4>$decimal_places</h4>
+<code>integer</code><p>The number of decimal places to display</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getPathInfo"></a><div class="element clickable method public method_getPathInfo" data-toggle="collapse" data-target=".method_getPathInfo .collapse">
+<h2>Returns info about a path including dirname, basename, extension and filename</h2>
+<pre>getPathInfo(string $path, string $element) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The file/directory path to retrieve information about</p>
+</div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The piece of information to return: <code>'dirname'</code>, <code>'basename'</code>, <code>'extension'</code>, or <code>'filename'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The file's dirname, basename, extension and filename</div>
+</div></div>
+</div>
+<a id="method_isInsideTransaction"></a><div class="element clickable method public method_isInsideTransaction" data-toggle="collapse" data-target=".method_isInsideTransaction .collapse">
+<h2>Indicates if a transaction is in progress</h2>
+<pre>isInsideTransaction() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_makeURLSafe"></a><div class="element clickable method public method_makeURLSafe" data-toggle="collapse" data-target=".method_makeURLSafe .collapse">
+<h2>Changes a filename to be safe for URLs by making it all lower case and changing everything but letters, numers, - and .</h2>
+<pre>makeURLSafe(string $filename) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>to _</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>The filename to clean up</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cleaned up filename</div>
+</div></div>
+</div>
+<a id="method_makeUniqueName"></a><div class="element clickable method public method_makeUniqueName" data-toggle="collapse" data-target=".method_makeUniqueName .collapse">
+<h2>Returns a unique name for a file</h2>
+<pre>makeUniqueName(string $file, string $new_extension) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file</h4>
+<code>string</code><p>The filename to check</p></div>
+<div class="subelement argument">
+<h4>$new_extension</h4>
+<code>string</code><p>The new extension for the filename, should not include <code>.</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The unique file name</div>
+</div></div>
+</div>
+<a id="method_rollback"></a><div class="element clickable method public method_rollback" data-toggle="collapse" data-target=".method_rollback .collapse">
+<h2>Rolls back a filesystem transaction, it is safe to rollback when no transaction is in progress</h2>
+<pre>rollback() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_translateToWebPath"></a><div class="element clickable method public method_translateToWebPath" data-toggle="collapse" data-target=".method_translateToWebPath .collapse">
+<h2>Takes a filesystem path and translates it to a web path using the rules added</h2>
+<pre>translateToWebPath(string $path) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The filesystem path translated to a web path</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fFilesystem.html">\fFilesystem</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fFilesystem.html">\fFilesystem</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_commit_operations"> </a><div class="element clickable property private property_commit_operations" data-toggle="collapse" data-target=".property_commit_operations .collapse">
+<h2>Stores the operations to perform when a commit occurs</h2>
+<pre>$commit_operations : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_deleted_map"> </a><div class="element clickable property private property_deleted_map" data-toggle="collapse" data-target=".property_deleted_map .collapse">
+<h2>Maps deletion backtraces to all instances of a file or directory, providing consistency</h2>
+<pre>$deleted_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_filename_map"> </a><div class="element clickable property private property_filename_map" data-toggle="collapse" data-target=".property_filename_map .collapse">
+<h2>Stores file and directory names by reference, allowing all object instances to be updated at once</h2>
+<pre>$filename_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_rollback_operations"> </a><div class="element clickable property private property_rollback_operations" data-toggle="collapse" data-target=".property_rollback_operations .collapse">
+<h2>Stores the operations to perform if a rollback occurs</h2>
+<pre>$rollback_operations : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_web_path_translations"> </a><div class="element clickable property private property_web_path_translations" data-toggle="collapse" data-target=".property_web_path_translations .collapse">
+<h2>Stores a list of search =&gt; replace strings for web path translations</h2>
+<pre>$web_path_translations : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addWebPathTranslation"> </a><div class="element clickable constant  constant_addWebPathTranslation" data-toggle="collapse" data-target=".constant_addWebPathTranslation .collapse">
+<h2>addWebPathTranslation</h2>
+<pre>addWebPathTranslation </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_begin"> </a><div class="element clickable constant  constant_begin" data-toggle="collapse" data-target=".constant_begin .collapse">
+<h2>begin</h2>
+<pre>begin </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_commit"> </a><div class="element clickable constant  constant_commit" data-toggle="collapse" data-target=".constant_commit .collapse">
+<h2>commit</h2>
+<pre>commit </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_convertToBytes"> </a><div class="element clickable constant  constant_convertToBytes" data-toggle="collapse" data-target=".constant_convertToBytes .collapse">
+<h2>convertToBytes</h2>
+<pre>convertToBytes </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_createObject"> </a><div class="element clickable constant  constant_createObject" data-toggle="collapse" data-target=".constant_createObject .collapse">
+<h2>createObject</h2>
+<pre>createObject </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_formatFilesize"> </a><div class="element clickable constant  constant_formatFilesize" data-toggle="collapse" data-target=".constant_formatFilesize .collapse">
+<h2>formatFilesize</h2>
+<pre>formatFilesize </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getPathInfo"> </a><div class="element clickable constant  constant_getPathInfo" data-toggle="collapse" data-target=".constant_getPathInfo .collapse">
+<h2>getPathInfo</h2>
+<pre>getPathInfo </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hookDeletedMap"> </a><div class="element clickable constant  constant_hookDeletedMap" data-toggle="collapse" data-target=".constant_hookDeletedMap .collapse">
+<h2>hookDeletedMap</h2>
+<pre>hookDeletedMap </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hookFilenameMap"> </a><div class="element clickable constant  constant_hookFilenameMap" data-toggle="collapse" data-target=".constant_hookFilenameMap .collapse">
+<h2>hookFilenameMap</h2>
+<pre>hookFilenameMap </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_isInsideTransaction"> </a><div class="element clickable constant  constant_isInsideTransaction" data-toggle="collapse" data-target=".constant_isInsideTransaction .collapse">
+<h2>isInsideTransaction</h2>
+<pre>isInsideTransaction </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_makeUniqueName"> </a><div class="element clickable constant  constant_makeUniqueName" data-toggle="collapse" data-target=".constant_makeUniqueName .collapse">
+<h2>makeUniqueName</h2>
+<pre>makeUniqueName </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordAppend"> </a><div class="element clickable constant  constant_recordAppend" data-toggle="collapse" data-target=".constant_recordAppend .collapse">
+<h2>recordAppend</h2>
+<pre>recordAppend </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordCreate"> </a><div class="element clickable constant  constant_recordCreate" data-toggle="collapse" data-target=".constant_recordCreate .collapse">
+<h2>recordCreate</h2>
+<pre>recordCreate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordDelete"> </a><div class="element clickable constant  constant_recordDelete" data-toggle="collapse" data-target=".constant_recordDelete .collapse">
+<h2>recordDelete</h2>
+<pre>recordDelete </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordDuplicate"> </a><div class="element clickable constant  constant_recordDuplicate" data-toggle="collapse" data-target=".constant_recordDuplicate .collapse">
+<h2>recordDuplicate</h2>
+<pre>recordDuplicate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordRename"> </a><div class="element clickable constant  constant_recordRename" data-toggle="collapse" data-target=".constant_recordRename .collapse">
+<h2>recordRename</h2>
+<pre>recordRename </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_recordWrite"> </a><div class="element clickable constant  constant_recordWrite" data-toggle="collapse" data-target=".constant_recordWrite .collapse">
+<h2>recordWrite</h2>
+<pre>recordWrite </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_rollback"> </a><div class="element clickable constant  constant_rollback" data-toggle="collapse" data-target=".constant_rollback .collapse">
+<h2>rollback</h2>
+<pre>rollback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_translateToWebPath"> </a><div class="element clickable constant  constant_translateToWebPath" data-toggle="collapse" data-target=".constant_translateToWebPath .collapse">
+<h2>translateToWebPath</h2>
+<pre>translateToWebPath </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_updateDeletedMap"> </a><div class="element clickable constant  constant_updateDeletedMap" data-toggle="collapse" data-target=".constant_updateDeletedMap .collapse">
+<h2>updateDeletedMap</h2>
+<pre>updateDeletedMap </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_updateFilenameMap"> </a><div class="element clickable constant  constant_updateFilenameMap" data-toggle="collapse" data-target=".constant_updateFilenameMap .collapse">
+<h2>updateFilenameMap</h2>
+<pre>updateFilenameMap </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_updateFilenameMapForDirectory"> </a><div class="element clickable constant  constant_updateFilenameMapForDirectory" data-toggle="collapse" data-target=".constant_updateFilenameMapForDirectory .collapse">
+<h2>updateFilenameMapForDirectory</h2>
+<pre>updateFilenameMapForDirectory </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

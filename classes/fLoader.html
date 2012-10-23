@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fLoader</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_best" title="best :: Performs eager loading if an op-code cache is present, otherwise lazy"><span class="description">Performs eager loading if an op-code cache is present, otherwise lazy</span><pre>best()</pre></a></li>
+<li class="method public "><a href="#method_eager" title="eager :: Loads all Flourish classes when called"><span class="description">Loads all Flourish classes when called</span><pre>eager()</pre></a></li>
+<li class="method public "><a href="#method_hasOpcodeCache" title="hasOpcodeCache :: Check if a PHP opcode cache is installed"><span class="description">Check if a PHP opcode cache is installed</span><pre>hasOpcodeCache()</pre></a></li>
+<li class="method public "><a href="#method_lazy" title="lazy :: Registers an autoloader for Flourish via [http://php.net/spl_autoload_register `spl_autoload_register()`]"><span class="description">Registers an autoloader for Flourish via [http://php.net/spl_autoload_register `spl_autoload_register()`]</span><pre>lazy()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_createConstructorFunctions" title="createConstructorFunctions :: Creates functions that act as chainable constructors"><span class="description">Creates functions that act as chainable constructors</span><pre>createConstructorFunctions()</pre></a></li>
+<li class="method private "><a href="#method_setPath" title="setPath :: Determines where Flourish is installed"><span class="description">Determines where Flourish is installed</span><pre>setPath()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_classes" title="$classes :: The Flourish classes in dependency order"><span class="description">The Flourish classes in dependency order</span><pre>$classes</pre></a></li>
+<li class="property private "><a href="#property_path" title="$path :: The path Flourish is installed into"><span class="description">The path Flourish is installed into</span><pre>$path</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_autoload" title="autoload :: "><span class="description">autoload</span><pre>autoload</pre></a></li>
+<li class="constant  "><a href="#constant_best" title="best :: "><span class="description">best</span><pre>best</pre></a></li>
+<li class="constant  "><a href="#constant_eager" title="eager :: "><span class="description">eager</span><pre>eager</pre></a></li>
+<li class="constant  "><a href="#constant_hasOpcodeCache" title="hasOpcodeCache :: "><span class="description">hasOpcodeCache</span><pre>hasOpcodeCache</pre></a></li>
+<li class="constant  "><a href="#constant_lazy" title="lazy :: "><span class="description">lazy</span><pre>lazy</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fLoader"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fLoader.html">fLoader</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A class that loads Flourish</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="">netcarver [n] &lt;fContrib@netcarving.com&gt;</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fLoader">http://flourishlib.com/fLoader</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b3</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Added fEmail() constructor function [n, 2011-09-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Added fPagination [wb, 2011-09-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2011-08-26]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_best"></a><div class="element clickable method public method_best" data-toggle="collapse" data-target=".method_best .collapse">
+<h2>Performs eager loading if an op-code cache is present, otherwise lazy</h2>
+<pre>best() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_eager"></a><div class="element clickable method public method_eager" data-toggle="collapse" data-target=".method_eager .collapse">
+<h2>Loads all Flourish classes when called</h2>
+<pre>eager() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_hasOpcodeCache"></a><div class="element clickable method public method_hasOpcodeCache" data-toggle="collapse" data-target=".method_hasOpcodeCache .collapse">
+<h2>Check if a PHP opcode cache is installed</h2>
+<pre>hasOpcodeCache() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The following opcode caches are currently detected:</p>
+
+<ul>
+<li>[http://pecl.php.net/package/APC APC]</li>
+<li>[http://eaccelerator.net eAccelerator]</li>
+<li>[http://www.nusphere.com/products/phpexpress.htm Nusphere PhpExpress]</li>
+<li>[http://turck-mmcache.sourceforge.net/index_old.html Turck MMCache]</li>
+<li>[http://xcache.lighttpd.net XCache]</li>
+<li>[http://www.zend.com/en/products/server/ Zend Server (Optimizer+)]</li>
+<li>[http://www.zend.com/en/products/platform/ Zend Platform (Code Acceleration)]</li>
+</ul></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If a PHP opcode cache is loaded</div>
+</div></div>
+</div>
+<a id="method_lazy"></a><div class="element clickable method public method_lazy" data-toggle="collapse" data-target=".method_lazy .collapse">
+<h2>Registers an autoloader for Flourish via [http://php.net/spl_autoload_register `spl_autoload_register()`]</h2>
+<pre>lazy() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fLoader.html">\fLoader</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fLoader.html">\fLoader</a></code></div>
+</div></div>
+</div>
+<a id="method_createConstructorFunctions"></a><div class="element clickable method private method_createConstructorFunctions" data-toggle="collapse" data-target=".method_createConstructorFunctions .collapse">
+<h2>Creates functions that act as chainable constructors</h2>
+<pre>createConstructorFunctions() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method private method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
+<h2>Determines where Flourish is installed</h2>
+<pre>setPath() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_classes"> </a><div class="element clickable property private property_classes" data-toggle="collapse" data-target=".property_classes .collapse">
+<h2>The Flourish classes in dependency order</h2>
+<pre>$classes : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_path"> </a><div class="element clickable property private property_path" data-toggle="collapse" data-target=".property_path .collapse">
+<h2>The path Flourish is installed into</h2>
+<pre>$path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_autoload"> </a><div class="element clickable constant  constant_autoload" data-toggle="collapse" data-target=".constant_autoload .collapse">
+<h2>autoload</h2>
+<pre>autoload </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_best"> </a><div class="element clickable constant  constant_best" data-toggle="collapse" data-target=".constant_best .collapse">
+<h2>best</h2>
+<pre>best </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_eager"> </a><div class="element clickable constant  constant_eager" data-toggle="collapse" data-target=".constant_eager .collapse">
+<h2>eager</h2>
+<pre>eager </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hasOpcodeCache"> </a><div class="element clickable constant  constant_hasOpcodeCache" data-toggle="collapse" data-target=".constant_hasOpcodeCache .collapse">
+<h2>hasOpcodeCache</h2>
+<pre>hasOpcodeCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_lazy"> </a><div class="element clickable constant  constant_lazy" data-toggle="collapse" data-target=".constant_lazy .collapse">
+<h2>lazy</h2>
+<pre>lazy </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fSession</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_add" title="add :: Adds a value to an already-existing array value, or to a new array value"><span class="description">Adds a value to an already-existing array value, or to a new array value</span><pre>add()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear :: Removes all session values with the provided prefix"><span class="description">Removes all session values with the provided prefix</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close :: Closes the session for writing, allowing other pages to open the session"><span class="description">Closes the session for writing, allowing other pages to open the session</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Deletes a value from the session"><span class="description">Deletes a value from the session</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_destroy" title="destroy :: Destroys the session, removing all values"><span class="description">Destroys the session, removing all values</span><pre>destroy()</pre></a></li>
+<li class="method public "><a href="#method_enablePersistence" title="enablePersistence :: Changed the session to use a time-based cookie instead of a session-based cookie"><span class="description">Changed the session to use a time-based cookie instead of a session-based cookie</span><pre>enablePersistence()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Gets data from the `$_SESSION` superglobal"><span class="description">Gets data from the `$_SESSION` superglobal</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_ignoreSubdomain" title="ignoreSubdomain :: Sets the session to run on the main domain, not just the specific subdomain currently being accessed"><span class="description">Sets the session to run on the main domain, not just the specific subdomain currently being accessed</span><pre>ignoreSubdomain()</pre></a></li>
+<li class="method public "><a href="#method_open" title="open :: Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()"><span class="description">Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()</span><pre>open()</pre></a></li>
+<li class="method public "><a href="#method_remove" title="remove :: Removes and returns the value from the end of an array value"><span class="description">Removes and returns the value from the end of an array value</span><pre>remove()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Sets data to the `$_SESSION` superglobal"><span class="description">Sets data to the `$_SESSION` superglobal</span><pre>set()</pre></a></li>
+<li class="method public "><a href="#method_setBackend" title="setBackend :: Sets an fCache object to store sessions in"><span class="description">Sets an fCache object to store sessions in</span><pre>setBackend()</pre></a></li>
+<li class="method public "><a href="#method_setLength" title="setLength :: Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed"><span class="description">Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed</span><pre>setLength()</pre></a></li>
+<li class="method public "><a href="#method_setPath" title="setPath :: Sets the path to store session files in"><span class="description">Sets the path to store session files in</span><pre>setPath()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_backend" title="$backend :: The fCache backend to use for the session"><span class="description">The fCache backend to use for the session</span><pre>$backend</pre></a></li>
+<li class="property private "><a href="#property_key_prefix" title="$key_prefix :: The key prefix to use when saving the session to an fCache"><span class="description">The key prefix to use when saving the session to an fCache</span><pre>$key_prefix</pre></a></li>
+<li class="property private "><a href="#property_normal_timespan" title="$normal_timespan :: The length for a normal session"><span class="description">The length for a normal session</span><pre>$normal_timespan</pre></a></li>
+<li class="property private "><a href="#property_old_session_module_name" title="$old_session_module_name :: The name of the old session module to revent to when fSession is closed"><span class="description">The name of the old session module to revent to when fSession is closed</span><pre>$old_session_module_name</pre></a></li>
+<li class="property private "><a href="#property_open" title="$open :: If the session is open"><span class="description">If the session is open</span><pre>$open</pre></a></li>
+<li class="property private "><a href="#property_persistent_timespan" title="$persistent_timespan :: The length for a persistent session cookie - one that survives browser restarts"><span class="description">The length for a persistent session cookie - one that survives browser restarts</span><pre>$persistent_timespan</pre></a></li>
+<li class="property private "><a href="#property_regenerated" title="$regenerated :: If the session ID was regenerated during this script"><span class="description">If the session ID was regenerated during this script</span><pre>$regenerated</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_add" title="add :: "><span class="description">add</span><pre>add</pre></a></li>
+<li class="constant  "><a href="#constant_clear" title="clear :: "><span class="description">clear</span><pre>clear</pre></a></li>
+<li class="constant  "><a href="#constant_close" title="close :: "><span class="description">close</span><pre>close</pre></a></li>
+<li class="constant  "><a href="#constant_closeCache" title="closeCache :: "><span class="description">closeCache</span><pre>closeCache</pre></a></li>
+<li class="constant  "><a href="#constant_delete" title="delete :: "><span class="description">delete</span><pre>delete</pre></a></li>
+<li class="constant  "><a href="#constant_destroy" title="destroy :: "><span class="description">destroy</span><pre>destroy</pre></a></li>
+<li class="constant  "><a href="#constant_destroyCache" title="destroyCache :: "><span class="description">destroyCache</span><pre>destroyCache</pre></a></li>
+<li class="constant  "><a href="#constant_enablePersistence" title="enablePersistence :: "><span class="description">enablePersistence</span><pre>enablePersistence</pre></a></li>
+<li class="constant  "><a href="#constant_gcCache" title="gcCache :: "><span class="description">gcCache</span><pre>gcCache</pre></a></li>
+<li class="constant  "><a href="#constant_get" title="get :: "><span class="description">get</span><pre>get</pre></a></li>
+<li class="constant  "><a href="#constant_ignoreSubdomain" title="ignoreSubdomain :: "><span class="description">ignoreSubdomain</span><pre>ignoreSubdomain</pre></a></li>
+<li class="constant  "><a href="#constant_open" title="open :: "><span class="description">open</span><pre>open</pre></a></li>
+<li class="constant  "><a href="#constant_openCache" title="openCache :: "><span class="description">openCache</span><pre>openCache</pre></a></li>
+<li class="constant  "><a href="#constant_readCache" title="readCache :: "><span class="description">readCache</span><pre>readCache</pre></a></li>
+<li class="constant  "><a href="#constant_regenerateID" title="regenerateID :: "><span class="description">regenerateID</span><pre>regenerateID</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_set" title="set :: "><span class="description">set</span><pre>set</pre></a></li>
+<li class="constant  "><a href="#constant_setBackend" title="setBackend :: "><span class="description">setBackend</span><pre>setBackend</pre></a></li>
+<li class="constant  "><a href="#constant_setLength" title="setLength :: "><span class="description">setLength</span><pre>setLength</pre></a></li>
+<li class="constant  "><a href="#constant_setPath" title="setPath :: "><span class="description">setPath</span><pre>setPath</pre></a></li>
+<li class="constant  "><a href="#constant_writeCache" title="writeCache :: "><span class="description">writeCache</span><pre>writeCache</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fSession"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSession.html">fSession</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Wraps the session control functions and the `$_SESSION` superglobal for a more consistent and safer API</p>
+<div class="details">
+<div class="long_description"><p>A <code>Cannot send session cache limiter</code> warning will be triggered if ::open(),
+::add(), ::clear(), ::delete(), ::get() or ::set() is called after output has
+been sent to the browser. To prevent such a warning, explicitly call ::open()
+before generating any output.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:alex@kingleeds.com">Alex Leeds [al]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fSession">http://flourishlib.com/fSession</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b20</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed bugs with ::reset() introduced in 1.0.0b19 [wb, 2011-08-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Fixed some session warning messages for PHP 5.1.6 [wb, 2011-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Added support for storing session data in memcache, redis and databases using fCache and ::setBackend() [wb, 2011-06-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Updated ::ignoreSubdomain() to use `$_SERVER['HTTP_HOST']` when `$_SERVER['SERVER_NAME']` is not set [wb, 2011-02-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Changed ::delete() to return the value of the key being deleted [wb, 2010-09-19]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Added documentation about `[sub-key]` syntax [wb, 2010-09-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Backwards Compatibility Break - ::add(), ::delete(), ::get() and ::set() now interpret `[` and `]` as array shorthand and thus they can not be used in keys - added `$beginning` parameter to ::add(), added ::remove() method [wb, 2010-09-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed a bug that prevented working with existing sessions since they did not have the `fSession::expires` key [wb, 2010-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Changed ::enablePersistence() to always regenerate the session ID, which ensures the function works even if the ID has already been regenerated by fAuthorizaton [wb, 2010-08-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Updated the class to make sure ::enablePersistence() is called after ::ignoreSubdomain(), ::setLength() and ::setPath() [wb, 2010-05-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed some documentation bugs [wb, 2010-03-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed a bug in ::destroy() where sessions weren't always being properly destroyed [wb, 2009-12-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed a bug that made the unit tests fail on PHP 5.1 [wb, 2009-10-27]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Backwards Compatibility Break - Removed the `$prefix` parameter from the methods ::delete(), ::get() and ::set() - added the methods ::add(), ::enablePersistence(), ::regenerateID() [wb+al, 2009-10-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Backwards Compatibility Break - the first parameter of ::clear() was removed, use ::delete() instead [wb, 2009-05-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Added documentation about session cache limiter warnings [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   The class now works with existing sessions [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed ::clear() to properly handle when `$key` is `NULL` [wb, 2009-02-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Made ::open() public, fixed some consistency issues with setting session options through the class [wb, 2009-01-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_add"></a><div class="element clickable method public method_add" data-toggle="collapse" data-target=".method_add .collapse">
+<h2>Adds a value to an already-existing array value, or to a new array value</h2>
+<pre>add(string $key, mixed $value, boolean $beginning) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name to access the array under - array elements can be modified via <code>[sub-key]</code> syntax, and thus <code>[</code> and <code>]</code> can not be used in key names</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to add to the array</p></div>
+<div class="subelement argument">
+<h4>$beginning</h4>
+<code>boolean</code><p>If the value should be added to the beginning</p></div>
+</div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
+<h2>Removes all session values with the provided prefix</h2>
+<pre>clear(string $prefix) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method will not remove session variables used by this class, which
+are prefixed with <code>fSession::</code>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$prefix</h4>
+<code>string</code><p>The prefix to clear all session values for</p></div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Closes the session for writing, allowing other pages to open the session</h2>
+<pre>close() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Deletes a value from the session</h2>
+<pre>delete(string $key, mixed $default_value) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key of the value to delete - array elements can be modified via <code>[sub-key]</code> syntax, and thus <code>[</code> and <code>]</code> can not be used in key names</p>
+</div>
+<div class="subelement argument">
+<h4>$default_value</h4>
+<code>mixed</code><p>The value to return if the <code>$key</code> is not set</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value of the `$key` that was deleted</div>
+</div></div>
+</div>
+<a id="method_destroy"></a><div class="element clickable method public method_destroy" data-toggle="collapse" data-target=".method_destroy .collapse">
+<h2>Destroys the session, removing all values</h2>
+<pre>destroy() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_enablePersistence"></a><div class="element clickable method public method_enablePersistence" data-toggle="collapse" data-target=".method_enablePersistence .collapse">
+<h2>Changed the session to use a time-based cookie instead of a session-based cookie</h2>
+<pre>enablePersistence() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The length of the time-based cookie is controlled by ::setLength(). When
+this method is called, a time-based cookie is used to store the session
+ID. This means the session can persist browser restarts. Normally, a
+session-based cookie is used, which is wiped when a browser restart
+occurs.</p>
+
+<p>This method should be called during the login process and will normally
+be controlled by a checkbox or similar where the user can indicate if
+they want to stay logged in for an extended period of time.</p></div></div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Gets data from the `$_SESSION` superglobal</h2>
+<pre>get(string $key, mixed $default_value) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name to get the value for - array elements can be accessed via <code>[sub-key]</code> syntax, and thus <code>[</code> and <code>]</code> can not be used in key names</p>
+</div>
+<div class="subelement argument">
+<h4>$default_value</h4>
+<code>mixed</code><p>The default value to use if the requested key is not set</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The data element requested</div>
+</div></div>
+</div>
+<a id="method_ignoreSubdomain"></a><div class="element clickable method public method_ignoreSubdomain" data-toggle="collapse" data-target=".method_ignoreSubdomain .collapse">
+<h2>Sets the session to run on the main domain, not just the specific subdomain currently being accessed</h2>
+<pre>ignoreSubdomain() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This method should be called after any calls to
+[http://php.net/session_set_cookie_params <code>session_set_cookie_params()</code>].</p></div></div></div>
+</div>
+<a id="method_open"></a><div class="element clickable method public method_open" data-toggle="collapse" data-target=".method_open .collapse">
+<h2>Opens the session for writing, is automatically called by ::clear(), ::get() and ::set()</h2>
+<pre>open(boolean $cookie_only_session_id) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>Cannot send session cache limiter</code> warning will be triggered if this,
+::add(), ::clear(), ::delete(), ::get() or ::set() is called after output
+has been sent to the browser. To prevent such a warning, explicitly call
+this method before generating any output.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cookie_only_session_id</h4>
+<code>boolean</code><p>If the session id should only be allowed via cookie - this is a security issue and should only be set to <code>FALSE</code> when absolutely necessary</p>
+</div>
+</div></div>
+</div>
+<a id="method_remove"></a><div class="element clickable method public method_remove" data-toggle="collapse" data-target=".method_remove .collapse">
+<h2>Removes and returns the value from the end of an array value</h2>
+<pre>remove(string $key, boolean $beginning) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name of the element to remove the value from - array elements can be modified via <code>[sub-key]</code> syntax, and thus <code>[</code> and <code>]</code> can not be used in key names</p>
+</div>
+<div class="subelement argument">
+<h4>$beginning</h4>
+<code>boolean</code><p>If the value should be removed to the beginning</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value that was removed</div>
+</div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Sets data to the `$_SESSION` superglobal</h2>
+<pre>set(string $key, mixed $value) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The name to save the value under - array elements can be modified via <code>[sub-key]</code> syntax, and thus <code>[</code> and <code>]</code> can not be used in key names</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to store</p></div>
+</div></div>
+</div>
+<a id="method_setBackend"></a><div class="element clickable method public method_setBackend" data-toggle="collapse" data-target=".method_setBackend .collapse">
+<h2>Sets an fCache object to store sessions in</h2>
+<pre>setBackend(<a href="../classes/fCache.html">\fCache</a> $backend, string $key_prefix) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>While any type of fCache backend should technically work, it would be
+unwise to use the <code>file</code> and <code>directory</code> types. The <code>file</code> caching
+backend stores all values in a single file, which would quickly become a
+performance bottleneck and could cause data loss with many concurrent
+users. The <code>directory</code> caching backend would not make sense since it is
+the same general functionality as the default session handler, but it
+would be slightly slower since it is written in PHP and not C.</p>
+
+<p>It is recommended to set the <code>serializer</code> and <code>unserializer</code> <code>$config</code>
+settings on the fCache object to <code>string</code> for the best performance and
+minimal storage space.</p>
+
+<p>For better performance, check out using the built-in session handlers
+that are bundled with the following extensions:</p>
+
+<ul>
+<li>[http://php.net/memcached.sessions memcached]</li>
+<li>[http://php.net/memcache.examples-overview#example-3596 memcache]</li>
+<li>[https://github.com/nicolasff/phpredis redis]</li>
+</ul>
+
+<p>The [http://pecl.php.net/package/igbinary igbinary] extension can
+provide even more of a performance boost by storing serialized data in
+binary format instead of as text.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$backend</h4>
+<code><a href="../classes/fCache.html">\fCache</a></code><p>An fCache object to store session values in</p></div>
+<div class="subelement argument">
+<h4>$key_prefix</h4>
+<code>string</code><p>A prefix to add to all session IDs before storing them in the cache</p></div>
+</div></div>
+</div>
+<a id="method_setLength"></a><div class="element clickable method public method_setLength" data-toggle="collapse" data-target=".method_setLength .collapse">
+<h2>Sets the minimum length of a session - PHP might not clean up the session data right away once this timespan has elapsed</h2>
+<pre>setLength(string | integer $normal_timespan, string | integer $persistent_timespan) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please be sure to set a custom session path via ::setPath() to ensure
+another site on the server does not garbage collect the session files
+from this site!</p>
+
+<p>Both of the timespan can accept either a integer timespan in seconds,
+or an english description of a timespan (e.g. <code>'30 minutes'</code>, <code>'1 hour'</code>,
+<code>'1 day 2 hours'</code>).</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$normal_timespan</h4>
+<code>string</code><code>integer</code><p>The normal, session-based cookie, length for the session</p>
+</div>
+<div class="subelement argument">
+<h4>$persistent_timespan</h4>
+<code>string</code><code>integer</code><p>The persistent, timed-based cookie, length for the session - this is enabled by calling ::enabledPersistence() during login</p>
+</div>
+</div></div>
+</div>
+<a id="method_setPath"></a><div class="element clickable method public method_setPath" data-toggle="collapse" data-target=".method_setPath .collapse">
+<h2>Sets the path to store session files in</h2>
+<pre>setPath(string | <a href="../classes/fDirectory.html">\fDirectory</a> $directory) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method should always be called with a non-standard directory
+whenever ::setLength() is called to ensure that another site on the
+server does not garbage collect the session files for this site.</p>
+
+<p>Standard session directories usually include <code>/tmp</code> and <code>/var/tmp</code>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$directory</h4>
+<code>string</code><code><a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to store session files in</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fSession.html">\fSession</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fSession.html">\fSession</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_backend"> </a><div class="element clickable property private property_backend" data-toggle="collapse" data-target=".property_backend .collapse">
+<h2>The fCache backend to use for the session</h2>
+<pre>$backend : <a href="../classes/fCache.html">\fCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_key_prefix"> </a><div class="element clickable property private property_key_prefix" data-toggle="collapse" data-target=".property_key_prefix .collapse">
+<h2>The key prefix to use when saving the session to an fCache</h2>
+<pre>$key_prefix : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_normal_timespan"> </a><div class="element clickable property private property_normal_timespan" data-toggle="collapse" data-target=".property_normal_timespan .collapse">
+<h2>The length for a normal session</h2>
+<pre>$normal_timespan : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_old_session_module_name"> </a><div class="element clickable property private property_old_session_module_name" data-toggle="collapse" data-target=".property_old_session_module_name .collapse">
+<h2>The name of the old session module to revent to when fSession is closed</h2>
+<pre>$old_session_module_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_open"> </a><div class="element clickable property private property_open" data-toggle="collapse" data-target=".property_open .collapse">
+<h2>If the session is open</h2>
+<pre>$open : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_persistent_timespan"> </a><div class="element clickable property private property_persistent_timespan" data-toggle="collapse" data-target=".property_persistent_timespan .collapse">
+<h2>The length for a persistent session cookie - one that survives browser restarts</h2>
+<pre>$persistent_timespan : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_regenerated"> </a><div class="element clickable property private property_regenerated" data-toggle="collapse" data-target=".property_regenerated .collapse">
+<h2>If the session ID was regenerated during this script</h2>
+<pre>$regenerated : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_add"> </a><div class="element clickable constant  constant_add" data-toggle="collapse" data-target=".constant_add .collapse">
+<h2>add</h2>
+<pre>add </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_clear"> </a><div class="element clickable constant  constant_clear" data-toggle="collapse" data-target=".constant_clear .collapse">
+<h2>clear</h2>
+<pre>clear </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_close"> </a><div class="element clickable constant  constant_close" data-toggle="collapse" data-target=".constant_close .collapse">
+<h2>close</h2>
+<pre>close </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_closeCache"> </a><div class="element clickable constant  constant_closeCache" data-toggle="collapse" data-target=".constant_closeCache .collapse">
+<h2>closeCache</h2>
+<pre>closeCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_delete"> </a><div class="element clickable constant  constant_delete" data-toggle="collapse" data-target=".constant_delete .collapse">
+<h2>delete</h2>
+<pre>delete </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_destroy"> </a><div class="element clickable constant  constant_destroy" data-toggle="collapse" data-target=".constant_destroy .collapse">
+<h2>destroy</h2>
+<pre>destroy </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_destroyCache"> </a><div class="element clickable constant  constant_destroyCache" data-toggle="collapse" data-target=".constant_destroyCache .collapse">
+<h2>destroyCache</h2>
+<pre>destroyCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enablePersistence"> </a><div class="element clickable constant  constant_enablePersistence" data-toggle="collapse" data-target=".constant_enablePersistence .collapse">
+<h2>enablePersistence</h2>
+<pre>enablePersistence </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_gcCache"> </a><div class="element clickable constant  constant_gcCache" data-toggle="collapse" data-target=".constant_gcCache .collapse">
+<h2>gcCache</h2>
+<pre>gcCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_get"> </a><div class="element clickable constant  constant_get" data-toggle="collapse" data-target=".constant_get .collapse">
+<h2>get</h2>
+<pre>get </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ignoreSubdomain"> </a><div class="element clickable constant  constant_ignoreSubdomain" data-toggle="collapse" data-target=".constant_ignoreSubdomain .collapse">
+<h2>ignoreSubdomain</h2>
+<pre>ignoreSubdomain </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_open"> </a><div class="element clickable constant  constant_open" data-toggle="collapse" data-target=".constant_open .collapse">
+<h2>open</h2>
+<pre>open </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_openCache"> </a><div class="element clickable constant  constant_openCache" data-toggle="collapse" data-target=".constant_openCache .collapse">
+<h2>openCache</h2>
+<pre>openCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_readCache"> </a><div class="element clickable constant  constant_readCache" data-toggle="collapse" data-target=".constant_readCache .collapse">
+<h2>readCache</h2>
+<pre>readCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_regenerateID"> </a><div class="element clickable constant  constant_regenerateID" data-toggle="collapse" data-target=".constant_regenerateID .collapse">
+<h2>regenerateID</h2>
+<pre>regenerateID </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_set"> </a><div class="element clickable constant  constant_set" data-toggle="collapse" data-target=".constant_set .collapse">
+<h2>set</h2>
+<pre>set </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setBackend"> </a><div class="element clickable constant  constant_setBackend" data-toggle="collapse" data-target=".constant_setBackend .collapse">
+<h2>setBackend</h2>
+<pre>setBackend </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setLength"> </a><div class="element clickable constant  constant_setLength" data-toggle="collapse" data-target=".constant_setLength .collapse">
+<h2>setLength</h2>
+<pre>setLength </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setPath"> </a><div class="element clickable constant  constant_setPath" data-toggle="collapse" data-target=".constant_setPath .collapse">
+<h2>setPath</h2>
+<pre>setPath </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_writeCache"> </a><div class="element clickable constant  constant_writeCache" data-toggle="collapse" data-target=".constant_writeCache .collapse">
+<h2>writeCache</h2>
+<pre>writeCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

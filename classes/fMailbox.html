@@ -1,0 +1,842 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fMailbox</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Configures the connection to the server"><span class="description">Configures the connection to the server</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___destruct" title="__destruct :: Disconnects from the server"><span class="description">Disconnects from the server</span><pre>__destruct()</pre></a></li>
+<li class="method public "><a href="#method_addSMIMEPair" title="addSMIMEPair :: Adds an S/MIME certificate, or certificate + private key pair for verification and decryption of S/MIME messages"><span class="description">Adds an S/MIME certificate, or certificate + private key pair for verification and decryption of S/MIME messages</span><pre>addSMIMEPair()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close :: Closes the connection to the server"><span class="description">Closes the connection to the server</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_deleteMessages" title="deleteMessages :: Deletes one or more messages from the server"><span class="description">Deletes one or more messages from the server</span><pre>deleteMessages()</pre></a></li>
+<li class="method public "><a href="#method_enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
+<li class="method public "><a href="#method_fetchMessage" title="fetchMessage :: Retrieves a single message from the server"><span class="description">Retrieves a single message from the server</span><pre>fetchMessage()</pre></a></li>
+<li class="method public "><a href="#method_listMessages" title="listMessages :: Gets a list of messages from the server"><span class="description">Gets a list of messages from the server</span><pre>listMessages()</pre></a></li>
+<li class="method public "><a href="#method_parseMessage" title="parseMessage :: Parses a MIME message into an associative array of information"><span class="description">Parses a MIME message into an associative array of information</span><pre>parseMessage()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_cleanDate" title="cleanDate :: Takes a date, removes comments and cleans up some common formatting inconsistencies"><span class="description">Takes a date, removes comments and cleans up some common formatting inconsistencies</span><pre>cleanDate()</pre></a></li>
+<li class="method private "><a href="#method_connect" title="connect :: Connects to the server"><span class="description">Connects to the server</span><pre>connect()</pre></a></li>
+<li class="method private "><a href="#method_decodeHeader" title="decodeHeader :: Decodes encoded-word headers of any encoding into raw UTF-8"><span class="description">Decodes encoded-word headers of any encoding into raw UTF-8</span><pre>decodeHeader()</pre></a></li>
+<li class="method private "><a href="#method_handlePart" title="handlePart :: Handles an individual part of a multipart message"><span class="description">Handles an individual part of a multipart message</span><pre>handlePart()</pre></a></li>
+<li class="method private "><a href="#method_handleSMIMEDecryption" title="handleSMIMEDecryption :: Tries to decrypt an S/MIME message using a private key"><span class="description">Tries to decrypt an S/MIME message using a private key</span><pre>handleSMIMEDecryption()</pre></a></li>
+<li class="method private "><a href="#method_handleSMIMEVerification" title="handleSMIMEVerification :: Takes a message with an S/MIME signature and verifies it if possible"><span class="description">Takes a message with an S/MIME signature and verifies it if possible</span><pre>handleSMIMEVerification()</pre></a></li>
+<li class="method private "><a href="#method_iconv" title="iconv :: This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value."><span class="description">This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</span><pre>iconv()</pre></a></li>
+<li class="method private "><a href="#method_joinEmails" title="joinEmails :: Joins parsed emails into a comma-delimited string"><span class="description">Joins parsed emails into a comma-delimited string</span><pre>joinEmails()</pre></a></li>
+<li class="method private "><a href="#method_parseEmail" title="parseEmail :: Parses a string representation of an email into the persona, mailbox and host parts"><span class="description">Parses a string representation of an email into the persona, mailbox and host parts</span><pre>parseEmail()</pre></a></li>
+<li class="method private "><a href="#method_parseHeaders" title="parseHeaders :: Parses full email headers into an associative array"><span class="description">Parses full email headers into an associative array</span><pre>parseHeaders()</pre></a></li>
+<li class="method private "><a href="#method_parseResponse" title="parseResponse :: Takes a response from an IMAP command and parses it into a
+multi-dimensional array"><span class="description">Takes a response from an IMAP command and parses it into a
+multi-dimensional array</span><pre>parseResponse()</pre></a></li>
+<li class="method private "><a href="#method_parseStructure" title="parseStructure :: Takes the raw contents of a MIME message and creates an array that
+describes the structure of the message"><span class="description">Takes the raw contents of a MIME message and creates an array that
+describes the structure of the message</span><pre>parseStructure()</pre></a></li>
+<li class="method private "><a href="#method_read" title="read :: Reads responses from the server"><span class="description">Reads responses from the server</span><pre>read()</pre></a></li>
+<li class="method private "><a href="#method_unfoldAssociativeArray" title="unfoldAssociativeArray :: Takes an associative array and unfolds the keys and values so that the
+result in an integer-indexed array of `0 =&gt; key1, 1 =&gt; value1, 2 =&gt; key2,
+3 =&gt; value2, ."><span class="description">Takes an associative array and unfolds the keys and values so that the
+result in an integer-indexed array of `0 =&gt; key1, 1 =&gt; value1, 2 =&gt; key2,
+3 =&gt; value2, .</span><pre>unfoldAssociativeArray()</pre></a></li>
+<li class="method private "><a href="#method_write" title="write :: Sends commands to the IMAP or POP3 server"><span class="description">Sends commands to the IMAP or POP3 server</span><pre>write()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_command_num" title="$command_num :: A counter to use for generating command keys"><span class="description">A counter to use for generating command keys</span><pre>$command_num</pre></a></li>
+<li class="property private "><a href="#property_connection" title="$connection :: The connection resource"><span class="description">The connection resource</span><pre>$connection</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug :: If debugging has been enabled"><span class="description">If debugging has been enabled</span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_host" title="$host :: The server hostname or IP address"><span class="description">The server hostname or IP address</span><pre>$host</pre></a></li>
+<li class="property private "><a href="#property_password" title="$password :: The password for the account"><span class="description">The password for the account</span><pre>$password</pre></a></li>
+<li class="property private "><a href="#property_port" title="$port :: The port for the server"><span class="description">The port for the server</span><pre>$port</pre></a></li>
+<li class="property private "><a href="#property_secure" title="$secure :: If the connection to the server should be secure"><span class="description">If the connection to the server should be secure</span><pre>$secure</pre></a></li>
+<li class="property private "><a href="#property_smime_pairs" title="$smime_pairs :: S/MIME certificates and private keys for verification and decryption"><span class="description">S/MIME certificates and private keys for verification and decryption</span><pre>$smime_pairs</pre></a></li>
+<li class="property private "><a href="#property_timeout" title="$timeout :: The timeout for the connection"><span class="description">The timeout for the connection</span><pre>$timeout</pre></a></li>
+<li class="property private "><a href="#property_type" title="$type :: The type of mailbox, `'imap'` or `'pop3'`"><span class="description">The type of mailbox, `'imap'` or `'pop3'`</span><pre>$type</pre></a></li>
+<li class="property private "><a href="#property_username" title="$username :: The username for the account"><span class="description">The username for the account</span><pre>$username</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_addSMIMEPair" title="addSMIMEPair :: "><span class="description">addSMIMEPair</span><pre>addSMIMEPair</pre></a></li>
+<li class="constant  "><a href="#constant_parseMessage" title="parseMessage :: "><span class="description">parseMessage</span><pre>parseMessage</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fMailbox"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fMailbox.html">fMailbox</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Retrieves and deletes messages from a email account via IMAP or POP3</p>
+<div class="details">
+<div class="long_description"><p>All headers, text and html content returned by this class are encoded in
+UTF-8. Please see http://flourishlib.com/docs/UTF-8 for more information.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2010-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fMailbox">http://flourishlib.com/fMailbox</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b14</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added a workaround for iconv having issues in MAMP 1.9.4+ [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed handling of headers in relation to encoded-words being embedded inside of quoted strings [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Enhanced the error checking in ::write() [wb, 2011-06-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Added code to work around PHP bug #42682 (http://bugs.php.net/bug.php?id=42682) where `stream_select()` doesn't work on 64bit machines from PHP 5.2.0 to 5.2.5, improved connectivity error handling and timeouts while reading data [wb, 2011-01-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed ::parseMessage() to properly handle a header format edge case and properly set the `text` and `html` keys even when the email has an explicit `Content-disposition: inline` header [wb, 2010-11-25]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed a bug in ::parseMessage() that could cause HTML alternate content to be included in the `inline` content array instead of the `html` element [wb, 2010-09-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed ::parseMessage() to be able to handle non-text/non-html multipart parts that do not have a `Content-disposition` header [wb, 2010-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed a typo in ::read() [wb, 2010-09-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed a typo from 1.0.0b4 [wb, 2010-07-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixes for increased compatibility with various IMAP and POP3 servers, hacked around a bug in PHP 5.3 on Windows [wb, 2010-06-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Added code to handle emails without an explicit `Content-type` header [wb, 2010-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added missing static method callback constants [wb, 2010-05-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Added the missing ::enableDebugging() [wb, 2010-05-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2010-05-05]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Configures the connection to the server</h2>
+<pre>__construct(string $type, string $host, string $username, string $password, integer $port, boolean $secure, integer $timeout) : <a href="../classes/fMailbox.html">\fMailbox</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that the GMail POP3 server does not act like other POP3
+servers and the GMail IMAP server should be used instead. GMail POP3 only
+allows retrieving a message once - during future connections the email
+in question will no longer be available.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of mailbox, <code>'pop3'</code> or <code>'imap'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$host</h4>
+<code>string</code><p>The server hostname or IP address</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>The user to log in as</p></div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The user's password</p>
+</div>
+<div class="subelement argument">
+<h4>$port</h4>
+<code>integer</code><p>The port to connect via - only required if non-standard</p>
+</div>
+<div class="subelement argument">
+<h4>$secure</h4>
+<code>boolean</code><p>If SSL should be used for the connection - this requires the <code>openssl</code> extension</p>
+</div>
+<div class="subelement argument">
+<h4>$timeout</h4>
+<code>integer</code><p>The timeout to use when connecting</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fMailbox.html">\fMailbox</a></code></div>
+</div></div>
+</div>
+<a id="method___destruct"></a><div class="element clickable method public method___destruct" data-toggle="collapse" data-target=".method___destruct .collapse">
+<h2>Disconnects from the server</h2>
+<pre>__destruct() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_addSMIMEPair"></a><div class="element clickable method public method_addSMIMEPair" data-toggle="collapse" data-target=".method_addSMIMEPair .collapse">
+<h2>Adds an S/MIME certificate, or certificate + private key pair for verification and decryption of S/MIME messages</h2>
+<pre>addSMIMEPair(string $email_address, <a href="../classes/fFile.html">\fFile</a> | string $certificate_file, <a href="../classes/fFile.html">\fFile</a> $private_key_file, string $private_key_password) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$email_address</h4>
+<code>string</code><p>The email address the certificate or private key is for</p></div>
+<div class="subelement argument">
+<h4>$certificate_file</h4>
+<code><a href="../classes/fFile.html">\fFile</a></code><code>string</code><p>The file the S/MIME certificate is stored in - required for verification and decryption</p>
+</div>
+<div class="subelement argument">
+<h4>$private_key_file</h4>
+<code><a href="../classes/fFile.html">\fFile</a></code><p>The file the S/MIME private key is stored in - required for decryption only</p>
+</div>
+<div class="subelement argument">
+<h4>$private_key_password</h4>
+<code>string</code><p>The password for the private key</p></div>
+</div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Closes the connection to the server</h2>
+<pre>close() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_deleteMessages"></a><div class="element clickable method public method_deleteMessages" data-toggle="collapse" data-target=".method_deleteMessages .collapse">
+<h2>Deletes one or more messages from the server</h2>
+<pre>deleteMessages(integer | array $uid) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Passing more than one UID at a time is more efficient for IMAP mailboxes,
+whereas POP3 mailboxes will see no difference in performance.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><code>array</code><p>The UID(s) of the message(s) to delete</p>
+</div>
+</div></div>
+</div>
+<a id="method_enableDebugging"></a><div class="element clickable method public method_enableDebugging" data-toggle="collapse" data-target=".method_enableDebugging .collapse">
+<h2>Sets if debug messages should be shown</h2>
+<pre>enableDebugging(boolean $flag) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flag</h4>
+<code>boolean</code><p>If debugging messages should be shown</p></div>
+</div></div>
+</div>
+<a id="method_fetchMessage"></a><div class="element clickable method public method_fetchMessage" data-toggle="collapse" data-target=".method_fetchMessage .collapse">
+<h2>Retrieves a single message from the server</h2>
+<pre>fetchMessage(integer $uid, boolean $convert_newlines) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The output includes the following keys:</p>
+
+<ul>
+<li><code>'uid'</code>: The UID of the message</li>
+<li><code>'received'</code>: The date the message was received by the server</li>
+<li><code>'headers'</code>: An associative array of mail headers, the keys are the header names, in lowercase</li>
+</ul>
+
+<p>And one or more of the following:</p>
+
+<ul>
+<li><code>'text'</code>: The plaintext body</li>
+<li><code>'html'</code>: The HTML body</li>
+<li><code>'attachment'</code>: An array of attachments, each containing:
+
+<ul>
+<li><code>'filename'</code>: The name of the file</li>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'inline'</code>: An array of inline files, each containing:
+
+<ul>
+<li><code>'filename'</code>: The name of the file</li>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'related'</code>: An associative array of related files, such as embedded images, with the key <code>'cid:{content-id}'</code> and an array value containing:
+
+<ul>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'verified'</code>: If the message contents were verified via an S/MIME certificate - if not verified the smime.p7s will be listed as an attachment</li>
+<li><code>'decrypted'</code>: If the message contents were decrypted via an S/MIME private key - if not decrypted the smime.p7m will be listed as an attachment</li>
+</ul>
+
+<p>All values in <code>headers</code>, <code>text</code> and <code>body</code> will have been decoded to
+UTF-8. Files in the <code>attachment</code>, <code>inline</code> and <code>related</code> array will all
+retain their original encodings.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$uid</h4>
+<code>integer</code><p>The UID of the message to retrieve</p></div>
+<div class="subelement argument">
+<h4>$convert_newlines</h4>
+<code>boolean</code><p>If <code>\r\n</code> should be converted to <code>\n</code> in the <code>text</code> and <code>html</code> parts the message</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parsed email message - see method description for details</div>
+</div></div>
+</div>
+<a id="method_listMessages"></a><div class="element clickable method public method_listMessages" data-toggle="collapse" data-target=".method_listMessages .collapse">
+<h2>Gets a list of messages from the server</h2>
+<pre>listMessages(integer $limit, integer $page) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The structure of the returned array is:</p>
+
+<p>{{{
+array(
+    (integer) {uid} => array(
+        'uid'         => (integer) {a unique identifier for this message on this server},
+        'received'    => (string) {date message was received},
+        'size'        => (integer) {size of message in bytes},
+        'date'        => (string) {date message was sent},
+        'from'        => (string) {the from header value},
+        'subject'     => (string) {the message subject},
+        'message_id'  => (string) {optional - the message-id header value, should be globally unique},
+        'to'          => (string) {optional - the to header value},
+        'in_reply_to' => (string) {optional - the in-reply-to header value}
+    ), ...
+)
+}}}</p>
+
+<p>All values will have been decoded to UTF-8.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$limit</h4>
+<code>integer</code><p>The number of messages to retrieve</p></div>
+<div class="subelement argument">
+<h4>$page</h4>
+<code>integer</code><p>The page of messages to retrieve</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>A list of messages on the server - see method description for details</div>
+</div></div>
+</div>
+<a id="method_parseMessage"></a><div class="element clickable method public method_parseMessage" data-toggle="collapse" data-target=".method_parseMessage .collapse">
+<h2>Parses a MIME message into an associative array of information</h2>
+<pre>parseMessage(string $message, boolean $convert_newlines) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The output includes the following keys:</p>
+
+<ul>
+<li><code>'received'</code>: The date the message was received by the server</li>
+<li><code>'headers'</code>: An associative array of mail headers, the keys are the header names, in lowercase</li>
+</ul>
+
+<p>And one or more of the following:</p>
+
+<ul>
+<li><code>'text'</code>: The plaintext body</li>
+<li><code>'html'</code>: The HTML body</li>
+<li><code>'attachment'</code>: An array of attachments, each containing:
+
+<ul>
+<li><code>'filename'</code>: The name of the file</li>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'inline'</code>: An array of inline files, each containing:
+
+<ul>
+<li><code>'filename'</code>: The name of the file</li>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'related'</code>: An associative array of related files, such as embedded images, with the key <code>'cid:{content-id}'</code> and an array value containing:
+
+<ul>
+<li><code>'mimetype'</code>: The mimetype of the file</li>
+<li><code>'data'</code>: The raw contents of the file</li>
+</ul></li>
+<li><code>'verified'</code>: If the message contents were verified via an S/MIME certificate - if not verified the smime.p7s will be listed as an attachment</li>
+<li><code>'decrypted'</code>: If the message contents were decrypted via an S/MIME private key - if not decrypted the smime.p7m will be listed as an attachment</li>
+</ul>
+
+<p>All values in <code>headers</code>, <code>text</code> and <code>body</code> will have been decoded to
+UTF-8. Files in the <code>attachment</code>, <code>inline</code> and <code>related</code> array will all
+retain their original encodings.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The full source of the email message</p></div>
+<div class="subelement argument">
+<h4>$convert_newlines</h4>
+<code>boolean</code><p>If <code>\r\n</code> should be converted to <code>\n</code> in the <code>text</code> and <code>html</code> parts the message</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parsed email message - see method description for details</div>
+</div></div>
+</div>
+<a id="method_cleanDate"></a><div class="element clickable method private method_cleanDate" data-toggle="collapse" data-target=".method_cleanDate .collapse">
+<h2>Takes a date, removes comments and cleans up some common formatting inconsistencies</h2>
+<pre>cleanDate(string $date) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$date</h4>
+<code>string</code><p>The date to clean</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cleaned date</div>
+</div></div>
+</div>
+<a id="method_connect"></a><div class="element clickable method private method_connect" data-toggle="collapse" data-target=".method_connect .collapse">
+<h2>Connects to the server</h2>
+<pre>connect() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_decodeHeader"></a><div class="element clickable method private method_decodeHeader" data-toggle="collapse" data-target=".method_decodeHeader .collapse">
+<h2>Decodes encoded-word headers of any encoding into raw UTF-8</h2>
+<pre>decodeHeader(string $text) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>The header value to decode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The decoded UTF-8</div>
+</div></div>
+</div>
+<a id="method_handlePart"></a><div class="element clickable method private method_handlePart" data-toggle="collapse" data-target=".method_handlePart .collapse">
+<h2>Handles an individual part of a multipart message</h2>
+<pre>handlePart(array $info, array $structure) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$info</h4>
+<code>array</code><p>An array of information about the message</p></div>
+<div class="subelement argument">
+<h4>$structure</h4>
+<code>array</code><p>An array describing the structure of the message</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The modified $info array</div>
+</div></div>
+</div>
+<a id="method_handleSMIMEDecryption"></a><div class="element clickable method private method_handleSMIMEDecryption" data-toggle="collapse" data-target=".method_handleSMIMEDecryption .collapse">
+<h2>Tries to decrypt an S/MIME message using a private key</h2>
+<pre>handleSMIMEDecryption(array $info, array $structure, array $smime_pair) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$info</h4>
+<code>array</code><p>&$info The array of information about a message</p>
+</div>
+<div class="subelement argument">
+<h4>$structure</h4>
+<code>array</code><p>The structure of this part</p></div>
+<div class="subelement argument">
+<h4>$smime_pair</h4>
+<code>array</code><p>An associative array containing an S/MIME certificate, private key and password</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the message was decrypted</div>
+</div></div>
+</div>
+<a id="method_handleSMIMEVerification"></a><div class="element clickable method private method_handleSMIMEVerification" data-toggle="collapse" data-target=".method_handleSMIMEVerification .collapse">
+<h2>Takes a message with an S/MIME signature and verifies it if possible</h2>
+<pre>handleSMIMEVerification(array $info, array $structure, array $smime_pair) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$info</h4>
+<code>array</code><p>&$info The array of information about a message</p>
+</div>
+<div class="subelement argument">
+<h4>$structure</h4>
+<code>array</code>
+</div>
+<div class="subelement argument">
+<h4>$smime_pair</h4>
+<code>array</code><p>An associative array containing an S/MIME certificate file</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the message was verified</div>
+</div></div>
+</div>
+<a id="method_iconv"></a><div class="element clickable method private method_iconv" data-toggle="collapse" data-target=".method_iconv .collapse">
+<h2>This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</h2>
+<pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$in_charset</h4>
+<code>string</code><p>The incoming character encoding</p></div>
+<div class="subelement argument">
+<h4>$out_charset</h4>
+<code>string</code><p>The outgoing character encoding</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<a id="method_joinEmails"></a><div class="element clickable method private method_joinEmails" data-toggle="collapse" data-target=".method_joinEmails .collapse">
+<h2>Joins parsed emails into a comma-delimited string</h2>
+<pre>joinEmails(array $emails) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$emails</h4>
+<code>array</code><p>An array of emails split into personal, mailbox and host parts</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An comma-delimited list of emails</div>
+</div></div>
+</div>
+<a id="method_parseEmail"></a><div class="element clickable method private method_parseEmail" data-toggle="collapse" data-target=".method_parseEmail .collapse">
+<h2>Parses a string representation of an email into the persona, mailbox and host parts</h2>
+<pre>parseEmail(string $string) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The email string to parse</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array with the key `mailbox`, and possibly `host` and `personal`</div>
+</div></div>
+</div>
+<a id="method_parseHeaders"></a><div class="element clickable method private method_parseHeaders" data-toggle="collapse" data-target=".method_parseHeaders .collapse">
+<h2>Parses full email headers into an associative array</h2>
+<pre>parseHeaders(string $headers, string $filter) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>string</code><p>The header to parse</p></div>
+<div class="subelement argument">
+<h4>$filter</h4>
+<code>string</code><p>Remove any headers that match this</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parsed headers</div>
+</div></div>
+</div>
+<a id="method_parseResponse"></a><div class="element clickable method private method_parseResponse" data-toggle="collapse" data-target=".method_parseResponse .collapse">
+<h2>Takes a response from an IMAP command and parses it into a
+multi-dimensional array</h2>
+<pre>parseResponse(string $text, boolean $top_level) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>The IMAP command response</p></div>
+<div class="subelement argument">
+<h4>$top_level</h4>
+<code>boolean</code><p>If we are parsing the top level</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The parsed representation of the response text</div>
+</div></div>
+</div>
+<a id="method_parseStructure"></a><div class="element clickable method private method_parseStructure" data-toggle="collapse" data-target=".method_parseStructure .collapse">
+<h2>Takes the raw contents of a MIME message and creates an array that
+describes the structure of the message</h2>
+<pre>parseStructure(string $data, string $headers) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>string</code><p>The contents to get the structure of</p></div>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>string</code><p>The parsed headers for the message - if not present they will be extracted from the <code>$data</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The multi-dimensional, associative array containing the message structure</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method private method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Reads responses from the server</h2>
+<pre>read(integer | string $expect) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$expect</h4>
+<code>integer</code><code>string</code><p>The expected number of lines of response or a regex of the last line</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The lines of response from the server</div>
+</div></div>
+</div>
+<a id="method_unfoldAssociativeArray"></a><div class="element clickable method private method_unfoldAssociativeArray" data-toggle="collapse" data-target=".method_unfoldAssociativeArray .collapse">
+<h2>Takes an associative array and unfolds the keys and values so that the
+result in an integer-indexed array of `0 =&gt; key1, 1 =&gt; value1, 2 =&gt; key2,
+3 =&gt; value2, .</h2>
+<pre>unfoldAssociativeArray(array $array) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>..`.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>array</code><p>The array to unfold</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The unfolded array</div>
+</div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method private method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>Sends commands to the IMAP or POP3 server</h2>
+<pre>write(string $command, integer $expected) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$command</h4>
+<code>string</code><p>The command to send</p></div>
+<div class="subelement argument">
+<h4>$expected</h4>
+<code>integer</code><p>The number of lines or regex expected for a POP3 command</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The response from the server</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_command_num"> </a><div class="element clickable property private property_command_num" data-toggle="collapse" data-target=".property_command_num .collapse">
+<h2>A counter to use for generating command keys</h2>
+<pre>$command_num : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_connection"> </a><div class="element clickable property private property_connection" data-toggle="collapse" data-target=".property_connection .collapse">
+<h2>The connection resource</h2>
+<pre>$connection : resource</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse">
+<h2>If debugging has been enabled</h2>
+<pre>$debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_host"> </a><div class="element clickable property private property_host" data-toggle="collapse" data-target=".property_host .collapse">
+<h2>The server hostname or IP address</h2>
+<pre>$host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property private property_password" data-toggle="collapse" data-target=".property_password .collapse">
+<h2>The password for the account</h2>
+<pre>$password : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_port"> </a><div class="element clickable property private property_port" data-toggle="collapse" data-target=".property_port .collapse">
+<h2>The port for the server</h2>
+<pre>$port : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_secure"> </a><div class="element clickable property private property_secure" data-toggle="collapse" data-target=".property_secure .collapse">
+<h2>If the connection to the server should be secure</h2>
+<pre>$secure : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_smime_pairs"> </a><div class="element clickable property private property_smime_pairs" data-toggle="collapse" data-target=".property_smime_pairs .collapse">
+<h2>S/MIME certificates and private keys for verification and decryption</h2>
+<pre>$smime_pairs : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_timeout"> </a><div class="element clickable property private property_timeout" data-toggle="collapse" data-target=".property_timeout .collapse">
+<h2>The timeout for the connection</h2>
+<pre>$timeout : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property private property_type" data-toggle="collapse" data-target=".property_type .collapse">
+<h2>The type of mailbox, `'imap'` or `'pop3'`</h2>
+<pre>$type : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_username"> </a><div class="element clickable property private property_username" data-toggle="collapse" data-target=".property_username .collapse">
+<h2>The username for the account</h2>
+<pre>$username : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addSMIMEPair"> </a><div class="element clickable constant  constant_addSMIMEPair" data-toggle="collapse" data-target=".constant_addSMIMEPair .collapse">
+<h2>addSMIMEPair</h2>
+<pre>addSMIMEPair </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_parseMessage"> </a><div class="element clickable constant  constant_parseMessage" data-toggle="collapse" data-target=".constant_parseMessage .collapse">
+<h2>parseMessage</h2>
+<pre>parseMessage </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

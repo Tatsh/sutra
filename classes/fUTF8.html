@@ -1,0 +1,1145 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fUTF8</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_chr" title="chr :: Converts a unicode value into a UTF-8 character"><span class="description">Converts a unicode value into a UTF-8 character</span><pre>chr()</pre></a></li>
+<li class="method public "><a href="#method_clean" title="clean :: Removes any invalid UTF-8 characters from a string or array of strings"><span class="description">Removes any invalid UTF-8 characters from a string or array of strings</span><pre>clean()</pre></a></li>
+<li class="method public "><a href="#method_cmp" title="cmp :: Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>cmp()</pre></a></li>
+<li class="method public "><a href="#method_explode" title="explode :: Explodes a string on a delimiter"><span class="description">Explodes a string on a delimiter</span><pre>explode()</pre></a></li>
+<li class="method public "><a href="#method_icmp" title="icmp :: Compares strings in a case-insensitive manner, with the resulting order having characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings in a case-insensitive manner, with the resulting order having characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>icmp()</pre></a></li>
+<li class="method public "><a href="#method_inatcmp" title="inatcmp :: Compares strings using a natural order algorithm in a case-insensitive manner, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings using a natural order algorithm in a case-insensitive manner, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>inatcmp()</pre></a></li>
+<li class="method public "><a href="#method_ipos" title="ipos :: Finds the first position (in characters) of the search value in the string - case is ignored when doing performing a match"><span class="description">Finds the first position (in characters) of the search value in the string - case is ignored when doing performing a match</span><pre>ipos()</pre></a></li>
+<li class="method public "><a href="#method_ireplace" title="ireplace :: Replaces matching parts of the string, with matches being done in a a case-insensitive manner"><span class="description">Replaces matching parts of the string, with matches being done in a a case-insensitive manner</span><pre>ireplace()</pre></a></li>
+<li class="method public "><a href="#method_irpos" title="irpos :: Finds the last position (in characters) of the search value in the string - case is ignored when doing performing a match"><span class="description">Finds the last position (in characters) of the search value in the string - case is ignored when doing performing a match</span><pre>irpos()</pre></a></li>
+<li class="method public "><a href="#method_istr" title="istr :: Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack"><span class="description">Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</span><pre>istr()</pre></a></li>
+<li class="method public "><a href="#method_len" title="len :: Determines the length (in characters) of a string"><span class="description">Determines the length (in characters) of a string</span><pre>len()</pre></a></li>
+<li class="method public "><a href="#method_lower" title="lower :: Converts all uppercase characters to lowercase"><span class="description">Converts all uppercase characters to lowercase</span><pre>lower()</pre></a></li>
+<li class="method public "><a href="#method_ltrim" title="ltrim :: Trims whitespace, or any specified characters, from the beginning of a string"><span class="description">Trims whitespace, or any specified characters, from the beginning of a string</span><pre>ltrim()</pre></a></li>
+<li class="method public "><a href="#method_natcmp" title="natcmp :: Compares strings using a natural order algorithm, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters"><span class="description">Compares strings using a natural order algorithm, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</span><pre>natcmp()</pre></a></li>
+<li class="method public "><a href="#method_ord" title="ord :: Converts a UTF-8 character to a unicode code point"><span class="description">Converts a UTF-8 character to a unicode code point</span><pre>ord()</pre></a></li>
+<li class="method public "><a href="#method_pad" title="pad :: Pads a string to the number of characters specified"><span class="description">Pads a string to the number of characters specified</span><pre>pad()</pre></a></li>
+<li class="method public "><a href="#method_pos" title="pos :: Finds the first position (in characters) of the search value in the string"><span class="description">Finds the first position (in characters) of the search value in the string</span><pre>pos()</pre></a></li>
+<li class="method public "><a href="#method_replace" title="replace :: Replaces matching parts of the string"><span class="description">Replaces matching parts of the string</span><pre>replace()</pre></a></li>
+<li class="method public "><a href="#method_rev" title="rev :: Reverses a string"><span class="description">Reverses a string</span><pre>rev()</pre></a></li>
+<li class="method public "><a href="#method_rpos" title="rpos :: Finds the last position (in characters) of the search value in the string"><span class="description">Finds the last position (in characters) of the search value in the string</span><pre>rpos()</pre></a></li>
+<li class="method public "><a href="#method_rtrim" title="rtrim :: Trims whitespace, or any specified characters, from the end of a string"><span class="description">Trims whitespace, or any specified characters, from the end of a string</span><pre>rtrim()</pre></a></li>
+<li class="method public "><a href="#method_str" title="str :: Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack"><span class="description">Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</span><pre>str()</pre></a></li>
+<li class="method public "><a href="#method_sub" title="sub :: Extracts part of a string"><span class="description">Extracts part of a string</span><pre>sub()</pre></a></li>
+<li class="method public "><a href="#method_trim" title="trim :: Trims whitespace, or any specified characters, from the beginning and end of a string"><span class="description">Trims whitespace, or any specified characters, from the beginning and end of a string</span><pre>trim()</pre></a></li>
+<li class="method public "><a href="#method_ucfirst" title="ucfirst :: Converts the first character of the string to uppercase."><span class="description">Converts the first character of the string to uppercase.</span><pre>ucfirst()</pre></a></li>
+<li class="method public "><a href="#method_ucwords" title="ucwords :: Converts the first character of every word to uppercase"><span class="description">Converts the first character of every word to uppercase</span><pre>ucwords()</pre></a></li>
+<li class="method public "><a href="#method_upper" title="upper :: Converts all lowercase characters to uppercase"><span class="description">Converts all lowercase characters to uppercase</span><pre>upper()</pre></a></li>
+<li class="method public "><a href="#method_wordwrap" title="wordwrap :: Wraps a string to a specific character width"><span class="description">Wraps a string to a specific character width</span><pre>wordwrap()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_checkMbString" title="checkMbString :: Checks to see if the [http://php.net/mbstring mbstring] extension is available"><span class="description">Checks to see if the [http://php.net/mbstring mbstring] extension is available</span><pre>checkMbString()</pre></a></li>
+<li class="method private "><a href="#method_convertOffsetToBytes" title="convertOffsetToBytes :: Converts an offset in characters to an offset in bytes to that we can use the built-in functions for some operations"><span class="description">Converts an offset in characters to an offset in bytes to that we can use the built-in functions for some operations</span><pre>convertOffsetToBytes()</pre></a></li>
+<li class="method private "><a href="#method_detect" title="detect :: Detects if a UTF-8 string contains any non-ASCII characters"><span class="description">Detects if a UTF-8 string contains any non-ASCII characters</span><pre>detect()</pre></a></li>
+<li class="method private "><a href="#method_iconv" title="iconv :: This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value."><span class="description">This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</span><pre>iconv()</pre></a></li>
+<li class="method private "><a href="#method_ucwordsCallback" title="ucwordsCallback :: Handles converting a character to uppercase for ::ucwords()"><span class="description">Handles converting a character to uppercase for ::ucwords()</span><pre>ucwordsCallback()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_can_ignore_invalid" title="$can_ignore_invalid :: Depending how things are compiled, NetBSD and Solaris don't support //IGNORE in iconv()"><span class="description">Depending how things are compiled, NetBSD and Solaris don't support //IGNORE in iconv()</span><pre>$can_ignore_invalid</pre></a></li>
+<li class="property private "><a href="#property_lower_to_upper" title="$lower_to_upper :: All lowercase UTF-8 characters mapped to uppercase characters"><span class="description">All lowercase UTF-8 characters mapped to uppercase characters</span><pre>$lower_to_upper</pre></a></li>
+<li class="property private "><a href="#property_mb_lower_to_upper_fix" title="$mb_lower_to_upper_fix :: All lowercase UTF-8 characters not properly handled by [http://php.net/mb_strtoupper mb_strtoupper()] mapped to uppercase characters"><span class="description">All lowercase UTF-8 characters not properly handled by [http://php.net/mb_strtoupper mb_strtoupper()] mapped to uppercase characters</span><pre>$mb_lower_to_upper_fix</pre></a></li>
+<li class="property private "><a href="#property_mb_upper_to_lower_fix" title="$mb_upper_to_lower_fix :: All uppercase UTF-8 characters not properly handled by [http://php.net/mb_strtolower mb_strtolower()] mapped to lowercase characters"><span class="description">All uppercase UTF-8 characters not properly handled by [http://php.net/mb_strtolower mb_strtolower()] mapped to lowercase characters</span><pre>$mb_upper_to_lower_fix</pre></a></li>
+<li class="property private "><a href="#property_mbstring_available" title="$mbstring_available :: If the [http://php.net/mbstring mbstring] extension is available"><span class="description">If the [http://php.net/mbstring mbstring] extension is available</span><pre>$mbstring_available</pre></a></li>
+<li class="property private "><a href="#property_upper_to_lower" title="$upper_to_lower :: All uppercase UTF-8 characters mapped to lowercase characters"><span class="description">All uppercase UTF-8 characters mapped to lowercase characters</span><pre>$upper_to_lower</pre></a></li>
+<li class="property private "><a href="#property_utf8_to_ascii" title="$utf8_to_ascii :: A mapping of all ASCII-based latin characters, puntuation, symbols and number forms to ASCII."><span class="description">A mapping of all ASCII-based latin characters, puntuation, symbols and number forms to ASCII.</span><pre>$utf8_to_ascii</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_ascii" title="ascii :: "><span class="description">ascii</span><pre>ascii</pre></a></li>
+<li class="constant  "><a href="#constant_chr" title="chr :: "><span class="description">chr</span><pre>chr</pre></a></li>
+<li class="constant  "><a href="#constant_clean" title="clean :: "><span class="description">clean</span><pre>clean</pre></a></li>
+<li class="constant  "><a href="#constant_cmp" title="cmp :: "><span class="description">cmp</span><pre>cmp</pre></a></li>
+<li class="constant  "><a href="#constant_explode" title="explode :: "><span class="description">explode</span><pre>explode</pre></a></li>
+<li class="constant  "><a href="#constant_icmp" title="icmp :: "><span class="description">icmp</span><pre>icmp</pre></a></li>
+<li class="constant  "><a href="#constant_inatcmp" title="inatcmp :: "><span class="description">inatcmp</span><pre>inatcmp</pre></a></li>
+<li class="constant  "><a href="#constant_ipos" title="ipos :: "><span class="description">ipos</span><pre>ipos</pre></a></li>
+<li class="constant  "><a href="#constant_ireplace" title="ireplace :: "><span class="description">ireplace</span><pre>ireplace</pre></a></li>
+<li class="constant  "><a href="#constant_irpos" title="irpos :: "><span class="description">irpos</span><pre>irpos</pre></a></li>
+<li class="constant  "><a href="#constant_istr" title="istr :: "><span class="description">istr</span><pre>istr</pre></a></li>
+<li class="constant  "><a href="#constant_len" title="len :: "><span class="description">len</span><pre>len</pre></a></li>
+<li class="constant  "><a href="#constant_lower" title="lower :: "><span class="description">lower</span><pre>lower</pre></a></li>
+<li class="constant  "><a href="#constant_ltrim" title="ltrim :: "><span class="description">ltrim</span><pre>ltrim</pre></a></li>
+<li class="constant  "><a href="#constant_natcmp" title="natcmp :: "><span class="description">natcmp</span><pre>natcmp</pre></a></li>
+<li class="constant  "><a href="#constant_ord" title="ord :: "><span class="description">ord</span><pre>ord</pre></a></li>
+<li class="constant  "><a href="#constant_pad" title="pad :: "><span class="description">pad</span><pre>pad</pre></a></li>
+<li class="constant  "><a href="#constant_pos" title="pos :: "><span class="description">pos</span><pre>pos</pre></a></li>
+<li class="constant  "><a href="#constant_replace" title="replace :: "><span class="description">replace</span><pre>replace</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_rev" title="rev :: "><span class="description">rev</span><pre>rev</pre></a></li>
+<li class="constant  "><a href="#constant_rpos" title="rpos :: "><span class="description">rpos</span><pre>rpos</pre></a></li>
+<li class="constant  "><a href="#constant_rtrim" title="rtrim :: "><span class="description">rtrim</span><pre>rtrim</pre></a></li>
+<li class="constant  "><a href="#constant_str" title="str :: "><span class="description">str</span><pre>str</pre></a></li>
+<li class="constant  "><a href="#constant_sub" title="sub :: "><span class="description">sub</span><pre>sub</pre></a></li>
+<li class="constant  "><a href="#constant_trim" title="trim :: "><span class="description">trim</span><pre>trim</pre></a></li>
+<li class="constant  "><a href="#constant_ucfirst" title="ucfirst :: "><span class="description">ucfirst</span><pre>ucfirst</pre></a></li>
+<li class="constant  "><a href="#constant_ucwords" title="ucwords :: "><span class="description">ucwords</span><pre>ucwords</pre></a></li>
+<li class="constant  "><a href="#constant_upper" title="upper :: "><span class="description">upper</span><pre>upper</pre></a></li>
+<li class="constant  "><a href="#constant_wordwrap" title="wordwrap :: "><span class="description">wordwrap</span><pre>wordwrap</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fUTF8"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fUTF8.html">fUTF8</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides string functions for UTF-8 strings</p>
+<div class="details">
+<div class="long_description"><p>This class is implemented to provide a UTF-8 version of almost every built-in
+PHP string function. For more information about UTF-8, please visit
+http://flourishlib.com/docs/UTF-8.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fUTF8">http://flourishlib.com/fUTF8</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b15</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed a bug with using IBM's iconv implementation on AIX [wb, 2011-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added a workaround for iconv having issues in MAMP 1.9.4+ [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Fixed notices from being thrown when invalid data is sent to ::clean() [wb, 2011-06-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed a variable name typo in ::sub() [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Updated the class to not using phpinfo() to determine the iconv implementation [wb, 2010-11-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed a bug with capitalizing a lowercase i resulting in a dotted upper-case I [wb, 2010-11-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Updated class to use fCore::startErrorCapture() instead of `error_reporting()` [wb, 2010-08-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Removed `e` flag from preg_replace() calls [wb, 2010-06-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Added the methods ::trim(), ::rtrim() and ::ltrim() [wb, 2010-05-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed ::clean() to work with PHP installs that use an iconv library that doesn't support //IGNORE [wb, 2010-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Changed ::ucwords() to also uppercase words right after various punctuation [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed a parameter name in ::rpos() from `$search` to `$needle` [wb, 2009-02-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug in ::explode() with newlines and zero-length delimiters [wb, 2009-02-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-06-01]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_chr"></a><div class="element clickable method public method_chr" data-toggle="collapse" data-target=".method_chr .collapse">
+<h2>Converts a unicode value into a UTF-8 character</h2>
+<pre>chr(mixed $unicode_code_point) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$unicode_code_point</h4>
+<code>mixed</code><p>The character to create, either the <code>U+hex</code> or decimal code point</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The UTF-8 character</div>
+</div></div>
+</div>
+<a id="method_clean"></a><div class="element clickable method public method_clean" data-toggle="collapse" data-target=".method_clean .collapse">
+<h2>Removes any invalid UTF-8 characters from a string or array of strings</h2>
+<pre>clean(array | string $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>array</code><code>string</code><p>The string or array of strings to clean</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cleaned string</div>
+</div></div>
+</div>
+<a id="method_cmp"></a><div class="element clickable method public method_cmp" data-toggle="collapse" data-target=".method_cmp .collapse">
+<h2>Compares strings, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
+<pre>cmp(string $str1, string $str2) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that this function sorts based on English language sorting
+rules only. Locale-sepcific sorting is done by
+[http://php.net/strcoll strcoll()], however there are technical
+limitations.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>< 0 if $str1 < $str2, 0 if they are equal, > 0 if $str1 > $str2</div>
+</div></div>
+</div>
+<a id="method_explode"></a><div class="element clickable method public method_explode" data-toggle="collapse" data-target=".method_explode .collapse">
+<h2>Explodes a string on a delimiter</h2>
+<pre>explode(string $string, string $delimiter) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no delimiter is provided, the string will be exploded with each
+characters being an element in the array.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to explode</p></div>
+<div class="subelement argument">
+<h4>$delimiter</h4>
+<code>string</code><p>The string to explode on. If <code>NULL</code> or <code>''</code> this method will return one character per array index.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The exploded string</div>
+</div></div>
+</div>
+<a id="method_icmp"></a><div class="element clickable method public method_icmp" data-toggle="collapse" data-target=".method_icmp .collapse">
+<h2>Compares strings in a case-insensitive manner, with the resulting order having characters that are based on ASCII letters placed after the relative ASCII characters</h2>
+<pre>icmp(string $str1, string $str2) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that this function sorts based on English language sorting
+rules only. Locale-sepcific sorting is done by
+[http://php.net/strcoll strcoll()], however there are technical
+limitations.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>< 0 if $str1 < $str2, 0 if they are equal, > 0 if $str1 > $str2</div>
+</div></div>
+</div>
+<a id="method_inatcmp"></a><div class="element clickable method public method_inatcmp" data-toggle="collapse" data-target=".method_inatcmp .collapse">
+<h2>Compares strings using a natural order algorithm in a case-insensitive manner, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
+<pre>inatcmp(string $str1, string $str2) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that this function sorts based on English language sorting
+rules only. Locale-sepcific sorting is done by
+[http://php.net/strcoll strcoll()], however there are technical
+limitations.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>`< 0` if `$str1 < $str2`, `0` if they are equal, `> 0` if `$str1 > $str2`</div>
+</div></div>
+</div>
+<a id="method_ipos"></a><div class="element clickable method public method_ipos" data-toggle="collapse" data-target=".method_ipos .collapse">
+<h2>Finds the first position (in characters) of the search value in the string - case is ignored when doing performing a match</h2>
+<pre>ipos(string $haystack, string $needle, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for. This match will be done in a case-insensitive manner.</p>
+</div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The integer character position of the first occurence of the needle or `FALSE` if no match</div>
+</div></div>
+</div>
+<a id="method_ireplace"></a><div class="element clickable method public method_ireplace" data-toggle="collapse" data-target=".method_ireplace .collapse">
+<h2>Replaces matching parts of the string, with matches being done in a a case-insensitive manner</h2>
+<pre>ireplace(string $string, mixed $search, mixed $replace) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If <code>$search</code> and <code>$replace</code> are both arrays and <code>$replace</code> is shorter,
+the extra <code>$search</code> string will be replaced with an empty string. If
+<code>$search</code> is an array and <code>$replace</code> is a string, all <code>$search</code> values
+will be replaced with the string specified.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to perform the replacements on</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>mixed</code><p>The string (or array of strings) to search for - see method description for details</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>mixed</code><p>The string (or array of strings) to replace with - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string with the specified replacements</div>
+</div></div>
+</div>
+<a id="method_irpos"></a><div class="element clickable method public method_irpos" data-toggle="collapse" data-target=".method_irpos .collapse">
+<h2>Finds the last position (in characters) of the search value in the string - case is ignored when doing performing a match</h2>
+<pre>irpos(string $haystack, string $needle, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for. This match will be done in a case-insensitive manner.</p>
+</div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from. A negative value will stop looking that many characters from the end of the string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The integer character position of the last occurence of the needle or `FALSE` if no match</div>
+</div></div>
+</div>
+<a id="method_istr"></a><div class="element clickable method public method_istr" data-toggle="collapse" data-target=".method_istr .collapse">
+<h2>Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</h2>
+<pre>istr(string $haystack, string $needle, boolean $before_needle) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Can optionally return the part of the haystack before the needle. Matching
+is done in a case-insensitive manner.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for. This match will be done in a case-insensitive manner.</p>
+</div>
+<div class="subelement argument">
+<h4>$before_needle</h4>
+<code>boolean</code><p>If a substring of the haystack before the needle should be returned instead of the substring from the needle to the end of the haystack</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The specified part of the haystack, or `FALSE` if the needle was not found</div>
+</div></div>
+</div>
+<a id="method_len"></a><div class="element clickable method public method_len" data-toggle="collapse" data-target=".method_len .collapse">
+<h2>Determines the length (in characters) of a string</h2>
+<pre>len(string $string) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to measure</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of characters in the string</div>
+</div></div>
+</div>
+<a id="method_lower"></a><div class="element clickable method public method_lower" data-toggle="collapse" data-target=".method_lower .collapse">
+<h2>Converts all uppercase characters to lowercase</h2>
+<pre>lower(string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string with all uppercase characters in lowercase</div>
+</div></div>
+</div>
+<a id="method_ltrim"></a><div class="element clickable method public method_ltrim" data-toggle="collapse" data-target=".method_ltrim .collapse">
+<h2>Trims whitespace, or any specified characters, from the beginning of a string</h2>
+<pre>ltrim(string $string, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to trim</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_natcmp"></a><div class="element clickable method public method_natcmp" data-toggle="collapse" data-target=".method_natcmp .collapse">
+<h2>Compares strings using a natural order algorithm, with the resulting order having latin characters that are based on ASCII letters placed after the relative ASCII characters</h2>
+<pre>natcmp(string $str1, string $str2) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that this function sorts based on English language sorting
+rules only. Locale-sepcific sorting is done by
+[http://php.net/strcoll strcoll()], however there are technical
+limitations.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$str1</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$str2</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>`< 0` if `$str1 < $str2`, `0` if they are equal, `> 0` if `$str1 > $str2`</div>
+</div></div>
+</div>
+<a id="method_ord"></a><div class="element clickable method public method_ord" data-toggle="collapse" data-target=".method_ord .collapse">
+<h2>Converts a UTF-8 character to a unicode code point</h2>
+<pre>ord(string $character) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$character</h4>
+<code>string</code><p>The character to decode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The U+hex unicode code point for the character</div>
+</div></div>
+</div>
+<a id="method_pad"></a><div class="element clickable method public method_pad" data-toggle="collapse" data-target=".method_pad .collapse">
+<h2>Pads a string to the number of characters specified</h2>
+<pre>pad(string $string, integer $pad_length, string $pad_string, string $pad_type) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to pad</p></div>
+<div class="subelement argument">
+<h4>$pad_length</h4>
+<code>integer</code><p>The character length to pad the string to</p></div>
+<div class="subelement argument">
+<h4>$pad_string</h4>
+<code>string</code><p>The string to pad the source string with</p></div>
+<div class="subelement argument">
+<h4>$pad_type</h4>
+<code>string</code><p>The type of padding to do: <code>'left'</code>, <code>'right'</code>, <code>'both'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string padded to the specified character width</div>
+</div></div>
+</div>
+<a id="method_pos"></a><div class="element clickable method public method_pos" data-toggle="collapse" data-target=".method_pos .collapse">
+<h2>Finds the first position (in characters) of the search value in the string</h2>
+<pre>pos(string $haystack, string $needle, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The integer character position of the first occurence of the needle or `FALSE` if no match</div>
+</div></div>
+</div>
+<a id="method_replace"></a><div class="element clickable method public method_replace" data-toggle="collapse" data-target=".method_replace .collapse">
+<h2>Replaces matching parts of the string</h2>
+<pre>replace(string $string, mixed $search, mixed $replace) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If <code>$search</code> and <code>$replace</code> are both arrays and <code>$replace</code> is shorter,
+the extra <code>$search</code> string will be replaced with an empty string. If
+<code>$search</code> is an array and <code>$replace</code> is a string, all <code>$search</code> values
+will be replaced with the string specified.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to perform the replacements on</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>mixed</code><p>The string (or array of strings) to search for - see method description for details</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>mixed</code><p>The string (or array of strings) to replace with - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string with the specified replacements</div>
+</div></div>
+</div>
+<a id="method_rev"></a><div class="element clickable method public method_rev" data-toggle="collapse" data-target=".method_rev .collapse">
+<h2>Reverses a string</h2>
+<pre>rev(string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to reverse</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The reversed string</div>
+</div></div>
+</div>
+<a id="method_rpos"></a><div class="element clickable method public method_rpos" data-toggle="collapse" data-target=".method_rpos .collapse">
+<h2>Finds the last position (in characters) of the search value in the string</h2>
+<pre>rpos(string $haystack, string $needle, integer $offset) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for.</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character position to start searching from. A negative value will stop looking that many characters from the end of the string</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The integer character position of the last occurence of the needle or `FALSE` if no match</div>
+</div></div>
+</div>
+<a id="method_rtrim"></a><div class="element clickable method public method_rtrim" data-toggle="collapse" data-target=".method_rtrim .collapse">
+<h2>Trims whitespace, or any specified characters, from the end of a string</h2>
+<pre>rtrim(string $string, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to trim</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_str"></a><div class="element clickable method public method_str" data-toggle="collapse" data-target=".method_str .collapse">
+<h2>Matches a string needle in the string haystack, returning a substring from the beginning of the needle to the end of the haystack</h2>
+<pre>str(string $haystack, string $needle, boolean $before_needle) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Can optionally return the part of the haystack before the needle.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$haystack</h4>
+<code>string</code><p>The string to search in</p></div>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$before_needle</h4>
+<code>boolean</code><p>If a substring of the haystack before the needle should be returned instead of the substring from the needle to the end of the haystack</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The specified part of the haystack, or `FALSE` if the needle was not found</div>
+</div></div>
+</div>
+<a id="method_sub"></a><div class="element clickable method public method_sub" data-toggle="collapse" data-target=".method_sub .collapse">
+<h2>Extracts part of a string</h2>
+<pre>sub(string $string, integer $start, integer $length) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to extract from</p></div>
+<div class="subelement argument">
+<h4>$start</h4>
+<code>integer</code><p>The zero-based starting index to extract from. Negative values will start the extraction that many characters from the end of the string.</p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>The length of the string to extract. If an empty value is provided, the remainder of the string will be returned.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The extracted subtring or `FALSE` if the start is out of bounds</div>
+</div></div>
+</div>
+<a id="method_trim"></a><div class="element clickable method public method_trim" data-toggle="collapse" data-target=".method_trim .collapse">
+<h2>Trims whitespace, or any specified characters, from the beginning and end of a string</h2>
+<pre>trim(string $string, string $charlist) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to trim</p></div>
+<div class="subelement argument">
+<h4>$charlist</h4>
+<code>string</code><p>The characters to trim, .. indicates a range</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The trimmed string</div>
+</div></div>
+</div>
+<a id="method_ucfirst"></a><div class="element clickable method public method_ucfirst" data-toggle="collapse" data-target=".method_ucfirst .collapse">
+<h2>Converts the first character of the string to uppercase.</h2>
+<pre>ucfirst(string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to process</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The processed string</div>
+</div></div>
+</div>
+<a id="method_ucwords"></a><div class="element clickable method public method_ucwords" data-toggle="collapse" data-target=".method_ucwords .collapse">
+<h2>Converts the first character of every word to uppercase</h2>
+<pre>ucwords(string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Words are considered to start at the beginning of the string, or after any
+whitespace character.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to process</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The processed string</div>
+</div></div>
+</div>
+<a id="method_upper"></a><div class="element clickable method public method_upper" data-toggle="collapse" data-target=".method_upper .collapse">
+<h2>Converts all lowercase characters to uppercase</h2>
+<pre>upper(string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string with all lowercase characters in uppercase</div>
+</div></div>
+</div>
+<a id="method_wordwrap"></a><div class="element clickable method public method_wordwrap" data-toggle="collapse" data-target=".method_wordwrap .collapse">
+<h2>Wraps a string to a specific character width</h2>
+<pre>wordwrap(string $string, integer $width, string $break, boolean $cut) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to wrap</p></div>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>integer</code><p>The character width to wrap to</p></div>
+<div class="subelement argument">
+<h4>$break</h4>
+<code>string</code><p>The string to insert as a break</p></div>
+<div class="subelement argument">
+<h4>$cut</h4>
+<code>boolean</code><p>If words longer than the character width should be split to fit</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The input string with all lowercase characters in uppercase</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fUTF8.html">\fUTF8</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fUTF8.html">\fUTF8</a></code></div>
+</div></div>
+</div>
+<a id="method_checkMbString"></a><div class="element clickable method private method_checkMbString" data-toggle="collapse" data-target=".method_checkMbString .collapse">
+<h2>Checks to see if the [http://php.net/mbstring mbstring] extension is available</h2>
+<pre>checkMbString() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_convertOffsetToBytes"></a><div class="element clickable method private method_convertOffsetToBytes" data-toggle="collapse" data-target=".method_convertOffsetToBytes .collapse">
+<h2>Converts an offset in characters to an offset in bytes to that we can use the built-in functions for some operations</h2>
+<pre>convertOffsetToBytes(string $string, integer $offset) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to base the offset on</p></div>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>The character offset to conver to bytes</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The converted offset</div>
+</div></div>
+</div>
+<a id="method_detect"></a><div class="element clickable method private method_detect" data-toggle="collapse" data-target=".method_detect .collapse">
+<h2>Detects if a UTF-8 string contains any non-ASCII characters</h2>
+<pre>detect(string $string) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the string contains any non-ASCII characters</div>
+</div></div>
+</div>
+<a id="method_iconv"></a><div class="element clickable method private method_iconv" data-toggle="collapse" data-target=".method_iconv .collapse">
+<h2>This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</h2>
+<pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$in_charset</h4>
+<code>string</code><p>The incoming character encoding</p></div>
+<div class="subelement argument">
+<h4>$out_charset</h4>
+<code>string</code><p>The outgoing character encoding</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<a id="method_ucwordsCallback"></a><div class="element clickable method private method_ucwordsCallback" data-toggle="collapse" data-target=".method_ucwordsCallback .collapse">
+<h2>Handles converting a character to uppercase for ::ucwords()</h2>
+<pre>ucwordsCallback(array $match) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$match</h4>
+<code>array</code><p>The regex match from ::ucwords()</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The uppercase character</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_can_ignore_invalid"> </a><div class="element clickable property private property_can_ignore_invalid" data-toggle="collapse" data-target=".property_can_ignore_invalid .collapse">
+<h2>Depending how things are compiled, NetBSD and Solaris don't support //IGNORE in iconv()</h2>
+<pre>$can_ignore_invalid : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>If //IGNORE support is not provided strings with invalid characters will be truncated</p></div></div></div>
+</div>
+<a id="property_lower_to_upper"> </a><div class="element clickable property private property_lower_to_upper" data-toggle="collapse" data-target=".property_lower_to_upper .collapse">
+<h2>All lowercase UTF-8 characters mapped to uppercase characters</h2>
+<pre>$lower_to_upper : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_mb_lower_to_upper_fix"> </a><div class="element clickable property private property_mb_lower_to_upper_fix" data-toggle="collapse" data-target=".property_mb_lower_to_upper_fix .collapse">
+<h2>All lowercase UTF-8 characters not properly handled by [http://php.net/mb_strtoupper mb_strtoupper()] mapped to uppercase characters</h2>
+<pre>$mb_lower_to_upper_fix : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_mb_upper_to_lower_fix"> </a><div class="element clickable property private property_mb_upper_to_lower_fix" data-toggle="collapse" data-target=".property_mb_upper_to_lower_fix .collapse">
+<h2>All uppercase UTF-8 characters not properly handled by [http://php.net/mb_strtolower mb_strtolower()] mapped to lowercase characters</h2>
+<pre>$mb_upper_to_lower_fix : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_mbstring_available"> </a><div class="element clickable property private property_mbstring_available" data-toggle="collapse" data-target=".property_mbstring_available .collapse">
+<h2>If the [http://php.net/mbstring mbstring] extension is available</h2>
+<pre>$mbstring_available : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_upper_to_lower"> </a><div class="element clickable property private property_upper_to_lower" data-toggle="collapse" data-target=".property_upper_to_lower .collapse">
+<h2>All uppercase UTF-8 characters mapped to lowercase characters</h2>
+<pre>$upper_to_lower : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_utf8_to_ascii"> </a><div class="element clickable property private property_utf8_to_ascii" data-toggle="collapse" data-target=".property_utf8_to_ascii .collapse">
+<h2>A mapping of all ASCII-based latin characters, puntuation, symbols and number forms to ASCII.</h2>
+<pre>$utf8_to_ascii : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Includes elements form the following unicode blocks:</p>
+
+<ul>
+<li>Latin-1 Supplement</li>
+<li>Latin Extended-A</li>
+<li>Latin Extended-B</li>
+<li>IPA Extensions</li>
+<li>Latin Extended Additional</li>
+<li>General Punctuation</li>
+<li>Letterlike symbols</li>
+<li>Number Forms</li>
+</ul></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_ascii"> </a><div class="element clickable constant  constant_ascii" data-toggle="collapse" data-target=".constant_ascii .collapse">
+<h2>ascii</h2>
+<pre>ascii </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_chr"> </a><div class="element clickable constant  constant_chr" data-toggle="collapse" data-target=".constant_chr .collapse">
+<h2>chr</h2>
+<pre>chr </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_clean"> </a><div class="element clickable constant  constant_clean" data-toggle="collapse" data-target=".constant_clean .collapse">
+<h2>clean</h2>
+<pre>clean </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_cmp"> </a><div class="element clickable constant  constant_cmp" data-toggle="collapse" data-target=".constant_cmp .collapse">
+<h2>cmp</h2>
+<pre>cmp </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_explode"> </a><div class="element clickable constant  constant_explode" data-toggle="collapse" data-target=".constant_explode .collapse">
+<h2>explode</h2>
+<pre>explode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_icmp"> </a><div class="element clickable constant  constant_icmp" data-toggle="collapse" data-target=".constant_icmp .collapse">
+<h2>icmp</h2>
+<pre>icmp </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_inatcmp"> </a><div class="element clickable constant  constant_inatcmp" data-toggle="collapse" data-target=".constant_inatcmp .collapse">
+<h2>inatcmp</h2>
+<pre>inatcmp </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ipos"> </a><div class="element clickable constant  constant_ipos" data-toggle="collapse" data-target=".constant_ipos .collapse">
+<h2>ipos</h2>
+<pre>ipos </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ireplace"> </a><div class="element clickable constant  constant_ireplace" data-toggle="collapse" data-target=".constant_ireplace .collapse">
+<h2>ireplace</h2>
+<pre>ireplace </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_irpos"> </a><div class="element clickable constant  constant_irpos" data-toggle="collapse" data-target=".constant_irpos .collapse">
+<h2>irpos</h2>
+<pre>irpos </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_istr"> </a><div class="element clickable constant  constant_istr" data-toggle="collapse" data-target=".constant_istr .collapse">
+<h2>istr</h2>
+<pre>istr </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_len"> </a><div class="element clickable constant  constant_len" data-toggle="collapse" data-target=".constant_len .collapse">
+<h2>len</h2>
+<pre>len </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_lower"> </a><div class="element clickable constant  constant_lower" data-toggle="collapse" data-target=".constant_lower .collapse">
+<h2>lower</h2>
+<pre>lower </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ltrim"> </a><div class="element clickable constant  constant_ltrim" data-toggle="collapse" data-target=".constant_ltrim .collapse">
+<h2>ltrim</h2>
+<pre>ltrim </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_natcmp"> </a><div class="element clickable constant  constant_natcmp" data-toggle="collapse" data-target=".constant_natcmp .collapse">
+<h2>natcmp</h2>
+<pre>natcmp </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ord"> </a><div class="element clickable constant  constant_ord" data-toggle="collapse" data-target=".constant_ord .collapse">
+<h2>ord</h2>
+<pre>ord </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_pad"> </a><div class="element clickable constant  constant_pad" data-toggle="collapse" data-target=".constant_pad .collapse">
+<h2>pad</h2>
+<pre>pad </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_pos"> </a><div class="element clickable constant  constant_pos" data-toggle="collapse" data-target=".constant_pos .collapse">
+<h2>pos</h2>
+<pre>pos </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_replace"> </a><div class="element clickable constant  constant_replace" data-toggle="collapse" data-target=".constant_replace .collapse">
+<h2>replace</h2>
+<pre>replace </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_rev"> </a><div class="element clickable constant  constant_rev" data-toggle="collapse" data-target=".constant_rev .collapse">
+<h2>rev</h2>
+<pre>rev </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_rpos"> </a><div class="element clickable constant  constant_rpos" data-toggle="collapse" data-target=".constant_rpos .collapse">
+<h2>rpos</h2>
+<pre>rpos </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_rtrim"> </a><div class="element clickable constant  constant_rtrim" data-toggle="collapse" data-target=".constant_rtrim .collapse">
+<h2>rtrim</h2>
+<pre>rtrim </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_str"> </a><div class="element clickable constant  constant_str" data-toggle="collapse" data-target=".constant_str .collapse">
+<h2>str</h2>
+<pre>str </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sub"> </a><div class="element clickable constant  constant_sub" data-toggle="collapse" data-target=".constant_sub .collapse">
+<h2>sub</h2>
+<pre>sub </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_trim"> </a><div class="element clickable constant  constant_trim" data-toggle="collapse" data-target=".constant_trim .collapse">
+<h2>trim</h2>
+<pre>trim </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ucfirst"> </a><div class="element clickable constant  constant_ucfirst" data-toggle="collapse" data-target=".constant_ucfirst .collapse">
+<h2>ucfirst</h2>
+<pre>ucfirst </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_ucwords"> </a><div class="element clickable constant  constant_ucwords" data-toggle="collapse" data-target=".constant_ucwords .collapse">
+<h2>ucwords</h2>
+<pre>ucwords </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_upper"> </a><div class="element clickable constant  constant_upper" data-toggle="collapse" data-target=".constant_upper .collapse">
+<h2>upper</h2>
+<pre>upper </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_wordwrap"> </a><div class="element clickable constant  constant_wordwrap" data-toggle="collapse" data-target=".constant_wordwrap .collapse">
+<h2>wordwrap</h2>
+<pre>wordwrap </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

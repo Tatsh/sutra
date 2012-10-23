@@ -1,0 +1,631 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sArray</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor."><span class="description">Constructor.</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count :: Returns the size of array."><span class="description">Returns the size of array.</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_diff" title="diff :: Compares this object's data with associative arrays."><span class="description">Compares this object's data with associative arrays.</span><pre>diff()</pre></a></li>
+<li class="method public "><a href="#method_fill" title="fill :: Fills the array $num times with $value."><span class="description">Fills the array $num times with $value.</span><pre>fill()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Calls a callback on each item in the object."><span class="description">Calls a callback on each item in the object.</span><pre>filter()</pre></a></li>
+<li class="method public "><a href="#method_flip" title="flip :: Returns an sObject instance with the indexes of this array being the
+  values and the values becoming the keys."><span class="description">Returns an sObject instance with the indexes of this array being the
+  values and the values becoming the keys.</span><pre>flip()</pre></a></li>
+<li class="method public "><a href="#method_getData" title="getData :: Gets the data as a regular array."><span class="description">Gets the data as a regular array.</span><pre>getData()</pre></a></li>
+<li class="method public "><a href="#method_map" title="map :: Applies the callback to the elements of this array."><span class="description">Applies the callback to the elements of this array.</span><pre>map()</pre></a></li>
+<li class="method public "><a href="#method_merge" title="merge :: Merges this array with another array or sArray object."><span class="description">Merges this array with another array or sArray object.</span><pre>merge()</pre></a></li>
+<li class="method public "><a href="#method_pad" title="pad :: Pad array to the specified length with a value."><span class="description">Pad array to the specified length with a value.</span><pre>pad()</pre></a></li>
+<li class="method public "><a href="#method_pop" title="pop :: Pops the last element of the array and returns its value."><span class="description">Pops the last element of the array and returns its value.</span><pre>pop()</pre></a></li>
+<li class="method public "><a href="#method_printJSON" title="printJSON :: Prints the JSON-encoded array."><span class="description">Prints the JSON-encoded array.</span><pre>printJSON()</pre></a></li>
+<li class="method public "><a href="#method_push" title="push :: Pushes the value into the last position of the array."><span class="description">Pushes the value into the last position of the array.</span><pre>push()</pre></a></li>
+<li class="method public "><a href="#method_rand" title="rand :: Picks one or more random keys."><span class="description">Picks one or more random keys.</span><pre>rand()</pre></a></li>
+<li class="method public "><a href="#method_reverse" title="reverse :: Returns a copy of this array reversed."><span class="description">Returns a copy of this array reversed.</span><pre>reverse()</pre></a></li>
+<li class="method public "><a href="#method_reverseSort" title="reverseSort :: Sorts the elements of the array reversed."><span class="description">Sorts the elements of the array reversed.</span><pre>reverseSort()</pre></a></li>
+<li class="method public "><a href="#method_search" title="search :: Searches the array for a given value and returns the corresponding key if
+  successful."><span class="description">Searches the array for a given value and returns the corresponding key if
+  successful.</span><pre>search()</pre></a></li>
+<li class="method public "><a href="#method_shift" title="shift :: Shifts the first value off the array and returns it."><span class="description">Shifts the first value off the array and returns it.</span><pre>shift()</pre></a></li>
+<li class="method public "><a href="#method_slice" title="slice :: Extract a slice of the array."><span class="description">Extract a slice of the array.</span><pre>slice()</pre></a></li>
+<li class="method public "><a href="#method_sort" title="sort :: Sorts the elements of the array."><span class="description">Sorts the elements of the array.</span><pre>sort()</pre></a></li>
+<li class="method public "><a href="#method_toJSON" title="toJSON :: Returns the JSON-encoded array."><span class="description">Returns the JSON-encoded array.</span><pre>toJSON()</pre></a></li>
+<li class="method public "><a href="#method_unique" title="unique :: Removes duplicate values from the array."><span class="description">Removes duplicate values from the array.</span><pre>unique()</pre></a></li>
+<li class="method public "><a href="#method_unshift" title="unshift :: Puts a new element at the beginning of the array."><span class="description">Puts a new element at the beginning of the array.</span><pre>unshift()</pre></a></li>
+<li class="method public "><a href="#method_values" title="values :: Returns the values of this array."><span class="description">Returns the values of this array.</span><pre>values()</pre></a></li>
+<li class="method public "><a href="#method_walk" title="walk :: Applies a user-defined function to each element of this object."><span class="description">Applies a user-defined function to each element of this object.</span><pre>walk()</pre></a></li>
+<li class="method public "><a href="#method_walkRecursive" title="walkRecursive :: Applies a user-defined function to each element of this object."><span class="description">Applies a user-defined function to each element of this object.</span><pre>walkRecursive()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_convertToStrings" title="convertToStrings :: Recursively converts an array to an array of strings."><span class="description">Recursively converts an array to an array of strings.</span><pre>convertToStrings()</pre></a></li>
+<li class="method private "><a href="#method_isArrayLike" title="isArrayLike :: Checks if value is an array or is array-like (implementing the correct
+  interfaces)."><span class="description">Checks if value is an array or is array-like (implementing the correct
+  interfaces).</span><pre>isArrayLike()</pre></a></li>
+<li class="method private "><a href="#method_walkRecursiveCallback" title="walkRecursiveCallback :: Callback used with walkRecursive."><span class="description">Callback used with walkRecursive.</span><pre>walkRecursiveCallback()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_data" title="$data :: The data."><span class="description">The data.</span><pre>$data</pre></a></li></ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sArray"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sArray.html">sArray</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">An object-oriented interface to numerically indexed arrays.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://github.com/tatsh/sutra">https://github.com/tatsh/sutra</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.3</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor.</h2>
+<pre>__construct(mixed $arg) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Accepts multiple arguments or only a single array argument.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$arg</h4>
+<code>mixed</code><p>First item of the array.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sArray.html">\sArray</a></code></div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Returns the size of array.</h2>
+<pre>count() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The size of the array.</div>
+</div></div>
+</div>
+<a id="method_diff"></a><div class="element clickable method public method_diff" data-toggle="collapse" data-target=".method_diff .collapse">
+<h2>Compares this object's data with associative arrays.</h2>
+<pre>diff(array | <a href="../classes/sArray.html">\sArray</a> $array1) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array1</h4>
+<code>array</code><code><a href="../classes/sArray.html">\sArray</a></code><p>Array or array-like object.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>Array containing all the entries from $array1 that are
+  not present in any of the other arrays.</div>
+</div></div>
+</div>
+<a id="method_fill"></a><div class="element clickable method public method_fill" data-toggle="collapse" data-target=".method_fill .collapse">
+<h2>Fills the array $num times with $value.</h2>
+<pre>fill(integer $num, mixed $value) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$num</h4>
+<code>integer</code><p>Number of times to fill.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to fill with.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Calls a callback on each item in the object.</h2>
+<pre>filter(string $cb) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the callback returns TRUE,
+  then the value will be returned in the resulting sArray instance of this
+  method.</p></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\array_filter()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cb</h4>
+<code>string</code><p>Callback to call on each key.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>New filtered sArray.</div>
+</div></div>
+</div>
+<a id="method_flip"></a><div class="element clickable method public method_flip" data-toggle="collapse" data-target=".method_flip .collapse">
+<h2>Returns an sObject instance with the indexes of this array being the
+  values and the values becoming the keys.</h2>
+<pre>flip() : <a href="../classes/sObject.html">\sObject</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sObject.html">\sObject</a></code></div>
+</div></div>
+</div>
+<a id="method_getData"></a><div class="element clickable method public method_getData" data-toggle="collapse" data-target=".method_getData .collapse">
+<h2>Gets the data as a regular array.</h2>
+<pre>getData() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of data.</div>
+</div></div>
+</div>
+<a id="method_map"></a><div class="element clickable method public method_map" data-toggle="collapse" data-target=".method_map .collapse">
+<h2>Applies the callback to the elements of this array.</h2>
+<pre>map(string $cb) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\array_map()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cb</h4>
+<code>string</code><p>Callback to use.</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sArray.html">\sArray</a></code></div>
+</div></div>
+</div>
+<a id="method_merge"></a><div class="element clickable method public method_merge" data-toggle="collapse" data-target=".method_merge .collapse">
+<h2>Merges this array with another array or sArray object.</h2>
+<pre>merge(array | <a href="../classes/sArray.html">\sArray</a> $array1) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$array1</h4>
+<code>array</code><code><a href="../classes/sArray.html">\sArray</a></code><p>Array to shift with.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_pad"></a><div class="element clickable method public method_pad" data-toggle="collapse" data-target=".method_pad .collapse">
+<h2>Pad array to the specified length with a value.</h2>
+<pre>pad(integer $pad_size, mixed $pad_value) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\array_pad()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$pad_size</h4>
+<code>integer</code><p>New size of the array.</p></div>
+<div class="subelement argument">
+<h4>$pad_value</h4>
+<code>mixed</code><p>Value to pad if the array is less than $pad_size.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>Returns a copy of the input padded to size specified by
+  $pad_size with value $pad_value.</div>
+</div></div>
+</div>
+<a id="method_pop"></a><div class="element clickable method public method_pop" data-toggle="collapse" data-target=".method_pop .collapse">
+<h2>Pops the last element of the array and returns its value.</h2>
+<pre>pop() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value at the last index.</div>
+</div></div>
+</div>
+<a id="method_printJSON"></a><div class="element clickable method public method_printJSON" data-toggle="collapse" data-target=".method_printJSON .collapse">
+<h2>Prints the JSON-encoded array.</h2>
+<pre>printJSON() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_push"></a><div class="element clickable method public method_push" data-toggle="collapse" data-target=".method_push .collapse">
+<h2>Pushes the value into the last position of the array.</h2>
+<pre>push(mixed $var) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$var</h4>
+<code>mixed</code><p>Variable to push.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_rand"></a><div class="element clickable method public method_rand" data-toggle="collapse" data-target=".method_rand .collapse">
+<h2>Picks one or more random keys.</h2>
+<pre>rand(integer $num_req) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$num_req</h4>
+<code>integer</code><p>Number of items to get.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of numeric keys.</div>
+</div></div>
+</div>
+<a id="method_reverse"></a><div class="element clickable method public method_reverse" data-toggle="collapse" data-target=".method_reverse .collapse">
+<h2>Returns a copy of this array reversed.</h2>
+<pre>reverse() : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The array, reversed.</div>
+</div></div>
+</div>
+<a id="method_reverseSort"></a><div class="element clickable method public method_reverseSort" data-toggle="collapse" data-target=".method_reverseSort .collapse">
+<h2>Sorts the elements of the array reversed.</h2>
+<pre>reverseSort(integer $flags) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\rsort()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>integer</code><p>Flags for sorting.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_search"></a><div class="element clickable method public method_search" data-toggle="collapse" data-target=".method_search .collapse">
+<h2>Searches the array for a given value and returns the corresponding key if
+  successful.</h2>
+<pre>search(mixed $needle, boolean $strict) : boolean | string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Can return boolean FALSE.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$needle</h4>
+<code>mixed</code><p>Value to search for.</p></div>
+<div class="subelement argument">
+<h4>$strict</h4>
+<code>boolean</code><p>If the value should be identical.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code><code>string</code>If the key is found, a string will be returned.
+  Otherwise boolean FALSE will be returned.</div>
+</div></div>
+</div>
+<a id="method_shift"></a><div class="element clickable method public method_shift" data-toggle="collapse" data-target=".method_shift .collapse">
+<h2>Shifts the first value off the array and returns it.</h2>
+<pre>shift() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value at the first index of the array.</div>
+</div></div>
+</div>
+<a id="method_slice"></a><div class="element clickable method public method_slice" data-toggle="collapse" data-target=".method_slice .collapse">
+<h2>Extract a slice of the array.</h2>
+<pre>slice(integer $offset, integer $length) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$offset</h4>
+<code>integer</code><p>If offset is non-negative, the sequence will start at that offset in the array. If offset is negative, the sequence will start that far from the end of the array.</p>
+</div>
+<div class="subelement argument">
+<h4>$length</h4>
+<code>integer</code><p>If length is given and is positive, then the sequence will have up to that many elements in it. If the array is shorter than the length, then only the available array elements will be present. If length is given and is negative then the sequence will stop that many elements from the end of the array. If it is omitted, then the sequence will have everything from offset up until the end of the array.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>Array slice.</div>
+</div></div>
+</div>
+<a id="method_sort"></a><div class="element clickable method public method_sort" data-toggle="collapse" data-target=".method_sort .collapse">
+<h2>Sorts the elements of the array.</h2>
+<pre>sort(integer $flags) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\sort()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flags</h4>
+<code>integer</code><p>Flags for sorting.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_toJSON"></a><div class="element clickable method public method_toJSON" data-toggle="collapse" data-target=".method_toJSON .collapse">
+<h2>Returns the JSON-encoded array.</h2>
+<pre>toJSON() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>JSON string.</div>
+</div></div>
+</div>
+<a id="method_unique"></a><div class="element clickable method public method_unique" data-toggle="collapse" data-target=".method_unique .collapse">
+<h2>Removes duplicate values from the array.</h2>
+<pre>unique(integer $sort_flags) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\array_unique</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sort_flags</h4>
+<code>integer</code><p>One of the SORT_* constants.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>Copy of this array with duplicate values removed.</div>
+</div></div>
+</div>
+<a id="method_unshift"></a><div class="element clickable method public method_unshift" data-toggle="collapse" data-target=".method_unshift .collapse">
+<h2>Puts a new element at the beginning of the array.</h2>
+<pre>unshift(mixed $var) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$var</h4>
+<code>mixed</code><p>Variable to unshift.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_values"></a><div class="element clickable method public method_values" data-toggle="collapse" data-target=".method_values .collapse">
+<h2>Returns the values of this array.</h2>
+<pre>values() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Alias to getData().</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of data.</div>
+</div></div>
+</div>
+<a id="method_walk"></a><div class="element clickable method public method_walk" data-toggle="collapse" data-target=".method_walk .collapse">
+<h2>Applies a user-defined function to each element of this object.</h2>
+<pre>walk(string | array $func, mixed $user_data) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>SuppressWarnings</th>
+<td>(PHPMD.UnusedLocalVariable)</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$func</h4>
+<code>string</code><code>array</code><p>Callback function. The callback takes two parameters: the value of the key, and the key second. If the value must be changed, then it should be specified as a reference.</p></div>
+<div class="subelement argument">
+<h4>$user_data</h4>
+<code>mixed</code><p>If specified, this will be passed to the callback as the third parameter.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_walkRecursive"></a><div class="element clickable method public method_walkRecursive" data-toggle="collapse" data-target=".method_walkRecursive .collapse">
+<h2>Applies a user-defined function to each element of this object.</h2>
+<pre>walkRecursive(string | array $func, mixed $user_data) : <a href="../classes/sArray.html">\sArray</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This
+  method will recurse into deeper arrays. Any key sets will be ignored.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$func</h4>
+<code>string</code><code>array</code><p>Callback function. The callback takes two parameters: the value of the key, and the key second. If the value must be changed, then it should be specified as a reference.</p></div>
+<div class="subelement argument">
+<h4>$user_data</h4>
+<code>mixed</code><p>If specified, this will be passed to the callback as the third parameter.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sArray.html">\sArray</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
+<a id="method_convertToStrings"></a><div class="element clickable method private method_convertToStrings" data-toggle="collapse" data-target=".method_convertToStrings .collapse">
+<h2>Recursively converts an array to an array of strings.</h2>
+<pre>convertToStrings(array | <a href="../classes/sArray.html">\sArray</a> $values) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><code><a href="../classes/sArray.html">\sArray</a></code><p>Array or array-like object.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of strings.</div>
+</div></div>
+</div>
+<a id="method_isArrayLike"></a><div class="element clickable method private method_isArrayLike" data-toggle="collapse" data-target=".method_isArrayLike .collapse">
+<h2>Checks if value is an array or is array-like (implementing the correct
+  interfaces).</h2>
+<pre>isArrayLike(mixed $value) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>To be array-like, a class must implement both ArrayAccess and
+  IteratorAggregate. Optionally, it can implement the Countable interface.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>Value to check.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value is an array or is array-like.</div>
+</div></div>
+</div>
+<a id="method_walkRecursiveCallback"></a><div class="element clickable method private method_walkRecursiveCallback" data-toggle="collapse" data-target=".method_walkRecursiveCallback .collapse">
+<h2>Callback used with walkRecursive.</h2>
+<pre>walkRecursiveCallback(\sArray $instance, mixed $array, string $func, mixed $user_data) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$instance</h4>
+<code><a href="../classes/sArray.html">\sArray</a></code><p>Object instance.</p></div>
+<div class="subelement argument">
+<h4>$array</h4>
+<code>mixed</code><p>Mixed variable, checked if is array-like.</p>
+</div>
+<div class="subelement argument">
+<h4>$func</h4>
+<code>string</code><p>Function to call on each item.</p></div>
+<div class="subelement argument">
+<h4>$user_data</h4>
+<code>mixed</code><p>User data to add as third argument to callback.</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_data"> </a><div class="element clickable property protected property_data" data-toggle="collapse" data-target=".property_data .collapse">
+<h2>The data.</h2>
+<pre>$data : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

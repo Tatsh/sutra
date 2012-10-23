@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fUpload</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_allowDotFiles" title="allowDotFiles :: Sets the upload class to allow files starting with a `.`"><span class="description">Sets the upload class to allow files starting with a `.`</span><pre>allowDotFiles()</pre></a></li>
+<li class="method public "><a href="#method_allowPHP" title="allowPHP :: Sets the upload class to allow PHP files"><span class="description">Sets the upload class to allow PHP files</span><pre>allowPHP()</pre></a></li>
+<li class="method public "><a href="#method_check" title="check :: Checks to see if the field specified is a valid file upload field"><span class="description">Checks to see if the field specified is a valid file upload field</span><pre>check()</pre></a></li>
+<li class="method public "><a href="#method_count" title="count :: Returns the number of files uploaded to a file upload array field"><span class="description">Returns the number of files uploaded to a file upload array field</span><pre>count()</pre></a></li>
+<li class="method public "><a href="#method_enableOverwrite" title="enableOverwrite :: Set the class to overwrite existing files in the destination directory instead of renaming the file"><span class="description">Set the class to overwrite existing files in the destination directory instead of renaming the file</span><pre>enableOverwrite()</pre></a></li>
+<li class="method public "><a href="#method_filter" title="filter :: Removes individual file upload entries from an array of file inputs in `$_FILES` when no file was uploaded"><span class="description">Removes individual file upload entries from an array of file inputs in `$_FILES` when no file was uploaded</span><pre>filter()</pre></a></li>
+<li class="method public "><a href="#method_move" title="move :: Moves an uploaded file from the temp directory to a permanent location"><span class="description">Moves an uploaded file from the temp directory to a permanent location</span><pre>move()</pre></a></li>
+<li class="method public "><a href="#method_setImageDimensions" title="setImageDimensions :: Sets the allowable dimensions for an uploaded image"><span class="description">Sets the allowable dimensions for an uploaded image</span><pre>setImageDimensions()</pre></a></li>
+<li class="method public "><a href="#method_setImageRatio" title="setImageRatio :: Sets the allowable dimensions for an uploaded image"><span class="description">Sets the allowable dimensions for an uploaded image</span><pre>setImageRatio()</pre></a></li>
+<li class="method public "><a href="#method_setMIMETypes" title="setMIMETypes :: Sets the file mime types accepted"><span class="description">Sets the file mime types accepted</span><pre>setMIMETypes()</pre></a></li>
+<li class="method public "><a href="#method_setMaxSize" title="setMaxSize :: Sets the maximum size the uploaded file may be"><span class="description">Sets the maximum size the uploaded file may be</span><pre>setMaxSize()</pre></a></li>
+<li class="method public "><a href="#method_setOptional" title="setOptional :: Sets the file upload to be optional instead of required"><span class="description">Sets the file upload to be optional instead of required</span><pre>setOptional()</pre></a></li>
+<li class="method public "><a href="#method_validate" title="validate :: Validates the uploaded file, ensuring a file was actually uploaded and that is matched the restrictions put in place"><span class="description">Validates the uploaded file, ensuring a file was actually uploaded and that is matched the restrictions put in place</span><pre>validate()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_extractFileUploadArray" title="extractFileUploadArray :: Returns the `$_FILES` array for the field specified."><span class="description">Returns the `$_FILES` array for the field specified.</span><pre>extractFileUploadArray()</pre></a></li>
+<li class="method private "><a href="#method_validateField" title="validateField :: Validates a $_FILES array against the upload configuration"><span class="description">Validates a $_FILES array against the upload configuration</span><pre>validateField()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_allow_dot_files" title="$allow_dot_files :: If files starting with `.` can be uploaded"><span class="description">If files starting with `.` can be uploaded</span><pre>$allow_dot_files</pre></a></li>
+<li class="property private "><a href="#property_allow_php" title="$allow_php :: If PHP files can be uploaded"><span class="description">If PHP files can be uploaded</span><pre>$allow_php</pre></a></li>
+<li class="property private "><a href="#property_enable_overwrite" title="$enable_overwrite :: If existing files of the same name should be overwritten"><span class="description">If existing files of the same name should be overwritten</span><pre>$enable_overwrite</pre></a></li>
+<li class="property private "><a href="#property_image_dimensions" title="$image_dimensions :: The dimension restrictions for uploaded images"><span class="description">The dimension restrictions for uploaded images</span><pre>$image_dimensions</pre></a></li>
+<li class="property private "><a href="#property_image_ratio" title="$image_ratio :: The dimension ratio restriction for uploaded images"><span class="description">The dimension ratio restriction for uploaded images</span><pre>$image_ratio</pre></a></li>
+<li class="property private "><a href="#property_max_size" title="$max_size :: The maximum file size in bytes"><span class="description">The maximum file size in bytes</span><pre>$max_size</pre></a></li>
+<li class="property private "><a href="#property_mime_type_message" title="$mime_type_message :: The error message to display if the mime types do not match"><span class="description">The error message to display if the mime types do not match</span><pre>$mime_type_message</pre></a></li>
+<li class="property private "><a href="#property_mime_types" title="$mime_types :: The mime types of files accepted"><span class="description">The mime types of files accepted</span><pre>$mime_types</pre></a></li>
+<li class="property private "><a href="#property_required" title="$required :: If the file upload is required"><span class="description">If the file upload is required</span><pre>$required</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_check" title="check :: "><span class="description">check</span><pre>check</pre></a></li>
+<li class="constant  "><a href="#constant_count" title="count :: "><span class="description">count</span><pre>count</pre></a></li>
+<li class="constant  "><a href="#constant_filter" title="filter :: "><span class="description">filter</span><pre>filter</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fUpload"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fUpload.html">fUpload</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides validation and movement of uploaded files</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fUpload">http://flourishlib.com/fUpload</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b14</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Fixed some method signatures [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Changed the class to throw fValidationException objects instead of fProgrammerException objects when the form is improperly configured - this is to prevent error logs when bad requests are sent by scanners/hackers [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed the ::filter() callback constant [wb, 2010-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Added ::setImageDimensions() and ::setImageRatio() [wb-imarc, 2010-11-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  BackwardsCompatibilityBreak - renamed ::setMaxFilesize() to ::setMaxSize() to be consistent with fFile::getSize() [wb, 2010-05-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   BackwardsCompatibilityBreak - the class no longer accepts uploaded files that start with a `.` unless ::allowDotFiles() is called - added ::setOptional() [wb, 2010-05-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   BackwardsCompatibilityBreak - ::validate() no longer returns the `$_FILES` array for the file being validated - added `$return_message` parameter to ::validate(), fixed a bug with detection of mime type for text files [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Added ::filter() to allow for ignoring array file upload field entries that did not have a file uploaded [wb, 2009-10-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Updated ::move() to use the new fFilesystem::createObject() method [wb, 2009-01-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Removed some unnecessary error suppression operators from ::move() [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Updated ::validate() so it properly handles upload max filesize specified in human-readable notation [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Removed the dependency on fRequest [wb, 2009-01-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with validating filesizes [wb, 2008-11-25]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_allowDotFiles"></a><div class="element clickable method public method_allowDotFiles" data-toggle="collapse" data-target=".method_allowDotFiles .collapse">
+<h2>Sets the upload class to allow files starting with a `.`</h2>
+<pre>allowDotFiles() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Files starting with <code>.</code> may change the behaviour of web servers,
+for instance <code>.htaccess</code> files for Apache.</p></div></div></div>
+</div>
+<a id="method_allowPHP"></a><div class="element clickable method public method_allowPHP" data-toggle="collapse" data-target=".method_allowPHP .collapse">
+<h2>Sets the upload class to allow PHP files</h2>
+<pre>allowPHP() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_check"></a><div class="element clickable method public method_check" data-toggle="collapse" data-target=".method_check .collapse">
+<h2>Checks to see if the field specified is a valid file upload field</h2>
+<pre>check(string $field, boolean $throw_exception) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to check</p></div>
+<div class="subelement argument">
+<h4>$throw_exception</h4>
+<code>boolean</code><p>If an exception should be thrown when there are issues with the form</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>If `$throw_exception` is `TRUE` and the request was not a POST or the content type is not multipart/form-data</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the field is a valid file upload field</div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Returns the number of files uploaded to a file upload array field</h2>
+<pre>count(string $field) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to get the number of files for</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>If the form is not properly configured for file uploads</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of uploaded files</div>
+</div></div>
+</div>
+<a id="method_enableOverwrite"></a><div class="element clickable method public method_enableOverwrite" data-toggle="collapse" data-target=".method_enableOverwrite .collapse">
+<h2>Set the class to overwrite existing files in the destination directory instead of renaming the file</h2>
+<pre>enableOverwrite() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_filter"></a><div class="element clickable method public method_filter" data-toggle="collapse" data-target=".method_filter .collapse">
+<h2>Removes individual file upload entries from an array of file inputs in `$_FILES` when no file was uploaded</h2>
+<pre>filter(string $field) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to filter</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>If the form is not properly configured for file uploads</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The indexes of the files that were uploaded</div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Moves an uploaded file from the temp directory to a permanent location</h2>
+<pre>move(string | <a href="../classes/fDirectory.html">\fDirectory</a> $directory, string $field, mixed $index) : <a href="../classes/fFile.html">\fFile</a> | NULL</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$directory</h4>
+<code>string</code><code><a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to upload the file to</p></div>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The file upload field to get the file from</p></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>mixed</code><p>If the field was an array file upload field, upload the file corresponding to this index</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the form is not setup for file uploads, the `$directory` is somehow invalid or ::validate() thows an exception</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code><code>NULL</code>An fFile (or fImage) object, or `NULL` if no file was uploaded</div>
+</div></div>
+</div>
+<a id="method_setImageDimensions"></a><div class="element clickable method public method_setImageDimensions" data-toggle="collapse" data-target=".method_setImageDimensions .collapse">
+<h2>Sets the allowable dimensions for an uploaded image</h2>
+<pre>setImageDimensions(integer $min_width, integer $min_height, integer $max_width, integer $max_height) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$min_width</h4>
+<code>integer</code><p>The minimum width - <code>0</code> for no minimum</p>
+</div>
+<div class="subelement argument">
+<h4>$min_height</h4>
+<code>integer</code><p>The minimum height - <code>0</code> for no minimum</p>
+</div>
+<div class="subelement argument">
+<h4>$max_width</h4>
+<code>integer</code><p>The maximum width - <code>0</code> for no maximum</p>
+</div>
+<div class="subelement argument">
+<h4>$max_height</h4>
+<code>integer</code><p>The maximum height - <code>0</code> for no maximum</p>
+</div>
+</div></div>
+</div>
+<a id="method_setImageRatio"></a><div class="element clickable method public method_setImageRatio" data-toggle="collapse" data-target=".method_setImageRatio .collapse">
+<h2>Sets the allowable dimensions for an uploaded image</h2>
+<pre>setImageRatio(\numeric $width, \numeric $height, string $allow_excess_dimension) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$width</h4>
+<code>\numeric</code><p>The minimum ratio width</p></div>
+<div class="subelement argument">
+<h4>$height</h4>
+<code>\numeric</code><p>The minimum ratio height</p></div>
+<div class="subelement argument">
+<h4>$allow_excess_dimension</h4>
+<code>string</code><p>The dimension that should allow for excess pixels</p></div>
+</div></div>
+</div>
+<a id="method_setMIMETypes"></a><div class="element clickable method public method_setMIMETypes" data-toggle="collapse" data-target=".method_setMIMETypes .collapse">
+<h2>Sets the file mime types accepted</h2>
+<pre>setMIMETypes(array $mime_types, string $message) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$mime_types</h4>
+<code>array</code><p>The mime types to accept</p></div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to display if the uploaded file is not one of the mime type specified</p></div>
+</div></div>
+</div>
+<a id="method_setMaxSize"></a><div class="element clickable method public method_setMaxSize" data-toggle="collapse" data-target=".method_setMaxSize .collapse">
+<h2>Sets the maximum size the uploaded file may be</h2>
+<pre>setMaxSize(string $size) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method should be used with the
+[http://php.net/file-upload.post-method <code>MAX_FILE_SIZE</code>] hidden form
+input since the hidden form input will reject a file that is too large
+before the file completely uploads, while this method will wait until the
+whole file has been uploaded. This method should always be used since it
+is very easy for the <code>MAX_FILE_SIZE</code> post field to be manipulated on the
+client side.</p>
+
+<p>This method can only further restrict the
+[http://php.net/upload_max_filesize <code>upload_max_filesize</code> ini setting],
+it can not increase that setting. <code>upload_max_filesize</code> must be set
+in the php.ini (or an Apache configuration) since file uploads are
+handled before the request is handed off to PHP.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$size</h4>
+<code>string</code><p>The maximum file size (e.g. <code>1MB</code>, <code>200K</code>, <code>10.5M</code>) - <code>0</code> for no limit</p>
+</div>
+</div></div>
+</div>
+<a id="method_setOptional"></a><div class="element clickable method public method_setOptional" data-toggle="collapse" data-target=".method_setOptional .collapse">
+<h2>Sets the file upload to be optional instead of required</h2>
+<pre>setOptional() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_validate"></a><div class="element clickable method public method_validate" data-toggle="collapse" data-target=".method_validate .collapse">
+<h2>Validates the uploaded file, ensuring a file was actually uploaded and that is matched the restrictions put in place</h2>
+<pre>validate(string $field, mixed $index, boolean $return_message) : NULL | string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field the file was uploaded through</p></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>mixed</code><p>If the field was an array of file uploads, this specifies which one to validate</p></div>
+<div class="subelement argument">
+<h4>$return_message</h4>
+<code>boolean</code><p>If any validation error should be returned as a string instead of being thrown as an fValidationException</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the form is not configured for file uploads, no file is uploaded or the uploaded file violates the options set for this object</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>NULL</code><code>string</code>If `$return_message` is not `TRUE` or if no error occurs, `NULL`, otherwise a string error message</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_extractFileUploadArray"></a><div class="element clickable method private method_extractFileUploadArray" data-toggle="collapse" data-target=".method_extractFileUploadArray .collapse">
+<h2>Returns the `$_FILES` array for the field specified.</h2>
+<pre>extractFileUploadArray(string $field, mixed $index) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The field to get the file array for</p></div>
+<div class="subelement argument">
+<h4>$index</h4>
+<code>mixed</code><p>If the field is an array file upload field, use this to specify which array index to return</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The file info array from `$_FILES`</div>
+</div></div>
+</div>
+<a id="method_validateField"></a><div class="element clickable method private method_validateField" data-toggle="collapse" data-target=".method_validateField .collapse">
+<h2>Validates a $_FILES array against the upload configuration</h2>
+<pre>validateField(array $file_array) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file_array</h4>
+<code>array</code><p>The $_FILES array for a single file</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The validation error message</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_allow_dot_files"> </a><div class="element clickable property private property_allow_dot_files" data-toggle="collapse" data-target=".property_allow_dot_files .collapse">
+<h2>If files starting with `.` can be uploaded</h2>
+<pre>$allow_dot_files : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_allow_php"> </a><div class="element clickable property private property_allow_php" data-toggle="collapse" data-target=".property_allow_php .collapse">
+<h2>If PHP files can be uploaded</h2>
+<pre>$allow_php : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_enable_overwrite"> </a><div class="element clickable property private property_enable_overwrite" data-toggle="collapse" data-target=".property_enable_overwrite .collapse">
+<h2>If existing files of the same name should be overwritten</h2>
+<pre>$enable_overwrite : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_image_dimensions"> </a><div class="element clickable property private property_image_dimensions" data-toggle="collapse" data-target=".property_image_dimensions .collapse">
+<h2>The dimension restrictions for uploaded images</h2>
+<pre>$image_dimensions : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_image_ratio"> </a><div class="element clickable property private property_image_ratio" data-toggle="collapse" data-target=".property_image_ratio .collapse">
+<h2>The dimension ratio restriction for uploaded images</h2>
+<pre>$image_ratio : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_max_size"> </a><div class="element clickable property private property_max_size" data-toggle="collapse" data-target=".property_max_size .collapse">
+<h2>The maximum file size in bytes</h2>
+<pre>$max_size : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_mime_type_message"> </a><div class="element clickable property private property_mime_type_message" data-toggle="collapse" data-target=".property_mime_type_message .collapse">
+<h2>The error message to display if the mime types do not match</h2>
+<pre>$mime_type_message : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_mime_types"> </a><div class="element clickable property private property_mime_types" data-toggle="collapse" data-target=".property_mime_types .collapse">
+<h2>The mime types of files accepted</h2>
+<pre>$mime_types : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_required"> </a><div class="element clickable property private property_required" data-toggle="collapse" data-target=".property_required .collapse">
+<h2>If the file upload is required</h2>
+<pre>$required : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_check"> </a><div class="element clickable constant  constant_check" data-toggle="collapse" data-target=".constant_check .collapse">
+<h2>check</h2>
+<pre>check </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_count"> </a><div class="element clickable constant  constant_count" data-toggle="collapse" data-target=".constant_count .collapse">
+<h2>count</h2>
+<pre>count </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_filter"> </a><div class="element clickable constant  constant_filter" data-toggle="collapse" data-target=".constant_filter .collapse">
+<h2>filter</h2>
+<pre>filter </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

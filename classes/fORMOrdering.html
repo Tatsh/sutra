@@ -1,0 +1,411 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fORMOrdering</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul><li class="method public "><a href="#method_configureOrderingColumn" title="configureOrderingColumn :: Sets a column to be an ordering column"><span class="description">Sets a column to be an ordering column</span><pre>configureOrderingColumn()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_addOldOtherFieldsWhereParams" title="addOldOtherFieldsWhereParams :: Add params for a `WHERE` clause for the //old// multi-column set a record was part of"><span class="description">Add params for a `WHERE` clause for the //old// multi-column set a record was part of</span><pre>addOldOtherFieldsWhereParams()</pre></a></li>
+<li class="method private "><a href="#method_addOtherFieldsWhereParams" title="addOtherFieldsWhereParams :: Adds params for a `WHERE` clause to ensure a database call is only selecting from rows that are part of the same set when an ordering field is in multi-column `UNIQUE` constraint."><span class="description">Adds params for a `WHERE` clause to ensure a database call is only selecting from rows that are part of the same set when an ordering field is in multi-column `UNIQUE` constraint.</span><pre>addOtherFieldsWhereParams()</pre></a></li>
+<li class="method private "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method private "><a href="#method_isInNewSet" title="isInNewSet :: Checks to see if the values specified are part of a record that is new to its order set"><span class="description">Checks to see if the values specified are part of a record that is new to its order set</span><pre>isInNewSet()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_ordering_columns" title="$ordering_columns :: The columns configured as ordering columns"><span class="description">The columns configured as ordering columns</span><pre>$ordering_columns</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_configureOrderingColumn" title="configureOrderingColumn :: "><span class="description">configureOrderingColumn</span><pre>configureOrderingColumn</pre></a></li>
+<li class="constant  "><a href="#constant_delete" title="delete :: "><span class="description">delete</span><pre>delete</pre></a></li>
+<li class="constant  "><a href="#constant_inspect" title="inspect :: "><span class="description">inspect</span><pre>inspect</pre></a></li>
+<li class="constant  "><a href="#constant_reflect" title="reflect :: "><span class="description">reflect</span><pre>reflect</pre></a></li>
+<li class="constant  "><a href="#constant_reorder" title="reorder :: "><span class="description">reorder</span><pre>reorder</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_validate" title="validate :: "><span class="description">validate</span><pre>validate</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fORMOrdering"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMOrdering.html">fORMOrdering</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Allows a column in an fActiveRecord class to be a relative sort order column</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2010 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dan@imarc.net">Dan Collins, iMarc LLC [dc-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMOrdering">http://flourishlib.com/fORMOrdering</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b19</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Updated code to work with the new fORM API [wb, 2010-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Changed ::configureOrderingColumn() to ensure the column specified can store negative values [wb, 2010-07-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Changed validation messages array to use column name keys [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Updated the class to allow for multiple ordering columns per class [dc-imarc, 2010-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed a bug with ordering columns that are part of a multi-column unique constraint [wb, 2009-11-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Fixed a bug affecting where conditions with columns that are not null but have a default value [wb, 2009-11-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Changed SQL statements to use value placeholders, identifier escaping and schema support [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed another bug with deleting records in the middle of a set, added support for reordering multiple records at once [dc-imarc, 2009-07-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed a bug with deleting multiple in-memory records in the same set [dc-imarc, 2009-07-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed a bug with using fORM::registerInspectCallback() [wb, 2009-07-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Updated to use new fORM::registerInspectCallback() method [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed ::validate() so it properly ignores ordering columns in multi-column unique constraints [wb, 2009-06-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Updated code for new fORM API [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated class to automatically correct ordering values that are too high [wb, 2009-06-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Updated code to use new fValidationException::formatField() method [wb, 2009-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Fixed a bug with setting a new record to anywhere but the end of a set [wb, 2009-03-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with ::inspect(), 'max_ordering_value' was being returned as 'max_ordering_index' [wb, 2009-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-06-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_configureOrderingColumn"></a><div class="element clickable method public method_configureOrderingColumn" data-toggle="collapse" data-target=".method_configureOrderingColumn .collapse">
+<h2>Sets a column to be an ordering column</h2>
+<pre>configureOrderingColumn(mixed $class, string $column) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>There can only be one ordering column per class/table and it must be
+part of a single or multi-column <code>UNIQUE</code> constraint.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set as an ordering column</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fORMOrdering.html">\fORMOrdering</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fORMOrdering.html">\fORMOrdering</a></code></div>
+</div></div>
+</div>
+<a id="method_addOldOtherFieldsWhereParams"></a><div class="element clickable method private method_addOldOtherFieldsWhereParams" data-toggle="collapse" data-target=".method_addOldOtherFieldsWhereParams .collapse">
+<h2>Add params for a `WHERE` clause for the //old// multi-column set a record was part of</h2>
+<pre>addOldOtherFieldsWhereParams(<a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $other_columns, array $values, array $old_values) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema of the database the query will be executed on</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The params for the fDatabase::query() call</p>
+</div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the <code>WHERE</code> clause is for</p>
+</div>
+<div class="subelement argument">
+<h4>$other_columns</h4>
+<code>array</code><p>The other columns in the multi-column unique constraint</p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The record's current values</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The record's old values</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The updated params for fDatabase::query()</div>
+</div></div>
+</div>
+<a id="method_addOtherFieldsWhereParams"></a><div class="element clickable method private method_addOtherFieldsWhereParams" data-toggle="collapse" data-target=".method_addOtherFieldsWhereParams .collapse">
+<h2>Adds params for a `WHERE` clause to ensure a database call is only selecting from rows that are part of the same set when an ordering field is in multi-column `UNIQUE` constraint.</h2>
+<pre>addOtherFieldsWhereParams(<a href="../classes/fSchema.html">\fSchema</a> $schema, array $params, string $table, array $other_columns, array $values) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema of the database the query will be executed on</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The parameters for the fDatabase::query() call</p>
+</div>
+<div class="subelement argument">
+<h4>$table</h4>
+<code>string</code><p>The table the <code>WHERE</code> clause is for</p>
+</div>
+<div class="subelement argument">
+<h4>$other_columns</h4>
+<code>array</code><p>The other columns in the multi-column unique constraint</p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values to match with</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The updated params for fDatabase::query()</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method private method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_isInNewSet"></a><div class="element clickable method private method_isInNewSet" data-toggle="collapse" data-target=".method_isInNewSet .collapse">
+<h2>Checks to see if the values specified are part of a record that is new to its order set</h2>
+<pre>isInNewSet(string $ordering_column, array $other_columns, array $values, array $old_values) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ordering_column</h4>
+<code>string</code><p>The column being ordered by</p></div>
+<div class="subelement argument">
+<h4>$other_columns</h4>
+<code>array</code><p>The other columns in the multi-column unique constraint</p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values of the record</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values of the record</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the record is part of a new ordering set</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_ordering_columns"> </a><div class="element clickable property private property_ordering_columns" data-toggle="collapse" data-target=".property_ordering_columns .collapse">
+<h2>The columns configured as ordering columns</h2>
+<pre>$ordering_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_configureOrderingColumn"> </a><div class="element clickable constant  constant_configureOrderingColumn" data-toggle="collapse" data-target=".constant_configureOrderingColumn .collapse">
+<h2>configureOrderingColumn</h2>
+<pre>configureOrderingColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_delete"> </a><div class="element clickable constant  constant_delete" data-toggle="collapse" data-target=".constant_delete .collapse">
+<h2>delete</h2>
+<pre>delete </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_inspect"> </a><div class="element clickable constant  constant_inspect" data-toggle="collapse" data-target=".constant_inspect .collapse">
+<h2>inspect</h2>
+<pre>inspect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reflect"> </a><div class="element clickable constant  constant_reflect" data-toggle="collapse" data-target=".constant_reflect .collapse">
+<h2>reflect</h2>
+<pre>reflect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reorder"> </a><div class="element clickable constant  constant_reorder" data-toggle="collapse" data-target=".constant_reorder .collapse">
+<h2>reorder</h2>
+<pre>reorder </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_validate"> </a><div class="element clickable constant  constant_validate" data-toggle="collapse" data-target=".constant_validate .collapse">
+<h2>validate</h2>
+<pre>validate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

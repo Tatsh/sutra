@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fResult</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_asObjects" title="asObjects :: Sets the object to return rows as objects instead of associative arrays (the default)"><span class="description">Sets the object to return rows as objects instead of associative arrays (the default)</span><pre>asObjects()</pre></a></li>
+<li class="method public "><a href="#method_countAffectedRows" title="countAffectedRows :: Returns the number of rows affected by the query"><span class="description">Returns the number of rows affected by the query</span><pre>countAffectedRows()</pre></a></li>
+<li class="method public "><a href="#method_countReturnedRows" title="countReturnedRows :: Returns the number of rows returned by the query"><span class="description">Returns the number of rows returned by the query</span><pre>countReturnedRows()</pre></a></li>
+<li class="method public "><a href="#method_fetchAllRows" title="fetchAllRows :: Returns all of the rows from the result set"><span class="description">Returns all of the rows from the result set</span><pre>fetchAllRows()</pre></a></li>
+<li class="method public "><a href="#method_fetchRow" title="fetchRow :: Returns the row next row in the result set (where the pointer is currently assigned to)"><span class="description">Returns the row next row in the result set (where the pointer is currently assigned to)</span><pre>fetchRow()</pre></a></li>
+<li class="method public "><a href="#method_fetchScalar" title="fetchScalar :: Wraps around ::fetchRow() and returns the first field from the row instead of the whole row"><span class="description">Wraps around ::fetchRow() and returns the first field from the row instead of the whole row</span><pre>fetchScalar()</pre></a></li>
+<li class="method public "><a href="#method_getAutoIncrementedValue" title="getAutoIncrementedValue :: Returns the last auto incremented value for this database connection."><span class="description">Returns the last auto incremented value for this database connection.</span><pre>getAutoIncrementedValue()</pre></a></li>
+<li class="method public "><a href="#method_getSQL" title="getSQL :: Returns the SQL used in the query"><span class="description">Returns the SQL used in the query</span><pre>getSQL()</pre></a></li>
+<li class="method public "><a href="#method_getUntranslatedSQL" title="getUntranslatedSQL :: Returns the SQL as it was before translation"><span class="description">Returns the SQL as it was before translation</span><pre>getUntranslatedSQL()</pre></a></li>
+<li class="method public "><a href="#method_seek" title="seek :: Seeks to the specified zero-based row for the specified SQL query"><span class="description">Seeks to the specified zero-based row for the specified SQL query</span><pre>seek()</pre></a></li>
+<li class="method public "><a href="#method_silenceNotices" title="silenceNotices :: Turns off notices about broken database extensions much as the MSSQL DBLib driver"><span class="description">Turns off notices about broken database extensions much as the MSSQL DBLib driver</span><pre>silenceNotices()</pre></a></li>
+<li class="method public "><a href="#method_tossIfNoRows" title="tossIfNoRows :: Throws an fNoResultException if the query did not return any rows"><span class="description">Throws an fNoResultException if the query did not return any rows</span><pre>tossIfNoRows()</pre></a></li>
+<li class="method public "><a href="#method_unescape" title="unescape :: Sets the result object to unescape all values as they are retrieved from the object"><span class="description">Sets the result object to unescape all values as they are retrieved from the object</span><pre>unescape()</pre></a></li>
+<li class="method public "><a href="#method_valid" title="valid :: Returns if the query has any rows left"><span class="description">Returns if the query has any rows left</span><pre>valid()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_advanceCurrentRow" title="advanceCurrentRow :: Gets the next row from the result and assigns it to the current row"><span class="description">Gets the next row from the result and assigns it to the current row</span><pre>advanceCurrentRow()</pre></a></li>
+<li class="method private "><a href="#method_decodeMSSQLNationalColumns" title="decodeMSSQLNationalColumns :: Decodes national (unicode) character data coming out of MSSQL into UTF-8"><span class="description">Decodes national (unicode) character data coming out of MSSQL into UTF-8</span><pre>decodeMSSQLNationalColumns()</pre></a></li>
+<li class="method private "><a href="#method_fixDblibMSSQLDriver" title="fixDblibMSSQLDriver :: Warns the user about bugs in the DBLib driver for MSSQL, fixes some bugs"><span class="description">Warns the user about bugs in the DBLib driver for MSSQL, fixes some bugs</span><pre>fixDblibMSSQLDriver()</pre></a></li>
+<li class="method private "><a href="#method_iconv" title="iconv :: This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value."><span class="description">This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</span><pre>iconv()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_affected_rows" title="$affected_rows :: The number of rows affected by an `INSERT`, `UPDATE`, `DELETE`, etc"><span class="description">The number of rows affected by an `INSERT`, `UPDATE`, `DELETE`, etc</span><pre>$affected_rows</pre></a></li>
+<li class="property private "><a href="#property_auto_incremented_value" title="$auto_incremented_value :: The auto incremented value from the query"><span class="description">The auto incremented value from the query</span><pre>$auto_incremented_value</pre></a></li>
+<li class="property private "><a href="#property_character_set" title="$character_set :: The character set to transcode from for MSSQL queries"><span class="description">The character set to transcode from for MSSQL queries</span><pre>$character_set</pre></a></li>
+<li class="property private "><a href="#property_current_row" title="$current_row :: The current row of the result set"><span class="description">The current row of the result set</span><pre>$current_row</pre></a></li>
+<li class="property private "><a href="#property_database" title="$database :: The database object this result was created from"><span class="description">The database object this result was created from</span><pre>$database</pre></a></li>
+<li class="property private "><a href="#property_extension" title="$extension :: The database extension"><span class="description">The database extension</span><pre>$extension</pre></a></li>
+<li class="property private "><a href="#property_output_objects" title="$output_objects :: If rows should be converted to objects"><span class="description">If rows should be converted to objects</span><pre>$output_objects</pre></a></li>
+<li class="property private "><a href="#property_pointer" title="$pointer :: The position of the pointer in the result set"><span class="description">The position of the pointer in the result set</span><pre>$pointer</pre></a></li>
+<li class="property private "><a href="#property_result" title="$result :: The result resource or array"><span class="description">The result resource or array</span><pre>$result</pre></a></li>
+<li class="property private "><a href="#property_returned_rows" title="$returned_rows :: The number of rows returned by a select"><span class="description">The number of rows returned by a select</span><pre>$returned_rows</pre></a></li>
+<li class="property private "><a href="#property_silence_notices" title="$silence_notices :: If notices should be hidden for broken database drivers"><span class="description">If notices should be hidden for broken database drivers</span><pre>$silence_notices</pre></a></li>
+<li class="property private "><a href="#property_sql" title="$sql :: The SQL query"><span class="description">The SQL query</span><pre>$sql</pre></a></li>
+<li class="property private "><a href="#property_unescape_map" title="$unescape_map :: Holds the data types for each column to allow for on-the-fly unescaping"><span class="description">Holds the data types for each column to allow for on-the-fly unescaping</span><pre>$unescape_map</pre></a></li>
+<li class="property private "><a href="#property_untranslated_sql" title="$untranslated_sql :: The SQL from before translation - only applicable to translated queries"><span class="description">The SQL from before translation - only applicable to translated queries</span><pre>$untranslated_sql</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fResult"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fResult.html">fResult</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Representation of a result from a query against the fDatabase class</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fResult">http://flourishlib.com/fResult</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b13</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Added a workaround for iconv having issues in MAMP 1.9.4+ [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Fixed MSSQL to have a properly reset row array, added ::silenceNotices(), fixed pdo_dblib on Windows when using the Microsoft DBLib driver [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Backwards Compatibility Break - removed ODBC support [wb, 2010-07-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Added IBM DB2 support [wb, 2010-04-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added support for prepared statements [wb, 2010-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed a bug with decoding MSSQL national column when using an ODBC connection [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Added the method ::unescape(), changed ::tossIfNoRows() to return the object for chaining [wb, 2009-08-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed a bug where ::fetchAllRows() would throw a fNoRowsException [wb, 2009-06-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Added the method ::asObjects() to allow for returning objects instead of associative arrays [wb, 2009-06-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Fixed a bug with not properly converting SQL Server text to UTF-8 [wb, 2009-06-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added support for Oracle, various bug fixes [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-09-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_asObjects"></a><div class="element clickable method public method_asObjects" data-toggle="collapse" data-target=".method_asObjects .collapse">
+<h2>Sets the object to return rows as objects instead of associative arrays (the default)</h2>
+<pre>asObjects() : <a href="../classes/fResult.html">\fResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code>The result object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_countAffectedRows"></a><div class="element clickable method public method_countAffectedRows" data-toggle="collapse" data-target=".method_countAffectedRows .collapse">
+<h2>Returns the number of rows affected by the query</h2>
+<pre>countAffectedRows() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of rows affected by the query</div>
+</div></div>
+</div>
+<a id="method_countReturnedRows"></a><div class="element clickable method public method_countReturnedRows" data-toggle="collapse" data-target=".method_countReturnedRows .collapse">
+<h2>Returns the number of rows returned by the query</h2>
+<pre>countReturnedRows() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of rows returned by the query</div>
+</div></div>
+</div>
+<a id="method_fetchAllRows"></a><div class="element clickable method public method_fetchAllRows" data-toggle="collapse" data-target=".method_fetchAllRows .collapse">
+<h2>Returns all of the rows from the result set</h2>
+<pre>fetchAllRows() : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The array of rows</div>
+</div></div>
+</div>
+<a id="method_fetchRow"></a><div class="element clickable method public method_fetchRow" data-toggle="collapse" data-target=".method_fetchRow .collapse">
+<h2>Returns the row next row in the result set (where the pointer is currently assigned to)</h2>
+<pre>fetchRow() : array | <a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/fNoRowsException.html">\fNoRowsException</a></code></th>
+<td>When the query did not return any rows</td>
+</tr>
+<tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are no rows left in the result</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code><a href="http://php.net/manual/en/class.stdclass.php">\stdClass</a></code>The next row in the result</div>
+</div></div>
+</div>
+<a id="method_fetchScalar"></a><div class="element clickable method public method_fetchScalar" data-toggle="collapse" data-target=".method_fetchScalar .collapse">
+<h2>Wraps around ::fetchRow() and returns the first field from the row instead of the whole row</h2>
+<pre>fetchScalar() : string | \number | boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/fNoRowsException.html">\fNoRowsException</a></code></th>
+<td>When the query did not return any rows</td>
+</tr>
+<tr>
+<th><code><a href="../classes/fNoRemainingException.html">\fNoRemainingException</a></code></th>
+<td>When there are no rows left in the result</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>\number</code><code>boolean</code>The first scalar value from ::fetchRow()</div>
+</div></div>
+</div>
+<a id="method_getAutoIncrementedValue"></a><div class="element clickable method public method_getAutoIncrementedValue" data-toggle="collapse" data-target=".method_getAutoIncrementedValue .collapse">
+<h2>Returns the last auto incremented value for this database connection.</h2>
+<pre>getAutoIncrementedValue() : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This may or may not be from the current query.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The auto incremented value</div>
+</div></div>
+</div>
+<a id="method_getSQL"></a><div class="element clickable method public method_getSQL" data-toggle="collapse" data-target=".method_getSQL .collapse">
+<h2>Returns the SQL used in the query</h2>
+<pre>getSQL() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The SQL used in the query</div>
+</div></div>
+</div>
+<a id="method_getUntranslatedSQL"></a><div class="element clickable method public method_getUntranslatedSQL" data-toggle="collapse" data-target=".method_getUntranslatedSQL .collapse">
+<h2>Returns the SQL as it was before translation</h2>
+<pre>getUntranslatedSQL() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The SQL from before translation</div>
+</div></div>
+</div>
+<a id="method_seek"></a><div class="element clickable method public method_seek" data-toggle="collapse" data-target=".method_seek .collapse">
+<h2>Seeks to the specified zero-based row for the specified SQL query</h2>
+<pre>seek(integer $row) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$row</h4>
+<code>integer</code><p>The row number to seek to (zero-based)</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRowsException.html">\fNoRowsException</a></code></th>
+<td>When the query did not return any rows</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_silenceNotices"></a><div class="element clickable method public method_silenceNotices" data-toggle="collapse" data-target=".method_silenceNotices .collapse">
+<h2>Turns off notices about broken database extensions much as the MSSQL DBLib driver</h2>
+<pre>silenceNotices() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_tossIfNoRows"></a><div class="element clickable method public method_tossIfNoRows" data-toggle="collapse" data-target=".method_tossIfNoRows .collapse">
+<h2>Throws an fNoResultException if the query did not return any rows</h2>
+<pre>tossIfNoRows(string $message) : <a href="../classes/fResult.html">\fResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to use for the exception if there are no rows in this result set</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fNoRowsException.html">\fNoRowsException</a></code></th>
+<td>When the query did not return any rows</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code>The result object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_unescape"></a><div class="element clickable method public method_unescape" data-toggle="collapse" data-target=".method_unescape .collapse">
+<h2>Sets the result object to unescape all values as they are retrieved from the object</h2>
+<pre>unescape(array $column_data_type_map) : <a href="../classes/fResult.html">\fResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The data types should be from the list of types supported by
+fDatabase::unescape().</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$column_data_type_map</h4>
+<code>array</code><p>An associative array with column names as the keys and the data types as the values</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code>The result object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_valid"></a><div class="element clickable method public method_valid" data-toggle="collapse" data-target=".method_valid .collapse">
+<h2>Returns if the query has any rows left</h2>
+<pre>valid() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the iterator is still valid</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_advanceCurrentRow"></a><div class="element clickable method private method_advanceCurrentRow" data-toggle="collapse" data-target=".method_advanceCurrentRow .collapse">
+<h2>Gets the next row from the result and assigns it to the current row</h2>
+<pre>advanceCurrentRow() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_decodeMSSQLNationalColumns"></a><div class="element clickable method private method_decodeMSSQLNationalColumns" data-toggle="collapse" data-target=".method_decodeMSSQLNationalColumns .collapse">
+<h2>Decodes national (unicode) character data coming out of MSSQL into UTF-8</h2>
+<pre>decodeMSSQLNationalColumns(array $row) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$row</h4>
+<code>array</code><p>The row from the database</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The fixed row</div>
+</div></div>
+</div>
+<a id="method_fixDblibMSSQLDriver"></a><div class="element clickable method private method_fixDblibMSSQLDriver" data-toggle="collapse" data-target=".method_fixDblibMSSQLDriver .collapse">
+<h2>Warns the user about bugs in the DBLib driver for MSSQL, fixes some bugs</h2>
+<pre>fixDblibMSSQLDriver(array $row) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$row</h4>
+<code>array</code><p>The row from the database</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The fixed row</div>
+</div></div>
+</div>
+<a id="method_iconv"></a><div class="element clickable method private method_iconv" data-toggle="collapse" data-target=".method_iconv .collapse">
+<h2>This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</h2>
+<pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$in_charset</h4>
+<code>string</code><p>The incoming character encoding</p></div>
+<div class="subelement argument">
+<h4>$out_charset</h4>
+<code>string</code><p>The outgoing character encoding</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_affected_rows"> </a><div class="element clickable property private property_affected_rows" data-toggle="collapse" data-target=".property_affected_rows .collapse">
+<h2>The number of rows affected by an `INSERT`, `UPDATE`, `DELETE`, etc</h2>
+<pre>$affected_rows : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_auto_incremented_value"> </a><div class="element clickable property private property_auto_incremented_value" data-toggle="collapse" data-target=".property_auto_incremented_value .collapse">
+<h2>The auto incremented value from the query</h2>
+<pre>$auto_incremented_value : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_character_set"> </a><div class="element clickable property private property_character_set" data-toggle="collapse" data-target=".property_character_set .collapse">
+<h2>The character set to transcode from for MSSQL queries</h2>
+<pre>$character_set : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_current_row"> </a><div class="element clickable property private property_current_row" data-toggle="collapse" data-target=".property_current_row .collapse">
+<h2>The current row of the result set</h2>
+<pre>$current_row : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_database"> </a><div class="element clickable property private property_database" data-toggle="collapse" data-target=".property_database .collapse">
+<h2>The database object this result was created from</h2>
+<pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_extension"> </a><div class="element clickable property private property_extension" data-toggle="collapse" data-target=".property_extension .collapse">
+<h2>The database extension</h2>
+<pre>$extension : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_output_objects"> </a><div class="element clickable property private property_output_objects" data-toggle="collapse" data-target=".property_output_objects .collapse">
+<h2>If rows should be converted to objects</h2>
+<pre>$output_objects : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_pointer"> </a><div class="element clickable property private property_pointer" data-toggle="collapse" data-target=".property_pointer .collapse">
+<h2>The position of the pointer in the result set</h2>
+<pre>$pointer : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_result"> </a><div class="element clickable property private property_result" data-toggle="collapse" data-target=".property_result .collapse">
+<h2>The result resource or array</h2>
+<pre>$result : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_returned_rows"> </a><div class="element clickable property private property_returned_rows" data-toggle="collapse" data-target=".property_returned_rows .collapse">
+<h2>The number of rows returned by a select</h2>
+<pre>$returned_rows : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_silence_notices"> </a><div class="element clickable property private property_silence_notices" data-toggle="collapse" data-target=".property_silence_notices .collapse">
+<h2>If notices should be hidden for broken database drivers</h2>
+<pre>$silence_notices : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_sql"> </a><div class="element clickable property private property_sql" data-toggle="collapse" data-target=".property_sql .collapse">
+<h2>The SQL query</h2>
+<pre>$sql : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_unescape_map"> </a><div class="element clickable property private property_unescape_map" data-toggle="collapse" data-target=".property_unescape_map .collapse">
+<h2>Holds the data types for each column to allow for on-the-fly unescaping</h2>
+<pre>$unescape_map : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_untranslated_sql"> </a><div class="element clickable property private property_untranslated_sql" data-toggle="collapse" data-target=".property_untranslated_sql .collapse">
+<h2>The SQL from before translation - only applicable to translated queries</h2>
+<pre>$untranslated_sql : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

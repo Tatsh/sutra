@@ -1,0 +1,478 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fSQLTranslation</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Sets up the class and creates functions for SQLite databases"><span class="description">Sets up the class and creates functions for SQLite databases</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
+<li class="method public "><a href="#method_enableCaching" title="enableCaching :: Sets the schema info to be cached to the fCache object specified"><span class="description">Sets the schema info to be cached to the fCache object specified</span><pre>enableCaching()</pre></a></li>
+<li class="method public "><a href="#method_enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_createSQLiteFunctions" title="createSQLiteFunctions :: Adds a number of math functions to SQLite that MSSQL, MySQL and PostgreSQL have by default"><span class="description">Adds a number of math functions to SQLite that MSSQL, MySQL and PostgreSQL have by default</span><pre>createSQLiteFunctions()</pre></a></li>
+<li class="method private "><a href="#method_fixMSSQLNationalColumns" title="fixMSSQLNationalColumns :: Fixes pulling unicode data out of national data type MSSQL columns"><span class="description">Fixes pulling unicode data out of national data type MSSQL columns</span><pre>fixMSSQLNationalColumns()</pre></a></li>
+<li class="method private "><a href="#method_fixOracleEmptyStrings" title="fixOracleEmptyStrings :: Fixes empty string comparisons in Oracle"><span class="description">Fixes empty string comparisons in Oracle</span><pre>fixOracleEmptyStrings()</pre></a></li>
+<li class="method private "><a href="#method_makeCachePrefix" title="makeCachePrefix :: Creates a unique cache prefix to help prevent cache conflicts"><span class="description">Creates a unique cache prefix to help prevent cache conflicts</span><pre>makeCachePrefix()</pre></a></li>
+<li class="method private "><a href="#method_parseTableAliases" title="parseTableAliases :: Takes the `FROM` clause from ::parseSelectSQL() and returns all of the tables and each one's alias"><span class="description">Takes the `FROM` clause from ::parseSelectSQL() and returns all of the tables and each one's alias</span><pre>parseTableAliases()</pre></a></li>
+<li class="method private "><a href="#method_translateBasicSyntax" title="translateBasicSyntax :: Translates basic syntax differences of the current database"><span class="description">Translates basic syntax differences of the current database</span><pre>translateBasicSyntax()</pre></a></li>
+<li class="method private "><a href="#method_translateCastClauses" title="translateCastClauses :: Translates simple CAST() clauses"><span class="description">Translates simple CAST() clauses</span><pre>translateCastClauses()</pre></a></li>
+<li class="method private "><a href="#method_translateLimitOffsetToRowNumber" title="translateLimitOffsetToRowNumber :: Translates `LIMIT x OFFSET x` to `ROW_NUMBER() OVER (ORDER BY)` syntax"><span class="description">Translates `LIMIT x OFFSET x` to `ROW_NUMBER() OVER (ORDER BY)` syntax</span><pre>translateLimitOffsetToRowNumber()</pre></a></li>
+<li class="method private "><a href="#method_uppercaseIdentifiers" title="uppercaseIdentifiers :: Oracle and DB2 require that all double-quoted identifiers be upper-case"><span class="description">Oracle and DB2 require that all double-quoted identifiers be upper-case</span><pre>uppercaseIdentifiers()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cache" title="$cache :: The fCache object to cache schema info and, optionally, translated queries to"><span class="description">The fCache object to cache schema info and, optionally, translated queries to</span><pre>$cache</pre></a></li>
+<li class="property private "><a href="#property_cache_prefix" title="$cache_prefix :: The cache prefix to use for cache entries"><span class="description">The cache prefix to use for cache entries</span><pre>$cache_prefix</pre></a></li>
+<li class="property private "><a href="#property_database" title="$database :: The fDatabase instance"><span class="description">The fDatabase instance</span><pre>$database</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug :: If debugging is enabled"><span class="description">If debugging is enabled</span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_schema_info" title="$schema_info :: Database-specific schema information needed for translation"><span class="description">Database-specific schema information needed for translation</span><pre>$schema_info</pre></a></li>
+<li class="property private "><a href="#property_schema_translation" title="$schema_translation :: An instance of fSQLSchemaTranslation for when DDL statements are run"><span class="description">An instance of fSQLSchemaTranslation for when DDL statements are run</span><pre>$schema_translation</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_sqliteCotangent" title="sqliteCotangent :: "><span class="description">sqliteCotangent</span><pre>sqliteCotangent</pre></a></li>
+<li class="constant  "><a href="#constant_sqliteLogBaseFirst" title="sqliteLogBaseFirst :: "><span class="description">sqliteLogBaseFirst</span><pre>sqliteLogBaseFirst</pre></a></li>
+<li class="constant  "><a href="#constant_sqliteSign" title="sqliteSign :: "><span class="description">sqliteSign</span><pre>sqliteSign</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fSQLTranslation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fSQLTranslation.html">fSQLTranslation</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Takes a subset of SQL from IBM DB2, MySQL, PostgreSQL, Oracle, SQLite and MSSQL and translates into the various dialects allowing for cross-database code</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fSQLTranslation">http://flourishlib.com/fSQLTranslation</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b20</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Added fix for PostgreSQL to handle `INSERT` statements that don't specify any columns or values [wb, 2011-09-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Removed the stray method ::removeSQLiteIndexes() that was left over from moving code into fSQLSchemaTranslation [wb, 2011-05-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Fixed `LENGTH()` and `SUBSTR()` functions for non-ascii characters being stored in MySQL, SQLite and DB2, moved `CREATE TABLE` support to fSQLSchemaTranslation [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Internal Backwards Compatiblity Break - changed the array keys for translated queries returned from ::translate() to include a number plus `:` before the original SQL, preventing duplicate keys [wb, 2010-07-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Added IBM DB2 support [wb, 2010-04-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed a bug with MSSQL national character conversion when running a SQL statement with a sub-select containing joins [wb, 2009-12-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Changed PostgreSQL to cast columns in LOWER() calls to VARCHAR to allow UUID columns (which are treated as a VARCHAR by fSchema) to work with default primary key ordering in fRecordSet [wb, 2009-12-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Added a parameter to ::enableCaching() to provide a key token that will allow cached values to be shared between multiple databases with the same schema [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Backwards Compatibility Break - Removed date translation functionality, changed the signature of ::translate(), updated to support quoted identifiers, added support for PostgreSQL, MSSQL and Oracle schemas [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed a bug with translating MSSQL national columns over an ODBC connection [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Changed last bug fix to support PHP 5.1.6 [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed another bug with parsing table aliases for MSSQL national columns [wb, 2009-09-18]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Fixed a bug with parsing table aliases that occurs when handling MSSQL national columns [wb, 2009-09-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed a bug with translating `NOT LIKE` operators in PostgreSQL [wb, 2009-07-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Update code to only translate data types inside of `CREATE TABLE` queries [wb, 2009-05-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Added the missing ::__get() method for callback support [wb, 2009-05-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Added Oracle and caching support, various bug fixes [wb, 2009-05-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a notice with SQLite foreign key constraints having no `ON` clauses [wb, 2009-02-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-09-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Sets up the class and creates functions for SQLite databases</h2>
+<pre>__construct(<a href="../classes/fDatabase.html">\fDatabase</a> $database) : <a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$database</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>The database being translated for</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></code></div>
+</div></div>
+</div>
+<a id="method_clearCache"></a><div class="element clickable method public method_clearCache" data-toggle="collapse" data-target=".method_clearCache .collapse">
+<h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
+<pre>clearCache() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_enableCaching"></a><div class="element clickable method public method_enableCaching" data-toggle="collapse" data-target=".method_enableCaching .collapse">
+<h2>Sets the schema info to be cached to the fCache object specified</h2>
+<pre>enableCaching(<a href="../classes/fCache.html">\fCache</a> $cache, $key_token) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code><a href="../classes/fCache.html">\fCache</a></code><p>The cache to cache to</p></div>
+<div class="subelement argument"><h4>$key_token</h4></div>
+</div></div>
+</div>
+<a id="method_enableDebugging"></a><div class="element clickable method public method_enableDebugging" data-toggle="collapse" data-target=".method_enableDebugging .collapse">
+<h2>Sets if debug messages should be shown</h2>
+<pre>enableDebugging(boolean $flag) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flag</h4>
+<code>boolean</code><p>If debugging messages should be shown</p></div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_createSQLiteFunctions"></a><div class="element clickable method private method_createSQLiteFunctions" data-toggle="collapse" data-target=".method_createSQLiteFunctions .collapse">
+<h2>Adds a number of math functions to SQLite that MSSQL, MySQL and PostgreSQL have by default</h2>
+<pre>createSQLiteFunctions() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_fixMSSQLNationalColumns"></a><div class="element clickable method private method_fixMSSQLNationalColumns" data-toggle="collapse" data-target=".method_fixMSSQLNationalColumns .collapse">
+<h2>Fixes pulling unicode data out of national data type MSSQL columns</h2>
+<pre>fixMSSQLNationalColumns(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to fix</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fixed SQL</div>
+</div></div>
+</div>
+<a id="method_fixOracleEmptyStrings"></a><div class="element clickable method private method_fixOracleEmptyStrings" data-toggle="collapse" data-target=".method_fixOracleEmptyStrings .collapse">
+<h2>Fixes empty string comparisons in Oracle</h2>
+<pre>fixOracleEmptyStrings(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to fix</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fixed SQL</div>
+</div></div>
+</div>
+<a id="method_makeCachePrefix"></a><div class="element clickable method private method_makeCachePrefix" data-toggle="collapse" data-target=".method_makeCachePrefix .collapse">
+<h2>Creates a unique cache prefix to help prevent cache conflicts</h2>
+<pre>makeCachePrefix() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cache prefix to use</div>
+</div></div>
+</div>
+<a id="method_parseTableAliases"></a><div class="element clickable method private method_parseTableAliases" data-toggle="collapse" data-target=".method_parseTableAliases .collapse">
+<h2>Takes the `FROM` clause from ::parseSelectSQL() and returns all of the tables and each one's alias</h2>
+<pre>parseTableAliases($sql) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$sql</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The tables in the `FROM` clause, in the format `{table_alias} => {table_name}`</div>
+</div></div>
+</div>
+<a id="method_translateBasicSyntax"></a><div class="element clickable method private method_translateBasicSyntax" data-toggle="collapse" data-target=".method_translateBasicSyntax .collapse">
+<h2>Translates basic syntax differences of the current database</h2>
+<pre>translateBasicSyntax(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateCastClauses"></a><div class="element clickable method private method_translateCastClauses" data-toggle="collapse" data-target=".method_translateCastClauses .collapse">
+<h2>Translates simple CAST() clauses</h2>
+<pre>translateCastClauses(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_translateLimitOffsetToRowNumber"></a><div class="element clickable method private method_translateLimitOffsetToRowNumber" data-toggle="collapse" data-target=".method_translateLimitOffsetToRowNumber .collapse">
+<h2>Translates `LIMIT x OFFSET x` to `ROW_NUMBER() OVER (ORDER BY)` syntax</h2>
+<pre>translateLimitOffsetToRowNumber(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to translate</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The translated SQL</div>
+</div></div>
+</div>
+<a id="method_uppercaseIdentifiers"></a><div class="element clickable method private method_uppercaseIdentifiers" data-toggle="collapse" data-target=".method_uppercaseIdentifiers .collapse">
+<h2>Oracle and DB2 require that all double-quoted identifiers be upper-case</h2>
+<pre>uppercaseIdentifiers(string $sql) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to fix</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fixed SQL</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_cache"> </a><div class="element clickable property private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2>The fCache object to cache schema info and, optionally, translated queries to</h2>
+<pre>$cache : <a href="../classes/fCache.html">\fCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cache_prefix"> </a><div class="element clickable property private property_cache_prefix" data-toggle="collapse" data-target=".property_cache_prefix .collapse">
+<h2>The cache prefix to use for cache entries</h2>
+<pre>$cache_prefix : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_database"> </a><div class="element clickable property private property_database" data-toggle="collapse" data-target=".property_database .collapse">
+<h2>The fDatabase instance</h2>
+<pre>$database : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse">
+<h2>If debugging is enabled</h2>
+<pre>$debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_schema_info"> </a><div class="element clickable property private property_schema_info" data-toggle="collapse" data-target=".property_schema_info .collapse">
+<h2>Database-specific schema information needed for translation</h2>
+<pre>$schema_info : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_schema_translation"> </a><div class="element clickable property private property_schema_translation" data-toggle="collapse" data-target=".property_schema_translation .collapse">
+<h2>An instance of fSQLSchemaTranslation for when DDL statements are run</h2>
+<pre>$schema_translation : <a href="../classes/fSQLSchemaTranslation.html">\fSQLSchemaTranslation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This object is only loaded when needed since it is so large.</p></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_sqliteCotangent"> </a><div class="element clickable constant  constant_sqliteCotangent" data-toggle="collapse" data-target=".constant_sqliteCotangent .collapse">
+<h2>sqliteCotangent</h2>
+<pre>sqliteCotangent </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sqliteLogBaseFirst"> </a><div class="element clickable constant  constant_sqliteLogBaseFirst" data-toggle="collapse" data-target=".constant_sqliteLogBaseFirst .collapse">
+<h2>sqliteLogBaseFirst</h2>
+<pre>sqliteLogBaseFirst </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sqliteSign"> </a><div class="element clickable constant  constant_sqliteSign" data-toggle="collapse" data-target=".constant_sqliteSign .collapse">
+<h2>sqliteSign</h2>
+<pre>sqliteSign </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

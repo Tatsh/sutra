@@ -1,0 +1,440 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fXML</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Create the XML object from a string, fFile or URL"><span class="description">Create the XML object from a string, fFile or URL</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method___toString" title="__toString :: Gets the string inside the root XML element"><span class="description">Gets the string inside the root XML element</span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_addCustomPrefix" title="addCustomPrefix :: Adds a custom namespace prefix to full namespace mapping"><span class="description">Adds a custom namespace prefix to full namespace mapping</span><pre>addCustomPrefix()</pre></a></li>
+<li class="method public "><a href="#method_encode" title="encode :: Encodes content for display in a UTF-8 encoded XML document"><span class="description">Encodes content for display in a UTF-8 encoded XML document</span><pre>encode()</pre></a></li>
+<li class="method public "><a href="#method_getName" title="getName :: Returns the name of the current element"><span class="description">Returns the name of the current element</span><pre>getName()</pre></a></li>
+<li class="method public "><a href="#method_getNamespace" title="getNamespace :: Returns the namespace of the current element"><span class="description">Returns the namespace of the current element</span><pre>getNamespace()</pre></a></li>
+<li class="method public "><a href="#method_getPrefix" title="getPrefix :: Returns the namespace prefix of the current element"><span class="description">Returns the namespace prefix of the current element</span><pre>getPrefix()</pre></a></li>
+<li class="method public "><a href="#method_getText" title="getText :: Returns the string text of the current element"><span class="description">Returns the string text of the current element</span><pre>getText()</pre></a></li>
+<li class="method public "><a href="#method_sendHeader" title="sendHeader :: Sets the proper `Content-Type` HTTP header for a UTF-8 XML file"><span class="description">Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</span><pre>sendHeader()</pre></a></li>
+<li class="method public "><a href="#method_toXML" title="toXML :: Returns a well-formed XML string from the current element"><span class="description">Returns a well-formed XML string from the current element</span><pre>toXML()</pre></a></li>
+<li class="method public "><a href="#method_xpath" title="xpath :: Executes an XPath query on the current element, returning an array of matching elements"><span class="description">Executes an XPath query on the current element, returning an array of matching elements</span><pre>xpath()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="method protected "><a href="#method_query" title="query :: Performs an XPath query on the current element, returning the raw results"><span class="description">Performs an XPath query on the current element, returning the raw results</span><pre>query()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_fixEntitiesEncoding" title="fixEntitiesEncoding :: Fixes HTML entities that aren't XML encoded and fixes ISO-8859-1/Windows-1252 encoded content that does not have an encoding attribute"><span class="description">Fixes HTML entities that aren't XML encoded and fixes ISO-8859-1/Windows-1252 encoded content that does not have an encoding attribute</span><pre>fixEntitiesEncoding()</pre></a></li>
+<li class="method private "><a href="#method_iconv" title="iconv :: This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value."><span class="description">This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</span><pre>iconv()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property___custom_prefixes" title="$__custom_prefixes :: Custom prefix =&gt; namespace URI mappings"><span class="description">Custom prefix =&gt; namespace URI mappings</span><pre>$__custom_prefixes</pre></a></li>
+<li class="property protected "><a href="#property___dom" title="$__dom :: The dom element for this XML"><span class="description">The dom element for this XML</span><pre>$__dom</pre></a></li>
+<li class="property protected "><a href="#property___xml" title="$__xml :: The XML string for serialization"><span class="description">The XML string for serialization</span><pre>$__xml</pre></a></li>
+<li class="property protected "><a href="#property___xpath" title="$__xpath :: An XPath object for performing xpath lookups"><span class="description">An XPath object for performing xpath lookups</span><pre>$__xpath</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  "><a href="#constant_sendHeader" title="sendHeader :: "><span class="description">sendHeader</span><pre>sendHeader</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fXML"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fXML.html">fXML</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides functionality for XML files</p>
+<div class="details">
+<div class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:craigruk@imarc.net">Craig Ruksznis [cr-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fXML">http://flourishlib.com/fXML</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b8</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8  Fixed a method signature [wb, 2011-08-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7  Added a workaround for iconv having issues in MAMP 1.9.4+ [wb, 2011-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6  Updated class to use fCore::startErrorCapture() instead of `error_reporting()` [wb, 2010-08-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5  Added the `$fix_entities_encoding` parameter to ::__construct() [cr-imarc+wb, 2010-08-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Updated the class to automatically add a `__` prefix for the default namespace and to use that for attribute and child element access [wb, 2010-04-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Added the `$http_timeout` parameter to ::__construct() [wb, 2009-09-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Added instance functionality for reading of XML files [wb, 2009-09-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2008-01-13]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Create the XML object from a string, fFile or URL</h2>
+<pre>__construct(<a href="../classes/fFile.html">\fFile</a> | string $source, \numeric $http_timeout, boolean $fix_entities_encoding) : <a href="../classes/fXML.html">\fXML</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The <code>$default_namespace</code> will be used for any sort of methods calls,
+member access or array access when the element or attribute name does
+not include a <code>:</code>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$source</h4>
+<code><a href="../classes/fFile.html">\fFile</a></code><code>string</code><p>The source of the XML, either an fFile object, a string of XML, a file path or a URL</p></div>
+<div class="subelement argument">
+<h4>$http_timeout</h4>
+<code>\numeric</code><p>The timeout to use in seconds when requesting an XML file from a URL</p></div>
+<div class="subelement argument">
+<h4>$fix_entities_encoding</h4>
+<code>boolean</code><p>This will fix two common XML authoring errors and should only be used when experiencing decoding issues - HTML entities that haven't been encoded as XML, and XML content published in ISO-8859-1 or Windows-1252 encoding without an explicit encoding attribute</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the source XML is invalid or does not exist</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fXML.html">\fXML</a></code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Gets the string inside the root XML element</h2>
+<pre>__toString() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The text inside the root element</div>
+</div></div>
+</div>
+<a id="method_addCustomPrefix"></a><div class="element clickable method public method_addCustomPrefix" data-toggle="collapse" data-target=".method_addCustomPrefix .collapse">
+<h2>Adds a custom namespace prefix to full namespace mapping</h2>
+<pre>addCustomPrefix(string $ns_prefix, string $namespace) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This namespace prefix will be valid for any operation on this object,
+including calls to ::xpath().</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ns_prefix</h4>
+<code>string</code><p>The custom namespace prefix</p></div>
+<div class="subelement argument">
+<h4>$namespace</h4>
+<code>string</code><p>The full namespace it maps to</p></div>
+</div></div>
+</div>
+<a id="method_encode"></a><div class="element clickable method public method_encode" data-toggle="collapse" data-target=".method_encode .collapse">
+<h2>Encodes content for display in a UTF-8 encoded XML document</h2>
+<pre>encode(string $content) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The content to encode</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded content</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Returns the name of the current element</h2>
+<pre>getName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the current element</div>
+</div></div>
+</div>
+<a id="method_getNamespace"></a><div class="element clickable method public method_getNamespace" data-toggle="collapse" data-target=".method_getNamespace .collapse">
+<h2>Returns the namespace of the current element</h2>
+<pre>getNamespace() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The namespace of the current element</div>
+</div></div>
+</div>
+<a id="method_getPrefix"></a><div class="element clickable method public method_getPrefix" data-toggle="collapse" data-target=".method_getPrefix .collapse">
+<h2>Returns the namespace prefix of the current element</h2>
+<pre>getPrefix() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The namespace prefix of the current element</div>
+</div></div>
+</div>
+<a id="method_getText"></a><div class="element clickable method public method_getText" data-toggle="collapse" data-target=".method_getText .collapse">
+<h2>Returns the string text of the current element</h2>
+<pre>getText() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string text of the current element</div>
+</div></div>
+</div>
+<a id="method_sendHeader"></a><div class="element clickable method public method_sendHeader" data-toggle="collapse" data-target=".method_sendHeader .collapse">
+<h2>Sets the proper `Content-Type` HTTP header for a UTF-8 XML file</h2>
+<pre>sendHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_toXML"></a><div class="element clickable method public method_toXML" data-toggle="collapse" data-target=".method_toXML .collapse">
+<h2>Returns a well-formed XML string from the current element</h2>
+<pre>toXML() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The XML</div>
+</div></div>
+</div>
+<a id="method_xpath"></a><div class="element clickable method public method_xpath" data-toggle="collapse" data-target=".method_xpath .collapse">
+<h2>Executes an XPath query on the current element, returning an array of matching elements</h2>
+<pre>xpath(string $path, boolean $first_only) : array | string | <a href="../classes/fXML.html">\fXML</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The XPath path to query</p></div>
+<div class="subelement argument">
+<h4>$first_only</h4>
+<code>boolean</code><p>If only the first match should be returned</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code><code>string</code><code><a href="../classes/fXML.html">\fXML</a></code>An array of matching elements, or a string or fXML object if `$first_only` is `TRUE`</div>
+</div></div>
+</div>
+<a id="method_query"></a><div class="element clickable method protected method_query" data-toggle="collapse" data-target=".method_query .collapse">
+<h2>Performs an XPath query on the current element, returning the raw results</h2>
+<pre>query(string $path) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The XPath path to query</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The matching elements</div>
+</div></div>
+</div>
+<a id="method_fixEntitiesEncoding"></a><div class="element clickable method private method_fixEntitiesEncoding" data-toggle="collapse" data-target=".method_fixEntitiesEncoding .collapse">
+<h2>Fixes HTML entities that aren't XML encoded and fixes ISO-8859-1/Windows-1252 encoded content that does not have an encoding attribute</h2>
+<pre>fixEntitiesEncoding(string $xml) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$xml</h4>
+<code>string</code><p>The XML to fix</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The fixed XML</div>
+</div></div>
+</div>
+<a id="method_iconv"></a><div class="element clickable method private method_iconv" data-toggle="collapse" data-target=".method_iconv .collapse">
+<h2>This works around a bug in MAMP 1.9.4+ and PHP 5.3 where iconv()
+does not seem to properly assign the return value to a variable, but
+does work when returning the value.</h2>
+<pre>iconv(string $in_charset, string $out_charset, string $string) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$in_charset</h4>
+<code>string</code><p>The incoming character encoding</p></div>
+<div class="subelement argument">
+<h4>$out_charset</h4>
+<code>string</code><p>The outgoing character encoding</p></div>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to convert</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The converted string</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property___custom_prefixes"> </a><div class="element clickable property protected property___custom_prefixes" data-toggle="collapse" data-target=".property___custom_prefixes .collapse">
+<h2>Custom prefix =&gt; namespace URI mappings</h2>
+<pre>$__custom_prefixes : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property___dom"> </a><div class="element clickable property protected property___dom" data-toggle="collapse" data-target=".property___dom .collapse">
+<h2>The dom element for this XML</h2>
+<pre>$__dom : <a href="http://php.net/manual/en/class.domelement.php">\DOMElement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property___xml"> </a><div class="element clickable property protected property___xml" data-toggle="collapse" data-target=".property___xml .collapse">
+<h2>The XML string for serialization</h2>
+<pre>$__xml : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property___xpath"> </a><div class="element clickable property protected property___xpath" data-toggle="collapse" data-target=".property___xpath .collapse">
+<h2>An XPath object for performing xpath lookups</h2>
+<pre>$__xpath : <a href="http://php.net/manual/en/class.domxpath.php">\DOMXPath</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_encode"> </a><div class="element clickable constant  constant_encode" data-toggle="collapse" data-target=".constant_encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendHeader"> </a><div class="element clickable constant  constant_sendHeader" data-toggle="collapse" data-target=".constant_sendHeader .collapse">
+<h2>sendHeader</h2>
+<pre>sendHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

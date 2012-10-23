@@ -1,0 +1,414 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fCache</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Set the type and master key for the cache"><span class="description">Set the type and master key for the cache</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_add" title="add :: Tries to set a value to the cache, but stops if a value already exists"><span class="description">Tries to set a value to the cache, but stops if a value already exists</span><pre>add()</pre></a></li>
+<li class="method public "><a href="#method_clean" title="clean :: Removes all cache entries that have expired"><span class="description">Removes all cache entries that have expired</span><pre>clean()</pre></a></li>
+<li class="method public "><a href="#method_clear" title="clear :: Clears the WHOLE cache of every key, use with caution!"><span class="description">Clears the WHOLE cache of every key, use with caution!</span><pre>clear()</pre></a></li>
+<li class="method public "><a href="#method_delete" title="delete :: Deletes a value from the cache"><span class="description">Deletes a value from the cache</span><pre>delete()</pre></a></li>
+<li class="method public "><a href="#method_get" title="get :: Returns a value from the cache"><span class="description">Returns a value from the cache</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_save" title="save :: Only valid for `file` caches, saves the file to disk"><span class="description">Only valid for `file` caches, saves the file to disk</span><pre>save()</pre></a></li>
+<li class="method public "><a href="#method_set" title="set :: Sets a value to the cache, overriding any previous value"><span class="description">Sets a value to the cache, overriding any previous value</span><pre>set()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_serialize" title="serialize :: Serializes a value before storing it in the cache"><span class="description">Serializes a value before storing it in the cache</span><pre>serialize()</pre></a></li>
+<li class="method protected "><a href="#method_unserialize" title="unserialize :: Unserializes a value before returning it"><span class="description">Unserializes a value before returning it</span><pre>unserialize()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_config" title="$config :: The cache configuration, used for database, directory and file caches"><span class="description">The cache configuration, used for database, directory and file caches</span><pre>$config</pre></a></li>
+<li class="property protected "><a href="#property_data_store" title="$data_store :: The data store to use"><span class="description">The data store to use</span><pre>$data_store</pre></a></li>
+<li class="property protected "><a href="#property_type" title="$type :: The type of cache"><span class="description">The type of cache</span><pre>$type</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fCache"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fCache.html">fCache</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">A simple interface to cache data using different backends</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2009-2012 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fCache">http://flourishlib.com/fCache</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b6</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6  Fixed a bug with ::add() setting a value when it shouldn't if no ttl was given for the file backend [wb, 2012-01-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5  Added missing documentation for using Redis as a backend [wb, 2011-08-25]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Added the `database`, `directory` and `redis` types, added support for the memcached extention and support for custom serialization callbacks [wb, 2011-06-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Added `0` to the memcache delete method call since otherwise the method triggers notices on some installs [wb, 2011-05-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Fixed API calls to the memcache extension to pass the TTL as the correct parameter [wb, 2011-02-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2009-04-28]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Set the type and master key for the cache</h2>
+<pre>__construct(string $type, mixed $data_store, array $config) : <a href="../classes/fCache.html">\fCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>file</code> cache uses a single file to store values in an associative
+array and is probably not suitable for a large number of keys.</p>
+
+<p>Using an <code>apc</code> or <code>xcache</code> cache will have far better performance
+than a file or directory, however please remember that keys are shared
+server-wide.</p>
+
+<p><code>$config</code> is an associative array of configuration options for the various
+backends. Some backend require additional configuration, while others
+provide provide optional settings.</p>
+
+<p>The following <code>$config</code> options must be set for the <code>database</code> backend:</p>
+
+<ul>
+<li><code>table</code>: The database table to use for caching</li>
+<li><code>key_column</code>: The column to store the cache key in - must support at least 250 character strings</li>
+<li><code>value_column</code>: The column to store the serialized value in - this should probably be a <code>TEXT</code> column to support large values, or <code>BLOB</code> if binary serialization is used</li>
+<li><code>value_data_type</code>: If a <code>BLOB</code> column is being used for the <code>value_column</code>, this should be set to 'blob', otherwise <code>string</code></li>
+<li><code>ttl_column</code>: The column to store the expiration timestamp of the cached entry - this should be an integer</li>
+</ul>
+
+<p>The following <code>$config</code> for the following items can be set for all backends:</p>
+
+<ul>
+<li><code>serializer</code>: A callback to serialize data with, defaults to the PHP function <code>serialize()</code></li>
+<li><code>unserializer</code>: A callback to unserialize data with, defaults to the PHP function <code>unserialize()</code></li>
+</ul>
+
+<p>Common serialization callbacks include:</p>
+
+<ul>
+<li><code>json_encode</code>/<code>json_decode</code></li>
+<li><code>igbinary_serialize</code>/<code>igbinary_unserialize</code></li>
+</ul>
+
+<p>Please note that using JSON for serialization will exclude all non-public
+properties of objects from being serialized.</p>
+
+<p>A custom <code>serialize</code> and <code>unserialze</code> option is <code>string</code>, which will cast
+all values to a string when storing, instead of serializing them. If a
+<code>__toString()</code> method is provided for objects, it will be called.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of caching to use: <code>'apc'</code>, <code>'database'</code>, <code>'directory'</code>, <code>'file'</code>, <code>'memcache'</code>, <code>'redis'</code>, <code>'xcache'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$data_store</h4>
+<code>mixed</code><p>The path for a <code>file</code> or <code>directory</code> cache, an <code>Memcache</code> or <code>Memcached</code> object for a <code>memcache</code> cache, an fDatabase object for a <code>database</code> cache or a <code>Redis</code> object for a <code>redis</code> cache - not used for <code>apc</code> or <code>xcache</code></p>
+</div>
+<div class="subelement argument">
+<h4>$config</h4>
+<code>array</code><p>Configuration options - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fCache.html">\fCache</a></code></div>
+</div></div>
+</div>
+<a id="method_add"></a><div class="element clickable method public method_add" data-toggle="collapse" data-target=".method_add .collapse">
+<h2>Tries to set a value to the cache, but stops if a value already exists</h2>
+<pre>add(string $key, mixed $value, integer $ttl) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to store as, this should not exceed 250 characters</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to store, this will be serialized</p></div>
+<div class="subelement argument">
+<h4>$ttl</h4>
+<code>integer</code><p>The number of seconds to keep the cache valid for, 0 for no limit</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the key/value pair were added successfully</div>
+</div></div>
+</div>
+<a id="method_clean"></a><div class="element clickable method public method_clean" data-toggle="collapse" data-target=".method_clean .collapse">
+<h2>Removes all cache entries that have expired</h2>
+<pre>clean() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_clear"></a><div class="element clickable method public method_clear" data-toggle="collapse" data-target=".method_clear .collapse">
+<h2>Clears the WHOLE cache of every key, use with caution!</h2>
+<pre>clear() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>xcache may require a login or password depending on your ini settings.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the cache was successfully cleared</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Deletes a value from the cache</h2>
+<pre>delete(string $key) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to delete</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the delete succeeded</div>
+</div></div>
+</div>
+<a id="method_get"></a><div class="element clickable method public method_get" data-toggle="collapse" data-target=".method_get .collapse">
+<h2>Returns a value from the cache</h2>
+<pre>get(string $key, mixed $default) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to return the value for</p></div>
+<div class="subelement argument">
+<h4>$default</h4>
+<code>mixed</code><p>The value to return if the key did not exist</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The cached value or the default value if no cached value was found</div>
+</div></div>
+</div>
+<a id="method_save"></a><div class="element clickable method public method_save" data-toggle="collapse" data-target=".method_save .collapse">
+<h2>Only valid for `file` caches, saves the file to disk</h2>
+<pre>save() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_set"></a><div class="element clickable method public method_set" data-toggle="collapse" data-target=".method_set .collapse">
+<h2>Sets a value to the cache, overriding any previous value</h2>
+<pre>set(string $key, mixed $value, integer $ttl) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>The key to store as, this should not exceed 250 characters</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to store, this will be serialized</p></div>
+<div class="subelement argument">
+<h4>$ttl</h4>
+<code>integer</code><p>The number of seconds to keep the cache valid for, 0 for no limit</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value was successfully saved</div>
+</div></div>
+</div>
+<a id="method_serialize"></a><div class="element clickable method protected method_serialize" data-toggle="collapse" data-target=".method_serialize .collapse">
+<h2>Serializes a value before storing it in the cache</h2>
+<pre>serialize(mixed $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to serialize</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The serialized value</div>
+</div></div>
+</div>
+<a id="method_unserialize"></a><div class="element clickable method protected method_unserialize" data-toggle="collapse" data-target=".method_unserialize .collapse">
+<h2>Unserializes a value before returning it</h2>
+<pre>unserialize(string $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The serialized value</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The PHP value</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_config"> </a><div class="element clickable property protected property_config" data-toggle="collapse" data-target=".property_config .collapse">
+<h2>The cache configuration, used for database, directory and file caches</h2>
+<pre>$config : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The array structure for database caches is:
+{{{
+array(
+    'table'        => (string) {the database table to use},
+    'key_column'   => (string) {the varchar column to store the key in, should be able to handle at least 250 characters},
+    'value_column' => (string) {the text/varchar column to store the value in},
+    'ttl_column'   => (string) {the integer column to store the expiration time in}
+)
+}}}</p>
+
+<p>The array structure for directory caches:
+{{{
+array(
+    'path' => (string) {the directory path with trailing slash}
+)
+}}}</p>
+
+<p>The array structure for file caches:
+{{{
+array(
+    'path'  => (string) {the file path},
+    'state' => (string) {clean or dirty, used to appropriately save}
+)
+}}}</p></div></div></div>
+</div>
+<a id="property_data_store"> </a><div class="element clickable property protected property_data_store" data-toggle="collapse" data-target=".property_data_store .collapse">
+<h2>The data store to use</h2>
+<pre>$data_store : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Either the:
+ - array structure for file cache
+ - Memcache or Memcached object for memcache
+ - fDatabase object for database
+ - Redis object for redis</p>
+
+<p>Not used for apc, directory or xcache</p></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property protected property_type" data-toggle="collapse" data-target=".property_type .collapse">
+<h2>The type of cache</h2>
+<pre>$type : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The valid values are:
+ - <code>'apc'</code>
+ - <code>'database'</code>
+ - <code>'directory'</code>
+ - <code>'file'</code>
+ - <code>'memcache'</code>
+ - <code>'redis'</code>
+ - <code>'xcache'</code></p></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

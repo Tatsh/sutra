@@ -1,0 +1,1598 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fDatabase</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Configures the connection to a database - connection is not made until the first query is executed"><span class="description">Configures the connection to a database - connection is not made until the first query is executed</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_clearCache" title="clearCache :: Clears all of the schema info out of the object and, if set, the fCache object"><span class="description">Clears all of the schema info out of the object and, if set, the fCache object</span><pre>clearCache()</pre></a></li>
+<li class="method public "><a href="#method_close" title="close :: Closes the database connection"><span class="description">Closes the database connection</span><pre>close()</pre></a></li>
+<li class="method public "><a href="#method_connect" title="connect :: Connects to the database specified, if no connection exists"><span class="description">Connects to the database specified, if no connection exists</span><pre>connect()</pre></a></li>
+<li class="method public "><a href="#method_enableCaching" title="enableCaching :: Sets the schema info to be cached to the fCache object specified"><span class="description">Sets the schema info to be cached to the fCache object specified</span><pre>enableCaching()</pre></a></li>
+<li class="method public "><a href="#method_enableDebugging" title="enableDebugging :: Sets if debug messages should be shown"><span class="description">Sets if debug messages should be shown</span><pre>enableDebugging()</pre></a></li>
+<li class="method public "><a href="#method_escape" title="escape :: Escapes a value for insertion into SQL"><span class="description">Escapes a value for insertion into SQL</span><pre>escape()</pre></a></li>
+<li class="method public "><a href="#method_execute" title="execute :: Executes one or more SQL queries without returning any results"><span class="description">Executes one or more SQL queries without returning any results</span><pre>execute()</pre></a></li>
+<li class="method public "><a href="#method_getConnection" title="getConnection :: Returns the database connection resource or object"><span class="description">Returns the database connection resource or object</span><pre>getConnection()</pre></a></li>
+<li class="method public "><a href="#method_getDatabase" title="getDatabase :: Gets the name of the database currently connected to"><span class="description">Gets the name of the database currently connected to</span><pre>getDatabase()</pre></a></li>
+<li class="method public "><a href="#method_getHost" title="getHost :: Gets the host for this database"><span class="description">Gets the host for this database</span><pre>getHost()</pre></a></li>
+<li class="method public "><a href="#method_getPort" title="getPort :: Gets the port for this database"><span class="description">Gets the port for this database</span><pre>getPort()</pre></a></li>
+<li class="method public "><a href="#method_getSQLTranslation" title="getSQLTranslation :: Gets the fSQLTranslation object used for translated queries"><span class="description">Gets the fSQLTranslation object used for translated queries</span><pre>getSQLTranslation()</pre></a></li>
+<li class="method public "><a href="#method_getType" title="getType :: Gets the database type"><span class="description">Gets the database type</span><pre>getType()</pre></a></li>
+<li class="method public "><a href="#method_getUsername" title="getUsername :: Gets the username for this database"><span class="description">Gets the username for this database</span><pre>getUsername()</pre></a></li>
+<li class="method public "><a href="#method_getVersion" title="getVersion :: Gets the version of the database system"><span class="description">Gets the version of the database system</span><pre>getVersion()</pre></a></li>
+<li class="method public "><a href="#method_isInsideTransaction" title="isInsideTransaction :: Will indicate if a transaction is currently in progress"><span class="description">Will indicate if a transaction is currently in progress</span><pre>isInsideTransaction()</pre></a></li>
+<li class="method public "><a href="#method_prepare" title="prepare :: Prepares a single fStatement object to execute prepared statements"><span class="description">Prepares a single fStatement object to execute prepared statements</span><pre>prepare()</pre></a></li>
+<li class="method public "><a href="#method_query" title="query :: Executes one or more SQL queries and returns the result(s)"><span class="description">Executes one or more SQL queries and returns the result(s)</span><pre>query()</pre></a></li>
+<li class="method public "><a href="#method_registerHookCallback" title="registerHookCallback :: Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook"><span class="description">Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</span><pre>registerHookCallback()</pre></a></li>
+<li class="method public "><a href="#method_translatedExecute" title="translatedExecute :: Translates one or more SQL statements using fSQLTranslation and executes them without returning any results"><span class="description">Translates one or more SQL statements using fSQLTranslation and executes them without returning any results</span><pre>translatedExecute()</pre></a></li>
+<li class="method public "><a href="#method_translatedPrepare" title="translatedPrepare :: Translates a SQL statement and creates an fStatement object from it"><span class="description">Translates a SQL statement and creates an fStatement object from it</span><pre>translatedPrepare()</pre></a></li>
+<li class="method public "><a href="#method_translatedQuery" title="translatedQuery :: Translates one or more SQL statements using fSQLTranslation and executes them"><span class="description">Translates one or more SQL statements using fSQLTranslation and executes them</span><pre>translatedQuery()</pre></a></li>
+<li class="method public "><a href="#method_unbufferedQuery" title="unbufferedQuery :: Executes a single SQL statement in unbuffered mode."><span class="description">Executes a single SQL statement in unbuffered mode.</span><pre>unbufferedQuery()</pre></a></li>
+<li class="method public "><a href="#method_unbufferedTranslatedQuery" title="unbufferedTranslatedQuery :: Translates the SQL statement using fSQLTranslation and then executes it
+in unbuffered mode."><span class="description">Translates the SQL statement using fSQLTranslation and then executes it
+in unbuffered mode.</span><pre>unbufferedTranslatedQuery()</pre></a></li>
+<li class="method public "><a href="#method_unescape" title="unescape :: Unescapes a value coming out of a database based on its data type"><span class="description">Unescapes a value coming out of a database based on its data type</span><pre>unescape()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method protected "><a href="#method_determineCharacterSet" title="determineCharacterSet :: Determines the character set of a SQL Server database"><span class="description">Determines the character set of a SQL Server database</span><pre>determineCharacterSet()</pre></a></li>
+<li class="method protected "><a href="#method_determineExtension" title="determineExtension :: Figures out which extension to use for the database type selected"><span class="description">Figures out which extension to use for the database type selected</span><pre>determineExtension()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_checkForError" title="checkForError :: Checks to see if an SQL error occured"><span class="description">Checks to see if an SQL error occured</span><pre>checkForError()</pre></a></li>
+<li class="method private "><a href="#method_escapeBlob" title="escapeBlob :: Escapes a blob for use in SQL, includes surround quotes when appropriate"><span class="description">Escapes a blob for use in SQL, includes surround quotes when appropriate</span><pre>escapeBlob()</pre></a></li>
+<li class="method private "><a href="#method_escapeBoolean" title="escapeBoolean :: Escapes a boolean for use in SQL, includes surround quotes when appropriate"><span class="description">Escapes a boolean for use in SQL, includes surround quotes when appropriate</span><pre>escapeBoolean()</pre></a></li>
+<li class="method private "><a href="#method_escapeDate" title="escapeDate :: Escapes a date for use in SQL, includes surrounding quotes"><span class="description">Escapes a date for use in SQL, includes surrounding quotes</span><pre>escapeDate()</pre></a></li>
+<li class="method private "><a href="#method_escapeFloat" title="escapeFloat :: Escapes a float for use in SQL"><span class="description">Escapes a float for use in SQL</span><pre>escapeFloat()</pre></a></li>
+<li class="method private "><a href="#method_escapeIdentifier" title="escapeIdentifier :: Escapes an identifier for use in SQL, necessary for reserved words"><span class="description">Escapes an identifier for use in SQL, necessary for reserved words</span><pre>escapeIdentifier()</pre></a></li>
+<li class="method private "><a href="#method_escapeInteger" title="escapeInteger :: Escapes an integer for use in SQL"><span class="description">Escapes an integer for use in SQL</span><pre>escapeInteger()</pre></a></li>
+<li class="method private "><a href="#method_escapeSQL" title="escapeSQL :: Takes a SQL string and an array of values and replaces the placeholders with the value"><span class="description">Takes a SQL string and an array of values and replaces the placeholders with the value</span><pre>escapeSQL()</pre></a></li>
+<li class="method private "><a href="#method_escapeString" title="escapeString :: Escapes a string for use in SQL, includes surrounding quotes"><span class="description">Escapes a string for use in SQL, includes surrounding quotes</span><pre>escapeString()</pre></a></li>
+<li class="method private "><a href="#method_escapeTime" title="escapeTime :: Escapes a time for use in SQL, includes surrounding quotes"><span class="description">Escapes a time for use in SQL, includes surrounding quotes</span><pre>escapeTime()</pre></a></li>
+<li class="method private "><a href="#method_escapeTimestamp" title="escapeTimestamp :: Escapes a timestamp for use in SQL, includes surrounding quotes"><span class="description">Escapes a timestamp for use in SQL, includes surrounding quotes</span><pre>escapeTimestamp()</pre></a></li>
+<li class="method private "><a href="#method_extractStrings" title="extractStrings :: Pulls quoted strings out into the values array for simpler processing"><span class="description">Pulls quoted strings out into the values array for simpler processing</span><pre>extractStrings()</pre></a></li>
+<li class="method private "><a href="#method_handleAutoIncrementedValue" title="handleAutoIncrementedValue :: Will grab the auto incremented value from the last query (if one exists)"><span class="description">Will grab the auto incremented value from the last query (if one exists)</span><pre>handleAutoIncrementedValue()</pre></a></li>
+<li class="method private "><a href="#method_handleConnectionErrors" title="handleConnectionErrors :: Handles connection errors"><span class="description">Handles connection errors</span><pre>handleConnectionErrors()</pre></a></li>
+<li class="method private "><a href="#method_handleErrors" title="handleErrors :: Handles a PHP error to extract error information for the mssql extension"><span class="description">Handles a PHP error to extract error information for the mssql extension</span><pre>handleErrors()</pre></a></li>
+<li class="method private "><a href="#method_handleTransactionQueries" title="handleTransactionQueries :: Makes sure each database and extension handles BEGIN, COMMIT and ROLLBACK"><span class="description">Makes sure each database and extension handles BEGIN, COMMIT and ROLLBACK</span><pre>handleTransactionQueries()</pre></a></li>
+<li class="method private "><a href="#method_makeCachePrefix" title="makeCachePrefix :: Creates a unique cache prefix to help prevent cache conflicts"><span class="description">Creates a unique cache prefix to help prevent cache conflicts</span><pre>makeCachePrefix()</pre></a></li>
+<li class="method private "><a href="#method_perform" title="perform :: Executes a SQL statement"><span class="description">Executes a SQL statement</span><pre>perform()</pre></a></li>
+<li class="method private "><a href="#method_performQuery" title="performQuery :: Executes an SQL query"><span class="description">Executes an SQL query</span><pre>performQuery()</pre></a></li>
+<li class="method private "><a href="#method_performUnbufferedQuery" title="performUnbufferedQuery :: Executes an unbuffered SQL query"><span class="description">Executes an unbuffered SQL query</span><pre>performUnbufferedQuery()</pre></a></li>
+<li class="method private "><a href="#method_prepareStatement" title="prepareStatement :: Prepares a single fStatement object to execute prepared statements"><span class="description">Prepares a single fStatement object to execute prepared statements</span><pre>prepareStatement()</pre></a></li>
+<li class="method private "><a href="#method_run" title="run :: Runs a single statement and times it, removes any old unbuffered queries before starting"><span class="description">Runs a single statement and times it, removes any old unbuffered queries before starting</span><pre>run()</pre></a></li>
+<li class="method private "><a href="#method_runRollbackStatements" title="runRollbackStatements :: Takes an array of rollback statements to undo part of a set of queries which involve one that failed"><span class="description">Takes an array of rollback statements to undo part of a set of queries which involve one that failed</span><pre>runRollbackStatements()</pre></a></li>
+<li class="method private "><a href="#method_scalarize" title="scalarize :: Turns an array possibly containing objects into an array of all strings"><span class="description">Turns an array possibly containing objects into an array of all strings</span><pre>scalarize()</pre></a></li>
+<li class="method private "><a href="#method_setAffectedRows" title="setAffectedRows :: Sets the number of rows affected by the query"><span class="description">Sets the number of rows affected by the query</span><pre>setAffectedRows()</pre></a></li>
+<li class="method private "><a href="#method_setReturnedRows" title="setReturnedRows :: Sets the number of rows returned by the query"><span class="description">Sets the number of rows returned by the query</span><pre>setReturnedRows()</pre></a></li>
+<li class="method private "><a href="#method_splitSQL" title="splitSQL :: Splits SQL into pieces of SQL and quoted strings"><span class="description">Splits SQL into pieces of SQL and quoted strings</span><pre>splitSQL()</pre></a></li>
+<li class="method private "><a href="#method_unescapeBlob" title="unescapeBlob :: Unescapes a blob coming out of the database"><span class="description">Unescapes a blob coming out of the database</span><pre>unescapeBlob()</pre></a></li>
+<li class="method private "><a href="#method_unescapeBoolean" title="unescapeBoolean :: Unescapes a boolean coming out of the database"><span class="description">Unescapes a boolean coming out of the database</span><pre>unescapeBoolean()</pre></a></li>
+<li class="method private "><a href="#method_unescapeDate" title="unescapeDate :: Unescapes a date coming out of the database"><span class="description">Unescapes a date coming out of the database</span><pre>unescapeDate()</pre></a></li>
+<li class="method private "><a href="#method_unescapeTime" title="unescapeTime :: Unescapes a time coming out of the database"><span class="description">Unescapes a time coming out of the database</span><pre>unescapeTime()</pre></a></li>
+<li class="method private "><a href="#method_unescapeTimestamp" title="unescapeTimestamp :: Unescapes a timestamp coming out of the database"><span class="description">Unescapes a timestamp coming out of the database</span><pre>unescapeTimestamp()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_extension" title="$extension :: The extension to use for the database specified"><span class="description">The extension to use for the database specified</span><pre>$extension</pre></a></li>
+<li class="property protected "><a href="#property_schema_info" title="$schema_info :: A cache of database-specific code"><span class="description">A cache of database-specific code</span><pre>$schema_info</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cache" title="$cache :: An fCache object to cache the schema info to"><span class="description">An fCache object to cache the schema info to</span><pre>$cache</pre></a></li>
+<li class="property private "><a href="#property_cache_prefix" title="$cache_prefix :: The cache prefix to use for cache entries"><span class="description">The cache prefix to use for cache entries</span><pre>$cache_prefix</pre></a></li>
+<li class="property private "><a href="#property_connection" title="$connection :: Database connection resource or PDO object"><span class="description">Database connection resource or PDO object</span><pre>$connection</pre></a></li>
+<li class="property private "><a href="#property_database" title="$database :: The database name"><span class="description">The database name</span><pre>$database</pre></a></li>
+<li class="property private "><a href="#property_debug" title="$debug :: If debugging is enabled"><span class="description">If debugging is enabled</span><pre>$debug</pre></a></li>
+<li class="property private "><a href="#property_error" title="$error :: A temporary error holder for the mssql extension"><span class="description">A temporary error holder for the mssql extension</span><pre>$error</pre></a></li>
+<li class="property private "><a href="#property_hook_callbacks" title="$hook_callbacks :: Hooks callbacks to be used for accessing and modifying queries"><span class="description">Hooks callbacks to be used for accessing and modifying queries</span><pre>$hook_callbacks</pre></a></li>
+<li class="property private "><a href="#property_host" title="$host :: The host the database server is located on"><span class="description">The host the database server is located on</span><pre>$host</pre></a></li>
+<li class="property private "><a href="#property_inside_transaction" title="$inside_transaction :: If a transaction is in progress"><span class="description">If a transaction is in progress</span><pre>$inside_transaction</pre></a></li>
+<li class="property private "><a href="#property_password" title="$password :: The password for the user specified"><span class="description">The password for the user specified</span><pre>$password</pre></a></li>
+<li class="property private "><a href="#property_port" title="$port :: The port number for the host"><span class="description">The port number for the host</span><pre>$port</pre></a></li>
+<li class="property private "><a href="#property_query_time" title="$query_time :: The total number of seconds spent executing queries"><span class="description">The total number of seconds spent executing queries</span><pre>$query_time</pre></a></li>
+<li class="property private "><a href="#property_statement" title="$statement :: The last executed fStatement object"><span class="description">The last executed fStatement object</span><pre>$statement</pre></a></li>
+<li class="property private "><a href="#property_timeout" title="$timeout :: The timeout for the database connection"><span class="description">The timeout for the database connection</span><pre>$timeout</pre></a></li>
+<li class="property private "><a href="#property_translation" title="$translation :: The fSQLTranslation object for this database"><span class="description">The fSQLTranslation object for this database</span><pre>$translation</pre></a></li>
+<li class="property private "><a href="#property_type" title="$type :: The database type: `'db2'`, `'mssql'`, `'mysql'`, `'oracle'`, `'postgresql'`, or `'sqlite'`"><span class="description">The database type: `'db2'`, `'mssql'`, `'mysql'`, `'oracle'`, `'postgresql'`, or `'sqlite'`</span><pre>$type</pre></a></li>
+<li class="property private "><a href="#property_unbuffered_result" title="$unbuffered_result :: The unbuffered query instance"><span class="description">The unbuffered query instance</span><pre>$unbuffered_result</pre></a></li>
+<li class="property private "><a href="#property_username" title="$username :: The user to connect to the database as"><span class="description">The user to connect to the database as</span><pre>$username</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fDatabase"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fDatabase.html">fDatabase</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides a common API for different databases - will automatically use any installed extension</p>
+<div class="details">
+<div class="long_description"><p>This class is implemented to use the UTF-8 character encoding. Please see
+http://flourishlib.com/docs/UTF-8 for more information.</p>
+
+<p>The following databases are supported:</p>
+
+<ul>
+<li>[http://ibm.com/db2 DB2]</li>
+<li>[http://microsoft.com/sql/ MSSQL]</li>
+<li>[http://mysql.com MySQL]</li>
+<li>[http://oracle.com Oracle]</li>
+<li>[http://postgresql.org PostgreSQL]</li>
+<li>[http://sqlite.org SQLite]</li>
+</ul>
+
+<p>The class will automatically use the first of the following extensions it finds:</p>
+
+<ul>
+<li>DB2
+
+<ul>
+<li>[http://php.net/ibm_db2 ibm_db2]</li>
+<li>[http://php.net/pdo_ibm pdo_ibm]</li>
+</ul></li>
+<li>MSSQL
+
+<ul>
+<li>[http://msdn.microsoft.com/en-us/library/cc296221.aspx sqlsrv]</li>
+<li>[http://php.net/pdo_dblib pdo_dblib]</li>
+<li>[http://php.net/mssql mssql] (or [http://php.net/sybase sybase])</li>
+</ul></li>
+<li>MySQL
+
+<ul>
+<li>[http://php.net/mysql mysql]</li>
+<li>[http://php.net/mysqli mysqli]</li>
+<li>[http://php.net/pdo_mysql pdo_mysql]</li>
+</ul></li>
+<li>Oracle
+
+<ul>
+<li>[http://php.net/oci8 oci8]</li>
+<li>[http://php.net/pdo_oci pdo_oci]</li>
+</ul></li>
+<li>PostgreSQL
+
+<ul>
+<li>[http://php.net/pgsql pgsql]</li>
+<li>[http://php.net/pdo_pgsql pdo_pgsql]</li>
+</ul></li>
+<li>SQLite
+
+<ul>
+<li>[http://php.net/pdo_sqlite pdo_sqlite] (for v3.x)</li>
+<li>[http://php.net/sqlite sqlite] (for v2.x)</li>
+</ul></li>
+</ul>
+
+<p>The <code>odbc</code> and <code>pdo_odbc</code> extensions are not supported due to character
+encoding and stability issues on Windows, and functionality on non-Windows
+operating systems.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fDatabase">http://flourishlib.com/fDatabase</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b40</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b40  Fixed a bug with notices being triggered when failing to connect to a SQLite database [wb, 2011-06-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b39  Fixed a bug with detecting some MySQL database version numbers [wb, 2011-05-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b38  Backwards Compatibility Break - callbacks registered to the `extracted` hook via ::registerHookCallback() no longer receive the `$strings` parameter, instead all strings are added into the `$values` parameter - added ::getVersion(), fixed a bug with SQLite messaging, fixed a bug with ::__destruct(), improved handling of transactional queries, added ::close(), enhanced class to throw four different exceptions for different connection errors, silenced PHP warnings upon connection error [wb, 2011-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b37  Fixed usage of the mysqli extension to only call mysqli_set_charset() if it exists [wb, 2011-03-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b36  Updated ::escape() and methods that use ::escape() to handle float values that don't contain a digit before or after the . [wb, 2011-02-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b35  Updated the class to replace `LIMIT` and `OFFSET` value placeholders in the SQL with their values before translating since most databases that translate `LIMIT` statements need to move or add values together [wb, 2011-01-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b34  Fixed a bug with creating translated prepared statements [wb, 2011-01-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b33  Added code to explicitly set the connection encoding for the mysql and mysqli extensions since some PHP installs don't see to fully respect `SET NAMES` [wb, 2010-12-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b32  Fixed handling auto-incrementing values for Oracle when the trigger was on `INSERT OR UPDATE` instead of just `INSERT` [wb, 2010-12-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b31  Fixed handling auto-incrementing values for MySQL when the `INTO` keyword is left out of an `INSERT` statement [wb, 2010-11-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Fixed the pgsql, mssql and mysql extensions to force a new connection instead of reusing an existing one [wb, 2010-08-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Backwards Compatibility Break - removed ::enableSlowQueryWarnings(), added ability to replicate via ::registerHookCallback() [wb, 2010-08-10]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Backwards Compatibility Break - removed ODBC support. Added support for the `pdo_ibm` extension. [wb, 2010-07-31]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Fixed a bug with running multiple copies of a SQL statement with string values through a single ::translatedQuery() call [wb, 2010-07-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Updated the class to use new fCore functionality [wb, 2010-07-05]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Added IBM DB2 support [wb, 2010-04-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Fixed an auto-incrementing transaction bug with Oracle and debugging issues with all databases [wb, 2010-03-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Resolved another bug with capturing auto-incrementing values for PostgreSQL and Oracle [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Changed ::clearCache() to also clear the cache on the fSQLTranslation [wb, 2010-03-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Added ::execute() for result-less SQL queries, ::prepare() and ::translatedPrepare() to create fStatement objects for prepared statements, support for prepared statements in ::query() and ::unbufferedQuery(), fixed default caching key for ::enableCaching() [wb, 2010-03-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Added a parameter to ::enableCaching() to provide a key token that will allow cached values to be shared between multiple databases with the same schema [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Added support for escaping identifiers (column and table names) to ::escape(), added support for database schemas, rewrote internal SQL string spliting [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Updated the class for the new fResult and fUnbufferedResult APIs, fixed ::unescape() to not touch NULLs [wb, 2009-08-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added the ability to pass an array of all values as a single parameter to ::escape() instead of one value per parameter [wb, 2009-08-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Fixed PostgreSQL and Oracle from trying to get auto-incrementing values on inserts when explicit values were given [wb, 2009-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Fixed a bug where auto-incremented values would not be detected when table names were quoted [wb, 2009-07-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Changed ::determineExtension() and ::determineCharacterSet() to be protected instead of private [wb, 2009-07-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Updated ::escape() to accept arrays of values for insertion into full SQL strings [wb, 2009-07-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Updates to ::unescape() to improve performance [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Changed replacement values in preg_replace() calls to be properly escaped [wb, 2009-06-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Changed date/time/timestamp escaping from `strtotime()` to fDate/fTime/fTimestamp for better localization support [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Fixed a bug with ::escape() where floats that start with a . were encoded as `NULL` [wb, 2009-05-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Added Oracle support, change PostgreSQL code to no longer cause lastval() warnings, added support for arrays of values to ::escape() [wb, 2009-05-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Updated for new fCore API [wb, 2009-02-16]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed a bug with executing transaction queries when using the mysqli extension [wb, 2009-02-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Changed @ error suppression operator to `error_reporting()` calls [wb, 2009-01-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Added a few error suppression operators back in so that developers don't get errors and exceptions [wb, 2009-01-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Removed some unnecessary error suppresion operators [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with PostgreSQL when using the PDO extension and executing an INSERT statement [wb, 2008-12-11]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-09-25]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Configures the connection to a database - connection is not made until the first query is executed</h2>
+<pre>__construct(string $type, string $database, string $username, string $password, string $host, integer $port, integer $timeout) : <a href="../classes/fDatabase.html">\fDatabase</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Passing <code>NULL</code> to any parameter other than <code>$type</code> and <code>$database</code> will
+cause the default value to be used.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>string</code><p>The type of the database: <code>'db2'</code>, <code>'mssql'</code>, <code>'mysql'</code>, <code>'oracle'</code>, <code>'postgresql'</code>, <code>'sqlite'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$database</h4>
+<code>string</code><p>Name of the database. If SQLite the path to the database file.</p></div>
+<div class="subelement argument">
+<h4>$username</h4>
+<code>string</code><p>Database username - not used for SQLite</p>
+</div>
+<div class="subelement argument">
+<h4>$password</h4>
+<code>string</code><p>The password for the username specified - not used for SQLite</p>
+</div>
+<div class="subelement argument">
+<h4>$host</h4>
+<code>string</code><p>Database server host or IP, defaults to localhost - not used for SQLite. MySQL socket connection can be made by entering <code>'sock:'</code> followed by the socket path. PostgreSQL socket connection can be made by passing just <code>'sock:'</code>.</p>
+</div>
+<div class="subelement argument">
+<h4>$port</h4>
+<code>integer</code><p>The port to connect to, defaults to the standard port for the database type specified - not used for SQLite</p>
+</div>
+<div class="subelement argument">
+<h4>$timeout</h4>
+<code>integer</code><p>The number of seconds to timeout after if a connection can not be made - not used for SQLite</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fDatabase.html">\fDatabase</a></code></div>
+</div></div>
+</div>
+<a id="method_clearCache"></a><div class="element clickable method public method_clearCache" data-toggle="collapse" data-target=".method_clearCache .collapse">
+<h2>Clears all of the schema info out of the object and, if set, the fCache object</h2>
+<pre>clearCache() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_close"></a><div class="element clickable method public method_close" data-toggle="collapse" data-target=".method_close .collapse">
+<h2>Closes the database connection</h2>
+<pre>close() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_connect"></a><div class="element clickable method public method_connect" data-toggle="collapse" data-target=".method_connect .collapse">
+<h2>Connects to the database specified, if no connection exists</h2>
+<pre>connect() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is only intended to force a connection, all operations that
+require a database connection will automatically call this method.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fAuthorizationException.html">\fAuthorizationException</a></code></th>
+<td>When the username and password are not accepted</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_enableCaching"></a><div class="element clickable method public method_enableCaching" data-toggle="collapse" data-target=".method_enableCaching .collapse">
+<h2>Sets the schema info to be cached to the fCache object specified</h2>
+<pre>enableCaching(<a href="../classes/fCache.html">\fCache</a> $cache, string $key_token) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code><a href="../classes/fCache.html">\fCache</a></code><p>The cache to cache to</p></div>
+<div class="subelement argument">
+<h4>$key_token</h4>
+<code>string</code><p>Internal use only! (this will be used in the cache key to uniquely identify the cache for this fDatabase object)</p>
+</div>
+</div></div>
+</div>
+<a id="method_enableDebugging"></a><div class="element clickable method public method_enableDebugging" data-toggle="collapse" data-target=".method_enableDebugging .collapse">
+<h2>Sets if debug messages should be shown</h2>
+<pre>enableDebugging(boolean $flag) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$flag</h4>
+<code>boolean</code><p>If debugging messages should be shown</p></div>
+</div></div>
+</div>
+<a id="method_escape"></a><div class="element clickable method public method_escape" data-toggle="collapse" data-target=".method_escape .collapse">
+<h2>Escapes a value for insertion into SQL</h2>
+<pre>escape(string $sql_or_type, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The valid data types are:</p>
+
+<ul>
+<li><code>'blob'</code></li>
+<li><code>'boolean'</code></li>
+<li><code>'date'</code></li>
+<li><code>'float'</code></li>
+<li><code>'identifier'</code></li>
+<li><code>'integer'</code></li>
+<li><code>'string'</code> (also varchar, char or text)</li>
+<li><code>'varchar'</code></li>
+<li><code>'char'</code></li>
+<li><code>'text'</code></li>
+<li><code>'time'</code></li>
+<li><code>'timestamp'</code></li>
+</ul>
+
+<p>In addition to being able to specify the data type, you can also pass
+in an SQL statement with data type placeholders in the following form:</p>
+
+<ul>
+<li><code>%l</code> for a blob</li>
+<li><code>%b</code> for a boolean</li>
+<li><code>%d</code> for a date</li>
+<li><code>%f</code> for a float</li>
+<li><code>%r</code> for an indentifier (table or column name)</li>
+<li><code>%i</code> for an integer</li>
+<li><code>%s</code> for a string</li>
+<li><code>%t</code> for a time</li>
+<li><code>%p</code> for a timestamp</li>
+</ul>
+
+<p>Depending on what <code>$sql_or_type</code> and <code>$value</code> are, the output will be
+slightly different. If <code>$sql_or_type</code> is a data type or a single
+placeholder and <code>$value</code> is:</p>
+
+<ul>
+<li>a scalar value - an escaped SQL string is returned</li>
+<li>an array - an array of escaped SQL strings is returned</li>
+</ul>
+
+<p>If <code>$sql_or_type</code> is a SQL string and <code>$value</code> is:</p>
+
+<ul>
+<li>a scalar value - the escaped value is inserted into the SQL string</li>
+<li>an array - the escaped values are inserted into the SQL string separated by commas</li>
+</ul>
+
+<p>If <code>$sql_or_type</code> is a SQL string, it is also possible to pass an array
+of all values as a single parameter instead of one value per parameter.
+An example would look like the following:</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>$db->escape(
+    "SELECT * FROM users WHERE status = %s AND authorization_level = %s",
+    array('Active', 'Admin')
+);
+}}}</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql_or_type</h4>
+<code>string</code><p>This can either be the data type to escape or an SQL string with a data type placeholder - see method description</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to escape - both single values and arrays of values are supported, see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The escaped value/SQL or an array of the escaped values</div>
+</div></div>
+</div>
+<a id="method_execute"></a><div class="element clickable method public method_execute" data-toggle="collapse" data-target=".method_execute .collapse">
+<h2>Executes one or more SQL queries without returning any results</h2>
+<pre>execute(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>One or more SQL statements in a string or an fStatement prepared statement</p></div>
+</div></div>
+</div>
+<a id="method_getConnection"></a><div class="element clickable method public method_getConnection" data-toggle="collapse" data-target=".method_getConnection .collapse">
+<h2>Returns the database connection resource or object</h2>
+<pre>getConnection() : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The database connection</div>
+</div></div>
+</div>
+<a id="method_getDatabase"></a><div class="element clickable method public method_getDatabase" data-toggle="collapse" data-target=".method_getDatabase .collapse">
+<h2>Gets the name of the database currently connected to</h2>
+<pre>getDatabase() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The name of the database currently connected to</div>
+</div></div>
+</div>
+<a id="method_getHost"></a><div class="element clickable method public method_getHost" data-toggle="collapse" data-target=".method_getHost .collapse">
+<h2>Gets the host for this database</h2>
+<pre>getHost() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The host</div>
+</div></div>
+</div>
+<a id="method_getPort"></a><div class="element clickable method public method_getPort" data-toggle="collapse" data-target=".method_getPort .collapse">
+<h2>Gets the port for this database</h2>
+<pre>getPort() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The port</div>
+</div></div>
+</div>
+<a id="method_getSQLTranslation"></a><div class="element clickable method public method_getSQLTranslation" data-toggle="collapse" data-target=".method_getSQLTranslation .collapse">
+<h2>Gets the fSQLTranslation object used for translated queries</h2>
+<pre>getSQLTranslation() : <a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fSQLTranslation.html">\fSQLTranslation</a></code>The SQL translation object</div>
+</div></div>
+</div>
+<a id="method_getType"></a><div class="element clickable method public method_getType" data-toggle="collapse" data-target=".method_getType .collapse">
+<h2>Gets the database type</h2>
+<pre>getType() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The database type: `'mssql'`, `'mysql'`, `'postgresql'` or `'sqlite'`</div>
+</div></div>
+</div>
+<a id="method_getUsername"></a><div class="element clickable method public method_getUsername" data-toggle="collapse" data-target=".method_getUsername .collapse">
+<h2>Gets the username for this database</h2>
+<pre>getUsername() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The username</div>
+</div></div>
+</div>
+<a id="method_getVersion"></a><div class="element clickable method public method_getVersion" data-toggle="collapse" data-target=".method_getVersion .collapse">
+<h2>Gets the version of the database system</h2>
+<pre>getVersion() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The database system version</div>
+</div></div>
+</div>
+<a id="method_isInsideTransaction"></a><div class="element clickable method public method_isInsideTransaction" data-toggle="collapse" data-target=".method_isInsideTransaction .collapse">
+<h2>Will indicate if a transaction is currently in progress</h2>
+<pre>isInsideTransaction() : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If a transaction has been started and not yet rolled back or committed</div>
+</div></div>
+</div>
+<a id="method_prepare"></a><div class="element clickable method public method_prepare" data-toggle="collapse" data-target=".method_prepare .collapse">
+<h2>Prepares a single fStatement object to execute prepared statements</h2>
+<pre>prepare(string $sql) : <a href="../classes/fStatement.html">\fStatement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+In addition, multiple values can not be escaped by a placeholder - only
+a single value can be provided.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to prepare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fStatement.html">\fStatement</a></code>A prepared statement object that can be passed to ::query(), ::unbufferedQuery() or ::execute()</div>
+</div></div>
+</div>
+<a id="method_query"></a><div class="element clickable method public method_query" data-toggle="collapse" data-target=".method_query .collapse">
+<h2>Executes one or more SQL queries and returns the result(s)</h2>
+<pre>query(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : <a href="../classes/fResult.html">\fResult</a> | array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>One or more SQL statements in a string or a single fStatement prepared statement</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code><code>array</code>The fResult object(s) for the query</div>
+</div></div>
+</div>
+<a id="method_registerHookCallback"></a><div class="element clickable method public method_registerHookCallback" data-toggle="collapse" data-target=".method_registerHookCallback .collapse">
+<h2>Registers a callback for one of the various query hooks - multiple callbacks can be registered for each hook</h2>
+<pre>registerHookCallback(string $hook, callback $callback) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The following hooks are available:
+ - <code>'unmodified'</code>: The original SQL passed to fDatabase, for prepared statements this is called just once before the fStatement object is created
+ - <code>'extracted'</code>: The SQL after all non-empty strings have been extracted and replaced with ordered sprintf-style placeholders
+ - <code>'run'</code>: After the SQL has been run</p>
+
+<p>Methods for the <code>'unmodified'</code> hook should have the following signature:</p>
+
+<ul>
+<li><strong><code>$database</code></strong>:  The fDatabase instance</li>
+<li><strong><code>&amp;$sql</code></strong>:      The original, unedited SQL</li>
+<li><strong><code>&amp;$values</code></strong>:   The values to be escaped into the placeholders in the SQL</li>
+</ul>
+
+<p>Methods for the <code>'extracted'</code> hook should have the following signature:</p>
+
+<ul>
+<li><strong><code>$database</code></strong>:  The fDatabase instance</li>
+<li><strong><code>&amp;$sql</code></strong>:      The SQL with all strings removed and replaced with <code>%1$s</code>-style placeholders</li>
+<li><strong><code>&amp;$values</code></strong>:   The values to be escaped into the placeholders in the SQL</li>
+</ul>
+
+<p>The <code>extracted</code> hook is the best place to modify the SQL since there is
+no risk of breaking string literals. Please note that there may be empty
+strings (<code>''</code>) present in the SQL since some databases treat those as
+<code>NULL</code>.</p>
+
+<p>Methods for the <code>'run'</code> hook should have the following signature:</p>
+
+<ul>
+<li><strong><code>$database</code></strong>:    The fDatabase instance</li>
+<li><strong><code>$query</code></strong>:       The (string) SQL or <code>array(0 =&gt; {fStatement object}, 1 =&gt; {values array})</code></li>
+<li><strong><code>$query_time</code></strong>:  The (float) number of seconds the query took</li>
+<li><strong><code>$result</code></strong>       The fResult or fUnbufferedResult object, or <code>FALSE</code> if no result</li>
+</ul></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$hook</h4>
+<code>string</code><p>The hook to register for</p></div>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to register - see the method description for details about the method signature</p>
+</div>
+</div></div>
+</div>
+<a id="method_translatedExecute"></a><div class="element clickable method public method_translatedExecute" data-toggle="collapse" data-target=".method_translatedExecute .collapse">
+<h2>Translates one or more SQL statements using fSQLTranslation and executes them without returning any results</h2>
+<pre>translatedExecute(string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>One or more SQL statements</p></div>
+</div></div>
+</div>
+<a id="method_translatedPrepare"></a><div class="element clickable method public method_translatedPrepare" data-toggle="collapse" data-target=".method_translatedPrepare .collapse">
+<h2>Translates a SQL statement and creates an fStatement object from it</h2>
+<pre>translatedPrepare(string $sql) : <a href="../classes/fStatement.html">\fStatement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+In addition, multiple values can not be escaped by a placeholder - only
+a single value can be provided.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to prepare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fStatement.html">\fStatement</a></code>A prepared statement object that can be passed to ::query(), ::unbufferedQuery() or ::execute()</div>
+</div></div>
+</div>
+<a id="method_translatedQuery"></a><div class="element clickable method public method_translatedQuery" data-toggle="collapse" data-target=".method_translatedQuery .collapse">
+<h2>Translates one or more SQL statements using fSQLTranslation and executes them</h2>
+<pre>translatedQuery(string $sql) : <a href="../classes/fResult.html">\fResult</a> | array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>One or more SQL statements</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code><code>array</code>The fResult object(s) for the query</div>
+</div></div>
+</div>
+<a id="method_unbufferedQuery"></a><div class="element clickable method public method_unbufferedQuery" data-toggle="collapse" data-target=".method_unbufferedQuery .collapse">
+<h2>Executes a single SQL statement in unbuffered mode.</h2>
+<pre>unbufferedQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement) : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is optimal for
+large results sets since it does not load the whole result set into
+memory first. The gotcha is that only one unbuffered result can exist at
+one time. If another unbuffered query is executed, the old result will
+be deleted.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>A single SQL statement</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></code>The result object for the unbuffered query</div>
+</div></div>
+</div>
+<a id="method_unbufferedTranslatedQuery"></a><div class="element clickable method public method_unbufferedTranslatedQuery" data-toggle="collapse" data-target=".method_unbufferedTranslatedQuery .collapse">
+<h2>Translates the SQL statement using fSQLTranslation and then executes it
+in unbuffered mode.</h2>
+<pre>unbufferedTranslatedQuery(string $sql) : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is optimal for large results sets since it does
+not load the whole result set into memory first. The gotcha is that only
+one unbuffered result can exist at one time. If another unbuffered query
+is executed, the old result will be deleted.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>A single SQL statement</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></code>The result object for the unbuffered query</div>
+</div></div>
+</div>
+<a id="method_unescape"></a><div class="element clickable method public method_unescape" data-toggle="collapse" data-target=".method_unescape .collapse">
+<h2>Unescapes a value coming out of a database based on its data type</h2>
+<pre>unescape(string $data_type, mixed $value) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The valid data types are:</p>
+
+<ul>
+<li><code>'blob'</code> (or <code>'%l'</code>)</li>
+<li><code>'boolean'</code> (or <code>'%b'</code>)</li>
+<li><code>'date'</code> (or <code>'%d'</code>)</li>
+<li><code>'float'</code> (or <code>'%f'</code>)</li>
+<li><code>'integer'</code> (or <code>'%i'</code>)</li>
+<li><code>'string'</code> (also <code>'%s'</code>, <code>'varchar'</code>, <code>'char'</code> or <code>'text'</code>)</li>
+<li><code>'time'</code> (or <code>'%t'</code>)</li>
+<li><code>'timestamp'</code> (or <code>'%p'</code>)</li>
+</ul></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data_type</h4>
+<code>string</code><p>The data type being unescaped - see method description for valid values</p>
+</div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value or array of values to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The unescaped value</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_determineCharacterSet"></a><div class="element clickable method protected method_determineCharacterSet" data-toggle="collapse" data-target=".method_determineCharacterSet .collapse">
+<h2>Determines the character set of a SQL Server database</h2>
+<pre>determineCharacterSet() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_determineExtension"></a><div class="element clickable method protected method_determineExtension" data-toggle="collapse" data-target=".method_determineExtension .collapse">
+<h2>Figures out which extension to use for the database type selected</h2>
+<pre>determineExtension() : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_checkForError"></a><div class="element clickable method private method_checkForError" data-toggle="collapse" data-target=".method_checkForError .collapse">
+<h2>Checks to see if an SQL error occured</h2>
+<pre>checkForError(<a href="../classes/fResult.html">\fResult</a> | <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a> | boolean $result, mixed $extra_info, string $sql) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fResult.html">\fResult</a></code><code><a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></code><code>boolean</code><p>The result object for the query</p></div>
+<div class="subelement argument">
+<h4>$extra_info</h4>
+<code>mixed</code><p>The sqlite extension will pass a string error message, the oci8 extension will pass the statement resource</p></div>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL that was executed</p></div>
+</div></div>
+</div>
+<a id="method_escapeBlob"></a><div class="element clickable method private method_escapeBlob" data-toggle="collapse" data-target=".method_escapeBlob .collapse">
+<h2>Escapes a blob for use in SQL, includes surround quotes when appropriate</h2>
+<pre>escapeBlob(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The blob to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped blob</div>
+</div></div>
+</div>
+<a id="method_escapeBoolean"></a><div class="element clickable method private method_escapeBoolean" data-toggle="collapse" data-target=".method_escapeBoolean .collapse">
+<h2>Escapes a boolean for use in SQL, includes surround quotes when appropriate</h2>
+<pre>escapeBoolean(boolean $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>boolean</code><p>The boolean to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The database equivalent of the boolean passed</div>
+</div></div>
+</div>
+<a id="method_escapeDate"></a><div class="element clickable method private method_escapeDate" data-toggle="collapse" data-target=".method_escapeDate .collapse">
+<h2>Escapes a date for use in SQL, includes surrounding quotes</h2>
+<pre>escapeDate(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The date to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped date</div>
+</div></div>
+</div>
+<a id="method_escapeFloat"></a><div class="element clickable method private method_escapeFloat" data-toggle="collapse" data-target=".method_escapeFloat .collapse">
+<h2>Escapes a float for use in SQL</h2>
+<pre>escapeFloat(float $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>float</code><p>The float to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped float</div>
+</div></div>
+</div>
+<a id="method_escapeIdentifier"></a><div class="element clickable method private method_escapeIdentifier" data-toggle="collapse" data-target=".method_escapeIdentifier .collapse">
+<h2>Escapes an identifier for use in SQL, necessary for reserved words</h2>
+<pre>escapeIdentifier(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The identifier to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped identifier</div>
+</div></div>
+</div>
+<a id="method_escapeInteger"></a><div class="element clickable method private method_escapeInteger" data-toggle="collapse" data-target=".method_escapeInteger .collapse">
+<h2>Escapes an integer for use in SQL</h2>
+<pre>escapeInteger(integer $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>integer</code><p>The integer to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped integer</div>
+</div></div>
+</div>
+<a id="method_escapeSQL"></a><div class="element clickable method private method_escapeSQL" data-toggle="collapse" data-target=".method_escapeSQL .collapse">
+<h2>Takes a SQL string and an array of values and replaces the placeholders with the value</h2>
+<pre>escapeSQL(string $sql, array $values, boolean $unescape_percent) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL string containing placeholders</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>An array of values to escape into the SQL</p></div>
+<div class="subelement argument">
+<h4>$unescape_percent</h4>
+<code>boolean</code><p>If %% should be translated to % - this should only be done once processing of the string is done</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The SQL with the values escaped into it</div>
+</div></div>
+</div>
+<a id="method_escapeString"></a><div class="element clickable method private method_escapeString" data-toggle="collapse" data-target=".method_escapeString .collapse">
+<h2>Escapes a string for use in SQL, includes surrounding quotes</h2>
+<pre>escapeString(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> value will be returned as <code>'NULL'</code>.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The string to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped string</div>
+</div></div>
+</div>
+<a id="method_escapeTime"></a><div class="element clickable method private method_escapeTime" data-toggle="collapse" data-target=".method_escapeTime .collapse">
+<h2>Escapes a time for use in SQL, includes surrounding quotes</h2>
+<pre>escapeTime(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The time to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped time</div>
+</div></div>
+</div>
+<a id="method_escapeTimestamp"></a><div class="element clickable method private method_escapeTimestamp" data-toggle="collapse" data-target=".method_escapeTimestamp .collapse">
+<h2>Escapes a timestamp for use in SQL, includes surrounding quotes</h2>
+<pre>escapeTimestamp(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>A <code>NULL</code> or invalid value will be returned as <code>'NULL'</code></p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The timestamp to escape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The escaped timestamp</div>
+</div></div>
+</div>
+<a id="method_extractStrings"></a><div class="element clickable method private method_extractStrings" data-toggle="collapse" data-target=".method_extractStrings .collapse">
+<h2>Pulls quoted strings out into the values array for simpler processing</h2>
+<pre>extractStrings(array $parts, array $values) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$parts</h4>
+<code>array</code><p>The parts of the SQL - alternating SQL and quoted strings</p>
+</div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The value to be escaped into the SQL</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The SQL with all quoted string values extracted into the `$values` array</div>
+</div></div>
+</div>
+<a id="method_handleAutoIncrementedValue"></a><div class="element clickable method private method_handleAutoIncrementedValue" data-toggle="collapse" data-target=".method_handleAutoIncrementedValue .collapse">
+<h2>Will grab the auto incremented value from the last query (if one exists)</h2>
+<pre>handleAutoIncrementedValue(<a href="../classes/fResult.html">\fResult</a> $result, mixed $resource) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fResult.html">\fResult</a></code><p>The result object for the query</p></div>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>mixed</code><p>Only applicable for <code>pdo</code>, <code>oci8</code> and <code>sqlsrv</code> extentions or <code>mysqli</code> prepared statements - this is either the <code>PDOStatement</code> object, <code>mysqli_stmt</code> object or the <code>oci8</code> or <code>sqlsrv</code> resource</p>
+</div>
+</div></div>
+</div>
+<a id="method_handleConnectionErrors"></a><div class="element clickable method private method_handleConnectionErrors" data-toggle="collapse" data-target=".method_handleConnectionErrors .collapse">
+<h2>Handles connection errors</h2>
+<pre>handleConnectionErrors(array | string $errors) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><code>string</code><p>An array or string of error information</p></div>
+</div></div>
+</div>
+<a id="method_handleErrors"></a><div class="element clickable method private method_handleErrors" data-toggle="collapse" data-target=".method_handleErrors .collapse">
+<h2>Handles a PHP error to extract error information for the mssql extension</h2>
+<pre>handleErrors(array $errors) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><p>An array of error information from fCore::stopErrorCapture()</p>
+</div>
+</div></div>
+</div>
+<a id="method_handleTransactionQueries"></a><div class="element clickable method private method_handleTransactionQueries" data-toggle="collapse" data-target=".method_handleTransactionQueries .collapse">
+<h2>Makes sure each database and extension handles BEGIN, COMMIT and ROLLBACK</h2>
+<pre>handleTransactionQueries(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, string $result_class) : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>&$statement The SQL to check for a transaction query</p>
+</div>
+<div class="subelement argument">
+<h4>$result_class</h4>
+<code>string</code><p>The type of result object to create</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>`FALSE` if normal processing should continue, otherwise an object of the type $result_class</div>
+</div></div>
+</div>
+<a id="method_makeCachePrefix"></a><div class="element clickable method private method_makeCachePrefix" data-toggle="collapse" data-target=".method_makeCachePrefix .collapse">
+<h2>Creates a unique cache prefix to help prevent cache conflicts</h2>
+<pre>makeCachePrefix() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The cache prefix to use</div>
+</div></div>
+</div>
+<a id="method_perform"></a><div class="element clickable method private method_perform" data-toggle="collapse" data-target=".method_perform .collapse">
+<h2>Executes a SQL statement</h2>
+<pre>perform(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, array $params) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>The statement to perform</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The parameters for prepared statements</p></div>
+</div></div>
+</div>
+<a id="method_performQuery"></a><div class="element clickable method private method_performQuery" data-toggle="collapse" data-target=".method_performQuery .collapse">
+<h2>Executes an SQL query</h2>
+<pre>performQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, <a href="../classes/fResult.html">\fResult</a> $result, array $params) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>The statement to perform</p></div>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fResult.html">\fResult</a></code><p>The result object for the query</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The parameters for prepared statements</p></div>
+</div></div>
+</div>
+<a id="method_performUnbufferedQuery"></a><div class="element clickable method private method_performUnbufferedQuery" data-toggle="collapse" data-target=".method_performUnbufferedQuery .collapse">
+<h2>Executes an unbuffered SQL query</h2>
+<pre>performUnbufferedQuery(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a> $result, array $params) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>The statement to perform</p></div>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></code><p>The result object for the query</p></div>
+<div class="subelement argument">
+<h4>$params</h4>
+<code>array</code><p>The parameters for prepared statements</p></div>
+</div></div>
+</div>
+<a id="method_prepareStatement"></a><div class="element clickable method private method_prepareStatement" data-toggle="collapse" data-target=".method_prepareStatement .collapse">
+<h2>Prepares a single fStatement object to execute prepared statements</h2>
+<pre>prepareStatement(string $sql, boolean $translate) : <a href="../classes/fStatement.html">\fStatement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Identifier placeholders (%r) are not supported with prepared statements.
+In addition, multiple values can not be escaped by a placeholder - only
+a single value can be provided.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to prepare</p></div>
+<div class="subelement argument">
+<h4>$translate</h4>
+<code>boolean</code><p>If the SQL should be translated using fSQLTranslation</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fStatement.html">\fStatement</a></code>A prepare statement object that can be passed to ::query(), ::unbufferedQuery() or ::execute()</div>
+</div></div>
+</div>
+<a id="method_run"></a><div class="element clickable method private method_run" data-toggle="collapse" data-target=".method_run .collapse">
+<h2>Runs a single statement and times it, removes any old unbuffered queries before starting</h2>
+<pre>run(string | <a href="../classes/fStatement.html">\fStatement</a> $statement, string $result_type, $params) : <a href="../classes/fResult.html">\fResult</a> | <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$statement</h4>
+<code>string</code><code><a href="../classes/fStatement.html">\fStatement</a></code><p>The SQL statement or prepared statement to execute</p></div>
+<div class="subelement argument">
+<h4>$result_type</h4>
+<code>string</code><p>The type of result object to return, fResult or fUnbufferedResult</p></div>
+<div class="subelement argument"><h4>$params</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fResult.html">\fResult</a></code><code><a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></code>The result for the query</div>
+</div></div>
+</div>
+<a id="method_runRollbackStatements"></a><div class="element clickable method private method_runRollbackStatements" data-toggle="collapse" data-target=".method_runRollbackStatements .collapse">
+<h2>Takes an array of rollback statements to undo part of a set of queries which involve one that failed</h2>
+<pre>runRollbackStatements(array $rollback_statements, integer $start_number) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This is only used for MySQL since it is the only database that does not
+support transactions about <code>ALTER TABLE</code> statements, but that also
+requires more than one query to accomplish many <code>ALTER TABLE</code> tasks.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$rollback_statements</h4>
+<code>array</code><p>The SQL statements used to rollback <code>ALTER TABLE</code> statements</p>
+</div>
+<div class="subelement argument">
+<h4>$start_number</h4>
+<code>integer</code><p>The number query that failed - this is used to determine which rollback statements to run</p>
+</div>
+</div></div>
+</div>
+<a id="method_scalarize"></a><div class="element clickable method private method_scalarize" data-toggle="collapse" data-target=".method_scalarize .collapse">
+<h2>Turns an array possibly containing objects into an array of all strings</h2>
+<pre>scalarize(array $values) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>The array of values to scalarize</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The scalarized values</div>
+</div></div>
+</div>
+<a id="method_setAffectedRows"></a><div class="element clickable method private method_setAffectedRows" data-toggle="collapse" data-target=".method_setAffectedRows .collapse">
+<h2>Sets the number of rows affected by the query</h2>
+<pre>setAffectedRows(<a href="../classes/fResult.html">\fResult</a> $result, mixed $resource) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fResult.html">\fResult</a></code><p>The result object for the query</p></div>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>mixed</code><p>Only applicable for <code>ibm_db2</code>, <code>pdo</code>, <code>oci8</code> and <code>sqlsrv</code> extentions or <code>mysqli</code> prepared statements - this is either the <code>PDOStatement</code> object, <code>mysqli_stmt</code> object or the <code>oci8</code> or <code>sqlsrv</code> resource</p>
+</div>
+</div></div>
+</div>
+<a id="method_setReturnedRows"></a><div class="element clickable method private method_setReturnedRows" data-toggle="collapse" data-target=".method_setReturnedRows .collapse">
+<h2>Sets the number of rows returned by the query</h2>
+<pre>setReturnedRows(<a href="../classes/fResult.html">\fResult</a> $result) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$result</h4>
+<code><a href="../classes/fResult.html">\fResult</a></code><p>The result object for the query</p></div>
+</div></div>
+</div>
+<a id="method_splitSQL"></a><div class="element clickable method private method_splitSQL" data-toggle="collapse" data-target=".method_splitSQL .collapse">
+<h2>Splits SQL into pieces of SQL and quoted strings</h2>
+<pre>splitSQL(string $sql, integer $placeholders) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$sql</h4>
+<code>string</code><p>The SQL to split</p></div>
+<div class="subelement argument">
+<h4>$placeholders</h4>
+<code>integer</code><p>&$placeholders The number of placeholders in the SQL</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The pieces</div>
+</div></div>
+</div>
+<a id="method_unescapeBlob"></a><div class="element clickable method private method_unescapeBlob" data-toggle="collapse" data-target=".method_unescapeBlob .collapse">
+<h2>Unescapes a blob coming out of the database</h2>
+<pre>unescapeBlob(string $value) : \binary</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>\binary</code>The binary data</div>
+</div></div>
+</div>
+<a id="method_unescapeBoolean"></a><div class="element clickable method private method_unescapeBoolean" data-toggle="collapse" data-target=".method_unescapeBoolean .collapse">
+<h2>Unescapes a boolean coming out of the database</h2>
+<pre>unescapeBoolean(string $value) : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>The boolean</div>
+</div></div>
+</div>
+<a id="method_unescapeDate"></a><div class="element clickable method private method_unescapeDate" data-toggle="collapse" data-target=".method_unescapeDate .collapse">
+<h2>Unescapes a date coming out of the database</h2>
+<pre>unescapeDate(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The date in YYYY-MM-DD format</div>
+</div></div>
+</div>
+<a id="method_unescapeTime"></a><div class="element clickable method private method_unescapeTime" data-toggle="collapse" data-target=".method_unescapeTime .collapse">
+<h2>Unescapes a time coming out of the database</h2>
+<pre>unescapeTime(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The time in `HH:MM:SS` format</div>
+</div></div>
+</div>
+<a id="method_unescapeTimestamp"></a><div class="element clickable method private method_unescapeTimestamp" data-toggle="collapse" data-target=".method_unescapeTimestamp .collapse">
+<h2>Unescapes a timestamp coming out of the database</h2>
+<pre>unescapeTimestamp(string $value) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>The value to unescape</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The timestamp in `YYYY-MM-DD HH:MM:SS` format</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_extension"> </a><div class="element clickable property protected property_extension" data-toggle="collapse" data-target=".property_extension .collapse">
+<h2>The extension to use for the database specified</h2>
+<pre>$extension : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Options include:</p>
+
+<ul>
+<li><code>'ibm_db2'</code></li>
+<li><code>'mssql'</code></li>
+<li><code>'mysql'</code></li>
+<li><code>'mysqli'</code></li>
+<li><code>'oci8'</code></li>
+<li><code>'pgsql'</code></li>
+<li><code>'sqlite'</code></li>
+<li><code>'sqlsrv'</code></li>
+<li><code>'pdo'</code></li>
+</ul></div></div></div>
+</div>
+<a id="property_schema_info"> </a><div class="element clickable property protected property_schema_info" data-toggle="collapse" data-target=".property_schema_info .collapse">
+<h2>A cache of database-specific code</h2>
+<pre>$schema_info : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cache"> </a><div class="element clickable property private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2>An fCache object to cache the schema info to</h2>
+<pre>$cache : <a href="../classes/fCache.html">\fCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cache_prefix"> </a><div class="element clickable property private property_cache_prefix" data-toggle="collapse" data-target=".property_cache_prefix .collapse">
+<h2>The cache prefix to use for cache entries</h2>
+<pre>$cache_prefix : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_connection"> </a><div class="element clickable property private property_connection" data-toggle="collapse" data-target=".property_connection .collapse">
+<h2>Database connection resource or PDO object</h2>
+<pre>$connection : mixed</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_database"> </a><div class="element clickable property private property_database" data-toggle="collapse" data-target=".property_database .collapse">
+<h2>The database name</h2>
+<pre>$database : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_debug"> </a><div class="element clickable property private property_debug" data-toggle="collapse" data-target=".property_debug .collapse">
+<h2>If debugging is enabled</h2>
+<pre>$debug : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_error"> </a><div class="element clickable property private property_error" data-toggle="collapse" data-target=".property_error .collapse">
+<h2>A temporary error holder for the mssql extension</h2>
+<pre>$error : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_hook_callbacks"> </a><div class="element clickable property private property_hook_callbacks" data-toggle="collapse" data-target=".property_hook_callbacks .collapse">
+<h2>Hooks callbacks to be used for accessing and modifying queries</h2>
+<pre>$hook_callbacks : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This array will have the structure:</p>
+
+<p>{{{
+array(
+    'unmodified' => array({callbacks}),
+    'extracted'  => array({callbacks}),
+    'run'        => array({callbacks})
+)
+}}}</p></div></div></div>
+</div>
+<a id="property_host"> </a><div class="element clickable property private property_host" data-toggle="collapse" data-target=".property_host .collapse">
+<h2>The host the database server is located on</h2>
+<pre>$host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_inside_transaction"> </a><div class="element clickable property private property_inside_transaction" data-toggle="collapse" data-target=".property_inside_transaction .collapse">
+<h2>If a transaction is in progress</h2>
+<pre>$inside_transaction : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_password"> </a><div class="element clickable property private property_password" data-toggle="collapse" data-target=".property_password .collapse">
+<h2>The password for the user specified</h2>
+<pre>$password : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_port"> </a><div class="element clickable property private property_port" data-toggle="collapse" data-target=".property_port .collapse">
+<h2>The port number for the host</h2>
+<pre>$port : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_query_time"> </a><div class="element clickable property private property_query_time" data-toggle="collapse" data-target=".property_query_time .collapse">
+<h2>The total number of seconds spent executing queries</h2>
+<pre>$query_time : float</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_statement"> </a><div class="element clickable property private property_statement" data-toggle="collapse" data-target=".property_statement .collapse">
+<h2>The last executed fStatement object</h2>
+<pre>$statement : <a href="../classes/fStatement.html">\fStatement</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_timeout"> </a><div class="element clickable property private property_timeout" data-toggle="collapse" data-target=".property_timeout .collapse">
+<h2>The timeout for the database connection</h2>
+<pre>$timeout : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_translation"> </a><div class="element clickable property private property_translation" data-toggle="collapse" data-target=".property_translation .collapse">
+<h2>The fSQLTranslation object for this database</h2>
+<pre>$translation : object</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_type"> </a><div class="element clickable property private property_type" data-toggle="collapse" data-target=".property_type .collapse">
+<h2>The database type: `'db2'`, `'mssql'`, `'mysql'`, `'oracle'`, `'postgresql'`, or `'sqlite'`</h2>
+<pre>$type : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_unbuffered_result"> </a><div class="element clickable property private property_unbuffered_result" data-toggle="collapse" data-target=".property_unbuffered_result .collapse">
+<h2>The unbuffered query instance</h2>
+<pre>$unbuffered_result : <a href="../classes/fUnbufferedResult.html">\fUnbufferedResult</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_username"> </a><div class="element clickable property private property_username" data-toggle="collapse" data-target=".property_username .collapse">
+<h2>The user to connect to the database as</h2>
+<pre>$username : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

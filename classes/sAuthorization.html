@@ -1,0 +1,965 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sAuthorization</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method_addNamedIPRange" title="addNamedIPRange :: Adds a named IP address or range, or array of addresses and/or ranges"><span class="description">Adds a named IP address or range, or array of addresses and/or ranges</span><pre>addNamedIPRange()</pre></a></li>
+<li class="method public inherited"><a href="#method_checkACL" title="checkACL :: Checks to see if the logged in user meets the requirements of the ACL specified"><span class="description">Checks to see if the logged in user meets the requirements of the ACL specified</span><pre>checkACL()</pre></a></li>
+<li class="method public inherited"><a href="#method_checkAuthLevel" title="checkAuthLevel :: Checks to see if the logged in user has the specified auth level"><span class="description">Checks to see if the logged in user has the specified auth level</span><pre>checkAuthLevel()</pre></a></li>
+<li class="method public inherited"><a href="#method_checkIP" title="checkIP :: Checks to see if the user is from the IPs or IP ranges specified"><span class="description">Checks to see if the user is from the IPs or IP ranges specified</span><pre>checkIP()</pre></a></li>
+<li class="method public inherited"><a href="#method_checkLoggedIn" title="checkLoggedIn :: Checks to see if the user has an auth level or ACLs defined"><span class="description">Checks to see if the user has an auth level or ACLs defined</span><pre>checkLoggedIn()</pre></a></li>
+<li class="method public inherited"><a href="#method_destroyUserInfo" title="destroyUserInfo :: Destroys the user's auth level and/or ACLs"><span class="description">Destroys the user's auth level and/or ACLs</span><pre>destroyUserInfo()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLoginPage" title="getLoginPage :: Returns the login page set via ::setLoginPage()"><span class="description">Returns the login page set via ::setLoginPage()</span><pre>getLoginPage()</pre></a></li>
+<li class="method public inherited"><a href="#method_getRequestedURL" title="getRequestedURL :: Returns the URL requested before the user was redirected to the login page"><span class="description">Returns the URL requested before the user was redirected to the login page</span><pre>getRequestedURL()</pre></a></li>
+<li class="method public inherited"><a href="#method_getUserACLs" title="getUserACLs :: Gets the ACLs for the logged in user"><span class="description">Gets the ACLs for the logged in user</span><pre>getUserACLs()</pre></a></li>
+<li class="method public inherited"><a href="#method_getUserAuthLevel" title="getUserAuthLevel :: Gets the authorization level for the logged in user"><span class="description">Gets the authorization level for the logged in user</span><pre>getUserAuthLevel()</pre></a></li>
+<li class="method public inherited"><a href="#method_getUserToken" title="getUserToken :: Gets the value that was set as the user token, `NULL` if no token has been set"><span class="description">Gets the value that was set as the user token, `NULL` if no token has been set</span><pre>getUserToken()</pre></a></li>
+<li class="method public inherited"><a href="#method_requireACL" title="requireACL :: Redirect the user to the login page if they do not have the permissions required"><span class="description">Redirect the user to the login page if they do not have the permissions required</span><pre>requireACL()</pre></a></li>
+<li class="method public inherited"><a href="#method_requireAuthLevel" title="requireAuthLevel :: Redirect the user to the login page if they do not have the auth level required"><span class="description">Redirect the user to the login page if they do not have the auth level required</span><pre>requireAuthLevel()</pre></a></li>
+<li class="method public inherited"><a href="#method_requireLoggedIn" title="requireLoggedIn :: Redirect the user to the login page if they do not have an auth level or ACLs"><span class="description">Redirect the user to the login page if they do not have an auth level or ACLs</span><pre>requireLoggedIn()</pre></a></li>
+<li class="method public "><a href="#method_requireNotLoggedIn" title="requireNotLoggedIn :: Require that a user not be logged in."><span class="description">Require that a user not be logged in.</span><pre>requireNotLoggedIn()</pre></a></li>
+<li class="method public inherited"><a href="#method_setAuthLevels" title="setAuthLevels :: Sets the authorization levels to use for level checking"><span class="description">Sets the authorization levels to use for level checking</span><pre>setAuthLevels()</pre></a></li>
+<li class="method public inherited"><a href="#method_setLoginPage" title="setLoginPage :: Sets the login page to redirect users to"><span class="description">Sets the login page to redirect users to</span><pre>setLoginPage()</pre></a></li>
+<li class="method public inherited"><a href="#method_setRequestedURL" title="setRequestedURL :: Sets the restricted URL requested by the user"><span class="description">Sets the restricted URL requested by the user</span><pre>setRequestedURL()</pre></a></li>
+<li class="method public inherited"><a href="#method_setUserACLs" title="setUserACLs :: Sets the ACLs for the logged in user."><span class="description">Sets the ACLs for the logged in user.</span><pre>setUserACLs()</pre></a></li>
+<li class="method public inherited"><a href="#method_setUserAuthLevel" title="setUserAuthLevel :: Sets the authorization level for the logged in user"><span class="description">Sets the authorization level for the logged in user</span><pre>setUserAuthLevel()</pre></a></li>
+<li class="method public inherited"><a href="#method_setUserToken" title="setUserToken :: Sets some piece of information to use to identify the current user"><span class="description">Sets some piece of information to use to identify the current user</span><pre>setUserToken()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private inherited"><a href="#method_redirect" title="redirect :: Redirects the user to the login page"><span class="description">Redirects the user to the login page</span><pre>redirect()</pre></a></li>
+<li class="method private inherited"><a href="#method_validateAuthLevel" title="validateAuthLevel :: Makes sure auth levels have been set, and that the specified auth level is valid"><span class="description">Makes sure auth levels have been set, and that the specified auth level is valid</span><pre>validateAuthLevel()</pre></a></li>
+<li class="method private inherited"><a href="#method_validateLoginPage" title="validateLoginPage :: Makes sure a login page has been defined"><span class="description">Makes sure a login page has been defined</span><pre>validateLoginPage()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private inherited"><a href="#property_levels" title="$levels :: The valid auth levels"><span class="description">The valid auth levels</span><pre>$levels</pre></a></li>
+<li class="property private inherited"><a href="#property_login_page" title="$login_page :: The login page"><span class="description">The login page</span><pre>$login_page</pre></a></li>
+<li class="property private inherited"><a href="#property_named_ip_ranges" title="$named_ip_ranges :: Named IP ranges"><span class="description">Named IP ranges</span><pre>$named_ip_ranges</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  inherited"><a href="#constant_addNamedIPRange" title="addNamedIPRange :: "><span class="description">addNamedIPRange</span><pre>addNamedIPRange</pre></a></li>
+<li class="constant  inherited"><a href="#constant_checkACL" title="checkACL :: "><span class="description">checkACL</span><pre>checkACL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_checkAuthLevel" title="checkAuthLevel :: "><span class="description">checkAuthLevel</span><pre>checkAuthLevel</pre></a></li>
+<li class="constant  inherited"><a href="#constant_checkIP" title="checkIP :: "><span class="description">checkIP</span><pre>checkIP</pre></a></li>
+<li class="constant  inherited"><a href="#constant_checkLoggedIn" title="checkLoggedIn :: "><span class="description">checkLoggedIn</span><pre>checkLoggedIn</pre></a></li>
+<li class="constant  inherited"><a href="#constant_destroyUserInfo" title="destroyUserInfo :: "><span class="description">destroyUserInfo</span><pre>destroyUserInfo</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getLoginPage" title="getLoginPage :: "><span class="description">getLoginPage</span><pre>getLoginPage</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getRequestedURL" title="getRequestedURL :: "><span class="description">getRequestedURL</span><pre>getRequestedURL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getUserACLs" title="getUserACLs :: "><span class="description">getUserACLs</span><pre>getUserACLs</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getUserAuthLevel" title="getUserAuthLevel :: "><span class="description">getUserAuthLevel</span><pre>getUserAuthLevel</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getUserToken" title="getUserToken :: "><span class="description">getUserToken</span><pre>getUserToken</pre></a></li>
+<li class="constant  inherited"><a href="#constant_requireACL" title="requireACL :: "><span class="description">requireACL</span><pre>requireACL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_requireAuthLevel" title="requireAuthLevel :: "><span class="description">requireAuthLevel</span><pre>requireAuthLevel</pre></a></li>
+<li class="constant  inherited"><a href="#constant_requireLoggedIn" title="requireLoggedIn :: "><span class="description">requireLoggedIn</span><pre>requireLoggedIn</pre></a></li>
+<li class="constant  "><a href="#constant_requireNotLoggedIn" title="requireNotLoggedIn :: "><span class="description">requireNotLoggedIn</span><pre>requireNotLoggedIn</pre></a></li>
+<li class="constant  inherited"><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setAuthLevels" title="setAuthLevels :: "><span class="description">setAuthLevels</span><pre>setAuthLevels</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setLoginPage" title="setLoginPage :: "><span class="description">setLoginPage</span><pre>setLoginPage</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setRequestedURL" title="setRequestedURL :: "><span class="description">setRequestedURL</span><pre>setRequestedURL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setUserACLs" title="setUserACLs :: "><span class="description">setUserACLs</span><pre>setUserACLs</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setUserAuthLevel" title="setUserAuthLevel :: "><span class="description">setUserAuthLevel</span><pre>setUserAuthLevel</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setUserToken" title="setUserToken :: "><span class="description">setUserToken</span><pre>setUserToken</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sAuthorization"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sAuthorization.html">sAuthorization</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Allows defining and checking user authentication.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.sutralib.com/">http://www.sutralib.com/</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.2</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addNamedIPRange"></a><div class="element clickable method public method_addNamedIPRange" data-toggle="collapse" data-target=".method_addNamedIPRange .collapse">
+<h2>Adds a named IP address or range, or array of addresses and/or ranges</h2>
+<pre>addNamedIPRange(string $name, mixed $ip_ranges) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method allows ::checkIP() to be called with a name instead of the
+actual IPs.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::addNamedIPRange()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>The name to give the IP addresses/ranges</p>
+</div>
+<div class="subelement argument">
+<h4>$ip_ranges</h4>
+<code>mixed</code><p>This can be string (or array of strings) of the IPs or IP ranges to restrict to - please see ::checkIP() for format details</p>
+</div>
+</div></div>
+</div>
+<a id="method_checkACL"></a><div class="element clickable method public method_checkACL" data-toggle="collapse" data-target=".method_checkACL .collapse">
+<h2>Checks to see if the logged in user meets the requirements of the ACL specified</h2>
+<pre>checkACL(string $resource, string $permission) : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkACL()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>string</code><p>The resource we are checking permissions for</p></div>
+<div class="subelement argument">
+<h4>$permission</h4>
+<code>string</code><p>The permission to require from the user</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user has the required permissions</div>
+</div></div>
+</div>
+<a id="method_checkAuthLevel"></a><div class="element clickable method public method_checkAuthLevel" data-toggle="collapse" data-target=".method_checkAuthLevel .collapse">
+<h2>Checks to see if the logged in user has the specified auth level</h2>
+<pre>checkAuthLevel(string $level) : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkAuthLevel()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to check against the logged in user's level</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user has the required auth level</div>
+</div></div>
+</div>
+<a id="method_checkIP"></a><div class="element clickable method public method_checkIP" data-toggle="collapse" data-target=".method_checkIP .collapse">
+<h2>Checks to see if the user is from the IPs or IP ranges specified</h2>
+<pre>checkIP(mixed $ip_ranges) : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The <code>$ip_ranges</code> parameter can be either a single string, or an array of
+strings, each of which should be in one of the following formats:</p>
+
+<ul>
+<li>A single IP address:
+
+<ul>
+<li>192.168.1.1</li>
+<li>208.77.188.166</li>
+</ul></li>
+<li>A CIDR range
+
+<ul>
+<li>192.168.1.0/24</li>
+<li>208.77.188.160/28</li>
+</ul></li>
+<li>An IP/subnet mask combination
+
+<ul>
+<li>192.168.1.0/255.255.255.0</li>
+<li>208.77.188.160/255.255.255.240</li>
+</ul></li>
+</ul></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkIP()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ip_ranges</h4>
+<code>mixed</code><p>A string (or array of strings) of the IPs or IP ranges to restrict to - see method description for details</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user is coming from (one of) the IPs or ranges specified</div>
+</div></div>
+</div>
+<a id="method_checkLoggedIn"></a><div class="element clickable method public method_checkLoggedIn" data-toggle="collapse" data-target=".method_checkLoggedIn .collapse">
+<h2>Checks to see if the user has an auth level or ACLs defined</h2>
+<pre>checkLoggedIn() : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkLoggedIn()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the user is logged in</div>
+</div></div>
+</div>
+<a id="method_destroyUserInfo"></a><div class="element clickable method public method_destroyUserInfo" data-toggle="collapse" data-target=".method_destroyUserInfo .collapse">
+<h2>Destroys the user's auth level and/or ACLs</h2>
+<pre>destroyUserInfo() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::destroyUserInfo()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getLoginPage"></a><div class="element clickable method public method_getLoginPage" data-toggle="collapse" data-target=".method_getLoginPage .collapse">
+<h2>Returns the login page set via ::setLoginPage()</h2>
+<pre>getLoginPage() : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getLoginPage()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The login page users are redirected to if they don't have the required authorization</div>
+</div></div>
+</div>
+<a id="method_getRequestedURL"></a><div class="element clickable method public method_getRequestedURL" data-toggle="collapse" data-target=".method_getRequestedURL .collapse">
+<h2>Returns the URL requested before the user was redirected to the login page</h2>
+<pre>getRequestedURL(boolean $clear, string $default_url) : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getRequestedURL()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$clear</h4>
+<code>boolean</code><p>If the requested url should be cleared from the session after it is retrieved</p></div>
+<div class="subelement argument">
+<h4>$default_url</h4>
+<code>string</code><p>The default URL to return if the user was not redirected</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The URL that was requested before they were redirected to the login page</div>
+</div></div>
+</div>
+<a id="method_getUserACLs"></a><div class="element clickable method public method_getUserACLs" data-toggle="collapse" data-target=".method_getUserACLs .collapse">
+<h2>Gets the ACLs for the logged in user</h2>
+<pre>getUserACLs() : array</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserACLs()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The logged in user's ACLs</div>
+</div></div>
+</div>
+<a id="method_getUserAuthLevel"></a><div class="element clickable method public method_getUserAuthLevel" data-toggle="collapse" data-target=".method_getUserAuthLevel .collapse">
+<h2>Gets the authorization level for the logged in user</h2>
+<pre>getUserAuthLevel() : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserAuthLevel()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The logged in user's auth level</div>
+</div></div>
+</div>
+<a id="method_getUserToken"></a><div class="element clickable method public method_getUserToken" data-toggle="collapse" data-target=".method_getUserToken .collapse">
+<h2>Gets the value that was set as the user token, `NULL` if no token has been set</h2>
+<pre>getUserToken() : mixed</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserToken()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The user token that had been set, `NULL` if none</div>
+</div></div>
+</div>
+<a id="method_requireACL"></a><div class="element clickable method public method_requireACL" data-toggle="collapse" data-target=".method_requireACL .collapse">
+<h2>Redirect the user to the login page if they do not have the permissions required</h2>
+<pre>requireACL(string $resource, string $permission) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireACL()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$resource</h4>
+<code>string</code><p>The resource we are checking permissions for</p></div>
+<div class="subelement argument">
+<h4>$permission</h4>
+<code>string</code><p>The permission to require from the user</p></div>
+</div></div>
+</div>
+<a id="method_requireAuthLevel"></a><div class="element clickable method public method_requireAuthLevel" data-toggle="collapse" data-target=".method_requireAuthLevel .collapse">
+<h2>Redirect the user to the login page if they do not have the auth level required</h2>
+<pre>requireAuthLevel(string $level) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireAuthLevel()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to check against the logged in user's level</p>
+</div>
+</div></div>
+</div>
+<a id="method_requireLoggedIn"></a><div class="element clickable method public method_requireLoggedIn" data-toggle="collapse" data-target=".method_requireLoggedIn .collapse">
+<h2>Redirect the user to the login page if they do not have an auth level or ACLs</h2>
+<pre>requireLoggedIn() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireLoggedIn()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_requireNotLoggedIn"></a><div class="element clickable method public method_requireNotLoggedIn" data-toggle="collapse" data-target=".method_requireNotLoggedIn .collapse">
+<h2>Require that a user not be logged in.</h2>
+<pre>requireNotLoggedIn(string $redirect) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$redirect</h4>
+<code>string</code><p>Where to redirect if the user is logged in.</p></div>
+</div></div>
+</div>
+<a id="method_setAuthLevels"></a><div class="element clickable method public method_setAuthLevels" data-toggle="collapse" data-target=".method_setAuthLevels .collapse">
+<h2>Sets the authorization levels to use for level checking</h2>
+<pre>setAuthLevels(array $levels) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setAuthLevels()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$levels</h4>
+<code>array</code><p>An associative array of <code>(string) {level} => (integer) {value}</code>, for each level</p>
+</div>
+</div></div>
+</div>
+<a id="method_setLoginPage"></a><div class="element clickable method public method_setLoginPage" data-toggle="collapse" data-target=".method_setLoginPage .collapse">
+<h2>Sets the login page to redirect users to</h2>
+<pre>setLoginPage(string $url) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setLoginPage()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL of the login page</p></div>
+</div></div>
+</div>
+<a id="method_setRequestedURL"></a><div class="element clickable method public method_setRequestedURL" data-toggle="collapse" data-target=".method_setRequestedURL .collapse">
+<h2>Sets the restricted URL requested by the user</h2>
+<pre>setRequestedURL(string $url) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setRequestedURL()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to save as the requested URL</p></div>
+</div></div>
+</div>
+<a id="method_setUserACLs"></a><div class="element clickable method public method_setUserACLs" data-toggle="collapse" data-target=".method_setUserACLs .collapse">
+<h2>Sets the ACLs for the logged in user.</h2>
+<pre>setUserACLs(array $acls) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Array should be formatted like:</p>
+
+<p>{{{
+array (
+    (string) {resource name} => array(
+        (mixed) {permission}, ...
+    ), ...
+)
+}}}</p>
+
+<p>The resource name or the permission may be the single character <code>'*'</code>
+which acts as a wildcard.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserACLs()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$acls</h4>
+<code>array</code><p>The logged in user's ACLs - see method description for format</p>
+</div>
+</div></div>
+</div>
+<a id="method_setUserAuthLevel"></a><div class="element clickable method public method_setUserAuthLevel" data-toggle="collapse" data-target=".method_setUserAuthLevel .collapse">
+<h2>Sets the authorization level for the logged in user</h2>
+<pre>setUserAuthLevel(string $level) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserAuthLevel()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The logged in user's auth level</p>
+</div>
+</div></div>
+</div>
+<a id="method_setUserToken"></a><div class="element clickable method public method_setUserToken" data-toggle="collapse" data-target=".method_setUserToken .collapse">
+<h2>Sets some piece of information to use to identify the current user</h2>
+<pre>setUserToken(mixed $token) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserToken()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$token</h4>
+<code>mixed</code><p>The user's token. This could be a user id, an email address, a user object, etc.</p>
+</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/sAuthorization.html">\sAuthorization</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sAuthorization.html">\sAuthorization</a></code></div>
+</div></div>
+</div>
+<a id="method_redirect"></a><div class="element clickable method private method_redirect" data-toggle="collapse" data-target=".method_redirect .collapse">
+<h2>Redirects the user to the login page</h2>
+<pre>redirect() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::redirect()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_validateAuthLevel"></a><div class="element clickable method private method_validateAuthLevel" data-toggle="collapse" data-target=".method_validateAuthLevel .collapse">
+<h2>Makes sure auth levels have been set, and that the specified auth level is valid</h2>
+<pre>validateAuthLevel(string $level) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::validateAuthLevel()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$level</h4>
+<code>string</code><p>The level to validate</p></div>
+</div></div>
+</div>
+<a id="method_validateLoginPage"></a><div class="element clickable method private method_validateLoginPage" data-toggle="collapse" data-target=".method_validateLoginPage .collapse">
+<h2>Makes sure a login page has been defined</h2>
+<pre>validateLoginPage() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::validateLoginPage()</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_levels"> </a><div class="element clickable property private property_levels" data-toggle="collapse" data-target=".property_levels .collapse">
+<h2>The valid auth levels</h2>
+<pre>$levels : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::$$levels</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_login_page"> </a><div class="element clickable property private property_login_page" data-toggle="collapse" data-target=".property_login_page .collapse">
+<h2>The login page</h2>
+<pre>$login_page : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::$$login_page</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_named_ip_ranges"> </a><div class="element clickable property private property_named_ip_ranges" data-toggle="collapse" data-target=".property_named_ip_ranges .collapse">
+<h2>Named IP ranges</h2>
+<pre>$named_ip_ranges : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::$$named_ip_ranges</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addNamedIPRange"> </a><div class="element clickable constant  constant_addNamedIPRange" data-toggle="collapse" data-target=".constant_addNamedIPRange .collapse">
+<h2>addNamedIPRange</h2>
+<pre>addNamedIPRange </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::addNamedIPRange</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_checkACL"> </a><div class="element clickable constant  constant_checkACL" data-toggle="collapse" data-target=".constant_checkACL .collapse">
+<h2>checkACL</h2>
+<pre>checkACL </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkACL</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_checkAuthLevel"> </a><div class="element clickable constant  constant_checkAuthLevel" data-toggle="collapse" data-target=".constant_checkAuthLevel .collapse">
+<h2>checkAuthLevel</h2>
+<pre>checkAuthLevel </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkAuthLevel</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_checkIP"> </a><div class="element clickable constant  constant_checkIP" data-toggle="collapse" data-target=".constant_checkIP .collapse">
+<h2>checkIP</h2>
+<pre>checkIP </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkIP</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_checkLoggedIn"> </a><div class="element clickable constant  constant_checkLoggedIn" data-toggle="collapse" data-target=".constant_checkLoggedIn .collapse">
+<h2>checkLoggedIn</h2>
+<pre>checkLoggedIn </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::checkLoggedIn</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_destroyUserInfo"> </a><div class="element clickable constant  constant_destroyUserInfo" data-toggle="collapse" data-target=".constant_destroyUserInfo .collapse">
+<h2>destroyUserInfo</h2>
+<pre>destroyUserInfo </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::destroyUserInfo</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getLoginPage"> </a><div class="element clickable constant  constant_getLoginPage" data-toggle="collapse" data-target=".constant_getLoginPage .collapse">
+<h2>getLoginPage</h2>
+<pre>getLoginPage </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getLoginPage</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getRequestedURL"> </a><div class="element clickable constant  constant_getRequestedURL" data-toggle="collapse" data-target=".constant_getRequestedURL .collapse">
+<h2>getRequestedURL</h2>
+<pre>getRequestedURL </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getRequestedURL</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getUserACLs"> </a><div class="element clickable constant  constant_getUserACLs" data-toggle="collapse" data-target=".constant_getUserACLs .collapse">
+<h2>getUserACLs</h2>
+<pre>getUserACLs </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserACLs</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getUserAuthLevel"> </a><div class="element clickable constant  constant_getUserAuthLevel" data-toggle="collapse" data-target=".constant_getUserAuthLevel .collapse">
+<h2>getUserAuthLevel</h2>
+<pre>getUserAuthLevel </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserAuthLevel</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getUserToken"> </a><div class="element clickable constant  constant_getUserToken" data-toggle="collapse" data-target=".constant_getUserToken .collapse">
+<h2>getUserToken</h2>
+<pre>getUserToken </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::getUserToken</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_requireACL"> </a><div class="element clickable constant  constant_requireACL" data-toggle="collapse" data-target=".constant_requireACL .collapse">
+<h2>requireACL</h2>
+<pre>requireACL </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireACL</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_requireAuthLevel"> </a><div class="element clickable constant  constant_requireAuthLevel" data-toggle="collapse" data-target=".constant_requireAuthLevel .collapse">
+<h2>requireAuthLevel</h2>
+<pre>requireAuthLevel </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireAuthLevel</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_requireLoggedIn"> </a><div class="element clickable constant  constant_requireLoggedIn" data-toggle="collapse" data-target=".constant_requireLoggedIn .collapse">
+<h2>requireLoggedIn</h2>
+<pre>requireLoggedIn </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::requireLoggedIn</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_requireNotLoggedIn"> </a><div class="element clickable constant  constant_requireNotLoggedIn" data-toggle="collapse" data-target=".constant_requireNotLoggedIn .collapse">
+<h2>requireNotLoggedIn</h2>
+<pre>requireNotLoggedIn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::reset</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setAuthLevels"> </a><div class="element clickable constant  constant_setAuthLevels" data-toggle="collapse" data-target=".constant_setAuthLevels .collapse">
+<h2>setAuthLevels</h2>
+<pre>setAuthLevels </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setAuthLevels</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setLoginPage"> </a><div class="element clickable constant  constant_setLoginPage" data-toggle="collapse" data-target=".constant_setLoginPage .collapse">
+<h2>setLoginPage</h2>
+<pre>setLoginPage </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setLoginPage</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setRequestedURL"> </a><div class="element clickable constant  constant_setRequestedURL" data-toggle="collapse" data-target=".constant_setRequestedURL .collapse">
+<h2>setRequestedURL</h2>
+<pre>setRequestedURL </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setRequestedURL</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setUserACLs"> </a><div class="element clickable constant  constant_setUserACLs" data-toggle="collapse" data-target=".constant_setUserACLs .collapse">
+<h2>setUserACLs</h2>
+<pre>setUserACLs </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserACLs</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setUserAuthLevel"> </a><div class="element clickable constant  constant_setUserAuthLevel" data-toggle="collapse" data-target=".constant_setUserAuthLevel .collapse">
+<h2>setUserAuthLevel</h2>
+<pre>setUserAuthLevel </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserAuthLevel</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setUserToken"> </a><div class="element clickable constant  constant_setUserToken" data-toggle="collapse" data-target=".constant_setUserToken .collapse">
+<h2>setUserToken</h2>
+<pre>setUserToken </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fAuthorization::setUserToken</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

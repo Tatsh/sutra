@@ -1,0 +1,1068 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sTemplate</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addBodyClass" title="addBodyClass :: Add a body class."><span class="description">Add a body class.</span><pre>addBodyClass()</pre></a></li>
+<li class="method public "><a href="#method_addCDN" title="addCDN :: Add a CDN URL prefix WITHOUT including the final slash."><span class="description">Add a CDN URL prefix WITHOUT including the final slash.</span><pre>addCDN()</pre></a></li>
+<li class="method public "><a href="#method_addCSSFile" title="addCSSFile :: Add a CSS file path."><span class="description">Add a CSS file path.</span><pre>addCSSFile()</pre></a></li>
+<li class="method public "><a href="#method_addJavaScriptFile" title="addJavaScriptFile :: Add a JavaScript file."><span class="description">Add a JavaScript file.</span><pre>addJavaScriptFile()</pre></a></li>
+<li class="method public "><a href="#method_addMinifiedJavaScriptFile" title="addMinifiedJavaScriptFile :: Add a minified JavaScript file."><span class="description">Add a minified JavaScript file.</span><pre>addMinifiedJavaScriptFile()</pre></a></li>
+<li class="method public "><a href="#method_buffer" title="buffer :: Buffer a file in for content."><span class="description">Buffer a file in for content.</span><pre>buffer()</pre></a></li>
+<li class="method public "><a href="#method_enableQueryStrings" title="enableQueryStrings :: Enable or disable query strings on resource URLs such as CSS while in
+  development mode."><span class="description">Enable or disable query strings on resource URLs such as CSS while in
+  development mode.</span><pre>enableQueryStrings()</pre></a></li>
+<li class="method public "><a href="#method_getACDN" title="getACDN :: Get a CDN to use."><span class="description">Get a CDN to use.</span><pre>getACDN()</pre></a></li>
+<li class="method public "><a href="#method_getBodyClasses" title="getBodyClasses :: Get the body classes."><span class="description">Get the body classes.</span><pre>getBodyClasses()</pre></a></li>
+<li class="method public "><a href="#method_getCDNs" title="getCDNs :: Get the CDNs in currently in use."><span class="description">Get the CDNs in currently in use.</span><pre>getCDNs()</pre></a></li>
+<li class="method public "><a href="#method_getCache" title="getCache :: Gets the sCache instance this is using."><span class="description">Gets the sCache instance this is using.</span><pre>getCache()</pre></a></li>
+<li class="method public "><a href="#method_getJavaScriptFiles" title="getJavaScriptFiles :: Load/get all JavaScript files in an array."><span class="description">Load/get all JavaScript files in an array.</span><pre>getJavaScriptFiles()</pre></a></li>
+<li class="method public "><a href="#method_getMode" title="getMode :: Get the current working mode."><span class="description">Get the current working mode.</span><pre>getMode()</pre></a></li>
+<li class="method public "><a href="#method_registerCallback" title="registerCallback :: Register a callback to be called when the template name specified is about
+  to be rendered."><span class="description">Register a callback to be called when the template name specified is about
+  to be rendered.</span><pre>registerCallback()</pre></a></li>
+<li class="method public "><a href="#method_removeCDN" title="removeCDN :: Remove a specified CDN URL."><span class="description">Remove a specified CDN URL.</span><pre>removeCDN()</pre></a></li>
+<li class="method public "><a href="#method_removeCDNs" title="removeCDNs :: Remove all CDNs."><span class="description">Remove all CDNs.</span><pre>removeCDNs()</pre></a></li>
+<li class="method public "><a href="#method_render" title="render :: Perform final rendering."><span class="description">Perform final rendering.</span><pre>render()</pre></a></li>
+<li class="method public "><a href="#method_setActiveTemplate" title="setActiveTemplate :: Set the active template."><span class="description">Set the active template.</span><pre>setActiveTemplate()</pre></a></li>
+<li class="method public "><a href="#method_setCDNs" title="setCDNs :: Set the CDNs to use."><span class="description">Set the CDNs to use.</span><pre>setCDNs()</pre></a></li>
+<li class="method public "><a href="#method_setCSSMediaOrder" title="setCSSMediaOrder :: Set the CSS media type order."><span class="description">Set the CSS media type order.</span><pre>setCSSMediaOrder()</pre></a></li>
+<li class="method public "><a href="#method_setCache" title="setCache :: Set the sCache instance sTemplate will use."><span class="description">Set the sCache instance sTemplate will use.</span><pre>setCache()</pre></a></li>
+<li class="method public "><a href="#method_setMinifiedCSSPath" title="setMinifiedCSSPath :: Set where minified CSS should be stored."><span class="description">Set where minified CSS should be stored.</span><pre>setMinifiedCSSPath()</pre></a></li>
+<li class="method public "><a href="#method_setMode" title="setMode :: Set the current mode."><span class="description">Set the current mode.</span><pre>setMode()</pre></a></li>
+<li class="method public "><a href="#method_setProductionModeTemplatesPath" title="setProductionModeTemplatesPath :: Set the template path used when production mode is enabled."><span class="description">Set the template path used when production mode is enabled.</span><pre>setProductionModeTemplatesPath()</pre></a></li>
+<li class="method public "><a href="#method_setSiteName" title="setSiteName :: Set the site name."><span class="description">Set the site name.</span><pre>setSiteName()</pre></a></li>
+<li class="method public "><a href="#method_setSiteSlogan" title="setSiteSlogan :: Set the site slogan."><span class="description">Set the site slogan.</span><pre>setSiteSlogan()</pre></a></li>
+<li class="method public "><a href="#method_setTemplatesPath" title="setTemplatesPath :: Set the templates path."><span class="description">Set the templates path.</span><pre>setTemplatesPath()</pre></a></li>
+<li class="method public "><a href="#method_templateExists" title="templateExists :: Check if a certain template file exists."><span class="description">Check if a certain template file exists.</span><pre>templateExists()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected "><a href="#method_getJavaScriptHTML" title="getJavaScriptHTML :: Get string of HTML scripts for use in the head element."><span class="description">Get string of HTML scripts for use in the head element.</span><pre>getJavaScriptHTML()</pre></a></li>
+<li class="method protected "><a href="#method_getPageTemplate" title="getPageTemplate :: Get the correct page template for this URL."><span class="description">Get the correct page template for this URL.</span><pre>getPageTemplate()</pre></a></li>
+<li class="method protected "><a href="#method_getStylesheetsHTML" title="getStylesheetsHTML :: Get the list of stylesheets in order."><span class="description">Get the list of stylesheets in order.</span><pre>getStylesheetsHTML()</pre></a></li>
+<li class="method protected "><a href="#method_getStylesheetsHTMLProductionMode" title="getStylesheetsHTMLProductionMode :: Makes the stylesheets HTML when in production mode."><span class="description">Makes the stylesheets HTML when in production mode.</span><pre>getStylesheetsHTMLProductionMode()</pre></a></li>
+<li class="method protected "><a href="#method_getTemplatesPath" title="getTemplatesPath :: Gets the correct templates path."><span class="description">Gets the correct templates path.</span><pre>getTemplatesPath()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_callCallbacks" title="callCallbacks :: Calls all the registered callback for * and this template."><span class="description">Calls all the registered callback for * and this template.</span><pre>callCallbacks()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_body_classes" title="$body_classes :: Array of strings of class names to apply to the body element."><span class="description">Array of strings of class names to apply to the body element.</span><pre>$body_classes</pre></a></li>
+<li class="property protected "><a href="#property_cache" title="$cache :: The sCache instance."><span class="description">The sCache instance.</span><pre>$cache</pre></a></li>
+<li class="property protected "><a href="#property_in_production_mode" title="$in_production_mode :: Whether or not the site is in production mode or not."><span class="description">Whether or not the site is in production mode or not.</span><pre>$in_production_mode</pre></a></li>
+<li class="property protected "><a href="#property_language" title="$language :: The language of the page."><span class="description">The language of the page.</span><pre>$language</pre></a></li>
+<li class="property protected "><a href="#property_text_direction" title="$text_direction :: The text direction of the page."><span class="description">The text direction of the page.</span><pre>$text_direction</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_cdns" title="$cdns :: Array of CDN URL prefixes."><span class="description">Array of CDN URL prefixes.</span><pre>$cdns</pre></a></li>
+<li class="property private "><a href="#property_compiled_javascript_files" title="$compiled_javascript_files :: The minified/compiled JavaScript files used in production mode."><span class="description">The minified/compiled JavaScript files used in production mode.</span><pre>$compiled_javascript_files</pre></a></li>
+<li class="property private "><a href="#property_css_files" title="$css_files :: CSS file paths."><span class="description">CSS file paths.</span><pre>$css_files</pre></a></li>
+<li class="property private "><a href="#property_css_media_order" title="$css_media_order :: CSS media order."><span class="description">CSS media order.</span><pre>$css_media_order</pre></a></li>
+<li class="property private "><a href="#property_javascript_files" title="$javascript_files :: The JavaScript files (which appear normally at the bottom of the page)."><span class="description">The JavaScript files (which appear normally at the bottom of the page).</span><pre>$javascript_files</pre></a></li>
+<li class="property private "><a href="#property_minifed_css_path" title="$minifed_css_path :: Where minified CSS should be stored."><span class="description">Where minified CSS should be stored.</span><pre>$minifed_css_path</pre></a></li>
+<li class="property private "><a href="#property_production_mode_template_path" title="$production_mode_template_path :: The templates path used when production mode is enabled."><span class="description">The templates path used when production mode is enabled.</span><pre>$production_mode_template_path</pre></a></li>
+<li class="property private "><a href="#property_query_strings_enabled" title="$query_strings_enabled :: If resources such as CSS and JavaScript while not in production mode
+  should be printed with query strings added to prevent caching (in
+  particular with IE)."><span class="description">If resources such as CSS and JavaScript while not in production mode
+  should be printed with query strings added to prevent caching (in
+  particular with IE).</span><pre>$query_strings_enabled</pre></a></li>
+<li class="property private "><a href="#property_registered_callbacks" title="$registered_callbacks :: Registered callbacks."><span class="description">Registered callbacks.</span><pre>$registered_callbacks</pre></a></li>
+<li class="property private "><a href="#property_site_name" title="$site_name :: The site name."><span class="description">The site name.</span><pre>$site_name</pre></a></li>
+<li class="property private "><a href="#property_site_slogan" title="$site_slogan :: The site slogan."><span class="description">The site slogan.</span><pre>$site_slogan</pre></a></li>
+<li class="property private "><a href="#property_template_fallback" title="$template_fallback :: The fallback template."><span class="description">The fallback template.</span><pre>$template_fallback</pre></a></li>
+<li class="property private "><a href="#property_template_name" title="$template_name :: The template name."><span class="description">The template name.</span><pre>$template_name</pre></a></li>
+<li class="property private "><a href="#property_templates_path" title="$templates_path :: The templates path without any ending directory separator (like /)."><span class="description">The templates path without any ending directory separator (like /).</span><pre>$templates_path</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_addBodyClass" title="addBodyClass :: "><span class="description">addBodyClass</span><pre>addBodyClass</pre></a></li>
+<li class="constant  "><a href="#constant_addCDN" title="addCDN :: "><span class="description">addCDN</span><pre>addCDN</pre></a></li>
+<li class="constant  "><a href="#constant_addCSSFile" title="addCSSFile :: "><span class="description">addCSSFile</span><pre>addCSSFile</pre></a></li>
+<li class="constant  "><a href="#constant_addJavaScriptFile" title="addJavaScriptFile :: "><span class="description">addJavaScriptFile</span><pre>addJavaScriptFile</pre></a></li>
+<li class="constant  "><a href="#constant_addMinifiedJavaScriptFile" title="addMinifiedJavaScriptFile :: "><span class="description">addMinifiedJavaScriptFile</span><pre>addMinifiedJavaScriptFile</pre></a></li>
+<li class="constant  "><a href="#constant_buffer" title="buffer :: "><span class="description">buffer</span><pre>buffer</pre></a></li>
+<li class="constant  "><a href="#constant_enableQueryStrings" title="enableQueryStrings :: "><span class="description">enableQueryStrings</span><pre>enableQueryStrings</pre></a></li>
+<li class="constant  "><a href="#constant_getACDN" title="getACDN :: "><span class="description">getACDN</span><pre>getACDN</pre></a></li>
+<li class="constant  "><a href="#constant_getBodyClasses" title="getBodyClasses :: "><span class="description">getBodyClasses</span><pre>getBodyClasses</pre></a></li>
+<li class="constant  "><a href="#constant_getCDNs" title="getCDNs :: "><span class="description">getCDNs</span><pre>getCDNs</pre></a></li>
+<li class="constant  "><a href="#constant_getCache" title="getCache :: "><span class="description">getCache</span><pre>getCache</pre></a></li>
+<li class="constant  "><a href="#constant_getJavaScriptFiles" title="getJavaScriptFiles :: "><span class="description">getJavaScriptFiles</span><pre>getJavaScriptFiles</pre></a></li>
+<li class="constant  "><a href="#constant_getMode" title="getMode :: "><span class="description">getMode</span><pre>getMode</pre></a></li>
+<li class="constant  "><a href="#constant_registerCallback" title="registerCallback :: "><span class="description">registerCallback</span><pre>registerCallback</pre></a></li>
+<li class="constant  "><a href="#constant_removeCDN" title="removeCDN :: "><span class="description">removeCDN</span><pre>removeCDN</pre></a></li>
+<li class="constant  "><a href="#constant_removeCDNs" title="removeCDNs :: "><span class="description">removeCDNs</span><pre>removeCDNs</pre></a></li>
+<li class="constant  "><a href="#constant_render" title="render :: "><span class="description">render</span><pre>render</pre></a></li>
+<li class="constant  "><a href="#constant_setActiveTemplate" title="setActiveTemplate :: "><span class="description">setActiveTemplate</span><pre>setActiveTemplate</pre></a></li>
+<li class="constant  "><a href="#constant_setCDNs" title="setCDNs :: "><span class="description">setCDNs</span><pre>setCDNs</pre></a></li>
+<li class="constant  "><a href="#constant_setCSSMediaOrder" title="setCSSMediaOrder :: "><span class="description">setCSSMediaOrder</span><pre>setCSSMediaOrder</pre></a></li>
+<li class="constant  "><a href="#constant_setCache" title="setCache :: "><span class="description">setCache</span><pre>setCache</pre></a></li>
+<li class="constant  "><a href="#constant_setMinifiedCSSPath" title="setMinifiedCSSPath :: "><span class="description">setMinifiedCSSPath</span><pre>setMinifiedCSSPath</pre></a></li>
+<li class="constant  "><a href="#constant_setMode" title="setMode :: "><span class="description">setMode</span><pre>setMode</pre></a></li>
+<li class="constant  "><a href="#constant_setProductionModeTemplatesPath" title="setProductionModeTemplatesPath :: "><span class="description">setProductionModeTemplatesPath</span><pre>setProductionModeTemplatesPath</pre></a></li>
+<li class="constant  "><a href="#constant_setSiteName" title="setSiteName :: "><span class="description">setSiteName</span><pre>setSiteName</pre></a></li>
+<li class="constant  "><a href="#constant_setSiteSlogan" title="setSiteSlogan :: "><span class="description">setSiteSlogan</span><pre>setSiteSlogan</pre></a></li>
+<li class="constant  "><a href="#constant_setTemplatesPath" title="setTemplatesPath :: "><span class="description">setTemplatesPath</span><pre>setTemplatesPath</pre></a></li>
+<li class="constant  "><a href="#constant_templateExists" title="templateExists :: "><span class="description">templateExists</span><pre>templateExists</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sTemplate"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sTemplate.html">sTemplate</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Manages templating.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.sutralib.com/">http://www.sutralib.com/</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.2</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addBodyClass"></a><div class="element clickable method public method_addBodyClass" data-toggle="collapse" data-target=".method_addBodyClass .collapse">
+<h2>Add a body class.</h2>
+<pre>addBodyClass(string $class_name) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This would normally be output in the class attribute of
+  the <body> element.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class_name</h4>
+<code>string</code><p>Class name to add.</p></div>
+</div></div>
+</div>
+<a id="method_addCDN"></a><div class="element clickable method public method_addCDN" data-toggle="collapse" data-target=".method_addCDN .collapse">
+<h2>Add a CDN URL prefix WITHOUT including the final slash.</h2>
+<pre>addCDN(string $url) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The prefix URL to use.</p></div>
+</div></div>
+</div>
+<a id="method_addCSSFile"></a><div class="element clickable method public method_addCSSFile" data-toggle="collapse" data-target=".method_addCSSFile .collapse">
+<h2>Add a CSS file path.</h2>
+<pre>addCSSFile(string $path, string $media, boolean $prepend) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::setCSSMediaOrder()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Path to the CSS file. Should be in the site root.</p></div>
+<div class="subelement argument">
+<h4>$media</h4>
+<code>string</code><p>Media type.</p></div>
+<div class="subelement argument">
+<h4>$prepend</h4>
+<code>boolean</code><p>If this CSS file sould be first.</p></div>
+</div></div>
+</div>
+<a id="method_addJavaScriptFile"></a><div class="element clickable method public method_addJavaScriptFile" data-toggle="collapse" data-target=".method_addJavaScriptFile .collapse">
+<h2>Add a JavaScript file.</h2>
+<pre>addJavaScriptFile(string $filename, string $where) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>File name. Should be relative to site root or can be full URIs.</p></div>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Where the script should go. One of: 'head', 'body'.</p>
+</div>
+</div></div>
+</div>
+<a id="method_addMinifiedJavaScriptFile"></a><div class="element clickable method public method_addMinifiedJavaScriptFile" data-toggle="collapse" data-target=".method_addMinifiedJavaScriptFile .collapse">
+<h2>Add a minified JavaScript file.</h2>
+<pre>addMinifiedJavaScriptFile(string $filename, string $where) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Should be relative to site path, or can be
+  full URIs. These are only added during production mode.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>File name. Example: '/files/themin.min.js'</p>
+</div>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Where the script should go. One of: 'head', 'body'.</p>
+</div>
+</div></div>
+</div>
+<a id="method_buffer"></a><div class="element clickable method public method_buffer" data-toggle="collapse" data-target=".method_buffer .collapse">
+<h2>Buffer a file in for content.</h2>
+<pre>buffer(string $filename, array $variables) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>string</code><p>File name to include without extension.</p></div>
+<div class="subelement argument">
+<h4>$variables</h4>
+<code>array</code><p>Array of key => value pairs, which will be turned into local variables before the template file is included.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the file cannot be found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The captured content.</div>
+</div></div>
+</div>
+<a id="method_enableQueryStrings"></a><div class="element clickable method public method_enableQueryStrings" data-toggle="collapse" data-target=".method_enableQueryStrings .collapse">
+<h2>Enable or disable query strings on resource URLs such as CSS while in
+  development mode.</h2>
+<pre>enableQueryStrings(boolean $bool) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$bool</h4>
+<code>boolean</code><p>Value to set. TRUE or FALSE.</p></div>
+</div></div>
+</div>
+<a id="method_getACDN"></a><div class="element clickable method public method_getACDN" data-toggle="collapse" data-target=".method_getACDN .collapse">
+<h2>Get a CDN to use.</h2>
+<pre>getACDN() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Empty string, or CDN URL prefix.</div>
+</div></div>
+</div>
+<a id="method_getBodyClasses"></a><div class="element clickable method public method_getBodyClasses" data-toggle="collapse" data-target=".method_getBodyClasses .collapse">
+<h2>Get the body classes.</h2>
+<pre>getBodyClasses() : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of strings.</div>
+</div></div>
+</div>
+<a id="method_getCDNs"></a><div class="element clickable method public method_getCDNs" data-toggle="collapse" data-target=".method_getCDNs .collapse">
+<h2>Get the CDNs in currently in use.</h2>
+<pre>getCDNs() </pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>returns</th>
+<td>array Array of string URLs.</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getCache"></a><div class="element clickable method public method_getCache" data-toggle="collapse" data-target=".method_getCache .collapse">
+<h2>Gets the sCache instance this is using.</h2>
+<pre>getCache() : <a href="../classes/sCache.html">\sCache</a></pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::setCache()</a></td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If cache is NULL.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCache.html">\sCache</a></code>The sCache instance.</div>
+</div></div>
+</div>
+<a id="method_getJavaScriptFiles"></a><div class="element clickable method public method_getJavaScriptFiles" data-toggle="collapse" data-target=".method_getJavaScriptFiles .collapse">
+<h2>Load/get all JavaScript files in an array.</h2>
+<pre>getJavaScriptFiles(string $where) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no argument is specified,
+  then all JavaScript file paths will be in the array, with first level
+  keys being 'head' and 'body'.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Which to get. One of: 'head', 'body'.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>array</code></div>
+</div></div>
+</div>
+<a id="method_getMode"></a><div class="element clickable method public method_getMode" data-toggle="collapse" data-target=".method_getMode .collapse">
+<h2>Get the current working mode.</h2>
+<pre>getMode() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>One of: 'development', 'production'.</div>
+</div></div>
+</div>
+<a id="method_registerCallback"></a><div class="element clickable method public method_registerCallback" data-toggle="collapse" data-target=".method_registerCallback .collapse">
+<h2>Register a callback to be called when the template name specified is about
+  to be rendered.</h2>
+<pre>registerCallback(callback $callback, string $template_name) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::buffer()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>Callback. All callbacks must return an array of keys to string values. They must be registered before the template will be used with sTemplate::buffer().</p>
+</div>
+<div class="subelement argument">
+<h4>$template_name</h4>
+<code>string</code><p>Template name (without .tpl.php) to listen for.</p>
+</div>
+</div></div>
+</div>
+<a id="method_removeCDN"></a><div class="element clickable method public method_removeCDN" data-toggle="collapse" data-target=".method_removeCDN .collapse">
+<h2>Remove a specified CDN URL.</h2>
+<pre>removeCDN(string $url) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$url</h4>
+<code>string</code><p>The URL to remove.</p></div>
+</div></div>
+</div>
+<a id="method_removeCDNs"></a><div class="element clickable method public method_removeCDNs" data-toggle="collapse" data-target=".method_removeCDNs .collapse">
+<h2>Remove all CDNs.</h2>
+<pre>removeCDNs() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_render"></a><div class="element clickable method public method_render" data-toggle="collapse" data-target=".method_render .collapse">
+<h2>Perform final rendering.</h2>
+<pre>render(array $variables) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Call this at the end of the router's main action
+  method.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$variables</h4>
+<code>array</code><p>Array of key => value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<td>If the template cannot be found.</td>
+</tr>
+<tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the keys title or content are missing.</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_setActiveTemplate"></a><div class="element clickable method public method_setActiveTemplate" data-toggle="collapse" data-target=".method_setActiveTemplate .collapse">
+<h2>Set the active template.</h2>
+<pre>setActiveTemplate(string $template_name, string $fallback_template) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template_name</h4>
+<code>string</code><p>String of template name.</p></div>
+<div class="subelement argument">
+<h4>$fallback_template</h4>
+<code>string</code><p>The fallback template.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If any directory is not found or not
+  readable.</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_setCDNs"></a><div class="element clickable method public method_setCDNs" data-toggle="collapse" data-target=".method_setCDNs .collapse">
+<h2>Set the CDNs to use.</h2>
+<pre>setCDNs(array $urls) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$urls</h4>
+<code>array</code><p>Array of URL prefixes WITHOUT the ending /.</p>
+</div>
+</div></div>
+</div>
+<a id="method_setCSSMediaOrder"></a><div class="element clickable method public method_setCSSMediaOrder" data-toggle="collapse" data-target=".method_setCSSMediaOrder .collapse">
+<h2>Set the CSS media type order.</h2>
+<pre>setCSSMediaOrder(array $order) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$order</h4>
+<code>array</code><p>Array of media query strings such as 'screen'.</p>
+</div>
+</div></div>
+</div>
+<a id="method_setCache"></a><div class="element clickable method public method_setCache" data-toggle="collapse" data-target=".method_setCache .collapse">
+<h2>Set the sCache instance sTemplate will use.</h2>
+<pre>setCache(\sCache $cache) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$cache</h4>
+<code><a href="../classes/sCache.html">\sCache</a></code><p>The cache object.</p></div>
+</div></div>
+</div>
+<a id="method_setMinifiedCSSPath"></a><div class="element clickable method public method_setMinifiedCSSPath" data-toggle="collapse" data-target=".method_setMinifiedCSSPath .collapse">
+<h2>Set where minified CSS should be stored.</h2>
+<pre>setMinifiedCSSPath(string $path) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This directory will be in the site root.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Path in which to store minified CSS. Should not have a leading '/', or './' at the beginning.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>If the directory is not writable.</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_setMode"></a><div class="element clickable method public method_setMode" data-toggle="collapse" data-target=".method_setMode .collapse">
+<h2>Set the current mode.</h2>
+<pre>setMode(string $mode) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>In production mode, the site will use minified CSS
+  and only minified JavaScript files which are added using
+  sTemplate::addMinifiedJavaScriptFile().</p>
+
+<p>In development mode, the site will use the CSS and JavaScript files, and
+  will append a query string to each resource to prevent caching by
+  default. This can be disabled by calling:
+  sTemplate::enableQueryStrings() with FALSE as the first argument.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::addMinifiedJavaScriptFile()</a></td>
+</tr>
+<tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::enableQueryStrings()</a></td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$mode</h4>
+<code>string</code><p>One of 'development' or 'production'.</p>
+</div>
+</div></div>
+</div>
+<a id="method_setProductionModeTemplatesPath"></a><div class="element clickable method public method_setProductionModeTemplatesPath" data-toggle="collapse" data-target=".method_setProductionModeTemplatesPath .collapse">
+<h2>Set the template path used when production mode is enabled.</h2>
+<pre>setProductionModeTemplatesPath(string $path) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If this is not
+  set, the default path will be used.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Path to use.</p></div>
+</div></div>
+</div>
+<a id="method_setSiteName"></a><div class="element clickable method public method_setSiteName" data-toggle="collapse" data-target=".method_setSiteName .collapse">
+<h2>Set the site name.</h2>
+<pre>setSiteName(string $name) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$name</h4>
+<code>string</code><p>Name for the site.</p></div>
+</div></div>
+</div>
+<a id="method_setSiteSlogan"></a><div class="element clickable method public method_setSiteSlogan" data-toggle="collapse" data-target=".method_setSiteSlogan .collapse">
+<h2>Set the site slogan.</h2>
+<pre>setSiteSlogan(string $slogan) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$slogan</h4>
+<code>string</code><p>Slogan string.</p></div>
+</div></div>
+</div>
+<a id="method_setTemplatesPath"></a><div class="element clickable method public method_setTemplatesPath" data-toggle="collapse" data-target=".method_setTemplatesPath .collapse">
+<h2>Set the templates path.</h2>
+<pre>setTemplatesPath(string $path) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The path is run through fDirectory. If it is not useable, then
+  fDirectory::__construct() will throw an fValidationException.</p></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\fDirectory::__construct()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>Path without ending separator, such as / or \.</p>
+</div>
+</div></div>
+</div>
+<a id="method_templateExists"></a><div class="element clickable method public method_templateExists" data-toggle="collapse" data-target=".method_templateExists .collapse">
+<h2>Check if a certain template file exists.</h2>
+<pre>templateExists(string $template_name) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template_name</h4>
+<code>string</code><p>Template name to check, without .tpl.php.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>TRUE if the template exists, otherwise FALSE.</div>
+</div></div>
+</div>
+<a id="method_getJavaScriptHTML"></a><div class="element clickable method protected method_getJavaScriptHTML" data-toggle="collapse" data-target=".method_getJavaScriptHTML .collapse">
+<h2>Get string of HTML scripts for use in the head element.</h2>
+<pre>getJavaScriptHTML(string $where) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>JavaScript here can only be dependent on scripts that are also
+  in the head element.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$where</h4>
+<code>string</code><p>Which scripts to get. One of: 'head', 'body'.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_getPageTemplate"></a><div class="element clickable method protected method_getPageTemplate" data-toggle="collapse" data-target=".method_getPageTemplate .collapse">
+<h2>Get the correct page template for this URL.</h2>
+<pre>getPageTemplate() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<td>If a candidate file cannot be found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>Template file name (with .tpl.php) to use.</div>
+</div></div>
+</div>
+<a id="method_getStylesheetsHTML"></a><div class="element clickable method protected method_getStylesheetsHTML" data-toggle="collapse" data-target=".method_getStylesheetsHTML .collapse">
+<h2>Get the list of stylesheets in order.</h2>
+<pre>getStylesheetsHTML() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\sTemplate::setCSSMediaOrder()</a></td>
+</tr></table>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<td>If the CSS file cannot be read (production mode only).</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>String of link HTML tags.</div>
+</div></div>
+</div>
+<a id="method_getStylesheetsHTMLProductionMode"></a><div class="element clickable method protected method_getStylesheetsHTMLProductionMode" data-toggle="collapse" data-target=".method_getStylesheetsHTMLProductionMode .collapse">
+<h2>Makes the stylesheets HTML when in production mode.</h2>
+<pre>getStylesheetsHTMLProductionMode() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<td>If a file is unable to read or found.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The HTML link tags.</div>
+</div></div>
+</div>
+<a id="method_getTemplatesPath"></a><div class="element clickable method protected method_getTemplatesPath" data-toggle="collapse" data-target=".method_getTemplatesPath .collapse">
+<h2>Gets the correct templates path.</h2>
+<pre>getTemplatesPath() : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The path.</div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class.</h2>
+<pre>__construct() : <a href="../classes/sTemplate.html">\sTemplate</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sTemplate.html">\sTemplate</a></code></div>
+</div></div>
+</div>
+<a id="method_callCallbacks"></a><div class="element clickable method private method_callCallbacks" data-toggle="collapse" data-target=".method_callCallbacks .collapse">
+<h2>Calls all the registered callback for * and this template.</h2>
+<pre>callCallbacks(string $template_name) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template_name</h4>
+<code>string</code><p>Template name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>Array of key => value pairs for use in the template.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_body_classes"> </a><div class="element clickable property protected property_body_classes" data-toggle="collapse" data-target=".property_body_classes .collapse">
+<h2>Array of strings of class names to apply to the body element.</h2>
+<pre>$body_classes : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cache"> </a><div class="element clickable property protected property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
+<h2>The sCache instance.</h2>
+<pre>$cache : <a href="../classes/sCache.html">\sCache</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_in_production_mode"> </a><div class="element clickable property protected property_in_production_mode" data-toggle="collapse" data-target=".property_in_production_mode .collapse">
+<h2>Whether or not the site is in production mode or not.</h2>
+<pre>$in_production_mode : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_language"> </a><div class="element clickable property protected property_language" data-toggle="collapse" data-target=".property_language .collapse">
+<h2>The language of the page.</h2>
+<pre>$language : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_text_direction"> </a><div class="element clickable property protected property_text_direction" data-toggle="collapse" data-target=".property_text_direction .collapse">
+<h2>The text direction of the page.</h2>
+<pre>$text_direction : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_cdns"> </a><div class="element clickable property private property_cdns" data-toggle="collapse" data-target=".property_cdns .collapse">
+<h2>Array of CDN URL prefixes.</h2>
+<pre>$cdns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_compiled_javascript_files"> </a><div class="element clickable property private property_compiled_javascript_files" data-toggle="collapse" data-target=".property_compiled_javascript_files .collapse">
+<h2>The minified/compiled JavaScript files used in production mode.</h2>
+<pre>$compiled_javascript_files : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_css_files"> </a><div class="element clickable property private property_css_files" data-toggle="collapse" data-target=".property_css_files .collapse">
+<h2>CSS file paths.</h2>
+<pre>$css_files : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>The keys are the media types.</p></div></div></div>
+</div>
+<a id="property_css_media_order"> </a><div class="element clickable property private property_css_media_order" data-toggle="collapse" data-target=".property_css_media_order .collapse">
+<h2>CSS media order.</h2>
+<pre>$css_media_order : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_javascript_files"> </a><div class="element clickable property private property_javascript_files" data-toggle="collapse" data-target=".property_javascript_files .collapse">
+<h2>The JavaScript files (which appear normally at the bottom of the page).</h2>
+<pre>$javascript_files : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_minifed_css_path"> </a><div class="element clickable property private property_minifed_css_path" data-toggle="collapse" data-target=".property_minifed_css_path .collapse">
+<h2>Where minified CSS should be stored.</h2>
+<pre>$minifed_css_path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_production_mode_template_path"> </a><div class="element clickable property private property_production_mode_template_path" data-toggle="collapse" data-target=".property_production_mode_template_path .collapse">
+<h2>The templates path used when production mode is enabled.</h2>
+<pre>$production_mode_template_path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_query_strings_enabled"> </a><div class="element clickable property private property_query_strings_enabled" data-toggle="collapse" data-target=".property_query_strings_enabled .collapse">
+<h2>If resources such as CSS and JavaScript while not in production mode
+  should be printed with query strings added to prevent caching (in
+  particular with IE).</h2>
+<pre>$query_strings_enabled : boolean</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_registered_callbacks"> </a><div class="element clickable property private property_registered_callbacks" data-toggle="collapse" data-target=".property_registered_callbacks .collapse">
+<h2>Registered callbacks.</h2>
+<pre>$registered_callbacks : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_site_name"> </a><div class="element clickable property private property_site_name" data-toggle="collapse" data-target=".property_site_name .collapse">
+<h2>The site name.</h2>
+<pre>$site_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_site_slogan"> </a><div class="element clickable property private property_site_slogan" data-toggle="collapse" data-target=".property_site_slogan .collapse">
+<h2>The site slogan.</h2>
+<pre>$site_slogan : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_template_fallback"> </a><div class="element clickable property private property_template_fallback" data-toggle="collapse" data-target=".property_template_fallback .collapse">
+<h2>The fallback template.</h2>
+<pre>$template_fallback : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_template_name"> </a><div class="element clickable property private property_template_name" data-toggle="collapse" data-target=".property_template_name .collapse">
+<h2>The template name.</h2>
+<pre>$template_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>Matches directory name in './template'. Defaults to
+  'default'.</p></div></div></div>
+</div>
+<a id="property_templates_path"> </a><div class="element clickable property private property_templates_path" data-toggle="collapse" data-target=".property_templates_path .collapse">
+<h2>The templates path without any ending directory separator (like /).</h2>
+<pre>$templates_path : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addBodyClass"> </a><div class="element clickable constant  constant_addBodyClass" data-toggle="collapse" data-target=".constant_addBodyClass .collapse">
+<h2>addBodyClass</h2>
+<pre>addBodyClass </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addCDN"> </a><div class="element clickable constant  constant_addCDN" data-toggle="collapse" data-target=".constant_addCDN .collapse">
+<h2>addCDN</h2>
+<pre>addCDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addCSSFile"> </a><div class="element clickable constant  constant_addCSSFile" data-toggle="collapse" data-target=".constant_addCSSFile .collapse">
+<h2>addCSSFile</h2>
+<pre>addCSSFile </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addJavaScriptFile"> </a><div class="element clickable constant  constant_addJavaScriptFile" data-toggle="collapse" data-target=".constant_addJavaScriptFile .collapse">
+<h2>addJavaScriptFile</h2>
+<pre>addJavaScriptFile </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addMinifiedJavaScriptFile"> </a><div class="element clickable constant  constant_addMinifiedJavaScriptFile" data-toggle="collapse" data-target=".constant_addMinifiedJavaScriptFile .collapse">
+<h2>addMinifiedJavaScriptFile</h2>
+<pre>addMinifiedJavaScriptFile </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_buffer"> </a><div class="element clickable constant  constant_buffer" data-toggle="collapse" data-target=".constant_buffer .collapse">
+<h2>buffer</h2>
+<pre>buffer </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_enableQueryStrings"> </a><div class="element clickable constant  constant_enableQueryStrings" data-toggle="collapse" data-target=".constant_enableQueryStrings .collapse">
+<h2>enableQueryStrings</h2>
+<pre>enableQueryStrings </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getACDN"> </a><div class="element clickable constant  constant_getACDN" data-toggle="collapse" data-target=".constant_getACDN .collapse">
+<h2>getACDN</h2>
+<pre>getACDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getBodyClasses"> </a><div class="element clickable constant  constant_getBodyClasses" data-toggle="collapse" data-target=".constant_getBodyClasses .collapse">
+<h2>getBodyClasses</h2>
+<pre>getBodyClasses </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getCDNs"> </a><div class="element clickable constant  constant_getCDNs" data-toggle="collapse" data-target=".constant_getCDNs .collapse">
+<h2>getCDNs</h2>
+<pre>getCDNs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getCache"> </a><div class="element clickable constant  constant_getCache" data-toggle="collapse" data-target=".constant_getCache .collapse">
+<h2>getCache</h2>
+<pre>getCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getJavaScriptFiles"> </a><div class="element clickable constant  constant_getJavaScriptFiles" data-toggle="collapse" data-target=".constant_getJavaScriptFiles .collapse">
+<h2>getJavaScriptFiles</h2>
+<pre>getJavaScriptFiles </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_getMode"> </a><div class="element clickable constant  constant_getMode" data-toggle="collapse" data-target=".constant_getMode .collapse">
+<h2>getMode</h2>
+<pre>getMode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_registerCallback"> </a><div class="element clickable constant  constant_registerCallback" data-toggle="collapse" data-target=".constant_registerCallback .collapse">
+<h2>registerCallback</h2>
+<pre>registerCallback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_removeCDN"> </a><div class="element clickable constant  constant_removeCDN" data-toggle="collapse" data-target=".constant_removeCDN .collapse">
+<h2>removeCDN</h2>
+<pre>removeCDN </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_removeCDNs"> </a><div class="element clickable constant  constant_removeCDNs" data-toggle="collapse" data-target=".constant_removeCDNs .collapse">
+<h2>removeCDNs</h2>
+<pre>removeCDNs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_render"> </a><div class="element clickable constant  constant_render" data-toggle="collapse" data-target=".constant_render .collapse">
+<h2>render</h2>
+<pre>render </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setActiveTemplate"> </a><div class="element clickable constant  constant_setActiveTemplate" data-toggle="collapse" data-target=".constant_setActiveTemplate .collapse">
+<h2>setActiveTemplate</h2>
+<pre>setActiveTemplate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setCDNs"> </a><div class="element clickable constant  constant_setCDNs" data-toggle="collapse" data-target=".constant_setCDNs .collapse">
+<h2>setCDNs</h2>
+<pre>setCDNs </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setCSSMediaOrder"> </a><div class="element clickable constant  constant_setCSSMediaOrder" data-toggle="collapse" data-target=".constant_setCSSMediaOrder .collapse">
+<h2>setCSSMediaOrder</h2>
+<pre>setCSSMediaOrder </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setCache"> </a><div class="element clickable constant  constant_setCache" data-toggle="collapse" data-target=".constant_setCache .collapse">
+<h2>setCache</h2>
+<pre>setCache </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setMinifiedCSSPath"> </a><div class="element clickable constant  constant_setMinifiedCSSPath" data-toggle="collapse" data-target=".constant_setMinifiedCSSPath .collapse">
+<h2>setMinifiedCSSPath</h2>
+<pre>setMinifiedCSSPath </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setMode"> </a><div class="element clickable constant  constant_setMode" data-toggle="collapse" data-target=".constant_setMode .collapse">
+<h2>setMode</h2>
+<pre>setMode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setProductionModeTemplatesPath"> </a><div class="element clickable constant  constant_setProductionModeTemplatesPath" data-toggle="collapse" data-target=".constant_setProductionModeTemplatesPath .collapse">
+<h2>setProductionModeTemplatesPath</h2>
+<pre>setProductionModeTemplatesPath </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setSiteName"> </a><div class="element clickable constant  constant_setSiteName" data-toggle="collapse" data-target=".constant_setSiteName .collapse">
+<h2>setSiteName</h2>
+<pre>setSiteName </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setSiteSlogan"> </a><div class="element clickable constant  constant_setSiteSlogan" data-toggle="collapse" data-target=".constant_setSiteSlogan .collapse">
+<h2>setSiteSlogan</h2>
+<pre>setSiteSlogan </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setTemplatesPath"> </a><div class="element clickable constant  constant_setTemplatesPath" data-toggle="collapse" data-target=".constant_setTemplatesPath .collapse">
+<h2>setTemplatesPath</h2>
+<pre>setTemplatesPath </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_templateExists"> </a><div class="element clickable constant  constant_templateExists" data-toggle="collapse" data-target=".constant_templateExists .collapse">
+<h2>templateExists</h2>
+<pre>templateExists </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

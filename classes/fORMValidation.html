@@ -1,0 +1,1110 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fORMValidation</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_addConditionalRule" title="addConditionalRule :: Adds a conditional rule"><span class="description">Adds a conditional rule</span><pre>addConditionalRule()</pre></a></li>
+<li class="method public "><a href="#method_addManyToManyRule" title="addManyToManyRule :: Add a many-to-many rule that requires at least one related record is associated with the current record"><span class="description">Add a many-to-many rule that requires at least one related record is associated with the current record</span><pre>addManyToManyRule()</pre></a></li>
+<li class="method public "><a href="#method_addOneOrMoreRule" title="addOneOrMoreRule :: Adds a one-or-more rule that requires at least one of the columns specified has a value"><span class="description">Adds a one-or-more rule that requires at least one of the columns specified has a value</span><pre>addOneOrMoreRule()</pre></a></li>
+<li class="method public "><a href="#method_addOneToManyRule" title="addOneToManyRule :: Add a one-to-many rule that requires at least one related record is associated with the current record"><span class="description">Add a one-to-many rule that requires at least one related record is associated with the current record</span><pre>addOneToManyRule()</pre></a></li>
+<li class="method public "><a href="#method_addOnlyOneRule" title="addOnlyOneRule :: Add an only-one rule that requires exactly one of the columns must have a value"><span class="description">Add an only-one rule that requires exactly one of the columns must have a value</span><pre>addOnlyOneRule()</pre></a></li>
+<li class="method public "><a href="#method_addRegexReplacement" title="addRegexReplacement :: Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message"><span class="description">Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</span><pre>addRegexReplacement()</pre></a></li>
+<li class="method public "><a href="#method_addRegexRule" title="addRegexRule :: Adds a rule to validate a column against a PCRE regular expression - the rule is not run if the value is `NULL`"><span class="description">Adds a rule to validate a column against a PCRE regular expression - the rule is not run if the value is `NULL`</span><pre>addRegexRule()</pre></a></li>
+<li class="method public "><a href="#method_addRequiredRule" title="addRequiredRule :: Requires that a column have a non-`NULL` value"><span class="description">Requires that a column have a non-`NULL` value</span><pre>addRequiredRule()</pre></a></li>
+<li class="method public "><a href="#method_addStringReplacement" title="addStringReplacement :: Adds a call to [http://php.net/str_replace `str_replace()`] for each message"><span class="description">Adds a call to [http://php.net/str_replace `str_replace()`] for each message</span><pre>addStringReplacement()</pre></a></li>
+<li class="method public "><a href="#method_addValidValuesRule" title="addValidValuesRule :: Restricts a column to having only a value from the list of valid values"><span class="description">Restricts a column to having only a value from the list of valid values</span><pre>addValidValuesRule()</pre></a></li>
+<li class="method public "><a href="#method_setColumnCaseInsensitive" title="setColumnCaseInsensitive :: Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints"><span class="description">Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</span><pre>setColumnCaseInsensitive()</pre></a></li>
+<li class="method public "><a href="#method_setMessageOrder" title="setMessageOrder :: Allows setting the order that the list items in a message will be displayed"><span class="description">Allows setting the order that the list items in a message will be displayed</span><pre>setMessageOrder()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_checkAgainstSchema" title="checkAgainstSchema :: Validates a value against the database schema"><span class="description">Validates a value against the database schema</span><pre>checkAgainstSchema()</pre></a></li>
+<li class="method private "><a href="#method_checkConditionalRule" title="checkConditionalRule :: Validates against a conditional rule"><span class="description">Validates against a conditional rule</span><pre>checkConditionalRule()</pre></a></li>
+<li class="method private "><a href="#method_checkDataType" title="checkDataType :: Validates a value against the database data type"><span class="description">Validates a value against the database data type</span><pre>checkDataType()</pre></a></li>
+<li class="method private "><a href="#method_checkForeignKeyConstraints" title="checkForeignKeyConstraints :: Validates values against foreign key constraints"><span class="description">Validates values against foreign key constraints</span><pre>checkForeignKeyConstraints()</pre></a></li>
+<li class="method private "><a href="#method_checkOneOrMoreRule" title="checkOneOrMoreRule :: Validates against a one-or-more rule"><span class="description">Validates against a one-or-more rule</span><pre>checkOneOrMoreRule()</pre></a></li>
+<li class="method private "><a href="#method_checkOnlyOneRule" title="checkOnlyOneRule :: Validates against an only-one rule"><span class="description">Validates against an only-one rule</span><pre>checkOnlyOneRule()</pre></a></li>
+<li class="method private "><a href="#method_checkPrimaryKeys" title="checkPrimaryKeys :: Makes sure a record with the same primary keys is not already in the database"><span class="description">Makes sure a record with the same primary keys is not already in the database</span><pre>checkPrimaryKeys()</pre></a></li>
+<li class="method private "><a href="#method_checkRegexRule" title="checkRegexRule :: Validates against a regex rule"><span class="description">Validates against a regex rule</span><pre>checkRegexRule()</pre></a></li>
+<li class="method private "><a href="#method_checkRelatedOneOrMoreRule" title="checkRelatedOneOrMoreRule :: Validates against a *-to-many one or more rule"><span class="description">Validates against a *-to-many one or more rule</span><pre>checkRelatedOneOrMoreRule()</pre></a></li>
+<li class="method private "><a href="#method_checkUniqueConstraints" title="checkUniqueConstraints :: Validates values against unique constraints"><span class="description">Validates values against unique constraints</span><pre>checkUniqueConstraints()</pre></a></li>
+<li class="method private "><a href="#method_checkValidValuesRule" title="checkValidValuesRule :: Validates against a valid values rule"><span class="description">Validates against a valid values rule</span><pre>checkValidValuesRule()</pre></a></li>
+<li class="method private "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method private "><a href="#method_isNonBlankString" title="isNonBlankString :: Returns FALSE if the string is empty - used for array filtering"><span class="description">Returns FALSE if the string is empty - used for array filtering</span><pre>isNonBlankString()</pre></a></li>
+<li class="method private "><a href="#method_sortMessageMatches" title="sortMessageMatches :: Compares the message matching strings by longest first so that the longest matches are made first"><span class="description">Compares the message matching strings by longest first so that the longest matches are made first</span><pre>sortMessageMatches()</pre></a></li>
+<li class="method private "><a href="#method_stringlike" title="stringlike :: Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)"><span class="description">Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</span><pre>stringlike()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_case_insensitive_columns" title="$case_insensitive_columns :: Columns that should be treated as case insensitive when checking uniqueness"><span class="description">Columns that should be treated as case insensitive when checking uniqueness</span><pre>$case_insensitive_columns</pre></a></li>
+<li class="property private "><a href="#property_conditional_rules" title="$conditional_rules :: Conditional rules"><span class="description">Conditional rules</span><pre>$conditional_rules</pre></a></li>
+<li class="property private "><a href="#property_message_orders" title="$message_orders :: Ordering rules for messages"><span class="description">Ordering rules for messages</span><pre>$message_orders</pre></a></li>
+<li class="property private "><a href="#property_one_or_more_rules" title="$one_or_more_rules :: One or more rules"><span class="description">One or more rules</span><pre>$one_or_more_rules</pre></a></li>
+<li class="property private "><a href="#property_only_one_rules" title="$only_one_rules :: Only one rules"><span class="description">Only one rules</span><pre>$only_one_rules</pre></a></li>
+<li class="property private "><a href="#property_regex_replacements" title="$regex_replacements :: Regular expression replacements performed on each message"><span class="description">Regular expression replacements performed on each message</span><pre>$regex_replacements</pre></a></li>
+<li class="property private "><a href="#property_regex_rules" title="$regex_rules :: Rules that require a value to match a regular expression"><span class="description">Rules that require a value to match a regular expression</span><pre>$regex_rules</pre></a></li>
+<li class="property private "><a href="#property_related_one_or_more_rules" title="$related_one_or_more_rules :: Rules that require at least one or more *-to-many related records to be associated"><span class="description">Rules that require at least one or more *-to-many related records to be associated</span><pre>$related_one_or_more_rules</pre></a></li>
+<li class="property private "><a href="#property_required_rules" title="$required_rules :: Rules that require a value be present in a column even if the database schema doesn't require it"><span class="description">Rules that require a value be present in a column even if the database schema doesn't require it</span><pre>$required_rules</pre></a></li>
+<li class="property private "><a href="#property_string_replacements" title="$string_replacements :: String replacements performed on each message"><span class="description">String replacements performed on each message</span><pre>$string_replacements</pre></a></li>
+<li class="property private "><a href="#property_valid_values_rules" title="$valid_values_rules :: Valid values rules"><span class="description">Valid values rules</span><pre>$valid_values_rules</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_addConditionalRule" title="addConditionalRule :: "><span class="description">addConditionalRule</span><pre>addConditionalRule</pre></a></li>
+<li class="constant  "><a href="#constant_addManyToManyRule" title="addManyToManyRule :: "><span class="description">addManyToManyRule</span><pre>addManyToManyRule</pre></a></li>
+<li class="constant  "><a href="#constant_addOneOrMoreRule" title="addOneOrMoreRule :: "><span class="description">addOneOrMoreRule</span><pre>addOneOrMoreRule</pre></a></li>
+<li class="constant  "><a href="#constant_addOneToManyRule" title="addOneToManyRule :: "><span class="description">addOneToManyRule</span><pre>addOneToManyRule</pre></a></li>
+<li class="constant  "><a href="#constant_addOnlyOneRule" title="addOnlyOneRule :: "><span class="description">addOnlyOneRule</span><pre>addOnlyOneRule</pre></a></li>
+<li class="constant  "><a href="#constant_addRegexReplacement" title="addRegexReplacement :: "><span class="description">addRegexReplacement</span><pre>addRegexReplacement</pre></a></li>
+<li class="constant  "><a href="#constant_addRegexRule" title="addRegexRule :: "><span class="description">addRegexRule</span><pre>addRegexRule</pre></a></li>
+<li class="constant  "><a href="#constant_addRequiredRule" title="addRequiredRule :: "><span class="description">addRequiredRule</span><pre>addRequiredRule</pre></a></li>
+<li class="constant  "><a href="#constant_addStringReplacement" title="addStringReplacement :: "><span class="description">addStringReplacement</span><pre>addStringReplacement</pre></a></li>
+<li class="constant  "><a href="#constant_addValidValuesRule" title="addValidValuesRule :: "><span class="description">addValidValuesRule</span><pre>addValidValuesRule</pre></a></li>
+<li class="constant  "><a href="#constant_hasValue" title="hasValue :: "><span class="description">hasValue</span><pre>hasValue</pre></a></li>
+<li class="constant  "><a href="#constant_inspect" title="inspect :: "><span class="description">inspect</span><pre>inspect</pre></a></li>
+<li class="constant  "><a href="#constant_removeRegexReplacement" title="removeRegexReplacement :: "><span class="description">removeRegexReplacement</span><pre>removeRegexReplacement</pre></a></li>
+<li class="constant  "><a href="#constant_removeStringReplacement" title="removeStringReplacement :: "><span class="description">removeStringReplacement</span><pre>removeStringReplacement</pre></a></li>
+<li class="constant  "><a href="#constant_reorderMessages" title="reorderMessages :: "><span class="description">reorderMessages</span><pre>reorderMessages</pre></a></li>
+<li class="constant  "><a href="#constant_replaceMessages" title="replaceMessages :: "><span class="description">replaceMessages</span><pre>replaceMessages</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_setColumnCaseInsensitive" title="setColumnCaseInsensitive :: "><span class="description">setColumnCaseInsensitive</span><pre>setColumnCaseInsensitive</pre></a></li>
+<li class="constant  "><a href="#constant_setMessageOrder" title="setMessageOrder :: "><span class="description">setMessageOrder</span><pre>setMessageOrder</pre></a></li>
+<li class="constant  "><a href="#constant_validate" title="validate :: "><span class="description">validate</span><pre>validate</pre></a></li>
+<li class="constant  "><a href="#constant_validateRelated" title="validateRelated :: "><span class="description">validateRelated</span><pre>validateRelated</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fORMValidation"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMValidation.html">fORMValidation</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Handles validation for fActiveRecord classes</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:jeff.turcotte@gmail.com">Jeff Turcotte [jt]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMValidation">http://flourishlib.com/fORMValidation</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b31</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b31  Fixed ::checkConditionalRule() to require columns that default to an empty string and are currently set to that value [wb, 2011-06-14]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b30  Fixed a bug with ::setMessageOrder() not accepting a variable number of parameters like fValidation::setMessageOrder() does [wb, 2011-03-07]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Updated ::addManyToManyRule() and ::addOneToManyRule() to prefix any namespace from `$class` to `$related_class` if not already present [wb, 2010-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b28  Updated the class to work with the new nested array structure for validation messages [wb, 2010-10-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b27  Fixed ::hasValue() to properly detect zero-value floats, made ::hasValue() internal public [wb, 2010-07-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b26  Improved the error message for integers to say `whole number` instead of just `number` [wb, 2010-05-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b25  Added ::addRegexRule(), changed validation messages array to use column name keys [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Added ::addRequiredRule() for required columns that aren't automatically handled via schema detection [wb, 2010-04-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b23  Added support for checking integers and floats to ensure they fit within the range imposed by the database schema [wb, 2010-03-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Made the value checking for one-or-more and only-one rules more robust when detecting the absence of a value [wb, 2009-12-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Fixed a bug affecting where conditions with columns that are not null but have a default value [wb, 2009-11-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b19  Changed SQL statements to use value placeholders, identifier escaping and schema support [wb, 2009-10-22]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b18  Fixed ::checkOnlyOneRule() and ::checkOneOrMoreRule() to consider blank strings as NULL [wb, 2009-08-21]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b17  Added @internal methods ::removeStringReplacement() and ::removeRegexReplacement() [wb, 2009-07-29]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b16  Backwards Compatibility Break - renamed ::addConditionalValidationRule() to ::addConditionalRule(), ::addManyToManyValidationRule() to ::addManyToManyRule(), ::addOneOrMoreValidationRule() to ::addOneOrMoreRule(), ::addOneToManyValidationRule() to ::addOneToManyRule(), ::addOnlyOneValidationRule() to ::addOnlyOneRule(), ::addValidValuesValidationRule() to ::addValidValuesRule() [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b15  Added ::addValidValuesValidationRule() [wb/jt, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b14  Added ::addStringReplacement() and ::addRegexReplacement() for simple validation message modification [wb, 2009-07-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b13  Changed ::reorderMessages() to compare string in a case-insensitive manner [wb, 2009-06-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b12  Updated ::addConditionalValidationRule() to allow any number of `$main_columns`, and if any of those have a matching value, the condtional columns will be required [wb, 2009-06-30]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed a couple of bugs with validating related records [wb, 2009-06-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Fixed UNIQUE constraint checking so it is only done once per constraint, fixed some UTF-8 case sensitivity issues [wb, 2009-06-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Updated code for new fORM API [wb, 2009-06-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Updated code to use new fValidationException::formatField() method [wb, 2009-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Updated ::validateRelated() to use new fORMRelated::validate() method and ::checkRelatedOneOrMoreRule() to use new `$related_records` structure [wb, 2009-06-02]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Changed date/time/timestamp checking from `strtotime()` to fDate/fTime/fTimestamp for better localization support [wb, 2009-06-01]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Fixed a bug in ::checkOnlyOneRule() where no values would not be flagged as an error [wb, 2009-04-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Fixed a bug in ::checkUniqueConstraints() related to case-insensitive columns [wb, 2009-02-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Implemented proper fix for ::addManyToManyValidationRule() [wb, 2008-12-12]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed a bug with ::addManyToManyValidationRule() [wb, 2008-12-08]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2007-08-04]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_addConditionalRule"></a><div class="element clickable method public method_addConditionalRule" data-toggle="collapse" data-target=".method_addConditionalRule .collapse">
+<h2>Adds a conditional rule</h2>
+<pre>addConditionalRule(mixed $class, string | array $main_columns, mixed $conditional_values, string | array $conditional_columns) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a non-empty value is found in one of the <code>$main_columns</code>, or if
+specified, a value from the <code>$conditional_values</code> array, all of the
+<code>$conditional_columns</code> will also be required to have a value.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class this rule applies to</p></div>
+<div class="subelement argument">
+<h4>$main_columns</h4>
+<code>string</code><code>array</code><p>The column(s) to check for a value</p>
+</div>
+<div class="subelement argument">
+<h4>$conditional_values</h4>
+<code>mixed</code><p>If <code>NULL</code>, any value in the main column will trigger the conditional column(s), otherwise the value must match this scalar value or be present in the array of values</p>
+</div>
+<div class="subelement argument">
+<h4>$conditional_columns</h4>
+<code>string</code><code>array</code><p>The column(s) that are to be required</p>
+</div>
+</div></div>
+</div>
+<a id="method_addManyToManyRule"></a><div class="element clickable method public method_addManyToManyRule" data-toggle="collapse" data-target=".method_addManyToManyRule .collapse">
+<h2>Add a many-to-many rule that requires at least one related record is associated with the current record</h2>
+<pre>addManyToManyRule(mixed $class, string $related_class, string $route) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to add the rule for</p></div>
+<div class="subelement argument">
+<h4>$related_class</h4>
+<code>string</code><p>The name of the related class</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route to the related class</p></div>
+</div></div>
+</div>
+<a id="method_addOneOrMoreRule"></a><div class="element clickable method public method_addOneOrMoreRule" data-toggle="collapse" data-target=".method_addOneOrMoreRule .collapse">
+<h2>Adds a one-or-more rule that requires at least one of the columns specified has a value</h2>
+<pre>addOneOrMoreRule(mixed $class, array $columns) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The columns to check</p></div>
+</div></div>
+</div>
+<a id="method_addOneToManyRule"></a><div class="element clickable method public method_addOneToManyRule" data-toggle="collapse" data-target=".method_addOneToManyRule .collapse">
+<h2>Add a one-to-many rule that requires at least one related record is associated with the current record</h2>
+<pre>addOneToManyRule(mixed $class, string $related_class, string $route) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to add the rule for</p></div>
+<div class="subelement argument">
+<h4>$related_class</h4>
+<code>string</code><p>The name of the related class</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The route to the related class</p></div>
+</div></div>
+</div>
+<a id="method_addOnlyOneRule"></a><div class="element clickable method public method_addOnlyOneRule" data-toggle="collapse" data-target=".method_addOnlyOneRule .collapse">
+<h2>Add an only-one rule that requires exactly one of the columns must have a value</h2>
+<pre>addOnlyOneRule(mixed $class, array $columns) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The columns to check</p></div>
+</div></div>
+</div>
+<a id="method_addRegexReplacement"></a><div class="element clickable method public method_addRegexReplacement" data-toggle="collapse" data-target=".method_addRegexReplacement .collapse">
+<h2>Adds a call to [http://php.net/preg_replace `preg_replace()`] for each message</h2>
+<pre>addRegexReplacement(mixed $class, string $search, string $replace) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Regex replacement is done after the <code>post::validate()</code> hook, and right
+before the messages are reordered.</p>
+
+<p>If a message is an empty string after replacement, it will be
+removed from the list of messages.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The PCRE regex to search for - see http://php.net/pcre for details</p>
+</div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with - all $ and \ are used in back references and must be escaped with a \ when meant literally</p>
+</div>
+</div></div>
+</div>
+<a id="method_addRegexRule"></a><div class="element clickable method public method_addRegexRule" data-toggle="collapse" data-target=".method_addRegexRule .collapse">
+<h2>Adds a rule to validate a column against a PCRE regular expression - the rule is not run if the value is `NULL`</h2>
+<pre>addRegexRule(mixed $class, string $column, string $regex, string $message) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to match with the regex</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>The PCRE regex to match against - see http://php.net/pcre for details</p>
+</div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to use if the value does not match the regular expression</p></div>
+</div></div>
+</div>
+<a id="method_addRequiredRule"></a><div class="element clickable method public method_addRequiredRule" data-toggle="collapse" data-target=".method_addRequiredRule .collapse">
+<h2>Requires that a column have a non-`NULL` value</h2>
+<pre>addRequiredRule(mixed $class, array $columns) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Before using this method, try setting the database column to <code>NOT NULL</code>
+and remove any default value. Such a configuration will trigger the same
+functionality as this method, and will enforce the rule on the database
+level for any other code that queries it.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the column(s) exists in</p>
+</div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The column or columns to check - each column will require a value</p>
+</div>
+</div></div>
+</div>
+<a id="method_addStringReplacement"></a><div class="element clickable method public method_addStringReplacement" data-toggle="collapse" data-target=".method_addStringReplacement .collapse">
+<h2>Adds a call to [http://php.net/str_replace `str_replace()`] for each message</h2>
+<pre>addStringReplacement(mixed $class, string $search, string $replace) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>String replacement is done after the <code>post::validate()</code> hook, and right
+before the messages are reordered.</p>
+
+<p>If a message is an empty string after replacement, it will be
+removed from the list of messages.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the columns exists in</p></div>
+<div class="subelement argument">
+<h4>$search</h4>
+<code>string</code><p>The string to search for</p></div>
+<div class="subelement argument">
+<h4>$replace</h4>
+<code>string</code><p>The string to replace with</p></div>
+</div></div>
+</div>
+<a id="method_addValidValuesRule"></a><div class="element clickable method public method_addValidValuesRule" data-toggle="collapse" data-target=".method_addValidValuesRule .collapse">
+<h2>Restricts a column to having only a value from the list of valid values</h2>
+<pre>addValidValuesRule(mixed $class, string $column, array $valid_values) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that <code>NULL</code> values are always allowed, even if not listed in
+the <code>$valid_values</code> array, if the column is not set as <code>NOT NULL</code>.</p>
+
+<p>This functionality can also be accomplished by added a <code>CHECK</code> constraint
+on the column in the database, or using a MySQL <code>ENUM</code> data type.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class this rule applies to</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to validate</p></div>
+<div class="subelement argument">
+<h4>$valid_values</h4>
+<code>array</code><p>The valid values to check - <code>NULL</code> values are always allows if the column is not set to <code>NOT NULL</code></p>
+</div>
+</div></div>
+</div>
+<a id="method_setColumnCaseInsensitive"></a><div class="element clickable method public method_setColumnCaseInsensitive" data-toggle="collapse" data-target=".method_setColumnCaseInsensitive .collapse">
+<h2>Sets a column to be compared in a case-insensitive manner when checking `UNIQUE` and `PRIMARY KEY` constraints</h2>
+<pre>setColumnCaseInsensitive(mixed $class, string $column) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class the column is located in</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to set as case-insensitive</p>
+</div>
+</div></div>
+</div>
+<a id="method_setMessageOrder"></a><div class="element clickable method public method_setMessageOrder" data-toggle="collapse" data-target=".method_setMessageOrder .collapse">
+<h2>Allows setting the order that the list items in a message will be displayed</h2>
+<pre>setMessageOrder(mixed $class, array $matches) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>All string comparisons during the reordering process are done in a
+case-insensitive manner.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or an instance of the class to set the message order for</p></div>
+<div class="subelement argument">
+<h4>$matches</h4>
+<code>array</code><p>This should be an ordered array of strings. If a line contains the string it will be displayed in the relative order it occurs in this array.</p></div>
+</div></div>
+</div>
+<a id="method_checkAgainstSchema"></a><div class="element clickable method private method_checkAgainstSchema" data-toggle="collapse" data-target=".method_checkAgainstSchema .collapse">
+<h2>Validates a value against the database schema</h2>
+<pre>checkAgainstSchema(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, string $column, array $values, array $old_values) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the object</p></div>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values going into the row (needs all for multi-field unique constraint checking)</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values from the record</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the column specified</div>
+</div></div>
+</div>
+<a id="method_checkConditionalRule"></a><div class="element clickable method private method_checkConditionalRule" data-toggle="collapse" data-target=".method_checkConditionalRule .collapse">
+<h2>Validates against a conditional rule</h2>
+<pre>checkConditionalRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $main_columns, array $conditional_values, array $conditional_columns) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the class specified</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class this rule applies to</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$main_columns</h4>
+<code>array</code><p>The columns to check for a value</p></div>
+<div class="subelement argument">
+<h4>$conditional_values</h4>
+<code>array</code><p>If <code>NULL</code>, any value in the main column will trigger the conditional columns, otherwise the value must match one of these</p>
+</div>
+<div class="subelement argument">
+<h4>$conditional_columns</h4>
+<code>array</code><p>The columns that are to be required</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The error messages for the rule specified</div>
+</div></div>
+</div>
+<a id="method_checkDataType"></a><div class="element clickable method private method_checkDataType" data-toggle="collapse" data-target=".method_checkDataType .collapse">
+<h2>Validates a value against the database data type</h2>
+<pre>checkDataType(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, string $column, mixed $value) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the class</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the column specified</div>
+</div></div>
+</div>
+<a id="method_checkForeignKeyConstraints"></a><div class="element clickable method private method_checkForeignKeyConstraints" data-toggle="collapse" data-target=".method_checkForeignKeyConstraints .collapse">
+<h2>Validates values against foreign key constraints</h2>
+<pre>checkForeignKeyConstraints(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, string $column, array $values) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the class</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class to check the foreign keys for</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values to check</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the column specified</div>
+</div></div>
+</div>
+<a id="method_checkOneOrMoreRule"></a><div class="element clickable method private method_checkOneOrMoreRule" data-toggle="collapse" data-target=".method_checkOneOrMoreRule .collapse">
+<h2>Validates against a one-or-more rule</h2>
+<pre>checkOneOrMoreRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $columns) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the table</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the columns are part of</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The columns to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the rule</div>
+</div></div>
+</div>
+<a id="method_checkOnlyOneRule"></a><div class="element clickable method private method_checkOnlyOneRule" data-toggle="collapse" data-target=".method_checkOnlyOneRule .collapse">
+<h2>Validates against an only-one rule</h2>
+<pre>checkOnlyOneRule(<a href="../classes/fSchema.html">\fSchema</a> $schema, string $class, array $values, array $columns) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the table</p></div>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the columns are part of</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$columns</h4>
+<code>array</code><p>The columns to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the rule</div>
+</div></div>
+</div>
+<a id="method_checkPrimaryKeys"></a><div class="element clickable method private method_checkPrimaryKeys" data-toggle="collapse" data-target=".method_checkPrimaryKeys .collapse">
+<h2>Makes sure a record with the same primary keys is not already in the database</h2>
+<pre>checkPrimaryKeys(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the object</p></div>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class to check</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values going into the row (needs all for multi-field unique constraint checking)</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values for the record</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>A single element associative array with the key being the primary keys joined by ,s and the value being the error message</div>
+</div></div>
+</div>
+<a id="method_checkRegexRule"></a><div class="element clickable method private method_checkRegexRule" data-toggle="collapse" data-target=".method_checkRegexRule .collapse">
+<h2>Validates against a regex rule</h2>
+<pre>checkRegexRule(string $class, array $values, string $column, string $regex, string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class the column is part of</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to check</p></div>
+<div class="subelement argument">
+<h4>$regex</h4>
+<code>string</code><p>The PCRE regular expression</p></div>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to use if the value does not match the regular expression</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the rule</div>
+</div></div>
+</div>
+<a id="method_checkRelatedOneOrMoreRule"></a><div class="element clickable method private method_checkRelatedOneOrMoreRule" data-toggle="collapse" data-target=".method_checkRelatedOneOrMoreRule .collapse">
+<h2>Validates against a *-to-many one or more rule</h2>
+<pre>checkRelatedOneOrMoreRule(<a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $related_records, string $related_class, string $route) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The object being checked</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values for the object</p>
+</div>
+<div class="subelement argument">
+<h4>$related_records</h4>
+<code>array</code><p>&$related_records The related records for the object</p>
+</div>
+<div class="subelement argument">
+<h4>$related_class</h4>
+<code>string</code><p>The name of the related class</p></div>
+<div class="subelement argument">
+<h4>$route</h4>
+<code>string</code><p>The name of the route from the class to the related class</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>An error message for the rule</div>
+</div></div>
+</div>
+<a id="method_checkUniqueConstraints"></a><div class="element clickable method private method_checkUniqueConstraints" data-toggle="collapse" data-target=".method_checkUniqueConstraints .collapse">
+<h2>Validates values against unique constraints</h2>
+<pre>checkUniqueConstraints(<a href="../classes/fSchema.html">\fSchema</a> $schema, <a href="../classes/fActiveRecord.html">\fActiveRecord</a> $object, array $values, array $old_values) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$schema</h4>
+<code><a href="../classes/fSchema.html">\fSchema</a></code><p>The schema object for the object</p></div>
+<div class="subelement argument">
+<h4>$object</h4>
+<code><a href="../classes/fActiveRecord.html">\fActiveRecord</a></code><p>The instance of the class to check</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values The values to check</p>
+</div>
+<div class="subelement argument">
+<h4>$old_values</h4>
+<code>array</code><p>&$old_values The old values for the record</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An aray of error messages for the unique constraints</div>
+</div></div>
+</div>
+<a id="method_checkValidValuesRule"></a><div class="element clickable method private method_checkValidValuesRule" data-toggle="collapse" data-target=".method_checkValidValuesRule .collapse">
+<h2>Validates against a valid values rule</h2>
+<pre>checkValidValuesRule(string $class, array $values, string $column, array $valid_values) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>string</code><p>The class this rule applies to</p></div>
+<div class="subelement argument">
+<h4>$values</h4>
+<code>array</code><p>&$values An associative array of all values for the record</p>
+</div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column the rule applies to</p></div>
+<div class="subelement argument">
+<h4>$valid_values</h4>
+<code>array</code><p>An array of valid values to check the column against</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The error message for the rule specified</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method private method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_isNonBlankString"></a><div class="element clickable method private method_isNonBlankString" data-toggle="collapse" data-target=".method_isNonBlankString .collapse">
+<h2>Returns FALSE if the string is empty - used for array filtering</h2>
+<pre>isNonBlankString(string $string) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$string</h4>
+<code>string</code><p>The string to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the string is not blank</div>
+</div></div>
+</div>
+<a id="method_sortMessageMatches"></a><div class="element clickable method private method_sortMessageMatches" data-toggle="collapse" data-target=".method_sortMessageMatches .collapse">
+<h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
+<pre>sortMessageMatches(string $a, string $b) : integer</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$a</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$b</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>`-1` if `$a` is longer than `$b`, `0` if they are equal length, `1` if `$a` is shorter than `$b`</div>
+</div></div>
+</div>
+<a id="method_stringlike"></a><div class="element clickable method private method_stringlike" data-toggle="collapse" data-target=".method_stringlike .collapse">
+<h2>Returns `TRUE` for non-empty strings, numbers, objects, empty numbers and string-like numbers (such as `0`, `0.0`, `'0'`)</h2>
+<pre>stringlike(mixed $value) : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>mixed</code><p>The value to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the value is string-like</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_case_insensitive_columns"> </a><div class="element clickable property private property_case_insensitive_columns" data-toggle="collapse" data-target=".property_case_insensitive_columns .collapse">
+<h2>Columns that should be treated as case insensitive when checking uniqueness</h2>
+<pre>$case_insensitive_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_conditional_rules"> </a><div class="element clickable property private property_conditional_rules" data-toggle="collapse" data-target=".property_conditional_rules .collapse">
+<h2>Conditional rules</h2>
+<pre>$conditional_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_message_orders"> </a><div class="element clickable property private property_message_orders" data-toggle="collapse" data-target=".property_message_orders .collapse">
+<h2>Ordering rules for messages</h2>
+<pre>$message_orders : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_one_or_more_rules"> </a><div class="element clickable property private property_one_or_more_rules" data-toggle="collapse" data-target=".property_one_or_more_rules .collapse">
+<h2>One or more rules</h2>
+<pre>$one_or_more_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_only_one_rules"> </a><div class="element clickable property private property_only_one_rules" data-toggle="collapse" data-target=".property_only_one_rules .collapse">
+<h2>Only one rules</h2>
+<pre>$only_one_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_regex_replacements"> </a><div class="element clickable property private property_regex_replacements" data-toggle="collapse" data-target=".property_regex_replacements .collapse">
+<h2>Regular expression replacements performed on each message</h2>
+<pre>$regex_replacements : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_regex_rules"> </a><div class="element clickable property private property_regex_rules" data-toggle="collapse" data-target=".property_regex_rules .collapse">
+<h2>Rules that require a value to match a regular expression</h2>
+<pre>$regex_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_related_one_or_more_rules"> </a><div class="element clickable property private property_related_one_or_more_rules" data-toggle="collapse" data-target=".property_related_one_or_more_rules .collapse">
+<h2>Rules that require at least one or more *-to-many related records to be associated</h2>
+<pre>$related_one_or_more_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_required_rules"> </a><div class="element clickable property private property_required_rules" data-toggle="collapse" data-target=".property_required_rules .collapse">
+<h2>Rules that require a value be present in a column even if the database schema doesn't require it</h2>
+<pre>$required_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_string_replacements"> </a><div class="element clickable property private property_string_replacements" data-toggle="collapse" data-target=".property_string_replacements .collapse">
+<h2>String replacements performed on each message</h2>
+<pre>$string_replacements : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_valid_values_rules"> </a><div class="element clickable property private property_valid_values_rules" data-toggle="collapse" data-target=".property_valid_values_rules .collapse">
+<h2>Valid values rules</h2>
+<pre>$valid_values_rules : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_addConditionalRule"> </a><div class="element clickable constant  constant_addConditionalRule" data-toggle="collapse" data-target=".constant_addConditionalRule .collapse">
+<h2>addConditionalRule</h2>
+<pre>addConditionalRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addManyToManyRule"> </a><div class="element clickable constant  constant_addManyToManyRule" data-toggle="collapse" data-target=".constant_addManyToManyRule .collapse">
+<h2>addManyToManyRule</h2>
+<pre>addManyToManyRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addOneOrMoreRule"> </a><div class="element clickable constant  constant_addOneOrMoreRule" data-toggle="collapse" data-target=".constant_addOneOrMoreRule .collapse">
+<h2>addOneOrMoreRule</h2>
+<pre>addOneOrMoreRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addOneToManyRule"> </a><div class="element clickable constant  constant_addOneToManyRule" data-toggle="collapse" data-target=".constant_addOneToManyRule .collapse">
+<h2>addOneToManyRule</h2>
+<pre>addOneToManyRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addOnlyOneRule"> </a><div class="element clickable constant  constant_addOnlyOneRule" data-toggle="collapse" data-target=".constant_addOnlyOneRule .collapse">
+<h2>addOnlyOneRule</h2>
+<pre>addOnlyOneRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addRegexReplacement"> </a><div class="element clickable constant  constant_addRegexReplacement" data-toggle="collapse" data-target=".constant_addRegexReplacement .collapse">
+<h2>addRegexReplacement</h2>
+<pre>addRegexReplacement </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addRegexRule"> </a><div class="element clickable constant  constant_addRegexRule" data-toggle="collapse" data-target=".constant_addRegexRule .collapse">
+<h2>addRegexRule</h2>
+<pre>addRegexRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addRequiredRule"> </a><div class="element clickable constant  constant_addRequiredRule" data-toggle="collapse" data-target=".constant_addRequiredRule .collapse">
+<h2>addRequiredRule</h2>
+<pre>addRequiredRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addStringReplacement"> </a><div class="element clickable constant  constant_addStringReplacement" data-toggle="collapse" data-target=".constant_addStringReplacement .collapse">
+<h2>addStringReplacement</h2>
+<pre>addStringReplacement </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_addValidValuesRule"> </a><div class="element clickable constant  constant_addValidValuesRule" data-toggle="collapse" data-target=".constant_addValidValuesRule .collapse">
+<h2>addValidValuesRule</h2>
+<pre>addValidValuesRule </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_hasValue"> </a><div class="element clickable constant  constant_hasValue" data-toggle="collapse" data-target=".constant_hasValue .collapse">
+<h2>hasValue</h2>
+<pre>hasValue </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_inspect"> </a><div class="element clickable constant  constant_inspect" data-toggle="collapse" data-target=".constant_inspect .collapse">
+<h2>inspect</h2>
+<pre>inspect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_removeRegexReplacement"> </a><div class="element clickable constant  constant_removeRegexReplacement" data-toggle="collapse" data-target=".constant_removeRegexReplacement .collapse">
+<h2>removeRegexReplacement</h2>
+<pre>removeRegexReplacement </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_removeStringReplacement"> </a><div class="element clickable constant  constant_removeStringReplacement" data-toggle="collapse" data-target=".constant_removeStringReplacement .collapse">
+<h2>removeStringReplacement</h2>
+<pre>removeStringReplacement </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reorderMessages"> </a><div class="element clickable constant  constant_reorderMessages" data-toggle="collapse" data-target=".constant_reorderMessages .collapse">
+<h2>reorderMessages</h2>
+<pre>reorderMessages </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_replaceMessages"> </a><div class="element clickable constant  constant_replaceMessages" data-toggle="collapse" data-target=".constant_replaceMessages .collapse">
+<h2>replaceMessages</h2>
+<pre>replaceMessages </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setColumnCaseInsensitive"> </a><div class="element clickable constant  constant_setColumnCaseInsensitive" data-toggle="collapse" data-target=".constant_setColumnCaseInsensitive .collapse">
+<h2>setColumnCaseInsensitive</h2>
+<pre>setColumnCaseInsensitive </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setMessageOrder"> </a><div class="element clickable constant  constant_setMessageOrder" data-toggle="collapse" data-target=".constant_setMessageOrder .collapse">
+<h2>setMessageOrder</h2>
+<pre>setMessageOrder </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_validate"> </a><div class="element clickable constant  constant_validate" data-toggle="collapse" data-target=".constant_validate .collapse">
+<h2>validate</h2>
+<pre>validate </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_validateRelated"> </a><div class="element clickable constant  constant_validateRelated" data-toggle="collapse" data-target=".constant_validateRelated .collapse">
+<h2>validateRelated</h2>
+<pre>validateRelated </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

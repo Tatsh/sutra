@@ -1,0 +1,1707 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sImage</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public inherited"><a href="#method___construct" title="__construct :: Creates an object to represent an image on the filesystem"><span class="description">Creates an object to represent an image on the filesystem</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___toString" title="__toString :: Returns the filename of the file"><span class="description">Returns the filename of the file</span><pre>__toString()</pre></a></li>
+<li class="method public inherited"><a href="#method_append" title="append :: Prevents a programmer from trying to append an image"><span class="description">Prevents a programmer from trying to append an image</span><pre>append()</pre></a></li>
+<li class="method public inherited"><a href="#method_count" title="count :: Returns the number of lines in the file"><span class="description">Returns the number of lines in the file</span><pre>count()</pre></a></li>
+<li class="method public inherited"><a href="#method_create" title="create :: Creates an image on the filesystem and returns an object representing it"><span class="description">Creates an image on the filesystem and returns an object representing it</span><pre>create()</pre></a></li>
+<li class="method public inherited"><a href="#method_crop" title="crop :: Crops the image by the exact pixel dimensions specified"><span class="description">Crops the image by the exact pixel dimensions specified</span><pre>crop()</pre></a></li>
+<li class="method public inherited"><a href="#method_cropToRatio" title="cropToRatio :: Crops the biggest area possible from the center of the image that matches the ratio provided"><span class="description">Crops the biggest area possible from the center of the image that matches the ratio provided</span><pre>cropToRatio()</pre></a></li>
+<li class="method public inherited"><a href="#method_delete" title="delete :: Deletes the current file"><span class="description">Deletes the current file</span><pre>delete()</pre></a></li>
+<li class="method public inherited"><a href="#method_desaturate" title="desaturate :: Converts the image to grayscale"><span class="description">Converts the image to grayscale</span><pre>desaturate()</pre></a></li>
+<li class="method public inherited"><a href="#method_duplicate" title="duplicate :: Creates a new file object with a copy of this file"><span class="description">Creates a new file object with a copy of this file</span><pre>duplicate()</pre></a></li>
+<li class="method public "><a href="#method_flip" title="flip :: Flip the image in a specified direction."><span class="description">Flip the image in a specified direction.</span><pre>flip()</pre></a></li>
+<li class="method public inherited"><a href="#method_getDimensions" title="getDimensions :: Returns the width and height of the image as a two element array"><span class="description">Returns the width and height of the image as a two element array</span><pre>getDimensions()</pre></a></li>
+<li class="method public inherited"><a href="#method_getExtension" title="getExtension :: Gets the file extension"><span class="description">Gets the file extension</span><pre>getExtension()</pre></a></li>
+<li class="method public inherited"><a href="#method_getHeight" title="getHeight :: Returns the height of the image"><span class="description">Returns the height of the image</span><pre>getHeight()</pre></a></li>
+<li class="method public inherited"><a href="#method_getMTime" title="getMTime :: Returns the last modification time of the file"><span class="description">Returns the last modification time of the file</span><pre>getMTime()</pre></a></li>
+<li class="method public inherited"><a href="#method_getMimeType" title="getMimeType :: Gets the file's mime type"><span class="description">Gets the file's mime type</span><pre>getMimeType()</pre></a></li>
+<li class="method public inherited"><a href="#method_getName" title="getName :: Gets the filename (i.e."><span class="description">Gets the filename (i.e.</span><pre>getName()</pre></a></li>
+<li class="method public inherited"><a href="#method_getParent" title="getParent :: Gets the directory the file is located in"><span class="description">Gets the directory the file is located in</span><pre>getParent()</pre></a></li>
+<li class="method public inherited"><a href="#method_getPath" title="getPath :: Gets the file's current path (directory and filename)"><span class="description">Gets the file's current path (directory and filename)</span><pre>getPath()</pre></a></li>
+<li class="method public inherited"><a href="#method_getSize" title="getSize :: Gets the size of the file"><span class="description">Gets the size of the file</span><pre>getSize()</pre></a></li>
+<li class="method public inherited"><a href="#method_getType" title="getType :: Returns the type of the image"><span class="description">Returns the type of the image</span><pre>getType()</pre></a></li>
+<li class="method public inherited"><a href="#method_getWidth" title="getWidth :: Returns the width of the image"><span class="description">Returns the width of the image</span><pre>getWidth()</pre></a></li>
+<li class="method public inherited"><a href="#method_isWritable" title="isWritable :: Check to see if the current file is writable"><span class="description">Check to see if the current file is writable</span><pre>isWritable()</pre></a></li>
+<li class="method public inherited"><a href="#method_move" title="move :: Moves the current file to a different directory"><span class="description">Moves the current file to a different directory</span><pre>move()</pre></a></li>
+<li class="method public inherited"><a href="#method_output" title="output :: Prints the contents of the file"><span class="description">Prints the contents of the file</span><pre>output()</pre></a></li>
+<li class="method public inherited"><a href="#method_read" title="read :: Reads the data from the file"><span class="description">Reads the data from the file</span><pre>read()</pre></a></li>
+<li class="method public inherited"><a href="#method_rename" title="rename :: Renames the current file"><span class="description">Renames the current file</span><pre>rename()</pre></a></li>
+<li class="method public inherited"><a href="#method_resize" title="resize :: Sets the image to be resized proportionally to a specific size canvas"><span class="description">Sets the image to be resized proportionally to a specific size canvas</span><pre>resize()</pre></a></li>
+<li class="method public inherited"><a href="#method_rotate" title="rotate :: Sets the image to be rotated"><span class="description">Sets the image to be rotated</span><pre>rotate()</pre></a></li>
+<li class="method public "><a href="#method_rotateAccordingToEXIFData" title="rotateAccordingToEXIFData :: Rotate an image a certain way based on EXIF information embedded."><span class="description">Rotate an image a certain way based on EXIF information embedded.</span><pre>rotateAccordingToEXIFData()</pre></a></li>
+<li class="method public inherited"><a href="#method_saveChanges" title="saveChanges :: Saves any changes to the image"><span class="description">Saves any changes to the image</span><pre>saveChanges()</pre></a></li>
+<li class="method public inherited"><a href="#method_setImageMagickDirectory" title="setImageMagickDirectory :: Sets the directory the ImageMagick binary is installed in and tells the class to use ImageMagick even if GD is installed"><span class="description">Sets the directory the ImageMagick binary is installed in and tells the class to use ImageMagick even if GD is installed</span><pre>setImageMagickDirectory()</pre></a></li>
+<li class="method public inherited"><a href="#method_setImageMagickTempDir" title="setImageMagickTempDir :: Sets a custom directory to use for the ImageMagick temporary files"><span class="description">Sets a custom directory to use for the ImageMagick temporary files</span><pre>setImageMagickTempDir()</pre></a></li>
+<li class="method public inherited"><a href="#method_write" title="write :: Writes the provided data to the file"><span class="description">Writes the provided data to the file</span><pre>write()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_determineProcessor" title="determineProcessor :: Determines what processor to use for image manipulation"><span class="description">Determines what processor to use for image manipulation</span><pre>determineProcessor()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getInfo" title="getInfo :: Gets the dimensions and type of an image stored on the filesystem"><span class="description">Gets the dimensions and type of an image stored on the filesystem</span><pre>getInfo()</pre></a></li>
+<li class="method protected inherited"><a href="#method_tossIfDeleted" title="tossIfDeleted :: Throws an fProgrammerException if the file has been deleted"><span class="description">Throws an fProgrammerException if the file has been deleted</span><pre>tossIfDeleted()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private inherited"><a href="#method_checkImageMagickBinary" title="checkImageMagickBinary :: Checks to make sure we can get to and execute the ImageMagick convert binary"><span class="description">Checks to make sure we can get to and execute the ImageMagick convert binary</span><pre>checkImageMagickBinary()</pre></a></li>
+<li class="method private inherited"><a href="#method_determineMimeTypeByContents" title="determineMimeTypeByContents :: Looks for specific bytes in a file to determine the mime type of the file"><span class="description">Looks for specific bytes in a file to determine the mime type of the file</span><pre>determineMimeTypeByContents()</pre></a></li>
+<li class="method private inherited"><a href="#method_determineMimeTypeByExtension" title="determineMimeTypeByExtension :: Uses the extension of the all-text file to determine the mime type"><span class="description">Uses the extension of the all-text file to determine the mime type</span><pre>determineMimeTypeByExtension()</pre></a></li>
+<li class="method private inherited"><a href="#method_getCurrentDimensions" title="getCurrentDimensions :: Gets the dimensions of the image as of the last modification"><span class="description">Gets the dimensions of the image as of the last modification</span><pre>getCurrentDimensions()</pre></a></li>
+<li class="method private inherited"><a href="#method_getImageType" title="getImageType :: Gets the image type from a file by looking at the file contents"><span class="description">Gets the image type from a file by looking at the file contents</span><pre>getImageType()</pre></a></li>
+<li class="method private inherited"><a href="#method_isAnimatedGif" title="isAnimatedGif :: Checks if the current image is an animated gif"><span class="description">Checks if the current image is an animated gif</span><pre>isAnimatedGif()</pre></a></li>
+<li class="method private inherited"><a href="#method_isOldImageMagickVersion" title="isOldImageMagickVersion :: Determines if ImageMagick is of version less than 6.7.5."><span class="description">Determines if ImageMagick is of version less than 6.7.5.</span><pre>isOldImageMagickVersion()</pre></a></li>
+<li class="method private inherited"><a href="#method_isOpenBaseDirRestricted" title="isOpenBaseDirRestricted :: Checks if the path specified is restricted by open basedir"><span class="description">Checks if the path specified is restricted by open basedir</span><pre>isOpenBaseDirRestricted()</pre></a></li>
+<li class="method private inherited"><a href="#method_isSafeModeExecDirRestricted" title="isSafeModeExecDirRestricted :: Checks if the path specified is restricted by the safe mode exec dir restriction"><span class="description">Checks if the path specified is restricted by the safe mode exec dir restriction</span><pre>isSafeModeExecDirRestricted()</pre></a></li>
+<li class="method private inherited"><a href="#method_processWithGD" title="processWithGD :: Processes the current image using GD"><span class="description">Processes the current image using GD</span><pre>processWithGD()</pre></a></li>
+<li class="method private inherited"><a href="#method_processWithImageMagick" title="processWithImageMagick :: Processes the current image using ImageMagick"><span class="description">Processes the current image using ImageMagick</span><pre>processWithImageMagick()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected inherited"><a href="#property_deleted" title="$deleted :: A backtrace from when the file was deleted"><span class="description">A backtrace from when the file was deleted</span><pre>$deleted</pre></a></li>
+<li class="property protected inherited"><a href="#property_file" title="$file :: The full path to the file"><span class="description">The full path to the file</span><pre>$file</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private inherited"><a href="#property_current_line" title="$current_line :: The current line of the file"><span class="description">The current line of the file</span><pre>$current_line</pre></a></li>
+<li class="property private inherited"><a href="#property_current_line_number" title="$current_line_number :: The current line number of the file"><span class="description">The current line number of the file</span><pre>$current_line_number</pre></a></li>
+<li class="property private inherited"><a href="#property_file_handle" title="$file_handle :: The file handle for iteration"><span class="description">The file handle for iteration</span><pre>$file_handle</pre></a></li>
+<li class="property private inherited"><a href="#property_imagemagick_dir" title="$imagemagick_dir :: If we are using the ImageMagick processor, this stores the path to the binaries"><span class="description">If we are using the ImageMagick processor, this stores the path to the binaries</span><pre>$imagemagick_dir</pre></a></li>
+<li class="property private inherited"><a href="#property_imagemagick_temp_dir" title="$imagemagick_temp_dir :: A custom tmp path to use for ImageMagick"><span class="description">A custom tmp path to use for ImageMagick</span><pre>$imagemagick_temp_dir</pre></a></li>
+<li class="property private inherited"><a href="#property_pending_modifications" title="$pending_modifications :: The modifications to perform on the image when it is saved"><span class="description">The modifications to perform on the image when it is saved</span><pre>$pending_modifications</pre></a></li>
+<li class="property private inherited"><a href="#property_processor" title="$processor :: The processor to use for the image manipulation"><span class="description">The processor to use for the image manipulation</span><pre>$processor</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_DIRECTION_UPSIDE_DOWN" title="DIRECTION_UPSIDE_DOWN :: Rotation direction upside-down."><span class="description">Rotation direction upside-down.</span><pre>DIRECTION_UPSIDE_DOWN</pre></a></li>
+<li class="constant  "><a href="#constant_DIRECTION_UPSIDE_LEFT" title="DIRECTION_UPSIDE_LEFT :: Rotation direction upside-left."><span class="description">Rotation direction upside-left.</span><pre>DIRECTION_UPSIDE_LEFT</pre></a></li>
+<li class="constant  "><a href="#constant_DIRECTION_UPSIDE_RIGHT" title="DIRECTION_UPSIDE_RIGHT :: Rotation direction upside-right."><span class="description">Rotation direction upside-right.</span><pre>DIRECTION_UPSIDE_RIGHT</pre></a></li>
+<li class="constant  "><a href="#constant_DIRECTION_UPSIDE_UP" title="DIRECTION_UPSIDE_UP :: Rotation direction upside-up."><span class="description">Rotation direction upside-up.</span><pre>DIRECTION_UPSIDE_UP</pre></a></li>
+<li class="constant  "><a href="#constant_FLIP_BOTH" title="FLIP_BOTH :: Flip direction both ways."><span class="description">Flip direction both ways.</span><pre>FLIP_BOTH</pre></a></li>
+<li class="constant  "><a href="#constant_FLIP_HORIZONTAL" title="FLIP_HORIZONTAL :: Flip direction horizontal."><span class="description">Flip direction horizontal.</span><pre>FLIP_HORIZONTAL</pre></a></li>
+<li class="constant  "><a href="#constant_FLIP_NONE" title="FLIP_NONE :: No flip."><span class="description">No flip.</span><pre>FLIP_NONE</pre></a></li>
+<li class="constant  "><a href="#constant_FLIP_VERTICAL" title="FLIP_VERTICAL :: Flip direction vertical."><span class="description">Flip direction vertical.</span><pre>FLIP_VERTICAL</pre></a></li>
+<li class="constant  inherited"><a href="#constant_create" title="create :: "><span class="description">create</span><pre>create</pre></a></li>
+<li class="constant  inherited"><a href="#constant_getCompatibleMimetypes" title="getCompatibleMimetypes :: "><span class="description">getCompatibleMimetypes</span><pre>getCompatibleMimetypes</pre></a></li>
+<li class="constant  inherited"><a href="#constant_isImageCompatible" title="isImageCompatible :: "><span class="description">isImageCompatible</span><pre>isImageCompatible</pre></a></li>
+<li class="constant  inherited"><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setImageMagickDirectory" title="setImageMagickDirectory :: "><span class="description">setImageMagickDirectory</span><pre>setImageMagickDirectory</pre></a></li>
+<li class="constant  inherited"><a href="#constant_setImageMagickTempDir" title="setImageMagickTempDir :: "><span class="description">setImageMagickTempDir</span><pre>setImageMagickTempDir</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sImage"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sImage.html">sImage</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides more methods to fImage, most notably rotation based on EXIF data
+  which may be present in the file.</p>
+<div class="details">
+<div class="long_description"><p>Requires Flourish's fImage::determineProcessor() method to be made at least
+  protected (at the moment it is private).</p></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 bne1.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@bne1.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://www.sutralib.com/">http://www.sutralib.com/</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.2</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Creates an object to represent an image on the filesystem</h2>
+<pre>__construct(string $file_path, boolean $skip_checks) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If multiple fFile objects are created for a single file, they will
+reflect changes in each other including rename and delete actions.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::__construct()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file_path</h4>
+<code>string</code><p>The path to the image</p></div>
+<div class="subelement argument">
+<h4>$skip_checks</h4>
+<code>boolean</code><p>If file checks should be skipped, which improves performance, but may cause undefined behavior - only skip these if they are duplicated elsewhere</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no image was specified, when the image does not exist or when the path specified is not an image</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fImage.html">\fImage</a></code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>Returns the filename of the file</h2>
+<pre>__toString() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::__toString()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::__toString()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The filename</div>
+</div></div>
+</div>
+<a id="method_append"></a><div class="element clickable method public method_append" data-toggle="collapse" data-target=".method_append .collapse">
+<h2>Prevents a programmer from trying to append an image</h2>
+<pre>append(mixed $data) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If a filesystem transaction is in progress and is rolled back, this
+data will be removed.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::append()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The data to append to the image</p></div>
+</div></div>
+</div>
+<a id="method_count"></a><div class="element clickable method public method_count" data-toggle="collapse" data-target=".method_count .collapse">
+<h2>Returns the number of lines in the file</h2>
+<pre>count() : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::count()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::count()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The number of lines in the file</div>
+</div></div>
+</div>
+<a id="method_create"></a><div class="element clickable method public method_create" data-toggle="collapse" data-target=".method_create .collapse">
+<h2>Creates an image on the filesystem and returns an object representing it</h2>
+<pre>create(string $file_path, string $contents) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This operation will be reverted by a filesystem transaction being rolled
+back.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::create()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$file_path</h4>
+<code>string</code><p>The path to the new image</p></div>
+<div class="subelement argument">
+<h4>$contents</h4>
+<code>string</code><p>The contents to write to the image</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When no image was specified or when the image already exists</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fImage.html">\fImage</a></code></div>
+</div></div>
+</div>
+<a id="method_crop"></a><div class="element clickable method public method_crop" data-toggle="collapse" data-target=".method_crop .collapse">
+<h2>Crops the image by the exact pixel dimensions specified</h2>
+<pre>crop(\numeric $new_width, \numeric $new_height, \numeric | string $crop_from_x, \numeric | string $crop_from_y) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The crop does not occur until ::saveChanges() is called.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::crop()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_width</h4>
+<code>\numeric</code><p>The width in pixels to crop the image to</p></div>
+<div class="subelement argument">
+<h4>$new_height</h4>
+<code>\numeric</code><p>The height in pixels to crop the image to</p></div>
+<div class="subelement argument">
+<h4>$crop_from_x</h4>
+<code>\numeric</code><code>string</code><p>The number of pixels from the left of the image to start the crop from, or a horizontal position of <code>'left'</code>, <code>'center'</code> or <code>'right'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$crop_from_y</h4>
+<code>\numeric</code><code>string</code><p>The number of pixels from the top of the image to start the crop from, or a vertical position of <code>'top'</code>, <code>'center'</code> or <code>'bottom'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_cropToRatio"></a><div class="element clickable method public method_cropToRatio" data-toggle="collapse" data-target=".method_cropToRatio .collapse">
+<h2>Crops the biggest area possible from the center of the image that matches the ratio provided</h2>
+<pre>cropToRatio(\numeric $ratio_width, \numeric $ratio_height, string $horizontal_position, string $vertical_position) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The crop does not occur until ::saveChanges() is called.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::cropToRatio()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$ratio_width</h4>
+<code>\numeric</code><p>The width ratio to crop the image to</p></div>
+<div class="subelement argument">
+<h4>$ratio_height</h4>
+<code>\numeric</code><p>The height ratio to crop the image to</p></div>
+<div class="subelement argument">
+<h4>$horizontal_position</h4>
+<code>string</code><p>A horizontal position of <code>'left'</code>, <code>'center'</code> or <code>'right'</code></p>
+</div>
+<div class="subelement argument">
+<h4>$vertical_position</h4>
+<code>string</code><p>A vertical position of <code>'top'</code>, <code>'center'</code> or <code>'bottom'</code></p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_delete"></a><div class="element clickable method public method_delete" data-toggle="collapse" data-target=".method_delete .collapse">
+<h2>Deletes the current file</h2>
+<pre>delete() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This operation will NOT be performed until the filesystem transaction
+has been committed, if a transaction is in progress. Any non-Flourish
+code (PHP or system) will still see this file as existing until that
+point.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::delete()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::delete()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_desaturate"></a><div class="element clickable method public method_desaturate" data-toggle="collapse" data-target=".method_desaturate .collapse">
+<h2>Converts the image to grayscale</h2>
+<pre>desaturate() : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Desaturation does not occur until ::saveChanges() is called.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::desaturate()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_duplicate"></a><div class="element clickable method public method_duplicate" data-toggle="collapse" data-target=".method_duplicate .collapse">
+<h2>Creates a new file object with a copy of this file</h2>
+<pre>duplicate(string | <a href="../classes/fDirectory.html">\fDirectory</a> $new_directory, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If no directory is specified, the file is created with a new name in
+the current directory. If a new directory is specified, you must also
+indicate if you wish to overwrite an existing file with the same name
+in the new directory or create a unique name.</p>
+
+<p>This operation will be reverted by a filesystem transaction being rolled
+back.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::duplicate()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::duplicate()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_directory</h4>
+<code>string</code><code><a href="../classes/fDirectory.html">\fDirectory</a></code><p>The directory to duplicate the file into if different than the current directory</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If a new directory is specified, this indicates if a file with the same name should be overwritten.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The new fFile object</div>
+</div></div>
+</div>
+<a id="method_flip"></a><div class="element clickable method public method_flip" data-toggle="collapse" data-target=".method_flip .collapse">
+<h2>Flip the image in a specified direction.</h2>
+<pre>flip(integer $type, integer $jpeg_quality, boolean $overwrite, string $processor_override) : <a href="../classes/sImage.html">\sImage</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If PECL Imagick class is
+  not found, GD will be used.</p>
+
+<p>Unlike fImage, these changes are immediate.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$type</h4>
+<code>integer</code><p>One of the FLIP_* constants.</p>
+</div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>Because this saves changes to the file directly, if the image is JPEG, specify a quality from 0 (worst quality) to 100 (best quality). Default is 90.</p>
+</div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the file should be overwritten.</p></div>
+<div class="subelement argument">
+<h4>$processor_override</h4>
+<code>string</code><p>Override the processor. Must be one of: 'imagemagick', 'gd'. This is generally for testing purposes only.</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered">
+<tr>
+<th><code><a href="../classes/fUnexpectedException.html">\fUnexpectedException</a></code></th>
+<td>If Imagick fails to return data, or if
+  an ImagickException is thrown.</td>
+</tr>
+<tr>
+<th><code><a href="../classes/fEnvironmentException.html">\fEnvironmentException</a></code></th>
+<td>If no image processor is found; if the image
+  type is invalid for GD.
+Additional notes:
+- To use ImageMagick (which is much faster), you must install the PECL
+  Imagick extension.
+- PJPEG is not supported if GD is used.
+- This overwrites the data in the file before returning (this is NOT
+ part of the operation queue).
+If the second argument is of internal type boolean, it will be treated as
+  the $overwrite argument. The JPEG quality will be 90.</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sImage.html">\sImage</a></code>The image object, to allow method chaining. If $overwrite
+  is FALSE, then a new sImage object is returned.</div>
+</div></div>
+</div>
+<a id="method_getDimensions"></a><div class="element clickable method public method_getDimensions" data-toggle="collapse" data-target=".method_getDimensions .collapse">
+<h2>Returns the width and height of the image as a two element array</h2>
+<pre>getDimensions() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getDimensions()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>In the format `0 => (integer) {width}, 1 => (integer) {height}`</div>
+</div></div>
+</div>
+<a id="method_getExtension"></a><div class="element clickable method public method_getExtension" data-toggle="collapse" data-target=".method_getExtension .collapse">
+<h2>Gets the file extension</h2>
+<pre>getExtension() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getExtension()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getExtension()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The extension of the file</div>
+</div></div>
+</div>
+<a id="method_getHeight"></a><div class="element clickable method public method_getHeight" data-toggle="collapse" data-target=".method_getHeight .collapse">
+<h2>Returns the height of the image</h2>
+<pre>getHeight() : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getHeight()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The height of the image in pixels</div>
+</div></div>
+</div>
+<a id="method_getMTime"></a><div class="element clickable method public method_getMTime" data-toggle="collapse" data-target=".method_getMTime .collapse">
+<h2>Returns the last modification time of the file</h2>
+<pre>getMTime() : <a href="../classes/fTimestamp.html">\fTimestamp</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getMTime()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getMTime()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a></code>The timestamp of when the file was last modified</div>
+</div></div>
+</div>
+<a id="method_getMimeType"></a><div class="element clickable method public method_getMimeType" data-toggle="collapse" data-target=".method_getMimeType .collapse">
+<h2>Gets the file's mime type</h2>
+<pre>getMimeType() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method will attempt to look at the file contents and the file
+extension to determine the mime type. If the file contains binary
+information, the contents will be used for mime type verification,
+however if the contents appear to be plain text, the file extension
+will be used.</p>
+
+<p>The following mime types are supported. All other binary file types
+will be returned as <code>application/octet-stream</code> and all other text files
+will be returned as <code>text/plain</code>.</p>
+
+<p><strong>Archive:</strong></p>
+
+<ul>
+<li><code>application/x-bzip2</code> BZip2 file</li>
+<li><code>application/x-compress</code> Compress (*nix) file</li>
+<li><code>application/x-gzip</code> GZip file</li>
+<li><code>application/x-rar-compressed</code> Rar file</li>
+<li><code>application/x-stuffit</code> StuffIt file</li>
+<li><code>application/x-tar</code> Tar file</li>
+<li><code>application/zip</code> Zip file</li>
+</ul>
+
+<p><strong>Audio:</strong></p>
+
+<ul>
+<li><code>audio/x-flac</code> FLAC audio</li>
+<li><code>audio/mpeg</code> MP3 audio</li>
+<li><code>audio/mp4</code> MP4 (AAC) audio</li>
+<li><code>audio/vorbis</code> Ogg Vorbis audio</li>
+<li><code>audio/x-wav</code> WAV audio</li>
+<li><code>audio/x-ms-wma</code> Windows media audio</li>
+</ul>
+
+<p><strong>Document:</strong></p>
+
+<ul>
+<li><code>application/vnd.ms-excel</code> Excel (2000, 2003 and 2007) file</li>
+<li><code>application/pdf</code> PDF file</li>
+<li><code>application/vnd.ms-powerpoint</code> Powerpoint (2000, 2003, 2007) file</li>
+<li><code>text/rtf</code> RTF file</li>
+<li><code>application/msword</code> Word (2000, 2003 and 2007) file</li>
+</ul>
+
+<p><strong>Image:</strong></p>
+
+<ul>
+<li><code>image/x-ms-bmp</code> BMP file</li>
+<li><code>application/postscript</code> EPS file</li>
+<li><code>image/gif</code> GIF file</li>
+<li><code>application/vnd.microsoft.icon</code> ICO file</li>
+<li><code>image/jpeg</code> JPEG file</li>
+<li><code>image/png</code> PNG file</li>
+<li><code>image/tiff</code> TIFF file</li>
+<li><code>image/svg+xml</code> SVG file</li>
+</ul>
+
+<p><strong>Text:</strong></p>
+
+<ul>
+<li><code>text/css</code> CSS file</li>
+<li><code>text/csv</code> CSV file</li>
+<li><code>text/html</code> (X)HTML file</li>
+<li><code>text/calendar</code> iCalendar file</li>
+<li><code>application/javascript</code> Javascript file</li>
+<li><code>application/x-perl</code> Perl file</li>
+<li><code>application/x-httpd-php</code> PHP file</li>
+<li><code>application/x-python</code> Python file</li>
+<li><code>application/rss+xml</code> RSS feed</li>
+<li><code>application/x-ruby</code> Ruby file</li>
+<li><code>text/tab-separated-values</code> TAB file</li>
+<li><code>text/x-vcard</code> VCard file</li>
+<li><code>application/xhtml+xml</code> XHTML (Real) file</li>
+<li><code>application/xml</code> XML file</li>
+</ul>
+
+<p><strong>Video/Animation:</strong></p>
+
+<ul>
+<li><code>video/x-msvideo</code> AVI video</li>
+<li><code>application/x-shockwave-flash</code> Flash movie</li>
+<li><code>video/x-flv</code> Flash video</li>
+<li><code>video/x-ms-asf</code> Microsoft ASF video</li>
+<li><code>video/mp4</code> MP4 video</li>
+<li><code>video/ogg</code> OGM and Ogg Theora video</li>
+<li><code>video/quicktime</code> Quicktime video</li>
+<li><code>video/x-ms-wmv</code> Windows media video</li>
+</ul></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getMimeType()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getMimeType()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<a id="method_getName"></a><div class="element clickable method public method_getName" data-toggle="collapse" data-target=".method_getName .collapse">
+<h2>Gets the filename (i.e.</h2>
+<pre>getName(boolean $remove_extension) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>does not include the directory)</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getName()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getName()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$remove_extension</h4>
+<code>boolean</code><p>If the extension should be removed from the filename</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The filename of the file</div>
+</div></div>
+</div>
+<a id="method_getParent"></a><div class="element clickable method public method_getParent" data-toggle="collapse" data-target=".method_getParent .collapse">
+<h2>Gets the directory the file is located in</h2>
+<pre>getParent() : <a href="../classes/fDirectory.html">\fDirectory</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getParent()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getParent()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code>The directory containing the file</div>
+</div></div>
+</div>
+<a id="method_getPath"></a><div class="element clickable method public method_getPath" data-toggle="collapse" data-target=".method_getPath .collapse">
+<h2>Gets the file's current path (directory and filename)</h2>
+<pre>getPath(boolean $translate_to_web_path) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the web path is requested, uses translations set with
+fFilesystem::addWebPathTranslation()</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getPath()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getPath()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$translate_to_web_path</h4>
+<code>boolean</code><p>If the path should be the web path</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The path (directory and filename) for the file</div>
+</div></div>
+</div>
+<a id="method_getSize"></a><div class="element clickable method public method_getSize" data-toggle="collapse" data-target=".method_getSize .collapse">
+<h2>Gets the size of the file</h2>
+<pre>getSize(boolean $format, integer $decimal_places) : integer | string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The return value may be incorrect for files over 2GB on 32-bit OSes.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::getSize()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::getSize()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>boolean</code><p>If the filesize should be formatted for human readability</p></div>
+<div class="subelement argument">
+<h4>$decimal_places</h4>
+<code>integer</code><p>The number of decimal places to format to (if enabled)</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code><code>string</code>If formatted a string with filesize in b/kb/mb/gb/tb, otherwise an integer</div>
+</div></div>
+</div>
+<a id="method_getType"></a><div class="element clickable method public method_getType" data-toggle="collapse" data-target=".method_getType .collapse">
+<h2>Returns the type of the image</h2>
+<pre>getType() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getType()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The type of the image: `'jpg'`, `'gif'`, `'png'`, `'tif'`</div>
+</div></div>
+</div>
+<a id="method_getWidth"></a><div class="element clickable method public method_getWidth" data-toggle="collapse" data-target=".method_getWidth .collapse">
+<h2>Returns the width of the image</h2>
+<pre>getWidth() : integer</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getWidth()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>The width of the image in pixels</div>
+</div></div>
+</div>
+<a id="method_isWritable"></a><div class="element clickable method public method_isWritable" data-toggle="collapse" data-target=".method_isWritable .collapse">
+<h2>Check to see if the current file is writable</h2>
+<pre>isWritable() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::isWritable()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::isWritable()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the file is writable</div>
+</div></div>
+</div>
+<a id="method_move"></a><div class="element clickable method public method_move" data-toggle="collapse" data-target=".method_move .collapse">
+<h2>Moves the current file to a different directory</h2>
+<pre>move(<a href="../classes/fDirectory.html">\fDirectory</a> | string $new_directory, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Please note that ::rename() will rename a file in its directory or rename
+it into a different directory.</p>
+
+<p>If the current file's filename already exists in the new directory and
+the overwrite flag is set to false, the filename will be changed to a
+unique name.</p>
+
+<p>This operation will be reverted if a filesystem transaction is in
+progress and is later rolled back.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::move()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::move()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_directory</h4>
+<code><a href="../classes/fDirectory.html">\fDirectory</a></code><code>string</code><p>The directory to move this file into</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the current filename already exists in the new directory, <code>TRUE</code> will cause the file to be overwritten, <code>FALSE</code> will cause the new filename to change</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the directory passed is not a directory or is not readable</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_output"></a><div class="element clickable method public method_output" data-toggle="collapse" data-target=".method_output .collapse">
+<h2>Prints the contents of the file</h2>
+<pre>output(boolean $headers, mixed $filename) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method is primarily intended for when PHP is used to control access
+to files.</p>
+
+<p>Be sure to close the session, if open, to prevent performance issues.
+Any open output buffers are automatically closed and discarded.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::output()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::output()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$headers</h4>
+<code>boolean</code><p>If HTTP headers for the file should be included</p></div>
+<div class="subelement argument">
+<h4>$filename</h4>
+<code>mixed</code><p>Present the file as an attachment instead of just outputting type headers - if a string is passed, that will be used for the filename, if <code>TRUE</code> is passed, the current filename will be used</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_read"></a><div class="element clickable method public method_read" data-toggle="collapse" data-target=".method_read .collapse">
+<h2>Reads the data from the file</h2>
+<pre>read() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Reads all file data into memory, use with caution on large files!</p>
+
+<p>This operation will read the data that has been written during the
+current transaction if one is in progress.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::read()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::read()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The contents of the file</div>
+</div></div>
+</div>
+<a id="method_rename"></a><div class="element clickable method public method_rename" data-toggle="collapse" data-target=".method_rename .collapse">
+<h2>Renames the current file</h2>
+<pre>rename(string $new_filename, boolean $overwrite) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the filename already exists and the overwrite flag is set to false,
+a new filename will be created.</p>
+
+<p>This operation will be reverted if a filesystem transaction is in
+progress and is later rolled back.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::rename()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::rename()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_filename</h4>
+<code>string</code><p>The new full path to the file or a new filename in the current directory</p></div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the new filename already exists, <code>TRUE</code> will cause the file to be overwritten, <code>FALSE</code> will cause the new filename to change</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_resize"></a><div class="element clickable method public method_resize" data-toggle="collapse" data-target=".method_resize .collapse">
+<h2>Sets the image to be resized proportionally to a specific size canvas</h2>
+<pre>resize(integer $canvas_width, integer $canvas_height, boolean $allow_upsizing) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Will only size down an image. This method uses resampling to ensure the
+resized image is smooth in appearance. Resizing does not occur until
+::saveChanges() is called.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::resize()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$canvas_width</h4>
+<code>integer</code><p>The width of the canvas to fit the image on, <code>0</code> for no constraint</p>
+</div>
+<div class="subelement argument">
+<h4>$canvas_height</h4>
+<code>integer</code><p>The height of the canvas to fit the image on, <code>0</code> for no constraint</p>
+</div>
+<div class="subelement argument">
+<h4>$allow_upsizing</h4>
+<code>boolean</code><p>If the image is smaller than the desired canvas, the image will be increased in size</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_rotate"></a><div class="element clickable method public method_rotate" data-toggle="collapse" data-target=".method_rotate .collapse">
+<h2>Sets the image to be rotated</h2>
+<pre>rotate(integer $degrees) </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Rotation does not occur until ::saveChanges() is called.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::rotate()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$degrees</h4>
+<code>integer</code><p>The number of degrees to rotate - 90, 180, or 270</p>
+</div>
+</div></div>
+</div>
+<a id="method_rotateAccordingToEXIFData"></a><div class="element clickable method public method_rotateAccordingToEXIFData" data-toggle="collapse" data-target=".method_rotateAccordingToEXIFData .collapse">
+<h2>Rotate an image a certain way based on EXIF information embedded.</h2>
+<pre>rotateAccordingToEXIFData(integer $direction, boolean $overwrite, integer $jpeg_quality) : <a href="../classes/sImage.html">\sImage</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only
+  JPEG and TIFF images are supported.</p>
+
+<p>Unlike fImage, these changes are immediate.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$direction</h4>
+<code>integer</code><p>Optional. One of the DIRECTION_* constant values. Default is up-side up.</p>
+</div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If the file should be overwritten.</p></div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>JPEG quality on a scale from 0 to 100.</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fEnvironmentException.html">\fEnvironmentException</a></code></th>
+<td>If the EXIF extension is not installed.</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sImage.html">\sImage</a></code>Object to allow method chaining. If $overwrite is FALSE,
+  then a new sImage object is returned.</div>
+</div></div>
+</div>
+<a id="method_saveChanges"></a><div class="element clickable method public method_saveChanges" data-toggle="collapse" data-target=".method_saveChanges .collapse">
+<h2>Saves any changes to the image</h2>
+<pre>saveChanges(string $new_image_type, integer $jpeg_quality, boolean $overwrite) : <a href="../classes/fImage.html">\fImage</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If the file type is different than the current one, removes the current
+file once the new one is created.</p>
+
+<p>This operation will be reverted by a filesystem transaction being rolled
+back. If a transaction is in progress and the new image type causes a
+new file to be created, the old file will not be deleted until the
+transaction is committed.</p></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::saveChanges()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_image_type</h4>
+<code>string</code><p>The new file format for the image: 'NULL<code>(no change),</code>'jpg'<code>,</code>'gif'<code>,</code>'png'`</p>
+</div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>The quality setting to use for JPEG images - this may be ommitted</p>
+</div>
+<div class="subelement argument">
+<h4>$overwrite</h4>
+<code>boolean</code><p>If an existing file with the same name and extension should be overwritten</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fImage.html">\fImage</a></code>The image object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_setImageMagickDirectory"></a><div class="element clickable method public method_setImageMagickDirectory" data-toggle="collapse" data-target=".method_setImageMagickDirectory .collapse">
+<h2>Sets the directory the ImageMagick binary is installed in and tells the class to use ImageMagick even if GD is installed</h2>
+<pre>setImageMagickDirectory(string $directory) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::setImageMagickDirectory()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$directory</h4>
+<code>string</code><p>The directory ImageMagick is installed in</p></div>
+</div></div>
+</div>
+<a id="method_setImageMagickTempDir"></a><div class="element clickable method public method_setImageMagickTempDir" data-toggle="collapse" data-target=".method_setImageMagickTempDir .collapse">
+<h2>Sets a custom directory to use for the ImageMagick temporary files</h2>
+<pre>setImageMagickTempDir(string $temp_dir) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::setImageMagickTempDir()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$temp_dir</h4>
+<code>string</code><p>The directory to use for the ImageMagick temp dir</p></div>
+</div></div>
+</div>
+<a id="method_write"></a><div class="element clickable method public method_write" data-toggle="collapse" data-target=".method_write .collapse">
+<h2>Writes the provided data to the file</h2>
+<pre>write(mixed $data) : <a href="../classes/fFile.html">\fFile</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Requires all previous data to be stored in memory if inside a
+transaction, use with caution on large files!</p>
+
+<p>If a filesystem transaction is in progress and is rolled back, the
+previous data will be restored.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::write()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::write()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The data to write to the file</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fFile.html">\fFile</a></code>The file object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_determineProcessor"></a><div class="element clickable method protected method_determineProcessor" data-toggle="collapse" data-target=".method_determineProcessor .collapse">
+<h2>Determines what processor to use for image manipulation</h2>
+<pre>determineProcessor() : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::determineProcessor()</td>
+</tr></table>
+</div></div>
+</div>
+<a id="method_getInfo"></a><div class="element clickable method protected method_getInfo" data-toggle="collapse" data-target=".method_getInfo .collapse">
+<h2>Gets the dimensions and type of an image stored on the filesystem</h2>
+<pre>getInfo(string $image_path, string $element) : mixed</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The <code>'type'</code> key will have one of the following values:</p>
+
+<ul>
+<li><code>{null}</code> (File type is not supported)</li>
+<li><code>'jpg'</code></li>
+<li><code>'gif'</code></li>
+<li><code>'png'</code></li>
+<li><code>'tif'</code></li>
+</ul></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getInfo()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$image_path</h4>
+<code>string</code><p>The path to the image to get stats for</p></div>
+<div class="subelement argument">
+<h4>$element</h4>
+<code>string</code><p>The element to retrieve: <code>'type'</code>, <code>'width'</code>, <code>'height'</code></p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fValidationException.html">\fValidationException</a></code></th>
+<td>When the file specified is not an image</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>An associative array: `'type' => {mixed}, 'width' => {integer}, 'height' => {integer}`, or the element specified</div>
+</div></div>
+</div>
+<a id="method_tossIfDeleted"></a><div class="element clickable method protected method_tossIfDeleted" data-toggle="collapse" data-target=".method_tossIfDeleted .collapse">
+<h2>Throws an fProgrammerException if the file has been deleted</h2>
+<pre>tossIfDeleted() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::tossIfDeleted()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::tossIfDeleted()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_checkImageMagickBinary"></a><div class="element clickable method private method_checkImageMagickBinary" data-toggle="collapse" data-target=".method_checkImageMagickBinary .collapse">
+<h2>Checks to make sure we can get to and execute the ImageMagick convert binary</h2>
+<pre>checkImageMagickBinary(string $path) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::checkImageMagickBinary()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to ImageMagick on the filesystem</p></div>
+</div></div>
+</div>
+<a id="method_determineMimeTypeByContents"></a><div class="element clickable method private method_determineMimeTypeByContents" data-toggle="collapse" data-target=".method_determineMimeTypeByContents .collapse">
+<h2>Looks for specific bytes in a file to determine the mime type of the file</h2>
+<pre>determineMimeTypeByContents(string $content, string $extension) : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::determineMimeTypeByContents()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::determineMimeTypeByContents()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content</h4>
+<code>string</code><p>The first 4 bytes of the file content to use for byte checking</p></div>
+<div class="subelement argument">
+<h4>$extension</h4>
+<code>string</code><p>The extension of the filetype, only used for difficult files such as Microsoft office documents</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<a id="method_determineMimeTypeByExtension"></a><div class="element clickable method private method_determineMimeTypeByExtension" data-toggle="collapse" data-target=".method_determineMimeTypeByExtension .collapse">
+<h2>Uses the extension of the all-text file to determine the mime type</h2>
+<pre>determineMimeTypeByExtension(string $extension) : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::determineMimeTypeByExtension()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::determineMimeTypeByExtension()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$extension</h4>
+<code>string</code><p>The file extension</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The mime type of the file</div>
+</div></div>
+</div>
+<a id="method_getCurrentDimensions"></a><div class="element clickable method private method_getCurrentDimensions" data-toggle="collapse" data-target=".method_getCurrentDimensions .collapse">
+<h2>Gets the dimensions of the image as of the last modification</h2>
+<pre>getCurrentDimensions() : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getCurrentDimensions()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An associative array: `'width' => {integer}, 'height' => {integer}`</div>
+</div></div>
+</div>
+<a id="method_getImageType"></a><div class="element clickable method private method_getImageType" data-toggle="collapse" data-target=".method_getImageType .collapse">
+<h2>Gets the image type from a file by looking at the file contents</h2>
+<pre>getImageType(string $image) : string | NULL</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getImageType()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$image</h4>
+<code>string</code><p>The image path to get the type for</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code><code>NULL</code>The type of the image - `'jpg'`, `'gif'`, `'png'` or `'tif'` - NULL if not one of those</div>
+</div></div>
+</div>
+<a id="method_isAnimatedGif"></a><div class="element clickable method private method_isAnimatedGif" data-toggle="collapse" data-target=".method_isAnimatedGif .collapse">
+<h2>Checks if the current image is an animated gif</h2>
+<pre>isAnimatedGif() : boolean</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::isAnimatedGif()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the image is an animated gif</div>
+</div></div>
+</div>
+<a id="method_isOldImageMagickVersion"></a><div class="element clickable method private method_isOldImageMagickVersion" data-toggle="collapse" data-target=".method_isOldImageMagickVersion .collapse">
+<h2>Determines if ImageMagick is of version less than 6.7.5.</h2>
+<pre>isOldImageMagickVersion() : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::isOldImageMagickVersion()</td>
+</tr></table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>`TRUE` if the version is less than 6.7.5, `FALSE` otherwise.</div>
+</div></div>
+</div>
+<a id="method_isOpenBaseDirRestricted"></a><div class="element clickable method private method_isOpenBaseDirRestricted" data-toggle="collapse" data-target=".method_isOpenBaseDirRestricted .collapse">
+<h2>Checks if the path specified is restricted by open basedir</h2>
+<pre>isOpenBaseDirRestricted(string $path) : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::isOpenBaseDirRestricted()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the path is restricted by the `open_basedir` ini setting</div>
+</div></div>
+</div>
+<a id="method_isSafeModeExecDirRestricted"></a><div class="element clickable method private method_isSafeModeExecDirRestricted" data-toggle="collapse" data-target=".method_isSafeModeExecDirRestricted .collapse">
+<h2>Checks if the path specified is restricted by the safe mode exec dir restriction</h2>
+<pre>isSafeModeExecDirRestricted(string $path) : boolean</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::isSafeModeExecDirRestricted()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$path</h4>
+<code>string</code><p>The path to check</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the path is restricted by the `safe_mode_exec_dir` ini setting</div>
+</div></div>
+</div>
+<a id="method_processWithGD"></a><div class="element clickable method private method_processWithGD" data-toggle="collapse" data-target=".method_processWithGD .collapse">
+<h2>Processes the current image using GD</h2>
+<pre>processWithGD(string $output_file, integer $jpeg_quality) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::processWithGD()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$output_file</h4>
+<code>string</code><p>The file to save the image to</p></div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>The JPEG quality to use</p></div>
+</div></div>
+</div>
+<a id="method_processWithImageMagick"></a><div class="element clickable method private method_processWithImageMagick" data-toggle="collapse" data-target=".method_processWithImageMagick .collapse">
+<h2>Processes the current image using ImageMagick</h2>
+<pre>processWithImageMagick(string $output_file, integer $jpeg_quality) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::processWithImageMagick()</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$output_file</h4>
+<code>string</code><p>The file to save the image to</p></div>
+<div class="subelement argument">
+<h4>$jpeg_quality</h4>
+<code>integer</code><p>The JPEG quality to use</p></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_deleted"> </a><div class="element clickable property protected property_deleted" data-toggle="collapse" data-target=".property_deleted .collapse">
+<h2>A backtrace from when the file was deleted</h2>
+<pre>$deleted : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::$$deleted</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::$$deleted</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_file"> </a><div class="element clickable property protected property_file" data-toggle="collapse" data-target=".property_file .collapse">
+<h2>The full path to the file</h2>
+<pre>$file : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::$$file</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::$$file</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_current_line"> </a><div class="element clickable property private property_current_line" data-toggle="collapse" data-target=".property_current_line .collapse">
+<h2>The current line of the file</h2>
+<pre>$current_line : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::$$current_line</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::$$current_line</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_current_line_number"> </a><div class="element clickable property private property_current_line_number" data-toggle="collapse" data-target=".property_current_line_number .collapse">
+<h2>The current line number of the file</h2>
+<pre>$current_line_number : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::$$current_line_number</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::$$current_line_number</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_file_handle"> </a><div class="element clickable property private property_file_handle" data-toggle="collapse" data-target=".property_file_handle .collapse">
+<h2>The file handle for iteration</h2>
+<pre>$file_handle : resource</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fFile::$$file_handle</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fImage::$$file_handle</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="property_imagemagick_dir"> </a><div class="element clickable property private property_imagemagick_dir" data-toggle="collapse" data-target=".property_imagemagick_dir .collapse">
+<h2>If we are using the ImageMagick processor, this stores the path to the binaries</h2>
+<pre>$imagemagick_dir : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::$$imagemagick_dir</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_imagemagick_temp_dir"> </a><div class="element clickable property private property_imagemagick_temp_dir" data-toggle="collapse" data-target=".property_imagemagick_temp_dir .collapse">
+<h2>A custom tmp path to use for ImageMagick</h2>
+<pre>$imagemagick_temp_dir : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::$$imagemagick_temp_dir</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_pending_modifications"> </a><div class="element clickable property private property_pending_modifications" data-toggle="collapse" data-target=".property_pending_modifications .collapse">
+<h2>The modifications to perform on the image when it is saved</h2>
+<pre>$pending_modifications : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::$$pending_modifications</td>
+</tr></table>
+</div></div>
+</div>
+<a id="property_processor"> </a><div class="element clickable property private property_processor" data-toggle="collapse" data-target=".property_processor .collapse">
+<h2>The processor to use for the image manipulation</h2>
+<pre>$processor : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::$$processor</td>
+</tr></table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_DIRECTION_UPSIDE_DOWN"> </a><div class="element clickable constant  constant_DIRECTION_UPSIDE_DOWN" data-toggle="collapse" data-target=".constant_DIRECTION_UPSIDE_DOWN .collapse">
+<h2>Rotation direction upside-down.</h2>
+<pre>DIRECTION_UPSIDE_DOWN : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_DIRECTION_UPSIDE_LEFT"> </a><div class="element clickable constant  constant_DIRECTION_UPSIDE_LEFT" data-toggle="collapse" data-target=".constant_DIRECTION_UPSIDE_LEFT .collapse">
+<h2>Rotation direction upside-left.</h2>
+<pre>DIRECTION_UPSIDE_LEFT : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_DIRECTION_UPSIDE_RIGHT"> </a><div class="element clickable constant  constant_DIRECTION_UPSIDE_RIGHT" data-toggle="collapse" data-target=".constant_DIRECTION_UPSIDE_RIGHT .collapse">
+<h2>Rotation direction upside-right.</h2>
+<pre>DIRECTION_UPSIDE_RIGHT : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_DIRECTION_UPSIDE_UP"> </a><div class="element clickable constant  constant_DIRECTION_UPSIDE_UP" data-toggle="collapse" data-target=".constant_DIRECTION_UPSIDE_UP .collapse">
+<h2>Rotation direction upside-up.</h2>
+<pre>DIRECTION_UPSIDE_UP : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FLIP_BOTH"> </a><div class="element clickable constant  constant_FLIP_BOTH" data-toggle="collapse" data-target=".constant_FLIP_BOTH .collapse">
+<h2>Flip direction both ways.</h2>
+<pre>FLIP_BOTH : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FLIP_HORIZONTAL"> </a><div class="element clickable constant  constant_FLIP_HORIZONTAL" data-toggle="collapse" data-target=".constant_FLIP_HORIZONTAL .collapse">
+<h2>Flip direction horizontal.</h2>
+<pre>FLIP_HORIZONTAL : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FLIP_NONE"> </a><div class="element clickable constant  constant_FLIP_NONE" data-toggle="collapse" data-target=".constant_FLIP_NONE .collapse">
+<h2>No flip.</h2>
+<pre>FLIP_NONE : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_FLIP_VERTICAL"> </a><div class="element clickable constant  constant_FLIP_VERTICAL" data-toggle="collapse" data-target=".constant_FLIP_VERTICAL .collapse">
+<h2>Flip direction vertical.</h2>
+<pre>FLIP_VERTICAL : integer</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_create"> </a><div class="element clickable constant  constant_create" data-toggle="collapse" data-target=".constant_create .collapse">
+<h2>create</h2>
+<pre>create </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::create</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_getCompatibleMimetypes"> </a><div class="element clickable constant  constant_getCompatibleMimetypes" data-toggle="collapse" data-target=".constant_getCompatibleMimetypes .collapse">
+<h2>getCompatibleMimetypes</h2>
+<pre>getCompatibleMimetypes </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::getCompatibleMimetypes</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_isImageCompatible"> </a><div class="element clickable constant  constant_isImageCompatible" data-toggle="collapse" data-target=".constant_isImageCompatible .collapse">
+<h2>isImageCompatible</h2>
+<pre>isImageCompatible </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::isImageCompatible</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::reset</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setImageMagickDirectory"> </a><div class="element clickable constant  constant_setImageMagickDirectory" data-toggle="collapse" data-target=".constant_setImageMagickDirectory .collapse">
+<h2>setImageMagickDirectory</h2>
+<pre>setImageMagickDirectory </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::setImageMagickDirectory</td>
+</tr></table>
+</div></div>
+</div>
+<a id="constant_setImageMagickTempDir"> </a><div class="element clickable constant  constant_setImageMagickTempDir" data-toggle="collapse" data-target=".constant_setImageMagickTempDir .collapse">
+<h2>setImageMagickTempDir</h2>
+<pre>setImageMagickTempDir </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered"><tr>
+<th>inherited_from</th>
+<td>\fImage::setImageMagickTempDir</td>
+</tr></table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,920 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fValidationException</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Sets the message for the exception, allowing for custom formatting beyond fException"><span class="description">Sets the message for the exception, allowing for custom formatting beyond fException</span><pre>__construct()</pre></a></li>
+<li class="method public inherited"><a href="#method___toString" title="__toString :: "><span class="description">__toString()
+        </span><pre>__toString()</pre></a></li>
+<li class="method public "><a href="#method_formatField" title="formatField :: Accepts a field name and formats it based on the formatting string set via ::setFieldFormat()"><span class="description">Accepts a field name and formats it based on the formatting string set via ::setFieldFormat()</span><pre>formatField()</pre></a></li>
+<li class="method public inherited"><a href="#method_formatTrace" title="formatTrace :: Gets the backtrace to currently called exception"><span class="description">Gets the backtrace to currently called exception</span><pre>formatTrace()</pre></a></li>
+<li class="method public inherited"><a href="#method_getCode" title="getCode :: "><span class="description">getCode()
+        </span><pre>getCode()</pre></a></li>
+<li class="method public inherited"><a href="#method_getFile" title="getFile :: "><span class="description">getFile()
+        </span><pre>getFile()</pre></a></li>
+<li class="method public inherited"><a href="#method_getLine" title="getLine :: "><span class="description">getLine()
+        </span><pre>getLine()</pre></a></li>
+<li class="method public inherited"><a href="#method_getMessage" title="getMessage :: "><span class="description">getMessage()
+        </span><pre>getMessage()</pre></a></li>
+<li class="method public inherited"><a href="#method_getPrevious" title="getPrevious :: "><span class="description">getPrevious()
+        </span><pre>getPrevious()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTrace" title="getTrace :: "><span class="description">getTrace()
+        </span><pre>getTrace()</pre></a></li>
+<li class="method public inherited"><a href="#method_getTraceAsString" title="getTraceAsString :: "><span class="description">getTraceAsString()
+        </span><pre>getTraceAsString()</pre></a></li>
+<li class="method public inherited"><a href="#method_printMessage" title="printMessage :: Prints the message inside of a div with the class being 'exception %THIS_EXCEPTION_CLASS_NAME%'"><span class="description">Prints the message inside of a div with the class being 'exception %THIS_EXCEPTION_CLASS_NAME%'</span><pre>printMessage()</pre></a></li>
+<li class="method public inherited"><a href="#method_printTrace" title="printTrace :: Prints the backtrace to currently called exception inside of a pre tag with the class being 'exception %THIS_EXCEPTION_CLASS_NAME% trace'"><span class="description">Prints the backtrace to currently called exception inside of a pre tag with the class being 'exception %THIS_EXCEPTION_CLASS_NAME% trace'</span><pre>printTrace()</pre></a></li>
+<li class="method public inherited"><a href="#method_registerCallback" title="registerCallback :: Adds a callback for when certain types of exceptions are created"><span class="description">Adds a callback for when certain types of exceptions are created</span><pre>registerCallback()</pre></a></li>
+<li class="method public "><a href="#method_removeFieldNames" title="removeFieldNames :: Removes the field names from normal validation messages, leaving just the message part"><span class="description">Removes the field names from normal validation messages, leaving just the message part</span><pre>removeFieldNames()</pre></a></li>
+<li class="method public inherited"><a href="#method_reorderMessage" title="reorderMessage :: Reorders list items in the message based on simple string matching"><span class="description">Reorders list items in the message based on simple string matching</span><pre>reorderMessage()</pre></a></li>
+<li class="method public "><a href="#method_setFieldFormat" title="setFieldFormat :: Set the format to be applied to all field names used in fValidationExceptions"><span class="description">Set the format to be applied to all field names used in fValidationExceptions</span><pre>setFieldFormat()</pre></a></li>
+<li class="method public inherited"><a href="#method_setMessage" title="setMessage :: Allows the message to be overwriten"><span class="description">Allows the message to be overwriten</span><pre>setMessage()</pre></a></li>
+<li class="method public inherited"><a href="#method_splitMessage" title="splitMessage :: Splits an exception with an HTML list into multiple strings each containing part of the original message"><span class="description">Splits an exception with an HTML list into multiple strings each containing part of the original message</span><pre>splitMessage()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="method protected inherited"><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+<li class="method protected inherited"><a href="#method_dump" title="dump :: Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings"><span class="description">Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</span><pre>dump()</pre></a></li>
+<li class="method protected inherited"><a href="#method_getCSSClass" title="getCSSClass :: Returns the CSS class name for printing information about the exception"><span class="description">Returns the CSS class name for printing information about the exception</span><pre>getCSSClass()</pre></a></li>
+<li class="method protected inherited"><a href="#method_prepare" title="prepare :: Prepares content for output into HTML"><span class="description">Prepares content for output into HTML</span><pre>prepare()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method_formatErrorArray" title="formatErrorArray :: Takes an error array that may or may not be nested and returns a HTML string representation"><span class="description">Takes an error array that may or may not be nested and returns a HTML string representation</span><pre>formatErrorArray()</pre></a></li>
+<li class="method private inherited"><a href="#method_sortMatchingArray" title="sortMatchingArray :: Compares the message matching strings by longest first so that the longest matches are made first"><span class="description">Compares the message matching strings by longest first so that the longest matches are made first</span><pre>sortMatchingArray()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul><li class="property protected "><a href="#property_field_format" title="$field_format :: The formatting string to use for field names"><span class="description">The formatting string to use for field names</span><pre>$field_format</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private inherited"><a href="#property_callbacks" title="$callbacks :: Callbacks for when exceptions are created"><span class="description">Callbacks for when exceptions are created</span><pre>$callbacks</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_formatField" title="formatField :: "><span class="description">formatField</span><pre>formatField</pre></a></li>
+<li class="constant  "><a href="#constant_removeFieldNames" title="removeFieldNames :: "><span class="description">removeFieldNames</span><pre>removeFieldNames</pre></a></li>
+<li class="constant  "><a href="#constant_setFieldFormat" title="setFieldFormat :: "><span class="description">setFieldFormat</span><pre>setFieldFormat</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fValidationException"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fValidationException.html">fValidationException</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">An exception caused by a data not matching a rule or set of rules</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2007-2010 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fValidationException">http://flourishlib.com/fValidationException</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b4</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4  Added support for nested error arrays [wb-imarc, 2010-10-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3  Added ::removeFieldNames() [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2  Added a custom ::__construct() to handle arrays of messages [wb, 2009-09-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b   The initial implementation [wb, 2007-06-14]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Sets the message for the exception, allowing for custom formatting beyond fException</h2>
+<pre>__construct(string $message) : <a href="../classes/fException.html">\fException</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>If this method receives exactly two parameters, a string and an array,
+the string will be used as a message in a HTML <code>&lt;p&gt;</code> tag and the array
+will be turned into an unorder list <code>&lt;ul&gt;</code> tag with each element in the
+array being an <code>&lt;li&gt;</code> tag. It is possible to pass an optional exception
+code as a third parameter.</p>
+
+<p>The following PHP:</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>throw new fValidationException(
+    'The following problems were found:',
+    array(
+        'Please provide your name',
+        'Please provide your email address'
+    )
+);
+}}}</p>
+
+<p>Would create the message:</p>
+
+<p>{{{</p>
+
+<h1>!text/html</h1>
+
+<p>The following problems were found:</p>
+
+<ul>
+    <li>Please provide your name</li>
+    <li>Please provide your email address</li>
+</ul>
+
+<p>}}}</p>
+
+<p>If the parameters are anything else, they will be passed to
+fException::__construct().</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The beginning message for the exception. This will be placed in a <code><p></code> tag.</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fException.html">\fException</a></code></div>
+</div></div>
+</div>
+<a id="method___toString"></a><div class="element clickable method public method___toString" data-toggle="collapse" data-target=".method___toString .collapse">
+<h2>__toString()
+        </h2>
+<pre>__toString() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::__toString()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::__toString()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::__toString()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_formatField"></a><div class="element clickable method public method_formatField" data-toggle="collapse" data-target=".method_formatField .collapse">
+<h2>Accepts a field name and formats it based on the formatting string set via ::setFieldFormat()</h2>
+<pre>formatField(string $field) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$field</h4>
+<code>string</code><p>The name of the field to format</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The formatted field name</div>
+</div></div>
+</div>
+<a id="method_formatTrace"></a><div class="element clickable method public method_formatTrace" data-toggle="collapse" data-target=".method_formatTrace .collapse">
+<h2>Gets the backtrace to currently called exception</h2>
+<pre>formatTrace() : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::formatTrace()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::formatTrace()</td>
+</tr>
+</table>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>A nicely formatted backtrace to this exception</div>
+</div></div>
+</div>
+<a id="method_getCode"></a><div class="element clickable method public method_getCode" data-toggle="collapse" data-target=".method_getCode .collapse">
+<h2>getCode()
+        </h2>
+<pre>getCode() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getCode()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getCode()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getCode()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getFile"></a><div class="element clickable method public method_getFile" data-toggle="collapse" data-target=".method_getFile .collapse">
+<h2>getFile()
+        </h2>
+<pre>getFile() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getFile()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getFile()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getFile()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getLine"></a><div class="element clickable method public method_getLine" data-toggle="collapse" data-target=".method_getLine .collapse">
+<h2>getLine()
+        </h2>
+<pre>getLine() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getLine()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getLine()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getLine()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getMessage"></a><div class="element clickable method public method_getMessage" data-toggle="collapse" data-target=".method_getMessage .collapse">
+<h2>getMessage()
+        </h2>
+<pre>getMessage() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getMessage()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getPrevious"></a><div class="element clickable method public method_getPrevious" data-toggle="collapse" data-target=".method_getPrevious .collapse">
+<h2>getPrevious()
+        </h2>
+<pre>getPrevious() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getPrevious()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getPrevious()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getPrevious()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getTrace"></a><div class="element clickable method public method_getTrace" data-toggle="collapse" data-target=".method_getTrace .collapse">
+<h2>getTrace()
+        </h2>
+<pre>getTrace() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getTrace()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getTrace()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getTrace()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_getTraceAsString"></a><div class="element clickable method public method_getTraceAsString" data-toggle="collapse" data-target=".method_getTraceAsString .collapse">
+<h2>getTraceAsString()
+        </h2>
+<pre>getTraceAsString() </pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>Exception::getTraceAsString()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fException::getTraceAsString()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getTraceAsString()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_printMessage"></a><div class="element clickable method public method_printMessage" data-toggle="collapse" data-target=".method_printMessage .collapse">
+<h2>Prints the message inside of a div with the class being 'exception %THIS_EXCEPTION_CLASS_NAME%'</h2>
+<pre>printMessage() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::printMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::printMessage()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_printTrace"></a><div class="element clickable method public method_printTrace" data-toggle="collapse" data-target=".method_printTrace .collapse">
+<h2>Prints the backtrace to currently called exception inside of a pre tag with the class being 'exception %THIS_EXCEPTION_CLASS_NAME% trace'</h2>
+<pre>printTrace() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::printTrace()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::printTrace()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_registerCallback"></a><div class="element clickable method public method_registerCallback" data-toggle="collapse" data-target=".method_registerCallback .collapse">
+<h2>Adds a callback for when certain types of exceptions are created</h2>
+<pre>registerCallback(callback $callback, string $exception_type) : void</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The callback will be called when any exception of this class, or any
+child class, specified is tossed. A single parameter will be passed
+to the callback, which will be the exception object.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::registerCallback()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::registerCallback()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback</p></div>
+<div class="subelement argument">
+<h4>$exception_type</h4>
+<code>string</code><p>The type of exception to call the callback for</p></div>
+</div></div>
+</div>
+<a id="method_removeFieldNames"></a><div class="element clickable method public method_removeFieldNames" data-toggle="collapse" data-target=".method_removeFieldNames .collapse">
+<h2>Removes the field names from normal validation messages, leaving just the message part</h2>
+<pre>removeFieldNames(array $messages) : array</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$messages</h4>
+<code>array</code><p>The messages to remove the field names from</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>The messages without field names</div>
+</div></div>
+</div>
+<a id="method_reorderMessage"></a><div class="element clickable method public method_reorderMessage" data-toggle="collapse" data-target=".method_reorderMessage .collapse">
+<h2>Reorders list items in the message based on simple string matching</h2>
+<pre>reorderMessage(string $match) : <a href="../classes/fException.html">\fException</a></pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::reorderMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::reorderMessage()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$match</h4>
+<code>string</code><p>This should be a string to match to one of the list items - whatever the order this is in the parameter list will be the order of the list item in the adjusted message</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/fException.html">\fException</a></code>The exception object, to allow for method chaining</div>
+</div></div>
+</div>
+<a id="method_setFieldFormat"></a><div class="element clickable method public method_setFieldFormat" data-toggle="collapse" data-target=".method_setFieldFormat .collapse">
+<h2>Set the format to be applied to all field names used in fValidationExceptions</h2>
+<pre>setFieldFormat(string $format) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The format should contain exactly one <code>%s</code>
+[http://php.net/sprintf sprintf()] conversion specification, which will
+be replaced with the field name. Any literal <code>%</code> characters should be
+written as <code>%%</code>.</p>
+
+<p>The default format is just <code>%s:</code>, which simply inserts a <code>:</code> and space
+after the field name.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$format</h4>
+<code>string</code><p>A string to format the field name with - <code>%s</code> will be replaced with the field name</p>
+</div>
+</div></div>
+</div>
+<a id="method_setMessage"></a><div class="element clickable method public method_setMessage" data-toggle="collapse" data-target=".method_setMessage .collapse">
+<h2>Allows the message to be overwriten</h2>
+<pre>setMessage(string $new_message) : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::setMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::setMessage()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$new_message</h4>
+<code>string</code><p>The new message for the exception</p></div>
+</div></div>
+</div>
+<a id="method_splitMessage"></a><div class="element clickable method public method_splitMessage" data-toggle="collapse" data-target=".method_splitMessage .collapse">
+<h2>Splits an exception with an HTML list into multiple strings each containing part of the original message</h2>
+<pre>splitMessage(array $list_item_matches) : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>This method should be called with two or more parameters of arrays of
+string to match. If any of the provided strings are matching in a list
+item in the exception message, a new copy of the message will be created
+containing just the matching list items.</p>
+
+<p>Here is an exception message to be split:</p>
+
+<p>{{{</p>
+
+<h1>!html</h1>
+
+<p>The following problems were found:</p>
+
+<ul>
+    <li>First Name: Please enter a value</li>
+    <li>Last Name: Please enter a value</li>
+    <li>Email: Please enter a value</li>
+    <li>Address: Please enter a value</li>
+    <li>City: Please enter a value</li>
+    <li>State: Please enter a value</li>
+    <li>Zip Code: Please enter a value</li>
+</ul>
+
+<p>}}}</p>
+
+<p>The following PHP would split the exception into two messages:</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>list ($name_exception, $address_exception) = $exception->splitMessage(
+    array('First Name', 'Last Name', 'Email'),
+    array('Address', 'City', 'State', 'Zip Code')
+);
+}}}</p>
+
+<p>The resulting messages would be:</p>
+
+<p>{{{</p>
+
+<h1>!html</h1>
+
+<p>The following problems were found:</p>
+
+<ul>
+    <li>First Name: Please enter a value</li>
+    <li>Last Name: Please enter a value</li>
+    <li>Email: Please enter a value</li>
+</ul>
+
+<p>}}}</p>
+
+<p>and</p>
+
+<p>{{{</p>
+
+<h1>!html</h1>
+
+<p>The following problems were found:</p>
+
+<ul>
+    <li>Address: Please enter a value</li>
+    <li>City: Please enter a value</li>
+    <li>State: Please enter a value</li>
+    <li>Zip Code: Please enter a value</li>
+</ul>
+
+<p>}}}</p>
+
+<p>If no list items match the strings in a parameter, the result will be
+an empty string, allowing for simple display:</p>
+
+<p>{{{</p>
+
+<h1>!php</h1>
+
+<p>fHTML::show($name_exception, 'error');
+}}}</p>
+
+<p>An empty string is returned when none of the list items matched the
+strings in the parameter. If no list items are found, the first value in
+the returned array will be the existing message and all other array
+values will be an empty string.</p></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::splitMessage()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::splitMessage()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$list_item_matches</h4>
+<code>array</code><p>An array of strings to filter the list items by, list items will be ordered in the same order as this array</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>This will contain an array of strings corresponding to the parameters passed - see method description for details</div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method protected method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::compose()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::compose()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<a id="method_dump"></a><div class="element clickable method protected method_dump" data-toggle="collapse" data-target=".method_dump .collapse">
+<h2>Creates a string representation of any variable using predefined strings for booleans, `NULL` and empty strings</h2>
+<pre>dump(mixed $data) : string</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>The string output format of this method is very similar to the output of
+[http://php.net/print_r print_r()] except that the following values
+are represented as special strings:</p>
+
+<ul>
+<li><code>TRUE</code>: <code>'{true}'</code></li>
+<li><code>FALSE</code>: <code>'{false}'</code></li>
+<li><code>NULL</code>: <code>'{null}'</code></li>
+<li><code>''</code>: <code>'{empty_string}'</code></li>
+</ul></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::dump()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::dump()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>The value to dump</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The string representation of the value</div>
+</div></div>
+</div>
+<a id="method_getCSSClass"></a><div class="element clickable method protected method_getCSSClass" data-toggle="collapse" data-target=".method_getCSSClass .collapse">
+<h2>Returns the CSS class name for printing information about the exception</h2>
+<pre>getCSSClass() : void</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::getCSSClass()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::getCSSClass()</td>
+</tr>
+</table>
+</div></div>
+</div>
+<a id="method_prepare"></a><div class="element clickable method protected method_prepare" data-toggle="collapse" data-target=".method_prepare .collapse">
+<h2>Prepares content for output into HTML</h2>
+<pre>prepare($content) : string</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::prepare()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::prepare()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$content</h4></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The prepared content</div>
+</div></div>
+</div>
+<a id="method_formatErrorArray"></a><div class="element clickable method private method_formatErrorArray" data-toggle="collapse" data-target=".method_formatErrorArray .collapse">
+<h2>Takes an error array that may or may not be nested and returns a HTML string representation</h2>
+<pre>formatErrorArray(array $errors) : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$errors</h4>
+<code>array</code><p>An array of (possibly nested) child record errors</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>array</code>An array of string error messages</div>
+</div></div>
+</div>
+<a id="method_sortMatchingArray"></a><div class="element clickable method private method_sortMatchingArray" data-toggle="collapse" data-target=".method_sortMatchingArray .collapse">
+<h2>Compares the message matching strings by longest first so that the longest matches are made first</h2>
+<pre>sortMatchingArray(string $a, string $b) : integer</pre>
+<div class="labels">
+<span class="label">Inherited</span><span class="label">Static</span>
+</div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::sortMatchingArray()</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::sortMatchingArray()</td>
+</tr>
+</table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$a</h4>
+<code>string</code><p>The first string to compare</p></div>
+<div class="subelement argument">
+<h4>$b</h4>
+<code>string</code><p>The second string to compare</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>integer</code>`-1` if `$a` is longer than `$b`, `0` if they are equal length, `1` if `$a` is shorter than `$b`</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_field_format"> </a><div class="element clickable property protected property_field_format" data-toggle="collapse" data-target=".property_field_format .collapse">
+<h2>The formatting string to use for field names</h2>
+<pre>$field_format : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_callbacks"> </a><div class="element clickable property private property_callbacks" data-toggle="collapse" data-target=".property_callbacks .collapse">
+<h2>Callbacks for when exceptions are created</h2>
+<pre>$callbacks : array</pre>
+<div class="labels"><span class="label">Inherited</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>inherited_from</th>
+<td>\fException::$$callbacks</td>
+</tr>
+<tr>
+<th>inherited_from</th>
+<td>\fExpectedException::$$callbacks</td>
+</tr>
+</table>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_formatField"> </a><div class="element clickable constant  constant_formatField" data-toggle="collapse" data-target=".constant_formatField .collapse">
+<h2>formatField</h2>
+<pre>formatField </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_removeFieldNames"> </a><div class="element clickable constant  constant_removeFieldNames" data-toggle="collapse" data-target=".constant_removeFieldNames .collapse">
+<h2>removeFieldNames</h2>
+<pre>removeFieldNames </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setFieldFormat"> </a><div class="element clickable constant  constant_setFieldFormat" data-toggle="collapse" data-target=".constant_setFieldFormat .collapse">
+<h2>setFieldFormat</h2>
+<pre>setFieldFormat </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+</div>
+</body>
+</html>

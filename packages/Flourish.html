@@ -1,0 +1,620 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » Flourish</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Flourish.html" title="Flourish"><i class="icon-folder-open"></i>Flourish</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#fORMFile" title="Provides file manipulation functionality for fActiveRecord classes">fORMFile</a></li>
+<li><a href="#fSchema" title="Gets schema information for the selected database">fSchema</a></li>
+<li><a href="#fXML" title="Provides functionality for XML files">fXML</a></li>
+<li><a href="#fException" title="An exception that allows for easy l10n, printing, tracing and hooking">fException</a></li>
+<li><a href="#fHTML" title="Provides HTML-related methods">fHTML</a></li>
+<li><a href="#fGrammar" title="Provides english word inflection, notation conversion, grammar helpers and internationlization support">fGrammar</a></li>
+<li><a href="#fCookie" title="Provides a consistent cookie API, HTTPOnly compatibility with older PHP versions and default parameters">fCookie</a></li>
+<li><a href="#fORMOrdering" title="Allows a column in an fActiveRecord class to be a relative sort order column">fORMOrdering</a></li>
+<li><a href="#fLoader" title="A class that loads Flourish">fLoader</a></li>
+<li><a href="#fAuthorization" title="Allows defining and checking user authentication via ACLs, authorization levels or a simple logged in/not logged in scheme">fAuthorization</a></li>
+<li><a href="#fORMDate" title="Provides additional date/time functionality for fActiveRecord classes">fORMDate</a></li>
+<li><a href="#fORMColumn" title="Provides special column functionality for fActiveRecord classes">fORMColumn</a></li>
+<li><a href="#fSQLSchemaTranslation" title="Adds cross-database `CREATE TABLE`, `ALTER TABLE` and `COMMENT ON COLUMN` statements to fSQLTranslation">fSQLSchemaTranslation</a></li>
+<li><a href="#fURL" title="Provides functionality to retrieve and manipulate URL information">fURL</a></li>
+<li><a href="#fMailbox" title="Retrieves and deletes messages from a email account via IMAP or POP3">fMailbox</a></li>
+<li><a href="#fORMMoney" title="Provides money functionality for fActiveRecord classes">fORMMoney</a></li>
+<li><a href="#fUpload" title="Provides validation and movement of uploaded files">fUpload</a></li>
+<li><a href="#fUnexpectedException" title="An exception that should probably not be handled by the display code, fCore::enableExceptionHandler() is recommended">fUnexpectedException</a></li>
+<li><a href="#fMoney" title="Represents a monetary value - USD are supported by default and others can be added via ::defineCurrency()">fMoney</a></li>
+<li><a href="#fUTF8" title="Provides string functions for UTF-8 strings">fUTF8</a></li>
+<li><a href="#fEnvironmentException" title="An exception caused by an environment error such a file permissions">fEnvironmentException</a></li>
+<li><a href="#fFile" title="Represents a file on the filesystem, also provides static file-related methods">fFile</a></li>
+<li><a href="#fTime" title="Represents a time of day as a value object">fTime</a></li>
+<li><a href="#fCryptography" title="Provides cryptography functionality, including hashing, symmetric-key encryption and public-key encryption">fCryptography</a></li>
+<li><a href="#fORM" title="Dynamically handles many centralized object-relational mapping tasks">fORM</a></li>
+<li><a href="#fORMJSON" title="Adds JSON functionality to fActiveRecord and fRecordSet">fORMJSON</a></li>
+<li><a href="#fBuffer" title="Provides a single, simplified interface for [http://php.net/outcontrol output buffering] to prevent nested buffering issues and provide a more logical API">fBuffer</a></li>
+<li><a href="#fJSON" title="Provides encoding and decoding for JSON">fJSON</a></li>
+<li><a href="#fResult" title="Representation of a result from a query against the fDatabase class">fResult</a></li>
+<li><a href="#fDirectory" title="Represents a directory on the filesystem, also provides static directory-related methods">fDirectory</a></li>
+<li><a href="#fEmptySetException" title="An exception when an fRecordSet does not contain any elements">fEmptySetException</a></li>
+<li><a href="#fConnectivityException" title="An exception caused by a connectivity error">fConnectivityException</a></li>
+<li><a href="#fDate" title="Represents a date as a value object">fDate</a></li>
+<li><a href="#fSMTP" title="Creates a connection to an SMTP server to be used by fEmail">fSMTP</a></li>
+<li><a href="#fNoRemainingException" title="An exception caused when trying to get a value from an iterator and there is nothing left">fNoRemainingException</a></li>
+<li><a href="#fText" title="Provides internationlization support for strings">fText</a></li>
+<li><a href="#fMessaging" title="Provides session-based messaging for page-to-page communication">fMessaging</a></li>
+<li><a href="#fFilesystem" title="Handles filesystem-level tasks including filesystem transactions and the reference map to keep all fFile and fDirectory objects in sync">fFilesystem</a></li>
+<li><a href="#fSession" title="Wraps the session control functions and the `$_SESSION` superglobal for a more consistent and safer API">fSession</a></li>
+<li><a href="#fORMSchema" title="Provides fSchema class related functions for ORM code">fORMSchema</a></li>
+<li><a href="#fValidation" title="Provides validation routines for standalone forms, such as contact forms">fValidation</a></li>
+<li><a href="#fPagination" title="Prints pagination links for fRecordSet or other paginated records">fPagination</a></li>
+<li><a href="#fTimestamp" title="Represents a date and time as a value object">fTimestamp</a></li>
+<li><a href="#fProgrammerException" title="An exception caused by programmer error">fProgrammerException</a></li>
+<li><a href="#fEmail" title="Allows creating and sending a single email containing plaintext, HTML, attachments and S/MIME encryption">fEmail</a></li>
+<li><a href="#fORMValidation" title="Handles validation for fActiveRecord classes">fORMValidation</a></li>
+<li><a href="#fTemplating" title="Allows for quick and flexible HTML templating">fTemplating</a></li>
+<li><a href="#fActiveRecord" title="An [http://en.wikipedia.org/wiki/Active_record_pattern active record pattern] base class">fActiveRecord</a></li>
+<li><a href="#fSQLTranslation" title="Takes a subset of SQL from IBM DB2, MySQL, PostgreSQL, Oracle, SQLite and MSSQL and translates into the various dialects allowing for cross-database code">fSQLTranslation</a></li>
+<li><a href="#fRequest" title="Provides request-related methods">fRequest</a></li>
+<li><a href="#fStatement" title="Representation of a prepared statement for use with the fDatabase class">fStatement</a></li>
+<li><a href="#fORMDatabase" title="Holds a single instance of the fDatabase class and provides database manipulation functionality for ORM code">fORMDatabase</a></li>
+<li><a href="#fNoRowsException" title="An exception when no rows are returned from a SQL query">fNoRowsException</a></li>
+<li><a href="#fCache" title="A simple interface to cache data using different backends">fCache</a></li>
+<li><a href="#fExpectedException" title="An exception that should be handled by the display code">fExpectedException</a></li>
+<li><a href="#fSQLException" title="An exception occurred while executing a SQL statement">fSQLException</a></li>
+<li><a href="#fCore" title="Provides low-level debugging, error and exception functionality">fCore</a></li>
+<li><a href="#fImage" title="Represents an image on the filesystem, also provides image manipulation functionality">fImage</a></li>
+<li><a href="#fValidationException" title="An exception caused by a data not matching a rule or set of rules">fValidationException</a></li>
+<li><a href="#fNotFoundException" title="An exception when an fActiveRecord is not found in the database">fNotFoundException</a></li>
+<li><a href="#fDatabase" title="Provides a common API for different databases - will automatically use any installed extension">fDatabase</a></li>
+<li><a href="#fUnbufferedResult" title="Representation of an unbuffered result from a query against the fDatabase class">fUnbufferedResult</a></li>
+<li><a href="#fCRUD" title="Provides miscellaneous functionality for [http://en.wikipedia.org/wiki/Create,_read,_update_and_delete CRUD-like] pages">fCRUD</a></li>
+<li><a href="#fNumber" title="Provides large/precise number support">fNumber</a></li>
+<li><a href="#fRecordSet" title="A lightweight, iterable set of fActiveRecord-based objects">fRecordSet</a></li>
+<li><a href="#fORMRelated" title="Handles related record tasks for fActiveRecord classes">fORMRelated</a></li>
+<li><a href="#fAuthorizationException" title="An exception caused by an authorization error">fAuthorizationException</a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/Flourish.html">Flourish</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="fActiveRecord" class="element ajax clickable class">
+<h1>fActiveRecord<a href="../classes/fActiveRecord.html">¶</a>
+</h1>
+<p class="short_description">An [http://en.wikipedia.org/wiki/Active_record_pattern active record pattern] base class</p>
+<div class="details collapse"></div>
+<a href="../classes/fActiveRecord.html" class="more">« More »</a>
+</div>
+<div id="fAuthorization" class="element ajax clickable class">
+<h1>fAuthorization<a href="../classes/fAuthorization.html">¶</a>
+</h1>
+<p class="short_description">Allows defining and checking user authentication via ACLs, authorization levels or a simple logged in/not logged in scheme</p>
+<div class="details collapse"></div>
+<a href="../classes/fAuthorization.html" class="more">« More »</a>
+</div>
+<div id="fAuthorizationException" class="element ajax clickable class">
+<h1>fAuthorizationException<a href="../classes/fAuthorizationException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused by an authorization error</p>
+<div class="details collapse"></div>
+<a href="../classes/fAuthorizationException.html" class="more">« More »</a>
+</div>
+<div id="fBuffer" class="element ajax clickable class">
+<h1>fBuffer<a href="../classes/fBuffer.html">¶</a>
+</h1>
+<p class="short_description">Provides a single, simplified interface for [http://php.net/outcontrol output buffering] to prevent nested buffering issues and provide a more logical API</p>
+<div class="details collapse"></div>
+<a href="../classes/fBuffer.html" class="more">« More »</a>
+</div>
+<div id="fCRUD" class="element ajax clickable class">
+<h1>fCRUD<a href="../classes/fCRUD.html">¶</a>
+</h1>
+<p class="short_description">Provides miscellaneous functionality for [http://en.wikipedia.org/wiki/Create,_read,_update_and_delete CRUD-like] pages</p>
+<div class="details collapse"></div>
+<a href="../classes/fCRUD.html" class="more">« More »</a>
+</div>
+<div id="fCache" class="element ajax clickable class">
+<h1>fCache<a href="../classes/fCache.html">¶</a>
+</h1>
+<p class="short_description">A simple interface to cache data using different backends</p>
+<div class="details collapse"></div>
+<a href="../classes/fCache.html" class="more">« More »</a>
+</div>
+<div id="fConnectivityException" class="element ajax clickable class">
+<h1>fConnectivityException<a href="../classes/fConnectivityException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused by a connectivity error</p>
+<div class="details collapse"></div>
+<a href="../classes/fConnectivityException.html" class="more">« More »</a>
+</div>
+<div id="fCookie" class="element ajax clickable class">
+<h1>fCookie<a href="../classes/fCookie.html">¶</a>
+</h1>
+<p class="short_description">Provides a consistent cookie API, HTTPOnly compatibility with older PHP versions and default parameters</p>
+<div class="details collapse"></div>
+<a href="../classes/fCookie.html" class="more">« More »</a>
+</div>
+<div id="fCore" class="element ajax clickable class">
+<h1>fCore<a href="../classes/fCore.html">¶</a>
+</h1>
+<p class="short_description">Provides low-level debugging, error and exception functionality</p>
+<div class="details collapse"></div>
+<a href="../classes/fCore.html" class="more">« More »</a>
+</div>
+<div id="fCryptography" class="element ajax clickable class">
+<h1>fCryptography<a href="../classes/fCryptography.html">¶</a>
+</h1>
+<p class="short_description">Provides cryptography functionality, including hashing, symmetric-key encryption and public-key encryption</p>
+<div class="details collapse"></div>
+<a href="../classes/fCryptography.html" class="more">« More »</a>
+</div>
+<div id="fDatabase" class="element ajax clickable class">
+<h1>fDatabase<a href="../classes/fDatabase.html">¶</a>
+</h1>
+<p class="short_description">Provides a common API for different databases - will automatically use any installed extension</p>
+<div class="details collapse"></div>
+<a href="../classes/fDatabase.html" class="more">« More »</a>
+</div>
+<div id="fDate" class="element ajax clickable class">
+<h1>fDate<a href="../classes/fDate.html">¶</a>
+</h1>
+<p class="short_description">Represents a date as a value object</p>
+<div class="details collapse"></div>
+<a href="../classes/fDate.html" class="more">« More »</a>
+</div>
+<div id="fDirectory" class="element ajax clickable class">
+<h1>fDirectory<a href="../classes/fDirectory.html">¶</a>
+</h1>
+<p class="short_description">Represents a directory on the filesystem, also provides static directory-related methods</p>
+<div class="details collapse"></div>
+<a href="../classes/fDirectory.html" class="more">« More »</a>
+</div>
+<div id="fEmail" class="element ajax clickable class">
+<h1>fEmail<a href="../classes/fEmail.html">¶</a>
+</h1>
+<p class="short_description">Allows creating and sending a single email containing plaintext, HTML, attachments and S/MIME encryption</p>
+<div class="details collapse"></div>
+<a href="../classes/fEmail.html" class="more">« More »</a>
+</div>
+<div id="fEmptySetException" class="element ajax clickable class">
+<h1>fEmptySetException<a href="../classes/fEmptySetException.html">¶</a>
+</h1>
+<p class="short_description">An exception when an fRecordSet does not contain any elements</p>
+<div class="details collapse"></div>
+<a href="../classes/fEmptySetException.html" class="more">« More »</a>
+</div>
+<div id="fEnvironmentException" class="element ajax clickable class">
+<h1>fEnvironmentException<a href="../classes/fEnvironmentException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused by an environment error such a file permissions</p>
+<div class="details collapse"></div>
+<a href="../classes/fEnvironmentException.html" class="more">« More »</a>
+</div>
+<div id="fException" class="element ajax clickable class">
+<h1>fException<a href="../classes/fException.html">¶</a>
+</h1>
+<p class="short_description">An exception that allows for easy l10n, printing, tracing and hooking</p>
+<div class="details collapse"></div>
+<a href="../classes/fException.html" class="more">« More »</a>
+</div>
+<div id="fExpectedException" class="element ajax clickable class">
+<h1>fExpectedException<a href="../classes/fExpectedException.html">¶</a>
+</h1>
+<p class="short_description">An exception that should be handled by the display code</p>
+<div class="details collapse"></div>
+<a href="../classes/fExpectedException.html" class="more">« More »</a>
+</div>
+<div id="fFile" class="element ajax clickable class">
+<h1>fFile<a href="../classes/fFile.html">¶</a>
+</h1>
+<p class="short_description">Represents a file on the filesystem, also provides static file-related methods</p>
+<div class="details collapse"></div>
+<a href="../classes/fFile.html" class="more">« More »</a>
+</div>
+<div id="fFilesystem" class="element ajax clickable class">
+<h1>fFilesystem<a href="../classes/fFilesystem.html">¶</a>
+</h1>
+<p class="short_description">Handles filesystem-level tasks including filesystem transactions and the reference map to keep all fFile and fDirectory objects in sync</p>
+<div class="details collapse"></div>
+<a href="../classes/fFilesystem.html" class="more">« More »</a>
+</div>
+<div id="fGrammar" class="element ajax clickable class">
+<h1>fGrammar<a href="../classes/fGrammar.html">¶</a>
+</h1>
+<p class="short_description">Provides english word inflection, notation conversion, grammar helpers and internationlization support</p>
+<div class="details collapse"></div>
+<a href="../classes/fGrammar.html" class="more">« More »</a>
+</div>
+<div id="fHTML" class="element ajax clickable class">
+<h1>fHTML<a href="../classes/fHTML.html">¶</a>
+</h1>
+<p class="short_description">Provides HTML-related methods</p>
+<div class="details collapse"></div>
+<a href="../classes/fHTML.html" class="more">« More »</a>
+</div>
+<div id="fImage" class="element ajax clickable class">
+<h1>fImage<a href="../classes/fImage.html">¶</a>
+</h1>
+<p class="short_description">Represents an image on the filesystem, also provides image manipulation functionality</p>
+<div class="details collapse"></div>
+<a href="../classes/fImage.html" class="more">« More »</a>
+</div>
+<div id="fJSON" class="element ajax clickable class">
+<h1>fJSON<a href="../classes/fJSON.html">¶</a>
+</h1>
+<p class="short_description">Provides encoding and decoding for JSON</p>
+<div class="details collapse"></div>
+<a href="../classes/fJSON.html" class="more">« More »</a>
+</div>
+<div id="fLoader" class="element ajax clickable class">
+<h1>fLoader<a href="../classes/fLoader.html">¶</a>
+</h1>
+<p class="short_description">A class that loads Flourish</p>
+<div class="details collapse"></div>
+<a href="../classes/fLoader.html" class="more">« More »</a>
+</div>
+<div id="fMailbox" class="element ajax clickable class">
+<h1>fMailbox<a href="../classes/fMailbox.html">¶</a>
+</h1>
+<p class="short_description">Retrieves and deletes messages from a email account via IMAP or POP3</p>
+<div class="details collapse"></div>
+<a href="../classes/fMailbox.html" class="more">« More »</a>
+</div>
+<div id="fMessaging" class="element ajax clickable class">
+<h1>fMessaging<a href="../classes/fMessaging.html">¶</a>
+</h1>
+<p class="short_description">Provides session-based messaging for page-to-page communication</p>
+<div class="details collapse"></div>
+<a href="../classes/fMessaging.html" class="more">« More »</a>
+</div>
+<div id="fMoney" class="element ajax clickable class">
+<h1>fMoney<a href="../classes/fMoney.html">¶</a>
+</h1>
+<p class="short_description">Represents a monetary value - USD are supported by default and others can be added via ::defineCurrency()</p>
+<div class="details collapse"></div>
+<a href="../classes/fMoney.html" class="more">« More »</a>
+</div>
+<div id="fNoRemainingException" class="element ajax clickable class">
+<h1>fNoRemainingException<a href="../classes/fNoRemainingException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused when trying to get a value from an iterator and there is nothing left</p>
+<div class="details collapse"></div>
+<a href="../classes/fNoRemainingException.html" class="more">« More »</a>
+</div>
+<div id="fNoRowsException" class="element ajax clickable class">
+<h1>fNoRowsException<a href="../classes/fNoRowsException.html">¶</a>
+</h1>
+<p class="short_description">An exception when no rows are returned from a SQL query</p>
+<div class="details collapse"></div>
+<a href="../classes/fNoRowsException.html" class="more">« More »</a>
+</div>
+<div id="fNotFoundException" class="element ajax clickable class">
+<h1>fNotFoundException<a href="../classes/fNotFoundException.html">¶</a>
+</h1>
+<p class="short_description">An exception when an fActiveRecord is not found in the database</p>
+<div class="details collapse"></div>
+<a href="../classes/fNotFoundException.html" class="more">« More »</a>
+</div>
+<div id="fNumber" class="element ajax clickable class">
+<h1>fNumber<a href="../classes/fNumber.html">¶</a>
+</h1>
+<p class="short_description">Provides large/precise number support</p>
+<div class="details collapse"></div>
+<a href="../classes/fNumber.html" class="more">« More »</a>
+</div>
+<div id="fORM" class="element ajax clickable class">
+<h1>fORM<a href="../classes/fORM.html">¶</a>
+</h1>
+<p class="short_description">Dynamically handles many centralized object-relational mapping tasks</p>
+<div class="details collapse"></div>
+<a href="../classes/fORM.html" class="more">« More »</a>
+</div>
+<div id="fORMColumn" class="element ajax clickable class">
+<h1>fORMColumn<a href="../classes/fORMColumn.html">¶</a>
+</h1>
+<p class="short_description">Provides special column functionality for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMColumn.html" class="more">« More »</a>
+</div>
+<div id="fORMDatabase" class="element ajax clickable class">
+<h1>fORMDatabase<a href="../classes/fORMDatabase.html">¶</a>
+</h1>
+<p class="short_description">Holds a single instance of the fDatabase class and provides database manipulation functionality for ORM code</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMDatabase.html" class="more">« More »</a>
+</div>
+<div id="fORMDate" class="element ajax clickable class">
+<h1>fORMDate<a href="../classes/fORMDate.html">¶</a>
+</h1>
+<p class="short_description">Provides additional date/time functionality for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMDate.html" class="more">« More »</a>
+</div>
+<div id="fORMFile" class="element ajax clickable class">
+<h1>fORMFile<a href="../classes/fORMFile.html">¶</a>
+</h1>
+<p class="short_description">Provides file manipulation functionality for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMFile.html" class="more">« More »</a>
+</div>
+<div id="fORMJSON" class="element ajax clickable class">
+<h1>fORMJSON<a href="../classes/fORMJSON.html">¶</a>
+</h1>
+<p class="short_description">Adds JSON functionality to fActiveRecord and fRecordSet</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMJSON.html" class="more">« More »</a>
+</div>
+<div id="fORMMoney" class="element ajax clickable class">
+<h1>fORMMoney<a href="../classes/fORMMoney.html">¶</a>
+</h1>
+<p class="short_description">Provides money functionality for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMMoney.html" class="more">« More »</a>
+</div>
+<div id="fORMOrdering" class="element ajax clickable class">
+<h1>fORMOrdering<a href="../classes/fORMOrdering.html">¶</a>
+</h1>
+<p class="short_description">Allows a column in an fActiveRecord class to be a relative sort order column</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMOrdering.html" class="more">« More »</a>
+</div>
+<div id="fORMRelated" class="element ajax clickable class">
+<h1>fORMRelated<a href="../classes/fORMRelated.html">¶</a>
+</h1>
+<p class="short_description">Handles related record tasks for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMRelated.html" class="more">« More »</a>
+</div>
+<div id="fORMSchema" class="element ajax clickable class">
+<h1>fORMSchema<a href="../classes/fORMSchema.html">¶</a>
+</h1>
+<p class="short_description">Provides fSchema class related functions for ORM code</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMSchema.html" class="more">« More »</a>
+</div>
+<div id="fORMValidation" class="element ajax clickable class">
+<h1>fORMValidation<a href="../classes/fORMValidation.html">¶</a>
+</h1>
+<p class="short_description">Handles validation for fActiveRecord classes</p>
+<div class="details collapse"></div>
+<a href="../classes/fORMValidation.html" class="more">« More »</a>
+</div>
+<div id="fPagination" class="element ajax clickable class">
+<h1>fPagination<a href="../classes/fPagination.html">¶</a>
+</h1>
+<p class="short_description">Prints pagination links for fRecordSet or other paginated records</p>
+<div class="details collapse"></div>
+<a href="../classes/fPagination.html" class="more">« More »</a>
+</div>
+<div id="fProgrammerException" class="element ajax clickable class">
+<h1>fProgrammerException<a href="../classes/fProgrammerException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused by programmer error</p>
+<div class="details collapse"></div>
+<a href="../classes/fProgrammerException.html" class="more">« More »</a>
+</div>
+<div id="fRecordSet" class="element ajax clickable class">
+<h1>fRecordSet<a href="../classes/fRecordSet.html">¶</a>
+</h1>
+<p class="short_description">A lightweight, iterable set of fActiveRecord-based objects</p>
+<div class="details collapse"></div>
+<a href="../classes/fRecordSet.html" class="more">« More »</a>
+</div>
+<div id="fRequest" class="element ajax clickable class">
+<h1>fRequest<a href="../classes/fRequest.html">¶</a>
+</h1>
+<p class="short_description">Provides request-related methods</p>
+<div class="details collapse"></div>
+<a href="../classes/fRequest.html" class="more">« More »</a>
+</div>
+<div id="fResult" class="element ajax clickable class">
+<h1>fResult<a href="../classes/fResult.html">¶</a>
+</h1>
+<p class="short_description">Representation of a result from a query against the fDatabase class</p>
+<div class="details collapse"></div>
+<a href="../classes/fResult.html" class="more">« More »</a>
+</div>
+<div id="fSMTP" class="element ajax clickable class">
+<h1>fSMTP<a href="../classes/fSMTP.html">¶</a>
+</h1>
+<p class="short_description">Creates a connection to an SMTP server to be used by fEmail</p>
+<div class="details collapse"></div>
+<a href="../classes/fSMTP.html" class="more">« More »</a>
+</div>
+<div id="fSQLException" class="element ajax clickable class">
+<h1>fSQLException<a href="../classes/fSQLException.html">¶</a>
+</h1>
+<p class="short_description">An exception occurred while executing a SQL statement</p>
+<div class="details collapse"></div>
+<a href="../classes/fSQLException.html" class="more">« More »</a>
+</div>
+<div id="fSQLSchemaTranslation" class="element ajax clickable class">
+<h1>fSQLSchemaTranslation<a href="../classes/fSQLSchemaTranslation.html">¶</a>
+</h1>
+<p class="short_description">Adds cross-database `CREATE TABLE`, `ALTER TABLE` and `COMMENT ON COLUMN` statements to fSQLTranslation</p>
+<div class="details collapse"></div>
+<a href="../classes/fSQLSchemaTranslation.html" class="more">« More »</a>
+</div>
+<div id="fSQLTranslation" class="element ajax clickable class">
+<h1>fSQLTranslation<a href="../classes/fSQLTranslation.html">¶</a>
+</h1>
+<p class="short_description">Takes a subset of SQL from IBM DB2, MySQL, PostgreSQL, Oracle, SQLite and MSSQL and translates into the various dialects allowing for cross-database code</p>
+<div class="details collapse"></div>
+<a href="../classes/fSQLTranslation.html" class="more">« More »</a>
+</div>
+<div id="fSchema" class="element ajax clickable class">
+<h1>fSchema<a href="../classes/fSchema.html">¶</a>
+</h1>
+<p class="short_description">Gets schema information for the selected database</p>
+<div class="details collapse"></div>
+<a href="../classes/fSchema.html" class="more">« More »</a>
+</div>
+<div id="fSession" class="element ajax clickable class">
+<h1>fSession<a href="../classes/fSession.html">¶</a>
+</h1>
+<p class="short_description">Wraps the session control functions and the `$_SESSION` superglobal for a more consistent and safer API</p>
+<div class="details collapse"></div>
+<a href="../classes/fSession.html" class="more">« More »</a>
+</div>
+<div id="fStatement" class="element ajax clickable class">
+<h1>fStatement<a href="../classes/fStatement.html">¶</a>
+</h1>
+<p class="short_description">Representation of a prepared statement for use with the fDatabase class</p>
+<div class="details collapse"></div>
+<a href="../classes/fStatement.html" class="more">« More »</a>
+</div>
+<div id="fTemplating" class="element ajax clickable class">
+<h1>fTemplating<a href="../classes/fTemplating.html">¶</a>
+</h1>
+<p class="short_description">Allows for quick and flexible HTML templating</p>
+<div class="details collapse"></div>
+<a href="../classes/fTemplating.html" class="more">« More »</a>
+</div>
+<div id="fText" class="element ajax clickable class">
+<h1>fText<a href="../classes/fText.html">¶</a>
+</h1>
+<p class="short_description">Provides internationlization support for strings</p>
+<div class="details collapse"></div>
+<a href="../classes/fText.html" class="more">« More »</a>
+</div>
+<div id="fTime" class="element ajax clickable class">
+<h1>fTime<a href="../classes/fTime.html">¶</a>
+</h1>
+<p class="short_description">Represents a time of day as a value object</p>
+<div class="details collapse"></div>
+<a href="../classes/fTime.html" class="more">« More »</a>
+</div>
+<div id="fTimestamp" class="element ajax clickable class">
+<h1>fTimestamp<a href="../classes/fTimestamp.html">¶</a>
+</h1>
+<p class="short_description">Represents a date and time as a value object</p>
+<div class="details collapse"></div>
+<a href="../classes/fTimestamp.html" class="more">« More »</a>
+</div>
+<div id="fURL" class="element ajax clickable class">
+<h1>fURL<a href="../classes/fURL.html">¶</a>
+</h1>
+<p class="short_description">Provides functionality to retrieve and manipulate URL information</p>
+<div class="details collapse"></div>
+<a href="../classes/fURL.html" class="more">« More »</a>
+</div>
+<div id="fUTF8" class="element ajax clickable class">
+<h1>fUTF8<a href="../classes/fUTF8.html">¶</a>
+</h1>
+<p class="short_description">Provides string functions for UTF-8 strings</p>
+<div class="details collapse"></div>
+<a href="../classes/fUTF8.html" class="more">« More »</a>
+</div>
+<div id="fUnbufferedResult" class="element ajax clickable class">
+<h1>fUnbufferedResult<a href="../classes/fUnbufferedResult.html">¶</a>
+</h1>
+<p class="short_description">Representation of an unbuffered result from a query against the fDatabase class</p>
+<div class="details collapse"></div>
+<a href="../classes/fUnbufferedResult.html" class="more">« More »</a>
+</div>
+<div id="fUnexpectedException" class="element ajax clickable class">
+<h1>fUnexpectedException<a href="../classes/fUnexpectedException.html">¶</a>
+</h1>
+<p class="short_description">An exception that should probably not be handled by the display code, fCore::enableExceptionHandler() is recommended</p>
+<div class="details collapse"></div>
+<a href="../classes/fUnexpectedException.html" class="more">« More »</a>
+</div>
+<div id="fUpload" class="element ajax clickable class">
+<h1>fUpload<a href="../classes/fUpload.html">¶</a>
+</h1>
+<p class="short_description">Provides validation and movement of uploaded files</p>
+<div class="details collapse"></div>
+<a href="../classes/fUpload.html" class="more">« More »</a>
+</div>
+<div id="fValidation" class="element ajax clickable class">
+<h1>fValidation<a href="../classes/fValidation.html">¶</a>
+</h1>
+<p class="short_description">Provides validation routines for standalone forms, such as contact forms</p>
+<div class="details collapse"></div>
+<a href="../classes/fValidation.html" class="more">« More »</a>
+</div>
+<div id="fValidationException" class="element ajax clickable class">
+<h1>fValidationException<a href="../classes/fValidationException.html">¶</a>
+</h1>
+<p class="short_description">An exception caused by a data not matching a rule or set of rules</p>
+<div class="details collapse"></div>
+<a href="../classes/fValidationException.html" class="more">« More »</a>
+</div>
+<div id="fXML" class="element ajax clickable class">
+<h1>fXML<a href="../classes/fXML.html">¶</a>
+</h1>
+<p class="short_description">Provides functionality for XML files</p>
+<div class="details collapse"></div>
+<a href="../classes/fXML.html" class="more">« More »</a>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

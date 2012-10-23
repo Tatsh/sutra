@@ -1,0 +1,329 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \fORMMoney</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul><li class="method public "><a href="#method_configureMoneyColumn" title="configureMoneyColumn :: Sets a column to be formatted as an fMoney object"><span class="description">Sets a column to be formatted as an fMoney object</span><pre>configureMoneyColumn()</pre></a></li></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class"><span class="description">Forces use as a static class</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_compose" title="compose :: Composes text using fText if loaded"><span class="description">Composes text using fText if loaded</span><pre>compose()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="property private "><a href="#property_currency_columns" title="$currency_columns :: Columns that store currency information for a money column"><span class="description">Columns that store currency information for a money column</span><pre>$currency_columns</pre></a></li>
+<li class="property private "><a href="#property_money_columns" title="$money_columns :: Columns that should be formatted as money"><span class="description">Columns that should be formatted as money</span><pre>$money_columns</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_configureMoneyColumn" title="configureMoneyColumn :: "><span class="description">configureMoneyColumn</span><pre>configureMoneyColumn</pre></a></li>
+<li class="constant  "><a href="#constant_encodeMoneyColumn" title="encodeMoneyColumn :: "><span class="description">encodeMoneyColumn</span><pre>encodeMoneyColumn</pre></a></li>
+<li class="constant  "><a href="#constant_inspect" title="inspect :: "><span class="description">inspect</span><pre>inspect</pre></a></li>
+<li class="constant  "><a href="#constant_makeMoneyObjects" title="makeMoneyObjects :: "><span class="description">makeMoneyObjects</span><pre>makeMoneyObjects</pre></a></li>
+<li class="constant  "><a href="#constant_objectifyMoney" title="objectifyMoney :: "><span class="description">objectifyMoney</span><pre>objectifyMoney</pre></a></li>
+<li class="constant  "><a href="#constant_objectifyMoneyWithCurrency" title="objectifyMoneyWithCurrency :: "><span class="description">objectifyMoneyWithCurrency</span><pre>objectifyMoneyWithCurrency</pre></a></li>
+<li class="constant  "><a href="#constant_prepareMoneyColumn" title="prepareMoneyColumn :: "><span class="description">prepareMoneyColumn</span><pre>prepareMoneyColumn</pre></a></li>
+<li class="constant  "><a href="#constant_reflect" title="reflect :: "><span class="description">reflect</span><pre>reflect</pre></a></li>
+<li class="constant  "><a href="#constant_reset" title="reset :: "><span class="description">reset</span><pre>reset</pre></a></li>
+<li class="constant  "><a href="#constant_setCurrencyColumn" title="setCurrencyColumn :: "><span class="description">setCurrencyColumn</span><pre>setCurrencyColumn</pre></a></li>
+<li class="constant  "><a href="#constant_setMoneyColumn" title="setMoneyColumn :: "><span class="description">setMoneyColumn</span><pre>setMoneyColumn</pre></a></li>
+<li class="constant  "><a href="#constant_validateMoneyColumns" title="validateMoneyColumns :: "><span class="description">validateMoneyColumns</span><pre>validateMoneyColumns</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\fORMMoney"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/fORMMoney.html">fORMMoney</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Provides money functionality for fActiveRecord classes</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2008-2011 Will Bond, others</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:dan@imarc.net">Dan Collins, iMarc LLC [dc-imarc]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Flourish.html">Flourish</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="http://flourishlib.com/fORMMoney">http://flourishlib.com/fORMMoney</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.0.0b11</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b11  Fixed the generation of validation messages when a non-monetary value is supplied [wb, 2011-05-17]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b10  Updated code to work with the new fORM API [wb, 2010-08-06]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b9   Added the `$remove_zero_fraction` parameter to prepare methods [wb, 2010-06-09]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b8   Changed validation messages array to use column name keys [wb, 2010-05-26]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b7   Fixed the `set` methods to return the record object in order to be consistent with all other `set` methods [wb, 2010-03-15]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b6   Fixed duplicate validation messages and fProgrammerException object being thrown when NULL is set [dc-imarc+wb, 2010-03-03]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b5   Updated code for the new fORMDatabase and fORMSchema APIs [wb, 2009-10-28]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b4   Updated to use new fORM::registerInspectCallback() method [wb, 2009-07-13]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b3   Updated code to use new fValidationException::formatField() method [wb, 2009-06-04]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Fixed bugs with objectifying money columns [wb, 2008-11-24]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b    The initial implementation [wb, 2008-09-05]</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_configureMoneyColumn"></a><div class="element clickable method public method_configureMoneyColumn" data-toggle="collapse" data-target=".method_configureMoneyColumn .collapse">
+<h2>Sets a column to be formatted as an fMoney object</h2>
+<pre>configureMoneyColumn(mixed $class, string $column, string $currency_column) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to set the column format</p></div>
+<div class="subelement argument">
+<h4>$column</h4>
+<code>string</code><p>The column to format as an fMoney object</p></div>
+<div class="subelement argument">
+<h4>$currency_column</h4>
+<code>string</code><p>If specified, this column will store the currency of the fMoney object</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class</h2>
+<pre>__construct() : <a href="../classes/fORMMoney.html">\fORMMoney</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/fORMMoney.html">\fORMMoney</a></code></div>
+</div></div>
+</div>
+<a id="method_compose"></a><div class="element clickable method private method_compose" data-toggle="collapse" data-target=".method_compose .collapse">
+<h2>Composes text using fText if loaded</h2>
+<pre>compose(string $message) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$message</h4>
+<code>string</code><p>The message to compose</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The composed and possible translated message</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_currency_columns"> </a><div class="element clickable property private property_currency_columns" data-toggle="collapse" data-target=".property_currency_columns .collapse">
+<h2>Columns that store currency information for a money column</h2>
+<pre>$currency_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_money_columns"> </a><div class="element clickable property private property_money_columns" data-toggle="collapse" data-target=".property_money_columns .collapse">
+<h2>Columns that should be formatted as money</h2>
+<pre>$money_columns : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_configureMoneyColumn"> </a><div class="element clickable constant  constant_configureMoneyColumn" data-toggle="collapse" data-target=".constant_configureMoneyColumn .collapse">
+<h2>configureMoneyColumn</h2>
+<pre>configureMoneyColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_encodeMoneyColumn"> </a><div class="element clickable constant  constant_encodeMoneyColumn" data-toggle="collapse" data-target=".constant_encodeMoneyColumn .collapse">
+<h2>encodeMoneyColumn</h2>
+<pre>encodeMoneyColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_inspect"> </a><div class="element clickable constant  constant_inspect" data-toggle="collapse" data-target=".constant_inspect .collapse">
+<h2>inspect</h2>
+<pre>inspect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_makeMoneyObjects"> </a><div class="element clickable constant  constant_makeMoneyObjects" data-toggle="collapse" data-target=".constant_makeMoneyObjects .collapse">
+<h2>makeMoneyObjects</h2>
+<pre>makeMoneyObjects </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_objectifyMoney"> </a><div class="element clickable constant  constant_objectifyMoney" data-toggle="collapse" data-target=".constant_objectifyMoney .collapse">
+<h2>objectifyMoney</h2>
+<pre>objectifyMoney </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_objectifyMoneyWithCurrency"> </a><div class="element clickable constant  constant_objectifyMoneyWithCurrency" data-toggle="collapse" data-target=".constant_objectifyMoneyWithCurrency .collapse">
+<h2>objectifyMoneyWithCurrency</h2>
+<pre>objectifyMoneyWithCurrency </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_prepareMoneyColumn"> </a><div class="element clickable constant  constant_prepareMoneyColumn" data-toggle="collapse" data-target=".constant_prepareMoneyColumn .collapse">
+<h2>prepareMoneyColumn</h2>
+<pre>prepareMoneyColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reflect"> </a><div class="element clickable constant  constant_reflect" data-toggle="collapse" data-target=".constant_reflect .collapse">
+<h2>reflect</h2>
+<pre>reflect </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_reset"> </a><div class="element clickable constant  constant_reset" data-toggle="collapse" data-target=".constant_reset .collapse">
+<h2>reset</h2>
+<pre>reset </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setCurrencyColumn"> </a><div class="element clickable constant  constant_setCurrencyColumn" data-toggle="collapse" data-target=".constant_setCurrencyColumn .collapse">
+<h2>setCurrencyColumn</h2>
+<pre>setCurrencyColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setMoneyColumn"> </a><div class="element clickable constant  constant_setMoneyColumn" data-toggle="collapse" data-target=".constant_setMoneyColumn .collapse">
+<h2>setMoneyColumn</h2>
+<pre>setMoneyColumn </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_validateMoneyColumns"> </a><div class="element clickable constant  constant_validateMoneyColumns" data-toggle="collapse" data-target=".constant_validateMoneyColumns .collapse">
+<h2>validateMoneyColumns</h2>
+<pre>validateMoneyColumns </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+</div>
+</body>
+</html>

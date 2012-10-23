@@ -1,0 +1,399 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » \sResponse</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method_encode" title="encode :: Encodes data in a specified content type."><span class="description">Encodes data in a specified content type.</span><pre>encode()</pre></a></li>
+<li class="method public "><a href="#method_printData" title="printData :: Prints the data and sends the appropriate Content-Type header."><span class="description">Prints the data and sends the appropriate Content-Type header.</span><pre>printData()</pre></a></li>
+<li class="method public "><a href="#method_sendCreatedHeader" title="sendCreatedHeader :: Sends a 201 created HTTP header."><span class="description">Sends a 201 created HTTP header.</span><pre>sendCreatedHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendForbiddenHeader" title="sendForbiddenHeader :: Sends a 403 restricted content header."><span class="description">Sends a 403 restricted content header.</span><pre>sendForbiddenHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendHeader" title="sendHeader :: Sends a custom header."><span class="description">Sends a custom header.</span><pre>sendHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendNotAcceptableHeader" title="sendNotAcceptableHeader :: Sends a 406 not acceptable header."><span class="description">Sends a 406 not acceptable header.</span><pre>sendNotAcceptableHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendNotFoundHeader" title="sendNotFoundHeader :: Sends a 404 not found header."><span class="description">Sends a 404 not found header.</span><pre>sendNotFoundHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendNotModifiedHeader" title="sendNotModifiedHeader :: Send a 304 not modified header, if the content hasn't changed according to
+  the headers sent in by the client."><span class="description">Send a 304 not modified header, if the content hasn't changed according to
+  the headers sent in by the client.</span><pre>sendNotModifiedHeader()</pre></a></li>
+<li class="method public "><a href="#method_sendPlainTextResponse" title="sendPlainTextResponse :: Send a plain text response."><span class="description">Send a plain text response.</span><pre>sendPlainTextResponse()</pre></a></li>
+<li class="method public "><a href="#method_sendServerErrorHeader" title="sendServerErrorHeader :: Sends a 500 server error header."><span class="description">Sends a 500 server error header.</span><pre>sendServerErrorHeader()</pre></a></li>
+<li class="method public "><a href="#method_setEncodeCallback" title="setEncodeCallback :: Set the encoding callback for a particular content type."><span class="description">Set the encoding callback for a particular content type.</span><pre>setEncodeCallback()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul>
+<li class="method private "><a href="#method___construct" title="__construct :: Forces use as a static class."><span class="description">Forces use as a static class.</span><pre>__construct()</pre></a></li>
+<li class="method private "><a href="#method_encodeKeyedArray" title="encodeKeyedArray :: Recursively encodes a keyed array to string."><span class="description">Recursively encodes a keyed array to string.</span><pre>encodeKeyedArray()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header private">» Private
+                    <ul><li class="property private "><a href="#property_encode_callbacks" title="$encode_callbacks :: Encoding callbacks."><span class="description">Encoding callbacks.</span><pre>$encode_callbacks</pre></a></li></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants
+                    <ul>
+<li class="constant  "><a href="#constant_encode" title="encode :: "><span class="description">encode</span><pre>encode</pre></a></li>
+<li class="constant  "><a href="#constant_printData" title="printData :: "><span class="description">printData</span><pre>printData</pre></a></li>
+<li class="constant  "><a href="#constant_sendCreatedHeader" title="sendCreatedHeader :: "><span class="description">sendCreatedHeader</span><pre>sendCreatedHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendForbiddenHeader" title="sendForbiddenHeader :: "><span class="description">sendForbiddenHeader</span><pre>sendForbiddenHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendHeader" title="sendHeader :: "><span class="description">sendHeader</span><pre>sendHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendNotAcceptableHeader" title="sendNotAcceptableHeader :: "><span class="description">sendNotAcceptableHeader</span><pre>sendNotAcceptableHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendNotFoundHeader" title="sendNotFoundHeader :: "><span class="description">sendNotFoundHeader</span><pre>sendNotFoundHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendNotModifiedHeader" title="sendNotModifiedHeader :: "><span class="description">sendNotModifiedHeader</span><pre>sendNotModifiedHeader</pre></a></li>
+<li class="constant  "><a href="#constant_sendPlainTextResponse" title="sendPlainTextResponse :: "><span class="description">sendPlainTextResponse</span><pre>sendPlainTextResponse</pre></a></li>
+<li class="constant  "><a href="#constant_sendServerErrorHeader" title="sendServerErrorHeader :: "><span class="description">sendServerErrorHeader</span><pre>sendServerErrorHeader</pre></a></li>
+<li class="constant  "><a href="#constant_setEncodeCallback" title="setEncodeCallback :: "><span class="description">setEncodeCallback</span><pre>setEncodeCallback</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\sResponse"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/sResponse.html">sResponse</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">Common non-file related HTTP response helper class.</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>copyright</th>
+<td>Copyright (c) 2012 Poluza.</td>
+</tr>
+<tr>
+<th>author</th>
+<td><a href="mailto:andrew@poluza.com">Andrew Udvare [au]</a></td>
+</tr>
+<tr>
+<th>license</th>
+<td><a href="http://www.opensource.org/licenses/mit-license.php">http://www.opensource.org/licenses/mit-license.php</a></td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Sutra.html">Sutra</a></td>
+</tr>
+<tr>
+<th>link</th>
+<td><a href="https://github.com/tatsh/sutra">https://github.com/tatsh/sutra</a></td>
+</tr>
+<tr>
+<th>version</th>
+<td>1.3</td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method_encode"></a><div class="element clickable method public method_encode" data-toggle="collapse" data-target=".method_encode .collapse">
+<h2>Encodes data in a specified content type.</h2>
+<pre>encode(mixed $data, string $content_type) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Default is
+  application/x-www-form-urlencoded.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Data to encode. Note that if the callback can only handle strings and the data is of type array, 'Array' will be printed.</p>
+</div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type to encode to.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded data.</div>
+</div></div>
+</div>
+<a id="method_printData"></a><div class="element clickable method public method_printData" data-toggle="collapse" data-target=".method_printData .collapse">
+<h2>Prints the data and sends the appropriate Content-Type header.</h2>
+<pre>printData(mixed $data, string $content_type) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>mixed</code><p>Data to print.</p></div>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type of the data. This is only the mimetype. It should NOT have other parts such as 'charset=utf-8'.</p>
+</div>
+</div></div>
+</div>
+<a id="method_sendCreatedHeader"></a><div class="element clickable method public method_sendCreatedHeader" data-toggle="collapse" data-target=".method_sendCreatedHeader .collapse">
+<h2>Sends a 201 created HTTP header.</h2>
+<pre>sendCreatedHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_sendForbiddenHeader"></a><div class="element clickable method public method_sendForbiddenHeader" data-toggle="collapse" data-target=".method_sendForbiddenHeader .collapse">
+<h2>Sends a 403 restricted content header.</h2>
+<pre>sendForbiddenHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_sendHeader"></a><div class="element clickable method public method_sendHeader" data-toggle="collapse" data-target=".method_sendHeader .collapse">
+<h2>Sends a custom header.</h2>
+<pre>sendHeader(string $key, string $value) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$key</h4>
+<code>string</code><p>Header name.</p></div>
+<div class="subelement argument">
+<h4>$value</h4>
+<code>string</code><p>Value.</p></div>
+</div></div>
+</div>
+<a id="method_sendNotAcceptableHeader"></a><div class="element clickable method public method_sendNotAcceptableHeader" data-toggle="collapse" data-target=".method_sendNotAcceptableHeader .collapse">
+<h2>Sends a 406 not acceptable header.</h2>
+<pre>sendNotAcceptableHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"><p>This is for when the client sends an
+  Accept header of types none of which can be satisfied by the server.</p></div></div></div>
+</div>
+<a id="method_sendNotFoundHeader"></a><div class="element clickable method public method_sendNotFoundHeader" data-toggle="collapse" data-target=".method_sendNotFoundHeader .collapse">
+<h2>Sends a 404 not found header.</h2>
+<pre>sendNotFoundHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_sendNotModifiedHeader"></a><div class="element clickable method public method_sendNotModifiedHeader" data-toggle="collapse" data-target=".method_sendNotModifiedHeader .collapse">
+<h2>Send a 304 not modified header, if the content hasn't changed according to
+  the headers sent in by the client.</h2>
+<pre>sendNotModifiedHeader(<a href="../classes/fTimestamp.html">\fTimestamp</a> | integer $last_modified, string $etag, integer $cache_time, boolean $accept_encoding) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$last_modified</h4>
+<code><a href="../classes/fTimestamp.html">\fTimestamp</a></code><code>integer</code><p>Time the file was last modified (fTimestamp object or UNIX timestamp).</p>
+</div>
+<div class="subelement argument">
+<h4>$etag</h4>
+<code>string</code><p>Etag to use for this request.</p></div>
+<div class="subelement argument">
+<h4>$cache_time</h4>
+<code>integer</code><p>Time in seconds to cache for. Default is 2 weeks.</p></div>
+<div class="subelement argument">
+<h4>$accept_encoding</h4>
+<code>boolean</code><p>Send Vary: Accept-Encoding header. Default is TRUE.</p>
+</div>
+</div></div>
+</div>
+<a id="method_sendPlainTextResponse"></a><div class="element clickable method public method_sendPlainTextResponse" data-toggle="collapse" data-target=".method_sendPlainTextResponse .collapse">
+<h2>Send a plain text response.</h2>
+<pre>sendPlainTextResponse(string $text) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Accepts variable arguments.</p></div>
+<table class="table table-bordered"><tr>
+<th>see</th>
+<td><a href="">\global\fText::compose()</a></td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$text</h4>
+<code>string</code><p>Text to send.</p></div>
+</div></div>
+</div>
+<a id="method_sendServerErrorHeader"></a><div class="element clickable method public method_sendServerErrorHeader" data-toggle="collapse" data-target=".method_sendServerErrorHeader .collapse">
+<h2>Sends a 500 server error header.</h2>
+<pre>sendServerErrorHeader() : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="method_setEncodeCallback"></a><div class="element clickable method public method_setEncodeCallback" data-toggle="collapse" data-target=".method_setEncodeCallback .collapse">
+<h2>Set the encoding callback for a particular content type.</h2>
+<pre>setEncodeCallback(string $content_type, string | array $cb) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$content_type</h4>
+<code>string</code><p>Content type such as 'application/xml'.</p>
+</div>
+<div class="subelement argument">
+<h4>$cb</h4>
+<code>string</code><code>array</code><p>Callback.</p></div>
+</div></div>
+</div>
+<a id="method___construct"></a><div class="element clickable method private method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Forces use as a static class.</h2>
+<pre>__construct() : <a href="../classes/sResponse.html">\sResponse</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/sResponse.html">\sResponse</a></code></div>
+</div></div>
+</div>
+<a id="method_encodeKeyedArray"></a><div class="element clickable method private method_encodeKeyedArray" data-toggle="collapse" data-target=".method_encodeKeyedArray .collapse">
+<h2>Recursively encodes a keyed array to string.</h2>
+<pre>encodeKeyedArray(array $data) : string</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$data</h4>
+<code>array</code><p>Data to encode.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The encoded data.</div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_encode_callbacks"> </a><div class="element clickable property private property_encode_callbacks" data-toggle="collapse" data-target=".property_encode_callbacks .collapse">
+<h2>Encoding callbacks.</h2>
+<pre>$encode_callbacks : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_encode"> </a><div class="element clickable constant  constant_encode" data-toggle="collapse" data-target=".constant_encode .collapse">
+<h2>encode</h2>
+<pre>encode </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_printData"> </a><div class="element clickable constant  constant_printData" data-toggle="collapse" data-target=".constant_printData .collapse">
+<h2>printData</h2>
+<pre>printData </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendCreatedHeader"> </a><div class="element clickable constant  constant_sendCreatedHeader" data-toggle="collapse" data-target=".constant_sendCreatedHeader .collapse">
+<h2>sendCreatedHeader</h2>
+<pre>sendCreatedHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendForbiddenHeader"> </a><div class="element clickable constant  constant_sendForbiddenHeader" data-toggle="collapse" data-target=".constant_sendForbiddenHeader .collapse">
+<h2>sendForbiddenHeader</h2>
+<pre>sendForbiddenHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendHeader"> </a><div class="element clickable constant  constant_sendHeader" data-toggle="collapse" data-target=".constant_sendHeader .collapse">
+<h2>sendHeader</h2>
+<pre>sendHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendNotAcceptableHeader"> </a><div class="element clickable constant  constant_sendNotAcceptableHeader" data-toggle="collapse" data-target=".constant_sendNotAcceptableHeader .collapse">
+<h2>sendNotAcceptableHeader</h2>
+<pre>sendNotAcceptableHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendNotFoundHeader"> </a><div class="element clickable constant  constant_sendNotFoundHeader" data-toggle="collapse" data-target=".constant_sendNotFoundHeader .collapse">
+<h2>sendNotFoundHeader</h2>
+<pre>sendNotFoundHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendNotModifiedHeader"> </a><div class="element clickable constant  constant_sendNotModifiedHeader" data-toggle="collapse" data-target=".constant_sendNotModifiedHeader .collapse">
+<h2>sendNotModifiedHeader</h2>
+<pre>sendNotModifiedHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendPlainTextResponse"> </a><div class="element clickable constant  constant_sendPlainTextResponse" data-toggle="collapse" data-target=".constant_sendPlainTextResponse .collapse">
+<h2>sendPlainTextResponse</h2>
+<pre>sendPlainTextResponse </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_sendServerErrorHeader"> </a><div class="element clickable constant  constant_sendServerErrorHeader" data-toggle="collapse" data-target=".constant_sendServerErrorHeader .collapse">
+<h2>sendServerErrorHeader</h2>
+<pre>sendServerErrorHeader </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_setEncodeCallback"> </a><div class="element clickable constant  constant_setEncodeCallback" data-toggle="collapse" data-target=".constant_setEncodeCallback .collapse">
+<h2>setEncodeCallback</h2>
+<pre>setEncodeCallback </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>

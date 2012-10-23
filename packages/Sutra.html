@@ -1,0 +1,497 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Sutra » Sutra</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Sutra</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Flourish.html"><i class="icon-folder-open"></i> Flourish</a></li>
+<li><a href="../packages/Sutra.html"><i class="icon-folder-open"></i> Sutra</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">269</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">2</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-map-marker"></i> Packages</li>
+<li>
+<a href="../packages/Sutra.html" title="Sutra"><i class="icon-folder-open"></i>Sutra</a><ul class="nav nav-list nav-packages"></ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-function"></i> Functions</li>
+<li class="function  "><a href="#function_fDate" title="fDate :: "><span class="description">fDate()
+        </span><pre>fDate</pre></a></li>
+<li class="function  "><a href="#function_fDirectory" title="fDirectory :: "><span class="description">fDirectory()
+        </span><pre>fDirectory</pre></a></li>
+<li class="function  "><a href="#function_fEmail" title="fEmail :: "><span class="description">fEmail()
+        </span><pre>fEmail</pre></a></li>
+<li class="function  "><a href="#function_fFile" title="fFile :: "><span class="description">fFile()
+        </span><pre>fFile</pre></a></li>
+<li class="function  "><a href="#function_fImage" title="fImage :: "><span class="description">fImage()
+        </span><pre>fImage</pre></a></li>
+<li class="function  "><a href="#function_fMoney" title="fMoney :: "><span class="description">fMoney()
+        </span><pre>fMoney</pre></a></li>
+<li class="function  "><a href="#function_fNumber" title="fNumber :: "><span class="description">fNumber()
+        </span><pre>fNumber</pre></a></li>
+<li class="function  "><a href="#function_fTime" title="fTime :: "><span class="description">fTime()
+        </span><pre>fTime</pre></a></li>
+<li class="function  "><a href="#function_fTimestamp" title="fTimestamp :: "><span class="description">fTimestamp()
+        </span><pre>fTimestamp</pre></a></li>
+<li class="function  "><a href="#function_sHTTPRequest" title="sHTTPRequest :: "><span class="description">sHTTPRequest()
+        </span><pre>sHTTPRequest</pre></a></li>
+<li class="function  "><a href="#function_sImage" title="sImage :: "><span class="description">sImage()
+        </span><pre>sImage</pre></a></li>
+<li class="function  "><a href="#function_sNumber" title="sNumber :: "><span class="description">sNumber()
+        </span><pre>sNumber</pre></a></li>
+<li class="function  "><a href="#function_sObject" title="sObject :: "><span class="description">sObject()
+        </span><pre>sObject</pre></a></li>
+<li class="function  "><a href="#function_sProcess" title="sProcess :: "><span class="description">sProcess()
+        </span><pre>sProcess</pre></a></li>
+<li class="function  "><a href="#function_sTimestamp" title="sTimestamp :: "><span class="description">sTimestamp()
+        </span><pre>sTimestamp</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-class"></i> Classes</li>
+<li><a href="#sProcess" title="Manages processes external to PHP, including interactive processes.">sProcess</a></li>
+<li><a href="#sString" title="Provides object-oriented interface to strings.">sString</a></li>
+<li><a href="#sORMRelatedImage" title="Provides image to active record relationship functionality.">sORMRelatedImage</a></li>
+<li><a href="#sHTML" title="Library to help with rendering HTML tags cleanly and validly.">sHTML</a></li>
+<li><a href="#sJSONP" title="Extension to Flourish fJSON class to provide methods for JSONP support.">sJSONP</a></li>
+<li><a href="#sArray" title="An object-oriented interface to numerically indexed arrays.">sArray</a></li>
+<li><a href="#sAuthorization" title="Allows defining and checking user authentication.">sAuthorization</a></li>
+<li><a href="#sRequest" title="Manages POST requests.">sRequest</a></li>
+<li><a href="#sLoader" title="Manages loading of classes.">sLoader</a></li>
+<li><a href="#sCore" title="This class is optional to use.">sCore</a></li>
+<li><a href="#sORMJSON" title="Extension to fORMJSON.">sORMJSON</a></li>
+<li><a href="#sTimestamp" title="Utility functions for timestamp and time/date/time zone representations.">sTimestamp</a></li>
+<li><a href="#sResponse" title="Common non-file related HTTP response helper class.">sResponse</a></li>
+<li><a href="#sTemplate" title="Manages templating.">sTemplate</a></li>
+<li><a href="#sCache" title="Extension to sCache.">sCache</a></li>
+<li><a href="#sObject" title="Provides an object-oriented interface to associative arrays.">sObject</a></li>
+<li><a href="#sCRUDForm" title="Creates an HTML form based on an fActiveRecord class.">sCRUDForm</a></li>
+<li><a href="#sNumber" title="Provides getting ordinal numbers as an extension to fNumber.">sNumber</a></li>
+<li><a href="#sProcessException" title="Exceptions specific to the class sProcess.">sProcessException</a></li>
+<li><a href="#sImage" title="Provides more methods to fImage, most notably rotation based on EXIF data
+  which may be present in the file.">sImage</a></li>
+<li><a href="#sGrammar" title="Extends fGrammar.">sGrammar</a></li>
+<li><a href="#sHTTPRequest" title="Interface to making HTTP requests.">sHTTPRequest</a></li>
+<li class="nav-header">
+<i class="icon-custom icon-constant"></i> Constants</li>
+<li class="constant  "><a href="#constant_matches%5B1%5D" title="$matches[1] :: "><span class="description">$matches[1]</span><pre>$matches[1]</pre></a></li>
+<li class="constant  "><a href="#constant_E_DEPRECATED" title="E_DEPRECATED :: "><span class="description">E_DEPRECATED</span><pre>E_DEPRECATED</pre></a></li>
+<li class="constant  "><a href="#constant_E_RECOVERABLE_ERROR" title="E_RECOVERABLE_ERROR :: "><span class="description">E_RECOVERABLE_ERROR</span><pre>E_RECOVERABLE_ERROR</pre></a></li>
+<li class="constant  "><a href="#constant_E_USER_DEPRECATED" title="E_USER_DEPRECATED :: "><span class="description">E_USER_DEPRECATED</span><pre>E_USER_DEPRECATED</pre></a></li>
+</ul>
+</div>
+<div class="span8 package-contents">
+<ul class="breadcrumb"><li>
+<a href="../index.html"><i class="icon-folder-open"></i></a><span class="divider">\</span><li class="active"><a href="../packages/Sutra.html">Sutra</a></li>
+</li></ul>
+<div class="package-indent">
+<h3>
+<i class="icon-custom icon-function"></i> Functions</h3>
+<a id="function_fDate"></a><div class="element clickable function  function_fDate" data-toggle="collapse" data-target=".function_fDate .collapse">
+<h2>fDate()
+        </h2>
+<pre>fDate($date) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$date</h4></div>
+</div></div>
+</div>
+<a id="function_fDirectory"></a><div class="element clickable function  function_fDirectory" data-toggle="collapse" data-target=".function_fDirectory .collapse">
+<h2>fDirectory()
+        </h2>
+<pre>fDirectory($directory) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$directory</h4></div>
+</div></div>
+</div>
+<a id="function_fEmail"></a><div class="element clickable function  function_fEmail" data-toggle="collapse" data-target=".function_fEmail .collapse">
+<h2>fEmail()
+        </h2>
+<pre>fEmail() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="function_fFile"></a><div class="element clickable function  function_fFile" data-toggle="collapse" data-target=".function_fFile .collapse">
+<h2>fFile()
+        </h2>
+<pre>fFile($file) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file</h4></div>
+</div></div>
+</div>
+<a id="function_fImage"></a><div class="element clickable function  function_fImage" data-toggle="collapse" data-target=".function_fImage .collapse">
+<h2>fImage()
+        </h2>
+<pre>fImage($file_path) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file_path</h4></div>
+</div></div>
+</div>
+<a id="function_fMoney"></a><div class="element clickable function  function_fMoney" data-toggle="collapse" data-target=".function_fMoney .collapse">
+<h2>fMoney()
+        </h2>
+<pre>fMoney($amount, $currency) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$amount</h4></div>
+<div class="subelement argument"><h4>$currency</h4></div>
+</div></div>
+</div>
+<a id="function_fNumber"></a><div class="element clickable function  function_fNumber" data-toggle="collapse" data-target=".function_fNumber .collapse">
+<h2>fNumber()
+        </h2>
+<pre>fNumber($value, $scale) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$scale</h4></div>
+</div></div>
+</div>
+<a id="function_fTime"></a><div class="element clickable function  function_fTime" data-toggle="collapse" data-target=".function_fTime .collapse">
+<h2>fTime()
+        </h2>
+<pre>fTime($time) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$time</h4></div>
+</div></div>
+</div>
+<a id="function_fTimestamp"></a><div class="element clickable function  function_fTimestamp" data-toggle="collapse" data-target=".function_fTimestamp .collapse">
+<h2>fTimestamp()
+        </h2>
+<pre>fTimestamp($datetime, $timezone) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$datetime</h4></div>
+<div class="subelement argument"><h4>$timezone</h4></div>
+</div></div>
+</div>
+<a id="function_sHTTPRequest"></a><div class="element clickable function  function_sHTTPRequest" data-toggle="collapse" data-target=".function_sHTTPRequest .collapse">
+<h2>sHTTPRequest()
+        </h2>
+<pre>sHTTPRequest($url, $method, $timeout) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$url</h4></div>
+<div class="subelement argument"><h4>$method</h4></div>
+<div class="subelement argument"><h4>$timeout</h4></div>
+</div></div>
+</div>
+<a id="function_sImage"></a><div class="element clickable function  function_sImage" data-toggle="collapse" data-target=".function_sImage .collapse">
+<h2>sImage()
+        </h2>
+<pre>sImage($file_path, $skip_checks) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$file_path</h4></div>
+<div class="subelement argument"><h4>$skip_checks</h4></div>
+</div></div>
+</div>
+<a id="function_sNumber"></a><div class="element clickable function  function_sNumber" data-toggle="collapse" data-target=".function_sNumber .collapse">
+<h2>sNumber()
+        </h2>
+<pre>sNumber($value, $scale) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$value</h4></div>
+<div class="subelement argument"><h4>$scale</h4></div>
+</div></div>
+</div>
+<a id="function_sObject"></a><div class="element clickable function  function_sObject" data-toggle="collapse" data-target=".function_sObject .collapse">
+<h2>sObject()
+        </h2>
+<pre>sObject(array $arg) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$arg</h4></div>
+</div></div>
+</div>
+<a id="function_sProcess"></a><div class="element clickable function  function_sProcess" data-toggle="collapse" data-target=".function_sProcess .collapse">
+<h2>sProcess()
+        </h2>
+<pre>sProcess($name) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$name</h4></div>
+</div></div>
+</div>
+<a id="function_sTimestamp"></a><div class="element clickable function  function_sTimestamp" data-toggle="collapse" data-target=".function_sTimestamp .collapse">
+<h2>sTimestamp()
+        </h2>
+<pre>sTimestamp($datetime, $timezone) </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$datetime</h4></div>
+<div class="subelement argument"><h4>$timezone</h4></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-class"></i> Classes and interfaces</h3>
+<div id="sArray" class="element ajax clickable class">
+<h1>sArray<a href="../classes/sArray.html">¶</a>
+</h1>
+<p class="short_description">An object-oriented interface to numerically indexed arrays.</p>
+<div class="details collapse"></div>
+<a href="../classes/sArray.html" class="more">« More »</a>
+</div>
+<div id="sAuthorization" class="element ajax clickable class">
+<h1>sAuthorization<a href="../classes/sAuthorization.html">¶</a>
+</h1>
+<p class="short_description">Allows defining and checking user authentication.</p>
+<div class="details collapse"></div>
+<a href="../classes/sAuthorization.html" class="more">« More »</a>
+</div>
+<div id="sCRUDForm" class="element ajax clickable class">
+<h1>sCRUDForm<a href="../classes/sCRUDForm.html">¶</a>
+</h1>
+<p class="short_description">Creates an HTML form based on an fActiveRecord class.</p>
+<div class="details collapse"></div>
+<a href="../classes/sCRUDForm.html" class="more">« More »</a>
+</div>
+<div id="sCache" class="element ajax clickable class">
+<h1>sCache<a href="../classes/sCache.html">¶</a>
+</h1>
+<p class="short_description">Extension to sCache.</p>
+<div class="details collapse"></div>
+<a href="../classes/sCache.html" class="more">« More »</a>
+</div>
+<div id="sCore" class="element ajax clickable class">
+<h1>sCore<a href="../classes/sCore.html">¶</a>
+</h1>
+<p class="short_description">This class is optional to use.</p>
+<div class="details collapse"></div>
+<a href="../classes/sCore.html" class="more">« More »</a>
+</div>
+<div id="sGrammar" class="element ajax clickable class">
+<h1>sGrammar<a href="../classes/sGrammar.html">¶</a>
+</h1>
+<p class="short_description">Extends fGrammar.</p>
+<div class="details collapse"></div>
+<a href="../classes/sGrammar.html" class="more">« More »</a>
+</div>
+<div id="sHTML" class="element ajax clickable class">
+<h1>sHTML<a href="../classes/sHTML.html">¶</a>
+</h1>
+<p class="short_description">Library to help with rendering HTML tags cleanly and validly.</p>
+<div class="details collapse"></div>
+<a href="../classes/sHTML.html" class="more">« More »</a>
+</div>
+<div id="sHTTPRequest" class="element ajax clickable class">
+<h1>sHTTPRequest<a href="../classes/sHTTPRequest.html">¶</a>
+</h1>
+<p class="short_description">Interface to making HTTP requests.</p>
+<div class="details collapse"></div>
+<a href="../classes/sHTTPRequest.html" class="more">« More »</a>
+</div>
+<div id="sImage" class="element ajax clickable class">
+<h1>sImage<a href="../classes/sImage.html">¶</a>
+</h1>
+<p class="short_description">Provides more methods to fImage, most notably rotation based on EXIF data
+  which may be present in the file.</p>
+<div class="details collapse"></div>
+<a href="../classes/sImage.html" class="more">« More »</a>
+</div>
+<div id="sJSONP" class="element ajax clickable class">
+<h1>sJSONP<a href="../classes/sJSONP.html">¶</a>
+</h1>
+<p class="short_description">Extension to Flourish fJSON class to provide methods for JSONP support.</p>
+<div class="details collapse"></div>
+<a href="../classes/sJSONP.html" class="more">« More »</a>
+</div>
+<div id="sLoader" class="element ajax clickable class">
+<h1>sLoader<a href="../classes/sLoader.html">¶</a>
+</h1>
+<p class="short_description">Manages loading of classes.</p>
+<div class="details collapse"></div>
+<a href="../classes/sLoader.html" class="more">« More »</a>
+</div>
+<div id="sNumber" class="element ajax clickable class">
+<h1>sNumber<a href="../classes/sNumber.html">¶</a>
+</h1>
+<p class="short_description">Provides getting ordinal numbers as an extension to fNumber.</p>
+<div class="details collapse"></div>
+<a href="../classes/sNumber.html" class="more">« More »</a>
+</div>
+<div id="sORMJSON" class="element ajax clickable class">
+<h1>sORMJSON<a href="../classes/sORMJSON.html">¶</a>
+</h1>
+<p class="short_description">Extension to fORMJSON.</p>
+<div class="details collapse"></div>
+<a href="../classes/sORMJSON.html" class="more">« More »</a>
+</div>
+<div id="sORMRelatedImage" class="element ajax clickable class">
+<h1>sORMRelatedImage<a href="../classes/sORMRelatedImage.html">¶</a>
+</h1>
+<p class="short_description">Provides image to active record relationship functionality.</p>
+<div class="details collapse"></div>
+<a href="../classes/sORMRelatedImage.html" class="more">« More »</a>
+</div>
+<div id="sObject" class="element ajax clickable class">
+<h1>sObject<a href="../classes/sObject.html">¶</a>
+</h1>
+<p class="short_description">Provides an object-oriented interface to associative arrays.</p>
+<div class="details collapse"></div>
+<a href="../classes/sObject.html" class="more">« More »</a>
+</div>
+<div id="sProcess" class="element ajax clickable class">
+<h1>sProcess<a href="../classes/sProcess.html">¶</a>
+</h1>
+<p class="short_description">Manages processes external to PHP, including interactive processes.</p>
+<div class="details collapse"></div>
+<a href="../classes/sProcess.html" class="more">« More »</a>
+</div>
+<div id="sProcessException" class="element ajax clickable class">
+<h1>sProcessException<a href="../classes/sProcessException.html">¶</a>
+</h1>
+<p class="short_description">Exceptions specific to the class sProcess.</p>
+<div class="details collapse"></div>
+<a href="../classes/sProcessException.html" class="more">« More »</a>
+</div>
+<div id="sRequest" class="element ajax clickable class">
+<h1>sRequest<a href="../classes/sRequest.html">¶</a>
+</h1>
+<p class="short_description">Manages POST requests.</p>
+<div class="details collapse"></div>
+<a href="../classes/sRequest.html" class="more">« More »</a>
+</div>
+<div id="sResponse" class="element ajax clickable class">
+<h1>sResponse<a href="../classes/sResponse.html">¶</a>
+</h1>
+<p class="short_description">Common non-file related HTTP response helper class.</p>
+<div class="details collapse"></div>
+<a href="../classes/sResponse.html" class="more">« More »</a>
+</div>
+<div id="sString" class="element ajax clickable class">
+<h1>sString<a href="../classes/sString.html">¶</a>
+</h1>
+<p class="short_description">Provides object-oriented interface to strings.</p>
+<div class="details collapse"></div>
+<a href="../classes/sString.html" class="more">« More »</a>
+</div>
+<div id="sTemplate" class="element ajax clickable class">
+<h1>sTemplate<a href="../classes/sTemplate.html">¶</a>
+</h1>
+<p class="short_description">Manages templating.</p>
+<div class="details collapse"></div>
+<a href="../classes/sTemplate.html" class="more">« More »</a>
+</div>
+<div id="sTimestamp" class="element ajax clickable class">
+<h1>sTimestamp<a href="../classes/sTimestamp.html">¶</a>
+</h1>
+<p class="short_description">Utility functions for timestamp and time/date/time zone representations.</p>
+<div class="details collapse"></div>
+<a href="../classes/sTimestamp.html" class="more">« More »</a>
+</div>
+<h3>
+<i class="icon-custom icon-constant"></i> Constants</h3>
+<a id="constant_matches[1]"> </a><div class="element clickable constant  constant_matches[1]" data-toggle="collapse" data-target=".constant_matches[1] .collapse">
+<h2>$matches[1]</h2>
+<pre>$matches[1] </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_E_DEPRECATED"> </a><div class="element clickable constant  constant_E_DEPRECATED" data-toggle="collapse" data-target=".constant_E_DEPRECATED .collapse">
+<h2>E_DEPRECATED</h2>
+<pre>E_DEPRECATED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_E_RECOVERABLE_ERROR"> </a><div class="element clickable constant  constant_E_RECOVERABLE_ERROR" data-toggle="collapse" data-target=".constant_E_RECOVERABLE_ERROR .collapse">
+<h2>E_RECOVERABLE_ERROR</h2>
+<pre>E_RECOVERABLE_ERROR </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="constant_E_USER_DEPRECATED"> </a><div class="element clickable constant  constant_E_USER_DEPRECATED" data-toggle="collapse" data-target=".constant_E_USER_DEPRECATED .collapse">
+<h2>E_USER_DEPRECATED</h2>
+<pre>E_USER_DEPRECATED </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+</div>
+</body>
+</html>
