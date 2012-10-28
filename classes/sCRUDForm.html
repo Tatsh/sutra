@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -80,6 +80,7 @@
 <li class="method public "><a href="#method_setFieldAttributes" title="setFieldAttributes :: Set a specific field's attributes."><span class="description">Set a specific field's attributes.</span><pre>setFieldAttributes()</pre></a></li>
 <li class="method public "><a href="#method_setFieldOrder" title="setFieldOrder :: Sets the field order."><span class="description">Sets the field order.</span><pre>setFieldOrder()</pre></a></li>
 <li class="method public "><a href="#method_setMaxFileUploadSize" title="setMaxFileUploadSize :: Set the maximum file upload size."><span class="description">Set the maximum file upload size.</span><pre>setMaxFileUploadSize()</pre></a></li>
+<li class="method public "><a href="#method_setTemplate" title="setTemplate :: Template to use alternatively for custom styling."><span class="description">Template to use alternatively for custom styling.</span><pre>setTemplate()</pre></a></li>
 </ul>
 </li>
 <li class="nav-header private">» Private
@@ -90,6 +91,7 @@
 <li class="method private "><a href="#method_isRequiredField" title="isRequiredField :: Checks if the field is required."><span class="description">Checks if the field is required.</span><pre>isRequiredField()</pre></a></li>
 <li class="method private "><a href="#method_makeAttributesArray" title="makeAttributesArray :: Makes the attributes array for the field."><span class="description">Makes the attributes array for the field.</span><pre>makeAttributesArray()</pre></a></li>
 <li class="method private "><a href="#method_makeElement" title="makeElement :: Makes an HTML form element wrapped in a div."><span class="description">Makes an HTML form element wrapped in a div.</span><pre>makeElement()</pre></a></li>
+<li class="method private "><a href="#method_makeWithTemplate" title="makeWithTemplate :: Generates the form HTML with the template specified."><span class="description">Generates the form HTML with the template specified.</span><pre>makeWithTemplate()</pre></a></li>
 <li class="method private "><a href="#method_parseRelationships" title="parseRelationships :: Parses the many-to-one relationships of the table."><span class="description">Parses the many-to-one relationships of the table.</span><pre>parseRelationships()</pre></a></li>
 <li class="method private "><a href="#method_parseSchema" title="parseSchema :: Parses the fields of the schema."><span class="description">Parses the fields of the schema.</span><pre>parseSchema()</pre></a></li>
 <li class="method private "><a href="#method_setPostValues" title="setPostValues :: Sets POST values from the fActiveRecord instance."><span class="description">Sets POST values from the fActiveRecord instance.</span><pre>setPostValues()</pre></a></li>
@@ -125,6 +127,7 @@
 <li class="property private "><a href="#property_table_columns" title="$table_columns :: The columns array of the table."><span class="description">The columns array of the table.</span><pre>$table_columns</pre></a></li>
 <li class="property private "><a href="#property_table_name" title="$table_name :: The table name."><span class="description">The table name.</span><pre>$table_name</pre></a></li>
 <li class="property private "><a href="#property_table_relationships" title="$table_relationships :: The relationships array of the table."><span class="description">The relationships array of the table.</span><pre>$table_relationships</pre></a></li>
+<li class="property private "><a href="#property_template" title="$template :: Template to use alternatively."><span class="description">Template to use alternatively.</span><pre>$template</pre></a></li>
 <li class="property private "><a href="#property_valid_field_types" title="$valid_field_types :: Valid field types."><span class="description">Valid field types.</span><pre>$valid_field_types</pre></a></li>
 </ul>
 </li>
@@ -504,6 +507,34 @@
 <code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
 </div></div>
 </div>
+<a id="method_setTemplate"></a><div class="element clickable method public method_setTemplate" data-toggle="collapse" data-target=".method_setTemplate .collapse">
+<h2>Template to use alternatively for custom styling.</h2>
+<pre>setTemplate(string $template_name) : <a href="../classes/sCRUDForm.html">\sCRUDForm</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>All input field HTML
+  will be passed as variables to the template by their column name.</p>
+
+<p>No containers or labels are generated when templating is used.</p>
+
+<p>The form attributes will be passed as variable <code>$form_attr</code> to the
+  template.</p>
+
+<p>The buttons will be passed as an array <code>$buttons</code> with each piece being
+  the button HTML.</p></div>
+<table class="table table-bordered"><tr>
+<th>note</th>
+<td>Requires sTemplate.</td>
+</tr></table>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$template_name</h4>
+<code>string</code><p>Template name.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code><a href="../classes/sCRUDForm.html">\sCRUDForm</a></code>The object to allow method chaining.</div>
+</div></div>
+</div>
 <a id="method_addSpecialAttributes"></a><div class="element clickable method private method_addSpecialAttributes" data-toggle="collapse" data-target=".method_addSpecialAttributes .collapse">
 <h2>Adds special attributes to the attributes array depending on field type.</h2>
 <pre>addSpecialAttributes(array $attr, array $info, string $field_type) : void</pre>
@@ -615,7 +646,7 @@
 </div>
 <a id="method_makeElement"></a><div class="element clickable method private method_makeElement" data-toggle="collapse" data-target=".method_makeElement .collapse">
 <h2>Makes an HTML form element wrapped in a div.</h2>
-<pre>makeElement(string $type, string $name, string $label, array $attr) : string</pre>
+<pre>makeElement(string $type, string $name, string $label, array $attr, boolean $wrap) : string</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -632,9 +663,34 @@
 <div class="subelement argument">
 <h4>$attr</h4>
 <code>array</code><p>Array of fields.</p></div>
+<div class="subelement argument">
+<h4>$wrap</h4>
+<code>boolean</code><p>If this should wrap the field.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>string</code>HTML of the field.</div>
+</div></div>
+</div>
+<a id="method_makeWithTemplate"></a><div class="element clickable method private method_makeWithTemplate" data-toggle="collapse" data-target=".method_makeWithTemplate .collapse">
+<h2>Generates the form HTML with the template specified.</h2>
+<pre>makeWithTemplate(\fDatabase $db, array $no_value_types, array $special_value_types) : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$db</h4>
+<code><a href="../classes/fDatabase.html">\fDatabase</a></code><p>Database.</p></div>
+<div class="subelement argument">
+<h4>$no_value_types</h4>
+<code>array</code><p>Array of element types that have <code>value</code> attribute.</p>
+</div>
+<div class="subelement argument">
+<h4>$special_value_types</h4>
+<code>array</code><p>Array of special input element types.</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The form HTML.</div>
 </div></div>
 </div>
 <a id="method_parseRelationships"></a><div class="element clickable method private method_parseRelationships" data-toggle="collapse" data-target=".method_parseRelationships .collapse">
@@ -863,6 +919,12 @@
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_template"> </a><div class="element clickable property private property_template" data-toggle="collapse" data-target=".property_template .collapse">
+<h2>Template to use alternatively.</h2>
+<pre>$template : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_valid_field_types"> </a><div class="element clickable property private property_valid_field_types" data-toggle="collapse" data-target=".property_valid_field_types .collapse">
 <h2>Valid field types.</h2>
 <pre>$valid_field_types : array</pre>
@@ -885,7 +947,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:50-07:00.<br></footer></div>
 </div>
 </body>
 </html>

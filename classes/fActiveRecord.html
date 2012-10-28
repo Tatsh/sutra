@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -60,6 +60,7 @@
 <i class="icon-custom icon-method"></i> Methods
                     <ul>
 <li class="method public "><a href="#method___call" title="__call :: Handles all method calls for columns, related records and hook callbacks"><span class="description">Handles all method calls for columns, related records and hook callbacks</span><pre>__call()</pre></a></li>
+<li class="method public "><a href="#method___callStatic" title="__callStatic :: Handles dynamically registered static method callbacks"><span class="description">Handles dynamically registered static method callbacks</span><pre>__callStatic()</pre></a></li>
 <li class="method public "><a href="#method___construct" title="__construct :: Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded"><span class="description">Creates a new record or loads one from the database - if a primary key or unique key is provided the record will be loaded</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_clearIdentityMap" title="clearIdentityMap :: Clears the identity map"><span class="description">Clears the identity map</span><pre>clearIdentityMap()</pre></a></li>
 <li class="method public "><a href="#method_delete" title="delete :: Deletes a record from the database, but does not destroy the object"><span class="description">Deletes a record from the database, but does not destroy the object</span><pre>delete()</pre></a></li>
@@ -106,6 +107,7 @@
 <li class="property protected "><a href="#property_related_records" title="$related_records :: Records that are related to the current record via some relationship"><span class="description">Records that are related to the current record via some relationship</span><pre>$related_records</pre></a></li>
 <li class="property protected "><a href="#property_replicate_level" title="$replicate_level :: Keeps track of the recursive call level of replication so we can clear the map"><span class="description">Keeps track of the recursive call level of replication so we can clear the map</span><pre>$replicate_level</pre></a></li>
 <li class="property protected "><a href="#property_replicate_map" title="$replicate_map :: Keeps a list of records that have been replicated"><span class="description">Keeps a list of records that have been replicated</span><pre>$replicate_map</pre></a></li>
+<li class="property protected "><a href="#property_static_callback_cache" title="$static_callback_cache :: Caches callbacks for static methods"><span class="description">Caches callbacks for static methods</span><pre>$static_callback_cache</pre></a></li>
 <li class="property protected "><a href="#property_unescape_map" title="$unescape_map :: Contains a list of what columns in each class need to be unescaped and what data type they are"><span class="description">Contains a list of what columns in each class need to be unescaped and what data type they are</span><pre>$unescape_map</pre></a></li>
 <li class="property protected "><a href="#property_values" title="$values :: The values for this record"><span class="description">The values for this record</span><pre>$values</pre></a></li>
 </ul>
@@ -156,6 +158,10 @@ dynamically handles retrieving and storing related records.</p></div>
 <td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
 </tr>
 <tr>
+<th>author</th>
+<td><a href="mailto:jeff.turcotte@gmail.com">Jeff Turcotte [jt]</a></td>
+</tr>
+<tr>
 <th>license</th>
 <td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
 </tr>
@@ -169,7 +175,11 @@ dynamically handles retrieving and storing related records.</p></div>
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b81</td>
+<td>1.0.0b82</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b82  Added support for registering methods for __callStatic() [jt, 2011-07-25]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -523,6 +533,31 @@ will be delegated via this method.</p></div>
 <div class="subelement argument">
 <h4>$parameters</h4>
 <code>array</code><p>The parameters passed</p></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>mixed</code>The value returned by the method called</div>
+</div></div>
+</div>
+<a id="method___callStatic"></a><div class="element clickable method public method___callStatic" data-toggle="collapse" data-target=".method___callStatic .collapse">
+<h2>Handles dynamically registered static method callbacks</h2>
+<pre>__callStatic(string $method_name, array $parameters) : mixed</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Static method callbacks registered through fORM::registerActiveRecordStaticMethod()
+will be delegated via this method. Both this and fORM::registerActiveRecordStaticMethod
+are available to PHP 5.3+ only.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$method_name</h4>
+<code>string</code><p>The name of the method called</p></div>
+<div class="subelement argument">
+<h4>$parameters</h4>
+<code>array</code><p>The parameters passed</p></div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>When the method cannot be found</td>
+</tr></table>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The value returned by the method called</div>
@@ -977,6 +1012,12 @@ class handles most of the interaction with this array.</p></div></div></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_static_callback_cache"> </a><div class="element clickable property protected property_static_callback_cache" data-toggle="collapse" data-target=".property_static_callback_cache .collapse">
+<h2>Caches callbacks for static methods</h2>
+<pre>$static_callback_cache : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_unescape_map"> </a><div class="element clickable property protected property_unescape_map" data-toggle="collapse" data-target=".property_unescape_map .collapse">
 <h2>Contains a list of what columns in each class need to be unescaped and what data type they are</h2>
 <pre>$unescape_map : array</pre>
@@ -1047,7 +1088,7 @@ with the value being the current value.</p></div></div></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:51-07:00.<br></footer></div>
 </div>
 </body>
 </html>

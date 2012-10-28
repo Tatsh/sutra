@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -67,6 +67,7 @@
 <li class="method public "><a href="#method_overrideColumnName" title="overrideColumnName :: Allows overriding of default column names"><span class="description">Allows overriding of default column names</span><pre>overrideColumnName()</pre></a></li>
 <li class="method public "><a href="#method_overrideRecordName" title="overrideRecordName :: Allows overriding of default record names"><span class="description">Allows overriding of default record names</span><pre>overrideRecordName()</pre></a></li>
 <li class="method public "><a href="#method_registerActiveRecordMethod" title="registerActiveRecordMethod :: Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__call() or hits a predefined method hook"><span class="description">Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__call() or hits a predefined method hook</span><pre>registerActiveRecordMethod()</pre></a></li>
+<li class="method public "><a href="#method_registerActiveRecordStaticMethod" title="registerActiveRecordStaticMethod :: Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__callStatic() or hits a predefined method hook"><span class="description">Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__callStatic() or hits a predefined method hook</span><pre>registerActiveRecordStaticMethod()</pre></a></li>
 <li class="method public "><a href="#method_registerHookCallback" title="registerHookCallback :: Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook"><span class="description">Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook</span><pre>registerHookCallback()</pre></a></li>
 <li class="method public "><a href="#method_registerInspectCallback" title="registerInspectCallback :: Registers a callback to modify the results of fActiveRecord::inspect() methods"><span class="description">Registers a callback to modify the results of fActiveRecord::inspect() methods</span><pre>registerInspectCallback()</pre></a></li>
 <li class="method public "><a href="#method_registerObjectifyCallback" title="registerObjectifyCallback :: Registers a callback for when ::objectify() is called on a specific column"><span class="description">Registers a callback for when ::objectify() is called on a specific column</span><pre>registerObjectifyCallback()</pre></a></li>
@@ -87,6 +88,7 @@
 <li class="nav-header private">» Private
                     <ul>
 <li class="property private "><a href="#property_active_record_method_callbacks" title="$active_record_method_callbacks :: An array of `{method} =&gt; {callback}` mappings for fActiveRecord"><span class="description">An array of `{method} =&gt; {callback}` mappings for fActiveRecord</span><pre>$active_record_method_callbacks</pre></a></li>
+<li class="property private "><a href="#property_active_record_static_method_callbacks" title="$active_record_static_method_callbacks :: An array of `{static_method} =&gt; {callback}` mappings for fActiveRecord"><span class="description">An array of `{static_method} =&gt; {callback}` mappings for fActiveRecord</span><pre>$active_record_static_method_callbacks</pre></a></li>
 <li class="property private "><a href="#property_cache" title="$cache :: Cache for repetitive computation"><span class="description">Cache for repetitive computation</span><pre>$cache</pre></a></li>
 <li class="property private "><a href="#property_class_database_map" title="$class_database_map :: Custom mappings for class -&gt; database"><span class="description">Custom mappings for class -&gt; database</span><pre>$class_database_map</pre></a></li>
 <li class="property private "><a href="#property_class_table_map" title="$class_table_map :: Custom mappings for class &lt;-&gt; table"><span class="description">Custom mappings for class &lt;-&gt; table</span><pre>$class_table_map</pre></a></li>
@@ -127,6 +129,7 @@
 <li class="constant  "><a href="#constant_overrideRecordName" title="overrideRecordName :: "><span class="description">overrideRecordName</span><pre>overrideRecordName</pre></a></li>
 <li class="constant  "><a href="#constant_parseMethod" title="parseMethod :: "><span class="description">parseMethod</span><pre>parseMethod</pre></a></li>
 <li class="constant  "><a href="#constant_registerActiveRecordMethod" title="registerActiveRecordMethod :: "><span class="description">registerActiveRecordMethod</span><pre>registerActiveRecordMethod</pre></a></li>
+<li class="constant  "><a href="#constant_registerActiveRecordStaticMethod" title="registerActiveRecordStaticMethod :: "><span class="description">registerActiveRecordStaticMethod</span><pre>registerActiveRecordStaticMethod</pre></a></li>
 <li class="constant  "><a href="#constant_registerHookCallback" title="registerHookCallback :: "><span class="description">registerHookCallback</span><pre>registerHookCallback</pre></a></li>
 <li class="constant  "><a href="#constant_registerInspectCallback" title="registerInspectCallback :: "><span class="description">registerInspectCallback</span><pre>registerInspectCallback</pre></a></li>
 <li class="constant  "><a href="#constant_registerObjectifyCallback" title="registerObjectifyCallback :: "><span class="description">registerObjectifyCallback</span><pre>registerObjectifyCallback</pre></a></li>
@@ -166,6 +169,10 @@
 <td><a href="mailto:will@flourishlib.com">Will Bond [wb]</a></td>
 </tr>
 <tr>
+<th>author</th>
+<td><a href="mailto:jeff.turcotte@gmail.com">Jeff Turcotte [jt]</a></td>
+</tr>
+<tr>
 <th>license</th>
 <td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
 </tr>
@@ -179,7 +186,11 @@
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b28</td>
+<td>1.0.0b29</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b29  Added ::registerActiveRecordStaticMethod() for static hooks in PHP 5.3 [jt, 2012-07-25]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -452,6 +463,40 @@ on the class.</p></div>
 </div>
 </div></div>
 </div>
+<a id="method_registerActiveRecordStaticMethod"></a><div class="element clickable method public method_registerActiveRecordStaticMethod" data-toggle="collapse" data-target=".method_registerActiveRecordStaticMethod .collapse">
+<h2>Registers a callback for an fActiveRecord method that falls through to fActiveRecord::__callStatic() or hits a predefined method hook</h2>
+<pre>registerActiveRecordStaticMethod(mixed $class, string $method, callback $callback) : void</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Only available to PHP 5.3+ which supports the __callStatic magic method.</p>
+
+<p>The callback should accept the following parameters:</p>
+
+<ul>
+<li><strong><code>&amp;$class</code></strong>:           The class calling the static method</li>
+<li><strong><code>$method_name</code></strong>:      The method that was called</li>
+<li><strong><code>&amp;$parameters</code></strong>:      The parameters passed to the method</li>
+</ul></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$class</h4>
+<code>mixed</code><p>The class name or instance of the class to register for, <code>'*'</code> will register for all classes</p>
+</div>
+<div class="subelement argument">
+<h4>$method</h4>
+<code>string</code><p>The method to hook for - this can be a complete method name or <code>{prefix}*</code> where <code>*</code> will match any column name</p>
+</div>
+<div class="subelement argument">
+<h4>$callback</h4>
+<code>callback</code><p>The callback to execute - see method description for parameter list</p>
+</div>
+<h3>Exceptions</h3>
+<table class="table table-bordered"><tr>
+<th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
+<td>When the PHP version less than 5.3</td>
+</tr></table>
+</div></div>
+</div>
 <a id="method_registerHookCallback"></a><div class="element clickable method public method_registerHookCallback" data-toggle="collapse" data-target=".method_registerHookCallback .collapse">
 <h2>Registers a callback for one of the various fActiveRecord hooks - multiple callbacks can be registered for each hook</h2>
 <pre>registerHookCallback(mixed $class, string $hook, callback $callback) : void</pre>
@@ -678,6 +723,12 @@ will override these signatures.</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="property_active_record_static_method_callbacks"> </a><div class="element clickable property private property_active_record_static_method_callbacks" data-toggle="collapse" data-target=".property_active_record_static_method_callbacks .collapse">
+<h2>An array of `{static_method} =&gt; {callback}` mappings for fActiveRecord</h2>
+<pre>$active_record_static_method_callbacks : array</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="property_cache"> </a><div class="element clickable property private property_cache" data-toggle="collapse" data-target=".property_cache .collapse">
 <h2>Cache for repetitive computation</h2>
 <pre>$cache : array</pre>
@@ -890,6 +941,12 @@ will override these signatures.</p>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_registerActiveRecordStaticMethod"> </a><div class="element clickable constant  constant_registerActiveRecordStaticMethod" data-toggle="collapse" data-target=".constant_registerActiveRecordStaticMethod .collapse">
+<h2>registerActiveRecordStaticMethod</h2>
+<pre>registerActiveRecordStaticMethod </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_registerHookCallback"> </a><div class="element clickable constant  constant_registerHookCallback" data-toggle="collapse" data-target=".constant_registerHookCallback .collapse">
 <h2>registerHookCallback</h2>
 <pre>registerHookCallback </pre>
@@ -963,7 +1020,7 @@ will override these signatures.</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:50-07:00.<br></footer></div>
 </div>
 </body>
 </html>

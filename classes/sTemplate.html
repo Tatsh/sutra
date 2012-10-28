@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -470,7 +470,7 @@
 <h3>Parameters</h3>
 <div class="subelement argument">
 <h4>$variables</h4>
-<code>array</code><p>Array of key => value pairs, which will be turned into local variables before the template file is included. Must have the keys content and title.</p>
+<code>array</code><p>Array of key => value pairs, which will be turned into local variables before the template file is included. Must have the keys <code>content</code> and <code>title</code>.</p>
 </div>
 <h3>Exceptions</h3>
 <table class="table table-bordered">
@@ -480,7 +480,8 @@
 </tr>
 <tr>
 <th><code><a href="../classes/fProgrammerException.html">\fProgrammerException</a></code></th>
-<td>If the keys title or content are missing.</td>
+<td>If the keys title or content are missing if
+  the first argument is passed is an array.</td>
 </tr>
 </table>
 </div></div>
@@ -1062,7 +1063,7 @@
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:55:59-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:50-07:00.<br></footer></div>
 </div>
 </body>
 </html>

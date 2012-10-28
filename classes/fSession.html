@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -141,7 +141,7 @@ before generating any output.</p></div>
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2007-2011 Will Bond, others</td>
+<td>Copyright (c) 2007-2012 Will Bond, others</td>
 </tr>
 <tr>
 <th>author</th>
@@ -165,7 +165,15 @@ before generating any output.</p></div>
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b20</td>
+<td>1.0.0b22</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b22  Fixed ::destroy() to no longer call ::regenerateID() since it fails after a session is destroyed [wb, 2012-09-20]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Changed ::regenerateID() to not fail silently if the session has not been opened yet [wb, 2012-09-15]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -671,7 +679,7 @@ server does not garbage collect the session files for this site.</p>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:51-07:00.<br></footer></div>
 </div>
 </body>
 </html>

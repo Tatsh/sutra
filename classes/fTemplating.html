@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -70,6 +70,7 @@
 <li class="method public "><a href="#method_encode" title="encode :: Gets the value of an element and runs it through fHTML::encode()"><span class="description">Gets the value of an element and runs it through fHTML::encode()</span><pre>encode()</pre></a></li>
 <li class="method public "><a href="#method_filter" title="filter :: Removes a value from an array element"><span class="description">Removes a value from an array element</span><pre>filter()</pre></a></li>
 <li class="method public "><a href="#method_get" title="get :: Gets the value of an element"><span class="description">Gets the value of an element</span><pre>get()</pre></a></li>
+<li class="method public "><a href="#method_getRootPath" title="getRootPath :: Gets the root path"><span class="description">Gets the root path</span><pre>getRootPath()</pre></a></li>
 <li class="method public "><a href="#method_inject" title="inject :: Includes the file specified - this is identical to ::place() except a filename is specified instead of an element"><span class="description">Includes the file specified - this is identical to ::place() except a filename is specified instead of an element</span><pre>inject()</pre></a></li>
 <li class="method public "><a href="#method_place" title="place :: Includes the element specified - element must be set through ::set() first"><span class="description">Includes the element specified - element must be set through ::set() first</span><pre>place()</pre></a></li>
 <li class="method public "><a href="#method_prepare" title="prepare :: Gets the value of an element and runs it through fHTML::prepare()"><span class="description">Gets the value of an element and runs it through fHTML::prepare()</span><pre>prepare()</pre></a></li>
@@ -155,6 +156,10 @@
 <td><a href="mailto:mdnowack@gmail.com">Matt Nowack [mn]</a></td>
 </tr>
 <tr>
+<th>author</th>
+<td><a href="mailto:jeff@imarc.net">Jeff Turcotte [jt]</a></td>
+</tr>
+<tr>
 <th>license</th>
 <td><a href="http://flourishlib.com/license">http://flourishlib.com/license</a></td>
 </tr>
@@ -168,7 +173,11 @@
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b23</td>
+<td>1.0.0b24</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b24  Added getRootPath() to retrieve the path fTemplating was instantiated with [jt, 2012-10-24]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -468,6 +477,17 @@ that do not have their own explicit short tag settings.</p></div>
 <h3>Returns</h3>
 <div class="subelement response">
 <code>mixed</code>The value of the element(s) specified, or the default value(s) if it has not been set</div>
+</div></div>
+</div>
+<a id="method_getRootPath"></a><div class="element clickable method public method_getRootPath" data-toggle="collapse" data-target=".method_getRootPath .collapse">
+<h2>Gets the root path</h2>
+<pre>getRootPath() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>string</code>The root path for the instance</div>
 </div></div>
 </div>
 <a id="method_inject"></a><div class="element clickable method public method_inject" data-toggle="collapse" data-target=".method_inject .collapse">
@@ -894,7 +914,7 @@ this version does not.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:51-07:00.<br></footer></div>
 </div>
 </body>
 </html>

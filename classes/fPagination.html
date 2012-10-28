@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -62,7 +62,6 @@
 <li class="method public "><a href="#method___construct" title="__construct :: Accepts the record information necessary for printing pagination"><span class="description">Accepts the record information necessary for printing pagination</span><pre>__construct()</pre></a></li>
 <li class="method public "><a href="#method_defineTemplate" title="defineTemplate :: Defines a new template to use with the paginator"><span class="description">Defines a new template to use with the paginator</span><pre>defineTemplate()</pre></a></li>
 <li class="method public "><a href="#method_extend" title="extend :: Adds the methods `printInfo()` and `showLinks()` to fRecordSet"><span class="description">Adds the methods `printInfo()` and `showLinks()` to fRecordSet</span><pre>extend()</pre></a></li>
-<li class="method public "><a href="#method_makeLinks" title="makeLinks :: Returns the links as a string"><span class="description">Returns the links as a string</span><pre>makeLinks()</pre></a></li>
 <li class="method public "><a href="#method_printInfo" title="printInfo :: Prints which records are showing on the current page"><span class="description">Prints which records are showing on the current page</span><pre>printInfo()</pre></a></li>
 <li class="method public "><a href="#method_set" title="set :: Sets data to be available to the templates"><span class="description">Sets data to be available to the templates</span><pre>set()</pre></a></li>
 <li class="method public "><a href="#method_showLinks" title="showLinks :: Shows links to other pages when more than one page of records exists"><span class="description">Shows links to other pages when more than one page of records exists</span><pre>showLinks()</pre></a></li>
@@ -71,8 +70,6 @@
 <li class="nav-header private">» Private
                     <ul>
 <li class="method private "><a href="#method_extendRecordSetInfo" title="extendRecordSetInfo :: Overlays user data over info from the record set"><span class="description">Overlays user data over info from the record set</span><pre>extendRecordSetInfo()</pre></a></li>
-<li class="method private "><a href="#method_makePiece" title="makePiece :: Makes a piece of a template."><span class="description">Makes a piece of a template.</span><pre>makePiece()</pre></a></li>
-<li class="method private "><a href="#method_makeTemplatedLinks" title="makeTemplatedLinks :: Makes the links HTML for a set of records"><span class="description">Makes the links HTML for a set of records</span><pre>makeTemplatedLinks()</pre></a></li>
 <li class="method private "><a href="#method_printPiece" title="printPiece :: Prints out a piece of a template"><span class="description">Prints out a piece of a template</span><pre>printPiece()</pre></a></li>
 <li class="method private "><a href="#method_printTemplatedInfo" title="printTemplatedInfo :: Prints the info for the displayed records"><span class="description">Prints the info for the displayed records</span><pre>printTemplatedInfo()</pre></a></li>
 <li class="method private "><a href="#method_showTemplatedLinks" title="showTemplatedLinks :: Prints the links for a set of records"><span class="description">Prints the links for a set of records</span><pre>showTemplatedLinks()</pre></a></li>
@@ -121,7 +118,7 @@
 <table class="table table-bordered">
 <tr>
 <th>copyright</th>
-<td>Copyright (c) 2010-2011 Will Bond</td>
+<td>Copyright (c) 2010-2012 Will Bond</td>
 </tr>
 <tr>
 <th>author</th>
@@ -137,11 +134,15 @@
 </tr>
 <tr>
 <th>link</th>
-<td><a href="http://flourishlib.com/fActiveRecord">http://flourishlib.com/fActiveRecord</a></td>
+<td><a href="http://flourishlib.com/fPagination">http://flourishlib.com/fPagination</a></td>
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b</td>
+<td>1.0.0b2</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b2   Improved the determination of what pages to show with `with_first_last` templates [wb, 2012-09-16]</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -273,21 +274,6 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
-<a id="method_makeLinks"></a><div class="element clickable method public method_makeLinks" data-toggle="collapse" data-target=".method_makeLinks .collapse">
-<h2>Returns the links as a string</h2>
-<pre>makeLinks(string $template) : string</pre>
-<div class="labels"></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$template</h4>
-<code>string</code><p>The template to use</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The links HTML</div>
-</div></div>
-</div>
 <a id="method_printInfo"></a><div class="element clickable method public method_printInfo" data-toggle="collapse" data-target=".method_printInfo .collapse">
 <h2>Prints which records are showing on the current page</h2>
 <pre>printInfo(string $template) : void</pre>
@@ -348,57 +334,9 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 <code>array</code>The merged data</div>
 </div></div>
 </div>
-<a id="method_makePiece"></a><div class="element clickable method private method_makePiece" data-toggle="collapse" data-target=".method_makePiece .collapse">
-<h2>Makes a piece of a template.</h2>
-<pre>makePiece(string $template, string $name, array $data) : string</pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$template</h4>
-<code>string</code><p>The name of the template to print</p></div>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The piece of the template to print</p></div>
-<div class="subelement argument">
-<h4>$data</h4>
-<code>array</code><p>The data to replace the variables with</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>The piece HTML</div>
-</div></div>
-</div>
-<a id="method_makeTemplatedLinks"></a><div class="element clickable method private method_makeTemplatedLinks" data-toggle="collapse" data-target=".method_makeTemplatedLinks .collapse">
-<h2>Makes the links HTML for a set of records</h2>
-<pre>makeTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : string</pre>
-<div class="labels"><span class="label">Static</span></div>
-<div class="row collapse"><div class="detail-description">
-<div class="long_description"></div>
-<h3>Parameters</h3>
-<div class="subelement argument">
-<h4>$template</h4>
-<code>string</code><p>The template to use</p></div>
-<div class="subelement argument">
-<h4>$data</h4>
-<code>array</code><p>The extra data to make available to the template</p></div>
-<div class="subelement argument">
-<h4>$page</h4>
-<code>integer</code><p>The page of records being displayed</p></div>
-<div class="subelement argument">
-<h4>$per_page</h4>
-<code>integer</code><p>The number of records being displayed on each page</p></div>
-<div class="subelement argument">
-<h4>$total_records</h4>
-<code>integer</code><p>The total number of records</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>string</code>HTML of the links</div>
-</div></div>
-</div>
 <a id="method_printPiece"></a><div class="element clickable method private method_printPiece" data-toggle="collapse" data-target=".method_printPiece .collapse">
 <h2>Prints out a piece of a template</h2>
-<pre>printPiece(string $template, string $name, array $data) : void</pre>
+<pre>printPiece(string $template, $name, array $data) : void</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -406,9 +344,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 <div class="subelement argument">
 <h4>$template</h4>
 <code>string</code><p>The name of the template to print</p></div>
-<div class="subelement argument">
-<h4>$name</h4>
-<code>string</code><p>The piece of the template to print</p></div>
+<div class="subelement argument"><h4>$name</h4></div>
 <div class="subelement argument">
 <h4>$data</h4>
 <code>array</code><p>The data to replace the variables with</p></div>
@@ -440,7 +376,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 </div>
 <a id="method_showTemplatedLinks"></a><div class="element clickable method private method_showTemplatedLinks" data-toggle="collapse" data-target=".method_showTemplatedLinks .collapse">
 <h2>Prints the links for a set of records</h2>
-<pre>showTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : boolean</pre>
+<pre>showTemplatedLinks(string $template, array $data, integer $page, integer $per_page, integer $total_records) : void</pre>
 <div class="labels"><span class="label">Static</span></div>
 <div class="row collapse"><div class="detail-description">
 <div class="long_description"></div>
@@ -460,9 +396,6 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 <div class="subelement argument">
 <h4>$total_records</h4>
 <code>integer</code><p>The total number of records</p></div>
-<h3>Returns</h3>
-<div class="subelement response">
-<code>boolean</code>If the links were printed</div>
 </div></div>
 </div>
 <h3>
@@ -542,7 +475,7 @@ in the form <code>{{ variable|filter_1|filter_2 }}</code>.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:00-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:51-07:00.<br></footer></div>
 </div>
 </body>
 </html>

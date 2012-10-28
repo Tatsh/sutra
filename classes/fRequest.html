@@ -32,7 +32,7 @@
 <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
                                     Reports <b class="caret"></b></a><ul class="dropdown-menu">
 <li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
-                <span class="label label-info">269</span></a></li>
+                <span class="label label-info">272</span></a></li>
 <li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
                 <ul><li>todo 
                 <span class="label label-info">2</span>
@@ -72,6 +72,7 @@
 <li class="method public "><a href="#method_isAjax" title="isAjax :: Indicates if the URL was accessed via an XMLHttpRequest"><span class="description">Indicates if the URL was accessed via an XMLHttpRequest</span><pre>isAjax()</pre></a></li>
 <li class="method public "><a href="#method_isDelete" title="isDelete :: Indicates if the URL was accessed via the `DELETE` HTTP method"><span class="description">Indicates if the URL was accessed via the `DELETE` HTTP method</span><pre>isDelete()</pre></a></li>
 <li class="method public "><a href="#method_isGet" title="isGet :: Indicates if the URL was accessed via the `GET` HTTP method"><span class="description">Indicates if the URL was accessed via the `GET` HTTP method</span><pre>isGet()</pre></a></li>
+<li class="method public "><a href="#method_isHead" title="isHead :: Indicates if the URL was accessed via the `HEAD` HTTP method"><span class="description">Indicates if the URL was accessed via the `HEAD` HTTP method</span><pre>isHead()</pre></a></li>
 <li class="method public "><a href="#method_isPost" title="isPost :: Indicates if the URL was accessed via the `POST` HTTP method"><span class="description">Indicates if the URL was accessed via the `POST` HTTP method</span><pre>isPost()</pre></a></li>
 <li class="method public "><a href="#method_isPut" title="isPut :: Indicates if the URL was accessed via the `PUT` HTTP method"><span class="description">Indicates if the URL was accessed via the `PUT` HTTP method</span><pre>isPut()</pre></a></li>
 <li class="method public "><a href="#method_overrideAction" title="overrideAction :: Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value"><span class="description">Overrides the value of `'action'` in the `DELETE`/`PUT` post data, `$_POST` or `$_GET` superglobals based on the `'action::{action_name}'` value</span><pre>overrideAction()</pre></a></li>
@@ -120,6 +121,7 @@
 <li class="constant  "><a href="#constant_isAjax" title="isAjax :: "><span class="description">isAjax</span><pre>isAjax</pre></a></li>
 <li class="constant  "><a href="#constant_isDelete" title="isDelete :: "><span class="description">isDelete</span><pre>isDelete</pre></a></li>
 <li class="constant  "><a href="#constant_isGet" title="isGet :: "><span class="description">isGet</span><pre>isGet</pre></a></li>
+<li class="constant  "><a href="#constant_isHead" title="isHead :: "><span class="description">isHead</span><pre>isHead</pre></a></li>
 <li class="constant  "><a href="#constant_isPost" title="isPost :: "><span class="description">isPost</span><pre>isPost</pre></a></li>
 <li class="constant  "><a href="#constant_isPut" title="isPut :: "><span class="description">isPut</span><pre>isPut</pre></a></li>
 <li class="constant  "><a href="#constant_overrideAction" title="overrideAction :: "><span class="description">overrideAction</span><pre>overrideAction</pre></a></li>
@@ -161,6 +163,10 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 </tr>
 <tr>
 <th>author</th>
+<td><a href="mailto:will@imarc.net">Will Bond, iMarc LLC [wb-imarc]</a></td>
+</tr>
+<tr>
+<th>author</th>
 <td><a href="mailto:alex@kingleeds.com">Alex Leeds [al]</a></td>
 </tr>
 <tr>
@@ -177,7 +183,15 @@ cause the php://input stream to be consumed, and thus no longer available.</p></
 </tr>
 <tr>
 <th>version</th>
-<td>1.0.0b19</td>
+<td>1.0.0b21</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b21  Added ::isHead(), fixed ability to call ::set() on `HEAD` requests [wb-imarc, 2011-11-23]</td>
+</tr>
+<tr>
+<th>changes</th>
+<td>1.0.0b20  Fixed problem where Accept headers are spaced out and mime-types won't match (mainly from IE)</td>
 </tr>
 <tr>
 <th>changes</th>
@@ -494,6 +508,17 @@ as the <code>$cast_to</code>.</p></div>
 <code>boolean</code>If the URL was accessed via the `GET` HTTP method</div>
 </div></div>
 </div>
+<a id="method_isHead"></a><div class="element clickable method public method_isHead" data-toggle="collapse" data-target=".method_isHead .collapse">
+<h2>Indicates if the URL was accessed via the `HEAD` HTTP method</h2>
+<pre>isHead() : boolean</pre>
+<div class="labels"><span class="label">Static</span></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response">
+<code>boolean</code>If the URL was accessed via the `HEAD` HTTP method</div>
+</div></div>
+</div>
 <a id="method_isPost"></a><div class="element clickable method public method_isPost" data-toggle="collapse" data-target=".method_isPost .collapse">
 <h2>Indicates if the URL was accessed via the `POST` HTTP method</h2>
 <pre>isPost() : boolean</pre>
@@ -804,6 +829,12 @@ it will throw an fValidationException.</p></div>
 <div class="labels"></div>
 <div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
 </div>
+<a id="constant_isHead"> </a><div class="element clickable constant  constant_isHead" data-toggle="collapse" data-target=".constant_isHead .collapse">
+<h2>isHead</h2>
+<pre>isHead </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
 <a id="constant_isPost"> </a><div class="element clickable constant  constant_isPost" data-toggle="collapse" data-target=".constant_isPost .collapse">
 <h2>isPost</h2>
 <pre>isPost </pre>
@@ -859,7 +890,7 @@ it will throw an fValidationException.</p></div>
 <div class="row"><footer class="span12">
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
-            generated on 2012-10-22T20:56:01-07:00.<br></footer></div>
+            generated on 2012-10-27T23:31:51-07:00.<br></footer></div>
 </div>
 </body>
 </html>
