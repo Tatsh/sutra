@@ -871,19 +871,44 @@ class sTemplate {
    *   method.
    *
    * @throws fUnexpectedException If the template cannot be found.
-   * @throws fProgrammerException If the keys title or content are missing.
+   * @throws fProgrammerException If the keys title or content are missing if
+   *   the first argument is passed is an array.
    *
-   * @param array $variables Array of key => value pairs, which will be turned into
-   *   local variables before the template file is included. Must have the keys content
-   *   and title.
+   * @param array $variables Array of key => value pairs, which will be turned
+   *   into local variables before the template file is included. Must have the
+   *   keys `content` and `title`.
+   * @param string |$title Title of the page.
+   * @param string |$content Content (usually HTML) of the page.
+   *
    * @return void
    */
-  public static function render(array $variables) {
-    if (!isset($variables['content'])) {
-      throw new fProgrammerException('The content string is missing in the variables array.');
+  public static function render($variables) {
+    $was_array = TRUE;
+
+    if (!is_array($variables)) {
+      $args = func_get_args();
+      $variables = array();
+      $was_array = FALSE;
+
+      if (isset($args[0])) {
+        $variables['title'] = $args[0];
+      }
+      if (isset($args[1])) {
+        $variables['content'] = $args[1];
+      }
     }
+
     if (!isset($variables['title'])) {
-      throw new fProgrammerException('The title string is missing in the variables array.');
+      if (!$was_array) {
+        throw new fProgrammerException('Title (argument 1) is a required argument');
+      }
+      throw new fProgrammerException('The title string is missing in the variables array');
+    }
+    if (!isset($variables['content'])) {
+      if (!$was_array) {
+        throw new fProgrammerException('Content (argument 2) is a required argument');
+      }
+      throw new fProgrammerException('The content string is missing in the variables array');
     }
 
     $path = fURL::get();
