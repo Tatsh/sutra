@@ -208,6 +208,13 @@ class sCRUDForm {
   private $custom_html = array();
 
   /**
+   * Template to use alternatively.
+   *
+   * @var string
+   */
+  private $template = NULL;
+
+  /**
    * Validate the field type.
    *
    * @throws fProgrammerException If the field type is invalid.
@@ -249,18 +256,30 @@ class sCRUDForm {
    * @param string $name Name of the field.
    * @param string $label Label text of the field.
    * @param array $attr Array of fields.
+   * @param boolean $wrap If this should wrap the field.
    * @return string HTML of the field.
    */
-  private static function makeElement($type, $name, $label, array $attr = array()) {
+  private static function makeElement($type, $name, $label = NULL, array $attr = array(), $wrap = TRUE) {
     if ($type == 'text') {
       $type = 'textfield';
     }
 
-    $attr['label'] = $label;
+    if ($label) {
+      $attr['label'] = $label;
+    }
+
     $class = 'form-field-container form-'.$type.'-container';
-    $container = '<div class="'.$class.'">';
+    $container = '';
+
+    if ($wrap) {
+      $container = '<div class="'.$class.'">';
+    }
+
     $container .= sHTML::makeFormElement($type, $name, $attr);
-    $container .= '</div>';
+
+    if ($wrap) {
+      $container .= '</div>';
+    }
 
     return $container;
   }
@@ -651,15 +670,125 @@ class sCRUDForm {
   }
 
   /**
+   * Generates the form HTML with the template specified.
+   *
+   * @param fDatabase $db Database.
+   * @param array $no_value_types Array of element types that have `value`
+   *   attribute.
+   * @param array $special_value_types Array of special input element types.
+   * @return string The form HTML.
+   */
+  private function makeWithTemplate(fDatabase $db, array $no_value_types, array $special_value_types) {
+    $fields = array();
+
+    foreach ($this->fields as $column_name => $info) {
+      if ($info['type'] == 'file') {
+        $this->file_uploads = TRUE;
+      }
+
+      if (isset($this->custom_html[$column_name])) {
+        $fields[$column_name] = $this->custom_html[$column_name];
+        continue;
+      }
+
+      if ($info['related']) {
+        $column = $info['related_column'];
+        $related_column = isset($info['original_related_column']) ? $info['original_related_column'] : $column;
+        $options = $this->fetchRelatedValues($db, $related_column, $column, $info['related_table']);
+
+        $info['attributes'] = array_merge($info['attributes'], array(
+          'options' => $options,
+          'label' => $info['label'],
+          'value' => fRequest::get($info['name'], 'string', NULL, TRUE),
+        ));
+
+        $fields[$column_name] = sHTML::makeFormElement($info['type'], $column_name, $info['attributes'], FALSE);
+        continue;
+      }
+
+      $value = fRequest::get($column_name);
+
+      if ($value && in_array($info['type'], $special_value_types)) {
+        switch ($info['type']) {
+          case 'date': // HTML5 'date' field in Chrome only accepts Y-m-d format
+            $date = strtotime($value);
+            $date = date('Y-m-d', $date);
+            $info['attributes']['value'] = $date;
+            break;
+
+          default:
+            $info['attributes']['value'] = $date;
+            break;
+        }
+      }
+      else if ($value && !in_array($info['type'], $no_value_types)) {
+        $info['attributes']['value'] = $value;
+
+        if ($info['type'] === 'checkbox') {
+          $info['attributes']['checked'] = 'checked';
+        }
+      }
+      else if (!$value && $info['type'] === 'checkbox') {
+        $info['attributes']['value'] = 1;
+      }
+
+      $fields[$column_name] = self::makeElement($info['type'], $column_name, NULL, $info['attributes'], FALSE);
+    }
+
+    if (isset($this->action)) {
+      $fields['action'] = '<input type="hidden" name="action" value="'.$this->action.'">';
+    }
+
+    if (count($this->buttons)) {
+      $buttons = array();
+
+      foreach ($this->buttons as $button) {
+        $action_name = $button[0];
+        $label = $button[1];
+        $buttons[] = sHTML::makeFormElement('submit', 'action::'.$action_name, array('value' => $label));
+      }
+
+      $fields['buttons'] = $buttons;
+    }
+
+    if ($this->print_csrf) {
+      $fields[$this->csrf_field_name] = '<input type="hidden" name="'.$this->csrf_field_name.'" value="'.fRequest::generateCSRFToken($this->csrf_field_url).'">';
+    }
+
+    if ($this->file_uploads) {
+      $this->form_attr['enctype'] = 'multipart/form-data';
+      if ($this->file_upload_max_size) {
+        $fields['MAX_FILE_SIZE'] = '<input name="MAX_FILE_SIZE" value="'.(int)$this->file_upload_max_size.'" type="hidden">';
+      }
+    }
+
+    $this->form_attr['action'] = $this->action_url;
+    $this->form_attr['method'] = $this->request_method;
+
+    if (!empty($this->class_names)) {
+      $this->form_attr['class'] = array_values($this->class_names);
+    }
+
+    return sTemplate::buffer($this->template, array_merge($fields, array(
+      'form_attr' => sHTML::attributesString($this->form_attr),
+    )));
+  }
+
+  /**
    * Generates the form HTML. Should be called last.
    *
    * @return string The form HTML.
    */
   public function make() {
-    $fields = '';
     $db = fORMDatabase::retrieve($this->class_name);
     $no_value_types = array('select');
     $special_value_types = array('date');
+
+    if ($this->template !== NULL) {
+      return $this->makeWithTemplate($db, $no_value_types, $special_value_types);
+    }
+
+    $fields = '';
 
     foreach ($this->fields as $column_name => $info) {
       if ($info['type'] == 'file') {
@@ -924,6 +1053,29 @@ class sCRUDForm {
   public function setFieldAttributes($field, array $attr) {
     $this->validateFieldName($field);
     $this->fields[$field]['attributes'] = array_merge($this->fields[$field]['attributes'], $attr);
+    return $this;
+  }
+
+  /**
+   * Template to use alternatively for custom styling. All input field HTML
+   *   will be passed as variables to the template by their column name.
+   *
+   * No containers or labels are generated when templating is used.
+   *
+   * The form attributes will be passed as variable `$form_attr` to the
+   *   template.
+   *
+   * The buttons will be passed as an array `$buttons` with each piece being
+   *   the button HTML.
+   *
+   * @param string $template_name Template name.
+   *
+   * @return sCRUDForm The object to allow method chaining.
+   *
+   * @note Requires sTemplate.
+   */
+  public function setTemplate($template_name) {
+    $this->template = $template_name;
     return $this;
   }
 
