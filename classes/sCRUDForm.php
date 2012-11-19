@@ -782,7 +782,7 @@ class sCRUDForm {
   public function make() {
     $db = fORMDatabase::retrieve($this->class_name);
     $no_value_types = array('select');
-    $special_value_types = array('date');
+    $special_value_types = array('date', 'password');
 
     if ($this->template !== NULL) {
       return $this->makeWithTemplate($db, $no_value_types, $special_value_types);
@@ -826,6 +826,10 @@ class sCRUDForm {
             $date = strtotime($value);
             $date = date('Y-m-d', $date);
             $info['attributes']['value'] = $date;
+            break;
+
+          case 'password':
+            $info['attributes']['value'] = '';
             break;
 
           default:
