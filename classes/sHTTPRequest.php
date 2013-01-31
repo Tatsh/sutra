@@ -85,6 +85,20 @@ class sHTTPRequest {
   private $authentication = array();
 
   /**
+   * Last response headers.
+   *
+   * @var array
+   */
+  private $response_header = NULL;
+
+  /**
+   * Last HTTP status.
+   *
+   * @var integer
+   */
+  private $status = NULL;
+
+  /**
    * Constructor.
    *
    * @throws fProgrammerException If the URL is not valid.
@@ -296,7 +310,7 @@ class sHTTPRequest {
    *   has been set.
    */
   public function getProxy() {
-    return is_null($this->proxy) ? '' : $this->proxy;
+    return $this->proxy == null ? '' : $this->proxy;
   }
 
   /**
@@ -342,6 +356,8 @@ class sHTTPRequest {
       $data = file_get_contents($this->url, FALSE, $context);
       fCore::stopErrorCapture();
 
+      $this->response_header = isset($http_response_header) ? $http_response_header : NULL; // PHP is so strange
+
       if ($data === FALSE) {
         throw new fUnexpectedException('The URI, "%s", could not be loaded.', $this->url);
       }
@@ -349,6 +365,33 @@ class sHTTPRequest {
       $this->data = $data;
     }
     return $this;
+  }
+
+  /**
+   * Get the last HTTP status code.
+   *
+   * @return integer The last status code.
+   */
+  public function getStatus() {
+    if ($this->status === NULL && isset($this->response_header[0])) {
+      $matches = array();
+      $isMatch = preg_match('#HTTP/1.\d\s(\d{3})#', $this->response_header[0], $matches);
+
+      if ($isMatch) {
+        $this->status = (int) $matches[1];
+      }
+    }
+
+    return $this->status;
+  }
+
+  /**
+   * Get the last received response headers.
+   *
+   * @return array Array of response headers.
+   */
+  public function getResponseHeaders() {
+    return $this->response_header;
   }
 
   /**
