@@ -9,4 +9,6 @@ script: phpunit --stderr --configuration ./config-travis.xml --coverage-text
 
 before_script:
   - cd tests
+  - pecl install apc
+  - echo 'extension=apc.so' >> `php --ini | grep "Loaded Configuration" | sed -e "s|.*:\s*||"`
   - bash ./travis-before_script.sh
