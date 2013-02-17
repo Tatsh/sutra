@@ -2,7 +2,7 @@
 git clone git://github.com/Tatsh/flourish-classes.git flourish
 
 psql -c "DROP DATABASE IF EXISTS sutra_tests;" -U postgres
-psql -c "CREATE DATABASE IF NOT EXISTS sutra_tests;" -U postgres
+psql -c "CREATE DATABASE sutra_tests;" -U postgres
 mysql -e "DROP DATABASE IF EXISTS sutra_tests; CREATE DATABASE IF NOT EXISTS sutra_tests;" -u root
 
 mkdir -p template/default
