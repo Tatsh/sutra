@@ -471,7 +471,7 @@ class sHTML extends fHTML {
 
         // Attempt to leave HTML tags alone; assume they are block-level
         if ($length > 0 && $potential[0] !== '<' && $potential[$length - 1] !== '>') {
-          $str .= '<p>'.fHTML::prepare($potential).'</p>';
+          $str .= '<p>'.fHTML::encode($potential).'</p>';
         }
         else {
           $str .= fHTML::prepare($potential);
