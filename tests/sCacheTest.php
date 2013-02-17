@@ -42,13 +42,16 @@ class sCacheTest extends PHPUnit_Framework_TestCase {
   }
 
   public static function tearDownAfterClass() {
-    self::$fcache->clear();
-    self::$fcache->__destruct();
+    if (self::$fcache !== NULL) {
+      self::$fcache->clear();
+      self::$fcache->__destruct();
+    }
   }
 
   public function setUp() {
     if (self::$skipping) {
       $this->markTestSkipped('The APC extension is unvailable or not functioning.');
+      return;
     }
 
     self::$scache->set('key1', 'value');
