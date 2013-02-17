@@ -124,6 +124,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    */
   public function testInteractiveAlreadyActive() {
     $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $proc = 'cat';
+    }
+
     $proc = $this->getObject($program);
     $proc->beginInteractive();
     $proc->beginInteractive();
@@ -135,6 +140,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    */
   public function testRedirectStdErrorAlreadyRunning() {
     $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'cat';
+    }
+
     $proc = $this->getObject($program);
     $proc->beginInteractive();
     $proc->redirectStandardError();
@@ -144,6 +154,13 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
     $is_windows = fCore::checkOS('windows');
     $program = $is_windows ? 'ftp' : 'bc';
     $write = $is_windows ? 'quit' : '1 * 2';
+
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'cat';
+      $write = "a123\n";
+    }
+
     $proc = $this->getObject($program);
     $proc->beginInteractive();
     $proc->write($write);
@@ -157,6 +174,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
   public function testInteractiveNonExistantHandle() {
     $is_windows = fCore::checkOS('windows');
     $program = $is_windows ? 'ftp' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'cat';
+    }
+
     $write = $is_windows ? 'quit' : '1 * 2';
     $proc = $this->getObject($program);
     $proc->write($write);
@@ -168,6 +190,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    */
   public function testCloseNonExistantHandle() {
     $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'cat';
+    }
+
     $proc = $this->getObject($program);
     $proc->EOF();
   }
@@ -180,6 +207,12 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
     $is_windows = fCore::checkOS('windows');
     $program = $is_windows ? 'ftp' : 'bc';
     $write = $is_windows ? 'quit' : '1 * 2';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'cat';
+      $write = "abc\n";
+    }
+
     $proc = $this->getObject($program);
     $proc->tossIfUnexpected();
     $proc->beginInteractive();
@@ -193,7 +226,18 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
    */
   public function testAddArgumentAlreadyRunning() {
     $program = fCore::checkOS('windows') ? 'ftp' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'grep';
+    }
+
     $proc = $this->getObject($program);
+
+    if (getenv('TRAVIS') === 'true') {
+      $proc->addArgument('-s');
+      $proc->addArgument('a');
+    }
+
     $proc->tossIfUnexpected();
     $proc->beginInteractive();
     $proc->addArgument('a');
@@ -202,6 +246,11 @@ class sProcessTest extends PHPUnit_Framework_TestCase {
 
   public function testAddArgument() {
     $program = fCore::checkOS('windows') ? 'compact' : 'bc';
+
+    if (getenv('TRAVIS') === 'true') {
+      $program = 'grep';
+    }
+
     $proc = $this->getObject($program);
     $proc->addArgument('--help');
   }

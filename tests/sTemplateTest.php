@@ -157,7 +157,7 @@ class sTemplateTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fProgrammerException
-   * @expectedExceptionMessage The content string is missing in the variables array.
+   * @expectedExceptionMessage The content string is missing in the variables array
    */
   public function testRenderMissingContent() {
     sTemplate::render(array('title' => 'b'));
@@ -165,7 +165,7 @@ class sTemplateTest extends PHPUnit_Framework_TestCase {
 
   /**
    * @expectedException fProgrammerException
-   * @expectedExceptionMessage The title string is missing in the variables array.
+   * @expectedExceptionMessage The title string is missing in the variables array
    */
   public function testRenderMissingTitle() {
     sTemplate::render(array('content' => 'a'));
