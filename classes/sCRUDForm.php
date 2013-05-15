@@ -745,7 +745,10 @@ class sCRUDForm {
       foreach ($this->buttons as $button) {
         $action_name = $button[0];
         $label = $button[1];
-        $buttons[] = sHTML::makeFormElement('submit', 'action::'.$action_name, array('value' => $label));
+        $attr = is_array($button[2]) ? $button[2] : array();
+        $attr = array_merge($attr, array('value' => $label));
+
+        $buttons[] = sHTML::makeFormElement('submit', 'action::'.$action_name, $attr);
       }
 
       $fields['buttons'] = $buttons;
@@ -860,7 +863,10 @@ class sCRUDForm {
       foreach ($this->buttons as $button) {
         $action_name = $button[0];
         $label = $button[1];
-        $container .= sHTML::makeFormElement('submit', 'action::'.$action_name, array('value' => $label));
+        $attr = is_array($button[2]) ? $button[2] : array();
+        $attr = array_merge($attr, array('value' => $label));
+
+        $container .= sHTML::makeFormElement('submit', 'action::'.$action_name, $attr);
       }
       $container .= '</div>';
       $fields .= $container;
@@ -914,11 +920,11 @@ class sCRUDForm {
    * @param string $label Label of the button.
    * @return sCRUDForm The object to allow method chaining.
    */
-  public function addAction($action_name, $label) {
+  public function addAction($action_name, $label, array $attr = array()) {
     if (!isset($this->action)) {
       $this->action = $action_name;
     }
-    $this->buttons[] = array($action_name, $label);
+    $this->buttons[] = array($action_name, $label, $attr);
     return $this;
   }
 
