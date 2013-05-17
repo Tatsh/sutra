@@ -984,7 +984,7 @@ class sCRUDForm {
     self::validateFieldType($type);
 
     // Ignore these from attributes
-    $required = $this->fields[$name]['attributes']['required'];
+    $required = isset($this->fields[$name]['attributes']['required']) ? $this->fields[$name]['attributes']['required'] : false;
     unset($attr['type']);
     unset($attr['required']);
     unset($attr['label']);
