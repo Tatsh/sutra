@@ -81,6 +81,55 @@ abstract class sCore extends fCore {
   }
 
   /**
+   * Helper for casting.
+   *
+   * @param mixed $value Value.
+   * @param string $cast_to Type to cast to.
+   */
+  protected static function cast($value, $cast_to) {
+    $cast_to = strtolower($cast_to);
+
+    switch ($cast_to) {
+      case 'string':
+        $value = (string) $value;
+        break;
+
+      case 'integer':
+      case 'int':
+        $value = (int) $value;
+        break;
+
+      case 'float':
+      case 'double':
+      case 'real':
+        $value = (float) $value;
+        break;
+
+      case 'bool':
+      case 'boolean':
+        $value = (bool) $value;
+        break;
+
+      case 'array':
+        $value = (array) $value;
+        break;
+
+      case 'object':
+        $value = (object) $value;
+        break;
+
+      case 'unset':
+        $value = null;
+        break;
+
+      default:
+        throw new fProgrammerException('Type "%s" is not a valid type to cast to', $cast_to);
+    }
+
+    return $value;
+  }
+
+  /**
    * Example entry point. This would be called from index.php or similar file.
    *
    * Calls to set up the database, configure session, configure authorisation,
