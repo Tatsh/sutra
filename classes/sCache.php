@@ -22,6 +22,13 @@ class sCache extends fCache {
   private static $cwd = '';
 
   /**
+   * Debug mode.
+   *
+   * @var boolean
+   */
+  protected $debugging = false;
+
+  /**
    * Initialises the class.
    *
    * @return void
@@ -55,6 +62,11 @@ class sCache extends fCache {
    */
   public function add($key, $value, $ttl = 0) {
     $key = self::getSiteUniqueKey($key);
+
+    if ($this->debugging) {
+      fCore::debug(fText::compose('sCache: add: "%s"', $key));
+    }
+
     return parent::add($key, $value, $ttl);
   }
 
@@ -66,6 +78,11 @@ class sCache extends fCache {
    */
   public function delete($key) {
     $key = self::getSiteUniqueKey($key);
+
+    if ($this->debugging) {
+      fCore::debug(fText::compose('sCache: delete: "%s"', $key));
+    }
+
     return parent::delete($key);
   }
 
@@ -79,6 +96,11 @@ class sCache extends fCache {
    */
   public function get($key, $default = NULL) {
     $key = self::getSiteUniqueKey($key);
+
+    if ($this->debugging) {
+      fCore::debug(fText::compose('sCache: get: "%s"', $key));
+    }
+
     return parent::get($key, $default);
   }
 
@@ -94,7 +116,23 @@ class sCache extends fCache {
    */
   public function set($key, $value, $ttl = 0) {
     $key = self::getSiteUniqueKey($key);
+
+    if ($this->debugging) {
+      fCore::debug(fText::compose('sCache: set: "%s"', $key));
+    }
+
     return parent::set($key, $value, $ttl);
+  }
+
+  /**
+   * Enables debugging (logging).
+   *
+   * @param boolean $debug If debugging mode should be enabled.
+   * @return sCache The object, to allow method chaining.
+   */
+  public function enableDebugging($debug) {
+    $this->debugging = (bool) $debug;
+    return $this;
   }
 }
 
