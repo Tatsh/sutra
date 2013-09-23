@@ -84,7 +84,7 @@ class BufferTest extends TestCase
     public function testGetDuringCapture()
     {
         $this->instance->start();
-        $this->startedCapture = true;
+        $this->startedBuffer = true;
         $this->instance->startCapture();
         $this->startedCapture = true;
         $this->instance->get();
@@ -115,7 +115,7 @@ class BufferTest extends TestCase
     public function testEraseDuringCapture()
     {
         $this->instance->start();
-        $this->startedCapture = true;
+        $this->startedBuffer = true;
         $this->instance->startCapture();
         $this->startedCapture = true;
         $this->instance->erase();
@@ -145,7 +145,7 @@ class BufferTest extends TestCase
     public function testStopDuringCapture()
     {
         $this->instance->start();
-        $this->startedCapture = true;
+        $this->startedBuffer = true;
         $this->instance->startCapture();
         $this->startedCapture = true;
         $this->instance->stop();
