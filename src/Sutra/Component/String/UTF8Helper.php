@@ -1049,7 +1049,7 @@ class UTF8Helper implements UTF8HelperInterface
 
         for ($i = 0; $i < $len && $measuredOffset < $offset; $i++) {
             $char = $string[$i];
-            ++$byte_offset;
+            ++$byteOffset;
 
             if (ord($char) < 0x80) {
                 ++$measuredOffset;
