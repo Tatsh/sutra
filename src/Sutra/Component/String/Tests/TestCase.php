@@ -1,6 +1,6 @@
 <?php
-namespace Sutra\String\Tests;
+namespace Sutra\Component\String\Tests;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
 }
