@@ -17,7 +17,7 @@ class UTF8Helper implements UTF8HelperInterface
      *
      * @var boolean
      */
-    protected static $canIgnoreInvalid = null;
+    protected $canIgnoreInvalid = null;
 
     /**
      * All lowercase UTF-8 characters mapped to uppercase characters.
@@ -493,12 +493,12 @@ class UTF8Helper implements UTF8HelperInterface
      *
      * @var boolean
      */
-    protected static $mbstringAvailable = false;
+    protected $mbstringAvailable = false;
 
     public function __construct()
     {
-        static::$mbstringAvailable = extension_loaded('mbstring');
-        static::$canIgnoreInvalid = !in_array(strtolower(ICONV_IMPL), array('unknown', 'ibm iconv'));
+        $this->mbstringAvailable = extension_loaded('mbstring');
+        $this->canIgnoreInvalid = !in_array(strtolower(ICONV_IMPL), array('unknown', 'ibm iconv'));
     }
 
     /**
@@ -518,7 +518,7 @@ class UTF8Helper implements UTF8HelperInterface
      */
     public function length($string)
     {
-        if (static::$mbstringAvailable) {
+        if ($this->mbstringAvailable) {
             return mb_strlen($string, 'UTF-8');
         }
 
@@ -532,7 +532,7 @@ class UTF8Helper implements UTF8HelperInterface
     public function replace($string, $find, $replace, $caseSensitive = true)
     {
         if ($caseSensitive) {
-            return str_replace($string, $search, $replace);
+            return str_replace($string, $find, $replace);
         }
 
         if (is_array($find)) {
@@ -578,7 +578,7 @@ class UTF8Helper implements UTF8HelperInterface
             return strtolower($string);
         }
 
-        if (static::$mbstringAvailable) {
+        if ($this->mbstringAvailable) {
             $string = mb_strtolower($string, 'utf-8');
             // For some reason mb_strtolower misses some characters
             return strtr($string, static::$mbUpperToLowerFix);
@@ -597,7 +597,7 @@ class UTF8Helper implements UTF8HelperInterface
             return strtoupper($string);
         }
 
-        if (static::$mbstringAvailable) {
+        if ($this->mbstringAvailable) {
             $string = mb_strtoupper($string, 'utf-8');
 
             return strtr($string, static::$mbLowerToUpperFix);
@@ -694,7 +694,7 @@ class UTF8Helper implements UTF8HelperInterface
      */
     public function indexOf($string, $needle, $offset = 0)
     {
-        if (static::$mbstringAvailable) {
+        if ($this->mbstringAvailable) {
             return mb_strpos($string, $needle, $offset, 'UTF-8');
         }
 
@@ -926,7 +926,7 @@ class UTF8Helper implements UTF8HelperInterface
     public function clean($value)
     {
         if (!is_array($value)) {
-            if (static::$mbstringAvailable) {
+            if ($this->mbstringAvailable) {
                 $oldSub = ini_get('mbstring.substitute_character');
                 ini_set('mbstring.substitute_character', 'none');
                 $value = mb_convert_encoding($value, 'UTF-8', 'UTF-8');
@@ -937,7 +937,7 @@ class UTF8Helper implements UTF8HelperInterface
 
             $to = 'UTF-8';
 
-            if (static::$canIgnoreInvalid) {
+            if ($this->canIgnoreInvalid) {
                 $to .= '//IGNORE';
             }
 
@@ -961,7 +961,7 @@ class UTF8Helper implements UTF8HelperInterface
      */
     public function substr($string, $start, $length = null)
     {
-        if (static::$mbstringAvailable) {
+        if ($this->mbstringAvailable) {
             $strLen = $this->length($string);
 
             if (abs($start) > $strLen) {
