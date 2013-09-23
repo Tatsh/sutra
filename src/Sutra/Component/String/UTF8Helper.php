@@ -968,7 +968,7 @@ class UTF8Helper implements UTF8HelperInterface
                 return false;
             }
 
-            if (!$len) {
+            if (!$length) {
                 if ($start >= 0) {
                     $length = $strLen - $start;
                 }
@@ -1003,7 +1003,7 @@ class UTF8Helper implements UTF8HelperInterface
         // Optimize looking by changing to negative start positions if the
         //   start is in the second half of the string
         if ($start > ($strLen / 2)) {
-            $start = 0 - ($strlen - $start);
+            $start = 0 - ($strLen - $start);
         }
 
         // Substrings to the end of the string are pretty simple
