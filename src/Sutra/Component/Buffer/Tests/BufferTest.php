@@ -8,19 +8,19 @@ use Sutra\Component\Buffer\Exception\ProgrammerException;
 class BufferTest extends TestCase
 {
     protected $instance;
+    protected $startedBuffer = false;
+    protected $startedCapture = false;
 
     public function setUp()
     {
         $this->instance = new Buffer();
-        $this->started_buffer = FALSE;
-        $this->started_capture = FALSE;
     }
 
     public function testStartBuffering()
     {
         $level = ob_get_level();
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedBuffer = true;
         $this->assertEquals($level + 1, ob_get_level());
     }
 
@@ -31,7 +31,7 @@ class BufferTest extends TestCase
     public function testStartBufferingTwice()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedBuffer = true;
         $this->instance->start();
     }
 
@@ -47,23 +47,23 @@ class BufferTest extends TestCase
     public function testStartCapturingAfterBuffering()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedBuffer = true;
         $this->instance->startCapture();
-        $this->started_capture = TRUE;
+        $this->startedCapture = true;
     }
 
     public function testIsStarted()
     {
-        $this->assertEquals(FALSE, $this->instance->isStarted());
+        $this->assertEquals(false, $this->instance->isStarted());
         $this->instance->start();
-        $this->started_buffer = TRUE;
-        $this->assertEquals(TRUE, $this->instance->isStarted());
+        $this->startedBuffer = true;
+        $this->assertEquals(true, $this->instance->isStarted());
     }
 
     public function testGet()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedBuffer = true;
         echo 'testing get';
         $this->assertEquals('testing get', $this->instance->get());
     }
@@ -84,16 +84,16 @@ class BufferTest extends TestCase
     public function testGetDuringCapture()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedCapture = true;
         $this->instance->startCapture();
-        $this->started_capture = TRUE;
+        $this->startedCapture = true;
         $this->instance->get();
     }
 
     public function testErase()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedBuffer = true;
         echo 'testing erase';
         $this->instance->erase();
         $this->assertEquals('', $this->instance->get());
@@ -115,9 +115,9 @@ class BufferTest extends TestCase
     public function testEraseDuringCapture()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedCapture = true;
         $this->instance->startCapture();
-        $this->started_capture = TRUE;
+        $this->startedCapture = true;
         $this->instance->erase();
     }
 
@@ -145,22 +145,22 @@ class BufferTest extends TestCase
     public function testStopDuringCapture()
     {
         $this->instance->start();
-        $this->started_buffer = TRUE;
+        $this->startedCapture = true;
         $this->instance->startCapture();
-        $this->started_capture = TRUE;
+        $this->startedCapture = true;
         $this->instance->stop();
     }
 
     public function tearDown()
     {
-        if ($this->started_capture) {
+        if ($this->startedCapture) {
             $this->instance->stopCapture();
-            $this->started_capture = FALSE;
+            $this->startedCapture = false;
         }
-        if ($this->started_buffer) {
+        if ($this->startedBuffer) {
             ob_clean();
             $this->instance->stop();
-            $this->started_buffer = FALSE;
+            $this->startedBuffer = false;
         }
     }
 }
