@@ -546,7 +546,7 @@ class UTF8Helper implements UTF8HelperInterface
 
         $replace = strtr($replace, array('\\' => '\\\\', '$' => '\\$'));
 
-        return preg_replace($search, $replace, $string);
+        return preg_replace($find, $replace, $string);
     }
 
     /**
