@@ -785,7 +785,7 @@ class UTF8Helper implements UTF8HelperInterface
         $lineLen = 0;
 
         foreach ($words as $word) {
-            $wordLen = self::len($word);
+            $wordLen = $this->length($word);
 
             // Shorten up words that are too long
             while ($cut && $wordLen > $width) {
