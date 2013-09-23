@@ -664,7 +664,7 @@ class UTF8Helper implements UTF8HelperInterface
             return rtrim($string);
         }
 
-        $search = preg_quote($charlist, '#');
+        $search = preg_quote($charList, '#');
         $search = str_replace('-', '\-', $search);
         $search = str_replace('\.\.', '-', $search);
 
@@ -681,7 +681,7 @@ class UTF8Helper implements UTF8HelperInterface
             return trim($string);
         }
 
-        $search = preg_quote($charlist, '#');
+        $search = preg_quote($charList, '#');
         $search = str_replace('-', '\-', $search);
         $search = str_replace('\.\.', '-', $search);
 
@@ -727,7 +727,7 @@ class UTF8Helper implements UTF8HelperInterface
             return false;
         }
 
-        return strlen(utf8_decode(substr($haystack, 0, $position)));
+        return strlen(utf8_decode(substr($string, 0, $position)));
     }
 
     /**
@@ -813,7 +813,7 @@ class UTF8Helper implements UTF8HelperInterface
     public function padLeft($string, $padLength, $padString)
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
-            return str_pad($string, $padLeft, $padString, STR_PAD_LEFT);
+            return str_pad($string, $padLength, $padString, STR_PAD_LEFT);
         }
 
         $stringLength = $this->length($string);
@@ -847,7 +847,7 @@ class UTF8Helper implements UTF8HelperInterface
     public function padRight($string, $padLength, $padString)
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
-            return str_pad($string, $padLeft, $padString, STR_PAD_RIGHT);
+            return str_pad($string, $padLength, $padString, STR_PAD_RIGHT);
         }
 
         $stringLength = $this->length($string);
@@ -880,7 +880,7 @@ class UTF8Helper implements UTF8HelperInterface
     public function pad($string, $padLength, $padString)
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
-            return str_pad($string, $padLeft, $padString, STR_PAD_BOTH);
+            return str_pad($string, $padLength, $padString, STR_PAD_BOTH);
         }
 
         $stringLength = $this->length($string);
