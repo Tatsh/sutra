@@ -738,7 +738,6 @@ class UTF8Helper implements UTF8HelperInterface
     {
         $output = '';
         $len = strlen($string);
-        $mb_char = '';
 
         for ($i = 0; $i < $len; $i++) {
             $char = $string[$i];
