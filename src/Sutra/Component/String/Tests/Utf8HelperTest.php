@@ -1,15 +1,15 @@
 <?php
-namespace Sutra\String\Tests;
+namespace Sutra\Component\String\Tests;
 
-use Sutra\String\UTF8Helper;
+use Sutra\Component\String\Utf8Helper;
 
-class UTF8HelperTest extends TestCase
+class Utf8HelperTest extends TestCase
 {
     public static $instance;
 
     public static function setUpBeforeClass()
     {
-        static::$instance = new UTF8Helper();
+        static::$instance = new Utf8Helper();
     }
 
     public static function cleanProvider()

@@ -1,12 +1,12 @@
 <?php
-namespace Sutra\String;
+namespace Sutra\Component\String;
 
 /**
  * Helper for UTF-8 strings.
  *
  * @replaces fUTF8
  */
-class UTF8Helper implements UTF8HelperInterface
+class Utf8Helper implements Utf8HelperInterface
 {
     /**
      * Depending how things are compiled, NetBSD and Solaris don't support
@@ -1016,6 +1016,17 @@ class UTF8Helper implements UTF8HelperInterface
         $length = $this->convertOffsetToBytes($string, $length);
 
         return substr($string, 0, $length);
+    }
+
+    public function ascii($string)
+    {
+        if ($this->isAscii($string)) {
+            return $string;
+        }
+
+        $string = strtr($string, self::$utf8ToAscii);
+
+        return preg_replace('#[^\x00-\x7F]#', '', $string);
     }
 
     /**

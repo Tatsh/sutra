@@ -1,7 +1,7 @@
 <?php
-namespace Sutra\String;
+namespace Sutra\Component\String;
 
-interface UTF8HelperInterface
+interface Utf8HelperInterface
 {
     public function length($string);
     public function replace($string, $find, $replace, $caseSensitive = true);
@@ -22,4 +22,5 @@ interface UTF8HelperInterface
     public function pad($string, $padLength, $padString);
     public function clean($string);
     public function isAscii($string);
+    public function ascii($string);
 }
