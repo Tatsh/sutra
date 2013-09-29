@@ -50,4 +50,9 @@ interface DateInterface
      * @replaces ::modify
      */
     public function modify($format);
+
+    /**
+     * @repalces ::__toString
+     */
+    public function __toString();
 }
