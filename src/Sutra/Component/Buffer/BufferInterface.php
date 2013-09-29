@@ -9,5 +9,4 @@ interface BufferInterface
     public function replace($find, $replace);
     public function start($gzip = false);
     public function stop();
-
 }
