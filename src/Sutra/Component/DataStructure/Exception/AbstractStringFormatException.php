@@ -38,7 +38,7 @@ abstract class AbstractStringFormatException extends \Exception
             return;
         }
 
-        $this->message = sprintf($format, $args);
+        $this->message = vsprintf($format, $args);
     }
 
     /**

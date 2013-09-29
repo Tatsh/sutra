@@ -2,6 +2,7 @@
 namespace Sutra\Component\DataStructure;
 
 use Sutra\Component\DataStructure\Exception\ProgrammerException;
+use Sutra\Component\DataStructure\Exception\ValidationException;
 
 // For documentation
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -44,7 +45,7 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
     {
         foreach ($data as $key => $value) {
             if (!$key) {
-                throw new ProgrammerException('All keys must be non-empty strings. Error at key: "%s"', $key);
+                throw new ProgrammerException('All keys must be non-empty strings. Error at key: "%s"', $key ? $key : '{empty_string}');
             }
         }
 
@@ -67,6 +68,8 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      * @param mixed $offset Offset value.
      *
      * @return boolean If the offset exists.
+     *
+     * @throws ProgrammerException If the offset is invalid.
      */
     public function offsetExists($offset)
     {
@@ -79,6 +82,8 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      * @param mixed $offset Offset value.
      *
      * @return mixed The value at the offset.
+     *
+     * @throws ProgrammerException If the offset is invalid.
      */
     public function offsetGet($offset)
     {
@@ -91,12 +96,12 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      * @param mixed $offset Offset to set.
      * @param mixed $value  Value to set.
      *
-     * @throws ProgrammerException If the offset is a false-like value.
+     * @throws ProgrammerException If the offset is invalid.
      */
     public function offsetSet($offset, $value)
     {
         if (!$offset) {
-            throw new ProgrammerException('Key must be a non-empty string.');
+            throw new ProgrammerException('Key must be a non-empty string. Given: "%s" (%s)', $offset, gettype($offset));
         }
 
         $this->data[$offset] = $value;
@@ -109,7 +114,7 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function count()
     {
-        return sizeof($this->data);
+        return count($this->data);
     }
 
     /**
@@ -236,8 +241,6 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function walkRecursive($func, $userData = null)
     {
-        $func = call_user_func_array($func, array());
-
         foreach ($this->data as $key => $value) {
             call_user_func_array($func, array(&$value, $key, $userData));
             static::walkRecursiveCallback($this, $value, $func, $userData);
@@ -468,9 +471,9 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
         }
 
         if (is_object($value)) {
-            $reflection = new ReflectionClass($value);
+            $reflection = new \ReflectionClass($value);
             if ($reflection->implementsInterface('IteratorAggregate') &&
-                    $reflection->implementsInterface('ArrayAccess')) {
+                $reflection->implementsInterface('ArrayAccess')) {
                 return true;
             }
         }
