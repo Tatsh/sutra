@@ -113,14 +113,6 @@ class DictionaryTest extends TestCase
         $this->assertEquals(array('b' => 'c', 'c' => 'd'), $new->getData());
     }
 
-    /**
-     * @todo
-     */
-    public function testGetLastMissingKey()
-    {
-        $this->markTestSkipped();
-    }
-
     public function testKeys() {
         $keys = array('b', 'd', 'c');
         $obj = new Dictionary(array('b' => 1, 'd' => 2, 'c' => 3));
