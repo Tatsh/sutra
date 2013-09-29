@@ -3,7 +3,6 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 # Ports from Flourish
 
 - [ ] `fBuffer` 
-- [ ] `fCache`
 - [ ] `fDate`
 - [ ] `fTime`
 - [ ] `fTimestamp`
@@ -24,7 +23,6 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 # Ports from Sutra
 
 - [ ] `sArray`
-- [ ] `sCache` (same as `fCache`)
 - [ ] `sGrammar` (same as `fGrammar`)
 - [ ] `sHTML` (same as `fHTML`)
 - [ ] `sHTTPRequest` 
