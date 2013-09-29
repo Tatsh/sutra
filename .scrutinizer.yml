@@ -1,22 +1,29 @@
+filter:
+    paths:
+        - src/*
+    excluded_paths:
+        - bin/*
+        - classes/*
+        - vendor/*
 tools:
     php_code_coverage:
         test_command: bin/phpunit
-    php_code_sniffer:
-        enabled: true
-        command: bin/phpcs
-        config:
-            standard: Symfony2
-            sniffs:
-                squiz:
-                    white_space:
-                        control_structure_spacing_sniff: false
-        filter:
-            paths:
-                - src/*
-            excluded_paths:
-                - bin/*
-                - classes/*
-                - vendor/*
+#     php_code_sniffer:
+#         enabled: true
+#         command: bin/phpcs
+#         config:
+#             standard: Symfony2
+#             sniffs:
+#                 squiz:
+#                     white_space:
+#                         control_structure_spacing_sniff: false
+#         filter:
+#             paths:
+#                 - src/*
+#             excluded_paths:
+#                 - bin/*
+#                 - classes/*
+#                 - vendor/*
 #     php_cpd:
 #         enabled: true
 #         filter:
@@ -29,21 +36,21 @@ tools:
 #                 - src/Sutra/Component/*/Exception/AbstractStringFormatException.php
 #                 - src/Sutra/Component/*/Exception/ProgrammerException.php
 #                 - src/Sutra/Component/*/Exception/ValidationException.php
-    php_loc:
-        enabled: true
-        excluded_dirs:
-            - bin
-            - classes
-            - vendor
-    php_mess_detector:
-        enabled: true
-        filter:
-            paths:
-                - src/*
-            excluded_paths:
-                - bin/*
-                - classes/*
-                - vendor/*
+#     php_loc:
+#         enabled: true
+#         excluded_dirs:
+#             - bin
+#             - classes
+#             - vendor
+#     php_mess_detector:
+#         enabled: true
+#         filter:
+#             paths:
+#                 - src/*
+#             excluded_paths:
+#                 - bin/*
+#                 - classes/*
+#                 - vendor/*
 #     php_analyzer:
 #         enabled: true
 #         filter:
