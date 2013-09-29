@@ -22,7 +22,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 
 # Ports from Sutra
 
-- [ ] `sArray`
+- [x] `sArray`
 - [ ] `sGrammar` (same as `fGrammar`)
 - [ ] `sHTML` (same as `fHTML`)
 - [ ] `sHTTPRequest` 
