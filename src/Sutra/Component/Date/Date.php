@@ -5,12 +5,9 @@ use Sutra\Component\Date\Exception\ProgrammerException;
 use Sutra\Component\Date\Exception\ValidationException;
 
 /**
- * Simple interface to date comparison, modification, and fuzzy difference
- *   string generation.
+ * {@inheritdoc}
  *
- * @todo Localisation (probably in different class)
- *
- * @replaces fDate
+ * @todo Localisation (probably in different class).
  */
 class Date implements DateInterface
 {
@@ -26,7 +23,7 @@ class Date implements DateInterface
      *
      * @var array
      *
-     * @see #getFuzzyDifference
+     * @see #getFuzzyDifference()
      */
     private static $breakPoints = array(
         // 5 days
@@ -45,7 +42,7 @@ class Date implements DateInterface
      * @param mixed $date Date. Supports objects with a callable
      *   `__toString()` method, PHP \DateTime, and UNIX timestamp.
      *
-     * @replaces __construct Please note `'CURRENT_TIMESTAMP'` and
+     * @replaces ::__construct Please note `'CURRENT_TIMESTAMP'` and
      *   `'CURRENT_DATE'` strings are no longer supported.
      */
     public function __construct($date = null)
@@ -78,11 +75,7 @@ class Date implements DateInterface
     }
 
     /**
-     * Returns date in `Y-m-d` format.
-     *
-     * @return string Date string.
-     *
-     * @replaces ::__toString
+     * {@inheritdoc}
      */
     public function __toString()
     {
@@ -90,16 +83,7 @@ class Date implements DateInterface
     }
 
     /**
-     * Adjusts to a relative time string such as '-1 week'.
-     *
-     * @param string $adjustment Relative time string.
-     *
-     * @return Date Returns a new instance of the object with the new adjusted
-     *   date.
-     *
-     * @throws ValidationException If the adjustment string is not valid.
-     *
-     * @replaces ::adjust
+     * {@inheritdoc}
      */
     public function adjust($adjustment)
     {
@@ -113,14 +97,7 @@ class Date implements DateInterface
     }
 
     /**
-     * Tests equality of 2 dates (by day only).
-     *
-     * @param mixed $otherDate Other date to compare. If not specified, current
-     *   date will be used.
-     *
-     * @return boolean Returns if the dates are equal.
-     *
-     * @replaces ::eq
+     * {@inheritdoc}
      */
     public function equals($otherDate = null)
     {
@@ -130,12 +107,7 @@ class Date implements DateInterface
     }
 
     /**
-     * Returns date formatted according to format specified.
-     *
-     * @param string $format Format to use. Only date-related
-     *   (and not time-related) letters are allowed.
-     *
-     * @return string Formatted date.
+     * {@inheritdoc}
      */
     public function format($format)
     {
@@ -149,16 +121,7 @@ class Date implements DateInterface
     }
 
     /**
-     * Gets a fuzzy difference string by comparing 2 dates.
-     *
-     * @param mixed   $otherDate Other date to compare. If not passed, today's
-     *   date is used.
-     * @param boolean $simple    If simple format should be used.
-     *
-     * @return string Fuzzy date string such as '1 day ago', '2 years from
-     *   now'.
-     *
-     * @replaces ::getFuzzyDifference
+     * {@inheritdoc}
      */
     public function getFuzzyDifference($otherDate = null, $simple = false)
     {
@@ -211,79 +174,47 @@ class Date implements DateInterface
     }
 
     /**
-     * Tests if this date is greater than other date (by day only).
-     *
-     * @param mixed $otherDate Other date to compare. If not specified, current
-     *   date will be used.
-     *
-     * @return boolean Returns if this date is greater than other date.
-     *
-     * @replaces ::gt
+     * {@inheritdoc}
      */
     public function greaterThan($otherDate = null)
     {
         $otherDate = new static($otherDate);
+
         return $this->date > $otherDate->date;
     }
 
     /**
-     * Tests if this date is greater than or equal to other date (by day only).
-     *
-     * @param mixed $otherDate Other date to compare. If not specified, current
-     *   date will be used.
-     *
-     * @return boolean Returns if this date is greater than or equal to other
-     *   date.
-     *
-     * @replaces ::gte
+     * {@inheritdoc}
      */
     public function greaterThanOrEqualTo($otherDate = null)
     {
         $otherDate = new static($otherDate);
+
         return $this->date >= $otherDate->date;
     }
 
     /**
-     * Tests if this date is less than other date (by day only).
-     *
-     * @param mixed $otherDate Other date to compare. If not specified, current
-     *   date will be used.
-     *
-     * @return boolean Returns if this date is less than other date.
-     *
-     * @replaces ::lt
+     * {@inheritdoc}
      */
     public function lessThan($otherDate = null)
     {
         $otherDate = new static($otherDate);
+
         return $this->date < $otherDate->date;
     }
 
     /**
-     * Tests if this date is less than or equal to other date (by day only).
-     *
-     * @param mixed $otherDate Other date to compare. If not specified, current
-     *   date will be used.
-     *
-     * @return boolean Returns if this date is less than or equal to other
-     *   date.
-     *
-     * @replaces ::lte
+     * {@inheritdoc}
      */
     public function lessThanOrEqualTo($otherDate = null)
     {
         $otherDate = new static($otherDate);
+
         return $this->date <= $otherDate->date;
     }
 
     /**
-     * Returns a new instance with modified date according to format.
-     *
-     * @param string $format Date format string.
-     *
-     * @return Date New instance with modified date.
-     *
-     * @replaces ::modify
+     * {@inheritdoc}
      */
     public function modify($format)
     {

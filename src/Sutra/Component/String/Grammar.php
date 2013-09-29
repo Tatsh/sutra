@@ -49,7 +49,7 @@ class Grammar implements GrammarInterface
      */
     protected $urlParser;
 
-    public function __construct(URLParserInterface $urlParser)
+    public function __construct(UrlParserInterface $urlParser)
     {
         $this->urlParser = $urlParser;
     }

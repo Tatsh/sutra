@@ -5,34 +5,40 @@ use Psr\Log\LoggerInterface;
 use Symfony\Component\Security\Core\Util\SecureRandom;
 
 /**
- * @replaces fCryptography
+ * {@inheritdoc}
  */
 class RandomGenerator implements RandomGeneratorInterface
 {
+    /**
+     * SecureRandomInterface instance.
+     *
+     * @var SecureRandom
+     */
     protected $secureRandom;
+
+    /**
+     * If `mt_rand()` has been seeded.
+     *
+     * @var boolean
+     */
     protected $seeded = false;
 
-    public function __construct($seedFile = null)
+    /**
+     * Constructor.
+     *
+     * Be aware that a guessable seed will severely compromise the PRNG
+     *   algorithm that is employed.
+     *
+     * @param string          $seedFile Seed file (random data).
+     * @param LoggerInterface $logger   Logger instance.
+     */
+    public function __construct($seedFile = null, LoggerInterface $logger = null)
     {
-
-    }
-
-    protected function seedRandom()
-    {
-        if ($this->seeded) {
-            return;
-        }
-
-        $bytes = $this->secureRandom->nextBytes(4);
-        $seed = (int) base_convert(bin2hex($bytes), 16, 10) - 2147483647;
-
-        mt_srand($seed);
-
-        $this->seeded = true;
+        $this->secureRandom = new SecureRandom($seedFile, $logger);
     }
 
     /**
-     * @replaces ::random
+     * {@inheritdoc}
      */
     public function random($min = null, $max = null)
     {
@@ -46,6 +52,8 @@ class RandomGenerator implements RandomGeneratorInterface
     }
 
     /**
+     * {@inheritdoc}
+     *
      * @replaces ::random
      */
     public function nextBytes($nbBytes)
@@ -54,7 +62,14 @@ class RandomGenerator implements RandomGeneratorInterface
     }
 
     /**
-     * @replaces ::randomString
+     * Generates a random string.
+     *
+     * @param integer $length Length of the string to generate.
+     * @param string  $type   Type of alphabet. One of: base64, alphanumeric,
+     *   base56, alpha, base36, hexadecimal, numeric. If not any of these, then
+     *   what is passed as string will be the alphabet used.
+     *
+     * @return string Randomly generated string.
      */
     public function randomString($length, $type = 'alphanumeric')
     {
@@ -104,5 +119,19 @@ class RandomGenerator implements RandomGeneratorInterface
         }
 
         return $output;
+    }
+
+    private function seedRandom()
+    {
+        if ($this->seeded) {
+            return;
+        }
+
+        $bytes = $this->secureRandom->nextBytes(4);
+        $seed = (int) base_convert(bin2hex($bytes), 16, 10) - 2147483647;
+
+        mt_srand($seed);
+
+        $this->seeded = true;
     }
 }

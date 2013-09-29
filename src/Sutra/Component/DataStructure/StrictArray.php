@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * An object-oriented interface to numerically indexed arrays.
-
+ *
  * @author Andrew Udvare <audvare@gmail.com>
  */
 class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
@@ -32,6 +32,7 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     {
         if (is_array($arg)) {
             $this->data = array_values($arg);
+
             return;
         }
 
@@ -61,8 +62,6 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * So the object can be used with foreach.
      *
-     * @internal
-     *
      * @return ArrayIterator Iterator object.
      */
     public function getIterator()
@@ -73,11 +72,8 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Checks if the offset exists.
      *
-     * @internal
-     *
-     * @throws ProgrammerException If the offset is not an integer.
-     *
      * @param integer $offset Offset.
+     *
      * @return boolean If the offset exists.
      */
     public function offsetExists($offset)
@@ -86,19 +82,19 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
 
-        $offset = (int)$offset;
+        $offset = (int) $offset;
+
         return isset($this->data[$offset]);
     }
 
     /**
      * Gets the value at a specific offset.
      *
-     * @internal
+     * @param integer $offset Offset.
+     *
+     * @return mixed The value or null.
      *
      * @throws ProgrammerException If the offset is not an integer.
-     *
-     * @param integer $offset Offset.
-     * @return mixed The value or null.
      */
     public function offsetGet($offset)
     {
@@ -106,18 +102,16 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
 
-        $offset = (int)$offset;
+        $offset = (int) $offset;
+
         return isset($this->data[$offset]) ? $this->data[$offset] : null;
     }
 
     /**
      * Sets the value at an offset.
      *
-     * @internal
-     *
      * @param integer $offset Offset to set to.
-     * @param mixed $value Value to set.
-     * @return void
+     * @param mixed   $value  Value to set.
      */
     public function offsetSet($offset, $value)
     {
@@ -132,12 +126,9 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Unsets the value at an offset.
      *
-     * @internal
+     * @param integer $offset Offset.
      *
      * @throws ProgrammerException If the offset is not an integer.
-     *
-     * @param integer $offset Offset.
-     * @return void
      */
     public function offsetUnset($offset)
     {
@@ -145,7 +136,7 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
 
-        $offset = (int)$offset;
+        $offset = (int) $offset;
         unset($this->data[$offset]);
     }
 
@@ -153,9 +144,8 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * This is only for getting the 'length' attribute, to be similar to
      *     JavaScript.
      *
-     * @internal
-     *
      * @param string $key Key to get value of. Only 'length' is accepted.
+     *
      * @return mixed The length of the array or null if the key is invalid.
      */
     public function __get($key)
@@ -163,6 +153,7 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
         if ($key == 'length') {
             return count($this);
         }
+
         return null;
     }
 
@@ -181,26 +172,30 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Pushes the value into the last position of the array.
      *
      * @param mixed $var Variable to push.
-     * @return sArray The object to allow method chaining.
+     *
+     * @return StrictArray The object to allow method chaining.
      */
     public function push($var)
     {
         $this->data[] = $var;
+
         return $this;
     }
 
     /**
      * Fills the array $num times with $value.
      *
-     * @param integer $num Number of times to fill.
-     * @param mixed $value Value to fill with.
-     * @return sArray The object to allow method chaining.
+     * @param integer $num   Number of times to fill.
+     * @param mixed   $value Value to fill with.
+     *
+     * @return StrictArray The object to allow method chaining.
      */
     public function fill($num, $value)
     {
         for ($i = 0; $i < $num; $i++) {
             $this->data[] = $value;
         }
+
         return $this;
     }
 
@@ -218,27 +213,30 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Puts a new element at the beginning of the array.
      *
      * @param mixed $var Variable to unshift.
-     * @return sArray The object to allow method chaining.
+     *
+     * @return StrictArray The object to allow method chaining.
      */
     public function unshift($var)
     {
         array_unshift($this->data, $var);
+
         return $this;
     }
 
     /**
-     * Merges this array with another array or sArray object.
+     * Merges this array with another array or `StrictArray` object. Accepts
+     *   multiple arguments.
      *
-     * @param array|sArray $array1 Array to shift with.
-     * @param array|sArray $array1,... Additional arrays.
-     * @return sArray The object to allow method chaining.
+     * @param array|StrictArray $array1 Array to shift with.
+     *
+     * @return StrictArray The object to allow method chaining.
      */
     public function merge($array1)
     {
         $args = func_get_args();
 
         foreach ($args as $key => $arg) {
-            if ($arg instanceof self) {
+            if ($arg instanceof static) {
                 $args[$key] = $arg->getData();
             }
         }
@@ -252,21 +250,24 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Applies a user-defined function to each element of this object.
      *
-     * @param string|array $func Callback function. The callback takes two
+     * @param callable $func     Callback function. The callback takes two
      *     parameters: the value of the key, and the key second. If the value must
      *     be changed, then it should be specified as a reference.
-     * @param mixed $user_data If specified, this will be passed to the callback
-     *     as the third parameter.
-     * @return sArray The object to allow method chaining.
+     * @param mixed    $userData If specified, this will be passed to the
+     *   callback as the third parameter.
+     *
+     * @return StrictArray The object to allow method chaining.
+     *
      * @SuppressWarnings(PHPMD.UnusedLocalVariable)
      */
-    public function walk($func, $user_data = null)
+    public function walk($func, $userData = null)
     {
         foreach ($this->data as $key => $value) {
-            call_user_func_array($func, array(&$value, $key, $user_data));
+            call_user_func_array($func, array(&$value, $key, $userData));
             $this->data[$key] = $value;
         }
         $this->data = array_values($this->data);
+
         return $this;
     }
 
@@ -274,19 +275,21 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Applies a user-defined function to each element of this object. This
      *     method will recurse into deeper arrays. Any key sets will be ignored.
      *
-     * @param string|array $func Callback function. The callback takes two
+     * @param callable $func     Callback function. The callback takes two
      *     parameters: the value of the key, and the key second. If the value must
      *     be changed, then it should be specified as a reference.
-     * @param mixed $user_data If specified, this will be passed to the callback
+     * @param mixed    $userData If specified, this will be passed to the callback
      *     as the third parameter.
-     * @return sArray The object to allow method chaining.
+     *
+     * @return StrictArray The object to allow method chaining.
      */
-    public function walkRecursive($func, $user_data = null)
+    public function walkRecursive($func, $userData = null)
     {
         foreach ($this->data as $key => $value) {
-            call_user_func_array($func, array(&$value, $key, $user_data));
-            self::walkRecursiveCallback($this, $value, $func, $user_data);
+            call_user_func_array($func, array(&$value, $key, $userData));
+            static::walkRecursiveCallback($this, $value, $func, $userData);
         }
+
         return $this;
     }
 
@@ -294,12 +297,15 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Sorts the elements of the array.
      *
      * @param integer $flags Flags for sorting.
-     * @return sArray The object to allow method chaining.
+     *
+     * @return StrictArray The object to allow method chaining.
+     *
      * @see sort()
      */
     public function sort($flags = SORT_STRING)
     {
         sort($this->data, $flags);
+
         return $this;
     }
 
@@ -307,12 +313,15 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Sorts the elements of the array reversed.
      *
      * @param integer $flags Flags for sorting.
-     * @return sArray The object to allow method chaining.
+     *
+     * @return StrictArray The object to allow method chaining.
+     *
      * @see rsort()
      */
     public function reverseSort($flags = SORT_STRING)
     {
         rsort($this->data, $flags);
+
         return $this;
     }
 
@@ -320,17 +329,18 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Recursively converts an array to an array of strings.
      *
-     * @param array|sArray Array or array-like object.
+     * @param array|StrictArray|object $values Array or array-like object.
+     *
      * @return array Array of strings.
      */
     private static function convertToStrings($values)
     {
         foreach ($values as $key => $value) {
-            if (self::isArrayLike($value)) {
-                $values[$key] = implode(',', self::convertToStrings($value));
+            if (static::isArrayLike($value)) {
+                $values[$key] = implode(',', static::convertToStrings($value));
             }
             else {
-                $values[$key] = (string)$value;
+                $values[$key] = (string) $value;
             }
         }
 
@@ -342,20 +352,17 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      *     by a comma. Internal arrays and array-like objects are also handled, but
      *     are not separated by any symbol (like JavaScript).
      *
-     * @internal
-     *
      * @return string
      */
     public function __toString()
     {
-        $arr = self::convertToStrings($this->data);
+        $arr = static::convertToStrings($this->data);
+
         return implode(',', $arr);
     }
 
     /**
      * Prints the JSON-encoded array.
-     *
-     * @return void
      */
     public function printJSON()
     {
@@ -376,8 +383,9 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Searches the array for a given value and returns the corresponding key if
      *     successful. Can return boolean false.
      *
-     * @param mixed $needle Value to search for.
+     * @param mixed   $needle Value to search for.
      * @param boolean $strict If the value should be identical.
+     *
      * @return boolean|string If the key is found, a string will be returned.
      *     Otherwise boolean false will be returned.
      */
@@ -389,12 +397,13 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Picks one or more random keys.
      *
-     * @param integer $num_req Number of items to get.
+     * @param integer $numReq Number of items to get.
+     *
      * @return array Array of numeric keys.
      */
-    public function rand($num_req = 1)
+    public function rand($numReq = 1)
     {
-        $ret = @array_rand($this->data, $num_req);
+        $ret = @array_rand($this->data, $numReq);
         if (!is_array($ret)) {
             $ret = array($ret);
         }
@@ -403,10 +412,11 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     }
 
     /**
-     * Compares this object's data with associative arrays.
+     * Compares this object's data with other arrays. Accepts multiple
+     *   arguments.
      *
-     * @param array|sArray $array1 Array or array-like object.
-     * @param array|sArray $array1,...
+     * @param array|StrictArray|object $array1 Array or array-like object.
+     *
      * @return sArray Array containing all the entries from $array1 that are
      *     not present in any of the other arrays.
      */
@@ -415,14 +425,14 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
         $args = func_get_args();
 
         foreach ($args as $key => $arg) {
-            if ($arg instanceof self) {
+            if ($arg instanceof static) {
                 $args[$key] = $arg->getData();
             }
         }
 
         array_unshift($args, $this->data);
 
-        return new self(call_user_func_array('array_diff', $args));
+        return new static(call_user_func_array('array_diff', $args));
     }
 
     /**
@@ -432,7 +442,7 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      */
     public function reverse()
     {
-        return new self(array_reverse($this->data));
+        return new static(array_reverse($this->data));
     }
 
     /**
@@ -447,11 +457,12 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      *     present. If length is given and is negative then the sequence will stop
      *     that many elements from the end of the array. If it is omitted, then the
      *     sequence will have everything from offset up until the end of the array.
-     * @return sArray Array slice.
+     *
+     * @return StrictArray Array slice.
      */
     public function slice($offset, $length = null)
     {
-        return new self(array_slice($this->data, $offset, $length));
+        return new static(array_slice($this->data, $offset, $length));
     }
 
     /**
@@ -459,51 +470,60 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      *     then the value will be returned in the resulting sArray instance of this
      *     method.
      *
-     * @param string $cb Callback to call on each key.
+     * @param callable $cb Callback to call on each key.
+     *
      * @return sArray New filtered sArray.
+     *
      * @see array_filter()
      */
     public function filter($cb)
     {
-        return new self(array_filter($this->data, $cb));
+        return new static(array_filter($this->data, $cb));
     }
 
     /**
      * Applies the callback to the elements of this array.
      *
-     * @param string $cb Callback to use.
-     * @return sArray
+     * @param callable $cb Callback to use.
+     *
+     * @return StrictArray New instance.
+     *
      * @see array_map()
      */
     public function map($cb)
     {
-        return new self(array_map($cb, $this->data));
+        return new static(array_map($cb, $this->data));
     }
 
     /**
      * Pad array to the specified length with a value.
      *
-     * @param integer $pad_size New size of the array.
-     * @param mixed $pad_value Value to pad if the array is less than $pad_size.
-     * @return sArray Returns a copy of the input padded to size specified by
-     *     $pad_size with value $pad_value.
+     * @param integer $padSize  New size of the array.
+     * @param mixed   $padValue Value to pad if the array size is less than
+     *   `$padSize`.
+     *
+     * @return StrictArray Returns a copy of the input padded to size specified by
+     *     `$padSize` with value `$padValue`.
+     *
      * @see array_pad()
      */
-    public function pad($pad_size, $pad_value)
+    public function pad($padSize, $padValue)
     {
-        return new self(array_pad($this->data, $pad_size, $pad_value));
+        return new static(array_pad($this->data, $padSize, $padValue));
     }
 
     /**
      * Removes duplicate values from the array.
      *
-     * @param integer $sort_flags One of the SORT_* constants.
-     * @return sArray Copy of this array with duplicate values removed.
+     * @param integer $sort_flags One of the `SORT_*` constants.
+     *
+     * @return StrictArray Copy of this array with duplicate values removed.
+     *
      * @see array_unique
      */
     public function unique($sort_flags = SORT_STRING)
     {
-        return new self(array_unique($this->data, $sort_flags));
+        return new static(array_unique($this->data, $sort_flags));
     }
 
     /**
@@ -531,10 +551,11 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Checks if value is an array or is array-like (implementing the correct
      *     interfaces).
      *
-     * To be array-like, a class must implement both ArrayAccess and
-     *     IteratorAggregate. Optionally, it can implement the Countable interface.
+     * To be array-like, a class must implement both `ArrayAccess` and
+     *     `IteratorAggregate`.
      *
      * @param mixed $value Value to check.
+     *
      * @return boolean If the value is an array or is array-like.
      */
     private static function isArrayLike($value)
@@ -543,7 +564,7 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
             return true;
         }
 
-        if ($value instanceof self) {
+        if ($value instanceof static) {
             return true;
         }
 
@@ -561,22 +582,21 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Callback used with walkRecursive.
      *
-     * @param sArray $instance Object instance.
-     * @param mixed $array Mixed variable, checked if is array-like.
-     * @param string $func Function to call on each item.
-     * @param mixed $user_data User data to add as third argument to callback.
-     * @return void
+     * @param sArray   $instance Object instance.
+     * @param mixed    &$array   Mixed variable, checked if is array-like.
+     * @param callable $func     Function to call on each item.
+     * @param mixed    $userData User data to add as third argument to callback.
      */
-    private static function walkRecursiveCallback(StrictArray $instance, &$array, $func, $user_data = null)
+    private static function walkRecursiveCallback(StrictArray $instance, &$array, $func, $userData = null)
     {
-        if (!self::isArrayLike($array)) {
+        if (!static::isArrayLike($array)) {
             return;
         }
 
         foreach ($array as $key => $value) {
-            call_user_func_array($func, array(&$value, $key, $user_data));
-            if (self::isArrayLike($value)) {
-                self::walkRecursiveCallback($instance, $value, $func, $user_data);
+            call_user_func_array($func, array(&$value, $key, $userData));
+            if (static::isArrayLike($value)) {
+                static::walkRecursiveCallback($instance, $value, $func, $userData);
             }
         }
     }

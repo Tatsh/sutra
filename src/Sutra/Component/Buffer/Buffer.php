@@ -5,17 +5,27 @@ use Sutra\Component\Buffer\Exception\EnvironmentException;
 use Sutra\Component\Buffer\Exception\ProgrammerException;
 
 /**
- * Provides a single, simplified interface for output buffering to prevent
- *   nested buffering issues and provide a more logical API.
- *
- * The best way to use this class is in a way that keeps only one instance.
- *   Examples: DI container, core class that holds your app 'globals'.
+ * {@inheritdoc}
  */
 class Buffer implements CapturableBufferInterface
 {
+    /**
+     * If this is already capturing.
+     *
+     * @var boolean
+     */
     protected $capturing = false;
+
+    /**
+     * If output buffering has already started.
+     *
+     * @var boolean
+     */
     protected $started = false;
 
+    /**
+     * {@inheritdoc}
+     */
     public function erase()
     {
         if (!$this->started) {
@@ -29,6 +39,9 @@ class Buffer implements CapturableBufferInterface
         ob_clean();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function get()
     {
         if (!$this->started) {
@@ -42,11 +55,17 @@ class Buffer implements CapturableBufferInterface
         return ob_get_contents();
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function isStarted()
     {
         return $this->started;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function replace($find, $replace)
     {
         if (!$this->started) {
@@ -61,9 +80,12 @@ class Buffer implements CapturableBufferInterface
         $contents = ob_get_contents();
         ob_clean();
 
-        print str_replace($find, $replace, $contents);
+        print(str_replace($find, $replace, $contents));
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function start($gzip = false)
     {
         if ($this->started) {
@@ -82,16 +104,9 @@ class Buffer implements CapturableBufferInterface
         $this->started = true;
     }
 
-    public function startCapture()
-    {
-        if ($this->capturing) {
-            throw new ProgrammerException('Output capturing has already been started');
-        }
-
-        ob_start();
-        $this->capturing = true;
-    }
-
+    /**
+     * {@inheritdoc}
+     */
     public function stop()
     {
         if (!$this->started) {
@@ -115,6 +130,22 @@ class Buffer implements CapturableBufferInterface
         $this->started = false;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function startCapture()
+    {
+        if ($this->capturing) {
+            throw new ProgrammerException('Output capturing has already been started');
+        }
+
+        ob_start();
+        $this->capturing = true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function stopCapture()
     {
         if (!$this->capturing) {
