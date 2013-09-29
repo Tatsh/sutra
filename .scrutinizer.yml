@@ -12,6 +12,7 @@ tools:
     php_code_coverage: true
     php_code_sniffer:
         enabled: true
+        command: bin/phpcs
         config:
             standard: Symfony2
             sniffs:
@@ -24,4 +25,4 @@ tools:
     php_analyzer: true
 before_commands:
     - "composer install --prefer-source"
-    - "pushd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../instaclick/symfony2-coding-standard/Symfony2; popd"
+    - "cd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../instaclick/symfony2-coding-standard/Symfony2; cd ../../../../.."
