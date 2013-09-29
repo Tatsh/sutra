@@ -11,7 +11,8 @@ class HttpRequestTest extends TestCase
      * @expectedException Sutra\Component\Url\Exception\ProgrammerException
      * @expectedExceptionMessage The argument specified, "aaa", is not a valid HTTP URL.
      */
-    public function testConstructorBadURL() {
+    public function testConstructorBadURL()
+    {
         new HttpRequest('aaa');
     }
 
@@ -19,11 +20,13 @@ class HttpRequestTest extends TestCase
      * @expectedException Sutra\Component\Url\Exception\ProgrammerException
      * @expectedExceptionMessage The method specified, "bad", is not a valid HTTP method.
      */
-    public function testConstructorBadMethod() {
+    public function testConstructorBadMethod()
+    {
         new HttpRequest('http://localhost', 'bad');
     }
 
-    public function testGetHeadersAsString() {
+    public function testGetHeadersAsString()
+    {
         $headers = array(
             'User-Agent' => 'my user agent',
             'custom-header' => 'custom header',
@@ -36,7 +39,8 @@ class HttpRequestTest extends TestCase
         $this->assertEquals($result, $str);
     }
 
-    public function testSetHeaders() {
+    public function testSetHeaders()
+    {
         $headers = array(
             'User-Agent' => 'my user agent',
             'custom-header' => 'custom header',
@@ -46,14 +50,16 @@ class HttpRequestTest extends TestCase
         $this->assertInternalType('array', $a->getHeaders());
     }
 
-    public function testSetHeader() {
+    public function testSetHeader()
+    {
         $a = new HttpRequest('http://localhost');
         $a->setHeader('X-Requested-With', 'blah');
         $headers = $a->getHeaders();
         $this->assertArrayHasKey('X-Requested-With', $headers);
     }
 
-    public function testSetUserAgent() {
+    public function testSetUserAgent()
+    {
         $agent = 'aaaaaa';
         $a = new HttpRequest('http://localhost');
         $a->setUserAgent($agent);
@@ -62,7 +68,8 @@ class HttpRequestTest extends TestCase
         $this->assertEquals($agent, $headers['User-Agent']);
     }
 
-    public function testGetData() {
+    public function testGetData()
+    {
         $a = new HttpRequest('http://am.php.net/manual/en/context.http.php');
         $data = $a->getData();
         $this->assertTag(array(
@@ -83,13 +90,15 @@ class HttpRequestTest extends TestCase
      * @expectedException Sutra\Component\Url\Exception\UnexpectedException
      * @expectedExceptionMessage The URI, "http://hope-it-doesnt-exist", could not be loaded.
      */
-    public function testBadRequest() {
+    public function testBadRequest()
+    {
         $url = 'http://hope-it-doesnt-exist';
         $a = new HttpRequest($url);
         $a->getData();
     }
 
-    public function testPOST() {
+    public function testPOST()
+    {
         $a = new HttpRequest('http://am.php.net/manual/en/context.http.php', 'POST');
 
         $this->assertEquals('', $a->getContent());
@@ -104,7 +113,8 @@ class HttpRequestTest extends TestCase
             ), $data);
     }
 
-    public function testSetProxy() {
+    public function testSetProxy()
+    {
         $url = 'http://hope-it-doesnt-exist';
         $a = new HttpRequest($url);
         $a->setProxy('tcp://proxy.example.com:5100');
@@ -119,14 +129,16 @@ class HttpRequestTest extends TestCase
      *
      * @todo Need test with working proxy.
      */
-    public function testWithProxy() {
+    public function testWithProxy()
+    {
         $url = 'http://www.google.com';
         $a = new HttpRequest($url);
         $a->setProxy('tcp://proxy.example.com:5100');
         $data = $a->getData();
     }
 
-    public function testGetJSON() {
+    public function testGetJSON()
+    {
         $a = new HttpRequest(self::JSON_SOURCE_URI);
         $data = $a->getJson();
         $this->assertInternalType('object', $data);
