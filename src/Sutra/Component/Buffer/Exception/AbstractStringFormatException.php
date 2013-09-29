@@ -9,13 +9,6 @@ namespace Sutra\Component\Buffer\Exception;
 abstract class AbstractStringFormatException extends \Exception
 {
     /**
-     * Previous exception, if set.
-     *
-     * @var \Exception|null
-     */
-    protected $previous;
-
-    /**
      * Constructor. Takes a format string and a variable amount of arguments
      *   like `sprintf()`.
      *
@@ -50,16 +43,5 @@ abstract class AbstractStringFormatException extends \Exception
     public function setCode($code)
     {
         $this->code = (int) $code;
-    }
-
-    /**
-     * Because the previous exception argument is ignored in the constructor,
-     *   this helper sets the previous exception if necessary.
-     *
-     * @param \Exception $exception Exception instance.
-     */
-    public function setPrevious(\Exception $exception)
-    {
-        $this->previous = $exception;
     }
 }
