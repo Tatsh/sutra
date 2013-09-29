@@ -1,13 +1,3 @@
-filter:
-    paths:
-        - src/*
-    excluded_paths:
-        - bin/*
-        - classes/*
-        - src/Sutra/Component/*/Exception/AbstractStringFormatException.php
-        - src/Sutra/Component/*/Exception/ProgrammerException.php
-        - src/Sutra/Component/*/Exception/ValidationException.php
-        - vendor/*
 tools:
     php_code_coverage:
         test_command: bin/phpunit
@@ -20,10 +10,52 @@ tools:
                 squiz:
                     white_space:
                         control_structure_spacing_sniff: false
-    php_cpd: true
-    #php_loc: true
-    #php_mess_detector: true
-    php_analyzer: true
+        filter:
+            paths:
+                - src/*
+            excluded_paths:
+                - bin/*
+                - classes/*
+                - vendor/*
+    php_cpd:
+        enabled: true
+        filter:
+            paths:
+                - src/*
+            excluded_paths:
+                - bin/*
+                - classes/*
+                - vendor/*
+                - src/Sutra/Component/*/Exception/AbstractStringFormatException.php
+                - src/Sutra/Component/*/Exception/ProgrammerException.php
+                - src/Sutra/Component/*/Exception/ValidationException.php
+    php_loc:
+        enabled: true
+        filter:
+            paths:
+                - src/*
+            excluded_paths:
+                - bin/*
+                - classes/*
+                - vendor/*
+    php_mess_detector:
+        enabled: true
+        filter:
+            paths:
+                - src/*
+            excluded_paths:
+                - bin/*
+                - classes/*
+                - vendor/*
+    php_analyzer:
+        enabled: true
+        filter:
+            paths:
+                - src/*
+            excluded_paths:
+                - bin/*
+                - classes/*
+                - vendor/*
 before_commands:
     - "composer install --prefer-source"
     - "cd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../instaclick/symfony2-coding-standard/Symfony2; cd ../../../../.."
