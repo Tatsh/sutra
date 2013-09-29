@@ -31,11 +31,10 @@ tools:
                 - src/Sutra/Component/*/Exception/ValidationException.php
     php_loc:
         enabled: true
-        filter:
-            excluded_dirs:
-                - bin
-                - classes
-                - vendor
+        excluded_dirs:
+            - bin
+            - classes
+            - vendor
     php_mess_detector:
         enabled: true
         filter:
