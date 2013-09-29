@@ -12,30 +12,9 @@ tools:
 #         enabled: true
 #         command: bin/phpcs
 #         config:
-#             standard: Symfony2
-#             sniffs:
-#                 squiz:
-#                     white_space:
-#                         control_structure_spacing_sniff: false
-#         filter:
-#             paths:
-#                 - src/*
-#             excluded_paths:
-#                 - bin/*
-#                 - classes/*
-#                 - vendor/*
+#             standard: Sutra
 #     php_cpd:
 #         enabled: true
-#         filter:
-#             paths:
-#                 - src/*
-#             excluded_paths:
-#                 - bin/*
-#                 - classes/*
-#                 - vendor/*
-#                 - src/Sutra/Component/*/Exception/AbstractStringFormatException.php
-#                 - src/Sutra/Component/*/Exception/ProgrammerException.php
-#                 - src/Sutra/Component/*/Exception/ValidationException.php
 #     php_loc:
 #         enabled: true
 #         excluded_dirs:
@@ -44,22 +23,8 @@ tools:
 #             - vendor
 #     php_mess_detector:
 #         enabled: true
-#         filter:
-#             paths:
-#                 - src/*
-#             excluded_paths:
-#                 - bin/*
-#                 - classes/*
-#                 - vendor/*
 #     php_analyzer:
 #         enabled: true
-#         filter:
-#             paths:
-#                 - src/*
-#             excluded_paths:
-#                 - bin/*
-#                 - classes/*
-#                 - vendor/*
 before_commands:
     - "composer install --prefer-source"
-    - "cd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../instaclick/symfony2-coding-standard/Symfony2; cd ../../../../.."
+    #- "cd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../sutra/sutra-coding-standard/Sutra; cd ../../../../.."
