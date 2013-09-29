@@ -2,8 +2,8 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 
 # Ports from Flourish
 
-- [ ] `fBuffer` 
-- [ ] `fDate`
+- [ ] `fBuffer`
+- [x] `fDate`
 - [ ] `fTime`
 - [ ] `fTimestamp`
 - [ ] `fCryptography`
@@ -28,7 +28,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `sHTTPRequest` 
 - [ ] `sImage` (same as `fImage`)
 - [ ] `sNumber` (same as `fNumber`)
-- [ ] `sObject`
+- [x] `sObject`
 - [ ] `sProcess`
 - [ ] `sString`
 - [ ] `sTimestamp` (same as `sTimestamp`)
