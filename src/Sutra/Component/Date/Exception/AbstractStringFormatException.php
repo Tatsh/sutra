@@ -19,8 +19,8 @@ abstract class AbstractStringFormatException extends \Exception
      * Constructor. Takes a format string and a variable amount of arguments
      *   like `sprintf()`.
      *
-     * @param string     $message   Format string.
-     * @param integer    $code      Ignored.
+     * @param string     $message  Format string.
+     * @param integer    $code     Ignored.
      * @param \Exception $previous Ignored.
      *
      * @see sprintf()
