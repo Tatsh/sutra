@@ -35,6 +35,9 @@ class DictionaryTest extends TestCase
     public function testValidateRequiredKeys() {
         $obj = new Dictionary(array('a' => 'b'));
         $this->assertEquals($obj, $obj->validateRequiredKeys('a'));
+
+        $obj = new Dictionary(array('a' => 'b'));
+        $this->assertEquals($obj, $obj->validateRequiredKeys(array('a')));
     }
 
     /**
@@ -209,9 +212,9 @@ class DictionaryTest extends TestCase
         $contained = new ContainerMock();
         $contained['a'] = 1;
 
-        $this->expectOutputString('a=>b,b=>c,0=>1,1=>2,3,0=>1,0=>2,1=>3,0=>2,1=>3,e=>{"a":1},a=>1,');
+        $this->expectOutputString('a=>{"a":"b","b":"c","d":[1,[2,3]],"e":{}},b=>{"a":"b","b":"c","d":[1,[2,3]],"e":{}},d=>{"a":"b","b":"c","d":[1,[2,3]],"e":{}},e=>{"a":"b","b":"c","d":[1,[2,3]],"e":{}},');
         $obj = new Dictionary(array('a' => 'b', 'b' => 'c', 'd' => array(1, array(2, 3)), 'e' => $contained));
-        $obj->walkRecursive(array(__CLASS__, 'walkCallback'));
+        $obj->walk(array(__CLASS__, 'walkCallback'));
     }
 
     public function testWalkRecursive() {

@@ -7,6 +7,15 @@ class DateTest extends TestCase
 {
     const DATE_TO_TEST = '2013-05-12';
 
+    /**
+     * @expectedException Sutra\Component\Date\Exception\ValidationException
+     * @expectedExceptionMessage The date given "red" was not able to be parsed
+     */
+    public function testConstructorBadTimestamp()
+    {
+        $date = new Date('red');
+    }
+
     public function testToString()
     {
         $date = new Date(static::DATE_TO_TEST);
@@ -30,6 +39,16 @@ class DateTest extends TestCase
 
         // Make sure original date is not changed
         $this->assertEquals(static::DATE_TO_TEST, (string) $date);
+    }
+
+    /**
+     * @expectedException Sutra\Component\Date\Exception\ValidationException
+     * @expectedExceptionMessage The adjustment specified, "-500 years", does not appear to be a valid relative date measurement
+     */
+    public function testAdjustBadTimestamp()
+    {
+        $date = new Date(static::DATE_TO_TEST);
+        $date->adjust('-500 years');
     }
 
     public function testEquals()
@@ -77,7 +96,32 @@ class DateTest extends TestCase
             array($date->adjust('-2 months'), true, '2 months'),
             array($date->adjust('+1 year'), false, '1 year before'),
             array($date->adjust('+10 years'), false, '10 years before'),
+            array(clone $date, false, 'same day'),
         );
+    }
+
+    /**
+     * NOTE Time-sensitive.
+     */
+    public function testGetFuzzyDifferenceAgo()
+    {
+        $currentYear = date('Y');
+        $currentMonth = date('m');
+        $date = new Date(sprintf('%d-%d-01', $currentYear, $currentMonth - 2));
+
+        $this->assertRegExp('/[23] months ago/', $date->getFuzzyDifference());
+    }
+
+    /**
+     * NOTE Time-sensitive.
+     */
+    public function testGetFuzzyDifferenceFromNow()
+    {
+        $currentYear = date('Y');
+        $currentMonth = date('m');
+        $date = new Date(sprintf('%d-%d-01', $currentYear, $currentMonth + 3));
+
+        $this->assertRegExp('/[23] months from now/', $date->getFuzzyDifference());
     }
 
     /**
@@ -124,7 +168,7 @@ class DateTest extends TestCase
         $this->assertTrue($date->lessThanOrEqualTo('2099-05-12'));
     }
 
-    public function modify()
+    public function testModify()
     {
         $date = new Date(static::DATE_TO_TEST);
 
@@ -133,6 +177,6 @@ class DateTest extends TestCase
         $this->assertEquals('2013-05-01', (string) $newDate);
 
         $newDate = $date->modify('Y-m-t');
-        $this->assertEquals('2013-05-30', (string) $newDate);
+        $this->assertEquals('2013-05-31', (string) $newDate);
     }
 }

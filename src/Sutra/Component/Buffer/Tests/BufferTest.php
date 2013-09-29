@@ -129,6 +129,13 @@ class BufferTest extends TestCase
         $this->assertEquals($level, ob_get_level());
     }
 
+    public function testStopBufferingWithFlush()
+    {
+        $this->instance->start();
+        print('O');
+        $this->instance->stop();
+    }
+
     /**
      * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
      * @expectedExceptionMessage Output buffering cannot be stopped since it has not been started
@@ -149,6 +156,69 @@ class BufferTest extends TestCase
         $this->instance->startCapture();
         $this->startedCapture = true;
         $this->instance->stop();
+    }
+
+    /**
+     * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
+     * @expectedExceptionMessage A replacement cannot be made since output buffering has not been started
+     */
+    public function testReplaceWithoutStarting()
+    {
+        $this->instance->replace('find', 'replace');
+    }
+
+    /**
+     * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
+     * @expectedExceptionMessage Output capturing is currently active and it must be stopped before a replacement can be made
+     */
+    public function testReplaceDuringCapture()
+    {
+        $this->instance->start();
+        $this->startedBuffer = true;
+        $this->instance->startCapture();
+        $this->startedCapture = true;
+        $this->instance->replace('find', 'replace');
+    }
+
+    public function testReplace()
+    {
+        $this->instance->start();
+        $this->startedBuffer = true;
+        print('1');
+        $this->assertEquals('1', ob_get_contents());
+        $this->instance->replace('1', 'replacement string');
+        $this->assertEquals('replacement string', ob_get_contents());
+    }
+
+    /**
+     * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
+     * @expectedExceptionMessage Output capturing is currently active and it must be stopped before the buffering can be started
+     */
+    public function testStartWhileCapturing()
+    {
+        $this->instance->startCapture();
+        $this->startedCapture = true;
+        $this->instance->start();
+    }
+
+    /**
+     * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
+     * @expectedExceptionMessage Output capturing has already been started
+     */
+    public function testStartCaptureWhileCapturing()
+    {
+        $this->instance->startCapture();
+        $this->startedCapture = true;
+        $this->instance->startCapture();
+    }
+
+    /**
+     * @expectedException Sutra\Component\Buffer\Exception\ProgrammerException
+     * @expectedExceptionMessage Output capturing cannot be stopped since it has not been started
+     */
+    public function testStopCaptureWhileNotCapturing()
+    {
+        $this->instance->stopCapture();
     }
 
     public function tearDown()
