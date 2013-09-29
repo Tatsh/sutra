@@ -240,7 +240,7 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
 
         foreach ($this->data as $key => $value) {
             call_user_func_array($func, array(&$value, $key, $userData));
-            self::walkRecursiveCallback($this, $value, $func, $userData);
+            static::walkRecursiveCallback($this, $value, $func, $userData);
         }
 
         return $this;
@@ -301,7 +301,7 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
         $args = func_get_args();
 
         foreach ($args as $key => $arg) {
-            if ($arg instanceof self) {
+            if ($arg instanceof static) {
                 $args[$key] = $arg->getData();
             }
         }
@@ -394,7 +394,7 @@ class Dictionary implements \ArrayAccess, \IteratorAggregate, \Countable
      */
     public function filter($cb)
     {
-        return new self(array_filter($this->data, $cb));
+        return new static(array_filter($this->data, $cb));
     }
 
     /**
