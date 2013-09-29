@@ -2,7 +2,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 
 # Ports from Flourish
 
-- [ ] `fBuffer`
+- [X] `fBuffer`
 - [x] `fDate`
 - [ ] `fTime`
 - [ ] `fTimestamp`
