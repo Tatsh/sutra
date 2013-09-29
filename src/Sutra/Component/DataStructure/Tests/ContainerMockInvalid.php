@@ -1,7 +1,7 @@
 <?php
 namespace Sutra\Component\DataStructure\Tests;
 
-class DictionaryContainerMockInvalid implements \IteratorAggregate
+class ContainerMockInvalid implements \IteratorAggregate
 {
     private $data = array();
 

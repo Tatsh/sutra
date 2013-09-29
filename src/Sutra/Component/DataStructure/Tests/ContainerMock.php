@@ -1,7 +1,7 @@
 <?php
 namespace Sutra\Component\DataStructure\Tests;
 
-class DictionaryContainerMock implements \ArrayAccess, \IteratorAggregate
+class ContainerMock implements \ArrayAccess, \IteratorAggregate
 {
     private $data = array();
 

@@ -214,7 +214,7 @@ class DictionaryTest extends TestCase
     }
 
     public function testWalk() {
-        $contained = new DictionaryContainerMock();
+        $contained = new ContainerMock();
         $contained['a'] = 1;
 
         $this->expectOutputString('a=>b,b=>c,0=>1,1=>2,3,0=>1,0=>2,1=>3,0=>2,1=>3,e=>{"a":1},a=>1,');
@@ -223,9 +223,9 @@ class DictionaryTest extends TestCase
     }
 
     public function testWalkRecursive() {
-        $contained = new DictionaryContainerMock();
+        $contained = new ContainerMock();
         $contained['a'] = 1;
-        $non_array = new DictionaryContainerMockInvalid();
+        $non_array = new ContainerMockInvalid();
 
         $this->expectOutputString('a=>b,b=>c,0=>1,1=>2,3,0=>1,0=>2,1=>3,0=>2,1=>3,e=>{"b":"c"},b=>c,f=>{"a":1},a=>1,g=>[],');
         $obj1 = new Dictionary(array('b' => 'c'));
