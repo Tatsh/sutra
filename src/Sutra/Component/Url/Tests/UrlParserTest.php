@@ -1,8 +1,8 @@
 <?php
-namespace Sutra\Component\String\Tests;
+namespace Sutra\Component\Url\Tests;
 
-use Sutra\Component\String\UrlParser;
 use Sutra\Component\String\Utf8Helper;
+use Sutra\Component\Url\UrlParser;
 
 class UrlParserTest extends TestCase
 {

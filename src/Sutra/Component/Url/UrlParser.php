@@ -1,5 +1,7 @@
 <?php
-namespace Sutra\Component\String;
+namespace Sutra\Component\Url;
+
+use Sutra\Component\String\Utf8HelperInterface;
 
 class UrlParser implements UrlParserInterface
 {

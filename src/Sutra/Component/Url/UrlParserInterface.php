@@ -1,5 +1,5 @@
 <?php
-namespace Sutra\Component\String;
+namespace Sutra\Component\Url;
 
 interface UrlParserInterface
 {
