@@ -69,6 +69,74 @@ class Utf8HelperTest extends TestCase
         );
     }
 
+    public static function lowerProvider()
+    {
+        return array(
+            array('Ξ', 'ξ'),
+            array('Ŧ', 'ŧ'),
+            array('ABC', 'abc'),
+        );
+    }
+
+    /**
+     * @dataProvider lowerProvider
+     */
+    public function testLower($input, $output)
+    {
+        $this->assertEquals($output, static::$instance->lower($input));
+    }
+
+    /**
+     * @dataProvider lowerProvider
+     */
+    public function testUpper($output, $input)
+    {
+        $this->assertEquals($output, static::$instance->upper($input));
+    }
+
+    public static function indexOfProvider()
+    {
+        return array(
+            array('my string', 's', 0, 3),
+            array('a string', 'y', 0, false),
+            array('AŦBC', 'Ŧ', 1, 1),
+            array('AŦBCD', 'F', 0, false),
+        );
+    }
+
+    /**
+     * @dataProvider indexOfProvider
+     */
+    public function testIndexOf($string, $needle, $offset, $expected)
+    {
+        $this->assertSame($expected, static::$instance->indexOf($string, $needle, $offset));
+    }
+
+    /**
+     * @dataProvider indexOfProvider
+     */
+    public function testLastIndexOf($string, $needle, $offset, $expected)
+    {
+        $this->assertSame($expected, static::$instance->lastIndexOf($string, $needle, $offset));
+    }
+
+    public static function asciiProvider()
+    {
+        return array(
+            array('my string has العربي', 'my string has '),
+            array('道德經', ''),
+            array('maybe this is uñicode', 'maybe this is unicode'),
+        );
+    }
+
+    /**
+     * @dataProvider asciiProvider
+     */
+    public function testAscii($string, $expected)
+    {
+        $this->assertEquals($expected, static::$instance->ascii($string));
+    }
+
     /**
      * @dataProvider titleProvider
      */
