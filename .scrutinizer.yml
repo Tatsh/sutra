@@ -1,0 +1,27 @@
+filter:
+    paths:
+        - src/*
+    excluded_paths:
+        - bin/*
+        - classes/*
+        - src/Sutra/Component/*/Exception/AbstractStringFormatException.php
+        - src/Sutra/Component/*/Exception/ProgrammerException.php
+        - src/Sutra/Component/*/Exception/ValidationException.php
+        - vendor/*
+tools:
+    php_code_coverage: true
+    php_code_sniffer:
+        enabled: true
+        config:
+            standard: Symfony2
+            sniffs:
+                squiz:
+                    white_space:
+                        control_structure_spacing_sniff: false
+    php_cpd: true
+    #php_loc: true
+    #php_mess_detector: true
+    php_analyzer: true
+before_commands:
+    - "composer install --prefer-source"
+    - "pushd vendor/squizlabs/php_codesniffer/CodeSniffer/Standards; ln -s ../../../../instaclick/symfony2-coding-standard/Symfony2; popd"
