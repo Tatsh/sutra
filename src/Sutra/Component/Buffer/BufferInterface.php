@@ -53,11 +53,9 @@ interface BufferInterface
     /**
      * Starts output buffering.
      *
-     * @param boolean $gzip If gzip compression should be used.
-     *
      * @throws ProgrammerException If output buffering cannot be started.
      */
-    public function start($gzip = false);
+    public function start();
 
     /**
      * Stops output buffering.

@@ -86,7 +86,7 @@ class Buffer implements CapturableBufferInterface
     /**
      * {@inheritdoc}
      */
-    public function start($gzip = false)
+    public function start()
     {
         if ($this->started) {
             throw new ProgrammerException('Output buffering has already been started');
@@ -96,11 +96,7 @@ class Buffer implements CapturableBufferInterface
             throw new ProgrammerException('Output capturing is currently active and it must be stopped before the buffering can be started');
         }
 
-        if ($gzip && !extension_loaded('gzip')) {
-            throw new EnvironmentException('The PHP zlib extension is required for gzipped buffering, however is does not appear to be loaded');
-        }
-
-        ob_start($gzip ? 'ob_gzhandler' : null);
+        ob_start();
         $this->started = true;
     }
 
