@@ -70,14 +70,14 @@ class HttpRequestTest extends TestCase
 
     public function testGetData()
     {
-        $a = new HttpRequest('http://am.php.net/manual/en/context.http.php');
+        $a = new HttpRequest('http://php.tatsh.net/manual/en/context.http.php');
         $data = $a->getData();
         $this->assertTag(array(
             'tag' => 'title',
             'content' => 'PHP: HTTP context options - Manual',
         ), $data);
 
-        $a = new HttpRequest('http://am.php.net/manual/en/context.http.php');
+        $a = new HttpRequest('http://php.tatsh.net/manual/en/context.http.php');
         $a->send();
         $data = $a->getData();
         $this->assertTag(array(
@@ -99,7 +99,7 @@ class HttpRequestTest extends TestCase
 
     public function testPOST()
     {
-        $a = new HttpRequest('http://am.php.net/manual/en/context.http.php', 'POST');
+        $a = new HttpRequest('http://php.tatsh.net/manual/en/context.http.php', 'POST');
 
         $this->assertEquals('', $a->getContent());
 
