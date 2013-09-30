@@ -61,7 +61,7 @@ class Grammar implements GrammarInterface
 
     public function addPluralizationRule($word, $replacement)
     {
-        DoctrineInflector::rules('plural', array('irregular' => array($word, $replacement))));
+        DoctrineInflector::rules('plural', array('irregular' => array($word, $replacement)));
     }
 
     public function pluralize($str)
@@ -76,7 +76,7 @@ class Grammar implements GrammarInterface
 
     public function addSingularizationRule($word, $replacement)
     {
-        DoctrineInflector::rules('singular', array('irregular' => array($word, $replacement))));
+        DoctrineInflector::rules('singular', array('irregular' => array($word, $replacement)));
     }
 
     public function studlyize($str)
