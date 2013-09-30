@@ -151,4 +151,23 @@ class Utf8HelperTest extends TestCase
     {
         $this->assertEquals($output, static::$instance->title($input));
     }
+
+    public static function substrProvider()
+    {
+        return array(
+            array('my string', 3, null, 'string'),
+            // array('العربيaaaa', 3, null, 'ربيaaaa'), // Doesn't work yet
+            array('《》『', 4, null, false),
+            array('a', 2, 1, false),
+            array('abc', -1, null, 'c'),
+        );
+    }
+
+    /**
+     * @dataProvider substrProvider
+     */
+    public function testSubstr($string, $start, $length, $output)
+    {
+        $this->assertSame($output, static::$instance->substr($string, $start, $length));
+    }
 }
