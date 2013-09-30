@@ -25,11 +25,9 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [x] `sArray`
 - [ ] `sGrammar` (same as `fGrammar`)
 - [ ] `sHTML` (same as `fHTML`)
-- [ ] `sHTTPRequest` 
-- [ ] `sImage` (same as `fImage`)
+- [X] `sHTTPRequest` 
 - [ ] `sNumber` (same as `fNumber`)
 - [x] `sObject`
-- [ ] `sProcess`
 - [ ] `sString`
 - [ ] `sTimestamp` (same as `sTimestamp`)
 
