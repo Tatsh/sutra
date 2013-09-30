@@ -11,7 +11,7 @@ class GzipBuffer extends Buffer
     /**
      * {@inheritdoc}
      */
-    public function start($gzip = false)
+    public function start()
     {
         if ($this->started) {
             throw new ProgrammerException('Output buffering has already been started');
