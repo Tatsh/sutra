@@ -495,6 +495,12 @@ class Utf8Helper implements Utf8HelperInterface
      */
     protected $mbstringAvailable = false;
 
+    /**
+     * Constructor.
+     *
+     * Checks if the `mbstring` extension is available and if this version of
+     *   iconv is usable with `//IGNORE`.
+     */
     public function __construct()
     {
         $this->mbstringAvailable = extension_loaded('mbstring');
@@ -502,11 +508,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * Detects if a UTF-8 string contains only ASCII characters.
-     *
-     * @param string $string The string to check.
-     *
-     * @return boolean `true` if the string only contains ASCII characters.
+     * {@inheritdoc}
      */
     public function isAscii($string)
     {
@@ -514,7 +516,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::len
+     * {@inheritdoc}
      */
     public function length($string)
     {
@@ -526,15 +528,18 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::replace
-     * @replaces str_replace
+     * {@inheritdoc}
      */
-    public function replace($string, $find, $replace, $caseSensitive = true)
+    public function replace($string, $find, $replace)
     {
-        if ($caseSensitive) {
-            return str_replace($string, $find, $replace);
-        }
+        return str_replace($string, $find, $replace);
+    }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function caseInsensitiveReplace($string, $find, $replace)
+    {
         if (is_array($find)) {
             foreach ($find as &$needle) {
                 $needle = sprintf('#%s#ui', preg_quote($needle, '#'));
@@ -550,9 +555,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::explode
-     * @replaces explode
-     * @replaces str_split
+     * {@inheritdoc}
      */
     public function split($string, $delimiter = null)
     {
@@ -568,8 +571,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::lower
-     * @replaces strtolower
+     * {@inheritdoc}
      */
     public function lower($string)
     {
@@ -588,8 +590,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::upper
-     * @replaces strtoupper
+     * {@inheritdoc}
      */
     public function upper($string)
     {
@@ -610,36 +611,38 @@ class Utf8Helper implements Utf8HelperInterface
      * Handles converting a character to uppercase for `#title()`.
      *
      * @param array $match The match from `#title()`.
+     *
      * @return string  The uppercase character.
      *
      * @see #title()
      */
-    protected function _titleCallback($match)
+    protected function titleCallback($match)
     {
         return $this->upper($match[1]);
     }
 
     /**
-     * @replaces ::ucwords
-     * @replaces ucwords
+     * {@inheritdoc}
      */
     public function title($string)
     {
         return preg_replace_callback(
             '#(?<=^|\s|[\x{2000}-\x{200A}]|/|-|\(|\[|\{|\||"|^\'|\s\'|‘|“)(.)#u',
-            array('static', '_titleCallback'),
+            array('static', 'titleCallback'),
             $string
         );
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function firstToUpper($string)
     {
         return $this->upper(sprintf('%s%s', $this->substr($string, 0, 1), $this->substr($string, 1)));
     }
 
     /**
-     * @replaces ::ltrim
-     * @replaces ltrim
+     * {@inheritdoc}
      */
     public function trimLeft($string, $charList = null)
     {
@@ -655,8 +658,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::rtrim
-     * @replaces rtrim
+     * {@inheritdoc}
      */
     public function trimRight($string, $charList = null)
     {
@@ -672,8 +674,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::trim
-     * @replaces trim
+     * {@inheritdoc}
      */
     public function trim($string, $charList = null)
     {
@@ -689,8 +690,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::pos
-     * @replaces strpos
+     * {@inheritdoc}
      */
     public function indexOf($string, $needle, $offset = 0)
     {
@@ -709,9 +709,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::rpos
-     * @replaces strrpos
-     * @replaces mb_strrpos
+     * {@inheritdoc}
      */
     public function lastIndexOf($string, $needle, $offset = 0)
     {
@@ -731,8 +729,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::rev
-     * @replaces strrev
+     * {@inheritdoc}
      */
     public function reverse($string)
     {
@@ -770,10 +767,9 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::wordwrap
-     * @replaces wordwrap
+     * {@inheritdoc}
      */
-    public function wordWrap($string, $width = 75, $break = '', $cut = false)
+    public function wordWrap($string, $width = 75, $break = "\n", $cut = false)
     {
         if ($this->isAscii($string)) {
             return wordwrap($string, $width, $break, $cut);
@@ -807,10 +803,9 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::pad
-     * @replaces str_pad
+     * {@inheritdoc}
      */
-    public function padLeft($string, $padLength, $padString)
+    public function padLeft($string, $padLength, $padString = ' ')
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
             return str_pad($string, $padLength, $padString, STR_PAD_LEFT);
@@ -841,10 +836,9 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::pad
-     * @replaces str_pad
+     * {@inheritdoc}
      */
-    public function padRight($string, $padLength, $padString)
+    public function padRight($string, $padLength, $padString = ' ')
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
             return str_pad($string, $padLength, $padString, STR_PAD_RIGHT);
@@ -874,10 +868,9 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::pad
-     * @replaces str_pad
+     * {@inheritdoc}
      */
-    public function pad($string, $padLength, $padString)
+    public function pad($string, $padLength, $padString = ' ')
     {
         if ($this->isAscii($string) && $this->isAscii($padString)) {
             return str_pad($string, $padLength, $padString, STR_PAD_BOTH);
@@ -920,7 +913,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::clean
+     * {@inheritdoc}
      */
     public function clean($value)
     {
@@ -954,9 +947,7 @@ class Utf8Helper implements Utf8HelperInterface
     }
 
     /**
-     * @replaces ::sub
-     * @replaces substr
-     * @replaces mb_substr
+     * {@inheritdoc}
      */
     public function substr($string, $start, $length = null)
     {
@@ -1018,6 +1009,9 @@ class Utf8Helper implements Utf8HelperInterface
         return substr($string, 0, $length);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function ascii($string)
     {
         if ($this->isAscii($string)) {
