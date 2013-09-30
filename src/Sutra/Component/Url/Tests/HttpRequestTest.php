@@ -56,6 +56,11 @@ class HttpRequestTest extends TestCase
         $a->setHeader('X-Requested-With', 'blah');
         $headers = $a->getHeaders();
         $this->assertArrayHasKey('X-Requested-With', $headers);
+
+        $a = new HttpRequest('http://localhost');
+        $a->setHeader('Content-Length', 'blah');
+        $headers = $a->getHeaders();
+        $this->assertNotEquals($headers['Content-Length'], 'blah');
     }
 
     public function testSetUserAgent()
@@ -84,6 +89,8 @@ class HttpRequestTest extends TestCase
             'tag' => 'title',
             'content' => 'PHP: HTTP context options - Manual',
         ), $data);
+
+        $this->assertSame(200, $a->getStatus());
     }
 
     /**
@@ -110,7 +117,7 @@ class HttpRequestTest extends TestCase
         $this->assertTag(array(
             'tag' => 'title',
             'content' => 'PHP: HTTP context options - Manual',
-            ), $data);
+        ), $data);
     }
 
     public function testSetProxy()

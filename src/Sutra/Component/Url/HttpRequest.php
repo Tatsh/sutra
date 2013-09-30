@@ -390,7 +390,7 @@ class HttpRequest
 
             $data = @file_get_contents($this->url, false, $context);
 
-            $this->response_header = isset($http_response_header) ? $http_response_header : null; // PHP is so strange
+            $this->responseHeader = isset($http_response_header) ? $http_response_header : null; // PHP is so strange
 
             if ($data === false) {
                 throw new UnexpectedException('The URI, "%s", could not be loaded.', $this->url);
