@@ -34,12 +34,12 @@ class Utf8HelperTest extends TestCase
     public static function splitProvider()
     {
         return array(
-            array('', NULL, array('')),
-            array(' ', NULL, array(' ')),
-            array("a\nb", NULL, array("a", "\n", "b")),
-            array("\na\nb\n\n", NULL, array("\n", "a", "\n", "b", "\n", "\n")),
-            array('abcdefg', NULL, array('a', 'b', 'c', 'd', 'e', 'f', 'g')),
-            array('Iñtërnâtiônàlizætiøn', NULL, array('I', 'ñ', 't', 'ë', 'r', 'n', 'â', 't', 'i', 'ô', 'n', 'à', 'l', 'i', 'z', 'æ', 't', 'i', 'ø', 'n')),
+            array('', null, array('')),
+            array(' ', null, array(' ')),
+            array("a\nb", null, array("a", "\n", "b")),
+            array("\na\nb\n\n", null, array("\n", "a", "\n", "b", "\n", "\n")),
+            array('abcdefg', null, array('a', 'b', 'c', 'd', 'e', 'f', 'g')),
+            array('Iñtërnâtiônàlizætiøn', null, array('I', 'ñ', 't', 'ë', 'r', 'n', 'â', 't', 'i', 'ô', 'n', 'à', 'l', 'i', 'z', 'æ', 't', 'i', 'ø', 'n')),
             array("a\nb", '', array("a", "\n", "b")),
             array("a\nb", 'a', array("", "\nb")),
             array("a\nb", "\n", array("a", "b")),
