@@ -170,4 +170,21 @@ class Utf8HelperTest extends TestCase
     {
         $this->assertSame($output, static::$instance->substr($string, $start, $length));
     }
+
+    public static function lengthProvider()
+    {
+        return array(
+            array('my string', strlen('my string')),
+            array('العربيaaaa', 10),
+            array('《》『', 3),
+            );
+    }
+
+    /**
+     * @dataProvider lengthProvider
+     */
+    public function testLength($input, $output)
+    {
+        $this->assertEquals($output, static::$instance->length($input));
+    }
 }
