@@ -23,6 +23,13 @@ class Utf8HelperTest extends TestCase
         );
     }
 
+    // Just to cover the constructor
+    public function testConstructor()
+    {
+        $instance = new Utf8Helper();
+        $this->assertInstanceOf('Sutra\Component\String\Utf8HelperInterface', $instance);
+    }
+
     /**
      * @dataProvider cleanProvider
      */
