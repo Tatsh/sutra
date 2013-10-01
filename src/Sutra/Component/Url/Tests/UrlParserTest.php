@@ -1,7 +1,7 @@
 <?php
 namespace Sutra\Component\Url\Tests;
 
-use Sutra\Component\String\Utf8Helper;
+use Sutra\Component\String\MbUtf8Helper;
 use Sutra\Component\Url\UrlParser;
 
 class UrlParserTest extends TestCase
@@ -13,7 +13,16 @@ class UrlParserTest extends TestCase
 
     public static function setUpBeforeClass()
     {
-        static::$instance = new UrlParser(new Utf8Helper());
+        static::$instance = new UrlParser(new MbUtf8Helper());
+    }
+
+    public function testConstructor()
+    {
+        $parser = new UrlParser(new MbUtf8Helper());
+        $reflection = new \ReflectionClass($parser);
+        $prop = $reflection->getProperty('utf8Helper');
+        $prop->setAccessible(true);
+        $this->assertInstanceOf('Sutra\Component\String\Utf8HelperInterface', $prop->getValue($parser));
     }
 
     public function testGet()
@@ -57,6 +66,15 @@ class UrlParserTest extends TestCase
         $this->assertEquals('http://www.myurl.com:81', static::$instance->getDomain());
     }
 
+    public function testGetDomainSsl()
+    {
+        $_SERVER['REQUEST_URI'] = 'https://www.google.com';
+        $_SERVER['SERVER_NAME'] = 'www.google.com';
+        $_SERVER['HTTPS'] = 'on';
+
+        $this->assertEquals('https://www.google.com', static::$instance->getDomain());
+    }
+
     public function testGetQueryString()
     {
         $this->assertEquals('query=1&a=bar&b=f', static::$instance->getQueryString(static::URI));
@@ -84,6 +102,7 @@ class UrlParserTest extends TestCase
             array('limited to 10 chars', 10, null, 'limited-to'),
             array('delim is underscore', null, '_', 'delim_is_underscore'),
             array('call without max length', '+', null, 'call+without+max+length'),
+            array('my-----string-', 3, '-', 'my'),
         );
     }
 
@@ -93,6 +112,15 @@ class UrlParserTest extends TestCase
     public function testMakeFriendly($input, $maxLength, $delimiter, $output)
     {
         $this->assertEquals($output, static::$instance->makeFriendly($input, $maxLength, $delimiter));
+    }
+
+    /**
+     * @expectedException Sutra\Component\Url\Exception\UrlParserException
+     * @expectedExceptionMessage URI "x://::abc/?:" is invalid
+     */
+    public function testParseException()
+    {
+        static::$instance->getDomain('x://::abc/?:');
     }
 
     public function testRemoveFromQueryString()
@@ -119,6 +147,25 @@ class UrlParserTest extends TestCase
     public function testReplaceInQueryString($param, $value, $output)
     {
         $this->assertEquals($output, static::$instance->replaceInQueryString($param, $value, static::URI));
+    }
+
+    /**
+     * @expectedException Sutra\Component\Url\Exception\ProgrammerException
+     * @expectedExceptionMessage There are a different number of parameters and values
+     */
+    public function testReplaceInQueryStringDifferentNumberOfParameters()
+    {
+        static::$instance->replaceInQueryString(array('a', 'b'), array(1, 2, 3), static::URI);
+    }
+
+    /**
+     * @expectedException Sutra\Component\Url\Exception\ProgrammerException
+     * @expectedExceptionMessage There are a different number of parameters and values
+     */
+    public function testReplaceInQueryStringDifferentNumberOfParametersNoUri()
+    {
+        $_SERVER['REQUEST_URI'] = static::URI;
+        static::$instance->replaceInQueryString(array('a', 'b'), array(1, 2, 3));
     }
 
     /**

@@ -2,6 +2,8 @@
 namespace Sutra\Component\Url;
 
 use Sutra\Component\String\Utf8HelperInterface;
+use Sutra\Component\Url\Exception\ProgrammerException;
+use Sutra\Component\Url\Exception\UrlParserException;
 
 class UrlParser implements UrlParserInterface
 {
@@ -140,11 +142,7 @@ class UrlParser implements UrlParserInterface
         settype($value, 'array');
 
         if (sizeof($parameter) != sizeof($value)) {
-            throw new ProgrammerException(
-                "There are a different number of parameters and values.\nParameters:\n%1\$s\nValues\n%2\$s",
-                $parameter,
-                $value
-            );
+            throw new ProgrammerException('There are a different number of parameters and values');
         }
 
         for ($i = 0; $i < sizeof($parameter); $i++) {
@@ -159,7 +157,7 @@ class UrlParser implements UrlParserInterface
         $parsed = parse_url($uri);
 
         if ($parsed === false) {
-            throw new URLParserException('URI "%s" is invalid', (string) $uri);
+            throw new UrlParserException('URI "%s" is invalid', (string) $uri);
         }
 
         return $parsed;
