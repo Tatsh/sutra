@@ -119,9 +119,9 @@ class DateTest extends TestCase
     {
         $currentYear = date('Y');
         $currentMonth = date('m');
-        $date = new Date(sprintf('%d-%d-01', $currentYear, $currentMonth + 3));
+        $date = new Date(sprintf('%d-%d-01', $currentYear, floor(($currentMonth + 3) / 12)));
 
-        $this->assertRegExp('/[23] months from now/', $date->getFuzzyDifference());
+        $this->assertRegExp('/[123]\s(?:year|months|month)\s(?:from\snow|ago)/', $date->getFuzzyDifference());
     }
 
     /**
