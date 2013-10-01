@@ -146,12 +146,44 @@ class HttpRequestTest extends TestCase
 
     public function testGetJSON()
     {
-        $a = new HttpRequest(self::JSON_SOURCE_URI);
+        $a = new HttpRequest(static::JSON_SOURCE_URI);
         $data = $a->getJson();
         $this->assertInternalType('object', $data);
 
-        $a = new HttpRequest(self::JSON_SOURCE_URI);
+        $a = new HttpRequest(static::JSON_SOURCE_URI);
         $data = $a->getJson(true);
         $this->assertInternalType('array', $data);
+    }
+
+    public function testSetAuthentication()
+    {
+        $a = new HttpRequest(static::JSON_SOURCE_URI);
+        $a->setCredentials('a', 'a');
+        $headers = $a->getHeaders();
+        $this->assertArrayHasKey('Authorization', $headers);
+        $this->assertEquals(sprintf('Basic %s', base64_encode('a:a')), $headers['Authorization']);
+    }
+
+    public function testSetContent()
+    {
+        $a = new HttpRequest(static::JSON_SOURCE_URI);
+        $this->assertSame('', $a->getContent());
+
+        $content = array('key' => 'value');
+        $a->setContent($content);
+        $this->assertEquals('key=value', $a->getContent());
+    }
+
+    /**
+     * @covers Sutra\Component\Url\HttpRequest::setPostDataContentType
+     * @covers Sutra\Component\Url\HttpRequest::getResponseHeaders
+     */
+    public function testGetResponseHeaders()
+    {
+        $a = new HttpRequest('http://php.tatsh.net/manual/en/context.http.php');
+        $a->setPostDataContentType('application/json');
+        $a->connect();
+        $headers = $a->getResponseHeaders();
+        $this->assertEquals('HTTP/1.1 200 OK', $headers[0]);
     }
 }
