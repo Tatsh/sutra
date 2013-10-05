@@ -5,15 +5,31 @@ use Sutra\Component\String\Utf8HelperInterface;
 use Sutra\Component\Url\Exception\ProgrammerException;
 use Sutra\Component\Url\Exception\UrlParserException;
 
+/**
+ * {@inheritdoc}
+ */
 class UrlParser implements UrlParserInterface
 {
+    /**
+     * UTF-8 helper.
+     *
+     * @var Utf8HelperInterface
+     */
     protected $utf8Helper;
 
+    /**
+     * Constructor.
+     *
+     * @param Utf8HelperInterface $utf8Helper UTF-8 helper instance.
+     */
     public function __construct(Utf8HelperInterface $utf8Helper)
     {
         $this->utf8Helper = $utf8Helper;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function get($uri = null)
     {
         if ($uri === null) {
@@ -23,6 +39,9 @@ class UrlParser implements UrlParserInterface
         return preg_replace('#\?.*$#D', '', $uri);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getDomain($uri = null)
     {
         if ($uri === null) {
@@ -54,6 +73,9 @@ class UrlParser implements UrlParserInterface
         return sprintf('%s://%s', $parsed['scheme'], $parsed['host']);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getQueryString($uri = null)
     {
         if ($uri === null) {
@@ -65,6 +87,9 @@ class UrlParser implements UrlParserInterface
         return $parsed['query'];
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function getWithQueryString($uri = null)
     {
         if ($uri === null) {
@@ -76,7 +101,10 @@ class UrlParser implements UrlParserInterface
         return sprintf('%s?%s', $parsed['path'], $parsed['query']);
     }
 
-    public function makeFriendly($string, $maxLength = null, $delimiter = null)
+    /**
+     * {@inheritdoc}
+     */
+    public function makeFriendly($string, $maxLength = null, $delimiter = '-')
     {
         // This allows omitting the max length, but including a delimiter
         if ($maxLength && !is_numeric($maxLength)) {
@@ -113,6 +141,9 @@ class UrlParser implements UrlParserInterface
         return $string;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function removeFromQueryString($parameter, $uri = null)
     {
         if ($uri === null) {
@@ -128,6 +159,9 @@ class UrlParser implements UrlParserInterface
         return '?'.http_build_query($qsArray, '', '&');
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function replaceInQueryString($parameter, $value, $uri = null)
     {
         if ($uri === null) {
@@ -152,6 +186,17 @@ class UrlParser implements UrlParserInterface
         return '?'.http_build_query($qsArray, '', '&');
     }
 
+    /**
+     * For parsing URL but throwing a consistent exception.
+     *
+     * @param string $uri URI to parse.
+     *
+     * @return array Parsed URL parts.
+     *
+     * @throws UrlParserException If the URI is invalid.
+     *
+     * @see parse_url()
+     */
     private function parse($uri)
     {
         $parsed = parse_url($uri);
@@ -163,6 +208,13 @@ class UrlParser implements UrlParserInterface
         return $parsed;
     }
 
+    /**
+     * For consistent HTML-encoded string decoding.
+     *
+     * @param string $content String to decode.
+     *
+     * @return string Decoded string.
+     */
     private function htmlDecode($content)
     {
         return html_entity_decode($content, ENT_QUOTES, 'UTF-8');
