@@ -29,10 +29,11 @@ class ContainerMock implements \ArrayAccess, \IteratorAggregate
      * @param mixed $offset Offset.
      *
      * @return boolean Always returns `false`.
+     *
+     * @codeCoverageIgnore
      */
     public function offsetExists($offset)
     {
-        return false;
     }
 
     /**
@@ -41,10 +42,11 @@ class ContainerMock implements \ArrayAccess, \IteratorAggregate
      * @param mixed $offset Offset.
      *
      * @return null Always returns `null`.
+     *
+     * @codeCoverageIgnore
      */
     public function offsetGet($offset)
     {
-        return null;
     }
 
     /**
@@ -62,10 +64,11 @@ class ContainerMock implements \ArrayAccess, \IteratorAggregate
      * Unsets the value at an offset.
      *
      * @param mixed $offset Offset.
+     *
+     * @codeCoverageIgnore
      */
     public function offsetUnset($offset)
     {
-        unset($this->data[$offset]);
     }
 
     /**

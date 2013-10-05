@@ -17,6 +17,8 @@ class ContainerMockInvalid implements \IteratorAggregate
      * So the object can be used with foreach.
      *
      * @return ArrayIterator Iterator object.
+     *
+     * @codeCoverageIgnore
      */
     public function getIterator()
     {
