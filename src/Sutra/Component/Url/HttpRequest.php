@@ -448,7 +448,7 @@ class HttpRequest
     /**
      * Gets data from a JSON source.
      *
-     * @param boolean $assoc   If the data should be returned as associative array.
+     * @param boolean $assoc If the data should be returned as associative array.
      *
      * @return mixed JSON decoded value. Can return null.
      *
