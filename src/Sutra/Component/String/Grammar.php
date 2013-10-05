@@ -3,6 +3,8 @@ namespace Sutra\Component\String;
 
 use Doctrine\Common\Inflector\Inflector as DoctrineInflector;
 
+use Sutra\Component\Url\UrlParserInterface;
+
 /**
  * {@inheritdoc}
  *
@@ -10,6 +12,14 @@ use Doctrine\Common\Inflector\Inflector as DoctrineInflector;
  */
 class Grammar implements GrammarInterface
 {
+    /**
+     * Generic regular expression used for extensions and abbreviations in
+     *   `#humanize`.
+     *
+     * @var string
+     */
+    const HUMANIZE_REGEX = '/(\b(api|css|gif|html|id|jpg|js|mp3|pdf|php|png|sql|swf|url|xhtml|xml)\b|\b\w)/';
+
     /**
     * Cache of strings.
     *
@@ -35,6 +45,50 @@ class Grammar implements GrammarInterface
         'studlyize' => array(),
         'underscorize' => array(),
         'titleize' => array(),
+    );
+
+    /**
+     * Various stop words (not just English).
+     *
+     * @var array
+     */
+    protected $stopWords = array(
+        'a',
+        'an',
+        'and',
+        'at',
+        'by',
+        'de',  # mainly for Spanish and French
+        'el',  # Spanish
+        'feat',
+        'featuring',
+        'for',
+        'from',
+        'il',  # Italian
+        'in',
+        'into',
+        'la',  # Spanish/French/Italian
+        'lo',  # Italian
+        'of',
+        'off',
+        'on',
+        'or',
+        'per',
+        //'so',
+        'te',  # Spanish/French
+        //'than',
+        'the',
+        //'then',
+        //'this',
+        'to',
+        //'too',
+        'van',
+        'via',
+        'von',
+        'vs',
+        'with',
+        'within',
+        'without',
     );
 
     /**
@@ -133,9 +187,37 @@ class Grammar implements GrammarInterface
     /**
      * {@inheritdoc}
      */
+    public function removeSingularizationRule($word)
+    {
+        unset($this->rules['singularize'][$word]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function studlyize($str)
     {
+        if (isset($this->rules['studlyize'][$str])) {
+            return $this->rules['studlyize'][$str];
+        }
+
         return DoctrineInflector::camelize($str);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addStudlyizationRule($word, $replacement)
+    {
+        $this->rules['studlyize'][$word] = $replacement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeStudlyizationRule($word)
+    {
+        unset($this->rules['studlyize'][$word]);
     }
 
     /**
@@ -143,7 +225,27 @@ class Grammar implements GrammarInterface
      */
     public function underscorize($str)
     {
+        if (isset($this->rules['underscorize'][$str])) {
+            return $this->rules['underscorize'][$str];
+        }
+
         return DoctrineInflector::tableize($str);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addUnderscorizationRule($word, $replacement)
+    {
+        $this->rules['underscorize'][$word] = $replacement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeUnderscorizationRule($word)
+    {
+        unset($this->rules['underscorize'][$word]);
     }
 
     /**
@@ -171,7 +273,7 @@ class Grammar implements GrammarInterface
             $string = $this->urlParser->makeFriendly($string);
         }
 
-        $this->rules['dashize'][$original] = $string;
+        $this->cache['dashize'][$original] = $string;
 
         return $string;
     }
@@ -179,7 +281,7 @@ class Grammar implements GrammarInterface
     /**
      * {@inheritdoc}
      */
-    public function addDashizeRule($original, $returnString)
+    public function addDashizationRule($original, $returnString)
     {
         $this->rules['dashize'][$original] = $returnString;
     }
@@ -187,9 +289,121 @@ class Grammar implements GrammarInterface
     /**
      * {@inheritdoc}
      */
-    public function removeDashizeRule($original)
+    public function removeDashizationRule($original)
     {
         unset($this->rules['dashize'][$original]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function humanize($string)
+    {
+        if (isset($this->cache['humanize'][$string])) {
+            return $this->cache['humanize'][$string];
+        }
+
+        $original = $string;
+
+        $string = str_replace(array_keys($this->rules['humanize']), $this->rules['humanize'], $string);
+        $string = str_replace('_', ' ', $this->underscorize($string));
+        $string = preg_replace('/\s+/', ' ', $string);
+        $string = preg_replace_callback(static::HUMANIZE_REGEX, array($this, 'humanizeCallback'), $string);
+
+        $this->cache['humanize'][$original] = $string;
+
+        return $string;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addHumanizationRule($substr, $replacement)
+    {
+        $this->rules['humanize'][$substr] = $replacement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeHumanizationRule($substr)
+    {
+        unset($this->rules['humanize'][$substr]);
+        unset($this->cache['humanize'][$substr]);
+
+        foreach ($this->cache['humanize'] as $key => $value) {
+            if (stripos($key, $substr) !== false) {
+                unset($this->cache['humanize'][$key]);
+            }
+        }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function titleize($str)
+    {
+        if (isset($this->cache['titleize'][$str])) {
+            return $this->cache['titleize'][$str];
+        }
+
+        $original = $str;
+
+        // First use rules
+        $str = str_replace(array_keys($this->rules['titleize']), $this->rules['titleize'], $str);
+        // Humanize (hope for no rule conflicts)
+        $str = $this->humanize($str);
+
+        // Split into words and replace with lower-case versions
+        $words = array_map('trim', preg_split('/\s+/', $str, null, PREG_SPLIT_NO_EMPTY));
+        foreach ($words as $key => $word) {
+            $find = strtolower($word);
+
+            if (in_array($find, $this->stopWords)) {
+                $words[$key] = $find;
+            }
+        }
+
+        $str = join(' ', array_merge(array(ucfirst($words[0])), array_slice($words, 1)));
+
+        $this->cache['titleize'][$original] = $str;
+
+        return $str;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addTitleizationRule($substr, $replacement)
+    {
+        $this->rules['titleize'][$substr] = $replacement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeTitleizationRule($substr)
+    {
+        unset($this->rules['titleize'][$substr]);
+        unset($this->cache['titleize'][$substr]);
+
+        foreach ($this->cache['titleize'] as $key => $value) {
+            if (stripos($key, $substr) !== false) {
+                unset($this->cache['titleize'][$key]);
+            }
+        }
+    }
+
+    /**
+     * Callback used in `#humanize()`.
+     *
+     * @param array $matches Regular expression matches.
+     *
+     * @return string String with first letter upper-cased.
+     */
+    private function humanizeCallback(array $matches)
+    {
+        return strtoupper($matches[1]);
     }
 }
 
