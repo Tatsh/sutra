@@ -58,24 +58,24 @@ class Grammar implements GrammarInterface
         'and',
         'at',
         'by',
-        'de',  # mainly for Spanish and French
-        'el',  # Spanish
+        'de',  //  mainly for Spanish and French
+        'el',  // Spanish
         'feat',
         'featuring',
         'for',
         'from',
-        'il',  # Italian
+        'il',  // Italian
         'in',
         'into',
-        'la',  # Spanish/French/Italian
-        'lo',  # Italian
+        'la',  // Spanish/French/Italian
+        'lo',  // Italian
         'of',
         'off',
         'on',
         'or',
         'per',
         //'so',
-        'te',  # Spanish/French
+        'te',  // Spanish/French
         //'than',
         'the',
         //'then',
