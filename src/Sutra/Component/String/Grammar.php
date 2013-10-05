@@ -4,14 +4,9 @@ namespace Sutra\Component\String;
 use Doctrine\Common\Inflector\Inflector as DoctrineInflector;
 
 /**
- * @copyright Copyright (c) 2013 Andrew Udvare
- * @author Andrew Udvare [au] <andrew@bne1.com>
- * @license http://www.opensource.org/licenses/mit-license.php
+ * {@inheritdoc}
  *
- * @package Sutra
- * @link http://www.sutralib.com/
- *
- * @version 1.3
+ * @author Andrew Udvare <audvare@gmail.com>
  */
 class Grammar implements GrammarInterface
 {
@@ -49,116 +44,152 @@ class Grammar implements GrammarInterface
      */
     protected $urlParser;
 
+    /**
+     * Constructor.
+     *
+     * @param UrlParserInterface $urlParser URL parser instance.
+     */
     public function __construct(UrlParserInterface $urlParser)
     {
         $this->urlParser = $urlParser;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function camelize($str)
     {
+        if (isset($this->rules['camelize'][$str])) {
+            return $this->rules['camelize'][$str];
+        }
+
         return DoctrineInflector::classify($str);
     }
 
-    public function addPluralizationRule($word, $replacement)
+    /**
+     * {@inheritdoc}
+     */
+    public function addCamelizationRule($word, $replacement)
     {
-        DoctrineInflector::rules('plural', array('irregular' => array($word, $replacement)));
+        $this->rules['camelize'][$word] = $replacement;
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function removeCamelizationRule($word)
+    {
+        unset($this->rules['camelize'][$word]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function pluralize($str)
     {
+        if (isset($this->rules['pluralize'][$str])) {
+            return $this->rules['pluralize'][$str];
+        }
+
         return DoctrineInflector::pluralize($str);
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function addPluralizationRule($word, $replacement)
+    {
+        $this->rules['pluralize'][$word] = $replacement;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removePluralizationRule($word)
+    {
+        unset($this->rules['pluralize'][$word]);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function singularize($str)
     {
+        if (isset($this->rules['singularize'][$str])) {
+            return $this->rules['singularize'][$str];
+        }
+
         return DoctrineInflector::singularize($str);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function addSingularizationRule($word, $replacement)
     {
-        DoctrineInflector::rules('singular', array('irregular' => array($word, $replacement)));
+        $this->rules['singularize'][$word] = $replacement;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function studlyize($str)
     {
         return DoctrineInflector::camelize($str);
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function underscorize($str)
     {
         return DoctrineInflector::tableize($str);
     }
 
-  /**
-   * Add an exception string for sGrammar::dashize().
-   *
-   * @param string $original Original string.
-   * @param string $returnString The string to return in case this string is passed to
-   *   sGrammar::dashize().
-   * @return void
-   * @see sGrammar::removeDashizeRule()
-   */
-  public static function addDashizeRule($original, $returnString) {
-    if (!strlen($returnString) || !strlen($original)) {
-      throw new fProgrammerException('An empty string was passed to %s', self::addDashizeRule);
-    }
-
-    self::$dashize_rules[$original] = $returnString;
-  }
-
-  /**
-   * Removes a rule used by sGrammar::dashize().
-   *
-   * @param string $original Original string that would be processed.
-   * @return void
-   * @see sGrammar::addDashizeRule()
-   */
-  public static function removeDashizeRule($original) {
-    if (!strlen($original)) {
-      throw new fProgrammerException('An empty string was passed to %s', self::removeDashizeRule);
-    }
-
-    if (isset(self::$dashize_rules[$original])) {
-      unset(self::$dashize_rules[$original]);
-    }
-  }
-
     /**
-    * Converts an underscore_notation or camelCase notation to dash-notation.
-    *
-    * @param string $string String to convert.
-    * @return string Converted string.
-    * @see sGrammar::addDashizeRule()
-    */
-    public function dashize($string) {
-        if (!strlen($string)) {
-            throw new ProgrammerException('An empty string was passed to %s', self::dashize);
+     * {@inheritdoc}
+     */
+    public function dashize($string)
+    {
+        if (isset($this->rules['dashize'][$string])) {
+            return $this->rules['dashize'][$string];
         }
 
-        if (isset(self::$dashize_cache[$string])) {
-            return self::$dashize_cache[$string];
+        if (isset($this->cache['dashize'][$string])) {
+            return $this->cache['dashize'][$string];
         }
 
         $original = $string;
         $string = trim(strtolower($string[0]) . substr($string, 1));
 
-        // Handle custom rules
-        if (isset(self::$dashize_rules[$string])) {
-            $string = self::$dashize_rules[$string];
-        }
-        else if (strpos($string, ' ') === FALSE) {
+        if (strpos($string, ' ') === false) {
             // Handle camelCase
             $string = $this->underscorize($string);
             $string = str_replace('_', '-', $string);
         }
         else {
-            $string = $this->urlParser->makeFriendly($string, NULL, '-');
-            $string = str_replace('_', '-', $string);
+            $string = $this->urlParser->makeFriendly($string);
         }
 
-        self::$dashize_cache[$original] = $string;
+        $this->rules['dashize'][$original] = $string;
 
         return $string;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function addDashizeRule($original, $returnString)
+    {
+        $this->rules['dashize'][$original] = $returnString;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function removeDashizeRule($original)
+    {
+        unset($this->rules['dashize'][$original]);
     }
 }
 
