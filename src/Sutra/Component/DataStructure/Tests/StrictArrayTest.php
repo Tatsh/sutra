@@ -12,26 +12,30 @@ class StrictArrayTest extends TestCase
     const mapCallback = 'Sutra\Component\DataStructure\Tests\StrictArrayTest::mapCallback';
     const walkCallbackRef = 'Sutra\Component\DataStructure\Tests\StrictArrayTest::walkCallbackRef';
 
-    public function testGetData() {
+    public function testGetData()
+    {
         $a = new StrictArray(1, 2, 3);
         $this->assertEquals(array(1, 2, 3), $a->getData());
     }
 
-    public function testCount() {
+    public function testCount()
+    {
         $a = new StrictArray(1, 2, 3);
         $this->assertEquals(3, $a->count());
         $this->assertEquals(3, count($a));
         $this->assertEquals(3, $a->length);
     }
 
-    public function testArrayAccess() {
+    public function testArrayAccess()
+    {
         $a = new StrictArray(1, 2, 3);
         foreach ($a as $key => $value) {
             $this->assertEquals($value, $a[$key]);
         }
     }
 
-    public function testArraySetting() {
+    public function testArraySetting()
+    {
         $a = new StrictArray(1, 2, 3);
         $a[0] = 2;
         $this->assertEquals(array(2,2,3), $a->getData());
@@ -41,7 +45,8 @@ class StrictArrayTest extends TestCase
      * @expectedException Sutra\Component\DataStructure\Exception\ProgrammerException
      * @expectedExceptionMessage Offsets can only be integer. Given: "1.2"
      */
-    public function testOffsetExistsBadArgument() {
+    public function testOffsetExistsBadArgument()
+    {
         $a = new StrictArray(1, 2, 3);
         isset($a[1.2]);
     }
@@ -50,18 +55,21 @@ class StrictArrayTest extends TestCase
      * @expectedException Sutra\Component\DataStructure\Exception\ProgrammerException
      * @expectedExceptionMessage Offsets can only be integer. Given: "1.2"
      */
-    public function testOffsetGetException() {
+    public function testOffsetGetException()
+    {
         $a = new StrictArray(1,2,3);
         $c = $a[1.2];
     }
 
-    public function testOffsetExists() {
+    public function testOffsetExists()
+    {
         $a = new StrictArray(1,2,3);
         $this->assertTrue($a->offsetExists(0));
         $this->assertFalse($a->offsetExists(3));
     }
 
-    public function testOffsetSet() {
+    public function testOffsetSet()
+    {
         $a = new StrictArray(1,2,3);
         $a[] = 2;
         $this->assertEquals(2, $a[3]);
@@ -71,28 +79,33 @@ class StrictArrayTest extends TestCase
      * @expectedException Sutra\Component\DataStructure\Exception\ProgrammerException
      * @expectedExceptionMessage Offsets can only be integer. Given: "1.2"
      */
-    public function testOffsetUnsetBadArgument() {
+    public function testOffsetUnsetBadArgument()
+    {
         $a = new StrictArray(1, 2, 3);
         unset($a[1.2]);
     }
 
-    public function testOffsetUnset() {
+    public function testOffsetUnset()
+    {
         $a = new StrictArray(1, 2, 3);
         unset($a[0]);
     }
 
-    public function testPop() {
+    public function testPop()
+    {
         $a = new StrictArray(1,2,3);
         $this->assertEquals(3, $a->pop());
     }
 
-    public function testPush() {
+    public function testPush()
+    {
         $a = new StrictArray(1,2);
         $a->push(3);
         $this->assertEquals(3, $a->pop());
     }
 
-    public function testFill() {
+    public function testFill()
+    {
         $a = new StrictArray(1,2);
         $a->fill(10, 1);
         for ($i = 0; $i < 10; $i++) {
@@ -101,19 +114,22 @@ class StrictArrayTest extends TestCase
         }
     }
 
-    public function testShift() {
+    public function testShift()
+    {
         $a = new StrictArray(1,2,3,4);
         $this->assertEquals(1, $a->shift());
         $this->assertEquals(array(2,3,4), $a->getData());
     }
 
-    public function testUnshift() {
+    public function testUnshift()
+    {
         $a = new StrictArray(2,3,4);
         $this->assertEquals($a, $a->unshift(1));
         $this->assertEquals(array(1,2,3,4), $a->getData());
     }
 
-    public function testMerge() {
+    public function testMerge()
+    {
         $one = array(1,2,3,4);
         $two = array(45,46,47);
         $three = new StrictArray(100,1000,10000);
@@ -142,7 +158,8 @@ class StrictArrayTest extends TestCase
         print $b.',';
     }
 
-    public function testWalk() {
+    public function testWalk()
+    {
         $this->expectOutputString('1=>0,2=>1,3=>2,');
         $a = new StrictArray(1,2,3);
         $this->assertEquals($a, $a->walk(self::walkCallback));
@@ -152,44 +169,51 @@ class StrictArrayTest extends TestCase
         $value += 3;
     }
 
-    public function testWalkModify() {
+    public function testWalkModify()
+    {
         $a = new StrictArray(1,2,3);
         $b = array(4,5,6);
         $this->assertEquals($b, $a->walk(self::walkCallbackRef)->getData());
     }
 
-    public function testWalkRecursive() {
+    public function testWalkRecursive()
+    {
         $this->expectOutputString('1=>0,2=>1,3=>2,a=>3,a=>0,a,1=>4,a=>0,1=>1,1=>0,[]=>5,[]=>6,');
         $a = new StrictArray(1,2,3, array('a'), new StrictArray('a', array(1)), new ContainerMock(), new ContainerMockInvalid());
         $this->assertEquals($a, $a->walkRecursive(self::walkCallback));
     }
 
-    public function testPrintJSON() {
+    public function testPrintJSON()
+    {
         $this->expectOutputString('[1,2,3]');
         $a = new StrictArray(1,2,3);
         $a->printJSON();
     }
 
-    public function testToJSON() {
+    public function testToJSON()
+    {
         $a = new StrictArray(1,2,3);
         $this->assertEquals('[1,2,3]', $a->toJSON());
     }
 
-    public function testSearch() {
+    public function testSearch()
+    {
         $a = new StrictArray(1,2,3);
         $this->assertEquals(0, $a->search(1));
         $this->assertEquals(0, $a->search(TRUE));
         $this->assertFalse($a->search(TRUE, TRUE));
     }
 
-    public function testRand() {
+    public function testRand()
+    {
         $a = new StrictArray(1,2,3);
         $this->assertInternalType('array', $a->rand());
         $this->assertEquals(1, count($a->rand()));
         $this->assertEquals(2, count($a->rand(2)));
     }
 
-    public function testDiff() {
+    public function testDiff()
+    {
         $a = new StrictArray(1,2,3);
         $b = new StrictArray(4,3,5);
         $diff = $a->diff($b);
@@ -197,13 +221,15 @@ class StrictArrayTest extends TestCase
         $this->assertEquals(array(1,2), $diff->getData());
     }
 
-    public function testReverse() {
+    public function testReverse()
+    {
         $a = new StrictArray(1,2,3);
         $result = array(3,2,1);
         $this->assertEquals($result, $a->reverse()->getData());
     }
 
-    public function testSlice() {
+    public function testSlice()
+    {
         $a = new StrictArray(1,2,3);
         $result = array(2,3);
         $this->assertEquals($result, $a->slice(1)->getData());
@@ -222,7 +248,8 @@ class StrictArrayTest extends TestCase
         return TRUE;
     }
 
-    public function testFilter() {
+    public function testFilter()
+    {
         $a = new StrictArray(1,2,3);
         $b = $a->filter(self::filterCallback1);
         $this->assertNotSame($b, $a);
@@ -236,31 +263,36 @@ class StrictArrayTest extends TestCase
         return $n * 2;
     }
 
-    public function testMap() {
+    public function testMap()
+    {
         $a = new StrictArray(1,2,3);
         $b = $a->map(self::mapCallback);
         $this->assertEquals(array(2,4,6), $b->getData());
     }
 
-    public function testPad() {
+    public function testPad()
+    {
         $a = new StrictArray(1,2,3);
         $b = $a->pad(10, 0);
         $this->assertEquals(array(1,2,3,0,0,0,0,0,0,0), $b->getData());
     }
 
-    public function testUnique() {
+    public function testUnique()
+    {
         $a = new StrictArray(1,2,3,1,2,3,1,2,3);
         $b = $a->unique(SORT_NUMERIC);
         $this->assertEquals(array(1,2,3), $b->getData());
     }
 
-    public function testValues() {
+    public function testValues()
+    {
         $a = new StrictArray(1,2,3,1,2,3,1,2,3);
         $this->assertInternalType('array', $a->values());
         $this->assertEquals(array(1,2,3,1,2,3,1,2,3), $a->values());
     }
 
-    public function testFlip() {
+    public function testFlip()
+    {
         $a = new StrictArray('a', 'b', 'c');
         $obj = $a->flip();
         $this->assertInstanceOf('Sutra\Component\DataStructure\Dictionary', $obj);
@@ -269,18 +301,21 @@ class StrictArrayTest extends TestCase
         $this->assertEquals(2, $obj->c);
     }
 
-    public function testGetUnknownProperty() {
+    public function testGetUnknownProperty()
+    {
         $a = new StrictArray(1, 2, 3);
         $this->assertNull($a->unknown_property);
     }
 
-    public function testSort() {
+    public function testSort()
+    {
         $a = new StrictArray(10,2,3,1);
         $a->sort(SORT_NUMERIC);
         $this->assertEquals(array(1,2,3,10), $a->getData());
     }
 
-    public function testReverseSort() {
+    public function testReverseSort()
+    {
         $a = new StrictArray(10,2,3,1);
         $a->reverseSort(SORT_NUMERIC);
         $this->assertEquals(array(10,3,2,1), $a->getData());
