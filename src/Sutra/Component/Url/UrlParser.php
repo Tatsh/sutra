@@ -109,7 +109,7 @@ class UrlParser implements UrlParserInterface
         // This allows omitting the max length, but including a delimiter
         if ($maxLength && !is_numeric($maxLength)) {
             $delimiter  = $maxLength;
-            $maxLength = NULL;
+            $maxLength = null;
         }
 
         $string = $this->htmlDecode($this->utf8Helper->ascii($string));
@@ -220,4 +220,3 @@ class UrlParser implements UrlParserInterface
         return html_entity_decode($content, ENT_QUOTES, 'UTF-8');
     }
 }
-

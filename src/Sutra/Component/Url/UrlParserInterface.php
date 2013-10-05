@@ -71,7 +71,7 @@ interface UrlParserInterface
      * Removes a parameter from the query string.
      *
      * @param string $parameter Parameter name to remove.
-     * @param string $uri URL to use instead of requested URL.
+     * @param string $uri       URL to use instead of requested URL.
      *
      * @return string Query string with parameter removed. First character is
      *   `?`.
@@ -87,6 +87,7 @@ interface UrlParserInterface
      *
      * @param string|array $parameter Query string parameter.
      * @param string|array $value     Value to set parameter to.
+     * @param string       $uri       URL to use instead of requested URL.
      *
      * @return string Query string with parameter replaced. First character is
      *   `?`.
