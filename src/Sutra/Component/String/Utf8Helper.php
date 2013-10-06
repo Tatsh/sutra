@@ -472,7 +472,7 @@ class Utf8Helper implements Utf8HelperInterface
      */
     public function replace($string, $find, $replace)
     {
-        return str_replace($string, $find, $replace);
+        return str_replace($find, $replace, $string);
     }
 
     /**
@@ -606,7 +606,7 @@ class Utf8Helper implements Utf8HelperInterface
      */
     public function trim($string, $charList = null)
     {
-        if (!strlen($charList) === 0) {
+        if (!strlen($charList)) {
             return trim($string);
         }
 
