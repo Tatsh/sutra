@@ -9,7 +9,7 @@
  * @package Sutra
  * @link http://www.sutralib.com/
  *
- * @version 1.2
+ * @version 1.4
  */
 class sORMJSON extends fORMJSON {
   const configureJSONSerializedColumn = 'sORMJSON::configureJSONSerializedColumn';

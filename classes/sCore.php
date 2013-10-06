@@ -10,7 +10,7 @@
  * @package Sutra
  * @link http://www.sutralib.com/
  *
- * @version 1.2
+ * @version 1.4
  */
 abstract class sCore extends fCore {
   const main        = 'sCore::main';

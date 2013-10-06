@@ -10,7 +10,7 @@
  * @package Sutra
  * @link https://github.com/tatsh/sutra
  *
- * @version 1.3
+ * @version 1.4
  */
 class sString implements ArrayAccess, Countable, IteratorAggregate {
   /**

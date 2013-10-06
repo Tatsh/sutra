@@ -11,7 +11,7 @@
  * @package Sutra
  * @link http://www.sutralib.com/
  *
- * @version 1.2
+ * @version 1.4
  */
 class sCache extends fCache {
   /**

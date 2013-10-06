@@ -9,7 +9,7 @@
  * @package Sutra
  * @link http://www.sutralib.com/
  *
- * @version 1.2
+ * @version 1.4
  */
 class sLoader extends fLoader {
   const best  = 'sLoader::best';
