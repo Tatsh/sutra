@@ -14,18 +14,18 @@ use Sutra\Component\String\Exception\ProgrammerException;
 class String implements \ArrayAccess, \Countable, \IteratorAggregate
 {
     /**
+     * UTF-8 helper class.
+     *
+     * @var Utf8HelperInterface
+     */
+    protected static $helper;
+
+    /**
      * The string.
      *
      * @var string
      */
     protected $string;
-
-    /**
-     * UTF-8 helper class.
-     *
-     * @var UTF8HelperInterface
-     */
-    protected $helper;
 
     /**
      * Constructor.
@@ -34,21 +34,20 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function __construct($string)
     {
+        if (!static::$helper) {
+            if (extension_loaded('mbstring')) {
+                static::$helper = new MbUtf8Helper();
+            }
+            else {
+                static::$helper = new Utf8Helper();
+            }
+        }
+
         if (strlen($string) === 0) {
             throw new ProgrammerException('String argument must be non-zero-length string.');
         }
 
         $this->string = (string) $string;
-    }
-
-    /**
-     * Sets UTF-8 helper.
-     *
-     * @param Utf8HelperInterface $helper UTF-8 helper instance.
-     */
-    public function setUtf8Helper(Utf8HelperInterface $helper)
-    {
-        $this->helper = $helper;
     }
 
     /**
