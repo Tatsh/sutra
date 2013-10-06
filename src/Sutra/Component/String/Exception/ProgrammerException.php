@@ -1,5 +1,5 @@
 <?php
-namespace Sutra\Component\DataStructure\Exception;
+namespace Sutra\Component\String\Exception;
 
 /**
  * An exception a programmer should never ignore (and honestly, never catch).
