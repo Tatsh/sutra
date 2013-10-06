@@ -33,7 +33,7 @@ rmdir non-writable-directory &> /dev/null
 
 touch test.cache
 
-phpunit --stderr -c config.xml "$TESTS"
+../bin/phpunit --stderr -c config.xml "$TESTS"
 
 chmod 0700 non-writable-directory &> /dev/null
 rmdir non-writable-directory &> /dev/null
