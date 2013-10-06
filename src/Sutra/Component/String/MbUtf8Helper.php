@@ -2,9 +2,7 @@
 namespace Sutra\Component\String;
 
 /**
- * Utf8Helper extension that uses the `mbstring` extension.
- *
- * @replaces fUTF8
+ * {@inheritDoc}
  */
 class MbUtf8Helper extends Utf8Helper
 {

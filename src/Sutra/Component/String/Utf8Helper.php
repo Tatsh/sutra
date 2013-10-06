@@ -2,9 +2,7 @@
 namespace Sutra\Component\String;
 
 /**
- * Helper for UTF-8 strings.
- *
- * @replaces fUTF8
+ * {@inheritDoc}
  */
 class Utf8Helper implements Utf8HelperInterface
 {
