@@ -1,11 +1,10 @@
 #!/bin/sh
-DOCDIR="/home/tatsh/dev/sutra-doc"
-FLOURISH="/home/tatsh/dev/php/flourish"
-SUTRA="/home/tatsh/dev/sutra/classes"
+DOCDIR="$HOME/sutra-doc"
+SUTRA="./classes"
 
-phpdoc -title="Sutra documentation (generated $(date))" \
+bin/phpdoc.php -title="Sutra documentation (generated $(date))" \
 	-t "$DOCDIR" \
-	-d "$SUTRA,$FLOURISH" \
+	-d "$SUTRA" \
 	-p \
 	--defaultpackagename "Sutra" \
 	--title "Sutra"
