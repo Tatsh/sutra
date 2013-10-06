@@ -67,10 +67,10 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     public function replace($search, $replace, $caseSensitive = true)
     {
         if ($caseSensitive) {
-            return new self($this->helper->replace($this->string, $search, $replace));
+            return new self(static::$helper->replace($this->string, $search, $replace));
         }
 
-        return new self($this->helper->ireplace($this->string, $search, $replace));
+        return new self(static::$helper->ireplace($this->string, $search, $replace));
     }
 
     /**
@@ -124,7 +124,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
         if (!is_numeric($offset) || is_float($offset)) {
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
-        if ($this->helper->len($value) !== 1) {
+        if (static::$helper->len($value) !== 1) {
             throw new ProgrammerException('The value length may not be greater than 1');
         }
         $offset = (int) $offset;
@@ -144,7 +144,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
 
-        $arr = $this->helper->explode($this->string);
+        $arr = static::$helper->explode($this->string);
         unset($arr[$offset]);
         $this->string = implode('', $arr);
     }
@@ -209,7 +209,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             return str_split($this->string);
         }
 
-        return $this->helper->explode($this->string, $separator);
+        return static::$helper->explode($this->string, $separator);
     }
 
     /**
@@ -329,49 +329,49 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     /**
      * Convert the string to all lowercase.
      *
-     * @see $this->helper->lower()
+     * @see static::$helper->lower()
      *
      * @return String The string lowercased.
      */
     public function toLowerCase()
     {
-        return new self($this->helper->lower($this->string));
+        return new self(static::$helper->lower($this->string));
     }
 
     /**
      * Convert the string to all uppercase.
      *
-     * @see $this->helper->upper()
+     * @see static::$helper->upper()
      *
      * @return String The string uppercased.
      */
     public function toUpperCase()
     {
-        return new self($this->helper->upper($this->string));
+        return new self(static::$helper->upper($this->string));
     }
 
     /**
      * Convert the beginning of each word to uppercase.
      *
-     * @see $this->helper->ucwords()
+     * @see static::$helper->ucwords()
      *
      * @return String The beginning of each word uppcased.
      */
     public function wordsToUpper()
     {
-        return new self($this->helper->ucwords($this->string));
+        return new self(static::$helper->ucwords($this->string));
     }
 
     /**
      * Converts the first character to uppercase.
      *
-     * @see $this->helper->ucfirst()
+     * @see static::$helper->ucfirst()
      *
      * @return String The first character uppercased.
      */
     public function firstCharToUpper()
     {
-        return new self($this->helper->ucfirst($this->string));
+        return new self(static::$helper->ucfirst($this->string));
     }
 
     /**
@@ -384,7 +384,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function substr($start, $length = null)
     {
-        return new self($this->helper->sub($this->string, $start, $length));
+        return new self(static::$helper->sub($this->string, $start, $length));
     }
 
     /**
@@ -396,7 +396,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trimLeft($charlist = null)
     {
-        return new self($this->helper->ltrim($this->string, $charlist));
+        return new self(static::$helper->ltrim($this->string, $charlist));
     }
 
     /**
@@ -408,7 +408,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trim($charList = null)
     {
-        return new self($this->helper->trim($this->string, $charList));
+        return new self(static::$helper->trim($this->string, $charList));
     }
 
     /**
@@ -420,7 +420,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trimRight($charList = null)
     {
-        return new self($this->helper->rtrim($this->string, $charList));
+        return new self(static::$helper->rtrim($this->string, $charList));
     }
 
     /**
@@ -433,7 +433,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function indexOf($needle, $offset = 0)
     {
-        $pos = $this->helper->pos($this->string, $needle, $offset);
+        $pos = static::$helper->pos($this->string, $needle, $offset);
 
         if ($pos === false) {
             return -1;
@@ -452,7 +452,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function lastIndexOf($needle, $offset = 0)
     {
-        $pos = $this->helper->rpos($this->string, $needle, $offset);
+        $pos = static::$helper->rpos($this->string, $needle, $offset);
 
         if ($pos === false) {
             return -1;
@@ -468,7 +468,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function reverse()
     {
-        return new self($this->helper->rev($this->string));
+        return new self(static::$helper->rev($this->string));
     }
 
     /**
@@ -482,7 +482,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function wordWrap($width = 75, $break = '', $cut = false)
     {
-        return new self($this->helper->wordwrap($this->string, $width, $break, $cut));
+        return new self(static::$helper->wordwrap($this->string, $width, $break, $cut));
     }
 
     /**
@@ -496,7 +496,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function pad($padLength, $padStr = '', $padType = 'right')
     {
-        return new self($this->helper->pad($this->string, $padLength, $padStr, $padType));
+        return new self(static::$helper->pad($this->string, $padLength, $padStr, $padType));
     }
 
     /**
@@ -506,7 +506,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function clean()
     {
-        return new self($this->helper->clean($this->string));
+        return new self(static::$helper->clean($this->string));
     }
 
     /**
@@ -540,7 +540,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     public function __get($name)
     {
         if ($name == 'length') {
-            return $this->helper->len($this->string);
+            return static::$helper->len($this->string);
         }
 
         return null;
