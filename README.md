@@ -1,19 +1,34 @@
-# What is this?
+This is a work-in-progress port of some Sutra's functionality to something that better fits with Composer and the like.
 
-Sutra is a PHP unframework based on the Flourish unframework. What is an 'unframework'? It is a set of core code that does not get in your way of what you really seek: to complete your project.
+# Ports from Flourish
 
-# How do I use it?
+- [X] `fBuffer`
+- [x] `fDate`
+- [ ] `fTime`
+- [ ] `fTimestamp`
+- [ ] `fCryptography`
+- [ ] `fDirectory`
+- [ ] `fEmail`
+- [ ] `fFile`
+- [ ] `fFilesystem`
+- [ ] `fGrammar`
+- [ ] `fHTML`
+- [ ] `fImage`
+- [ ] `fJSON`
+- [ ] `fMailbox`
+- [ ] `fMoney`
+- [ ] `fNumber`
+- [ ] `fUTF8`
 
-5 minute tutorial: https://github.com/tatsh/sutra/wiki/Tutorial
+# Ports from Sutra
 
-# Class documentation (Wiki)
+- [x] `sArray`
+- [ ] `sGrammar` (same as `fGrammar`)
+- [ ] `sHTML` (same as `fHTML`)
+- [X] `sHTTPRequest` 
+- [ ] `sNumber` (same as `fNumber`)
+- [x] `sObject`
+- [ ] `sString`
+- [ ] `sTimestamp` (same as `sTimestamp`)
 
-[sCRUDForm](https://github.com/tatsh/sutra/wiki/sCRUDForm)
-
-# Generated documentation
-
-http://tatsh.github.com/sutra/documentation
-
-# What's coming?
-
-https://github.com/tatsh/sutra/wiki/Roadmap
+Anything not on the above lists will *not* be ported.

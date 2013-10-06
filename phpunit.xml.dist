@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- http://www.phpunit.de/manual/current/en/appendixes.configuration.html -->
+<phpunit
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    stopOnFailure="true"
+    syntaxCheck="false"
+    >
+
+    <testsuites>
+        <testsuite name="Component\\Buffer">
+            <directory>./src/Sutra/Component/Buffer/Tests</directory>
+        </testsuite>
+        <testsuite name="Component\\Date">
+            <directory>./src/Sutra/Component/Date/Tests</directory>
+        </testsuite>
+        <testsuite name="Component\\DataStructure">
+            <directory>./src/Sutra/Component/DataStructure/Tests</directory>
+        </testsuite>
+        <testsuite name="Component\\String">
+            <directory>./src/Sutra/Component/String/Tests</directory>
+        </testsuite>
+        <testsuite name="Component\\Url">
+            <directory>./src/Sutra/Component/Url/Tests</directory>
+        </testsuite>
+    </testsuites>
+</phpunit>
