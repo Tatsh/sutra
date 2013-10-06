@@ -34,17 +34,10 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function __construct($string)
     {
-        if (!static::$helper) {
-            if (extension_loaded('mbstring')) {
-                static::$helper = new MbUtf8Helper();
-            }
-            else {
-                static::$helper = new Utf8Helper();
-            }
-        }
+        static::getUtf8Helper();
 
         if (strlen($string) === 0) {
-            throw new ProgrammerException('String argument must be non-zero-length string.');
+            throw new ProgrammerException('String argument must be non-zero-length string');
         }
 
         $this->string = (string) $string;
@@ -67,10 +60,10 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     public function replace($search, $replace, $caseSensitive = true)
     {
         if ($caseSensitive) {
-            return new self(static::$helper->replace($this->string, $search, $replace));
+            return new static(static::$helper->replace($this->string, $search, $replace));
         }
 
-        return new self(static::$helper->ireplace($this->string, $search, $replace));
+        return new static(static::$helper->caseInsensitiveReplace($this->string, $search, $replace));
     }
 
     /**
@@ -124,7 +117,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
         if (!is_numeric($offset) || is_float($offset)) {
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
-        if (static::$helper->len($value) !== 1) {
+        if (static::$helper->length($value) !== 1) {
             throw new ProgrammerException('The value length may not be greater than 1');
         }
         $offset = (int) $offset;
@@ -144,9 +137,9 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             throw new ProgrammerException('Offsets can only be integer. Given: "%s"', $offset);
         }
 
-        $arr = static::$helper->explode($this->string);
+        $arr = static::$helper->split($this->string);
         unset($arr[$offset]);
-        $this->string = implode('', $arr);
+        $this->string = join('', $arr);
     }
 
     /**
@@ -166,7 +159,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             return;
         }
 
-        return new self($this->string[$index]);
+        return new static($this->string[$index]);
     }
 
     /**
@@ -183,7 +176,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             return;
         }
 
-        return ord($this[$index]);
+        return ord($this->string[$index]);
     }
 
     /**
@@ -193,7 +186,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function quote()
     {
-        return new self('"' . $this->string . '"');
+        return new static('"' . $this->string . '"');
     }
 
     /**
@@ -209,7 +202,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
             return str_split($this->string);
         }
 
-        return static::$helper->explode($this->string, $separator);
+        return static::$helper->split($this->string, $separator);
     }
 
     /**
@@ -225,7 +218,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function replaceRegex($pattern, $replacement, $limit = -1)
     {
-        return new self(preg_replace($pattern, $replacement, $this->string, $limit));
+        return new static(preg_replace($pattern, $replacement, $this->string, $limit));
     }
 
     /**
@@ -267,7 +260,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function toBase64()
     {
-        return base64_encode($this->string);
+        return new static(base64_encode($this->string));
     }
 
     /**
@@ -277,9 +270,9 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function toBoolean()
     {
-        $bool = $this->toLowerCase();
+        $bool = (string) $this->toLowerCase();
 
-        if ($bool == 'true' || $bool == '1') {
+        if ($bool === 'true' || $bool === '1') {
             return true;
         }
 
@@ -299,7 +292,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function toJson($options = null)
     {
-        return json_encode($this->string, $options);
+        return new static(json_encode($this->string, $options));
     }
 
     /**
@@ -311,7 +304,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function toUriComponent()
     {
-        return urlencode($this->string);
+        return new static(urlencode($this->string));
     }
 
     /**
@@ -323,55 +316,47 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function toRawUriComponent()
     {
-        return rawurlencode($this->string);
+        return new static(rawurlencode($this->string));
     }
 
     /**
      * Convert the string to all lowercase.
      *
-     * @see static::$helper->lower()
-     *
      * @return String The string lowercased.
      */
     public function toLowerCase()
     {
-        return new self(static::$helper->lower($this->string));
+        return new static(static::$helper->lower($this->string));
     }
 
     /**
      * Convert the string to all uppercase.
      *
-     * @see static::$helper->upper()
-     *
      * @return String The string uppercased.
      */
     public function toUpperCase()
     {
-        return new self(static::$helper->upper($this->string));
+        return new static(static::$helper->upper($this->string));
     }
 
     /**
      * Convert the beginning of each word to uppercase.
      *
-     * @see static::$helper->ucwords()
-     *
      * @return String The beginning of each word uppcased.
      */
     public function wordsToUpper()
     {
-        return new self(static::$helper->ucwords($this->string));
+        return new static(static::$helper->title($this->string));
     }
 
     /**
      * Converts the first character to uppercase.
      *
-     * @see static::$helper->ucfirst()
-     *
      * @return String The first character uppercased.
      */
     public function firstCharToUpper()
     {
-        return new self(static::$helper->ucfirst($this->string));
+        return new static(static::$helper->firstToUpper($this->string));
     }
 
     /**
@@ -384,7 +369,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function substr($start, $length = null)
     {
-        return new self(static::$helper->sub($this->string, $start, $length));
+        return new static(static::$helper->sub($this->string, $start, $length));
     }
 
     /**
@@ -396,7 +381,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trimLeft($charlist = null)
     {
-        return new self(static::$helper->ltrim($this->string, $charlist));
+        return new static(static::$helper->trimLeft($this->string, $charlist));
     }
 
     /**
@@ -408,7 +393,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trim($charList = null)
     {
-        return new self(static::$helper->trim($this->string, $charList));
+        return new static(static::$helper->trim($this->string, $charList));
     }
 
     /**
@@ -420,7 +405,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function trimRight($charList = null)
     {
-        return new self(static::$helper->rtrim($this->string, $charList));
+        return new static(static::$helper->trimRight($this->string, $charList));
     }
 
     /**
@@ -468,7 +453,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function reverse()
     {
-        return new self(static::$helper->rev($this->string));
+        return new static(static::$helper->rev($this->string));
     }
 
     /**
@@ -482,7 +467,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function wordWrap($width = 75, $break = '', $cut = false)
     {
-        return new self(static::$helper->wordwrap($this->string, $width, $break, $cut));
+        return new static(static::$helper->wordwrap($this->string, $width, $break, $cut));
     }
 
     /**
@@ -496,7 +481,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function pad($padLength, $padStr = '', $padType = 'right')
     {
-        return new self(static::$helper->pad($this->string, $padLength, $padStr, $padType));
+        return new static(static::$helper->pad($this->string, $padLength, $padStr, $padType));
     }
 
     /**
@@ -506,7 +491,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function clean()
     {
-        return new self(static::$helper->clean($this->string));
+        return new static(static::$helper->clean($this->string));
     }
 
     /**
@@ -540,7 +525,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     public function __get($name)
     {
         if ($name == 'length') {
-            return static::$helper->len($this->string);
+            return static::$helper->length($this->string);
         }
 
         return null;
@@ -563,6 +548,31 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
     public function count()
     {
         return $this->length;
+    }
+
+    /**
+     * Gets `Utf8HelperInterface` instance.
+     *
+     * Also sets up instance if it has not yet been instantiated for lazy
+     *   loading.
+     *
+     * @param boolean $default If this should always use the default class.
+     * @param boolean $replace Replace the existing instance.
+     *
+     * @return Utf8HelperInterface Utf8Helper instance.
+     */
+    public static function getUtf8Helper($default = false, $replace = false)
+    {
+        if (!static::$helper || $replace) {
+            if (extension_loaded('mbstring') && !$default) {
+                static::$helper = new MbUtf8Helper();
+            }
+            else {
+                static::$helper = new Utf8Helper();
+            }
+        }
+
+        return static::$helper;
     }
 }
 
