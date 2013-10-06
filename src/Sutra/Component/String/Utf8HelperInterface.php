@@ -86,7 +86,7 @@ interface Utf8HelperInterface
     public function upper($string);
 
     /**
-     * Title-cases a string. Handles special words like 'of'.
+     * Title-cases a string. Does not handle special words like 'of'.
      *
      * @param string $string String to change.
      *
