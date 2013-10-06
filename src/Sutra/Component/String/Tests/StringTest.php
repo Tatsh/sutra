@@ -168,6 +168,10 @@ class StringTest extends TestCase
 
     public function testReplaceRegex()
     {
+        $str = new String('string');
+        $this->assertNotSame($str, $str->replaceRegex('/string/', 'string'));
+        $this->assertEquals($str,  $str->replaceRegex('/string/', 'string'));
+        $this->assertNotEquals($str,  $str->replaceRegex('/string/', 'ff'));
     }
 
     public function testToInteger()
@@ -278,6 +282,9 @@ class StringTest extends TestCase
 
     public function testSubstr()
     {
+        $str = new String('my string of');
+        $this->assertNotSame($str, $str->substr(1));
+        $this->assertNotEquals($str, $str->substr(2));
     }
 
     public function testTrim()
@@ -309,26 +316,58 @@ class StringTest extends TestCase
 
     public function testIndexOf()
     {
+        $str = new String('my string of');
+        $this->assertFalse($str->indexOf('non-existant'));
+        $this->assertSame(3, $str->indexOf('string'));
     }
 
     public function testLastIndexOf()
     {
+        $str = new String('my string of string');
+        $this->assertFalse($str->lastIndexOf('non-existant'));
+        $this->assertNotSame(3, $str->lastIndexOf('string'));
     }
 
     public function testReverse()
     {
+        $str = new String('my string of string');
+        $this->assertNotSame($str, $str->reverse());
+        $this->assertNotEquals($str, $str->reverse());
     }
 
     public function testWordWrap()
     {
+        $str = new String('my string of string');
+        $this->assertNotSame($str, $str->wordWrap());
+        $this->assertEquals($str, $str->wordWrap());
+        $this->assertNotEquals($str, $str->wordWrap(1));
     }
 
     public function testPad()
     {
+        $str = new String('my string of string');
+        $this->assertNotSame($str, $str->pad(5));
+        $this->assertEquals($str, $str->pad(5));
+    }
+
+    public function testPadLeft()
+    {
+        $str = new String('my string of string');
+        $this->assertNotSame($str, $str->padLeft(5));
+        $this->assertEquals($str, $str->padLeft(5));
+    }
+
+    public function testPadRight()
+    {
+        $str = new String('my string of string');
+        $this->assertNotSame($str, $str->padRight(5));
+        $this->assertEquals($str, $str->padRight(5));
     }
 
     public function testClean()
     {
+        $str = new String('clean string');
+        $this->assertNotSame($str, $str->clean());
     }
 
     public function testLength()
