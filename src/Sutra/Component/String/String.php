@@ -369,7 +369,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function substr($start, $length = null)
     {
-        return new static(static::$helper->sub($this->string, $start, $length));
+        return new static(static::$helper->substr($this->string, $start, $length));
     }
 
     /**
@@ -414,17 +414,11 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      * @param string  $needle The string to search for.
      * @param integer $offset The character position to start searching from.
      *
-     * @return integer The character position, or -1.
+     * @return integer The character position, or `false`.
      */
     public function indexOf($needle, $offset = 0)
     {
-        $pos = static::$helper->pos($this->string, $needle, $offset);
-
-        if ($pos === false) {
-            return -1;
-        }
-
-        return $pos;
+        return static::$helper->indexOf($this->string, $needle, $offset);
     }
 
     /**
@@ -433,17 +427,11 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      * @param string  $needle The string to search for.
      * @param integer $offset The character position to start searching from.
      *
-     * @return integer The character position or `-1`.
+     * @return integer The character position or `false`.
      */
     public function lastIndexOf($needle, $offset = 0)
     {
-        $pos = static::$helper->rpos($this->string, $needle, $offset);
-
-        if ($pos === false) {
-            return -1;
-        }
-
-        return $pos;
+        return static::$helper->lastIndexOf($this->string, $needle, $offset);
     }
 
     /**
@@ -453,7 +441,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      */
     public function reverse()
     {
-        return new static(static::$helper->rev($this->string));
+        return new static(static::$helper->reverse($this->string));
     }
 
     /**
@@ -465,7 +453,7 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @return String The string with all lowercase characters to uppercase.
      */
-    public function wordWrap($width = 75, $break = '', $cut = false)
+    public function wordWrap($width = 75, $break = "\n", $cut = false)
     {
         return new static(static::$helper->wordwrap($this->string, $width, $break, $cut));
     }
@@ -474,14 +462,39 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      * Pads the string to the number of characters specified.
      *
      * @param integer $padLength The character length to pad.
-     * @param string  $padStr    The string to pad with our string.
-     * @param string  $padType   One of: 'left', 'right', 'both'.
+     * @param string  $padStr    The string to pad with.
      *
      * @return String The padded string.
      */
-    public function pad($padLength, $padStr = '', $padType = 'right')
+    public function pad($padLength, $padStr = '')
     {
-        return new static(static::$helper->pad($this->string, $padLength, $padStr, $padType));
+        return new static(static::$helper->pad($this->string, $padLength, $padStr));
+    }
+
+    /**
+     * Left pads the string to the number of characters specified.
+     *
+     * @param integer $padLength The character length to pad.
+     * @param string  $padStr    The string to pad with.
+     *
+     * @return String The padded string.
+     */
+    public function padLeft($padLength, $padStr = '')
+    {
+        return new static(static::$helper->padLeft($this->string, $padLength, $padStr));
+    }
+
+    /**
+     * Left pads the string to the number of characters specified.
+     *
+     * @param integer $padLength The character length to pad.
+     * @param string  $padStr    The string to pad with.
+     *
+     * @return String The padded string.
+     */
+    public function padRight($padLength, $padStr = '')
+    {
+        return new static(static::$helper->padRight($this->string, $padLength, $padStr));
     }
 
     /**
