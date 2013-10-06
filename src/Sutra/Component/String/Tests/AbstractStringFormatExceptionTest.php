@@ -1,5 +1,5 @@
 <?php
-namespace Sutra\Component\DataStructure\Tests\Exception;
+namespace Sutra\Component\String\Tests\Exception;
 
 use Sutra\Component\DataStructure\Tests\TestCase;
 
