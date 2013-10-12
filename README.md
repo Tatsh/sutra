@@ -30,8 +30,8 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `sHTML` (same as `fHTML`)
 - [X] `sHTTPRequest` 
 - [ ] `sNumber` (same as `fNumber`)
-- [x] `sObject`
-- [ ] `sString`
+- [X] `sObject`
+- [X] `sString`
 - [ ] `sTimestamp` (same as `sTimestamp`)
 
 Anything not on the above lists will *not* be ported.
