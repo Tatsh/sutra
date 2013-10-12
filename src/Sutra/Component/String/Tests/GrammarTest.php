@@ -159,4 +159,87 @@ class GrammarTest extends TestCase
         $ret = $this->grammar->titleize('and_an_stop_words_here_of_to');
         $this->assertEquals('And an Stop Words Here of to', $ret);
     }
+
+    public static function stemProvider()
+    {
+        return array(
+            array('pc', 'pc'),
+            array('goodness', 'good'),
+            array('oddly', 'oddli'),
+            array('logical', 'logic'),
+            array('educational', 'educ'),
+            array('gratefulness', 'grate'),
+            array('animated', 'anim'),
+            array('feed', 'feed'),
+            array('ponies', 'poni'),
+            array('ties', 'ti'),
+            array('caress', 'caress'),
+            array('cats', 'cat'),
+            array('agreed', 'agre'),
+            array('plastered', 'plaster'),
+            array('bled', 'bled'),
+            array('motoring', 'motor'),
+            array('sing', 'sing'),
+            array('conflated', 'conflat'),
+            array('sized', 'size'),
+            array('hopping', 'hop'),
+            array('filing', 'file'),
+            array('hissing', 'hiss'),
+            array('yawner', 'yawner'),
+            array('succeed', 'succe'),
+            array('skating', 'skate'),
+            array('equality', 'equal'),
+            array('license', 'licens'),
+            array('loyalty', 'loyalti'),
+            array('connected', 'connect'),
+            array('connecting', 'connect'),
+            array('connection', 'connect'),
+            array('connections', 'connect'),
+            array('controlling', 'control'),
+            array('relate', 'relat'),
+            array('relativity', 'rel'),
+        );
+    }
+
+    /**
+     * @dataProvider stemProvider
+     */
+    public function testStem($input, $output)
+    {
+        $this->assertEquals($output, $this->grammar->stem($input));
+    }
+
+    public function testStemCache()
+    {
+        foreach (range(0, 2) as $i) {
+            $this->assertEquals('control', $this->grammar->stem('controlling'));
+        }
+    }
+
+    public static function inflectOnQuantityProvider()
+    {
+        $range = range(0, 99);
+
+        return array(
+            array(1, 'item', null, true, 'item'),
+            array(array(1,2,3), 'item', null, true, 'items'),
+            array(array(1,2,3), 'item', null, false, 'items'),
+            array(array(1,2,3), 'item', 'odd_plural', false, 'odd_plural'),
+            array(array(1,2,3), 'item', 'odd_plural', true, 'odd_plural'),
+            array(array(1,2,3), 'item', '%d odd_plural', true, 'three odd_plural'),
+            array($range, 'item', '%d odd_plural', true, '100 odd_plural'),
+            array($range, 'item', '%d items', true, '100 items'),
+            array(0, 'deer', null, null, 'deer'),
+            array(0, 'deer', null, true, 'deer'),
+            array(-1, 'item', null, null, 'items'),
+        );
+    }
+
+    /**
+     * @dataProvider inflectOnQuantityProvider
+     */
+    public function testInflectOnQuantity($quantity, $singular, $plural, $words, $output)
+    {
+        $this->assertEquals($output, $this->grammar->inflectOnQuantity($quantity, $singular, $plural, $words));
+    }
 }

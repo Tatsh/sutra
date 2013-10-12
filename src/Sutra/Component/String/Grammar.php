@@ -29,6 +29,7 @@ class Grammar implements GrammarInterface
         'dashize' => array(),
         'humanize' => array(),
         'titleize' => array(),
+        'stem' => array(),
     );
 
     /**
@@ -92,11 +93,36 @@ class Grammar implements GrammarInterface
     );
 
     /**
+     * Word replacements for singular numbers.
+     *
+     * @var array
+     */
+    protected static $numberReplacements = array(
+        0 => 'zero',
+        1 => 'one',
+        2 => 'two',
+        3 => 'three',
+        4 => 'four',
+        5 => 'five',
+        6 => 'six',
+        7 => 'seven',
+        8 => 'eight',
+        9 => 'nine',
+    );
+
+    /**
      * URL parser.
      *
      * @var URLParserInterface
      */
     protected $urlParser;
+
+    /**
+     * UTF-8 helper.
+     *
+     * @var Utf8HelperInterface
+     */
+    protected $utf8;
 
     /**
      * Constructor.
@@ -106,6 +132,7 @@ class Grammar implements GrammarInterface
     public function __construct(UrlParserInterface $urlParser)
     {
         $this->urlParser = $urlParser;
+        $this->utf8 = new Utf8Helper();
     }
 
     /**
@@ -392,6 +419,162 @@ class Grammar implements GrammarInterface
                 unset($this->cache['titleize'][$key]);
             }
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     *
+     * @link http://tartarus.org/~martin/PorterStemmer/
+     */
+    public function stem($word)
+    {
+        if (isset($this->cache['stem'][$word])) {
+            return $this->cache['stem'][$word];
+        }
+
+        $original = $word;
+
+        $sV  = '^([^aeiou][^aeiouy]*)?[aeiouy]';
+        $mgr0 = $sV . '[aeiou]*[^aeiou][^aeiouy]*';
+
+        $sVRegex  = '#' . $sV . '#';
+        $mgr0Regex = '#' . $mgr0 . '#';
+        $meq1Regex = '#' . $mgr0 . '([aeiouy][aeiou]*)?$#';
+        $mgr1Regex = '#' . $mgr0 . '[aeiouy][aeiou]*[^aeiou][^aeiouy]*#';
+
+        $word = $this->utf8->ascii($word);
+        $word = strtolower($word);
+
+        if (strlen($word) < 3) {
+            return $word;
+        }
+
+        if ($word[0] == 'y') {
+            $word = 'Y' . substr($word, 1);
+        }
+
+        // Step 1a
+        $word = preg_replace('#^(.+?)(?:(ss|i)es|([^s])s)$#', '\1\2\3', $word);
+
+        // Step 1b
+        if (preg_match('#^(.+?)eed$#', $word, $match)) {
+            if (preg_match($mgr0Regex, $match[1])) {
+                $word = substr($word, 0, -1);
+            }
+
+        } elseif (preg_match('#^(.+?)(ed|ing)$#', $word, $match)) {
+            if (preg_match($sVRegex, $match[1])) {
+                $word = $match[1];
+                if (preg_match('#(at|bl|iz)$#', $word)) {
+                    $word .= 'e';
+                }
+                else if (preg_match('#([^aeiouylsz])\1$#', $word)) {
+                    $word = substr($word, 0, -1);
+                }
+                else if (preg_match('#^[^aeiou][^aeiouy]*[aeiouy][^aeiouwxy]$#', $word)) {
+                    $word .= 'e';
+                }
+            }
+        }
+
+        // Step 1c
+        if (substr($word, -1) == 'y') {
+            $stem = substr($word, 0, -1);
+            if (preg_match($sVRegex, $stem)) {
+                $word = $stem . 'i';
+            }
+        }
+
+        // Step 2
+        if (preg_match('#^(.+?)(ational|tional|enci|anci|izer|bli|alli|entli|eli|ousli|ization|ation|ator|alism|iveness|fulness|ousness|aliti|iviti|biliti|logi)$#', $word, $match)) {
+            if (preg_match($mgr0Regex, $match[1])) {
+                $word = $match[1] . strtr(
+                    $match[2],
+                    array(
+                        'ational' => 'ate',  'tional'  => 'tion', 'enci'    => 'ence',
+                        'anci'    => 'ance', 'izer'    => 'ize',  'bli'     => 'ble',
+                        'alli'    => 'al',   'entli'   => 'ent',  'eli'     => 'e',
+                        'ousli'   => 'ous',  'ization' => 'ize',  'ation'   => 'ate',
+                        'ator'    => 'ate',  'alism'   => 'al',   'iveness' => 'ive',
+                        'fulness' => 'ful',  'ousness' => 'ous',  'aliti'   => 'al',
+                        'iviti'   => 'ive',  'biliti'  => 'ble',  'logi'    => 'log'
+                    )
+                );
+            }
+        }
+
+        // Step 3
+        if (preg_match('#^(.+?)(icate|ative|alize|iciti|ical|ful|ness)$#', $word, $match)) {
+            if (preg_match($mgr0Regex, $match[1])) {
+                $word = $match[1] . strtr(
+                    $match[2],
+                    array(
+                        'icate' => 'ic', 'ative' => '', 'alize' => 'al', 'iciti' => 'ic',
+                        'ical'  => 'ic', 'ful'   => '', 'ness'  => ''
+                    )
+                );
+            }
+        }
+
+        // Step 4
+        if (preg_match('#^(.+?)(al|ance|ence|er|ic|able|ible|ant|ement|ment|ent|ou|ism|ate|iti|ous|ive|ize|(?<=[st])ion)$#', $word, $match) && preg_match($mgr1Regex, $match[1])) {
+            $word = $match[1];
+        }
+
+        // Step 5
+        if (substr($word, -1) == 'e') {
+            $stem = substr($word, 0, -1);
+            if (preg_match($mgr1Regex, $stem)) {
+                $word = $stem;
+            }
+            else if (preg_match($meq1Regex, $stem) && !preg_match('#^[^aeiou][^aeiouy]*[aeiouy][^aeiouwxy]$#', $stem)) {
+                $word = $stem;
+            }
+        }
+
+        if (preg_match('#ll$#', $word) && preg_match($mgr1Regex, $word)) {
+            $word = substr($word, 0, -1);
+        }
+
+        if ($word[0] == 'Y') {
+            $word = 'y' . substr($word, 1);
+        }
+
+        $this->cache['stem'][$original] = $word;
+
+        return $word;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function inflectOnQuantity($quantity, $singular, $plural = null, $wordsForSingleDigits = false)
+    {
+        if (!$plural) {
+            $plural = $this->pluralize($singular);
+        }
+
+        if (is_array($quantity)) {
+            $quantity = sizeof($quantity);
+        }
+
+        if ($quantity == 1) {
+            $output = $singular;
+        }
+        else {
+            $output = $plural;
+
+            // Handle placement of the quantity into the output
+            if (strpos($output, '%d') !== false) {
+                if ($wordsForSingleDigits && $quantity < 10) {
+                    $quantity = static::$numberReplacements[$quantity];
+                }
+
+                $output = str_replace('%d', $quantity, $output);
+            }
+        }
+
+        return $output;
     }
 
     /**

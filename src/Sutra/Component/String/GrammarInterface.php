@@ -3,6 +3,8 @@ namespace Sutra\Component\String;
 
 /**
  * String manipulation library.
+ *
+ * @todo Add all `@replaces` annotations.
  */
 interface GrammarInterface
 {
@@ -198,4 +200,31 @@ interface GrammarInterface
      * @param string $word Word to handle.
      */
     public function removePluralizationRule($word);
+
+    /**
+     * Creates the stem for a word.
+     *
+     * @param string $word Word to get stem for.
+     *
+     * @return string Stemmed word.
+     *
+     * @replaces ::stem
+     */
+    public function stem($word);
+
+    /**
+     * Inflects to singular or plural based on quantity value.
+     *
+     * @param array|integer $quantity             Quantity or array to count.
+     * @param string        $singular             Singular form of word.
+     * @param string        $plural               Plural form of word. Use `%d`
+     *   to include quantity in returned string.
+     * @param boolean       $wordsForSingleDigits Use words for single digits 0-9.
+     *
+     * @return string Singular or plural form of word or string with plural
+     *   form and number.
+     *
+     * @replaces ::inflectOnQuantity
+     */
+    public function inflectOnQuantity($quantity, $singular, $plural = null, $wordsForSingleDigits = false);
 }
