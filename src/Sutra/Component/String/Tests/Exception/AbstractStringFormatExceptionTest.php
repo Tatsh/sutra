@@ -1,11 +1,11 @@
 <?php
 namespace Sutra\Component\String\Tests\Exception;
 
-use Sutra\Component\DataStructure\Tests\TestCase;
+use Sutra\Component\String\Tests\TestCase;
 
 class AbstractStringFormatExceptionTest extends TestCase
 {
-    const ABSTRACT_EXCEPTION_CLASS = 'Sutra\Component\DataStructure\Exception\AbstractStringFormatException';
+    const ABSTRACT_EXCEPTION_CLASS = 'Sutra\Component\Buffer\Exception\AbstractStringFormatException';
 
     public function testConstructor()
     {

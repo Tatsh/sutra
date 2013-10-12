@@ -5,7 +5,7 @@ use Sutra\Component\Buffer\Tests\TestCase;
 
 class AbstractStringFormatExceptionTest extends TestCase
 {
-    const ABSTRACT_EXCEPTION_CLASS = 'Sutra\Component\Buffer\Exception\AbstractStringFormatException';
+    const ABSTRACT_EXCEPTION_CLASS = 'Sutra\Component\String\Exception\AbstractStringFormatException';
 
     public function testConstructor()
     {
