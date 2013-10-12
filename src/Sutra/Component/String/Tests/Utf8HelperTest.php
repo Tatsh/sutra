@@ -213,7 +213,7 @@ class Utf8HelperTest extends TestCase
             array('العربيaaaa', 3, ' ', 'العربيaaaa'),
             array('العربيaaaa', 16, ' ', '      العربيaaaa'),
             array('《》『', 6, '  ', '   《》『'),
-            );
+        );
     }
 
     /**
@@ -231,7 +231,7 @@ class Utf8HelperTest extends TestCase
             array('العربيaaaa', 3, ' ', 'العربيaaaa'),
             array('العربيaaaa', 16, ' ', 'العربيaaaa      '),
             array('《》『', 6, '  ', '《》『   '),
-            );
+        );
     }
 
     /**
