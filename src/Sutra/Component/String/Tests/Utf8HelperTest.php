@@ -177,7 +177,7 @@ class Utf8HelperTest extends TestCase
             array('my string', strlen('my string')),
             array('العربيaaaa', 10),
             array('《》『', 3),
-            );
+        );
     }
 
     /**
@@ -186,5 +186,59 @@ class Utf8HelperTest extends TestCase
     public function testLength($input, $output)
     {
         $this->assertEquals($output, static::$instance->length($input));
+    }
+
+    public static function padProvider()
+    {
+        return array(
+            array('ascii', 10, ' ', '  ascii   '),
+            array('العربيaaaa', 3, ' ', 'العربيaaaa'),
+            array('العربيaaaa', 16, ' ', '   العربيaaaa   '),
+            array('《》『', 6, '  ', '  《》『 '),
+        );
+    }
+
+    /**
+     * @dataProvider padProvider
+     */
+    public function testPad($str, $length, $padStr, $output)
+    {
+        $this->assertEquals($output, static::$instance->pad($str, $length, $padStr));
+    }
+
+    public static function padLeftProvider()
+    {
+        return array(
+            array('ascii', 10, ' ', '     ascii'),
+            array('العربيaaaa', 3, ' ', 'العربيaaaa'),
+            array('العربيaaaa', 16, ' ', '      العربيaaaa'),
+            array('《》『', 6, '  ', '   《》『'),
+            );
+    }
+
+    /**
+     * @dataProvider padLeftProvider
+     */
+    public function testPadLeft($str, $length, $padLeftStr, $output)
+    {
+        $this->assertEquals($output, static::$instance->padLeft($str, $length, $padLeftStr));
+    }
+
+    public static function padRightProvider()
+    {
+        return array(
+            array('ascii', 10, ' ', 'ascii     '),
+            array('العربيaaaa', 3, ' ', 'العربيaaaa'),
+            array('العربيaaaa', 16, ' ', 'العربيaaaa      '),
+            array('《》『', 6, '  ', '《》『   '),
+            );
+    }
+
+    /**
+     * @dataProvider padRightProvider
+     */
+    public function testPadRight($str, $length, $padRightStr, $output)
+    {
+        $this->assertEquals($output, static::$instance->padRight($str, $length, $padRightStr));
     }
 }
