@@ -14,7 +14,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fEmail`
 - [ ] `fFile`
 - [ ] `fFilesystem`
-- [ ] `fGrammar`
+- [X] `fGrammar`
 - [ ] `fHTML`
 - [ ] `fImage`
 - [ ] `fJSON`
@@ -25,8 +25,8 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 
 # Ports from Sutra
 
-- [x] `sArray`
-- [ ] `sGrammar` (same as `fGrammar`)
+- [X] `sArray`
+- [X] `sGrammar` (same as `fGrammar`)
 - [ ] `sHTML` (same as `fHTML`)
 - [X] `sHTTPRequest` 
 - [ ] `sNumber` (same as `fNumber`)
