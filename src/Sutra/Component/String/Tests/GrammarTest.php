@@ -2,7 +2,6 @@
 namespace Sutra\Component\String\Tests;
 
 use Sutra\Component\String\Grammar;
-use Sutra\Component\String\MbUtf8Helper;
 use Sutra\Component\String\Utf8Helper;
 use Sutra\Component\Url\UrlParser;
 
@@ -12,13 +11,7 @@ class GrammarTest extends TestCase
 
     public function setUp()
     {
-        if (extension_loaded('mbstring')) {
-            $utf8Helper = new MbUtf8Helper();
-        }
-        else {
-            $utf8Helper = new Utf8Helper();
-        }
-
+        $utf8Helper = new Utf8Helper();
         $this->grammar = new Grammar(new UrlParser($utf8Helper));
     }
 

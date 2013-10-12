@@ -10,19 +10,6 @@ class StringTest extends TestCase
         $helper = String::getUtf8Helper();
         $str = new String('my string');
         $this->assertSame($helper, String::getUtf8Helper());
-
-        $currentHelper = $helper;
-        $helper = String::getUtf8Helper(true);
-        $str = new String('my string');
-        $this->assertSame($currentHelper, String::getUtf8Helper());
-        $this->assertNotSame($currentHelper, String::getUtf8Helper(true, true));
-
-        // Go back to MbUtf8Helper if possible
-        String::getUtf8Helper(false, true);
-        $this->assertNotSame($currentHelper, String::getUtf8Helper());
-        if (extension_loaded('mbstring')) {
-            $this->assertInstanceOf('Sutra\Component\String\MbUtf8Helper', String::getUtf8Helper());
-        }
     }
 
     /**

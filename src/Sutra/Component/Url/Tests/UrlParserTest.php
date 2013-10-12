@@ -1,7 +1,7 @@
 <?php
 namespace Sutra\Component\Url\Tests;
 
-use Sutra\Component\String\MbUtf8Helper;
+use Sutra\Component\String\Utf8Helper;
 use Sutra\Component\Url\UrlParser;
 
 class UrlParserTest extends TestCase
@@ -13,12 +13,12 @@ class UrlParserTest extends TestCase
 
     public static function setUpBeforeClass()
     {
-        static::$instance = new UrlParser(new MbUtf8Helper());
+        static::$instance = new UrlParser(new Utf8Helper());
     }
 
     public function testConstructor()
     {
-        $parser = new UrlParser(new MbUtf8Helper());
+        $parser = new UrlParser(new Utf8Helper());
         $reflection = new \ReflectionClass($parser);
         $prop = $reflection->getProperty('utf8Helper');
         $prop->setAccessible(true);

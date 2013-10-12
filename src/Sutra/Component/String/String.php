@@ -569,20 +569,12 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      * Also sets up instance if it has not yet been instantiated for lazy
      *   loading.
      *
-     * @param boolean $default If this should always use the default class.
-     * @param boolean $replace Replace the existing instance.
-     *
      * @return Utf8HelperInterface Utf8Helper instance.
      */
-    public static function getUtf8Helper($default = false, $replace = false)
+    public static function getUtf8Helper()
     {
-        if (!static::$helper || $replace) {
-            if (extension_loaded('mbstring') && !$default) {
-                static::$helper = new MbUtf8Helper();
-            }
-            else {
-                static::$helper = new Utf8Helper();
-            }
+        if (!static::$helper) {
+            static::$helper = new Utf8Helper();
         }
 
         return static::$helper;
