@@ -241,4 +241,58 @@ class Utf8HelperTest extends TestCase
     {
         $this->assertEquals($output, static::$instance->padRight($str, $length, $padRightStr));
     }
+
+    public static function caseInsensitiveReplaceProvider()
+    {
+        return array(
+            array('some string AaA', array('a', 'b', 'c'), 'd', 'some string ddd'),
+            array('some string AaA', 'a', 'd', 'some string ddd'),
+        );
+    }
+
+    /**
+     * @dataProvider caseInsensitiveReplaceProvider
+     */
+    public function testCaseInsensitiveReplace($string, $find, $replace, $output)
+    {
+        $this->assertEquals($output, static::$instance->caseInsensitiveReplace($string, $find, $replace));
+    }
+
+    public static function reverseProvider()
+    {
+        return array(
+            array('العربيaaaa', 'aaaaيبرعلا'),
+            array('abcdῳ', 'ῳdcba'),
+            array('Ǿǽ⅔', '⅔ǽǾ'),
+            array('տպագրության', 'նայթւորգապտ'),
+            array('元素週期表', '表期週素元'),
+            array('𠜎 𠜱 𠝹 𠱓 𠱸 𠲖 𠳏 𠳕', '𠳕 𠳏 𠲖 𠱸 𠱓 𠝹 𠜱 𠜎'), // 4-byte
+        );
+    }
+
+    /**
+     * @dataProvider reverseProvider
+     */
+    public function testReverse($input, $output)
+    {
+        $this->assertEquals($output, static::$instance->reverse($input));
+    }
+
+    public function testWordwWrapAscii()
+    {
+        $str =<<<STR
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+STR;
+        $output =<<<STR
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+Lorem Ipsum has been the industry's standard dummy text ever since the
+1500s, when an unknown printer took a galley of type and scrambled it to
+make a type specimen book. It has survived not only five centuries, but
+also the leap into electronic typesetting, remaining essentially unchanged.
+It was popularised in the 1960s with the release of Letraset sheets
+containing Lorem Ipsum passages, and more recently with desktop publishing
+software like Aldus PageMaker including versions of Lorem Ipsum.
+STR;
+        $this->assertEquals($output, static::$instance->wordWrap($str));
+    }
 }

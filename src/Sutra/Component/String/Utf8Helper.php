@@ -452,7 +452,6 @@ class Utf8Helper implements Utf8HelperInterface
                     case 0xC0:
                         $output = $string[$i] . $string[$i+1] . $output;
                         $i += 1;
-                        break;
                 }
             }
         }
