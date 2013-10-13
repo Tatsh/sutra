@@ -473,26 +473,39 @@ class Utf8Helper implements Utf8HelperInterface
         $lineLen = 0;
 
         foreach ($words as $word) {
+            $word = $word;
             $wordLen = $this->length($word);
 
             // Shorten up words that are too long
             while ($cut && $wordLen > $width) {
-                $output  .= $break;
-                $output  .= $this->substr($word, 0, $width);
+                $output .= $break;
+                $output .= $this->substr($word, 0, $width);
+
                 $lineLen = $width;
-                $word     = $this->substr($word, $width);
+                $word = $this->substr($word, $width);
                 $wordLen = $this->length($word);
             }
 
             if ($lineLen && $lineLen + $wordLen > $width) {
-                $output  .= $break;
+                $output .= $break;
                 $lineLen = 0;
             }
             $output   .= $word;
             $lineLen += $wordLen;
         }
 
-        return $output;
+        // Trim each line
+        $ret = array();
+        $lines = preg_split('#'.preg_quote($break).'+#', $output, null, PREG_SPLIT_NO_EMPTY);
+        foreach (preg_split('#'.preg_quote($break).'+#', $output) as $line) {
+            $line = trim($line);
+
+            if ($this->length($line)) {
+                $ret[] = $line;
+            }
+        }
+
+        return join($break, $ret);
     }
 
     /**

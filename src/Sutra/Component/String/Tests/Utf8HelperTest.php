@@ -294,5 +294,40 @@ containing Lorem Ipsum passages, and more recently with desktop publishing
 software like Aldus PageMaker including versions of Lorem Ipsum.
 STR;
         $this->assertEquals($output, static::$instance->wordWrap($str));
+
+        $str =<<<STR
+위키백과(Wiki百科, 듣기 (도움말·정보)) 혹은 위키피디어(Wikipedia 듣기 (도움말·정보)는 모두가 함께 만들어 가며 누구나 자유롭게 쓸 수 있는 다언어판 인터넷 백과사전이다. 대표적인 집단 지성의 사례로 평가받고 있다. 배타적인 저작권 라이선스가 아닌 자유 콘텐츠로 사용에 제약을 받지 않는다.
+STR;
+        $output =<<<STR
+위키백과(Wiki百科, 듣기 (도움말·정보)) 혹은 위키피디어(Wikipedia 듣기 (도움말·정보)는 모두가 함께 만들어 가며
+누구나 자유롭게 쓸 수 있는 다언어판 인터넷 백과사전이다. 대표적인 집단 지성의 사례로 평가받고 있다. 배타적인 저작권 라이선스가
+아닌 자유 콘텐츠로 사용에 제약을 받지 않는다.
+STR;
+        $this->assertEquals($output, static::$instance->wordWrap($str));
+
+        $output =<<<STR
+위키백과(Wiki百
+科, 듣기
+(도움말·정보))
+혹은
+위키피디어(Wiki
+pedia 듣기
+(도움말·정보)는
+모두가 함께
+만들어 가며
+누구나 자유롭게
+쓸 수 있는
+다언어판 인터넷
+백과사전이다.
+대표적인 집단
+지성의 사례로
+평가받고 있다.
+배타적인 저작권
+라이선스가 아닌
+자유 콘텐츠로
+사용에 제약을
+받지 않는다.
+STR;
+        $this->assertEquals($output, static::$instance->wordWrap($str, 10, "\n", true));
     }
 }
