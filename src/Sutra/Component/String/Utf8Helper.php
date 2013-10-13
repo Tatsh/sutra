@@ -1,6 +1,8 @@
 <?php
 namespace Sutra\Component\String;
 
+use Sutra\Component\String\Exception\ProgrammerException;
+
 /**
  * {@inheritDoc}
  */
@@ -677,5 +679,154 @@ class Utf8Helper implements Utf8HelperInterface
         $string = strtr($string, self::$utf8ToAscii);
 
         return preg_replace('#[^\x00-\x7F]#', '', $string);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function fromCharCode($codePoint)
+    {
+        if (is_string($codePoint) && substr($codePoint, 0, 2) == 'U+') {
+            $codePoint = substr($codePoint, 2);
+            $codePoint = hexdec($codePoint);
+        }
+
+        $bin = decbin($codePoint);
+        $digits = strlen($bin);
+
+        $first = $second = $third = $fourth = NULL;
+
+        // One byte characters
+        if ($digits <= 7) {
+            $first = chr(bindec($bin));
+        }
+        // Two byte characters
+        else if ($digits <= 11) {
+            $first  = chr(bindec('110' . str_pad(substr($bin, 0, -6), 5, '0', STR_PAD_LEFT)));
+            $second = chr(bindec('10' . substr($bin, -6)));
+        }
+        // Three byte characters
+        else if ($digits <= 16) {
+            $first  = chr(bindec('1110' . str_pad(substr($bin, 0, -12), 4, '0', STR_PAD_LEFT)));
+            $second = chr(bindec('10' . substr($bin, -12, -6)));
+            $third  = chr(bindec('10' . substr($bin, -6)));
+        }
+        // Four byte characters
+        else if ($digits <= 21) {
+            $first  = chr(bindec('11110' . str_pad(substr($bin, 0, -18), 3, '0', STR_PAD_LEFT)));
+            $second = chr(bindec('10' . substr($bin, -18, -12)));
+            $third  = chr(bindec('10' . substr($bin, -12, -6)));
+            $fourth = chr(bindec('10' . substr($bin, -6)));
+        }
+
+        $ord = ord($first);
+        if ($digits > 21 || $ord == 0xC0 || $ord == 0xC1 || $ord > 0xF4) {
+            throw new ProgrammerException('The code point specified, %s, is invalid', $codePoint);
+        }
+
+        return $first . $second . $third . $fourth;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function toCodePoint($char)
+    {
+        $b = array_map('ord', str_split($char));
+        $invalid = false;
+
+        switch (strlen($char)) {
+            case 1:
+                if ($b[0] > 0x7F) {
+                    $invalid = true;
+                    break;
+                }
+                $bin = decbin($b[0]);
+                break;
+
+            case 2:
+                if ($b[0] < 0xC2 || $b[0] > 0xDF ||
+                    $b[1] < 0x80 || $b[1] > 0xBF) {
+                        $invalid = true;
+                        break;
+                    }
+                    $bin = substr(decbin($b[0]), 3) .
+                    substr(decbin($b[1]), 2);
+                break;
+
+            case 3:
+                if ($b[0] < 0xE0 || $b[0] > 0xEF ||
+                    $b[1] < 0x80 || $b[1] > 0xBF ||
+                    $b[2] < 0x80 || $b[2] > 0xBF) {
+                        $invalid = true;
+                        break;
+                    }
+                    $bin = substr(decbin($b[0]), 4) .
+                    substr(decbin($b[1]), 2) .
+                    substr(decbin($b[2]), 2);
+                break;
+
+            case 4:
+                if ($b[0] < 0xF0 || $b[0] > 0xF4 ||
+                    $b[1] < 0x80 || $b[1] > 0xBF ||
+                    $b[2] < 0x80 || $b[2] > 0xBF ||
+                    $b[3] < 0x80 || $b[3] > 0xBF) {
+                        $invalid = true;
+                        break;
+                    }
+                    $bin = substr(decbin($b[0]), 5) .
+                    substr(decbin($b[1]), 2) .
+                    substr(decbin($b[2]), 2) .
+                    substr(decbin($b[3]), 2);
+                break;
+
+            default:
+                $invalid = true;
+                break;
+        }
+
+        if ($invalid) {
+            throw new ProgrammerException('The UTF-8 character specified is invalid');
+        }
+
+        $hex = strtoupper(dechex(bindec($bin)));
+
+        return 'U+' . str_pad($hex, 4, '0', STR_PAD_LEFT);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function compare($str1, $str2)
+    {
+        $asciiStr1 = strtr($str1, self::$utf8ToAscii);
+        $asciiStr2 = strtr($str2, self::$utf8ToAscii);
+
+        $res = strcmp($asciiStr1, $asciiStr2);
+
+        // If the ASCII representations are the same, sort by the UTF-8 representations
+        if ($res === 0) {
+            $res = strcmp($str1, $str2);
+        }
+
+        return $res;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function naturalCompare($str1, $str2)
+    {
+        $asciiStr1 = strtr($str1, static::$utf8ToAscii);
+        $asciiStr2 = strtr($str2, static::$utf8ToAscii);
+
+        $res = strnatcmp($asciiStr1, $asciiStr2);
+
+        // If the ASCII representations are the same, sort by the UTF-8 representations
+        if ($res === 0) {
+            $res = strnatcmp($str1, $str2);
+        }
+
+        return $res;
     }
 }

@@ -21,7 +21,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fMailbox`
 - [ ] `fMoney`
 - [ ] `fNumber`
-- [ ] `fUTF8`
+- [X] `fUTF8`
 
 # Ports from Sutra
 

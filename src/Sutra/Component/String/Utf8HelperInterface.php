@@ -1,6 +1,8 @@
 <?php
 namespace Sutra\Component\String;
 
+use Sutra\Component\String\Exception\ProgrammerException;
+
 /**
  * UTF-8 string helper.
  *
@@ -278,4 +280,70 @@ interface Utf8HelperInterface
      * @replaces ::ascii
      */
     public function ascii($string);
+
+    /**
+     * Converts a unicode code point to a character.
+     *
+     * @param string|integer Unicode code point in `U+XXXX` syntax or integer.
+     *
+     * @return string The character that matches.
+     *
+     * @throws ProgrammerException If the code point is not valid.
+     *
+     * @replaces ::chr
+     */
+    public function fromCharCode($codePoint);
+
+    /**
+     * Converts a character to a Unicode code point.
+     *
+     * @param string $char Character to convert.
+     *
+     * @return string Unicode code point in `U+XXXX` syntax.
+     *
+     * @replaces ::ord
+     */
+    public function toCodePoint($char);
+
+    /**
+     * Compares strings, with the resulting order having Latin characters that
+     *   are based on ASCII letters placed after the relative ASCII characters.
+     *
+     * @param string $str1 First string.
+     * @param string $str2 Second string.
+     *
+     * @return integer < 0 if `$str1` < `$str2`, 0 if they are equal, > 0 if
+     *   `$str1` > `$str2`.
+     */
+    public function compare($str1, $str2);
+
+    /**
+     * Compares strings using a natural order algorithm in a case-sensitive
+     *   manner, with the resulting order having Latin characters that are
+     *   based on ASCII letters placed after the relative ASCII characters.
+     *
+     * @param string $str1 First string.
+     * @param string $str2 Second string.
+     *
+     * @return integer < 0 if `$str1` < `$str2`, 0 if they are equal, > 0 if
+     *   `$str1` > `$str2`.
+     */
+    public function naturalCompare($str1, $str2);
+
+    /**
+     * Extracts part of a string.
+     *
+     * @param string  $string The string to extract from
+     * @param integer $start  The zero-based starting index to extract from.
+     *   Negative values will start the extraction that many characters from
+     *   the end of the string.
+     * @param integer $length  The length of the string to extract. If an empty
+     *   value is provided, the remainder of the string will be returned.
+     *
+     * @return mixed  The extracted subtring or `false` if the start is out
+     *   of bounds.
+     *
+     * @replaces ::sub
+     */
+    public function substr($string, $start, $length = null);
 }

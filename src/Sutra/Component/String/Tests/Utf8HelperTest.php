@@ -294,7 +294,10 @@ containing Lorem Ipsum passages, and more recently with desktop publishing
 software like Aldus PageMaker including versions of Lorem Ipsum.
 STR;
         $this->assertEquals($output, static::$instance->wordWrap($str));
+    }
 
+    public function testWordWrap()
+    {
         $str =<<<STR
 위키백과(Wiki百科, 듣기 (도움말·정보)) 혹은 위키피디어(Wikipedia 듣기 (도움말·정보)는 모두가 함께 만들어 가며 누구나 자유롭게 쓸 수 있는 다언어판 인터넷 백과사전이다. 대표적인 집단 지성의 사례로 평가받고 있다. 배타적인 저작권 라이선스가 아닌 자유 콘텐츠로 사용에 제약을 받지 않는다.
 STR;
@@ -329,5 +332,102 @@ pedia 듣기
 받지 않는다.
 STR;
         $this->assertEquals($output, static::$instance->wordWrap($str, 10, "\n", true));
+    }
+
+    public static function compareProvider()
+    {
+        return array(
+            array('위키백과', '위키백과', 0),
+            array('위키백', '위키백과', -1),
+            array('위키백과 科', '위키백과', 1),
+            array('my string', 'my string', 0),
+            array('My string', 'my string', -1),
+        );
+    }
+
+    /**
+     * @dataProvider compareProvider
+     */
+    public function testCompare($a, $b, $output)
+    {
+        if ($output === 0) {
+            $this->assertSame(0, static::$instance->compare($a, $b));
+        }
+        else if ($output === -1) {
+            $this->assertLessThanOrEqual(-1, static::$instance->compare($a, $b));
+        }
+        else if ($output === 1) {
+            $this->assertGreaterThanOrEqual(1, static::$instance->compare($a, $b));
+        }
+    }
+
+    public function naturalCompareProvider()
+    {
+        return array(
+            array('위키백과', '위키백과', 0),
+            array('위키백', '위키백과', -1),
+            array('위키백과 科', '위키백과', 1),
+            array('my string', 'my string', 0),
+            array('0My string', 'my string', -1),
+        );
+    }
+
+    /**
+     * @dataProvider naturalCompareProvider
+     */
+    public function testNaturalCompare($a, $b, $output)
+    {
+        if ($output === 0) {
+            $this->assertSame(0, static::$instance->naturalCompare($a, $b));
+        }
+        else if ($output === -1) {
+            $this->assertLessThanOrEqual(-1, static::$instance->naturalCompare($a, $b));
+        }
+        else if ($output === 1) {
+            $this->assertGreaterThanOrEqual(1, static::$instance->naturalCompare($a, $b));
+        }
+    }
+
+    public static function fromCharCodeProvider()
+    {
+        return array(
+            array(0x20, ' '),
+            array('U+C704', '위'),
+            array(0xc704, '위'),
+            array('U+2070E', '𠜎'), // 4 bytes
+            array(0x2070e, '𠜎'),
+            array(0xfb06, 'ﬆ'),
+            array(0xdf, 'ß'), // 2 bytes
+        );
+    }
+
+    /**
+     * @dataProvider fromCharCodeProvider
+     */
+    public function testFromCharCode($code, $char)
+    {
+        $this->assertSame($char, static::$instance->fromCharCode($code));
+    }
+
+    /**
+     * @expectedException Sutra\Component\String\Exception\ProgrammerException
+     * @expectedExceptionMessage The code point specified, 2000000, is invalid
+     */
+    public function testFromCharCodeException()
+    {
+        static::$instance->fromCharCode(2000000); // would be 5-byte
+    }
+
+    /**
+     * @dataProvider fromCharCodeProvider
+     */
+    public function testToCodePoint($ret, $char)
+    {
+        if (is_integer($ret)) {
+            $hex = strtoupper(dechex($ret));
+            $ret = 'U+'.str_pad($hex, 4, '0', STR_PAD_LEFT);
+        }
+
+        $this->assertSame($ret, static::$instance->toCodePoint($char));
     }
 }
