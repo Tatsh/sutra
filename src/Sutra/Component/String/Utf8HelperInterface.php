@@ -255,7 +255,7 @@ interface Utf8HelperInterface
      *
      * @param string $string String to fix.
      *
-     * @return Cleaned string.
+     * @return string Cleaned string.
      *
      * @replaces ::clean
      */

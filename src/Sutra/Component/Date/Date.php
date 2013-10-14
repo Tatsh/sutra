@@ -42,6 +42,8 @@ class Date implements DateInterface
      * @param mixed $date Date. Supports objects with a callable
      *   `__toString()` method, PHP \DateTime, and UNIX timestamp.
      *
+     * @throws ValidationException If date cannot be parsed.
+     *
      * @replaces ::__construct Please note `'CURRENT_TIMESTAMP'` and
      *   `'CURRENT_DATE'` strings are no longer supported.
      */

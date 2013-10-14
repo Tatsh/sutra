@@ -19,7 +19,7 @@ class Utf8Helper implements Utf8HelperInterface
      *  - IPA Extensions
      *  - Latin Extended Additional
      *  - General Punctuation
-     *  - Letterlike symbols
+     *  - Letter-like symbols
      *  - Number Forms
      *
      * @var array
@@ -178,7 +178,7 @@ class Utf8Helper implements Utf8HelperInterface
         '‵' => "'",   '‶' => '"',   '‷' => '"\'', '‹' => '<',   '›' => '>',
         '‼' => '!!',  '‽' => '?!',  '⁄' => '/',   '⁇' => '?/',  '⁈' => '?!',
         '⁉' => '!?',
-        // Letterlike Symbols
+        // Letter-like Symbols
         '℠' => 'SM',  '™' => 'TM',
         // Number Forms
         '⅓' => '1/3', '⅔' => '2/3', '⅕' => '1/5', '⅖' => '2/5', '⅗' => '3/5',

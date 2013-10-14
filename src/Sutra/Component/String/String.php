@@ -31,6 +31,8 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      * Constructor.
      *
      * @param string $string The string to handle.
+     *
+     * @throws ProgrammerException If string length is zero.
      */
     public function __construct($string)
     {
@@ -111,6 +113,9 @@ class String implements \ArrayAccess, \Countable, \IteratorAggregate
      *
      * @param integer $offset Offset to set to. Ignored.
      * @param string  $value  Character to set.
+     *
+     * @throws ProgrammerException If offset is not integer or if value length
+     *   is not at least 1.
      */
     public function offsetSet($offset, $value)
     {

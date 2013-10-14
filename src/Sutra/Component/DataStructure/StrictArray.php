@@ -25,8 +25,6 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * Constructor. Accepts multiple arguments or only a single array argument.
      *
      * @param mixed $arg First item of the array.
-     *
-     * @return sArray
      */
     public function __construct($arg = null)
     {
@@ -75,6 +73,8 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
      * @param integer $offset Offset.
      *
      * @return boolean If the offset exists.
+     *
+     * @throws ProgrammerException If the offset is not an integer.
      */
     public function offsetExists($offset)
     {
@@ -582,10 +582,10 @@ class StrictArray implements \Countable, \ArrayAccess, \IteratorAggregate
     /**
      * Callback used with walkRecursive.
      *
-     * @param sArray   $instance Object instance.
-     * @param mixed    &$array   Mixed variable, checked if is array-like.
-     * @param callable $func     Function to call on each item.
-     * @param mixed    $userData User data to add as third argument to callback.
+     * @param StrictArray $instance Object instance.
+     * @param mixed       &$array   Mixed variable, checked if is array-like.
+     * @param callable    $func     Function to call on each item.
+     * @param mixed       $userData User data to add as third argument to callback.
      */
     private static function walkRecursiveCallback(StrictArray $instance, &$array, $func, $userData = null)
     {

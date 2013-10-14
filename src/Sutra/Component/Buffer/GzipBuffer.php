@@ -9,7 +9,7 @@ use Sutra\Component\Buffer\Exception\ProgrammerException;
 class GzipBuffer extends Buffer
 {
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function start()
     {

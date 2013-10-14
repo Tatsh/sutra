@@ -70,6 +70,8 @@ class RandomGenerator implements RandomGeneratorInterface
      *   what is passed as string will be the alphabet used.
      *
      * @return string Randomly generated string.
+     *
+     * @throws \UnexpectedValueException If length is invalid.
      */
     public function randomString($length, $type = 'alphanumeric')
     {
@@ -115,7 +117,7 @@ class RandomGenerator implements RandomGeneratorInterface
         $output = '';
 
         for ($i = 0; $i < $length; $i++) {
-            $output .= $alphabet[$this->arndom(0, $alphabetLength - 1)];
+            $output .= $alphabet[$this->random(0, $alphabetLength - 1)];
         }
 
         return $output;
