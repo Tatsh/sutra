@@ -3,11 +3,12 @@ namespace Sutra\Component\Cryptography;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\Security\Core\Util\SecureRandom;
+use Symfony\Component\Security\Core\Util\StringUtils;
 
 /**
  * {@inheritdoc}
  */
-class RandomGenerator implements RandomGeneratorInterface
+class Cryptography implements CryptographyInterface
 {
     /**
      * SecureRandomInterface instance.
@@ -38,7 +39,7 @@ class RandomGenerator implements RandomGeneratorInterface
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      */
     public function random($min = null, $max = null)
     {
@@ -52,31 +53,14 @@ class RandomGenerator implements RandomGeneratorInterface
     }
 
     /**
-     * {@inheritdoc}
-     *
-     * @replaces ::random
-     */
-    public function nextBytes($nbBytes)
-    {
-        $this->seedRandom();
-    }
-
-    /**
-     * Generates a random string.
-     *
-     * @param integer $length Length of the string to generate.
-     * @param string  $type   Type of alphabet. One of: base64, alphanumeric,
-     *   base56, alpha, base36, hexadecimal, numeric. If not any of these, then
-     *   what is passed as string will be the alphabet used.
-     *
-     * @return string Randomly generated string.
+     * {@inheritDoc}
      *
      * @throws \UnexpectedValueException If length is invalid.
      */
     public function randomString($length, $type = 'alphanumeric')
     {
         if ($length < 1) {
-            throw new \UnexpectedValueException('Length must be greater than or equal to 1');
+            throw new \BadMethodCallException('Length must be greater than or equal to 1');
         }
 
         switch ($type) {
@@ -123,6 +107,20 @@ class RandomGenerator implements RandomGeneratorInterface
         return $output;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function stringsAreEqual($s1, $s2)
+    {
+        return StringUtils::equals($s1, $s2);
+    }
+
+    /**
+     * Seeds `mt_rand()` function.
+     *
+     * @see mt_srand()
+     * @see mt_rand()
+     */
     private function seedRandom()
     {
         if ($this->seeded) {
