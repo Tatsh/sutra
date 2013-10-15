@@ -8,24 +8,21 @@ namespace Sutra\Component\Cryptography;
  *   and a private key (PEM) is required for decryption. Recommend that the
  *   constructor should receive these files or their contents as arguments.
  *
- * @todo Better interface/class name.
- *
  * @replaces fCryptography
  */
-interface PublicPrivateKeyInterface
+interface PublicKeyCryptographyInterface
 {
     /**
      * Decrypts cipher text encrypted using public-key encryption via
      *   `#encrypt()`.
      *
      * @param string $cipherText Content to be decrytped.
-     * @param string $password   Password for the private key.
      *
      * @return string Decrypted plain text.
      *
      * @replaces ::publicKeyDecrypt
      */
-    public function decrypt($cipherText, $password);
+    public function decrypt($cipherText);
 
     /**
      * Encrypts the passed data using public key encryption via OpenSSL.
@@ -42,11 +39,10 @@ interface PublicPrivateKeyInterface
      * Creates a signature for plain text to allow verification of the creator.
      *
      * @param string $plainText The content to be signed.
-     * @param string $password  Password for the private key.
      *
      * @replaces ::publicKeySign
      */
-    public function sign($plainText, $password);
+    public function sign($plainText);
 
     /**
      * Checks a signature for plaintext to verify the creator, intended to work
