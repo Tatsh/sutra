@@ -12,7 +12,7 @@ use Sutra\Component\Cryptography\Exception\ValidationException;
  *
  * @replaces fCryptography
  */
-interface SymmetricKeyInterface
+interface SymmetricKeyCryptographyInterface
 {
     /**
      * Decrypts cipher text encrypted using symmetric key encyption via `#encrypt()`.
