@@ -84,7 +84,7 @@ class PublicKeyCryptography implements PublicKeyCryptographyInterface
         $result = openssl_open($cipherText, $plainText, $encryptedKey, $this->privateKeyResource);
 
         if ($result === false) {
-            throw new EnvironmentException('Unknown error occurred whiel decrypting the cipher text provided');
+            throw new EnvironmentException('Unknown error occurred while decrypting the cipher text provided');
         }
 
         $hmac = hash_hmac('sha1', $encryptedKey.$cipherText, $plainText);
