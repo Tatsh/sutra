@@ -14,7 +14,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fEmail`
 - [ ] `fFile`
 - [X] `fFilesystem` - Non-transactional
-- [X] `fFilesystem` - Transactional
+- [ ] `fFilesystem` - Transactional
 - [X] `fGrammar`
 - [ ] `fHTML`
 - [ ] `fImage`
