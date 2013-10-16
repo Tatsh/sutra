@@ -168,14 +168,14 @@ class PublicKeyCryptography implements PublicKeyCryptographyInterface
         }
 
         if (!is_readable($this->publicKeyFile)) {
-            throw new EnvironmentException('The X.509 certificate specified, %s, can not be read', $this->publicKeyFile);
+            throw new EnvironmentException('The X.509 certificate specified, %s, is not readable', $this->publicKeyFile);
         }
 
         $publicKeyContents = file_get_contents($this->publicKeyFile);
         $this->publicKeyResource = openssl_pkey_get_public($publicKeyContents);
 
         if ($this->publicKeyResource === false) {
-            throw new ProgrammerException('The public key certificate specified, %s, does not appear to be a valid certificate', $this->publicKeyFile);
+            throw new ValidationException('The certificate specified, %s, does not appear to be a valid certificate', $this->publicKeyFile);
         }
     }
 
@@ -196,7 +196,7 @@ class PublicKeyCryptography implements PublicKeyCryptographyInterface
         $this->privateKeyResource = openssl_pkey_get_private($privateKeyContents, $this->password);
 
         if ($this->privateKeyResource === false) {
-            throw new ValidationException('The private key file specified, %s, does not appear to be a valid private key or the password provided is incorrect', $this->password);
+            throw new ValidationException('The private key file specified, %s, does not appear to be a valid private key or the password provided is incorrect', $this->privateKeyFile);
         }
     }
 
