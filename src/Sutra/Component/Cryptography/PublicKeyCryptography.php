@@ -60,7 +60,6 @@ class PublicKeyCryptography implements PublicKeyCryptographyInterface
         $this->privateKeyFile = $privateKeyFile;
         $this->password = $password;
 
-        $this->validateEnvironment();
         $this->createPublicKeyResource();
         $this->createPrivateKeyResource();
     }
@@ -197,18 +196,6 @@ class PublicKeyCryptography implements PublicKeyCryptographyInterface
 
         if ($this->privateKeyResource === false) {
             throw new ValidationException('The private key file specified, %s, does not appear to be a valid private key or the password provided is incorrect', $this->privateKeyFile);
-        }
-    }
-
-    /**
-     * Validates the environment.
-     *
-     * @codeCoverageIgnore
-     */
-    private function validateEnvironment()
-    {
-        if (!extension_loaded('openssl')) {
-            throw new EnvironmentException('The PHP openssl extension is required for this class, but it does not appear to be loaded');
         }
     }
 }
