@@ -13,7 +13,8 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fDirectory`
 - [ ] `fEmail`
 - [ ] `fFile`
-- [ ] `fFilesystem`
+- [X] `fFilesystem` - Non-transactional
+- [X] `fFilesystem` - Transactional
 - [X] `fGrammar`
 - [ ] `fHTML`
 - [ ] `fImage`
