@@ -6,10 +6,10 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 # Ports from Flourish
 
 - [X] `fBuffer`
-- [x] `fDate`
+- [X] `fDate`
 - [ ] `fTime`
 - [ ] `fTimestamp`
-- [ ] `fCryptography`
+- [X] `fCryptography`
 - [ ] `fDirectory`
 - [ ] `fEmail`
 - [ ] `fFile`
