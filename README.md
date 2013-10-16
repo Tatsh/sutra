@@ -18,7 +18,6 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [X] `fGrammar`
 - [ ] `fHTML`
 - [ ] `fImage`
-- [ ] `fJSON`
 - [ ] `fMailbox`
 - [ ] `fMoney`
 - [ ] `fNumber`
@@ -29,7 +28,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [X] `sArray`
 - [X] `sGrammar` (same as `fGrammar`)
 - [ ] `sHTML` (same as `fHTML`)
-- [X] `sHTTPRequest` 
+- [X] `sHTTPRequest`
 - [ ] `sNumber` (same as `fNumber`)
 - [X] `sObject`
 - [X] `sString`
