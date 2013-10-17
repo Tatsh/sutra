@@ -20,7 +20,8 @@
         "symfony/security": "dev-master",
         "symfony/filesystem": "dev-master",
         "symfony/finder": "dev-master",
-        "doctrine/inflector": "dev-master"
+        "doctrine/inflector": "dev-master",
+        "ezyang/htmlpurifier": "dev-master"
     },
     "require-dev": {
         "phpunit/phpunit" : "dev-master",
@@ -33,7 +34,10 @@
         "symfony/process": "dev-master"
     },
     "autoload": {
-        "psr-0": { "Sutra\\": "src/" }
+        "psr-0": { "Sutra\\": "src/" },
+        "files": [
+            "src/Sutra/Component/Html/HTMLPurifier/Injector/LinkifyWithTextLengthLimit.php"
+        ]
     },
     "minimum-stability": "dev",
     "config": {
