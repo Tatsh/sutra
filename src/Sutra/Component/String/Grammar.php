@@ -462,7 +462,8 @@ class Grammar implements GrammarInterface
                 $word = substr($word, 0, -1);
             }
 
-        } elseif (preg_match('#^(.+?)(ed|ing)$#', $word, $match)) {
+        }
+        else if (preg_match('#^(.+?)(ed|ing)$#', $word, $match)) {
             if (preg_match($sVRegex, $match[1])) {
                 $word = $match[1];
                 if (preg_match('#(at|bl|iz)$#', $word)) {
