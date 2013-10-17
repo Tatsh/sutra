@@ -10,7 +10,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fTime`
 - [ ] `fTimestamp`
 - [X] `fCryptography`
-- [ ] `fDirectory`
+- [X] `fDirectory`
 - [ ] `fEmail`
 - [ ] `fFile`
 - [X] `fFilesystem` - Non-transactional
