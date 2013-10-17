@@ -10,6 +10,7 @@ This is a work-in-progress port of some Sutra's functionality to something that 
 - [ ] `fTime`
 - [ ] `fTimestamp`
 - [X] `fCryptography`
+- [ ] `fCryptography#hashPassword` replacement for BC
 - [X] `fDirectory`
 - [ ] `fEmail`
 - [ ] `fFile`
