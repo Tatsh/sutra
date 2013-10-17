@@ -284,7 +284,8 @@ interface Utf8HelperInterface
     /**
      * Converts a unicode code point to a character.
      *
-     * @param string|integer Unicode code point in `U+XXXX` syntax or integer.
+     * @param string|integer $codePoint Unicode code point in `U+XXXX` syntax
+     *   or integer.
      *
      * @return string The character that matches.
      *
@@ -337,7 +338,7 @@ interface Utf8HelperInterface
      * @param integer $start  The zero-based starting index to extract from.
      *   Negative values will start the extraction that many characters from
      *   the end of the string.
-     * @param integer $length  The length of the string to extract. If an empty
+     * @param integer $length The length of the string to extract. If an empty
      *   value is provided, the remainder of the string will be returned.
      *
      * @return mixed  The extracted subtring or `false` if the start is out

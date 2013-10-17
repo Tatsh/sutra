@@ -694,7 +694,7 @@ class Utf8Helper implements Utf8HelperInterface
         $bin = decbin($codePoint);
         $digits = strlen($bin);
 
-        $first = $second = $third = $fourth = NULL;
+        $first = $second = $third = $fourth = null;
 
         // One byte characters
         if ($digits <= 7) {
@@ -747,10 +747,10 @@ class Utf8Helper implements Utf8HelperInterface
             case 2:
                 if ($b[0] < 0xC2 || $b[0] > 0xDF ||
                     $b[1] < 0x80 || $b[1] > 0xBF) {
-                        $invalid = true;
-                        break;
-                    }
-                    $bin = substr(decbin($b[0]), 3) .
+                    $invalid = true;
+                    break;
+                }
+                $bin = substr(decbin($b[0]), 3) .
                     substr(decbin($b[1]), 2);
                 break;
 
@@ -758,10 +758,10 @@ class Utf8Helper implements Utf8HelperInterface
                 if ($b[0] < 0xE0 || $b[0] > 0xEF ||
                     $b[1] < 0x80 || $b[1] > 0xBF ||
                     $b[2] < 0x80 || $b[2] > 0xBF) {
-                        $invalid = true;
-                        break;
-                    }
-                    $bin = substr(decbin($b[0]), 4) .
+                    $invalid = true;
+                    break;
+                }
+                $bin = substr(decbin($b[0]), 4) .
                     substr(decbin($b[1]), 2) .
                     substr(decbin($b[2]), 2);
                 break;
@@ -771,10 +771,10 @@ class Utf8Helper implements Utf8HelperInterface
                     $b[1] < 0x80 || $b[1] > 0xBF ||
                     $b[2] < 0x80 || $b[2] > 0xBF ||
                     $b[3] < 0x80 || $b[3] > 0xBF) {
-                        $invalid = true;
-                        break;
-                    }
-                    $bin = substr(decbin($b[0]), 5) .
+                    $invalid = true;
+                    break;
+                }
+                $bin = substr(decbin($b[0]), 5) .
                     substr(decbin($b[1]), 2) .
                     substr(decbin($b[2]), 2) .
                     substr(decbin($b[3]), 2);
