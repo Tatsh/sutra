@@ -2,7 +2,7 @@
 /**
  * Injector that converts http, https and ftp text URLs to actual links.
  *
- * This differs from the original in that two options are attempted to be used:
+ * This differs from the original in that several options are used:
  *   - `AutoFormat.LinkifyWithTextLengthLimit.Limit` - integer|null, string
  *        length limit for text between `<a>` tags
  *   - `AutoFormat.LinkifyWithTextLengthLimit.Suffix` - string|null, string to
