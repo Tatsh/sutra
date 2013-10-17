@@ -1,15 +1,15 @@
 <?php
 namespace Sutra\Component\Html\Tests;
 
-use Sutra\Component\Html\Html;
+use Sutra\Component\Html\HtmlHelper;
 
-class HtmlTest extends TestCase
+class HtmlHelperTest extends TestCase
 {
     protected static $html;
 
     public static function setUpBeforeClass()
     {
-        static::$html = new Html();
+        static::$html = new HtmlHelper();
     }
 
     /**

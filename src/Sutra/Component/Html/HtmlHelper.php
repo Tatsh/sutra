@@ -9,7 +9,7 @@ use Sutra\Component\Url\UrlParserInterface;
 /**
  * Provides HTML-related methods.
  */
-class Html
+class HtmlHelper
 {
     /**
      * Inline tags.
