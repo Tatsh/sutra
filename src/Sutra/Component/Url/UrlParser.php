@@ -102,6 +102,50 @@ class UrlParser implements UrlParserInterface
     }
 
     /**
+     * Checks if a string is a full URL.
+     *
+     * @param string $url            URL to check.
+     * @param array  $otherProtocols Other protocols to check besides
+     *   http/https.
+     *
+     * @return boolean If the string is a full URL.
+     *
+     * @replaces sHTML::linkIsURI
+     */
+    public function isUri($url, array $otherProtocols = array())
+    {
+        if (!empty($otherProtocols)) {
+            $otherProtocols[] = 'http';
+            $otherProtocols[] = 'https';
+
+            foreach ($otherProtocols as $protocol) {
+                $protocol .= '://';
+                $length = strlen($protocol);
+
+                if (substr($url, 0, $length) === $protocol) {
+                    return true;
+                }
+            }
+        }
+
+        return substr($url, 0, 7) === 'http://' || substr($url, 0, 8) === 'https://';
+    }
+
+    /**
+     * Checks if a string is a relative path.
+     *
+     * @param string $path Path to check.
+     *
+     * @return boolean If the path is relative.
+     *
+     * @replaces sHTML::linkIsURI
+     */
+    public function isRelativeUri($path)
+    {
+        return $path[0] === '/';
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function makeFriendly($string, $maxLength = null, $delimiter = '-')
