@@ -186,7 +186,7 @@ class FilesystemTest extends TestCase
             array(1048576, '1.0 MiB', 1),
             array(1248576, '1.2 MiB', 1),
             array(1248576 * 1024, '1.19 GiB', 2),
-            array(0, '0.0 B', 1),
+            array(0, '0 B', 2), // even with decimal argument still get 0 B
             array(-1, '0 B', 0),
         );
     }
