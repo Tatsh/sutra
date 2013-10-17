@@ -31,6 +31,8 @@ class Filesystem extends SymfonyFilesystem
      * @param string $directory The directory to check.
      *
      * @return string The directory name in canonical form.
+     *
+     * @replaces fDirectory::makeCanonical
      */
     public function makeCanonical($directory)
     {
@@ -42,13 +44,17 @@ class Filesystem extends SymfonyFilesystem
     }
 
     /**
-     * Takes a file size including a unit of measure (i.e. kb, GB, M) and converts it to bytes
+     * Takes a file size including a unit of measure (i.e. kb, GB, M) and
+     *   converts it to bytes.
      *
      * Sizes are interpreted using base 2, not base 10. Sizes above 2GB may not
-     * be accurately represented on 32 bit operating systems.
+     *   be accurately represented on 32-bit operating systems.
      *
-     * @param  string $size  The size to convert to bytes
-     * @return integer  The number of bytes represented by the size
+     * @param string $size The size to convert to bytes.
+     *
+     * @return integer The number of bytes represented by the size.
+     *
+     * @replaces ::convertToBytes
      */
     public function convertToBytes($size)
     {
@@ -83,6 +89,8 @@ class Filesystem extends SymfonyFilesystem
      *   second argument.
      *
      * @throws ProgrammerException If second argument is invalid.
+     *
+     * @replaces ::getPathInfo
      */
     public function getPathInfo($path, $element = null, $useCache = true)
     {
@@ -161,6 +169,8 @@ class Filesystem extends SymfonyFilesystem
      * @param string $newExtension New extension to use.
      *
      * @return string File name to use.
+     *
+     * @replaces ::makeUniqueName
      */
     public function makeUniqueName($file, $newExtension = null)
     {
@@ -212,16 +222,12 @@ class Filesystem extends SymfonyFilesystem
             $bytes = 0;
         }
 
-        if ($bytes == 0) {
-            return sprintf('%s B', number_format(0.0, $decimalPlaces));
-        }
-
-        $suffixes = array('B', 'K', 'M', 'G', 'T');
+        $suffixes = array('B', 'KiB', 'MiB', 'GiB', 'TiB');
         $sizes = array(1, 1024, 1048576, 1073741824, 1099511627776);
-        $suffix = (!$bytes) ? 0 : floor(log($bytes)/6.9314718);
+        $suffix = (!$bytes) ? 0 : floor(log($bytes) / 6.9314718);
         $decimalPlaces = $suffix == 0 ? 0 : $decimalPlaces;
 
-        return sprintf('%s %siB', number_format($bytes / $sizes[$suffix], $decimalPlaces), $suffixes[$suffix]);
+        return sprintf('%s %s', number_format($bytes / $sizes[$suffix], $decimalPlaces), $suffixes[$suffix]);
     }
 
     /**
@@ -229,6 +235,8 @@ class Filesystem extends SymfonyFilesystem
      *
      * @param string $searchPath  Substring to look for.
      * @param string $replacePath Replacement for the substring.
+     *
+     * @replaces ::addWebPathTranslation
      */
     public function addWebPathTranslation($searchPath, $replacePath)
     {
@@ -244,6 +252,8 @@ class Filesystem extends SymfonyFilesystem
      * @param string $path Path to translate.
      *
      * @return string Web path version of `$path` argument.
+     *
+     * @replaces ::translateToWebPath
      */
     public function translateToWebPath($path)
     {
@@ -258,5 +268,29 @@ class Filesystem extends SymfonyFilesystem
         }
 
         return str_replace('\\', '/', $path);
+    }
+
+    /**
+     * Creates the correct type of object for a path given.
+     *
+     * @param string $path Path to use.
+     *
+     * @return Directory|File `Directory` or `File` object.
+     *
+     * @replaces ::createObject
+     */
+    public function createObject($path)
+    {
+        if (!is_readable($path)) {
+            throw new ValidationException('The path specified, %s, does not exist or is not readable', $path);
+        }
+
+        if (is_dir($path)) {
+            return new Directory($path, true);
+        }
+
+        // TODO Image here
+
+        return new File($path, true);
     }
 }
