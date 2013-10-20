@@ -27,16 +27,16 @@ class HtmlHelperTest extends TestCase
 
     /**
      * @expectedException Sutra\Component\Html\Exception\ProgrammerException
-     * @covers Sutra\Component\Html\Html::makeFormElement
-     * @covers Sutra\Component\Html\Html::formElementIDWithName
+     * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+     * @covers Sutra\Component\Html\HtmlHelper::formElementIDWithName
      */
     public function testMakeFormElementBadType() {
         static::$html->makeFormElement('nogood', 'name');
     }
 
     /**
-     * @covers Sutra\Component\Html\Html::makeFormElement
-     * @covers Sutra\Component\Html\Html::formElementIDWithName
+     * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+     * @covers Sutra\Component\Html\HtmlHelper::formElementIDWithName
      */
     public function testMakeFormElementTextAndTextField() {
         $text = static::$html->makeFormElement('text', 'name');
@@ -54,10 +54,10 @@ class HtmlHelperTest extends TestCase
     }
 
     /**
-     * @covers Sutra\Component\Html\Html::makeFormElement
-     * @covers Sutra\Component\Html\Html::formElementIDWithName
-     * @covers Sutra\Component\Html\Html::validAttributeValue
-     * @covers Sutra\Component\Html\Html::attributesString
+     * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+     * @covers Sutra\Component\Html\HtmlHelper::formElementIDWithName
+     * @covers Sutra\Component\Html\HtmlHelper::validAttributeValue
+     * @covers Sutra\Component\Html\HtmlHelper::attributesString
      */
     public function testMakeFormElementSpecialAttributes() {
         // autocomplete and spellcheck
@@ -87,10 +87,10 @@ class HtmlHelperTest extends TestCase
     }
 
     /**
-     * @covers Sutra\Component\Html\Html::makeFormElement
-     * @covers Sutra\Component\Html\Html::formElementIDWithName
-     * @covers Sutra\Component\Html\Html::validAttributeValue
-     * @covers Sutra\Component\Html\Html::attributesString
+     * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+     * @covers Sutra\Component\Html\HtmlHelper::formElementIDWithName
+     * @covers Sutra\Component\Html\HtmlHelper::validAttributeValue
+     * @covers Sutra\Component\Html\HtmlHelper::attributesString
      */
     public function testMakeFormElementCustomAttributes() {
         $text = static::$html->makeFormElement('text', 'textfield1', array('data-has-name' => FALSE, 'data-2' => TRUE));
@@ -101,8 +101,8 @@ class HtmlHelperTest extends TestCase
     }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::formElementIDWithName
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::formElementIDWithName
    */
   public function testMakeFormElementBooleanAttributes() {
     $boolean_attributes = array(
@@ -142,7 +142,7 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
    */
   public function testMakeFormElementHasLabelTag() {
     $labeled = static::$html->makeFormElement('text', 'name', array('label' => 'My label'));
@@ -153,8 +153,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::makeTextarea
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeTextarea
    */
   public function testMakeFormElementNonInputElements() {
     $textarea = static::$html->makeFormElement('textarea', 'name');
@@ -169,7 +169,7 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
    */
   public function testMakeFormElementClassNotArray() {
     $field = static::$html->makeFormElement('textfield', 'name', array('class' => 'class-1 class-2'));
@@ -182,7 +182,7 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
    */
   public function testMakeFormElementLabelAndRequired() {
     $field = static::$html->makeFormElement('textfield', 'name', array(
@@ -203,8 +203,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::makeSelectElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeSelectElement
    */
   public function testMakeFormElementSelectField1D() {
     // Test selected attribute
@@ -230,8 +230,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::makeSelectElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeSelectElement
    * @depends testMakeFormElementSelectField1D
    */
   public function testMakeFormElementSelectField1DWithLabel() {
@@ -249,8 +249,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::makeSelectElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeSelectElement
    */
   public function testMakeFormElementSelectField2D() {
     $field = static::$html->makeFormElement('select', 'options', array(
@@ -291,8 +291,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeFormElement
-   * @covers Sutra\Component\Html\Html::makeSelectElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeFormElement
+   * @covers Sutra\Component\Html\HtmlHelper::makeSelectElement
    * @depends testMakeFormElementSelectField2D
    */
   public function testMakeFormElementSelectField2DWithLabel() {
@@ -316,8 +316,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::attributesString
-   * @covers Sutra\Component\Html\Html::validAttributeValue
+   * @covers Sutra\Component\Html\HtmlHelper::attributesString
+   * @covers Sutra\Component\Html\HtmlHelper::validAttributeValue
    */
   public function testAttributesString() {
     // Not using array as class
@@ -367,8 +367,8 @@ class HtmlHelperTest extends TestCase
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::tag
-   * @covers Sutra\Component\Html\Html::tagRequiresEnd
+   * @covers Sutra\Component\Html\HtmlHelper::tag
+   * @covers Sutra\Component\Html\HtmlHelper::tagRequiresEnd
    */
   public function testTag() {
     // Simple <a> tag
@@ -395,7 +395,7 @@ class HtmlHelperTest extends TestCase
 
   // TODO Move
 //   /**
-//    * @covers Sutra\Component\Html\Html::linkIsURI
+//    * @covers Sutra\Component\Html\HtmlHelper::linkIsURI
 //    */
 //   public function testLinkIsURI() {
 //     $this->assertTrue(static::$html->linkIsURI('http://www.google.com'));
@@ -406,7 +406,7 @@ class HtmlHelperTest extends TestCase
 //   }
 
   /**
-   * @covers Sutra\Component\Html\Html::paragraphify
+   * @covers Sutra\Component\Html\HtmlHelper::paragraphify
    */
   public function testParagraphify() {
     $str = "My special string
@@ -422,7 +422,7 @@ Everything should be properly encoded.";
   }
 
   /**
-   * @covers Sutra\Component\Html\Html::makeList
+   * @covers Sutra\Component\Html\HtmlHelper::makeList
    */
   public function testMakeList() {
     $items = array(
