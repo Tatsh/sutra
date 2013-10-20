@@ -2,6 +2,11 @@
 namespace Sutra\Component\Html\Tests;
 
 use Sutra\Component\Html\HtmlHelper;
+use Sutra\Component\Html\Purifier\Configuration as PurifierConfiguration;
+use Sutra\Component\Html\Purifier\CustomLinkifyConfigurationSchema;
+use Sutra\Component\Html\Purifier\Purifier;
+use Sutra\Component\String\Utf8Helper;
+use Sutra\Component\Url\UrlParser;
 
 class HtmlHelperTest extends TestCase
 {
@@ -9,7 +14,15 @@ class HtmlHelperTest extends TestCase
 
     public static function setUpBeforeClass()
     {
-        static::$html = new HtmlHelper();
+        $utf8 = new Utf8Helper();
+
+        // Factory should do this part
+        // Can't use new keyword here yet because 'Cannot retrieve value of undefined directive Core.LexerImpl invoked on ...'
+        $schema = CustomLinkifyConfigurationSchema::instance();
+        $config = new PurifierConfiguration($schema);
+        $config->autoFinalize = false;
+
+        static::$html = new HtmlHelper(new UrlParser($utf8), new Purifier($config));
     }
 
     /**

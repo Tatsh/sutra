@@ -2,8 +2,9 @@
 namespace Sutra\Component\Html;
 
 use Sutra\Component\Html\Exception\ProgrammerException;
-use Sutra\Component\String\Utf8Helper;
-use Sutra\Component\Url\UrlParser;
+use Sutra\Component\Html\Purifier\ConfigurationInterface;
+use Sutra\Component\Html\Purifier\ConfigurationSchemaInterface;
+use Sutra\Component\Html\Purifier\PurifierInterface;
 use Sutra\Component\Url\UrlParserInterface;
 
 /**
@@ -18,7 +19,7 @@ class HtmlHelper
      *
      * @todo Ensure this list is complete as of HTML 5 standard.
      */
-    protected static $inlineTags = array(
+    protected $inlineTags = array(
         'a',
         'abbr',
         'acronym',
@@ -57,13 +58,20 @@ class HtmlHelper
     );
 
     /**
+     * In-line tags without `<br>`.
+     *
+     * @see #convertNewLines()
+     */
+    protected $inlineTagsMinusBr;
+
+    /**
      * Valid values for the element input type attribute.
      *
      * @link http://dev.w3.org/html5/spec/Overview.html#states-of-the-type-attribute
      *
      * @var array
      */
-    protected static $inputTypeValues = array(
+    protected $inputTypeValues = array(
         'hidden',
         'text',
         'textfield',
@@ -96,7 +104,7 @@ class HtmlHelper
      *
      * @var array
      */
-    protected static $specialEnumeratedAttributes = array(
+    protected $specialEnumeratedAttributes = array(
         'spellcheck' => array(
             true => 'true',
             false => 'false',
@@ -112,7 +120,7 @@ class HtmlHelper
     *
     * @var array
     */
-    protected static $booleanAttributes = array(
+    protected $booleanAttributes = array(
         'scoped',
         'reveresed',
         'ismap',
@@ -135,50 +143,46 @@ class HtmlHelper
     );
 
     /**
-     * If each tag has been wrapped in lt/gt.
-     *
-     * @var boolean
-     */
-    protected static $inlineTagsFixed = false;
-
-    /**
-     * HTML Purifier instance.
-     *
-     * @var \HTMLPurifier
-     */
-    protected static $purifier;
-
-    /**
      * Form element IDs used.
      *
      * @var array
      */
-    protected static $formElementIds = array();
+    protected $formElementIds = array();
+
+    /**
+     * HTML Purifier instance.
+     *
+     * @var PurifierInterface
+     */
+    protected $purifier;
 
     /**
      * URL parser.
      *
      * @var UrlParserInterface
      */
-    protected static $urlParser;
+    protected $urlParser;
 
     /**
      * Constructor.
      *
-     * @param array $options HTML Purifier options.
+     * Note that for HTML Purifier, the Sutra `Purifier` class *must* be used
+     *   instead of HTML Purifier's class.
+     *
+     * @param UrlParserInterface $urlParser URL parser instance.
+     * @param PurifierInterface  $purifier  HTML Purifier instance.
      */
-    public function __construct(array $options = array())
+    public function __construct(UrlParserInterface $urlParser, PurifierInterface $purifier)
     {
-        static::getPurifier($options);
-        static::getUrlParser();
+        $this->urlParser = $urlParser;
+        $this->purifier = $purifier;
 
-        if (!static::$inlineTagsFixed) {
-            foreach (static::$inlineTags as $k => $tag) {
-                static::$inlineTags[$k] = '<'.$tag.'>';
-            }
-
-            static::$inlineTagsFixed = true;
+        foreach ($this->inlineTags as $k => $tag) {
+            $this->inlineTags[$k] = '<'.$tag.'>';
         }
+        $this->inlineTagsMinusBr = array_filter($this->inlineTags, function ($a) {
+            return $a !== '<br>';
+        });
     }
 
     /**
@@ -208,7 +212,7 @@ class HtmlHelper
             }
 
             if (is_bool($value)) {
-                if (in_array($key, static::$booleanAttributes)) {
+                if (in_array($key, $this->booleanAttributes)) {
                     if ($value === true) {
                         $value = $key;
                     }
@@ -262,7 +266,7 @@ class HtmlHelper
      */
     public function containsBlockLevelHtml($content)
     {
-        return strip_tags($content, static::$inlineTags) != $content;
+        return strip_tags($content, $this->inlineTags) != $content;
     }
 
     /**
@@ -275,15 +279,7 @@ class HtmlHelper
      */
     public function convertNewLines($content)
     {
-        static $inlineTags;
-
-        if (!$inlineTags) {
-            $inlineTags = array_filter(static::$inlineTags, function ($a) {
-                return $a !== '<br>';
-            });
-        }
-
-        return strip_tags($content, $inlineTags) != $content ? $content : nl2br($content);
+        return strip_tags($content, $this->inlineTagsMinusBr) != $content ? $content : nl2br($content);
     }
 
     /**
@@ -336,7 +332,7 @@ class HtmlHelper
     {
         $id = $this->formElementIDWithName($name);
         $type = strtolower($type);
-        $allowed_types = array_merge(static::$inputTypeValues, array('textarea', 'select'));
+        $allowed_types = array_merge($this->inputTypeValues, array('textarea', 'select'));
 
         if (!in_array($type, $allowed_types)) {
             throw new ProgrammerException('Type \'%s\' is not a valid form element type.', $type);
@@ -366,7 +362,7 @@ class HtmlHelper
         }
 
         // Handle the boolean attributes
-        foreach (static::$booleanAttributes as $b_attr) {
+        foreach ($this->booleanAttributes as $b_attr) {
             if (isset($attributes[$b_attr]) && $attributes[$b_attr]) {
                 $attributes[$b_attr] = $b_attr;
             }
@@ -428,7 +424,7 @@ class HtmlHelper
             $attr['class'] = array();
         }
 
-        $html = '<'.$type.' '.self::attributesString($attr).'>';
+        $html = '<'.$type.' '.$this->attributesString($attr).'>';
         $i = 1;
         $count = count($items);
         foreach ($items as $title) {
@@ -471,14 +467,17 @@ class HtmlHelper
      */
     public function makeLinks($content, $linkTextLength = null)
     {
-
-        $config = \HTMLPurifier_Config::createDefault();
-        $config->set('AutoFormat.Custom', array(
+        $originalLinkTextLength = $this->purifer->config->get('AutoFormat.LinkifyWithTextLengthLimit.Limit');
+        $this->purifier->config->set('AutoFormat.Custom', array(
             'LinkifyWithTextLengthLimit',
         ));
-        $config->set('AutoFormat.LinkifyWithTextLengthLimit.Limit', $linkTextLength);
+        $this->purifier->config->set('AutoFormat.LinkifyWithTextLengthLimit.Limit', $linkTextLength);
 
-        return static::$purifier->purify($content, $config);
+        $ret =  $this->purifier->purify($content);
+
+        $this->purifier->config->set('AutoFormat.LinkifyWithTextLengthLimit.Limit', $originalLinkTextLength ? $originalLinkTextLength : 0);
+
+        return $ret;
     }
 
     /**
@@ -490,10 +489,9 @@ class HtmlHelper
      */
     public function paragraphify($content)
     {
-        $config = \HTMLPurifier_Config::createDefault();
-        $config->set('AutoFormat.AutoParagraph', true);
+        $this->purifier->config->set('AutoFormat.AutoParagraph', true);
 
-        return static::$purifier->purify($content, $config);
+        return $this->purifier->purify($content);
     }
 
     /**
@@ -506,10 +504,10 @@ class HtmlHelper
     public function prepare($content)
     {
         if (is_array($content)) {
-            return static::$purifier->purifyArray($content);
+            return $this->purifier->purifyArray($content);
         }
 
-        return static::$purifier->purify($content);
+        return $this->purifier->purify($content);
     }
 
     /**
@@ -537,7 +535,7 @@ class HtmlHelper
         }
 
         if (!empty($attr)) {
-            return '<'.$tag.' '.$this->attributesString($attr).'>'.self::prepare($content).'</'.$tag.'>';
+            return '<'.$tag.' '.$this->attributesString($attr).'>'.$this->prepare($content).'</'.$tag.'>';
         }
 
         return '<'.$tag.'>'.$this->prepare($content).'</'.$tag.'>';
@@ -552,16 +550,16 @@ class HtmlHelper
      */
     protected function formElementIDWithName($name)
     {
-        $id = 'edit-'.static::$urlParser->makeFriendly($name, '-');
+        $id = 'edit-'.$this->urlParser->makeFriendly($name, '-');
 
-        if (in_array($id, static::$formElementIds)) {
+        if (in_array($id, $this->formElementIds)) {
             $in_array = true;
             $i = 1;
             $original = $id;
             while ($in_array) {
                 $id = $original.'-'.$i;
 
-                if (!in_array($id, static::$formElementIds)) {
+                if (!in_array($id, $this->formElementIds)) {
                     $in_array = false;
                     break;
                 }
@@ -570,7 +568,7 @@ class HtmlHelper
             }
         }
 
-        static::$formElementIds[] = $id;
+        $this->formElementIds[] = $id;
 
         return $id;
     }
@@ -599,13 +597,13 @@ class HtmlHelper
 
             if ($is2d) {
                 foreach ($attr['options'] as $group_name => $options) {
-                    $options_html .= '<optgroup label="'.self::encode($group_name).'">';
+                    $options_html .= '<optgroup label="'.$this->encode($group_name).'">';
                     foreach ($options as $key => $value) {
                         if ($selected && $selected == $key) {
                             $options_html .= '<option selected="selected" value="'.$this->encode($key).'">'.$this->encode($value).'</option>';
                         }
                         else {
-                            $options_html .= '<option value="'.self::encode($key).'">'.$this->encode($value).'</option>';
+                            $options_html .= '<option value="'.$this->encode($key).'">'.$this->encode($value).'</option>';
                         }
                     }
                     $options_html .= '</optgroup>';
@@ -649,7 +647,7 @@ class HtmlHelper
 
         $ret = $label;
         $ret .= '<textarea '.$this->attributesString($attributes).'>';
-        $ret .= self::encode($value);
+        $ret .= $this->encode($value);
         $ret .= '</textarea>';
 
         return $ret;
@@ -691,53 +689,10 @@ class HtmlHelper
     protected function validAttributeValue($attribute_name, $value)
     {
         // Assume that maybe this value is for a boolean attribute
-        if (!array_key_exists($attribute_name, static::$specialEnumeratedAttributes)) {
+        if (!array_key_exists($attribute_name, $this->specialEnumeratedAttributes)) {
             return false;
         }
 
-        return static::$specialEnumeratedAttributes[$attribute_name][$value];
-    }
-
-    /**
-     * Sets up HTML Purifier with custom linkify schema options.
-     *
-     * @param array $options Options for configuration.
-     *
-     * @return \HTMLPurifier Static instance of HTML purifier.
-     *
-     * @see \HTMLPurifier_Config#set()
-     */
-    protected static function getPurifier(array $options = array())
-    {
-        if (!static::$purifier) {
-            $schema = \HTMLPurifier_ConfigSchema::instance();
-            $schema->add('AutoFormat.LinkifyWithTextLengthLimit.Limit', null, 'mixed', true);
-            $schema->add('AutoFormat.LinkifyWithTextLengthLimit.Suffix', ' ...', 'string', true);
-            $schema->add('AutoFormat.LinkifyWithTextLengthLimit.RemoveProtocol', true, 'bool', false);
-
-            $config = \HTMLPurifier_Config::createDefault();
-
-            foreach ($options as $key => $value) {
-                $config->set($key, $value);
-            }
-
-            static::$purifier = new \HTMLPurifier($config);
-        }
-
-        return static::$purifier;
-    }
-
-    /**
-     * Sets up static URL parer instance.
-     *
-     * @return UrlParserInterface URL parser instance.
-     */
-    protected static function getUrlParser()
-    {
-        if (!static::$urlParser) {
-            static::$urlParser = new UrlParser(new Utf8Helper());
-        }
-
-        return static::$urlParser;
+        return $this->specialEnumeratedAttributes[$attribute_name][$value];
     }
 }
