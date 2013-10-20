@@ -337,7 +337,7 @@ class HtmlHelper
         $allowed_types = array_merge($this->inputTypeValues, array('textarea', 'select'));
 
         if (!in_array($type, $allowed_types)) {
-            throw new ProgrammerException('Type \'%s\' is not a valid form element type.', $type);
+            throw new ProgrammerException('Type \'%s\' is not a valid form element type', $type);
         }
 
         if ($type == 'textfield') {
