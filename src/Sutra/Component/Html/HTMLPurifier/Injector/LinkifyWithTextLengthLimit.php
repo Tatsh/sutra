@@ -58,6 +58,10 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
         $this->linkTextLength = $config->get('AutoFormat.LinkifyWithTextLengthLimit.Limit');
         $this->linkTextSuffix = $config->get('AutoFormat.LinkifyWithTextLengthLimit.Suffix');
         $this->linkTextRemoveProtocol = $config->get('AutoFormat.LinkifyWithTextLengthLimit.RemoveProtocol');
+
+        if (!$this->linkTextLength) {
+            $this->linkTextLength = null;
+        }
     }
 
     /**
