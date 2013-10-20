@@ -182,8 +182,8 @@ class HtmlHelper
         foreach ($this->inlineTags as $k => $tag) {
             $this->inlineTags[$k] = '<'.$tag.'>';
         }
-        $this->inlineTagsMinusBr = array_filter($this->inlineTags, function ($a) {
-            return $a !== '<br>';
+        $this->inlineTagsMinusBr = array_filter($this->inlineTags, function ($tag) {
+            return $tag !== '<br>';
         });
     }
 
@@ -400,6 +400,41 @@ class HtmlHelper
     }
 
     /**
+     * Takes a block of text and converts all URLs into HTML links.
+     *
+     * @param string  $content        The content to parse for links.
+     * @param integer $linkTextLength Link text length limit.
+     *
+     * @return string The content with all URLs converted to HTML link.
+     *
+     * @replaces ::makeLinks Only URIs with a scheme and e-mail addresses
+     *   (scheme optional) will work.
+     */
+    public function makeLinks($content, $linkTextLength = null)
+    {
+        $oldValues = array();
+        $newValues = array(
+            'AutoFormat.Custom' => array(
+                'LinkifyWithTextLengthLimit',
+            ),
+            'AutoFormat.LinkifyWithTextLengthLimit.Limit' => $linkTextLength,
+            'HTML.Trusted' => true,
+        );
+
+        foreach ($newValues as $key => $value) {
+            $oldValues[$key] = $this->temporarilySetConfigurationValue($key, $value);
+        }
+
+        $ret =  $this->purifier->purify($content);
+
+        foreach ($oldValues as $key => $value) {
+            $this->purifier->config->set($key, $value);
+        }
+
+        return $ret;
+    }
+
+    /**
      * Create a list. 'first', 'last', 'odd', 'even', 'item-INDEX' classes
      *   will be automatically added to each li element.
      *
@@ -455,39 +490,6 @@ class HtmlHelper
         $html .= '</'.$type.'>';
 
         return $html;
-    }
-
-    /**
-     * Takes a block of text and converts all URLs into HTML links.
-     *
-     * @param string  $content        The content to parse for links.
-     * @param integer $linkTextLength Link text length limit.
-     *
-     * @return string The content with all URLs converted to HTML link.
-     *
-     * @replaces ::makeLinks
-     */
-    public function makeLinks($content, $linkTextLength = null)
-    {
-        $oldValues = array();
-        $newValues = array(
-            'AutoFormat.Custom' => array(
-                'LinkifyWithTextLengthLimit',
-            ),
-            'AutoFormat.LinkifyWithTextLengthLimit.Limit' => $linkTextLength,
-        );
-
-        foreach ($newValues as $key => $value) {
-            $oldValues[$key] = $this->temporarilySetConfigurationValue($key, $value);
-        }
-
-        $ret =  $this->purifier->purify($content);
-
-        foreach ($oldValues as $key => $value) {
-            $this->purifier->config->set($key, $value);
-        }
-
-        return $ret;
     }
 
     /**
@@ -561,7 +563,7 @@ class HtmlHelper
      *
      * @return string Unique identifier for use with the `id` attribute.
      */
-    protected function formElementIDWithName($name)
+    protected function formElementIdWithName($name)
     {
         $id = 'edit-'.$this->urlParser->makeFriendly($name, '-');
 
@@ -667,6 +669,29 @@ class HtmlHelper
     }
 
     /**
+     * Some tags require end tags while some others do not. Example: <p> does
+     *   not in HTML, but in XHTML like all tags requires an end tag. However,
+     *   some browsers are not going to do the same thing when encountering
+     *   several <p> tags with no endings, so it returns `true`.
+     *
+     * @param string $tag Tag name.
+     *
+     * @return bool `true` if the end tag is required, `false` otherwise.
+     */
+    protected function tagRequiresEnd($tag)
+    {
+        switch ($tag) {
+            case 'input':
+            case 'meta':
+            case 'link':
+            case 'img':
+                return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Temporarily sets a configuration value in HTML Purifier.
      *
      * @param string $key   Key.
@@ -695,29 +720,6 @@ class HtmlHelper
         }
 
         return $oldValue;
-    }
-
-    /**
-     * Some tags require end tags while some others do not. Example: <p> does
-     *   not in HTML, but in XHTML like all tags requires an end tag. However,
-     *   some browsers are not going to do the same thing when encountering
-     *   several <p> tags with no endings, so it returns `true`.
-     *
-     * @param string $tag Tag name.
-     *
-     * @return bool `true` if the end tag is required, `false` otherwise.
-     */
-    protected function tagRequiresEnd($tag)
-    {
-        switch ($tag) {
-            case 'input':
-            case 'meta':
-            case 'link':
-            case 'img':
-                return false;
-        }
-
-        return true;
     }
 
     /**
