@@ -177,6 +177,14 @@ class UrlParserTest extends TestCase
         $this->assertEquals($output, static::$instance->replaceInQueryString($param, $value));
     }
 
+    public function testIsUri() {
+        $this->assertTrue(static::$instance->isUri('http://www.google.com'));
+        $this->assertTrue(static::$instance->isUri('https://www.amazon.com'));
+        $this->assertFalse(static::$instance->isUri('garbage string'));
+        $this->assertFalse(static::$instance->isUri('rtmp://alternate-protocol'));
+        $this->assertTrue(static::$instance->isUri('rtmp://alternate-protocol', array('rtmp')));
+    }
+
     public function tearDown()
     {
         unset($_SERVER['REQUEST_URI'], $_SERVER['SERVER_NAME'], $_SERVER['HTTPS'], $_SERVER['SERVER_PORT']);
