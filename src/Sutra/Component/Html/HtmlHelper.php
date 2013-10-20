@@ -469,15 +469,23 @@ class HtmlHelper
      */
     public function makeLinks($content, $linkTextLength = null)
     {
-        $originalLinkTextLength = $this->purifer->config->get('AutoFormat.LinkifyWithTextLengthLimit.Limit');
-        $this->purifier->config->set('AutoFormat.Custom', array(
-            'LinkifyWithTextLengthLimit',
-        ));
-        $this->purifier->config->set('AutoFormat.LinkifyWithTextLengthLimit.Limit', $linkTextLength);
+        $oldValues = array();
+        $newValues = array(
+            'AutoFormat.Custom' => array(
+                'LinkifyWithTextLengthLimit',
+            ),
+            'AutoFormat.LinkifyWithTextLengthLimit.Limit' => $linkTextLength,
+        );
+
+        foreach ($newValues as $key => $value) {
+            $oldValues[$key] = $this->temporarilySetConfigurationValue($key, $value);
+        }
 
         $ret =  $this->purifier->purify($content);
 
-        $this->purifier->config->set('AutoFormat.LinkifyWithTextLengthLimit.Limit', $originalLinkTextLength ? $originalLinkTextLength : 0);
+        foreach ($oldValues as $key => $value) {
+            $this->purifier->config->set($key, $value);
+        }
 
         return $ret;
     }
@@ -491,9 +499,12 @@ class HtmlHelper
      */
     public function paragraphify($content)
     {
-        $this->purifier->config->set('AutoFormat.AutoParagraph', true);
+        $oldValue = $this->temporarilySetConfigurationValue('AutoFormat.AutoParagraph', true);
+        $ret = $this->purifier->purify($content);
 
-        return $this->purifier->purify($content);
+        $this->purifier->config->set('AutoFormat.AutoParagraph', $oldValue);
+
+        return $ret;
     }
 
     /**
@@ -653,6 +664,37 @@ class HtmlHelper
         $ret .= '</textarea>';
 
         return $ret;
+    }
+
+    /**
+     * Temporarily sets a configuration value in HTML Purifier.
+     *
+     * @param string $key   Key.
+     * @param string $value Value to set.
+     *
+     * @return mixed Old value in configuration.
+     *
+     * @throws ProgrammerException If setting a value is not possible.
+     * @throws \Exception If any other error occurs while attempting to set a
+     *   value.
+     */
+    protected function temporarilySetConfigurationValue($key, $value)
+    {
+        $oldValue = $this->purifier->config->get($key);
+
+        try {
+            $this->purifier->config->set($key, $value);
+        }
+        catch (\Exception $e) {
+            if (strpos($e->getMessage(), 'Cannot set directive after finalization invoked') !== false) {
+                throw new ProgrammerException('If you are using HTML Purifier, this means you have not set \'autoFinalize\' to false in HTML Purifier\'s configuration (try: `$purifier->config->autoFinalize = false`)');
+            }
+            else {
+                throw $e;
+            }
+        }
+
+        return $oldValue;
     }
 
     /**
