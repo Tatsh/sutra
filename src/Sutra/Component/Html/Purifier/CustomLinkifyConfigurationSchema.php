@@ -8,7 +8,7 @@ namespace Sutra\Component\Html\Purifier;
 class CustomLinkifyConfigurationSchema extends \HTMLPurifier_ConfigSchema implements ConfigurationSchemaInterface
 {
     /**
-     * Constructor. Adds the `LinkifyWithTextLengthLimit` options.
+     * {@inheritDoc}
      */
     public function __construct()
     {
@@ -23,11 +23,7 @@ class CustomLinkifyConfigurationSchema extends \HTMLPurifier_ConfigSchema implem
     }
 
     /**
-     * Gets the global instance. Adds the `LinkifyWithTextLengthLimit` options.
-     *
-     * @param ConfigurationSchemaInterface $prototype Prototype configuration.
-     *
-     * @return CustomLinkifyConfigurationSchema Schema instance.
+     * {@inheritDoc}
      */
     public static function instance($prototype = null)
     {
