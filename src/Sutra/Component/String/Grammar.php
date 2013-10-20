@@ -97,7 +97,7 @@ class Grammar implements GrammarInterface
      *
      * @var array
      */
-    protected static $numberReplacements = array(
+    protected $numberReplacements = array(
         0 => 'zero',
         1 => 'one',
         2 => 'two',
@@ -568,7 +568,7 @@ class Grammar implements GrammarInterface
             // Handle placement of the quantity into the output
             if (strpos($output, '%d') !== false) {
                 if ($wordsForSingleDigits && $quantity < 10) {
-                    $quantity = static::$numberReplacements[$quantity];
+                    $quantity = $this->numberReplacements[$quantity];
                 }
 
                 $output = str_replace('%d', $quantity, $output);
