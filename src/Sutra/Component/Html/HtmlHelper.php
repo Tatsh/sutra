@@ -60,6 +60,8 @@ class HtmlHelper
     /**
      * In-line tags without `<br>`.
      *
+     * @var array
+     *
      * @see #convertNewLines()
      */
     protected $inlineTagsMinusBr;
