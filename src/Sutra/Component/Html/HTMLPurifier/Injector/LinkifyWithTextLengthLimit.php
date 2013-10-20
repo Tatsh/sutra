@@ -75,7 +75,7 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
             return;
         }
 
-        if (strpos($token->data, '://') === false) {
+        if (strpos($token->data, '://') === false && strpos($token->data, '@') === false) {
             // our really quick heuristic failed, abort
             // this may not work so well if we want to match things like
             // "google.com", but then again, most people don't
@@ -84,7 +84,7 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
 
         // there is/are URL(s). Let's split the string:
         // Note: this regex is extremely permissive
-        $bits = preg_split('#((?:https?|ftp)://[^\s\'",<>()]+)#Su', $token->data, -1, PREG_SPLIT_DELIM_CAPTURE);
+        $bits = preg_split('#((?:https?|ftp|mailto):(?://)?[^\s\'",<>()]+)#Su', $token->data, -1, PREG_SPLIT_DELIM_CAPTURE);
 
         $token = array();
         $linkTextSuffix = $this->linkTextSuffix ? (string) $this->linkTextSuffix : '';
@@ -92,7 +92,13 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
             'http://',
             'https://',
             'ftp://',
+            'mailto:',
         );
+
+        if (count($bits) === 1 && strpos($bits[0], '@') !== false) {
+            $bits[1] = 'mailto:'.$bits[0];
+            $bits[0] = '';
+        }
 
         // $i = index
         // $c = count
@@ -102,11 +108,11 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
                 if ($bits[$i] === '') {
                     continue;
                 }
+
                 $token[] = new HTMLPurifier_Token_Text($bits[$i]);
             }
             else {
                 $token[] = new HTMLPurifier_Token_Start('a', array('href' => $bits[$i]));
-
                 $urlText = $bits[$i];
 
                 if ($this->linkTextRemoveProtocol) {
