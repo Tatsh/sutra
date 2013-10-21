@@ -75,17 +75,7 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
             return;
         }
 
-        if (strpos($token->data, '://') === false && strpos($token->data, '@') === false) {
-            // our really quick heuristic failed, abort
-            // this may not work so well if we want to match things like
-            // "google.com", but then again, most people don't
-            return;
-        }
-
-        // there is/are URL(s). Let's split the string:
-        // Note: this regex is extremely permissive
-        $bits = preg_split('#((?:https?|ftp|mailto):(?://)?[^\s\'",<>()]+)#Su', $token->data, -1, PREG_SPLIT_DELIM_CAPTURE);
-
+        $pieces = preg_split('/\s+/', $token->data);
         $token = array();
         $linkTextSuffix = $this->linkTextSuffix ? (string) $this->linkTextSuffix : '';
         $protocols = array(
@@ -95,25 +85,32 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
             'mailto:',
         );
 
-        if (count($bits) === 1 && strpos($bits[0], '@') !== false) {
-            $bits[1] = 'mailto:'.$bits[0];
-            $bits[0] = '';
-        }
+        foreach ($pieces as $piece) {
+            if ($piece === '') {
+                continue;
+            }
 
-        // $i = index
-        // $c = count
-        // $l = is link
-        for ($i = 0, $c = count($bits), $l = false; $i < $c; $i++, $l = !$l) {
-            if (!$l) {
-                if ($bits[$i] === '') {
-                    continue;
+            $isEmail = (bool) filter_var($piece, FILTER_VALIDATE_EMAIL, FILTER_NULL_ON_FAILURE);
+            $isUri = filter_var($piece, FILTER_VALIDATE_URL, FILTER_NULL_ON_FAILURE) && preg_match('/https?|ftp/', $piece);
+            $hasProtocol = true;
+
+            if (!$isUri && !$isEmail) {
+                // Validate without a scheme, block anything that might have a scheme like ssh://
+                $isUri = (bool) preg_match('/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/', $piece) && strpos($piece, ':') === false;
+
+                // Assume http if it matches
+                if ($isUri) {
+                    $piece = 'http://'.$piece;
+                }
+            }
+
+            if ($isEmail) {
+                $url = $urlText = $piece;
+                if (strpos($piece, 'mailto:') === false) {
+                    $url = 'mailto:'.$piece;
                 }
 
-                $token[] = new HTMLPurifier_Token_Text($bits[$i]);
-            }
-            else {
-                $token[] = new HTMLPurifier_Token_Start('a', array('href' => $bits[$i]));
-                $urlText = $bits[$i];
+                $token[] = new HTMLPurifier_Token_Start('a', array('href' => $url));
 
                 if ($this->linkTextRemoveProtocol) {
                     $urlText = str_replace($protocols, '', $urlText);
@@ -125,6 +122,24 @@ class HTMLPurifier_Injector_LinkifyWithTextLengthLimit extends HTMLPurifier_Inje
 
                 $token[] = new HTMLPurifier_Token_Text($urlText);
                 $token[] = new HTMLPurifier_Token_End('a');
+            }
+            else if ($isUri) {
+                $urlText = $piece;
+
+                if ($this->linkTextRemoveProtocol) {
+                    $urlText = str_replace($protocols, '', $urlText);
+                }
+
+                if ($this->linkTextLength !== null && strlen($urlText) >= $this->linkTextLength) {
+                    $urlText = substr($urlText, 0, $this->linkTextLength).$linkTextSuffix;
+                }
+
+                $token[] = new HTMLPurifier_Token_Start('a', array('href' => $piece));
+                $token[] = new HTMLPurifier_Token_Text($urlText);
+                $token[] = new HTMLPurifier_Token_End('a');
+            }
+            else {
+                $token[] = new HTMLPurifier_Token_Text($piece);
             }
         }
     }
