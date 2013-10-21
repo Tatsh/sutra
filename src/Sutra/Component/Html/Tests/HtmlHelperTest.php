@@ -368,31 +368,31 @@ Everything should be properly encoded.";
         $this->assertStringEndsWith('.</p>', $result);
     }
 
-    /**
-     * @todo Commented out test cases should eventually be supported.
-     */
     public static function makeLinksProvider()
     {
+        $same = '<script type="text/javascript" src="http://example.com/foo.jg"></script>ssh://user@host';
+
         return array(
-            array('http://example.com',     0, '<a href="http://example.com">example.com</a>'),
+            array('http://example.com', 0, '<a href="http://example.com">example.com</a>'),
             array('http://www.example.com', 0, '<a href="http://www.example.com">www.example.com</a>'),
-            //array('www.example.com',        0, '<a href="http://www.example.com">www.example.com</a>'),
-            array('will@example.com',       0, '<a href="mailto:will@example.com">will@example.com</a>'),
+            array('www.example.com', 0, '<a href="http://www.example.com">www.example.com</a>'),
+            array('will@example.com', 0, '<a href="mailto:will@example.com">will@example.com</a>'),
 
             array('<a href="http://example.com">example.com</a>', 0, '<a href="http://example.com">example.com</a>'),
             array('<img src="http://example.com/foo.gif" alt="" />', 0, '<img src="http://example.com/foo.gif" alt="" />'),
-            //array('<img src="http://example.com/foo.gif" alt="" /> www.foobar.com', 0, '<img src="http://example.com/foo.gif" alt="" /> <a href="http://www.foobar.com">www.foobar.com</a>'),
+            array('<img src="http://example.com/foo.gif" alt="" /> www.foobar.com', 0, '<img src="http://example.com/foo.gif" alt="" /><a href="http://www.foobar.com">www.foobar.com</a>'),
             array('<script type="text/javascript" src="http://example.com/foo.jg"></script>', 0, '<script type="text/javascript" src="http://example.com/foo.jg"></script>'),
 
-            //array('www.example.com',        5, '<a href="http://www.example.com">www.e ...</a>'),
-            //array('www.example.com',        8, '<a href="http://www.example.com">www.exam ...</a>'),
-            //array('www.example.com',        20, '<a href="http://www.example.com">www.example.com</a>'),
+            array('www.example.com', 5, '<a href="http://www.example.com">www.e ...</a>'),
+            array('www.example.com', 8, '<a href="http://www.example.com">www.exam ...</a>'),
+            array('www.example.com', 20, '<a href="http://www.example.com">www.example.com</a>'),
 
-            array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 0, '<a href="mailto:will@example.com">will@example.com </a><script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com <a href="http://flourishlib.com">flourishlib.com</a> <img src="http://example.com/foo.gif" alt="" />'),
-            //array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 0, '<a href="mailto:will@example.com">will@example.com</a> <script type="text/javascript" src="http://example.com/foo.jg"></script><a href="http://www.foobar.com">www.foobar.com</a> <a href="http://flourishlib.com">http://flourishlib.com</a> <img src="http://example.com/foo.gif" alt="" />'),
+            array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 0, '<a href="mailto:will@example.com">will@example.com</a><script type="text/javascript" src="http://example.com/foo.jg"></script><a href="http://www.foobar.com">www.foobar.com</a><a href="http://flourishlib.com">flourishlib.com</a><img src="http://example.com/foo.gif" alt="" />'),
 
-            array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 8, '<a href="mailto:will@example.com">will@exa ...</a><script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com <a href="http://flourishlib.com">flourish ...</a> <img src="http://example.com/foo.gif" alt="" />')
-            //array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 8, '<a href="mailto:will@example.com">will@exa…</a> <script type="text/javascript" src="http://example.com/foo.jg"></script><a href="http://www.foobar.com">www.foob…</a> <a href="http://flourishlib.com">http://f…</a> <img src="http://example.com/foo.gif" alt="" />'),
+            array('will@example.com <script type="text/javascript" src="http://example.com/foo.jg"></script>www.foobar.com http://flourishlib.com <img src="http://example.com/foo.gif" alt="" />', 8, '<a href="mailto:will@example.com">will@exa ...</a><script type="text/javascript" src="http://example.com/foo.jg"></script><a href="http://www.foobar.com">www.foob ...</a><a href="http://flourishlib.com">flourish ...</a><img src="http://example.com/foo.gif" alt="" />'),
+
+            // Ensure no changes where inapplicable
+            array($same, null, $same),
         );
     }
 
