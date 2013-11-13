@@ -15,7 +15,7 @@ class Purifier extends \HTMLPurifier implements PurifierInterface
             throw new \BadMethodCallException(sprintf('Argument 2 must be an instance of %s\ConfigurationInterface or null', __NAMESPACE__));
         }
 
-        return parent::purify($content, $config = null);
+        return parent::purify($content, $config);
     }
 
     /**
