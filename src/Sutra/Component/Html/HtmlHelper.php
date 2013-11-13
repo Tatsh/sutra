@@ -182,9 +182,10 @@ class HtmlHelper
         foreach ($this->inlineTags as $k => $tag) {
             $this->inlineTags[$k] = '<'.$tag.'>';
         }
-        $this->inlineTagsMinusBr = array_filter($this->inlineTags, function ($tag) {
+        $this->inlineTagsMinusBr = join('', array_filter($this->inlineTags, function ($tag) {
             return $tag !== '<br>';
-        });
+        }));
+        $this->inlineTags = join('', $this->inlineTags);
     }
 
     /**
@@ -714,9 +715,11 @@ class HtmlHelper
             if (strpos($e->getMessage(), 'Cannot set directive after finalization invoked') !== false) {
                 throw new ProgrammerException('If you are using HTML Purifier, this means you have not set \'autoFinalize\' to false in HTML Purifier\'s configuration (try: `$purifier->config->autoFinalize = false`)');
             }
+            // @codeCoverageIgnoreStart
             else {
                 throw $e;
             }
+            // @codeCoverageIgnoreEnd
         }
 
         return $oldValue;

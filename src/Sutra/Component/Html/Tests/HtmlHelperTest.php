@@ -8,6 +8,9 @@ use Sutra\Component\Html\Purifier\Purifier;
 use Sutra\Component\String\Utf8Helper;
 use Sutra\Component\Url\UrlParser;
 
+/**
+ * @todo Complete formatting of this file.
+ */
 class HtmlHelperTest extends TestCase
 {
     protected static $html;
@@ -282,6 +285,14 @@ class HtmlHelperTest extends TestCase
         $this->assertTag(array('tag' => 'label'), $field, "No label: $field");
     }
 
+    public function testMakeFormElementCheckbox()
+    {
+        $field = static::$html->makeFormElement('checkbox', 'should_check', array(
+            'required' => true,
+        ));
+        $this->assertTag(array('tag' => 'input'), $field);
+    }
+
     public function testAttributesString()
     {
         // Not using array as class
@@ -439,4 +450,53 @@ Everything should be properly encoded.";
         $tag = static::$html->conditionalTag('lt IE 9', 'td', array('valign' => 'top'));
         $this->assertEquals('<!--[if lt IE 9]><td valign="top"></td><![endif]-->', $tag);
     }
+
+    public function testPrepareArray()
+    {
+        $content = array('1&', '27"');
+        $this->assertNotEquals($content, static::$html->prepare($content));
+    }
+
+    public function testDecode()
+    {
+        $this->assertNotEquals('1amp;', static::$html->decode('1&'));
+    }
+
+    public function testConvertNewLines()
+    {
+        $this->assertEquals('my string', static::$html->convertNewLines('my string'));
+        $this->assertContains('<br />', static::$html->convertNewLines("my string\nmy string\n"));
+    }
+
+    public function testContainsBlockLevelHtml()
+    {
+        $this->assertTrue(static::$html->containsBlockLevelHtml('<div></div>'));
+        $this->assertFalse(static::$html->containsBlockLevelHtml('<span></span>'));
+        $this->assertTrue(static::$html->containsBlockLevelHtml('<div></div><input />'));
+    }
+
+    /**
+     * @expectedException Sutra\Component\Html\Exception\ProgrammerException
+     * @expectedExceptionMessage If you are using HTML Purifier, this means you have not set 'autoFinalize' to false in HTML Purifier's configuration (try: `$purifier->config->autoFinalize = false`)
+     */
+    public function testConstructorBadConfiguration()
+    {
+        $utf8 = new Utf8Helper();
+        $schema = CustomLinkifyConfigurationSchema::instance();
+        $config = new PurifierConfiguration($schema);
+        // Missing $config->autoFinalize = false here
+
+        $helper = new HtmlHelper(new UrlParser($utf8), new Purifier($config));
+
+        $helper->makeLinks('http://www.google.com http://www.amazon.com');
+    }
+
+//     /**
+//      * Strictly for coverage purposes only.
+//      */
+//     public function testConstructor()
+//     {
+//         $utf8 = new Utf8Helper();
+//         $instance = new HtmlHelper(new UrlParser($utf8), new Purifier());
+//     }
 }
