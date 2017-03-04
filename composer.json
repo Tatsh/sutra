@@ -12,14 +12,25 @@
       "homepage": "http://andrew.udvare.com"
     }
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Tatsh-archive/flourish-classes"
+    }
+  ],
   "require": {
-    "php": ">=5.3.0"
+    "php": ">=5.3.0",
+    "flourish/flourish": "dev-master"
+  },
+  "autoload": {
+    "classmap": ["./classes"],
+    "files": ["./functions/__.php", "./functions/l.php"]
   },
   "require-dev": {
-    "phpunit/phpunit" : "dev-master",
+    "phpunit/phpunit" : "v5.7.15",
     "phpmd/phpmd": "dev-master",
     "sebastian/phpcpd": "dev-master",
     "squizlabs/php_codesniffer": "dev-master",
-    "phpdocumentor/phpdocumentor": "dev-develop"
+    "phpdocumentor/phpdocumentor": "v2.9.0"
   }
 }
